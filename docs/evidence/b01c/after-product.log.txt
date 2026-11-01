@@ -1,0 +1,14 @@
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1480.500459ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (334.686875ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (240.740708ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (138.225708ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (7531.535167ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (739.531542ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11170.306375

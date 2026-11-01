@@ -1,0 +1,66 @@
+
+> browser-control-lab@0.2.0 test:all
+> npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries
+
+
+> browser-control-lab@0.2.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs tests/output-buffer.test.mjs tests/output-transport.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (59.846875ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (68.858333ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (7.94025ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.632459ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.16325ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.100459ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (42.275792ms)
+✔ foreign frame stubs cannot overwrite live child-target document or context (1.118292ms)
+✔ detached targets remove descendants without removing another live branch (1.006458ms)
+✔ late detach cannot remove a frame already mapped to a new target session (0.276917ms)
+✔ new root document invalidates old contexts and child frames (0.172959ms)
+✔ current tree edges prune orphan frames even if a late child tree still replies (0.1055ms)
+✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.381125ms)
+✔ a child target own root replaces an inherited parent session (0.20125ms)
+✔ PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size (23.688792ms)
+✔ output errors cannot exceed the result JSON budget and never return partial images (61.60475ms)
+✔ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (519.436625ms)
+✔ B01C guide declares execution and output limits with explicit units (7.177ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (61.287833ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (32.005833ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (32.960042ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (47.063916ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (9.3795ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (29.045833ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 707.587083
+
+> browser-control-lab@0.2.0 test:fixtures
+> node --test tests/fixture-ui.test.mjs tests/output-fixture.test.mjs
+
+✔ basic form is judged by site state (3076.537125ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (1819.626792ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (599.447833ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3847.468209ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (313.725959ms)
+✔ file bytes are verified and browser download contents match (773.038917ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (283.507875ms)
+✖ tests/output-fixture.test.mjs (168156.185709ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168164.586375
+
+✖ failing tests:
+
+test at tests/output-fixture.test.mjs:1:1
+✖ tests/output-fixture.test.mjs (168156.185709ms)
+  'test failed'

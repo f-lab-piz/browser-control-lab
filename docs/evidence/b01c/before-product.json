@@ -1,0 +1,56 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b01c",
+  "startedAt": "2026-11-01T15:46:58.854Z",
+  "finishedAt": "2026-11-01T15:47:10.167Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 3
+  },
+  "headed": false,
+  "head": "0446e5b3ae683bb7801184648078f99de96ea55d",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "3e8849257368353af80910cbb982c39bbb964d705e3bcbe5058ccabd0727ea6a",
+    "bridge/client.mjs": "eb47da8f72090b49bdc70647a6afbd58320ee6ec3db94ebca88f40e492427d3f",
+    "extension/runtime-worker.mjs": "ccfe07aed3d295f6915154a3cfd8f6ac43e30559f0b69ba750deca001331c4a8",
+    "extension/output.mjs": "722931483389d6d1cea765e87a11ee7c60a8915a10c06828554968ae20fe4f80",
+    "shared/limits.mjs": "d31174b174ea6cd10351875fee19fdf395d82ccc1e7d8a02bb9ac2d8b81324e2",
+    "extension/transform.mjs": "f0b60533a80ac92369c84c7c1b01784330e86ed58a09b4f8a9359249ce803ecf",
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/offscreen.js": "45bb3b0060d6f0eb2678687c415227608442c1a70f9b1ff053140ebd2f2e6cb9",
+    "extension/browser-engine.mjs": "116d8cd5c3300368110d7e4a2aac83dba00ff95672686f5824b9a1c7a2b63720",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68",
+    "tests/helpers/product-runtime.mjs": "130fce66fa04f17152b1eba8ce857a31ffd80d3fda1f6e49ce7230c7c9899c7d",
+    "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
+    "tests/requirements-runtime.test.mjs": "cdd67141dbb5ddd16a1a1ae1f9c269c0b443e53eb41422526a5ec095c8862b85",
+    "test-site/server.mjs": "7923920045727420506b4648bc7d39d65e4b7e2c65a2c5fe2c1e950d5f55f175",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "b342debd0f91cabb5f4f1917c7913054e0fcb3d40c93756da3c2a520431fa7e4",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "288b9a49914af0918cd056bbc2a7e03d2e65c49fbde04492ae342075be974863",
+    "package-lock.json": "8f4d301d1e74760d62761b53d4ad35bf5352279148c3d17042c8b27687b17cc6",
+    "tests/output-runtime.test.mjs": "fff125ace40f2aec83388de806b9037880abc5a63c7e9a0274d735989b6f9bf7",
+    "test-site/output-png.mjs": "b0496a040b5168c37e8a65aebe6844fadc757cf7fe960f5cfd2dbe85a19ac93a"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-DISPLAY-001-C01"
+      ],
+      "status": "pass",
+      "kinds": [
+        "text",
+        "image",
+        "image",
+        "text"
+      ],
+      "pngSha256": "bad8ce5158991dd08857711942520ede9002cb643dd3fbfc5c7e892477c04893"
+    }
+  ]
+}

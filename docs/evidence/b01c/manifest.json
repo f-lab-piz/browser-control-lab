@@ -1,0 +1,146 @@
+{
+  "at": "2026-11-01T15:50:32.663342+00:00",
+  "baseline": "0446e5b3ae683bb7801184648078f99de96ea55d",
+  "comparison": "final test/fixture/dependencies/docs/helper plus new unused output/limits modules fixed; baseline server/worker entry files only changed. Not a full historical environment replay.",
+  "sourceDifferences": [
+    "bridge/server.mjs",
+    "extension/runtime-worker.mjs"
+  ],
+  "beforeProduct": {
+    "pass": 1,
+    "fail": 5
+  },
+  "afterProduct": {
+    "pass": 6,
+    "fail": 0
+  },
+  "beforeTransport": {
+    "pass": 0,
+    "fail": 2
+  },
+  "afterTransport": {
+    "pass": 2,
+    "fail": 0
+  },
+  "regression": {
+    "pass": 79,
+    "fail": 0,
+    "skip": 1,
+    "command": "npm run test:all"
+  },
+  "headed": {
+    "pass": 15,
+    "fail": 0,
+    "command": "HEADED=1 npm run test:requirements"
+  },
+  "firstParallelRun": "Fixture PNG process stayed live without completing. Inspected owned pids39633/39634, TERM then confirmed live and KILL; full exec terminal exit1. Not PASS. Serial fixture command and explicit oracle deadline added; native decode independent rerun passed.",
+  "competitors": "bounded console output LIVE for Codex tool and Aside one-shot; budgets/images/HTTP not measured. Codex artifact is labeled received-output transcription, not raw export.",
+  "artifacts": [
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b01c/final/before-current/b01c/results.json",
+      "sourceSha256": "00a02447dbda2cd283cb0c5e506104589eea161bfc7a48ce095ea77ffaf8df7b",
+      "sha256": "581be0f6e75fc73066862fe43227cf4a017e6798b4a2e2e1100ab3b3f96d1408",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b01c/final/before-current.log",
+      "sourceSha256": "5f1851f047f1dbbff8ad24f7b666f9f9f9aa4033f783ddb2bca7bcfd31aaea58",
+      "sha256": "e96d0ae88ae6db151ee6b1a77e65b44d89eabae400a15747b192bf92bf9f9672",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "before-transport.log.txt",
+      "source": "output/goal-b01c/final/before-current-transport.log",
+      "sourceSha256": "ef074401bd0232b8c91e4277f47e91d4127b1f48bb28cfbb8aa804e764111d1a",
+      "sha256": "58797cd35e3e0245e5ab58f4dc53ec8cb03799698351699d6e667a3ed8115e36",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b01c/final/current/b01c/results.json",
+      "sourceSha256": "35a8f1ff704be5701acfd2620e067e9066adfa6085e49f94ecd6c47f2fc8f765",
+      "sha256": "448a399f57bb7a5c557af17510254c9c6b14c16a25126028e9fa62a3219fd6b0",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-product.log.txt",
+      "source": "output/goal-b01c/final/current.log",
+      "sourceSha256": "d5caf9ccc4c10e212f06938bbc433ccb3d83447c5bb295198863a45c61410f5d",
+      "sha256": "d5caf9ccc4c10e212f06938bbc433ccb3d83447c5bb295198863a45c61410f5d",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b01c/final/all-serial.log",
+      "sourceSha256": "bdc00bab129ff871e04f44b3b7bcf07b03ec09e40f84a837b4f3937000ae8e27",
+      "sha256": "bdc00bab129ff871e04f44b3b7bcf07b03ec09e40f84a837b4f3937000ae8e27",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-headed-b01c.json",
+      "source": "output/goal-b01c/final/headed/b01c/results.json",
+      "sourceSha256": "96d25cc06a535d653ff2d0b5afd60faf14081a0b4e6232f090ffa9d20b1e527f",
+      "sha256": "3e3eb40207b5fbea0d5853d68cbe3912dd6fd8113577d30cdd6681cf779e4b58",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b01c/final/headed.log",
+      "sourceSha256": "1b734de03b27c43045ac824b36020490d51f07b3f0e3ba4c59a49c1634bbaa24",
+      "sha256": "1b734de03b27c43045ac824b36020490d51f07b3f0e3ba4c59a49c1634bbaa24",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-transport.log.txt",
+      "source": "output/goal-b01c/after/transport.log",
+      "sourceSha256": "579298a4cd9d77b1c2e84298101d48c4c353b74a406f5773a4572bb5b3b7a0cf",
+      "sha256": "579298a4cd9d77b1c2e84298101d48c4c353b74a406f5773a4572bb5b3b7a0cf",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "native-png-oracle.log.txt",
+      "source": "output/goal-b01c/final/native-png.log",
+      "sourceSha256": "090e4ec8611cf0a0523d0fbe82b01e82f349f486ba1f0fb1143831e8facd03fa",
+      "sha256": "090e4ec8611cf0a0523d0fbe82b01e82f349f486ba1f0fb1143831e8facd03fa",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "first-parallel-aborted.log.txt",
+      "source": "output/goal-b01c/final/all.log",
+      "sourceSha256": "6ece5819776a04e385b824723d59455739c0d648d543a64ca816aba3618075a0",
+      "sha256": "6ece5819776a04e385b824723d59455739c0d648d543a64ca816aba3618075a0",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "compare-before.json",
+      "source": "output/goal-b01c/final/compare-before/b01c-output-comparison/results.json",
+      "sourceSha256": "1ce1f9bfc0dc984952dc6475309a6087b6f990dd3a885af7c37de32bf7423df5",
+      "sha256": "648e6d5b6b630582b2572869aa965c0578e0f7c0c5ac9f03964e00e721093d36",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "compare-after.json",
+      "source": "output/goal-b01c/final/compare-after/b01c-output-comparison/results.json",
+      "sourceSha256": "5dcc091e91b9ea0431df3799abd9d2dcda92be68c1f699c3299ec7e49e7ac769",
+      "sha256": "44b23b3e73b80ac509f6b7767730e327a86373bdc9084cc8dc99d52f116373e1",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "compare-codex-live.json",
+      "source": "output/goal-b01c/codex-live.json",
+      "sourceSha256": "49169193b7372b81ffdb736d011606c8a495f4b02e25f87170c87937f90c88b7",
+      "sha256": "49169193b7372b81ffdb736d011606c8a495f4b02e25f87170c87937f90c88b7",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "compare-aside-live.json",
+      "source": "output/goal-b01c/aside-live.json",
+      "sourceSha256": "09cf9c7c37acc505ed7787431b9acac5dfdb887e68fb3e21bd10e15c6ea4b302",
+      "sha256": "09cf9c7c37acc505ed7787431b9acac5dfdb887e68fb3e21bd10e15c6ea4b302",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    }
+  ],
+  "gate": "independent exact-head review pending"
+}

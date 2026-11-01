@@ -1,4 +1,5 @@
 import http from 'node:http';
+import {outputPng} from './output-png.mjs';
 import crypto from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
@@ -42,6 +43,7 @@ export async function startFixture({port=0}={}){
   const url=new URL(req.url,'http://local');
   const send=(data,status=200,type='application/json')=>{res.writeHead(status,{'Content-Type':type,'Cache-Control':'no-store'});res.end(type==='application/json'?JSON.stringify(data):data)};
   try{
+   if(url.pathname==='/output-image')return send({type:'image',mimeType:'image/png',data:outputPng(Number(url.searchParams.get('bytes')||128)).toString('base64')});
    if(url.pathname==='/api/runs'&&req.method==='POST'){
     let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>65536)throw Error('Body too large')}
     const run=createRun(JSON.parse(raw||'{}').scenario);runs.set(run.id,run);return send(run,201);

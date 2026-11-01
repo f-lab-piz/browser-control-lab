@@ -1,0 +1,8 @@
+{
+  "surface": "Aside CLI1.26.1028.2335 one-shot repl",
+  "code": "console.log(\"before\");console.log(\"x\"+String.fromCharCode(0)+\"y\",{name:\"한😀\"},7);var b01cCycle={name:\"cycle\"};b01cCycle.self=b01cCycle;console.log(b01cCycle);console.log(\"after\");42",
+  "exitCode": 0,
+  "stdout": "before\nx { name: '한😀' } 7\n\u001b[31mRangeError: Maximum call stack size exceeded\n    at keys (native)\u001b[0m\n\u001b[31m[error | 91ms]\u001b[0m\n",
+  "stderr": "",
+  "scope": "explicit output order NUL Unicode JSON circular only; no browser tabs or user content accessed"
+}

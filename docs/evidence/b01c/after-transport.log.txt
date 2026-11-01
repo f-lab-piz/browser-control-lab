@@ -1,0 +1,10 @@
+✔ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (491.445791ms)
+✔ B01C guide declares execution and output limits with explicit units (8.948625ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 619.248583

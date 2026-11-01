@@ -126,3 +126,23 @@ PR10 정확 head bcaa0ba의 Sol6.1 high 독립 PASS. 전체64 PASS/외부1 SKIP,
 ### Decisions and Next Actions
 
 Codex/Aside의 공개 지속/명시 출력 계약과 미확인 세부 의미를 구분한다. 신규 경쟁 실측0이며 네이티브 VM 선택은 우리 구현 결정이다. B01B 전체 slice는 리뷰 전 in-progress이며3부모/4조건만 제품 pass다. PR 작성→정확 head Sol6.1 high 독립 리뷰→필요 수정/재리뷰→gate 충족 머지 후 B01C로 진행한다. NUL/예산·late hostcall·평가 직렬화는 이번 PASS에 포함하지 않는다.
+
+
+## 2026-11-02 · B01B 독립 PASS·머지 및 B01C 준비
+
+Sol6.1 high 새 컨텍스트의 PR12 리뷰는 정확697e92d에 PASS, P0/P1/P2 없음이었다. 단위20·요구 제품9(headless/headed)·전체68 PASS/외부1 SKIP, 같은 Before2/4→After4/4, 별도 선언 경계와 증거/소스 해시를 직접 확인했다. 비차단 P3 최신 현황 불일치1건을 이슈13에 연결하고, gate 확인 후 PR12를0446e5b로 머지했다. 이슈11은 닫혔다. 리뷰 보고서를 docs/reviews/pr12-b01b.md에 보존하고 현황의 하드코딩된 미착수 범위를 정본 ledger 연결로 수정했다.
+
+B01C는 이슈13·feat/13-output-budgets에서 준비 중이다. 아직 제품 코드 변경은 없다. 실제 확장 probe에서 NUL 잘림, [Circular] 누락, 절단 원인 누락, 잘못된 MIME/base64 이미지 허용을 확인했다. stack 초과는 JS_ERROR 후 같은 세대로 복구됐다. 큰 반복 문자열은 deadline에 걸렸으므로 메모리 한도 증거로 쓰지 않았다. 별도 Uint8Array 실제 할당 probe에서는 out of memory JS_ERROR·runtimeReset false와 다음 요청 복구를 확인했다. 원시 결과는 ignored output/goal-b01c-before-probe 및 output/goal-b01c-memory-probe에 보존한다. 이는 다음 단계의 Before 조사이며 어떤 B01C 조건도 pass로 올리지 않는다.
+
+다음은 전체6 REQ/7조건의 테스트·경계 fixture를 준비하고 동일 최종 Before를 수집한 뒤 공통 출력/이미지/전송/자원 한도를 구현한다. 이미지 검증은 PNG magic만 확인해 유효성으로 단정하지 않으며 원본 파일 bytes·정상 초과 전체 생략·후속 로그·무누출을 함께 판정한다. 전체 Goal의 B01D~B06와 최종 문서/회귀·리뷰·머지는 계속 남아 있다.
+
+
+## 2026-11-02 · B01C 출력·이미지·자원·전송 경계 구현
+
+이슈13의6 REQ/7조건을 실제 확장 테스트6개로 구현했다. 공통 요청 출력 버퍼, guest 문자열 escape·순환 표지, PNG 실제 디코딩/CRC/고정 inflate/Adler 확인,64KiB 텍스트·4MiB/합8MiB/4장 이미지·256블록·16MiB 결과를 분리한다. 메모리/호스트 WebAssembly 스택 한도는 RESOURCE_LIMIT·runtimeReset와 새 세대로 복구하며 일반 Error의 같은 문구는 JS_ERROR로 남긴다. fake extension 전송 경계2개·출력 buffer2개 단위와 별도 native PNG oracle을 추가했다.
+
+최종 소스/fixture/helper/docs/의존성을 고정하고 server/worker 진입 파일만0446e5b로 둔 Before는 제품1/6·전송0/2, After는6/6·2/2다. 전체79 PASS/외부1 SKIP/FAIL0, headed 요구 제품15 PASS. 첫 병렬 PNG fixture 프로세스는 live PID를 확인해 TERM 후에도 live임을 재확인하고 KILL로 종료했으며 raw 중단 로그를 보존했다. native oracle 단계 제한과 fixture 순차 실행 뒤 정상 종료했다. 표준 PNG fixture를 actual Chromium createImageBitmap의 픽셀로 검증하고 제품 원본 SHA와 구분했다.
+
+Codex CUA js와 Aside CLI1.26.1028.2335 one-shot REPL에서 같은 값의 bounded console/NUL/circular를 실제 비교했다. 사용자 탭/데이터를 읽지 않았고 Codex 임시 빈 탭은 닫았다. Codex는 NUL·[Circular *1]·after를 보존했고 Aside는 NUL 뒤가 잘리고 circular에서 RangeError가 나 after에 도달하지 않았다. CLI exit0과 런타임 오류를 구분했다. 우리 Before는 NUL 잘림/[object Object], After는 NUL/[Circular]/after다. Codex 증거는 수신 출력 전사, Aside는 CLI stdout 캡처로 출처를 구분한다. 그 외 예산/이미지/전송은 경쟁 신규 실측이 없으며 지원·성능을 추론하지 않는다.
+
+정확 head 독립 Sol6.1 high 리뷰가 아직 필요하다. B01C slice는 in-progress이며185개 전체의 완료가 아니다. B01D 이후 전체 작업은 유지한다.

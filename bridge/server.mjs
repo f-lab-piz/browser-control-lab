@@ -1,4 +1,5 @@
 import http from 'node:http';
+import {LIMITS} from '../shared/limits.mjs';
 import crypto from 'node:crypto';
 import {readFile,realpath,stat} from 'node:fs/promises';
 import os from 'node:os';
@@ -27,7 +28,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
     const catalog=JSON.parse(await readFile(path.join(root,'docs/api-catalog.json'),'utf8'));
     const name=url.searchParams.get('api'),api=name===null?catalog:[...catalog.external,...catalog.internal].find(a=>a.name===name);
     if(!api)return json(res,{error:'Unknown API',code:'UNKNOWN_API',api:name},404);
-    return json(res,{version,external:['guide','reset','js'],execution:'extension-worker/QuickJS-WASM',verificationScope:'카탈로그 status는 기존 기본 호출 검증이며 요구사항 전체 충족을 뜻하지 않습니다.',output:'Use console.log(value); values are not automatically printed.',instructions:await readFile(path.join(root,'docs/runtime-usage.md'),'utf8'),api});
+    return json(res,{version,limits:LIMITS,external:['guide','reset','js'],execution:'extension-worker/QuickJS-WASM',verificationScope:'카탈로그 status는 기존 기본 호출 검증이며 요구사항 전체 충족을 뜻하지 않습니다.',output:'Use console.log(value); values are not automatically printed.',instructions:await readFile(path.join(root,'docs/runtime-usage.md'),'utf8'),api});
    }
    if(url.pathname==='/v1/assets'&&req.method==='POST'){
     const sessionId=url.searchParams.get('sessionId');if(!sessions.has(sessionId))throw Error('Unknown asset session');let size=0;const chunks=[];for await(const chunk of req){size+=chunk.length;if(size>32*1024*1024)throw Error('Asset exceeds 32 MiB');chunks.push(chunk)}
@@ -37,7 +38,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
    if(assetPath){const asset=assets.get(assetPath[1]);if(!asset)return json(res,{error:'Asset not found'},404);if(url.searchParams.get('sessionId')!==asset.sessionId)return json(res,{error:'Wrong asset session'},403);res.writeHead(200,{'Content-Type':asset.mimeType,'X-File-Name':encodeURIComponent(asset.name),'Content-Length':asset.bytes.length});res.end(asset.bytes);return}
    let body={};if(req.method==='POST'){
     let size=0;const chunks=[];
-    for await(const chunk of req){size+=chunk.length;if(size>(url.pathname==='/v1/extension/result'?1048576:524288))throw Error('Request body exceeds limit');chunks.push(chunk)}
+    for await(const chunk of req){size+=chunk.length;if(size>(url.pathname==='/v1/extension/result'?LIMITS.resultBytes+524288+4096:524288))throw Error('Request body exceeds limit');chunks.push(chunk)}
     body=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(Buffer.concat(chunks))||'{}');
     if(!body||typeof body!=='object'||Array.isArray(body))throw Error('Request body must be an object');
    }
@@ -45,7 +46,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
     if(!sessions.has(body.sessionId))throw Error('Unknown download session');const source=await realpath(body.path);const roots=await Promise.all(downloadRoots.map(r=>realpath(r).catch(()=>path.resolve(r))));if(!roots.some(r=>source.startsWith(r+path.sep)))throw Error('Download is outside allowed download roots');if((await stat(source)).size>32*1024*1024)throw Error('Download exceeds 32 MiB');const bytes=await readFile(source);const asset={id:crypto.randomUUID(),sessionId:body.sessionId,name:path.basename(source),mimeType:body.mimeType||'application/octet-stream',bytes};assets.set(asset.id,asset);return json(res,{fileId:asset.id,name:asset.name,size:bytes.length,path:source,sha256:crypto.createHash('sha256').update(bytes).digest('hex')});
    }
    if(url.pathname==='/v1/extension/result'&&req.method==='POST'){
-    lastSeen=Date.now();const request=requests.get(body.requestId);if(!request||request.sessionId!==body.sessionId||request.generation!==body.generation)return json(res,{error:'Stale result'},409);finish(request,body.result);return json(res,{ok:true});
+    lastSeen=Date.now();const request=requests.get(body.requestId);if(!request||request.sessionId!==body.sessionId||request.generation!==body.generation)return json(res,{error:'Stale result'},409);if(Buffer.byteLength(JSON.stringify(body.result))>LIMITS.resultBytes){finish(request,{error:{code:'RESULT_LIMIT',message:'Result JSON exceeds 16 MiB'},runtimeReset:false});return json(res,{error:'Result JSON exceeds 16 MiB',code:'RESULT_LIMIT'},413)}finish(request,body.result);return json(res,{ok:true});
    }
    if(url.pathname==='/v1/sessions'&&req.method==='POST'){
     if(sessions.size>=8)return json(res,{error:'Session limit reached'},429);
