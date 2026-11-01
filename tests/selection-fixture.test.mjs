@@ -21,3 +21,17 @@ test('selection fixture preserves raw names roots slots mutations and trusted ou
   const events=JSON.parse(await page.locator('#events').textContent());assert.deepEqual(events,[{type:'click',id:'proof-button',trusted:true}]);
  }finally{await browser?.close();await fixture.close()}
 });
+
+test('selection boundary fixture distinguishes projected text from hidden physical DOM and exposes document metadata',async()=>{
+ const fixture=await startFixture();let browser;
+ try{
+  const fallback=path.join(os.homedir(),'Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing');
+  browser=await chromium.launch({executablePath:process.env.TEST_CHROME||(existsSync(fallback)?fallback:undefined),args:['--site-per-process','--host-resolver-rules=MAP mail.test 127.0.0.1','--no-proxy-server']});
+  const page=await browser.newPage();await page.goto(fixture.url+'/selection-boundaries');
+  assert.equal(await page.locator('html').getAttribute('lang'),'ko');assert.equal(await page.locator('title').textContent(),'Selection boundary metadata');assert.equal(await page.locator('#boundary-meta').getAttribute('content'),'metadata-proof');assert.equal(await page.locator('#boundary-data').textContent(),'{"fixture":"inert"}');
+  assert.equal(await page.locator('#ghost').isVisible(),false);assert.equal(await page.locator('#fallback-ghost').isVisible(),false);assert.equal(await page.locator('#pruning').isVisible(),true);assert.equal(await page.locator('#pruned-ghost').isVisible(),false);assert.equal(await page.locator('#active-fallback-span').isVisible(),true);
+  assert.equal(await page.frameLocator('#boundary-child').locator('html').getAttribute('data-scope'),'child');
+  await page.locator('#pruning').click();await page.locator('#raw-slot').click();await page.locator('#active-fallback-span').click();assert.equal(await page.locator('#verdict').textContent(),'PASS: projected controls clicked');assert.equal(await page.locator('#click-count').textContent(),'3');
+  assert.deepEqual(JSON.parse(await page.locator('#events').textContent()),[{id:'pruning',trusted:true},{id:'raw-slot',trusted:true},{id:'active-fallback',trusted:true}]);
+ }finally{await browser?.close();await fixture.close()}
+});

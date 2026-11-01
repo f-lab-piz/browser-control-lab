@@ -1,0 +1,70 @@
+{
+  "rows": [
+    {
+      "name": "html",
+      "value": 1
+    },
+    {
+      "name": "head",
+      "value": 1
+    },
+    {
+      "name": "metadata",
+      "value": "metadata-proof"
+    },
+    {
+      "name": "ghost",
+      "value": [
+        "ghost"
+      ]
+    },
+    {
+      "name": "inactive-fallback",
+      "error": "Selector \"text:exact:\"Fallback Needle\"\" not found"
+    },
+    {
+      "name": "pruned-host",
+      "value": [
+        "pruned-ghost"
+      ]
+    },
+    {
+      "name": "raw-slot-host",
+      "value": [
+        "raw-slot"
+      ]
+    },
+    {
+      "name": "active-fallback",
+      "error": "Selector \"text:exact:\"Active Fallback Needle\"\" not found"
+    },
+    {
+      "name": "css-hidden-text",
+      "value": [
+        "css-hidden"
+      ]
+    },
+    {
+      "name": "svg-script-text",
+      "value": 1
+    }
+  ],
+  "actions": [
+    {
+      "id": "pruning",
+      "accepted": true
+    },
+    {
+      "id": "raw-slot",
+      "accepted": true
+    },
+    {
+      "id": "active-fallback-span",
+      "accepted": false,
+      "error": "Selector \"#active-fallback-span\" not found"
+    }
+  ],
+  "cssProof": "준비",
+  "clicks": "2",
+  "fixtureSha256": "d373b5f435d513bc43a671038df9871d8dca59e23be1ddb5434ec3f62075dfc2"
+}

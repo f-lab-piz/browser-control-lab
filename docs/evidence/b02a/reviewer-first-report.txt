@@ -1,0 +1,35 @@
+# PR20 independent review
+
+Verdict: CHANGES_REQUESTED for the B02A requirement acceptance scope. No introduced P0/P1 defect was confirmed. Two P2 current-contract defects remain and reproduce with the base owning sources as well.
+
+## Confirmed findings
+
+1. **P2 — Do not prune a matching shadow host using an unassigned light child.** `extension/page-agent.mjs:44` (with `parentOf` at line11 and `all` at line7). If a host has an open shadow root containing text `Prune Needle` and an unassigned light-DOM span with the same text, `getByText('Prune Needle',{exact:true}).evaluateAll(...)` returns only the unrendered light span (`rects:0`); the visible host (`rects:1`) is removed. The span is not a composed descendant of the host, so the composed-descendant pruning condition in REQ-SCOPE-GETBYTEXT-001 is false and the host must remain. `getByText(...).click()` consequently fails with ACTIONABILITY_TIMEOUT instead of finding the displayed target. Active slots also expose inactive fallback children as candidates. `all()` includes light and fallback children even when the shadow/slot replaces them, and `parentOf()` then treats every DOM parent as a composed parent. The main pruning failure is a confirmed contract violation; no blanket claim is made that all disconnected-from-flat-tree DOM must be excluded under the CSS-hidden policy. **Pre-existing**, reproduced with exactly base0452cbe api-source/page-agent while fixing all other sources and the probe. Independent artifacts: `output/pr20-review/independent-probes.json` and `output/pr20-review/baseline-probe.log`; runnable fixture/script `output/pr20-review/probe.mjs`.
+
+2. **P2 — Evaluate CSS over the Scope document, including its document element.** `extension/page-agent.mjs:41` uses `all()` whose default root at line7 is `document.body`. On an ordinary HTML document, product `locator('html').count()` and `locator('head').count()` return0 while the independent native read returns1 each. `locator('html').getAttribute(...)`/waits consequently report absence even though the element belongs to this selected document. REQ-SCOPE-LOCATOR-001/C01 promises current-Scope-document CSS candidates and specifies no body-only restriction. **Pre-existing**, identical in the base-owned-source control run. Same probe artifacts contain the independent native oracle.
+
+## Verification
+
+- `BCL_RUN_DIR=output/pr20-review/all npm run test:all`: exit0,127 PASS/0 FAIL/1 external SKIP. unit42, fixture11, bootstrap1, legacy product24(+external skip1), requirements product42, review boundaries7. Log `output/pr20-review/all.log`.
+- Afterwards, standalone `HEADED=1 BCL_RUN_DIR=output/pr20-review/headed npm run test:requirements`: exit0,42 PASS/0 FAIL. Log `output/pr20-review/headed.log`.
+- `python3 docs/requirements/tools/validate.py`: exit0, DOCUMENT_STRUCTURE_ONLY_PASS.
+- `python3 docs/requirements/tools/validate_development_plan.py`: exit0, PLAN_STRUCTURE_PASS.
+- `python3 -m unittest discover -s docs/requirements/tools -p 'test_*.py'`: exit0,6 PASS.
+- `git diff --check 0452cbe2474ed73069167c43d683ae1514c4f29c HEAD`: exit0.
+- `BCL_RUN_DIR=output/pr20-review/probes node output/pr20-review/probe.mjs`: exit0; actual HTTP→extension→QuickJS queries/actions, passive native DOM oracle. An exit0 means diagnostic execution completed, not that its reproduced bugs are PASS.
+- The same probe ran from ignored `output/pr20-review/baseline-control` with only api-source/page-agent restored to exact base hashes and the remaining head sources fixed. Results match head for both findings.
+- Browser145.0.7632.6; dedicated temporary profiles. All product operations through the HTTP extension path. Native Playwright used only launch/read-only oracle.
+- Inspected actual base→head diff, AGENTS/project skill/review rules, all13B02A parents/21conditions and linked contracts, fixtures/tests, implementation/evidence reports. B02A manifest19artifact hashes match; Before2owning-file hashes match base, After/headed hashes match current files, and non-owning source fingerprints are controlled. Saved3PASS7FAIL→10PASS/0FAIL counts match the rows. PR18 manifest24hashes match. The legacy summary change explicitly tests SUMMARY/BUTTON identities and keeps actual click and hidden-content predicates.
+- Competitor report values and limitations match stored captures: Codex fill changed value but trusted-input verdict pending; Aside role evaluateAll errored; root-only scope/DNS and different contracts are disclosed. Encoding audits distinguish decoded source/native topology equality from new competitor measurements.
+
+## Not run / limits
+
+External Naver remained the default SKIP. No new Codex/Aside live runs were performed; stored claims/artifacts were checked. Full historical baseline environment was not recreated: the independent control fixes the head harness/fixture/deps and changes only the owning2files. Did not verify every AX rule, all185REQ, company sites or B02B/B03-B06. Neither finding was treated as PR-introduced.
+
+## Remaining risks
+
+The prior PR18 headed frame-tree timeout did not recur in this full/headed run; its root cause is still unproved. The new getByText subtree scan also has no broad performance result here. External3/internal64/catalog remains unchanged; these tests do not establish full API completion, and the review covers only the stated B02A scope.
+
+## Source and authority
+
+Start/end local HEAD and remote PR20 head: `f664dd19c3affcfe48262550366bab43b84a1135`. Remote base: `0452cbe2474ed73069167c43d683ae1514c4f29c`. PR OPEN. Tracked worktree clean at start/end. No tracked product/test/doc edits, remote comments/reviews/approvals or merge were performed.

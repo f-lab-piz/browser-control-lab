@@ -9,76 +9,76 @@
   ],
   "beforeProduct": {
     "pass": 3,
-    "fail": 7
+    "fail": 9
   },
   "afterProduct": {
-    "pass": 10,
+    "pass": 12,
     "fail": 0
   },
   "regression": {
-    "command": "BCL_RUN_DIR=output/goal-b02a/encoded-all npm run test:all",
-    "pass": 127,
+    "command": "BCL_RUN_DIR=output/goal-b02a/review-final-all npm run test:all",
+    "pass": 130,
     "fail": 0,
     "skip": 1,
     "grades": {
       "unit": 42,
-      "fixture": 11,
+      "fixture": 12,
       "bootstrap": 1,
       "legacyProduct": 24,
-      "requirementsProduct": 42,
+      "requirementsProduct": 44,
       "reviewBoundaries": 7
     }
   },
   "headed": {
-    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b02a/encoded-headed npm run test:requirements",
-    "pass": 42,
+    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b02a/review-final-headed npm run test:requirements",
+    "pass": 44,
     "fail": 0
   },
   "rawHistory": "Initial Before included a test-code newline escaping error in one case; fixed test quoting before final comparison, no product change then. First full after naming changes failed legacy summary test: composed name correctly matches SUMMARY and nested BUTTON. Test now asserts both identities and explicitly selects native button via CSS+filter, preserving hidden-content exclusions and actual clicked result. Initial125 stage then unit/coverage audit strengthened to final127. No predicates weakened.",
   "competitors": "Same final root fixture: Codex IAB public locators LIVE received-output transcription, Aside CLI1.26.1028.2335 Skill3 LIVE raw CLI.16reads plus proof click/fill; root only, Codex child DNS blocked. Different contracts, no general ranking. Codex field value changes but trusted-input site verdict pending, exact cause unknown. Own comparison tabs closed; no source/bundle/WASM copied.",
   "remainingRisk": "B03A old PR18 headed frame-tree timeout remains root-cause unproven; not reproduced in this final full/headed, not declared resolved. B02B/B03-B06/final audit unverified.",
-  "gate": "Exact-head Sol6.1 high independent review pending; slice remains in-progress",
+  "gate": "First exactf664dd1 independent CHANGES_REQUESTED; both accepted P2 fixed with full130PASS1SKIP/headed44PASS, new exact-head rereview pending. B02B-B06/final audit remain",
   "artifacts": [
     {
       "file": "before-product.json",
-      "source": "output/goal-b02a/encoded-before/b02a/results.json",
-      "sourceSha256": "dbc7226bc9b1723019b2e23c6a2bde2ecd96ab521a545e5d9a4a0f9dcdfabffa",
-      "sha256": "0a1f1e25522170fe48c9ae107219644a359132268bd8be4493d4cee04851201c",
+      "source": "output/goal-b02a/review-final-before/b02a/results.json",
+      "sourceSha256": "7b88e5223e0e620a328add3762db41915de3f4bdf76873ca3377f5892fce713b",
+      "sha256": "aa1688f3dabfb54702143ed57d738684e2490a23cc70511c682d76abf9e3cf6b",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "before-product.log.txt",
-      "source": "output/goal-b02a-encoded-before.log",
-      "sourceSha256": "f68b8ce65c43c7fdabcc2a821e267019bdc28c777956566b87a2193264a953f2",
-      "sha256": "440b22f3f2600b4116087400be4405bbf679744d0b189513c5627fdb7f1640b7",
+      "source": "output/goal-b02a-review-final-before.log",
+      "sourceSha256": "ea57d57ad9c8eacf10736a7fa40c443abef56637e1e0f1f789b74948075e29cd",
+      "sha256": "61b844b96e4baad358aa23c5ccf451333b52fbc8d92511cbbb77a222b49a94d2",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-product.json",
-      "source": "output/goal-b02a/encoded-all/b02a/results.json",
-      "sourceSha256": "afbcc7ea19ca3527ccac01cd766a4349dec594c4f61ab95d36f61a880a62dbfa",
-      "sha256": "990151ab2c5d6d5f37418ad45ac50c8b9994846ba56b1483a6fb644ebad26bf0",
+      "source": "output/goal-b02a/review-final-all/b02a/results.json",
+      "sourceSha256": "c1abac92f865760d9a3add17f12a8fea114c74f6cf53950bbb2ef3d4a130beed",
+      "sha256": "ec7a05718c6476b2881873b8e4a979840b29b7e76d4c1915ad25eaa4b1bcb065",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-all.log.txt",
-      "source": "output/goal-b02a-encoded-all.log",
-      "sourceSha256": "adda4c10deda87c63fb69dcf46c3a91baaa4bef028dec5f552789143937d2819",
-      "sha256": "adda4c10deda87c63fb69dcf46c3a91baaa4bef028dec5f552789143937d2819",
+      "source": "output/goal-b02a-review-final-all.log",
+      "sourceSha256": "18a5dc561b8669c568f35c5ce6618b82f225dc26bb25b7ce5558cd347e2943ea",
+      "sha256": "18a5dc561b8669c568f35c5ce6618b82f225dc26bb25b7ce5558cd347e2943ea",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-headed.json",
-      "source": "output/goal-b02a/encoded-headed/b02a/results.json",
-      "sourceSha256": "2097bed5786de1a149181c3ab55eb58476d88592bce9c3d5ea0b1f71adad623d",
-      "sha256": "3d8c0d0d8a6455aff95d84576c91dc29f80e61652e0ca3642d0d312fab20b8a8",
+      "source": "output/goal-b02a/review-final-headed/b02a/results.json",
+      "sourceSha256": "214d367efe9113e0e818bc1f25cc4d8e636570ea39034aa41c184aa6d528ac9a",
+      "sha256": "f4edb8aa91d83182e57aaec43d447f09bb1ba920d5aec0f264af56b0af0c0b98",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-headed.log.txt",
-      "source": "output/goal-b02a-encoded-headed.log",
-      "sourceSha256": "c697fc0fcf3fb313f74607a6ec2264873924adab45c5365cee816a1dc34d7cc5",
-      "sha256": "c697fc0fcf3fb313f74607a6ec2264873924adab45c5365cee816a1dc34d7cc5",
+      "source": "output/goal-b02a-review-final-headed.log",
+      "sourceSha256": "df89b59c7b8d43b75f4efe0ad8f09484ef4747ec7a15a1d6b5f57fd51dafbb06",
+      "sha256": "df89b59c7b8d43b75f4efe0ad8f09484ef4747ec7a15a1d6b5f57fd51dafbb06",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
@@ -147,8 +147,8 @@
     {
       "file": "runtime-regression.json",
       "source": "output/runtime-e2e/results.json",
-      "sourceSha256": "5282f111ff4ab10b36b764d76a4cae3c3e57bedc20005e6f83cdf21650fa9e63",
-      "sha256": "cc14806714b761ab09552c63c05fe4ebdf02b1105d25f900e20171a3bb46d012",
+      "sourceSha256": "20054cda122ad0795e48c169b9329d76e3eec5440bb74154e8a8d3424e7fca66",
+      "sha256": "70d9bc2a35431ebe2b0917765d61234ef02bf7f2acfd0cc850fa52ee38e494be",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
@@ -171,7 +171,101 @@
       "sourceSha256": "bb8481311e71f758c7075899fcad660c30c7ff1ea6f2c708eaaeaa2b0f9a4d28",
       "sha256": "bb8481311e71f758c7075899fcad660c30c7ff1ea6f2c708eaaeaa2b0f9a4d28",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-first-report.txt",
+      "source": "output/pr20-review/review.md",
+      "sourceSha256": "fe34910395ba09c0bb39d45930d80637b9306a8dc202b80cd37c367e9f33a31a",
+      "sha256": "fe34910395ba09c0bb39d45930d80637b9306a8dc202b80cd37c367e9f33a31a",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-first-probes.json",
+      "source": "output/pr20-review/independent-probes.json",
+      "sourceSha256": "0768d998c32bcd541ffba0927a9d65e6dcb48f4ad553b3096b3fc97a847a9a16",
+      "sha256": "2cf8d2ff46b4389361f755a6115ac4d7faf77e8081cce37cba6f7325ba4a35b4",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-base-probes.json",
+      "source": "output/pr20-review/baseline-control/output/pr20-review/independent-probes.json",
+      "sourceSha256": "cf870bbeb2b39c20b36f525db895017d0b8a0e513ac82058b9964cb8c77ed8a6",
+      "sha256": "dc6fde7889a656e03a43343f4e7e441636de7704820ec3697b9c20ebabab489a",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-first-probe.mjs",
+      "source": "output/pr20-review/probe.mjs",
+      "sourceSha256": "427924c1c6cf5999f0fc93184a0c6fffb6c90c88ece6774ebc782ffbcd95a64e",
+      "sha256": "427924c1c6cf5999f0fc93184a0c6fffb6c90c88ece6774ebc782ffbcd95a64e",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "candidate-boundary-harness-before.log.txt",
+      "source": "output/goal-b02a-review-before.log",
+      "sourceSha256": "3585f3935f87943a9ceea2b0b8c4e8e6689f9bcc2a5dc54728f610da1aabce1b",
+      "sha256": "421d0ddb06f3191b856e090e235326e42beb4a365962490d3730d8179ddd018f",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "candidate-boundary-native-failure.log.txt",
+      "source": "output/goal-b02a-review-native.log",
+      "sourceSha256": "efe1dd6520e9ebfcd9bf98ab5583d378bfd3d23cc0c47125124100463a1e8376",
+      "sha256": "aeda99923d2d949f602c12f7cb866e67c094d4385a50d114191a856e56649ddc",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "boundary-native-after.log.txt",
+      "source": "output/goal-b02a-review-native2.log",
+      "sourceSha256": "db5eeb19e2155c460859ad2f96709587e66102ab7830a0a1800c12a4a209906d",
+      "sha256": "db5eeb19e2155c460859ad2f96709587e66102ab7830a0a1800c12a4a209906d",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "boundary-compare-codex.json",
+      "source": "output/goal-b02a/review-compare/codex-live.json",
+      "sourceSha256": "d487180fc4ce0be594349d0f5eec54b56b8c47db730993d5d13d0031a8fd1c7b",
+      "sha256": "d487180fc4ce0be594349d0f5eec54b56b8c47db730993d5d13d0031a8fd1c7b",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "boundary-compare-aside.txt",
+      "source": "output/goal-b02a/review-compare/aside-live.txt",
+      "sourceSha256": "f9a7f9c4cd1d495f0032e9aa1fbb1dffe24d0e183b81e71524a8d59d99d6090d",
+      "sha256": "fde6295f5ecc56f630828578e38899442f3752b6b34c8b2b11d1ccd25c7bca73",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "boundary-compare-aside.json",
+      "source": "output/goal-b02a/review-compare/aside-summary.json",
+      "sourceSha256": "eb3856b5a164f7ea13cf71453ceb77b91275ae25f2fe2c72e02789144480c995",
+      "sha256": "eb3856b5a164f7ea13cf71453ceb77b91275ae25f2fe2c72e02789144480c995",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "boundary-aside-guide.txt",
+      "source": "output/goal-b02a/review-compare/aside-guide.txt",
+      "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "boundary-aside-repl-guide.txt",
+      "source": "output/goal-b02a/review-compare/aside-repl-guide.txt",
+      "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     }
   ],
-  "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Final Before/After/full127/headed42 rerun with encoded source. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns."
+  "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns.",
+  "reviewHistory": {
+    "firstHead": "f664dd19c3affcfe48262550366bab43b84a1135",
+    "verdict": "CHANGES_REQUESTED",
+    "findings": "Existing P2 composed ghost prunes real host; Existing P2 CSS body-only html/head omission. Both within B02A current acceptance, not introduced claims.",
+    "firstHeadRegression": "127PASS1SKIP/headed42PASS; original3/10→10/10 before added boundaries",
+    "fix": "CSS documentElement+inert physical elements; text active projection/transparent slot and localName inert exclusion. Valid new fixture/oracle+2product cases; current3/12→12/12.",
+    "fixtureHistory": "First boundary fixture attempted button.attachShadow, initialization stopped; native oracle caught missing active fallback. Changed to valid div host before final comparison. Candidate harness/native failures retained only as harness history, not product improvement score.",
+    "newReview": "Exact new-head fresh Sol6.1high pending"
+  },
+  "boundaryComparison": "Fresh same selection-boundaries root10queries and explicit CSS3-control sequence: Codex root metadata works, ghost text candidate remains but explicitCSS3trusted/PASS; Aside ghost remains/fallback selector errors, explicitCSS2success+lastselectorerror/pending. Own getByText3controls/trusted/PASS. Scope-specific public methods only, no overall unsupported ranking. Child competitor not measured, no original source extraction."
 }

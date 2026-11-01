@@ -1,4 +1,4 @@
-최신 진행: B01E PR18은 정확70ba037 독립 PASS 후0452cbe로 머지됐다(5부모/7조건, 전체114 PASS/외부1 SKIP·단독 창 모드32 PASS). B02A 이슈19는 검색/이름13부모/21조건을 국소 제품 검증했고 Before3/10→After10/10, 전체127 PASS/외부1 SKIP·단독 창 모드42 PASS다. 정확head 독립 리뷰 전이며 [보고서](implementation/b02a.md)를 따른다. 과거 headed 프레임조회 실패는 B03A에서 계속 추적한다.
+최신 진행: B01E PR18은 정확70ba037 독립 PASS 후0452cbe로 머지됐다(5부모/7조건, 전체114 PASS/외부1 SKIP·단독 창 모드32 PASS). B02A 이슈19는 검색/이름13부모/21조건을 국소 제품 검증했고 Before3/12→After12/12, 전체130 PASS/외부1 SKIP·단독 창 모드44 PASS다. 첫 리뷰의 기존 P2 두 건을 수정했고 정확 새head 재리뷰 전이며 [보고서](implementation/b02a.md)를 따른다. 과거 headed 프레임조회 실패는 B03A에서 계속 추적한다.
 
 # 현재 상태
 

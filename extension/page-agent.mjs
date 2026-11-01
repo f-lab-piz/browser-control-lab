@@ -4,18 +4,28 @@ export function installPageAgent(){
  const documentId=Array.from(crypto.getRandomValues(new Uint32Array(4)),n=>n.toString(16).padStart(8,'0')).join(''),registry=new Map(),ids=new WeakMap();let next=0;
  let depthLimited=false;
  const ref=element=>{let id=ids.get(element);if(!id){id='e'+(++next);ids.set(element,id);registry.set(id,element)}return id};
- function all(root=document.body,maxDepth=Infinity){const elements=[],seen=new Set(),stack=root?[{node:root,depth:0}]:[];depthLimited=false;while(stack.length){const {node,depth}=stack.pop();if(node.nodeType!==1||seen.has(node)||['SCRIPT','STYLE','NOSCRIPT','TEMPLATE'].includes(node.tagName))continue;seen.add(node);elements.push(node);const assigned=node.tagName==='SLOT'?node.assignedElements({flatten:true}):[],children=[...assigned,...(node.shadowRoot?.children||[]),...node.children];if(depth>=maxDepth){if(children.length)depthLimited=true;continue}for(let i=children.length-1;i>=0;i--)stack.push({node:children[i],depth:depth+1})}return elements}
+ const inert=node=>['script','style','noscript','template'].includes(node.localName?.toLowerCase());
+ function all(root=document.body,maxDepth=Infinity,includeInert=false){const elements=[],seen=new Set(),stack=root?[{node:root,depth:0}]:[];depthLimited=false;while(stack.length){const {node,depth}=stack.pop();if(node.nodeType!==1||seen.has(node)||!includeInert&&inert(node))continue;seen.add(node);elements.push(node);const assigned=node.tagName==='SLOT'?node.assignedElements({flatten:true}):[],children=[...assigned,...(node.shadowRoot?.children||[]),...node.children];if(depth>=maxDepth){if(children.length)depthLimited=true;continue}for(let i=children.length-1;i>=0;i--)stack.push({node:children[i],depth:depth+1})}return elements}
 
  const roles=new Set('alert alertdialog application article banner blockquote button caption cell checkbox code columnheader combobox complementary contentinfo definition deletion dialog directory document emphasis feed figure form generic grid gridcell group heading iframe img insertion link list listbox listitem log main marquee math menu menubar menuitem menuitemcheckbox menuitemradio meter navigation none note option paragraph presentation progressbar radio radiogroup region row rowgroup rowheader scrollbar search searchbox separator slider spinbutton status strong subscript suggestion superscript switch tab table tablist tabpanel term textbox time timer toolbar tooltip tree treegrid treeitem'.split(' '));
  const normalize=value=>String(value??'').replace(/\s+/g,' ').trim();
  const parentOf=node=>node.assignedSlot||node.parentElement||node.getRootNode()?.host;
+ function projected(el){
+  for(let node=el;node;){
+   if(node.assignedSlot){node=node.assignedSlot;continue}
+   const parent=node.parentElement;
+   if(parent?.shadowRoot||parent?.tagName==='SLOT'&&parent.assignedNodes().length)return false;
+   node=parent||node.getRootNode()?.host;
+  }
+  return true;
+ }
  function ariaHidden(el){for(let node=el;node;node=parentOf(node))if(node.getAttribute?.('aria-hidden')==='true')return true;return false}
  function role(el){const explicit=(el.getAttribute('role')||'').trim().split(/\s+/).find(token=>roles.has(token));if(explicit)return explicit;const tag=el.tagName.toLowerCase();if(tag==='input')return el.type==='hidden'?'':({checkbox:'checkbox',radio:'radio',button:'button',submit:'button',reset:'button',image:'button',range:'slider',number:'spinbutton',file:'button'})[el.type]||'textbox';if(tag==='select')return el.multiple||el.size>1?'listbox':'combobox';return ({button:'button',a:el.hasAttribute('href')?'link':'',textarea:'textbox',option:'option',h1:'heading',h2:'heading',h3:'heading',h4:'heading',h5:'heading',h6:'heading',table:'table',tr:'row',th:'columnheader',td:'cell',summary:'button',iframe:'iframe',dialog:'dialog',ul:'list',ol:'list',li:'listitem',img:'img',main:'main',nav:'navigation',aside:'complementary',article:'article',progress:'progressbar',meter:'meter'})[tag]||''}
  function childrenOf(node){if(node.tagName==='SLOT'){const assigned=node.assignedNodes({flatten:true});if(assigned.length)return assigned}return node.shadowRoot?.childNodes||node.childNodes}
  function readableText(el,limit=Infinity,separateNodes=false,includeAriaHidden=false){
   if(!includeAriaHidden&&ariaHidden(el))return '';
   let value='';const seen=new Set(),stack=[el];
-  while(stack.length&&value.length<limit){const node=stack.pop();if(seen.has(node))continue;seen.add(node);if(node.nodeType===3){value+=node.nodeValue;continue}if(node.nodeType!==1&&node.nodeType!==11)continue;if(node.nodeType===1&&(['SCRIPT','STYLE','NOSCRIPT','TEMPLATE'].includes(node.tagName)||!includeAriaHidden&&node.getAttribute('aria-hidden')==='true'))continue;const children=childrenOf(node);for(let i=children.length-1;i>=0;i--)stack.push(children[i])}
+  while(stack.length&&value.length<limit){const node=stack.pop();if(seen.has(node))continue;seen.add(node);if(node.nodeType===3){value+=node.nodeValue;continue}if(node.nodeType!==1&&node.nodeType!==11)continue;if(node.nodeType===1&&(inert(node)||!includeAriaHidden&&node.getAttribute('aria-hidden')==='true'))continue;const children=childrenOf(node);for(let i=children.length-1;i>=0;i--)stack.push(children[i])}
   return normalize(value);
  }
  function matches(value,pattern,exact=false){if(pattern?.__bclRegex)return new RegExp(pattern.source,pattern.flags).test(value);const expected=normalize(pattern);return exact?value===expected:value.includes(expected)}
@@ -38,10 +48,10 @@ export function installPageAgent(){
   if(query.documentPrefix&&!documentId.startsWith(query.documentPrefix))throw Error('STALE_DOCUMENT_REF');
   let elements;
   if(query.kind==='ref'){const el=registry.get(query.value);if(!el||!el.isConnected)throw Error('STALE_REF: element is detached; take a new snapshot');elements=[el]}
-  else {elements=all();if(query.kind==='css')elements=elements.filter(el=>el.matches(query.value));
+  else {elements=query.kind==='css'?all(document.documentElement,Infinity,true):all();if(query.kind==='css')elements=elements.filter(el=>el.matches(query.value));
    else if(query.kind==='role')elements=elements.filter(el=>role(el)===query.value&&(query.options?.name===undefined||matches(name(el),query.options.name,query.options.exact))&&(query.options?.includeHidden||visible(el)&&!ariaHidden(el)));
    else if(query.kind==='label')elements=elements.filter(el=>el.matches('input,textarea,select,button')&&matches(name(el,{explicitOnly:true}),query.value,query.options?.exact));
-   else if(query.kind==='text'){elements=elements.filter(el=>!ariaHidden(el)&&matches(readableText(el),query.value,query.options?.exact));const matched=new Set(elements),ancestors=new Set();for(const el of elements)for(let node=parentOf(el);node;node=parentOf(node))if(matched.has(node))ancestors.add(node);elements=elements.filter(el=>!ancestors.has(el))}
+   else if(query.kind==='text'){elements=elements.filter(el=>el.tagName!=='SLOT'&&projected(el)&&!ariaHidden(el)&&matches(readableText(el),query.value,query.options?.exact));const matched=new Set(elements),ancestors=new Set();for(const el of elements)for(let node=parentOf(el);node;node=parentOf(node))if(matched.has(node))ancestors.add(node);elements=elements.filter(el=>!ancestors.has(el))}
    else throw Error('Unknown selector type');
   }
   if(query.filter){for(const key of Object.keys(query.filter))if(!['hasText','hasNotText','visible'].includes(key))throw Error('UNSUPPORTED_FILTER: '+key);if(query.filter.hasText!==undefined)elements=elements.filter(el=>matches(readableText(el,Infinity,false),query.filter.hasText));if(query.filter.hasNotText!==undefined)elements=elements.filter(el=>!matches(readableText(el,Infinity,false),query.filter.hasNotText));if(query.filter.visible!==undefined)elements=elements.filter(el=>visible(el)===query.filter.visible)}

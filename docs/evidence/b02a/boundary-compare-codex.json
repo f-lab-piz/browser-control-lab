@@ -1,0 +1,67 @@
+{
+  "grade": "LIVE_RECEIVED_OUTPUT_TRANSCRIPTION",
+  "surface": "Codex CUA IAB public locators",
+  "url": "http://127.0.0.1:49259/selection-boundaries",
+  "fixtureSha256": "d373b5f435d513bc43a671038df9871d8dca59e23be1ddb5434ec3f62075dfc2",
+  "rows": [
+    {
+      "name": "html",
+      "value": 1
+    },
+    {
+      "name": "head",
+      "value": 1
+    },
+    {
+      "name": "metadata",
+      "value": "metadata-proof"
+    },
+    {
+      "name": "ghost",
+      "value": [
+        "ghost"
+      ]
+    },
+    {
+      "name": "inactive-fallback",
+      "value": [
+        "fallback-ghost"
+      ]
+    },
+    {
+      "name": "pruned-host",
+      "value": [
+        "pruned-ghost"
+      ]
+    },
+    {
+      "name": "raw-slot-host",
+      "value": [
+        "raw-slot"
+      ]
+    },
+    {
+      "name": "active-fallback",
+      "value": [
+        "active-fallback-span"
+      ]
+    },
+    {
+      "name": "css-hidden-text",
+      "value": [
+        "css-hidden"
+      ]
+    },
+    {
+      "name": "svg-script-text",
+      "value": 1
+    }
+  ],
+  "cssProof": "PASS: projected controls clicked",
+  "clicks": 3,
+  "limits": [
+    "root only, child DNS blocked",
+    "CSS controls explicitly chosen from own fixture; not a successful getByText discovery claim",
+    "Not original payload export; own temporary tab11 closed"
+  ]
+}
