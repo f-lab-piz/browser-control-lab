@@ -1,0 +1,4 @@
+refreshFrames is byte-identical to merged base8d7c7d8: True
+SHA256: 5af3661a027c0e87b73309b9db6d1fb2bbbfb99cde31141d7228fd3a972412e9
+Failure at first mail page.frames call, inFlight Page.getFrameTree session0DA3... absent from later cleanup childSessions453D.../EB3C....
+This proves the failed method did not use evaluationDeadline; does not prove complete root cause or exclude timing interactions. B03A full lifecycle remains unverified.

@@ -1,0 +1,160 @@
+[
+  {
+    "requestId": "9a2b05ac-0a1d-4da2-8871-5b6f380d7b87",
+    "operation": "js",
+    "sessionId": "071b5e8b-1ad5-4299-b370-d09b2b425328",
+    "generation": 1,
+    "status": "completed",
+    "createdAt": 1793555844014,
+    "startedAt": 1793555844014,
+    "result": {
+      "execution": "extension-worker/QuickJS-WASM",
+      "metrics": {
+        "durationMs": 357.5,
+        "outputChars": 0,
+        "outputBytes": 0,
+        "imageBytes": 0,
+        "imageCount": 0
+      },
+      "content": [],
+      "truncated": false,
+      "truncationReasons": []
+    },
+    "finishedAt": 1793555844420
+  },
+  {
+    "timeout": 10000,
+    "elapsed": 139,
+    "r": {
+      "requestId": "37f265e5-1d74-4579-b11e-afe8e353208f",
+      "operation": "js",
+      "sessionId": "071b5e8b-1ad5-4299-b370-d09b2b425328",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555844448,
+      "startedAt": 1793555844448,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 102.60000038146973,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555844552
+    },
+    "effect": "1"
+  },
+  {
+    "timeout": 2147483648,
+    "elapsed": 36,
+    "r": {
+      "requestId": "d6ce954c-32b2-464e-8b4d-b215cf7c42d6",
+      "operation": "js",
+      "sessionId": "071b5e8b-1ad5-4299-b370-d09b2b425328",
+      "generation": 1,
+      "status": "failed",
+      "createdAt": 1793555844605,
+      "startedAt": 1793555844605,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "error": {
+          "code": "JS_ERROR",
+          "guestName": "Error",
+          "message": "WAIT_TIMEOUT: page.waitForFunction"
+        },
+        "runtimeReset": false,
+        "metrics": {
+          "durationMs": 1.4000005722045898,
+          "outputChars": 0,
+          "outputBytes": 0,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555844608
+    },
+    "effect": "1"
+  },
+  {
+    "timeout": 4294967295,
+    "elapsed": 35,
+    "r": {
+      "requestId": "23b2e3db-a1b6-488e-aa8c-a5a27c26ebe5",
+      "operation": "js",
+      "sessionId": "071b5e8b-1ad5-4299-b370-d09b2b425328",
+      "generation": 1,
+      "status": "failed",
+      "createdAt": 1793555844642,
+      "startedAt": 1793555844642,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "error": {
+          "code": "JS_ERROR",
+          "guestName": "Error",
+          "message": "WAIT_TIMEOUT: page.waitForFunction"
+        },
+        "runtimeReset": false,
+        "metrics": {
+          "durationMs": 1.2999992370605469,
+          "outputChars": 0,
+          "outputBytes": 0,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555844644
+    },
+    "effect": "1"
+  },
+  {
+    "timeout": 9007199254740991,
+    "elapsed": 35,
+    "r": {
+      "requestId": "c98cfc84-a5e2-4672-b27a-82e6e9e8b4e2",
+      "operation": "js",
+      "sessionId": "071b5e8b-1ad5-4299-b370-d09b2b425328",
+      "generation": 1,
+      "status": "failed",
+      "createdAt": 1793555844678,
+      "startedAt": 1793555844678,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "error": {
+          "code": "JS_ERROR",
+          "guestName": "Error",
+          "message": "WAIT_TIMEOUT: page.waitForFunction"
+        },
+        "runtimeReset": false,
+        "metrics": {
+          "durationMs": 1.3999996185302734,
+          "outputChars": 0,
+          "outputBytes": 0,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555844681
+    },
+    "effect": "1"
+  }
+]

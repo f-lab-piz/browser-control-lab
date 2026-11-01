@@ -4,7 +4,16 @@ import {stringifyJsonValue} from '../shared/json-value.mjs';
 export function evaluationDeadline(scope,deadline){
  const timeoutError=()=>Error('WAIT_TIMEOUT: page.waitForFunction');
  let timer,expiredFlag=false;
- const expired=new Promise((_,reject)=>{timer=setTimeout(()=>{expiredFlag=true;reject(timeoutError())},Math.max(0,deadline-Date.now()))});
+ const expired=new Promise((_,reject)=>{
+  const arm=()=>{
+   const remaining=deadline-Date.now();
+   if(remaining<=0){expiredFlag=true;reject(timeoutError());return}
+   // Browser timers have a signed 32-bit delay. Recheck the absolute deadline
+   // after each bounded interval rather than overflowing or expiring early.
+   timer=setTimeout(arm,Math.min(remaining,2147483647));
+  };
+  arm();
+ });
  expired.catch(()=>{});
  const assert=()=>{scope.assert();if(expiredFlag||Date.now()>=deadline)throw timeoutError()};
  const wait=async promise=>{const value=await Promise.race([promise,expired]);assert();return value};

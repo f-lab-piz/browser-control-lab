@@ -11,4 +11,4 @@
 
 - B01D: 이슈#15에서4부모/6조건의 초기화·세대·실제 입력 해제를 국소 제품 검증. Before1/7→After7/7, 전체100 PASS/외부1 SKIP·창 모드25 PASS. 전체/정확head delta 독립 PASS 후 PR16 머지(8d7c7d8). [보고서](../docs/implementation/b01d.md)
 
-- B01E: 이슈#17,5부모/7조건의 비동기 평가·JSON 직렬화 국소 제품 PASS. Before0/7→After7/7, 전체113 PASS/외부1 SKIP·창 모드32 PASS. 정확head 독립 리뷰 전. [보고서](../docs/implementation/b01e.md)
+- B01E: 이슈#17,5부모/7조건의 비동기 평가·JSON 직렬화 국소 제품 PASS. Before0/7→After7/7, 전체114 PASS/외부1 SKIP·단독 창 모드32 PASS. 정확head 독립 리뷰 전. [보고서](../docs/implementation/b01e.md)

@@ -15,6 +15,17 @@ test('evaluation deadline includes setup and blocks continuation after a delayed
   assert.deepEqual(calls,['setup']);
  }finally{budget.close()}
 });
+test('large deadlines use bounded timer intervals and rearm until the absolute deadline',async()=>{
+ const originalNow=Date.now,originalTimeout=globalThis.setTimeout,originalClear=globalThis.clearTimeout,scheduled=[];let now=1000;
+ Date.now=()=>now;globalThis.setTimeout=(callback,delay)=>{const timer={callback,delay};scheduled.push(timer);return timer};globalThis.clearTimeout=()=>{};
+ const budget=evaluationDeadline({assert(){},call:async dispatch=>dispatch()},now+4294967295);
+ try{
+  assert.equal(scheduled[0].delay,2147483647);assert.equal(await budget.wait(Promise.resolve(7)),7);
+  now+=2147483647;scheduled[0].callback();assert.equal(scheduled[1].delay,2147483647);
+  now+=2147483647;scheduled[1].callback();assert.equal(scheduled[2].delay,1);
+  now++;scheduled[2].callback();await assert.rejects(budget.wait(Promise.resolve(7)),/WAIT_TIMEOUT/);
+ }finally{budget.close();Date.now=originalNow;globalThis.setTimeout=originalTimeout;globalThis.clearTimeout=originalClear}
+});
 test('a timed out page promise releases its private handle and context monitor',async()=>{
  const previous=globalThis.chrome,originalInterval=globalThis.setInterval,originalClear=globalThis.clearInterval,intervals=new Set(),event={addListener(){}};let released=0;
  globalThis.setInterval=(...args)=>{const id=originalInterval(...args);intervals.add(id);return id};globalThis.clearInterval=id=>{intervals.delete(id);return originalClear(id)};

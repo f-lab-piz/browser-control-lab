@@ -88,5 +88,10 @@ test('B01E function wait settles promises and reports reject invalid JSON and in
  }
  await setup('wait-true');const positive=done(await js(`console.log(await page.waitForFunction(async()=>{document.querySelector('#poll').textContent=String(Number(document.querySelector('#poll').textContent)+1);return Number(document.querySelector('#poll').textContent)>=3},null,{timeout:2000}));`));
  const pass=rows.every(r=>r.count===1&&r.runtimeReset===false&&r.binding==='17'&&r.generation[0]===r.generation[1]&&(r.name==='reject'?r.error.message.startsWith('EVALUATION_ERROR'):r.name==='invalid'?r.error.message.startsWith('SERIALIZATION_ERROR'):r.error.message.startsWith('WAIT_TIMEOUT')))&&text(positive)==='true';
- h.evidence.push({conditions:['REQ-C-RUNTIME-008-C01'],status:pass?'pass':'fail',rows,positive:text(positive)});assert(pass,JSON.stringify(rows));
+ const longTimeouts=[];
+ for(const timeout of [2147483647,2147483648,4294967295,Number.MAX_SAFE_INTEGER]){
+  const result=done(await js(`console.log(await page.waitForFunction(async()=>{await new Promise(resolve=>setTimeout(resolve,80));return true},null,{timeout:${timeout}}));`,{timeoutMs:2000}));
+  assert.equal(text(result),'true');longTimeouts.push({timeout,value:text(result),generation:result.generation});
+ }
+ h.evidence.push({conditions:['REQ-C-RUNTIME-008-C01'],status:pass?'pass':'fail',rows,positive:text(positive),longTimeouts});assert(pass,JSON.stringify(rows));
 });

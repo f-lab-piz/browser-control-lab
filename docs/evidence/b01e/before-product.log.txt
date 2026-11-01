@@ -1,10 +1,10 @@
-✖ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1929.225125ms)
-✖ B01E synchronous async thenable JSON and special string data round trip without automatic output (398.054416ms)
-✖ B01E invalid arguments fail before the page function and invalid results never become successful null (1125.917625ms)
-✖ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (231.365375ms)
-✖ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1533.903208ms)
-✖ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (31044.816291ms)
-✖ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (4150.037125ms)
+✖ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1225.511208ms)
+✖ B01E synchronous async thenable JSON and special string data round trip without automatic output (333.899208ms)
+✖ B01E invalid arguments fail before the page function and invalid results never become successful null (1369.979875ms)
+✖ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (506.360916ms)
+✖ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (2188.494375ms)
+✖ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (31433.701083ms)
+✖ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (4694.671416ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 0
@@ -12,12 +12,12 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 41063.880042
+ℹ duration_ms 42620.409042
 
 ✖ failing tests:
 
 test at tests/evaluation-runtime.test.mjs:16:1
-✖ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1929.225125ms)
+✖ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1225.511208ms)
   AssertionError [ERR_ASSERTION]: The input did not match the regular expression /EVALUATION_ERROR/. Input:
 
   'ReferenceError: b01eClosureSecret is not defined\n    at <anonymous>:1:6'
@@ -35,8 +35,8 @@ test at tests/evaluation-runtime.test.mjs:16:1
   }
 
 test at tests/evaluation-runtime.test.mjs:23:1
-✖ B01E synchronous async thenable JSON and special string data round trip without automatic output (398.054416ms)
-  AssertionError [ERR_ASSERTION]: {"execution":"extension-worker/QuickJS-WASM","error":{"code":"JS_ERROR","guestName":"Error","message":"SyntaxError: Unexpected token '{'"},"runtimeReset":false,"metrics":{"durationMs":32.29999923706055,"outputChars":0,"outputBytes":0,"imageBytes":0,"imageCount":0},"content":[],"truncated":false,"truncationReasons":[]}
+✖ B01E synchronous async thenable JSON and special string data round trip without automatic output (333.899208ms)
+  AssertionError [ERR_ASSERTION]: {"execution":"extension-worker/QuickJS-WASM","error":{"code":"JS_ERROR","guestName":"Error","message":"SyntaxError: Unexpected token '{'"},"runtimeReset":false,"metrics":{"durationMs":6.700000762939453,"outputChars":0,"outputBytes":0,"imageBytes":0,"imageCount":0},"content":[],"truncated":false,"truncationReasons":[]}
   + actual - expected
 
   + 'failed'
@@ -56,7 +56,7 @@ test at tests/evaluation-runtime.test.mjs:23:1
   }
 
 test at tests/evaluation-runtime.test.mjs:31:1
-✖ B01E invalid arguments fail before the page function and invalid results never become successful null (1125.917625ms)
+✖ B01E invalid arguments fail before the page function and invalid results never become successful null (1369.979875ms)
   AssertionError [ERR_ASSERTION]: {"rows":[{"kind":"arg","expression":"NaN","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"Infinity","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"1n","status":"completed","diagnostic":"Error in invocation of tabs.get(integer tabId, function callback): No matching signature.","effect":99},{"kind":"arg","expression":"Symbol(\"x\")","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"(()=>1)","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"new Date()","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"({x:undefined})","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"[,1]","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"page","status":"failed","diagnostic":"Maximum call stack size exceeded","effect":99},{"kind":"arg","expression":"Object.defineProperty({},\"x\",{enumerable:true,get(){throw Error(\"getter must not execute\")}})","status":"completed","diagnostic":"getter must not execute","effect":99},{"kind":"arg","expression":"(()=>{var v={};v.self=v;return v})()","status":"failed","diagnostic":"Maximum call stack size exceeded","effect":99},{"kind":"result","expression":"undefined","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"NaN","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"Infinity","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"1n","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"Symbol(\"x\")","status":"completed","diagnostic":"{\"code\":-32000,\"message\":\"Object couldn't be returned by value\"}"},{"kind":"result","expression":"(()=>1)","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"document.body","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"new Date()","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"({x:undefined})","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"[,1]","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"(()=>{var v={};v.self=v;return v})()","status":"completed","diagnostic":"{\"code\":-32000,\"message\":\"Object reference chain is too long\"}"}],"effect":99,"calls":11}
       at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:45:131)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -70,7 +70,7 @@ test at tests/evaluation-runtime.test.mjs:31:1
   }
 
 test at tests/evaluation-runtime.test.mjs:48:1
-✖ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (231.365375ms)
+✖ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (506.360916ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 
@@ -96,7 +96,7 @@ test at tests/evaluation-runtime.test.mjs:48:1
   }
 
 test at tests/evaluation-runtime.test.mjs:55:1
-✖ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1533.903208ms)
+✖ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (2188.494375ms)
   AssertionError [ERR_ASSERTION]: [{"name":"throw","status":"failed","error":{"code":"JS_ERROR","guestName":"Error","message":"Error: expected throw\n    at <anonymous>:1:123"},"runtimeReset":false,"count":1,"stable":true,"output":""},{"name":"reject","status":"failed","error":{"code":"JS_ERROR","guestName":"Error","message":"Error: expected reject\n    at <anonymous>:1:139"},"runtimeReset":false,"count":1,"stable":true,"output":""},{"name":"never","status":"failed","error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"count":1,"stable":true}]
       at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:65:94)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
@@ -111,8 +111,8 @@ test at tests/evaluation-runtime.test.mjs:55:1
   }
 
 test at tests/evaluation-runtime.test.mjs:68:1
-✖ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (31044.816291ms)
-  AssertionError [ERR_ASSERTION]: {"error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":1144519408},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519408,"sessionId":"66C5FF0D66386C1E876909273C6E216C"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519409},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519409,"sessionId":"6CF29290CB9580267FCC4B8A3BB2FD6D"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519410},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519410,"sessionId":"A2B25CA4A248882F39F7DCD44F1C6ABA"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519411},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519411,"sessionId":"8E047ED8ACB65BF2FB2708820B149E1F"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519412},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519412,"sessionId":"295CA74B2CC6E9BF2CBA776FE9F295DF"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519413},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519413,"sessionId":"5134CA4B00BDE30A57879ACE6C2D10B9"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519414},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519414,"sessionId":"1DAF8B15F4104E8E33398B6824C95EAF"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519415},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519415,"sessionId":"D1E6F3BCE3AD4A722042B3ACEBCA698A"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1144519416},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"c2e56136-0091-4fc5-9f6d-b99d01386622","hostMethod":"locator.evaluateAll","method":"Runtime.callFunctionOn","tabId":1144519416,"targetSession":"B0F17FB8459334B0FE238A8493D1A7C7","generation":4}],"inFlightEffectsUncertain":true}}
+✖ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (31433.701083ms)
+  AssertionError [ERR_ASSERTION]: {"error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":1375754368},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754368,"sessionId":"ABC4A5B095EFF343C6FE012F86E4BB51"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754369},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754369,"sessionId":"E016A9740E3D864A37F4F13D635445EB"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754370},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754370,"sessionId":"0B11EE29591FFCBF7F4F1238C2F65B2E"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754371},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754371,"sessionId":"E53688FEBF8E257B135623304205ACFA"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754372},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754372,"sessionId":"9E5CDC0E1BF7FB8E3445C3236C2704B6"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754373},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754373,"sessionId":"635B15E1538737837D21579EF81A0362"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754374},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754374,"sessionId":"BEB9D7C0E308F6554C23FEFE6105EEA0"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754375},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754375,"sessionId":"4168DD34A879C894380642DAC28852A6"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754376},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"fa9b50f1-1be1-4d7c-9af4-cfe565f0a348","hostMethod":"locator.evaluateAll","method":"Runtime.callFunctionOn","tabId":1375754376,"targetSession":"3D0D1D34EA5E4034B1562351C9175376","generation":4}],"inFlightEffectsUncertain":true}}
   + actual - expected
 
   + 'failed'
@@ -132,9 +132,9 @@ test at tests/evaluation-runtime.test.mjs:68:1
   }
 
 test at tests/evaluation-runtime.test.mjs:81:1
-✖ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (4150.037125ms)
-  AssertionError [ERR_ASSERTION]: [{"name":"reject","error":{"code":"JS_ERROR","guestName":"Error","message":"WAIT_TIMEOUT: page.waitForFunction"},"runtimeReset":false,"generation":[5,5],"binding":"17","count":4,"elapsed":286},{"name":"invalid","error":{"code":"JS_ERROR","guestName":"Error","message":"WAIT_TIMEOUT: page.waitForFunction"},"runtimeReset":false,"generation":[5,5],"binding":"17","count":4,"elapsed":309},{"name":"never","error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"generation":[5,6],"binding":"","count":1,"elapsed":2638}]
-      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:91:113)
+✖ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (4694.671416ms)
+  AssertionError [ERR_ASSERTION]: [{"name":"reject","error":{"code":"JS_ERROR","guestName":"Error","message":"WAIT_TIMEOUT: page.waitForFunction"},"runtimeReset":false,"generation":[5,5],"binding":"17","count":4,"elapsed":313},{"name":"invalid","error":{"code":"JS_ERROR","guestName":"Error","message":"WAIT_TIMEOUT: page.waitForFunction"},"runtimeReset":false,"generation":[5,5],"binding":"17","count":4,"elapsed":274},{"name":"never","error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"generation":[5,6],"binding":"","count":1,"elapsed":2665}]
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:96:126)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {

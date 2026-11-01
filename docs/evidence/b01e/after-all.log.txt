@@ -6,67 +6,68 @@
 > browser-control-lab@0.2.0 test
 > node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs tests/output-buffer.test.mjs tests/output-transport.test.mjs tests/session-lifecycle.test.mjs tests/browser-lifecycle.test.mjs tests/json-value.test.mjs tests/evaluation-boundaries.test.mjs
 
-✔ transport authorization, session file isolation and separate extension credentials (174.929125ms)
-✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (66.675958ms)
-✔ a refused attachment releases its new reservation instead of falsely owning the tab (120.268084ms)
-✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (7.27ms)
-✔ mail requires loading through inner scrolling and reading the correct mail (1.148417ms)
-✔ booking requires correct dragged interval, opened editor and saved details (0.254459ms)
-✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.207292ms)
-✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (97.553625ms)
-✔ function source keeps method bodies without executing computed property keys or moving closure names (9.496875ms)
-✔ evaluation deadline includes setup and blocks continuation after a delayed adapter response (22.920792ms)
-✔ a timed out page promise releases its private handle and context monitor (141.183167ms)
-✔ foreign frame stubs cannot overwrite live child-target document or context (3.34375ms)
-✔ detached targets remove descendants without removing another live branch (2.319375ms)
-✔ late detach cannot remove a frame already mapped to a new target session (0.11275ms)
-✔ new root document invalidates old contexts and child frames (0.3045ms)
-✔ current tree edges prune orphan frames even if a late child tree still replies (0.114916ms)
-✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.110791ms)
-✔ a child target own root replaces an inherited parent session (0.0835ms)
-✔ JSON codec keeps exact finite values own prototype-like keys shared references and cross-realm plain data (11.686792ms)
-✔ JSON codec rejects loss-prone data without invoking accessors or toJSON (4.179459ms)
-✔ PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size (37.279709ms)
-✔ output errors cannot exceed the result JSON budget and never return partial images (169.795584ms)
-✔ Adam7 exact scanline bytes and compressed metadata workspace apply during bounded stream validation (585.490625ms)
-✔ PNG format corpus enforces IHDR combinations palettes indexes transparency and estimated raster workspace (1611.518333ms)
-✔ PNG compressed streams validate stored LEN/NLEN and zlib framing without rejecting fixed or dynamic blocks (2.758625ms)
-✔ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (703.16275ms)
-✔ B01C guide declares execution and output limits with explicit units (9.271708ms)
-✔ an operation invalidated before the dispatch microtask never reaches the adapter (2.820958ms)
-✔ reset blocks unsent continuation while recording already transmitted uncertain effects (0.661291ms)
-✔ overlapping reset barriers block new work and stale reset cannot invalidate new generation (0.939417ms)
-✔ event wait and trigger stay concurrent and another session is independent (0.610666ms)
-✔ release failure and uncertainty retain held input and a later reset can retry it (12.31975ms)
-✔ explicit reset metadata does not advance generation twice while an execution reset advances once (44.792709ms)
-✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (33.504416ms)
-✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (12.950625ms)
-✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (29.304375ms)
-✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (84.714875ms)
-✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (31.210125ms)
-✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (40.621583ms)
-ℹ tests 39
+✔ transport authorization, session file isolation and separate extension credentials (84.251834ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (50.438625ms)
+✔ a refused attachment releases its new reservation instead of falsely owning the tab (383.539708ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (249.180875ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.531375ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.114333ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.091167ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (48.178125ms)
+✔ function source keeps method bodies without executing computed property keys or moving closure names (80.841666ms)
+✔ evaluation deadline includes setup and blocks continuation after a delayed adapter response (36.279792ms)
+✔ large deadlines use bounded timer intervals and rearm until the absolute deadline (1.910667ms)
+✔ a timed out page promise releases its private handle and context monitor (287.249542ms)
+✔ foreign frame stubs cannot overwrite live child-target document or context (8.665ms)
+✔ detached targets remove descendants without removing another live branch (1.510167ms)
+✔ late detach cannot remove a frame already mapped to a new target session (0.242791ms)
+✔ new root document invalidates old contexts and child frames (0.402208ms)
+✔ current tree edges prune orphan frames even if a late child tree still replies (0.277709ms)
+✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.754584ms)
+✔ a child target own root replaces an inherited parent session (0.270583ms)
+✔ JSON codec keeps exact finite values own prototype-like keys shared references and cross-realm plain data (8.517958ms)
+✔ JSON codec rejects loss-prone data without invoking accessors or toJSON (7.310666ms)
+✔ PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size (29.977791ms)
+✔ output errors cannot exceed the result JSON budget and never return partial images (339.351584ms)
+✔ Adam7 exact scanline bytes and compressed metadata workspace apply during bounded stream validation (452.676042ms)
+✔ PNG format corpus enforces IHDR combinations palettes indexes transparency and estimated raster workspace (1504.441333ms)
+✔ PNG compressed streams validate stored LEN/NLEN and zlib framing without rejecting fixed or dynamic blocks (2.846792ms)
+✔ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (511.383542ms)
+✔ B01C guide declares execution and output limits with explicit units (7.4915ms)
+✔ an operation invalidated before the dispatch microtask never reaches the adapter (2.549667ms)
+✔ reset blocks unsent continuation while recording already transmitted uncertain effects (1.090625ms)
+✔ overlapping reset barriers block new work and stale reset cannot invalidate new generation (0.698666ms)
+✔ event wait and trigger stay concurrent and another session is independent (0.748666ms)
+✔ release failure and uncertainty retain held input and a later reset can retry it (13.094292ms)
+✔ explicit reset metadata does not advance generation twice while an execution reset advances once (38.322ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (15.733042ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (7.3905ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (20.509708ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (62.623291ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (9.563416ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (30.743625ms)
+ℹ tests 40
 ℹ suites 0
-ℹ pass 39
+ℹ pass 40
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 2669.632167
+ℹ duration_ms 2508.233125
 
 > browser-control-lab@0.2.0 test:fixtures
 > node --test --test-concurrency=1 tests/fixture-ui.test.mjs tests/output-fixture.test.mjs tests/reset-fixture.test.mjs tests/evaluation-fixture.test.mjs
 
-✔ evaluation fixture exposes root shadow slot identities and real frame lifecycle independently (3788.849209ms)
-✔ basic form is judged by site state (3822.829459ms)
-✔ nested cross-site mailbox must scroll internally, lazy-load and read target (2104.356417ms)
-✔ booking grid requires pointer drag, double click, editor and confirmation (723.2355ms)
-✔ virtualized dropdown loads only a window of rows and accepts scrolled target (4127.245042ms)
-✔ large DOM includes offscreen target and long links without scrolling to generate rows (418.214583ms)
-✔ file bytes are verified and browser download contents match (827.888833ms)
-✔ replaced Shadow DOM element is distinct and current generation is judged (356.063542ms)
-✔ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (4762.394166ms)
-✔ reset fixture observes trusted root and OOPIF releases and delayed real clicks without injecting verdicts (3162.341ms)
+✔ evaluation fixture exposes root shadow slot identities and real frame lifecycle independently (2574.239333ms)
+✔ basic form is judged by site state (1808.315584ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (2046.795375ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (615.54275ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3901.227917ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (249.354542ms)
+✔ file bytes are verified and browser download contents match (769.408291ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (246.062792ms)
+✔ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (4150.2925ms)
+✔ reset fixture observes trusted root and OOPIF releases and delayed real clicks without injecting verdicts (3109.354042ms)
 ℹ tests 10
 ℹ suites 0
 ℹ pass 10
@@ -74,12 +75,12 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 25808.192916
+ℹ duration_ms 20923.609167
 
 > browser-control-lab@0.2.0 test:bootstrap
 > node --test tests/extension-bootstrap.test.mjs
 
-✔ unpacked extension receives an HTTP command and returns browser data through bridge (1479.85925ms)
+✔ unpacked extension receives an HTTP command and returns browser data through bridge (1746.084042ms)
 ℹ tests 1
 ℹ suites 0
 ℹ pass 1
@@ -87,36 +88,36 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1818.7975
+ℹ duration_ms 2086.635291
 
 > browser-control-lab@0.2.0 test:runtime
 > node --test tests/runtime-e2e.test.mjs
 
-✔ guide and authentication (754.5645ms)
-✔ JavaScript executes inside extension WASM and explicit output is collected (72.498542ms)
-✔ bindings persist and top-level await invokes browser APIs asynchronously (68.159292ms)
-✔ sessions do not share JavaScript variables (34.527958ms)
-✔ syntax and execution errors return failures and later requests still work (69.087917ms)
-✔ infinite computation is interrupted by its deadline (191.60525ms)
-✔ reset cancels unresolved execution, clears variables and creates a usable generation (171.209459ms)
-✔ output budget truncation is explicit (35.216666ms)
-✔ product extension opens a tab, observes DOM and completes the basic form using real input (366.476375ms)
-✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (228.567333ms)
-✔ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (230.411417ms)
-✔ product extension scrolls nested mailbox, loads mail 137 and marks it read (1233.680625ms)
-✔ product extension selects booking cells by drag and double click, then saves reservation (731.916583ms)
-✔ product extension scrolls a virtualized dropdown and selects the requested option (5257.266583ms)
-✔ product snapshot ref becomes stale after Shadow DOM element replacement (337.62225ms)
-✔ server-staged bytes upload through product setFiles and actual browser download exports to server (259.066833ms)
-✔ local path upload and intercepted file chooser use the same product upload engine (318.052417ms)
-✔ file data drop uses the product file resolver (98.334584ms)
-✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (131.448084ms)
-✔ navigation history, load and URL waits work through product APIs (504.864667ms)
-✔ snapshot scope, output budget, continuation and diff are explicit (707.787292ms)
-✔ popup and dialog events return controllable objects (417.679917ms)
-✔ viewport and full-page screenshots are actual images returned through display (359.21075ms)
-✔ download cancellation interrupts an actual browser transfer (223.378792ms)
-﹣ read-only Naver search observes actual external DOM through extension (0.089208ms) # SKIP
+✔ guide and authentication (894.158708ms)
+✔ JavaScript executes inside extension WASM and explicit output is collected (71.137042ms)
+✔ bindings persist and top-level await invokes browser APIs asynchronously (70.674583ms)
+✔ sessions do not share JavaScript variables (75.606875ms)
+✔ syntax and execution errors return failures and later requests still work (76.759833ms)
+✔ infinite computation is interrupted by its deadline (173.181083ms)
+✔ reset cancels unresolved execution, clears variables and creates a usable generation (188.648375ms)
+✔ output budget truncation is explicit (38.589ms)
+✔ product extension opens a tab, observes DOM and completes the basic form using real input (460.531834ms)
+✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (349.304083ms)
+✔ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (395.903916ms)
+✔ product extension scrolls nested mailbox, loads mail 137 and marks it read (1442.89075ms)
+✔ product extension selects booking cells by drag and double click, then saves reservation (1280.824417ms)
+✔ product extension scrolls a virtualized dropdown and selects the requested option (5116.930084ms)
+✔ product snapshot ref becomes stale after Shadow DOM element replacement (363.785833ms)
+✔ server-staged bytes upload through product setFiles and actual browser download exports to server (232.862083ms)
+✔ local path upload and intercepted file chooser use the same product upload engine (322.264083ms)
+✔ file data drop uses the product file resolver (99.016708ms)
+✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (162.689584ms)
+✔ navigation history, load and URL waits work through product APIs (656.012833ms)
+✔ snapshot scope, output budget, continuation and diff are explicit (967.301208ms)
+✔ popup and dialog events return controllable objects (560.15825ms)
+✔ viewport and full-page screenshots are actual images returned through display (507.72875ms)
+✔ download cancellation interrupts an actual browser transfer (231.273917ms)
+﹣ read-only Naver search observes actual external DOM through extension (0.080292ms) # SKIP
 ℹ tests 25
 ℹ suites 0
 ℹ pass 24
@@ -124,43 +125,43 @@
 ℹ cancelled 0
 ℹ skipped 1
 ℹ todo 0
-ℹ duration_ms 13286.353583
+ℹ duration_ms 15365.316833
 
 > browser-control-lab@0.2.0 test:requirements
 > node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs tests/reset-runtime.test.mjs tests/evaluation-runtime.test.mjs
 
-✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1342.213958ms)
-✔ B01B declarations, destructuring and closures persist across actual awaited host calls (134.609292ms)
-✔ B01B only explicit console and display output is returned (238.412958ms)
-✔ B01B lexical conflicts reject the entire request before variable or real click effects (645.736208ms)
-✔ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (949.422125ms)
-✔ B01E synchronous async thenable JSON and special string data round trip without automatic output (199.888ms)
-✔ B01E invalid arguments fail before the page function and invalid results never become successful null (936.177958ms)
-✔ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (307.285417ms)
-✔ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1377.945166ms)
-✔ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (873.864666ms)
-✔ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (1368.535708ms)
-✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (919.457791ms)
-✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (315.08475ms)
-✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (164.962041ms)
-✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (138.245208ms)
-✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6078.204625ms)
-✔ B01C declared code time memory and stack limits report resource failures and recover (1003.121417ms)
-✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (483.99175ms)
-✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4021.018375ms)
-✔ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (277.048208ms)
-✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1034.697625ms)
-✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (660.603542ms)
-✔ B01A a second conversation cannot attach or upload another conversation asset (306.469958ms)
-✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (370.924541ms)
-✔ nested cross-site frames initialize across repeated mail and booking navigation (835.473417ms)
-✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1531.68375ms)
-✔ B01D reset releases held input in a real cross-site child target (349.896833ms)
-✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1684.331542ms)
-✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (286.805375ms)
-✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3128.179625ms)
-✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1375.665375ms)
-✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (278.67075ms)
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1807.465125ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (139.307042ms)
+✔ B01B only explicit console and display output is returned (275.36275ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (618.60875ms)
+✔ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1153.728666ms)
+✔ B01E synchronous async thenable JSON and special string data round trip without automatic output (236.873542ms)
+✔ B01E invalid arguments fail before the page function and invalid results never become successful null (976.740958ms)
+✔ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (347.084166ms)
+✔ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1670.739084ms)
+✔ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (1043.379167ms)
+✔ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (1792.345875ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1044.360375ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (305.07925ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (164.986ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (137.162417ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (8034.891917ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (1025.739292ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (600.677084ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4414.03575ms)
+✔ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (273.004166ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1286.906791ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (701.616167ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (319.818ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (401.664167ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (785.674333ms)
+✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1475.949583ms)
+✔ B01D reset releases held input in a real cross-site child target (344.480459ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1717.347167ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (352.980375ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3230.000916ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1386.130291ms)
+✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (279.548083ms)
 ℹ tests 32
 ℹ suites 0
 ℹ pass 32
@@ -168,18 +169,18 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 36274.588875
+ℹ duration_ms 41250.864917
 
 > browser-control-lab@0.2.0 test:review-boundaries
 > node --test tests/review-boundaries.test.mjs
 
-✔ long hasText and hasNotText search the full text independently of snapshot budget (915.76175ms)
-✔ adjacent inline nodes preserve DOM text in positive negative and regex filters (37.119375ms)
-✔ explicit DOM whitespace keeps separated words distinct from adjacent text (34.2825ms)
-✔ snapshot text budget does not alter native labels or aria-labelledby (31.968625ms)
-✔ closed details exposes summary shadow control and hides content controls (818.943917ms)
-✔ scrolled viewport clip captures current blue area rather than document red top (296.984792ms)
-✔ clip respects horizontal scroll and nonzero viewport origin (166.93025ms)
+✔ long hasText and hasNotText search the full text independently of snapshot budget (950.829459ms)
+✔ adjacent inline nodes preserve DOM text in positive negative and regex filters (36.965625ms)
+✔ explicit DOM whitespace keeps separated words distinct from adjacent text (34.910458ms)
+✔ snapshot text budget does not alter native labels or aria-labelledby (35.631ms)
+✔ closed details exposes summary shadow control and hides content controls (926.384833ms)
+✔ scrolled viewport clip captures current blue area rather than document red top (301.872583ms)
+✔ clip respects horizontal scroll and nonzero viewport origin (206.009167ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -187,4 +188,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 2743.86625
+ℹ duration_ms 2938.746708

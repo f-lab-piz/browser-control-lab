@@ -196,3 +196,5 @@ Codex의 own fixture reset은 변수undefined·동일 tab7·A 보존을 LIVE 전
 B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준비한다. 아직 제품 코드는 바꾸지 않았다. 현재 returnByValue/parseValue가 undefined 등을 null로 숨길 수 있고 waitForFunction의 catch-all이 reject/직렬화 오류를 timeout으로 오인할 수 있어 공통 strict JSON/Promise settle·에러 경로를 먼저 명세와 대조했다. 최종 fixture/테스트와 Before를 고정한 뒤 구현한다. B02~B06와 최종 전체 요구/회귀 문서까지 이어지는 Goal은 유지한다.
 
 - B01E 이슈17: 엄격한 JSON/Promise settle/오류·문서 경계와 wait deadline을 구현. 실제 제품7 PASS·전체113 PASS/외부1 SKIP·headed32 PASS. Before0/7, 원시 준비 predicate 실패를 보존. Codex/Aside root LIVE 계약 비교 기록. 독립 리뷰 전이며 slice in-progress.
+
+- PR18 정확7bae78a Sol6.1 high 독립 CHANGES_REQUESTED(P2 큰 timeout 타이머 overflow). bounded interval 재설정으로 수정하고 제품4경계/단위1 추가. 전체114 PASS/외부1 SKIP·단독 headed32 PASS, 병렬 headed의 프레임조회1건 실패도 원시 보존·B03A 추적. 새head 재리뷰 대기.

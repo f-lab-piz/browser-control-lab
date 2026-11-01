@@ -1,0 +1,153 @@
+[
+  {
+    "requestId": "f4869442-5f6d-43bd-9e92-adc96a4ebc19",
+    "operation": "js",
+    "sessionId": "d418e5ea-9f65-4dc0-8e34-336ad0b5e835",
+    "generation": 1,
+    "status": "completed",
+    "createdAt": 1793555864670,
+    "startedAt": 1793555864671,
+    "result": {
+      "execution": "extension-worker/QuickJS-WASM",
+      "metrics": {
+        "durationMs": 124.30000019073486,
+        "outputChars": 0,
+        "outputBytes": 0,
+        "imageBytes": 0,
+        "imageCount": 0
+      },
+      "content": [],
+      "truncated": false,
+      "truncationReasons": []
+    },
+    "finishedAt": 1793555864824
+  },
+  {
+    "timeout": 10000,
+    "elapsed": 98,
+    "r": {
+      "requestId": "668507d3-8f37-4e91-85a4-35fa8bc0c74c",
+      "operation": "js",
+      "sessionId": "d418e5ea-9f65-4dc0-8e34-336ad0b5e835",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555864840,
+      "startedAt": 1793555864840,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 86.09999942779541,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555864928
+    }
+  },
+  {
+    "timeout": 2147483648,
+    "elapsed": 96,
+    "r": {
+      "requestId": "f47901f3-d947-4274-b693-28c697571ae1",
+      "operation": "js",
+      "sessionId": "d418e5ea-9f65-4dc0-8e34-336ad0b5e835",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555864939,
+      "startedAt": 1793555864939,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 87,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555865027
+    }
+  },
+  {
+    "timeout": 4294967295,
+    "elapsed": 102,
+    "r": {
+      "requestId": "4a5b039f-41f4-4907-8be2-e1e29fe9746a",
+      "operation": "js",
+      "sessionId": "d418e5ea-9f65-4dc0-8e34-336ad0b5e835",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555865035,
+      "startedAt": 1793555865035,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 90.20000076293945,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555865126
+    }
+  },
+  {
+    "timeout": 9007199254740991,
+    "elapsed": 101,
+    "r": {
+      "requestId": "6d7f9125-e11e-440e-ad91-f1eb3a35e45b",
+      "operation": "js",
+      "sessionId": "d418e5ea-9f65-4dc0-8e34-336ad0b5e835",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555865136,
+      "startedAt": 1793555865136,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 84,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555865222
+    }
+  }
+]
