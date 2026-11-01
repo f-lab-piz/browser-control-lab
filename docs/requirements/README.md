@@ -1,4 +1,4 @@
-# 도구 요구사항 v1 · 개발 전 명세
+# 도구 요구사항 v2 · 상세화·참고 방식
 
 2026-11-01. 제품 기준 `700a6a06af3f97729327afaf9becb4ee29bb475b`.
 
@@ -46,3 +46,9 @@
 ## 2차 상세 정책과 호환 이행
 
 현재185개REQ/254개구체사례이며도구/API수3+64는유지한다. lexical재선언/const대입·이름/상태우선순위·wait deadline/소비·Page별cleanup·CE값·clip경계와모달회복의기대값을공통표로확정했다. 새includeCurrent는목표옵션이며현재제품이이미지원한다고안내하지않는다. 기존top-level재선언허용코드/테스트·guide의호환이행은다음개발이다.
+
+## 최신 완료 상태 · 참고 방식 루프 v2
+
+새3사이클을완료했다. **개별문서67개+공통5개,185REQ·254상세판정사례,양쪽370참고슬롯**이다. [최종결과](reference-methods/completion.md)·[실제최종검토](reference-methods/reviews/cycle-3/review.md)·[전체집계](reference-methods/coverage.json)를확인한다. 위184개/진행중문장은각시점기록이며최신총수로재사용하지않는다. 마지막규범/근거리뷰는범위내PASS,제품적합성은미검증이다.
+
+문서구조·근거/PLAN연결·제품동결은 `python3 docs/requirements/tools/validate.py`로실제Git checkout에서재현한다. 이검사는문서도구이며제품/fixture테스트를대신하지않는다.

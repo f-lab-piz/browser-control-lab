@@ -1,0 +1,1134 @@
+{
+  "head": "367c16f7fd9ca6de7bac52290ebabe50ba88ee90",
+  "normativeDocuments": 72,
+  "requirements": 185,
+  "conditions": 254,
+  "referenceBodies": 6,
+  "requirementSlots": 370,
+  "conditionUnits": 508,
+  "claims": 152,
+  "items": [
+    {
+      "path": "docs/requirements/external/guide.md",
+      "sha256": "0692607f3ae3b40fd744edad7e12a4c4653e6e2c1f1b866e80ee2578dda76a68",
+      "requirements": [
+        "REQ-GUIDE-001",
+        "REQ-GUIDE-002"
+      ],
+      "conditions": [
+        "REQ-GUIDE-001-C01",
+        "REQ-GUIDE-001-C02",
+        "REQ-GUIDE-002-C01",
+        "REQ-GUIDE-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/external/reset.md",
+      "sha256": "a85fffa9d3f2c1c7ea44734ff170f7c2618f266c718caa3bde92cad4e99c056f",
+      "requirements": [
+        "REQ-RESET-001",
+        "REQ-RESET-002",
+        "REQ-RESET-003"
+      ],
+      "conditions": [
+        "REQ-RESET-001-C01",
+        "REQ-RESET-001-C02",
+        "REQ-RESET-002-C01",
+        "REQ-RESET-002-C02",
+        "REQ-RESET-003-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/external/js.md",
+      "sha256": "192de8036a482f6c71ca4e7465a7ecbbf3e42a659f1881e2775eb3d08fbdd476",
+      "requirements": [
+        "REQ-JS-001",
+        "REQ-JS-002",
+        "REQ-JS-003"
+      ],
+      "conditions": [
+        "REQ-JS-001-C01",
+        "REQ-JS-001-C02",
+        "REQ-JS-002-C01",
+        "REQ-JS-002-C02",
+        "REQ-JS-003-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/browser.list.md",
+      "sha256": "41f597e2fc0a5ba12eec07f5a7a4824a010e5850738dd6a3697de709ac35a14f",
+      "requirements": [
+        "REQ-BROWSER-LIST-001",
+        "REQ-BROWSER-LIST-002"
+      ],
+      "conditions": [
+        "REQ-BROWSER-LIST-001-C01",
+        "REQ-BROWSER-LIST-001-C02",
+        "REQ-BROWSER-LIST-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/browser.tabs.md",
+      "sha256": "003becf9ae07e2bbc22d65599b8729b59f7deefe7d6bd2fdc7becd5bd757e979",
+      "requirements": [
+        "REQ-BROWSER-TABS-001",
+        "REQ-BROWSER-TABS-002"
+      ],
+      "conditions": [
+        "REQ-BROWSER-TABS-001-C01",
+        "REQ-BROWSER-TABS-001-C02",
+        "REQ-BROWSER-TABS-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/browser.open.md",
+      "sha256": "d13016fb909e572ccf1f8b20744650f881cf9f07a64a2b9fab0035d79b726fe4",
+      "requirements": [
+        "REQ-BROWSER-OPEN-001",
+        "REQ-BROWSER-OPEN-002"
+      ],
+      "conditions": [
+        "REQ-BROWSER-OPEN-001-C01",
+        "REQ-BROWSER-OPEN-001-C02",
+        "REQ-BROWSER-OPEN-002-C01",
+        "REQ-BROWSER-OPEN-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/browser.attach.md",
+      "sha256": "fed762baa7b0d4b293287ee08f9f3ccb64e55ffbbea4482eeaa78b42f4120968",
+      "requirements": [
+        "REQ-BROWSER-ATTACH-001",
+        "REQ-BROWSER-ATTACH-002"
+      ],
+      "conditions": [
+        "REQ-BROWSER-ATTACH-001-C01",
+        "REQ-BROWSER-ATTACH-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.activate.md",
+      "sha256": "dea227ea018f9d6cf6165e4ff0e21993743f2481da95f7bc56d19e12bc054f00",
+      "requirements": [
+        "REQ-PAGE-ACTIVATE-001",
+        "REQ-PAGE-ACTIVATE-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-ACTIVATE-001-C01",
+        "REQ-PAGE-ACTIVATE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.close.md",
+      "sha256": "daf0bd246fe4ac565aea4736120ccfbeeed591a948a35fe0b3d08ee14582f2ab",
+      "requirements": [
+        "REQ-PAGE-CLOSE-001",
+        "REQ-PAGE-CLOSE-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-CLOSE-001-C01",
+        "REQ-PAGE-CLOSE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.goto.md",
+      "sha256": "73677228a146fff68a7339a273dfbf5dd771699239f02cb3d29996ef39c04875",
+      "requirements": [
+        "REQ-PAGE-GOTO-001",
+        "REQ-PAGE-GOTO-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-GOTO-001-C01",
+        "REQ-PAGE-GOTO-001-C02",
+        "REQ-PAGE-GOTO-002-C01",
+        "REQ-PAGE-GOTO-002-C02",
+        "REQ-PAGE-GOTO-002-C03"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.back.md",
+      "sha256": "dafc1ec31ac670642470742751f5f09d81e19841dec8726185ba74a5e88272b2",
+      "requirements": [
+        "REQ-PAGE-BACK-001",
+        "REQ-PAGE-BACK-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-BACK-001-C01",
+        "REQ-PAGE-BACK-002-C01",
+        "REQ-PAGE-BACK-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.forward.md",
+      "sha256": "22f416c27b5b201a2fc35d74f8cc6a20c25b3d1a2a81ef3472b7db85a31c4297",
+      "requirements": [
+        "REQ-PAGE-FORWARD-001",
+        "REQ-PAGE-FORWARD-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-FORWARD-001-C01",
+        "REQ-PAGE-FORWARD-002-C01",
+        "REQ-PAGE-FORWARD-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.reload.md",
+      "sha256": "f98b5f92728915dd3d77c6bc30ed5e9d082816aeb259f3a8a98c9d9f445617bc",
+      "requirements": [
+        "REQ-PAGE-RELOAD-001",
+        "REQ-PAGE-RELOAD-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-RELOAD-001-C01",
+        "REQ-PAGE-RELOAD-002-C01",
+        "REQ-PAGE-RELOAD-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/scope.snapshot.md",
+      "sha256": "e510bc94a310bb92816e43126e7359d14f5d7e28d7b217b65aaa42f79201369c",
+      "requirements": [
+        "REQ-SCOPE-SNAPSHOT-001",
+        "REQ-SCOPE-SNAPSHOT-002",
+        "REQ-SCOPE-SNAPSHOT-003",
+        "REQ-SCOPE-SNAPSHOT-004",
+        "REQ-SCOPE-SNAPSHOT-005",
+        "REQ-SCOPE-SNAPSHOT-006",
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
+      ],
+      "conditions": [
+        "REQ-SCOPE-SNAPSHOT-001-C01",
+        "REQ-SCOPE-SNAPSHOT-002-C01",
+        "REQ-SCOPE-SNAPSHOT-003-C01",
+        "REQ-SCOPE-SNAPSHOT-003-C02",
+        "REQ-SCOPE-SNAPSHOT-004-C01",
+        "REQ-SCOPE-SNAPSHOT-004-C02",
+        "REQ-SCOPE-SNAPSHOT-005-C01",
+        "REQ-SCOPE-SNAPSHOT-005-C02",
+        "REQ-SCOPE-SNAPSHOT-006-C01",
+        "REQ-SCOPE-SNAPSHOT-007-C01",
+        "REQ-SCOPE-SNAPSHOT-008-C01",
+        "REQ-SCOPE-SNAPSHOT-009-C01",
+        "REQ-SCOPE-SNAPSHOT-010-C01",
+        "REQ-SCOPE-SNAPSHOT-011-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.screenshot.md",
+      "sha256": "f45f4865957670f9e718e511d8ce80b8ac3cce87226d8001deac8d054f96163f",
+      "requirements": [
+        "REQ-PAGE-SCREENSHOT-001",
+        "REQ-PAGE-SCREENSHOT-002",
+        "REQ-PAGE-SCREENSHOT-003",
+        "REQ-PAGE-SCREENSHOT-004"
+      ],
+      "conditions": [
+        "REQ-PAGE-SCREENSHOT-001-C01",
+        "REQ-PAGE-SCREENSHOT-002-C01",
+        "REQ-PAGE-SCREENSHOT-002-C02",
+        "REQ-PAGE-SCREENSHOT-003-C01",
+        "REQ-PAGE-SCREENSHOT-004-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.frames.md",
+      "sha256": "ec3ed5f49d2b1d5ab791c1794139b97b8dfad846f7c14c88c70cfd30ca73ead2",
+      "requirements": [
+        "REQ-PAGE-FRAMES-001",
+        "REQ-PAGE-FRAMES-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-FRAMES-001-C01",
+        "REQ-PAGE-FRAMES-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.frame.md",
+      "sha256": "3ba441cd3f7bb56905d8cee330c8331c9c8d887c8bae367a4e12be7b9bf29617",
+      "requirements": [
+        "REQ-PAGE-FRAME-001",
+        "REQ-PAGE-FRAME-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-FRAME-001-C01",
+        "REQ-PAGE-FRAME-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/scope.locator.md",
+      "sha256": "0660e9664dcb20cef44a6fbf70a6d4c84e9b61cd895be9725ed5a94b47e63ab2",
+      "requirements": [
+        "REQ-SCOPE-LOCATOR-001",
+        "REQ-SCOPE-LOCATOR-002"
+      ],
+      "conditions": [
+        "REQ-SCOPE-LOCATOR-001-C01",
+        "REQ-SCOPE-LOCATOR-001-C02",
+        "REQ-SCOPE-LOCATOR-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByRole.md",
+      "sha256": "b9c52504a1df6bbe2d0778361120484508d2354a5f94d0b9cf040ea44cbf59cb",
+      "requirements": [
+        "REQ-SCOPE-GETBYROLE-001",
+        "REQ-SCOPE-GETBYROLE-002"
+      ],
+      "conditions": [
+        "REQ-SCOPE-GETBYROLE-001-C01",
+        "REQ-SCOPE-GETBYROLE-001-C02",
+        "REQ-SCOPE-GETBYROLE-001-C03",
+        "REQ-SCOPE-GETBYROLE-002-C01",
+        "REQ-SCOPE-GETBYROLE-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByText.md",
+      "sha256": "52f6a83cc39ea805b80de3c3abb5428a016b3ad56bfb46cceee1253f27c757b8",
+      "requirements": [
+        "REQ-SCOPE-GETBYTEXT-001",
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
+      ],
+      "conditions": [
+        "REQ-SCOPE-GETBYTEXT-001-C01",
+        "REQ-SCOPE-GETBYTEXT-001-C02",
+        "REQ-SCOPE-GETBYTEXT-002-C01",
+        "REQ-SCOPE-GETBYTEXT-002-C02",
+        "REQ-SCOPE-GETBYTEXT-003-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByLabel.md",
+      "sha256": "9e669f35e69c46602458ec6c19c82aec84c8358e88bc54bc60e681cdf943464a",
+      "requirements": [
+        "REQ-SCOPE-GETBYLABEL-001",
+        "REQ-SCOPE-GETBYLABEL-002"
+      ],
+      "conditions": [
+        "REQ-SCOPE-GETBYLABEL-001-C01",
+        "REQ-SCOPE-GETBYLABEL-001-C02",
+        "REQ-SCOPE-GETBYLABEL-002-C01",
+        "REQ-SCOPE-GETBYLABEL-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.filter.md",
+      "sha256": "1bbd9d8228f122e9a2a32287555f84182c44760612c1c94531b0d12f10adeb27",
+      "requirements": [
+        "REQ-LOCATOR-FILTER-001",
+        "REQ-LOCATOR-FILTER-002",
+        "REQ-LOCATOR-FILTER-003",
+        "REQ-LOCATOR-FILTER-004"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-FILTER-001-C01",
+        "REQ-LOCATOR-FILTER-001-C02",
+        "REQ-LOCATOR-FILTER-002-C01",
+        "REQ-LOCATOR-FILTER-002-C02",
+        "REQ-LOCATOR-FILTER-003-C01",
+        "REQ-LOCATOR-FILTER-004-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.nth.md",
+      "sha256": "9d1dda19b177f4ae8e7b7ef089379745e0cd5e8dffc0aa030c3714c26d472e71",
+      "requirements": [
+        "REQ-LOCATOR-NTH-001",
+        "REQ-LOCATOR-NTH-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-NTH-001-C01",
+        "REQ-LOCATOR-NTH-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.count.md",
+      "sha256": "889b491352223d4b6764d78f6ed8737c85476f4d6da059dec49982b07ba34e6a",
+      "requirements": [
+        "REQ-LOCATOR-COUNT-001",
+        "REQ-LOCATOR-COUNT-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-COUNT-001-C01",
+        "REQ-LOCATOR-COUNT-001-C02",
+        "REQ-LOCATOR-COUNT-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.textContent.md",
+      "sha256": "fde358ec8ba40e2858225d62c703aabf34debe2dc2ab3316d0110ea1aa699419",
+      "requirements": [
+        "REQ-LOCATOR-TEXTCONTENT-001",
+        "REQ-LOCATOR-TEXTCONTENT-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-TEXTCONTENT-001-C01",
+        "REQ-LOCATOR-TEXTCONTENT-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.getAttribute.md",
+      "sha256": "b662313f6f594985c0d938b63ee3da3fb8fd3bdf84d9136d00245f3854dab852",
+      "requirements": [
+        "REQ-LOCATOR-GETATTRIBUTE-001",
+        "REQ-LOCATOR-GETATTRIBUTE-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-GETATTRIBUTE-001-C01",
+        "REQ-LOCATOR-GETATTRIBUTE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.inputValue.md",
+      "sha256": "d85e375a8091d6ac1bb40c0da932b8865aaeacf4e366d6120baf7b375fb323f4",
+      "requirements": [
+        "REQ-LOCATOR-INPUTVALUE-001",
+        "REQ-LOCATOR-INPUTVALUE-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-INPUTVALUE-001-C01",
+        "REQ-LOCATOR-INPUTVALUE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isVisible.md",
+      "sha256": "d6561e7d272ea87c545b7d4b9deaf21e2c59cae0691554e7ccb0c8eab75fac67",
+      "requirements": [
+        "REQ-LOCATOR-ISVISIBLE-001",
+        "REQ-LOCATOR-ISVISIBLE-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-ISVISIBLE-001-C01",
+        "REQ-LOCATOR-ISVISIBLE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isEnabled.md",
+      "sha256": "4e94f70e27c0673fbcb3eb64991b84f01f6032d78d48d69fd7b645d88917a720",
+      "requirements": [
+        "REQ-LOCATOR-ISENABLED-001",
+        "REQ-LOCATOR-ISENABLED-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-ISENABLED-001-C01",
+        "REQ-LOCATOR-ISENABLED-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isEditable.md",
+      "sha256": "0c282e867336633e41c0f5538157f87c0612d552169ac126190930ed79459188",
+      "requirements": [
+        "REQ-LOCATOR-ISEDITABLE-001",
+        "REQ-LOCATOR-ISEDITABLE-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-ISEDITABLE-001-C01",
+        "REQ-LOCATOR-ISEDITABLE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isChecked.md",
+      "sha256": "5dc5ffc15d467a014490e97c0a373f5dd9e93bdf0d2e7bf18eca313b27737b26",
+      "requirements": [
+        "REQ-LOCATOR-ISCHECKED-001",
+        "REQ-LOCATOR-ISCHECKED-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-ISCHECKED-001-C01",
+        "REQ-LOCATOR-ISCHECKED-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.boundingBox.md",
+      "sha256": "323d6f853a47ca1439e86a813836ea5b91c8b5214f9217135266fb2181541b15",
+      "requirements": [
+        "REQ-LOCATOR-BOUNDINGBOX-001",
+        "REQ-LOCATOR-BOUNDINGBOX-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-BOUNDINGBOX-001-C01",
+        "REQ-LOCATOR-BOUNDINGBOX-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.click.md",
+      "sha256": "9877ab38c23f8f93ac02ca4ca757a798cb7481ea83ef4f96af2c833555d83623",
+      "requirements": [
+        "REQ-LOCATOR-CLICK-001",
+        "REQ-LOCATOR-CLICK-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-CLICK-001-C01",
+        "REQ-LOCATOR-CLICK-001-C02",
+        "REQ-LOCATOR-CLICK-001-C03",
+        "REQ-LOCATOR-CLICK-001-C04",
+        "REQ-LOCATOR-CLICK-002-C01",
+        "REQ-LOCATOR-CLICK-002-C02",
+        "REQ-LOCATOR-CLICK-002-C03",
+        "REQ-LOCATOR-CLICK-002-C04"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.fill.md",
+      "sha256": "d92b1a4b7e6d6d52d1662d3bc29db64ac2d4e7937ee54c32654ec3777e4da4a6",
+      "requirements": [
+        "REQ-LOCATOR-FILL-001",
+        "REQ-LOCATOR-FILL-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-FILL-001-C01",
+        "REQ-LOCATOR-FILL-001-C02",
+        "REQ-LOCATOR-FILL-002-C01",
+        "REQ-LOCATOR-FILL-002-C02",
+        "REQ-LOCATOR-FILL-002-C03"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.press.md",
+      "sha256": "b1339c61cc5e45ea3c1bc2f3210675d86fd3e1fb351c165f530de0ac31ab86bd",
+      "requirements": [
+        "REQ-LOCATOR-PRESS-001",
+        "REQ-LOCATOR-PRESS-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-PRESS-001-C01",
+        "REQ-LOCATOR-PRESS-001-C02",
+        "REQ-LOCATOR-PRESS-002-C01",
+        "REQ-LOCATOR-PRESS-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.hover.md",
+      "sha256": "dd7f748469433bd5e16857f111b7125223be68fd10c351f459cf8b0a82057408",
+      "requirements": [
+        "REQ-LOCATOR-HOVER-001",
+        "REQ-LOCATOR-HOVER-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-HOVER-001-C01",
+        "REQ-LOCATOR-HOVER-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.focus.md",
+      "sha256": "48d1a72bb75d168bb26a94038f5987d34e66f3298b6dc1991a691bf518767202",
+      "requirements": [
+        "REQ-LOCATOR-FOCUS-001",
+        "REQ-LOCATOR-FOCUS-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-FOCUS-001-C01",
+        "REQ-LOCATOR-FOCUS-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.scrollIntoView.md",
+      "sha256": "fe5d1f248f098e8f82d79bff6e3637dc59c754b7ff2caaf5794772b5a571701c",
+      "requirements": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.setChecked.md",
+      "sha256": "14db2a4231643e223bd7a502dd8664db52393f277e4780529b2267681825083d",
+      "requirements": [
+        "REQ-LOCATOR-SETCHECKED-001",
+        "REQ-LOCATOR-SETCHECKED-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-SETCHECKED-001-C01",
+        "REQ-LOCATOR-SETCHECKED-001-C02",
+        "REQ-LOCATOR-SETCHECKED-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.selectOption.md",
+      "sha256": "747200b4e8260459582ec63ecff9832bea231e8c401e865fe166e5a85f0570a0",
+      "requirements": [
+        "REQ-LOCATOR-SELECTOPTION-001",
+        "REQ-LOCATOR-SELECTOPTION-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-SELECTOPTION-001-C01",
+        "REQ-LOCATOR-SELECTOPTION-001-C02",
+        "REQ-LOCATOR-SELECTOPTION-002-C01",
+        "REQ-LOCATOR-SELECTOPTION-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.dragTo.md",
+      "sha256": "867f4c93f0f549f224b5d2ac4d54412177004d67581b6f9860c392a88331a1ec",
+      "requirements": [
+        "REQ-LOCATOR-DRAGTO-001",
+        "REQ-LOCATOR-DRAGTO-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-DRAGTO-001-C01",
+        "REQ-LOCATOR-DRAGTO-001-C02",
+        "REQ-LOCATOR-DRAGTO-002-C01",
+        "REQ-LOCATOR-DRAGTO-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.drop.md",
+      "sha256": "540793013c13c177e0ee80ed23ea5913f7dbd19bac7518257bc75f00f905b590",
+      "requirements": [
+        "REQ-LOCATOR-DROP-001",
+        "REQ-LOCATOR-DROP-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-DROP-001-C01",
+        "REQ-LOCATOR-DROP-001-C02",
+        "REQ-LOCATOR-DROP-002-C01",
+        "REQ-LOCATOR-DROP-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.move.md",
+      "sha256": "e9e15dbd7612fd539aeafc3afd0e41ae3158c542874ae954873bfe84bca35221",
+      "requirements": [
+        "REQ-MOUSE-MOVE-001",
+        "REQ-MOUSE-MOVE-002"
+      ],
+      "conditions": [
+        "REQ-MOUSE-MOVE-001-C01",
+        "REQ-MOUSE-MOVE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.down.md",
+      "sha256": "25a9d0647aff467d3bd24008544943dec8a86c900f2874b8146f78b74c60f0d3",
+      "requirements": [
+        "REQ-MOUSE-DOWN-001",
+        "REQ-MOUSE-DOWN-002"
+      ],
+      "conditions": [
+        "REQ-MOUSE-DOWN-001-C01",
+        "REQ-MOUSE-DOWN-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.up.md",
+      "sha256": "f1264c702ec039f0fc76ba37eac7de448247870a3bfe397d13e8876f93628bb7",
+      "requirements": [
+        "REQ-MOUSE-UP-001",
+        "REQ-MOUSE-UP-002"
+      ],
+      "conditions": [
+        "REQ-MOUSE-UP-001-C01",
+        "REQ-MOUSE-UP-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.click.md",
+      "sha256": "aaa6b2a29e95d0ec8cfba4ae5a163732d8d1b6e2655854d51211c60581a4d89b",
+      "requirements": [
+        "REQ-MOUSE-CLICK-001",
+        "REQ-MOUSE-CLICK-002"
+      ],
+      "conditions": [
+        "REQ-MOUSE-CLICK-001-C01",
+        "REQ-MOUSE-CLICK-002-C01",
+        "REQ-MOUSE-CLICK-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.wheel.md",
+      "sha256": "291f65b78e72d3ce2fbac4293dc86de492e2686c373fceb6850bc6b9549f7a3a",
+      "requirements": [
+        "REQ-MOUSE-WHEEL-001",
+        "REQ-MOUSE-WHEEL-002"
+      ],
+      "conditions": [
+        "REQ-MOUSE-WHEEL-001-C01",
+        "REQ-MOUSE-WHEEL-002-C01",
+        "REQ-MOUSE-WHEEL-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.down.md",
+      "sha256": "e3bb0ab0aeeec394f89dd30af62b01d033c70e18917c6cb1b7196b3db7e22f5c",
+      "requirements": [
+        "REQ-KEYBOARD-DOWN-001",
+        "REQ-KEYBOARD-DOWN-002"
+      ],
+      "conditions": [
+        "REQ-KEYBOARD-DOWN-001-C01",
+        "REQ-KEYBOARD-DOWN-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.up.md",
+      "sha256": "383cc3504b33701cb4524ce7f77e066f8377b7bb9210e8445fe27de913757292",
+      "requirements": [
+        "REQ-KEYBOARD-UP-001",
+        "REQ-KEYBOARD-UP-002"
+      ],
+      "conditions": [
+        "REQ-KEYBOARD-UP-001-C01",
+        "REQ-KEYBOARD-UP-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.press.md",
+      "sha256": "b220f2bc887ad27433c5a5604a5d8f994978fe07b64ddbf484ae702d5b881c00",
+      "requirements": [
+        "REQ-KEYBOARD-PRESS-001",
+        "REQ-KEYBOARD-PRESS-002"
+      ],
+      "conditions": [
+        "REQ-KEYBOARD-PRESS-001-C01",
+        "REQ-KEYBOARD-PRESS-001-C02",
+        "REQ-KEYBOARD-PRESS-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.type.md",
+      "sha256": "49d5a1fdc93c679a1e224d9aaaeba1b82800b3ef89229e636ebd7c97dd9cbf74",
+      "requirements": [
+        "REQ-KEYBOARD-TYPE-001",
+        "REQ-KEYBOARD-TYPE-002"
+      ],
+      "conditions": [
+        "REQ-KEYBOARD-TYPE-001-C01",
+        "REQ-KEYBOARD-TYPE-001-C02",
+        "REQ-KEYBOARD-TYPE-002-C01",
+        "REQ-KEYBOARD-TYPE-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.waitFor.md",
+      "sha256": "515f369e98927a43a37f6440ec72244954dc1b58e5f081d4d82921f29570314d",
+      "requirements": [
+        "REQ-LOCATOR-WAITFOR-001",
+        "REQ-LOCATOR-WAITFOR-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-WAITFOR-001-C01",
+        "REQ-LOCATOR-WAITFOR-002-C01",
+        "REQ-LOCATOR-WAITFOR-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForEvent.md",
+      "sha256": "a78b092b31c2108ead1c9b460cc407d38d2ff716ad77a000104f443b5002168b",
+      "requirements": [
+        "REQ-PAGE-WAITFOREVENT-001",
+        "REQ-PAGE-WAITFOREVENT-002",
+        "REQ-PAGE-WAITFOREVENT-003",
+        "REQ-PAGE-WAITFOREVENT-004"
+      ],
+      "conditions": [
+        "REQ-PAGE-WAITFOREVENT-001-C01",
+        "REQ-PAGE-WAITFOREVENT-002-C01",
+        "REQ-PAGE-WAITFOREVENT-002-C02",
+        "REQ-PAGE-WAITFOREVENT-003-C01",
+        "REQ-PAGE-WAITFOREVENT-004-C01",
+        "REQ-PAGE-WAITFOREVENT-004-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForURL.md",
+      "sha256": "4d32bca01b94c6a875fb73f2a6e2f2b720755fb7fe611fab08416e3d1fd462be",
+      "requirements": [
+        "REQ-PAGE-WAITFORURL-001",
+        "REQ-PAGE-WAITFORURL-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-WAITFORURL-001-C01",
+        "REQ-PAGE-WAITFORURL-002-C01",
+        "REQ-PAGE-WAITFORURL-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForFunction.md",
+      "sha256": "3fecc27c027b0829354c84000ea7b0f8de1c975066e38f9c42c8889fdaf41d49",
+      "requirements": [
+        "REQ-PAGE-WAITFORFUNCTION-001",
+        "REQ-PAGE-WAITFORFUNCTION-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-WAITFORFUNCTION-001-C01",
+        "REQ-PAGE-WAITFORFUNCTION-002-C01",
+        "REQ-PAGE-WAITFORFUNCTION-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForLoadState.md",
+      "sha256": "543758a43b3eb723ef13a007e887da1e37c8a7a7241f211a44cd31c872413443",
+      "requirements": [
+        "REQ-PAGE-WAITFORLOADSTATE-001",
+        "REQ-PAGE-WAITFORLOADSTATE-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-WAITFORLOADSTATE-001-C01",
+        "REQ-PAGE-WAITFORLOADSTATE-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.setFiles.md",
+      "sha256": "6e038e082896d079de41f403012223203f96f79d49c19424090c78aeda25569e",
+      "requirements": [
+        "REQ-LOCATOR-SETFILES-001",
+        "REQ-LOCATOR-SETFILES-002",
+        "REQ-LOCATOR-SETFILES-003"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-SETFILES-001-C01",
+        "REQ-LOCATOR-SETFILES-001-C02",
+        "REQ-LOCATOR-SETFILES-001-C03",
+        "REQ-LOCATOR-SETFILES-002-C01",
+        "REQ-LOCATOR-SETFILES-002-C02",
+        "REQ-LOCATOR-SETFILES-002-C03",
+        "REQ-LOCATOR-SETFILES-003-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/chooser.setFiles.md",
+      "sha256": "a2a029bdc683dadd6e8570fd946d43ff4132012c0b8492c77e1073c9d1c3bc8b",
+      "requirements": [
+        "REQ-CHOOSER-SETFILES-001",
+        "REQ-CHOOSER-SETFILES-002"
+      ],
+      "conditions": [
+        "REQ-CHOOSER-SETFILES-001-C01",
+        "REQ-CHOOSER-SETFILES-002-C01",
+        "REQ-CHOOSER-SETFILES-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/download.save.md",
+      "sha256": "ff17b744cf9f8080d4569c39492d73e176f255d87f78107fa19ac560e24c5a40",
+      "requirements": [
+        "REQ-DOWNLOAD-SAVE-001",
+        "REQ-DOWNLOAD-SAVE-002"
+      ],
+      "conditions": [
+        "REQ-DOWNLOAD-SAVE-001-C01",
+        "REQ-DOWNLOAD-SAVE-001-C02",
+        "REQ-DOWNLOAD-SAVE-002-C01",
+        "REQ-DOWNLOAD-SAVE-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/download.cancel.md",
+      "sha256": "66d8f5a4545d796c704050c97e1c4c21ef3c6de7b401df40c4ff2a8998b8710c",
+      "requirements": [
+        "REQ-DOWNLOAD-CANCEL-001",
+        "REQ-DOWNLOAD-CANCEL-002"
+      ],
+      "conditions": [
+        "REQ-DOWNLOAD-CANCEL-001-C01",
+        "REQ-DOWNLOAD-CANCEL-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/dialog.accept.md",
+      "sha256": "5553ccf4f592d9768542eced5edd7784c7f9a26f0cd1e0dbe4326f48c700f263",
+      "requirements": [
+        "REQ-DIALOG-ACCEPT-001",
+        "REQ-DIALOG-ACCEPT-002"
+      ],
+      "conditions": [
+        "REQ-DIALOG-ACCEPT-001-C01",
+        "REQ-DIALOG-ACCEPT-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/dialog.dismiss.md",
+      "sha256": "84575a8f3aa6536142df0a95429ee6b5e5698ebc395199ea21ed07d593827707",
+      "requirements": [
+        "REQ-DIALOG-DISMISS-001",
+        "REQ-DIALOG-DISMISS-002"
+      ],
+      "conditions": [
+        "REQ-DIALOG-DISMISS-001-C01",
+        "REQ-DIALOG-DISMISS-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/scope.evaluate.md",
+      "sha256": "d11d1a749ff229a32519c578d6e6094e2b666ce8123282dc9fd70d7d422d6765",
+      "requirements": [
+        "REQ-SCOPE-EVALUATE-001",
+        "REQ-SCOPE-EVALUATE-002"
+      ],
+      "conditions": [
+        "REQ-SCOPE-EVALUATE-001-C01",
+        "REQ-SCOPE-EVALUATE-001-C02",
+        "REQ-SCOPE-EVALUATE-002-C01",
+        "REQ-SCOPE-EVALUATE-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/locator.evaluateAll.md",
+      "sha256": "6f582c212c138acba60f8594c99c4fb28d83a22bbadd96239def8f26770922d8",
+      "requirements": [
+        "REQ-LOCATOR-EVALUATEALL-001",
+        "REQ-LOCATOR-EVALUATEALL-002"
+      ],
+      "conditions": [
+        "REQ-LOCATOR-EVALUATEALL-001-C01",
+        "REQ-LOCATOR-EVALUATEALL-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/page.logs.md",
+      "sha256": "f6a9c15c97a96913629321b6a272ff2e5a1d2f2450a18f735cdd1919418cf4aa",
+      "requirements": [
+        "REQ-PAGE-LOGS-001",
+        "REQ-PAGE-LOGS-002"
+      ],
+      "conditions": [
+        "REQ-PAGE-LOGS-001-C01",
+        "REQ-PAGE-LOGS-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/console.log.md",
+      "sha256": "3e43132ef2b22647061e119e15c90b05add5e47f9d42fa368e90294ecf1e1ae5",
+      "requirements": [
+        "REQ-CONSOLE-LOG-001",
+        "REQ-CONSOLE-LOG-002"
+      ],
+      "conditions": [
+        "REQ-CONSOLE-LOG-001-C01",
+        "REQ-CONSOLE-LOG-002-C01",
+        "REQ-CONSOLE-LOG-002-C02"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/internal/display.md",
+      "sha256": "6747c978abf7f42af60d1ce6fb7480e5aee86d6fa4b052101b484cd9fc40a874",
+      "requirements": [
+        "REQ-DISPLAY-001",
+        "REQ-DISPLAY-002"
+      ],
+      "conditions": [
+        "REQ-DISPLAY-001-C01",
+        "REQ-DISPLAY-002-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/common/runtime.md",
+      "sha256": "28e9b3504b6f031503c9451baaf76cf81d6d86d5262056043dbf0709644dd234",
+      "requirements": [
+        "REQ-C-RUNTIME-001",
+        "REQ-C-RUNTIME-002",
+        "REQ-C-RUNTIME-003",
+        "REQ-C-RUNTIME-004",
+        "REQ-C-RUNTIME-005",
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007",
+        "REQ-C-RUNTIME-008"
+      ],
+      "conditions": [
+        "REQ-C-RUNTIME-001-C01",
+        "REQ-C-RUNTIME-002-C01",
+        "REQ-C-RUNTIME-003-C01",
+        "REQ-C-RUNTIME-004-C01",
+        "REQ-C-RUNTIME-005-C01",
+        "REQ-C-RUNTIME-006-C01",
+        "REQ-C-RUNTIME-007-C01",
+        "REQ-C-RUNTIME-008-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/common/dom-frames.md",
+      "sha256": "a1ee529882d5457855f1a07b9272f91214b440226875d15e858a2f6f65238ec6",
+      "requirements": [
+        "REQ-C-DOMFRAMES-001",
+        "REQ-C-DOMFRAMES-002",
+        "REQ-C-DOMFRAMES-003",
+        "REQ-C-DOMFRAMES-004",
+        "REQ-C-DOMFRAMES-005",
+        "REQ-C-DOMFRAMES-006"
+      ],
+      "conditions": [
+        "REQ-C-DOMFRAMES-001-C01",
+        "REQ-C-DOMFRAMES-002-C01",
+        "REQ-C-DOMFRAMES-003-C01",
+        "REQ-C-DOMFRAMES-004-C01",
+        "REQ-C-DOMFRAMES-005-C01",
+        "REQ-C-DOMFRAMES-006-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/common/selection.md",
+      "sha256": "1fb2cd2b00cdbc526e9e20fd0652f04ca31a3f42268fff7bb99ec54b866abfdc",
+      "requirements": [
+        "REQ-C-SELECTION-001",
+        "REQ-C-SELECTION-002",
+        "REQ-C-SELECTION-003",
+        "REQ-C-SELECTION-004",
+        "REQ-C-SELECTION-005",
+        "REQ-C-SELECTION-006"
+      ],
+      "conditions": [
+        "REQ-C-SELECTION-001-C01",
+        "REQ-C-SELECTION-002-C01",
+        "REQ-C-SELECTION-003-C01",
+        "REQ-C-SELECTION-004-C01",
+        "REQ-C-SELECTION-005-C01",
+        "REQ-C-SELECTION-006-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/common/input.md",
+      "sha256": "4cad559f5bed263dbcd52ae3ed8995c4e27163e0769958a5e27f8f83bf1c8185",
+      "requirements": [
+        "REQ-C-INPUT-001",
+        "REQ-C-INPUT-002",
+        "REQ-C-INPUT-003",
+        "REQ-C-INPUT-004",
+        "REQ-C-INPUT-005"
+      ],
+      "conditions": [
+        "REQ-C-INPUT-001-C01",
+        "REQ-C-INPUT-002-C01",
+        "REQ-C-INPUT-003-C01",
+        "REQ-C-INPUT-004-C01",
+        "REQ-C-INPUT-005-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/common/files-events.md",
+      "sha256": "a995417bb128c0fba013750457d51cfb5a80661612236a894fe49bd8d9148bd6",
+      "requirements": [
+        "REQ-C-FILESEVENTS-001",
+        "REQ-C-FILESEVENTS-002",
+        "REQ-C-FILESEVENTS-003",
+        "REQ-C-FILESEVENTS-004",
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
+      ],
+      "conditions": [
+        "REQ-C-FILESEVENTS-001-C01",
+        "REQ-C-FILESEVENTS-002-C01",
+        "REQ-C-FILESEVENTS-003-C01",
+        "REQ-C-FILESEVENTS-004-C01",
+        "REQ-C-FILESEVENTS-005-C01",
+        "REQ-C-FILESEVENTS-006-C01",
+        "REQ-C-FILESEVENTS-007-C01"
+      ],
+      "read": "input/output/errors/side effects + full normative clauses and Cnn fields; repeated support/status boilerplate shared"
+    },
+    {
+      "path": "docs/requirements/reference-methods/runtime-output.md",
+      "sha256": "e977eb5712470798e94e277b6b76ab39259cb7493ffe71072a942f4ee6d67b58",
+      "read": "all provider relation/example/claim/unknown/scope + design/PLAN, repeated boilerplate read once"
+    },
+    {
+      "path": "docs/requirements/reference-methods/selection-search.md",
+      "sha256": "cddf22f17dedb08b02aca4d4e93a961df8181994e0dfd2469cba5db8d20688dc",
+      "read": "all provider relation/example/claim/unknown/scope + design/PLAN, repeated boilerplate read once"
+    },
+    {
+      "path": "docs/requirements/reference-methods/snapshot-frames.md",
+      "sha256": "1111a50e2d8c9bffb4b00c57973238185f98efb8c51343640dfc59f6b7aed67e",
+      "read": "all provider relation/example/claim/unknown/scope + design/PLAN, repeated boilerplate read once"
+    },
+    {
+      "path": "docs/requirements/reference-methods/input-state.md",
+      "sha256": "6e9a02d7c40e787d8bfbc7387ca8b43b9e384f7868ff055b48aed968cca57b18",
+      "read": "all provider relation/example/claim/unknown/scope + design/PLAN, repeated boilerplate read once"
+    },
+    {
+      "path": "docs/requirements/reference-methods/files-events.md",
+      "sha256": "fe3ce65d79e7390e9d6f75c6326bf239b3de4f55ee2b782fe51649cd06a17531",
+      "read": "all provider relation/example/claim/unknown/scope + design/PLAN, repeated boilerplate read once"
+    },
+    {
+      "path": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "sha256": "3d97db1668b13c1915685d54ed57bdc6a4f6d26670e80bb0967f39b3643a09ce",
+      "read": "all provider relation/example/claim/unknown/scope + design/PLAN, repeated boilerplate read once"
+    }
+  ],
+  "notRead": [
+    "full original CUA response byte-identical transcript unavailable; selected preserved excerpts only",
+    "unrelated product implementation and unrelated prior run artifacts not read line-by-line"
+  ],
+  "checks": "ID uniqueness/sets, plans/backlog/conditions, 370 slots/508 units/152 claim linkage, reference anchors, tracked source registries, 3 run-file paths, frozen product/test paths"
+}

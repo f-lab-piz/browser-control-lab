@@ -1,0 +1,671 @@
+{
+  "mode": "construct async function / JSON parse only; no snippet invocation and no browser access",
+  "counts": {
+    "compiled": 155,
+    "skipped-cli": 6,
+    "json-parsed": 2,
+    "skipped-pseudocode": 2
+  },
+  "result": [
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:15",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:35",
+      "status": "skipped-cli"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:69",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:119",
+      "status": "json-parsed"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:139",
+      "status": "skipped-cli"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:171",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:193",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:225",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/runtime-output.md:245",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:15",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:35",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:69",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:91",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:125",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:145",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:177",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:197",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:229",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:251",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:283",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:305",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:337",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:359",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:393",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:443",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/selection-search.md:463",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:15",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:37",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:75",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:97",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:131",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:183",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:203",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/snapshot-frames.md:237",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:15",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:67",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:117",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:167",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:219",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:271",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:293",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:329",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:351",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:383",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:577",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:627",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:695",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:871",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:921",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:1067",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/input-state.md:1117",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:63",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:83",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:115",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:165",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:215",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:235",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:321",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:371",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/files-events.md:476",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:15",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:35",
+      "status": "skipped-cli"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:69",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:89",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:121",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:143",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:175",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:195",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:275",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:297",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:331",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:381",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:431",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:481",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:531",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:551",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:583",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:633",
+      "status": "skipped-pseudocode"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:685",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:735",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:757",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:789",
+      "status": "compiled"
+    },
+    {
+      "source": "docs/requirements/reference-methods/lifecycle-evaluation.md:839",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:guide",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:reset",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:js",
+      "status": "json-parsed"
+    },
+    {
+      "source": "codex:browser.list",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:browser.tabs",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:browser.open",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:browser.attach",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.close",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.goto",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.back",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.forward",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.reload",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:scope.snapshot",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.screenshot",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.frames",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.frame",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:scope.locator",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:scope.getByRole",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:scope.getByText",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:scope.getByLabel",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.filter",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.nth",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.count",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.textContent",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.getAttribute",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.inputValue",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.isVisible",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.isEnabled",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.isEditable",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.isChecked",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.boundingBox",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.click",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.fill",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.press",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.setChecked",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.selectOption",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:mouse.click",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:mouse.wheel",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:keyboard.press",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:keyboard.type",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.waitFor",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.waitForEvent",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.waitForURL",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.waitForFunction",
+      "status": "skipped-pseudocode"
+    },
+    {
+      "source": "codex:page.waitForLoadState",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.setFiles",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:chooser.setFiles",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:download.save",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:dialog.accept",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:dialog.dismiss",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:scope.evaluate",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:locator.evaluateAll",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:page.logs",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:console.log",
+      "status": "compiled"
+    },
+    {
+      "source": "codex:display",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:guide",
+      "status": "skipped-cli"
+    },
+    {
+      "source": "aside:js",
+      "status": "skipped-cli"
+    },
+    {
+      "source": "aside:browser.list",
+      "status": "skipped-cli"
+    },
+    {
+      "source": "aside:browser.tabs",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:browser.open",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:browser.attach",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:page.close",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:scope.snapshot",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:page.screenshot",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:page.frame",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:scope.locator",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:scope.getByRole",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:scope.getByText",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:scope.getByLabel",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.filter",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.nth",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.count",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.getAttribute",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.click",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.fill",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.dragTo",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:locator.waitFor",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:page.waitForEvent",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:download.save",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:scope.evaluate",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:console.log",
+      "status": "compiled"
+    },
+    {
+      "source": "aside:display",
+      "status": "compiled"
+    }
+  ]
+}

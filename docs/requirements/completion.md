@@ -1,3 +1,5 @@
+> 이 문서는 이전 v1 완료 기록이다. 최신 결과는 [v2 결과](reference-methods/completion.md)를 확인한다.
+
 # 개발 전 요구사항 정립 결과
 
 2026-11-01. 제품 기준은 main 700a6a06af3f97729327afaf9becb4ee29bb475b. 제품 구현·테스트·fixture·빌드 파일은 기준과 동일하다.

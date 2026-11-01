@@ -48,7 +48,54 @@
       "rejected": 0,
       "deferred": 0,
       "meaning": "독립설계검토. A/B교차제안20건은별도판단기록.3차에서후속변경재확인."
+    },
+    {
+      "cycle": 3,
+      "reviewedHead": "367c16f7fd9ca6de7bac52290ebabe50ba88ee90",
+      "model": "gpt-6.1-sol",
+      "reasoningEffort": "high",
+      "freshContext": true,
+      "verdict": "PASS_DOCUMENT_SCOPE",
+      "reviewedRequirements": 185,
+      "reviewedConditions": 254,
+      "reviewedSlots": 370,
+      "candidates": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "deferred": 0,
+      "meaning": "전체문서반례/출처·구조검토PASS. 제품지원/실행/새fixturePASS아님. 최종메인집계는범위밖."
     }
   ],
-  "productStatus": "unverified; no product development"
+  "productStatus": "unverified; no product development",
+  "status": "DOCUMENT_RESEARCH_LOOP_COMPLETE",
+  "linkRatio": {
+    "numerator": 370,
+    "denominator": 370
+  },
+  "wholeConditionConfirmedRatio": {
+    "numerator": 0,
+    "denominator": 508
+  },
+  "finalReviewHead": "367c16f7fd9ca6de7bac52290ebabe50ba88ee90",
+  "finalReviewVerdict": "PASS_DOCUMENT_SCOPE",
+  "finalNormativeFilesUnchangedSinceReview": 72,
+  "finalReferenceBodiesUnchangedSinceReview": 6,
+  "explicitUnknownUnits": 508,
+  "newMeasurements": {
+    "primaryIabBlankRuns": 1,
+    "supplementalChromeRuns": 1,
+    "supplementalCases": 9,
+    "blockedPrimaryFixtureAttempts": 1,
+    "historicalComparisonArtifactGroups": 1
+  },
+  "uniqueRunsInterpretation": "LIVE2는주IAB빈문서1+별도Chrome보충1. 과거1은비교기록묶음이며현재재측정/신규API실행횟수가아니다.",
+  "claimRecordCount": 152,
+  "distinctClaimTuples": 148,
+  "claimDeduplication": "provider/kind/sourceId/정확한claim문장/location tuple. API별ID재사용과실측run수는별개.",
+  "productDevelopmentStarted": false,
+  "productTestsRunForNewRequirements": 0,
+  "independentNewFindings": 6,
+  "independentResolved": 6,
+  "researchCycle2Proposals": 20,
+  "researchCycle3Proposals": 7
 }
