@@ -8,7 +8,7 @@
 
 - 목적: 현재 편집 값을 읽고 HTML value 속성의 초기 값과 구분한다.
 - 입력/기본값: 단일 입력/textarea/select/contenteditable Locator.
-- 출력/성공 의미: Promise<string>; 현재 value 또는 contenteditable 텍스트.
+- 출력/성공 의미: Promise<string>; 현재 value 또는 contenteditable innerText(CRLF→LF, trim없음).
 - 허용 부작용: 없음.
 - 오류/경계: 비입력 요소에는 타입 오류를 내며 빈 입력을 실패나 일반 텍스트 값과 혼동하지 않는다.
 - 재시도: 읽기는 최신 문서 상태로 다시 관찰할 수 있다. 입력은 완료 여부를 먼저 확인하며 응답 유실만으로 재전송하지 않는다.
@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-INPUTVALUE-001-C01
 
-- 조건: 현재 값은 초기 attribute와 다르고 contenteditable은 정의한 본문 값을 쓴다.
-- 준비: value 속성 A·현재 B와 editor
-- 실행: inputValue
-- 판정: 현재 B/editor 현재 문자열이며 값 불변이다.
+- 조건: native입력/textarea/select는value,contenteditable은innerText의CRLF→LF문자열이며trim/공백압축하지않는다.
+- 준비: editor의block/BR/숨김자식/인접span과textarea를준비한다.
+- 실행: inputValue와독립property/innerText 및rawtextContent를비교한다.
+- 판정: 각지원타입표의현재값과일치하고접근이름/검색공백정규화로대체하지않는다. fill/type사후상태도같은값정의를쓴다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-INPUTVALUE-002

@@ -41,10 +41,10 @@
 
 #### REQ-SCOPE-GETBYROLE-001-C02
 
-- 조건: 문자열 exact와 RegExp는 별도 matching이다.
-- 준비: 이름 저장/저장하기/Save·한글 slotlabel
-- 실행: 부분/exact/정규식 조회
-- 판정: exact는 전체 문자열,정규식은 source/flags,반복 호출 결과 동일이다.
+- 조건: 이름 충돌·빈/깨진IDREF·문자열/RegExp 검색은 selection 이름 계산 표를 따른다.
+- 준비: native label Native, aria-label ARIA, labelledby b a(Beta/Alpha)가동시에있는제어와숨김참조를둔다.
+- 실행: 최종이름/하위이름·exact/regex로role과label을조회한다.
+- 판정: 최종Beta Alpha만일치·무효참조는fallback·명시숨김참조이름은포함·대상hidden정책은별도다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYROLE-001-C03

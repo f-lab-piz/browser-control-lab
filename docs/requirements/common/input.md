@@ -52,7 +52,7 @@
 
 - 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-input). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 3차 반영, 2026-11-01).
-- 규범: 좌표 primitive는 main viewport CSS 좌표와 유효한 버튼/키를 사용한다. 사전 검증/focus 실패는 기존 명시 down 상태를 보존한다. 입력 중 실패는 그 연산이 새로 획득한 키/버튼만 정리하고 이전 명시 down은 보존한다. reset/close는 해당 세션이 소유한 전체 실제 눌림 정리를 시도한다. 실제 release 실패를 내부 상태 초기화로 숨기지 않고 잔류/불확실을 보고한다. click/drag가 사용할 버튼이 이미 명시 down이면 사전 상태충돌로 거절하며 다른 down을 해제하지 않는다.
+- 규범: 좌표/키/상태 소유 정책은 input 상세표를 따른다. 사전 실패는 기존 down 보존, 중도 실패는 새소유만 release, Page close는 해당Page만, session reset은전체소유Page의release를시도한다. 실제release 실패는불확실로보고하며내부상태clear로숨기지않는다.
 - 근거: DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: 아래 REQ-C-INPUT-003-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
@@ -88,10 +88,10 @@
 
 #### REQ-C-INPUT-004-C01
 
-- 조건: 입력 전달과 사후 상태/업무 성공을 구분한다.
-- 준비: 값 되돌림/예약 격자·focus 거부
-- 실행: fill/check/select/focus 및 업무 저장
-- 판정: 약속 상태는 실제 확인·업무 서버 PASS는 별도이며 예외 없음만으로 성공 없다.
+- 조건: 약속한사후상태는동기handler와다음microtask checkpoint뒤성공반환직전같은identity에서판독한다.
+- 준비: sync/microtask revert,완료뒤gate로발생하는timer변경과동기element교체를준비한다.
+- 실행: fill/check/select/focus완료와별도업무관찰을분리한다.
+- 판정: 완료관측전mismatch/stale는실패·부분효과이며이후독립변경까지영속성공을보장하지않는다. 재입력으로맞추지않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-INPUT-005
@@ -115,3 +115,21 @@
 - 실행: 상태 관찰/요청 조회
 - 판정: 효과 중복 0·현재 상태와 재시도 가능 여부를 안내한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+## 상태와 키 및 완료 관측 상세표
+
+|상태|v1 판정|
+|---|---|
+|ARIA boolean|문자열을ASCII trim/lowercase 후 true만참으로본다. false/mixed/기타는참이아님. aria-hidden/disabled/readonly의해당정책과체크상태에같은정규화를사용.|
+|enabled|native disabled/disabled fieldset(첫 legend 예외) 또는 대상/composed조상 aria-disabled=true이면false. readonly만으로disabled로바꾸지않음.|
+|editable|enabled이며native readonly/대상의aria-readonly=true가아닌 input 기본/text/search/tel/url/email/password, textarea, effective contenteditable만true. number/date/time/color/range/file/checkbox/radio/button 등은텍스트fill대상아님.|
+|checked|native checkbox/radio는checked property 우선이며ARIA로덮지않음. native indeterminate는별도상태이고boolean checked를바꾸지않음. custom role checkbox/switch/radio는aria-checked=true만true, false/mixed는false. 비체크형은타입오류.|
+|현재값|INPUT/TEXTAREA/SELECT는value property. contenteditable은innerText의CRLF→LF만정규화하고trim/공백압축없음. raw textContent/접근이름/검색본문과다름.|
+|완료관측|상태를약속하는fill/check/select/focus는최종입력과동기핸들러·다음microtask checkpoint뒤,성공반환직전에같은document/element와값/상태를한번재판독. mismatch는해당상태오류,교체는stale/부분효과. 이후독립timer/서버변경은영속보장하지않음.|
+|release범위|중도실패는그연산의새소유만release, Page close는해당Page만, session reset은세션의모든Page대상. 상태는Page별이며다른Page modifier를묵시적으로공유하지않음. 실제release실패명시.|
+
+키 토큰: Control/Alt/Shift/Meta와 Enter/Tab/Escape/Backspace/Delete/ArrowLeft/ArrowRight/ArrowUp/ArrowDown/Home/End/PageUp/PageDown, printable ASCII 한 문자(U+0020..007E)를 지원한다. 철자 대소문자를 구분하고 alias/F키/미디어키/ControlOrMeta 자동치환은 이번 범위 밖이다. Unicode 문자열은 keyboard.type을 쓴다.
+
+down/up은 단일 토큰만, press/locator.press는 중복 없는 modifier 목록+주키1개다. 단독 '+'는 plus, 최종 '++'는 plus 주키로 해석한다(Control++). 그 외 빈 token/주키없는 조합/주키2개/unknown은 사전거절이다. modifier는선언순down,주키down/up,새소유modifier역순up. 기존명시down은보존한다.
+
+사후관측 테스트는sync/microtask revert와API완료뒤별도gate로발생시키는변경을나눈다. 임의sleep이나무한미래불변을oracle로쓰지않는다.

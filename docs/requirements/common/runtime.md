@@ -184,3 +184,20 @@
 - 실행: 평가와 함수 대기
 - 판정: JSON 정상·undefined 직렬화 오류·reject 즉시 함수 오류·효과 후 실패는 남는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+## 실행과 수명 상세표
+
+이 표는 우리 설계 선택이며 경쟁 제품 지원/현재 구현과 다를 수 있다.
+
+|항목|수용 계약|
+|---|---|
+|top-level binding|var/let/const는 세대 안에서 유지한다. let/const 이름의 재선언과 var↔lexical 충돌은 요청 실행 전 거절한다. 이 요청의 선행 marker도 실행0이며 기존 binding은 유지한다. var→var 재선언/재할당과 let 재할당은 허용, const 재할당은 오류다. 선언종류를 자동 변환해 이 계약을 우회하지 않는다.|
+|wait timeout|명시 값은 유한 양의 정수 number(ms). boolean/string/NaN/Infinity/0/음수/소수는 등록/입력 전에 거절. 생략/undefined는 기존 기본값(locator.waitFor5000, Page wait10000ms).|
+|총 deadline|JS에서 wait 호출한 시각부터 queue/arming/setup/poll/Promise settle을 포함. 바깥 js deadline과 이른 값이 우선이며 재평가로 연장하지 않음. 제어 clock oracle와 실환경 허용오차를 구분.|
+|session reset|JS 세대 갱신, 구세대 핸들/미전송명령/late결과 무효. 실제 탭·소유는 같은 세션에 유지하고 browser.attach(id)로 새 핸들을 얻는다. 세션 server asset과 완료 local파일은 유지한다. reset은 웹값을 rollback하지 않음.|
+|timeout|해당 실행을 단일 종결한다. CPU/메모리/실행제한으로 VM을 재생성했다면 generation 변경/runtimeReset을 결과에 명시한다. 단순 하위 wait timeout은 VM 전체 reset을 의미하지 않음.|
+|Page close|그 Page의 핸들/대기/눌림만 정리. 다른 자기 Page와 타세션은 유지. 해당 Page의 close wait는 정상, 나머지는PAGE_CLOSED.|
+|멱등 기록|requestId의 종결/tombstone과 payload digest는 세대를 넘어 session동안 유지하며 같은id입력을 재실행하지 않음. payload 충돌은거절. server asset은session동안유지. bridge종료/관리층session삭제후는더이상유효하지않고복구/업무취소를보장하지않음.|
+|데이터 ref|발급 ref 문자열은 같은 세션·Page·document·연결 element이면 reset만으로 대상이 바뀌지 않는다. JS 객체 핸들/구세대 명령과 구분. 실제 문서교체/분리는 stale.|
+
+기존 프로토타입의 top-level 선언 전역 property 변환과 달라지는 목표 계약이다. 기존 재선언 허용 테스트/guide는 구현 단계에서 버전·예제와 함께 이행한다. 이 선택은 현재 코드에 맞춰 요구를 낮추기보다 일반 lexical 예측 가능성을 우선한 결정이다.

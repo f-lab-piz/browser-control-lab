@@ -7,7 +7,7 @@
 공통 계약: [runtime](../common/runtime.md), [dom-frames](../common/dom-frames.md), [files-events](../common/files-events.md). Page/Frame의 Scope 메서드는 같은 API로 센다. 공통 필수 조건도 이 API의 개발 수용 기준에 포함한다.
 
 - 목적: 조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.
-- 입력/기본값: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000).
+- 입력/기본값: event:popup/filechooser/download/dialog/close, options.timeout?:positive integer ms(기본10000), includeCurrent?:boolean(기본false; true는dialog만).
 - 출력/성공 의미: Promise<Page/FileChooser/Download/Dialog/{tabId:number,closedAt:number}>. close는 관측한 탭 종료 시각의 epoch ms를 반환한다.
 - 허용 부작용: wait등록; chooser interception가능.
 - 오류/경계: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.
@@ -43,7 +43,7 @@
 
 - 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-page-waitforevent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
-- 규범: 다른 탭·등록 전 이벤트는 재사용하지 않는다. 자기 Page close가 관측되면 등록된 close waiter는 {tabId:number,closedAt:epochMs}로 정확히 한 번 resolve하고 제거한다. 다른 event waiter는 PAGE_CLOSED로 reject/정리한다. 이미 닫힌 핸들에 새 wait 등록은 즉시 PAGE_CLOSED다. timeout/reset/close 경합은 실제 먼저 확정된 terminal 결과 하나만 유지하고 late 결과는 무시한다. chooser/dialog는 동일 event를 이중 소비하지 않는다.
+- 규범: 기본 wait는다른탭/등록전event를재사용하지않는다. 명시 includeCurrent:true의dialog조회만기록된현재event를복구한다. 가변/관찰wait의중복·close·timeout/reset단일종결은공통파일/이벤트상세표를따른다. close waiter는metadata정상,다른wait는PAGE_CLOSED다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: 아래 REQ-PAGE-WAITFOREVENT-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
@@ -56,10 +56,10 @@
 
 #### REQ-PAGE-WAITFOREVENT-002-C01
 
-- 조건: 같은 가변 event의 중복 소비와 timeout 누수를 방지한다.
-- 준비: dialog/chooser waiter 두 개·timeout 후 event
-- 실행: wait 등록/소비
-- 판정: 같은 event에 두 가변 핸들 발급 없고 늦은 event가 종료 wait에 전달되지 않는다.
+- 조건: dialog/filechooser의두번째활성wait는등록시즉시충돌이며popup/download/close는identity공유정책이다.
+- 준비: 같은Page에동일event wait2개와제어가능한등록ack를준비한다.
+- 실행: 첫등록ready→둘째등록→action→event와terminal뒤재등록을실행한다.
+- 판정: 가변event 둘째만EVENT_WAITER_CONFLICT·첫째유지/정상수신. 관찰event는같은identity를각wait에1회주고늦은누수0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-WAITFOREVENT-002-C02
@@ -95,3 +95,31 @@
 - 실행: wait 선언→click→await
 - 판정: register-ready→action→event 순서·sleep 없음·timeout/reset 뒤 late 등록 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+### REQ-PAGE-WAITFOREVENT-004
+
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-page-waitforevent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
+- 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
+- 규범: 기록된 현재dialog는 includeCurrent:true로 자동응답없이 조회할 수 있어야 한다. reset후새세대핸들로재획득하고없음/중복claim/닫힌event를구분한다. 다른event의includeCurrent는명시미지원이다.
+- 근거: DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
+- 충족 상태: **미검증**. 구현/테스트는 다음 개발 범위다.
+- Given: 자기Page에dialog가열린상태와reset후새핸들,dialog없음·이미claim상태를준비한다.
+- When: includeCurrent:true의dialog조회와accept/dismiss·반복query를실행한다.
+- Then: 현세대의정확한현재dialog만처리하고없음/이미claim/타event는명시오류며기존dialog를자동응답하지않는다.
+- 검증 계획: `PLAN-PAGE-WAITFOREVENT-004`; [매핑](../verification-matrix.json).
+
+#### REQ-PAGE-WAITFOREVENT-004-C01
+
+- 조건: 현재 dialog를 명시 조회하고 reset후에도새핸들로복구한다.
+- 준비: dialog가열린자기Page와reset후browser.attach한새Page를준비한다.
+- 실행: waitForEvent('dialog',{includeCurrent:true})후handle을처리한다.
+- 판정: 정확한현재event만수락/취소하고새dialog를만들거나자동응답하지않는다.
+- 근거/상태: DESIGN · 수용 목표 · 제품 미검증.
+
+#### REQ-PAGE-WAITFOREVENT-004-C02
+
+- 조건: 없음/이미claim/다른event current-query는즉시오류다.
+- 준비: dialog없음·동일세대이미발급핸들·download종류를준비한다.
+- 실행: includeCurrent:true를각호출한다.
+- 판정: CURRENT_EVENT_NOT_FOUND/EVENT_ALREADY_CLAIMED/UNSUPPORTED_EVENT_OPTION이며기존dialog/미래waiter상태는변하지않는다.
+- 근거/상태: DESIGN · 수용 목표 · 제품 미검증.

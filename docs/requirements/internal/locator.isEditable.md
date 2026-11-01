@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-ISEDITABLE-001-C01
 
-- 조건: enabled·지원 텍스트 타입·notreadonly 제어만 편집 가능이다.
-- 준비: text/textarea/editor/checkbox/button
-- 실행: isEditable
-- 판정: 앞 셋 편집 가능,체크형·버튼 false이며 fill 지원과 일치한다.
+- 조건: 지원 편집 타입과 readonly/disabled는 input 상태 표로 판정하고 fill과일치한다.
+- 준비: text/search/tel/url/email/password, textarea/editor와number/date/time/file/checkbox/button을준비한다.
+- 실행: isEditable과fill의지원/거절을독립판정한다.
+- 판정: 지원enabled텍스트만true·나머지false/fill타입오류·native/ARIA readonly제한일치다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-ISEDITABLE-002

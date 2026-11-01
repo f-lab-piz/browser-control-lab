@@ -28,3 +28,12 @@
 서비스별 전용 API, 새 외부 툴, 전체 접근성 표준 동등성, Firefox/Safari, closed Shadow/canvas/PDF 의미 추출, 임의 Pod 저장, screenshot 주석과 범용 외부 modules는 이번 MUST가 아니다. 기존 도구 조합이나 명시 실패로 현재 범위를 유지하며 사용자 필요/근거가 생기면 신규 요구 후보로 검토한다. 세 리뷰에서 실제 보류한 후보와 이 제품 범위 밖 목록을 혼동하지 않는다.
 
 추가 확정 사항: B01/B06은 REQ-C-RUNTIME-008의 Promise settle/JSON/undefined 오류와 기존 호출 예제의 명시 return null 이행을 포함한다. B04는 기존 down 보존과 연산 소유 cleanup, B03/S04는 공개 predicate와 부재/동률/접근불가/예산의 구분, B04/S07/S09는 ancestor hit·cross-document/CDP target 사전 거절을 검증한다. 세 회차의 판단은 reviews/index.json에서 추적한다.
+
+## 참고 방식 루프에서 확정한 추가 이행
+
+- B01: top-level lexical재선언/const대입의예측가능한오류,재선언전부작용0,타입/deadline/수명표·tombstone/asset유지. 기존선언변환테스트변경을숨기지않는다.
+- B02/B04: 이름소스순서/숨김참조와본문분리,유한입력타입/상태표·사후microtask checkpoint,키grammar·CEinnerText·1px/2rAF/5초관측.
+- B03: hash goto문서유지·viewport안clip·oversized최소교차.
+- B05: 둘째가변wait즉시충돌,관찰wait공유identity,모달reset회복용dialog includeCurrent옵션과185번째REQ. download/chooser의범용재획득은자동범위확대하지않는다.
+
+이새계약은문서의목표이며제품/fixture/테스트구현과새요구PASS는아직없다.

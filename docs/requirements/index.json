@@ -676,7 +676,8 @@
       "requirements": [
         "REQ-PAGE-WAITFOREVENT-001",
         "REQ-PAGE-WAITFOREVENT-002",
-        "REQ-PAGE-WAITFOREVENT-003"
+        "REQ-PAGE-WAITFOREVENT-003",
+        "REQ-PAGE-WAITFOREVENT-004"
       ],
       "common": [
         "runtime",

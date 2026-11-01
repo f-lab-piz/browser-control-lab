@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-SCROLLINTOVIEW-001-C01
 
-- 조건: 연결된 대상을 관련 조상 scrollport에서 노출한다.
-- 준비: 가로/세로 내부 scroll 밖 요소
-- 실행: scrollIntoView
-- 판정: 각 관련 scrollport에서 대상 box가 노출되며 click/input0이다.
+- 조건: 노출은각관련clip scrollport와main viewport의가로/세로교차길이가모두양수인상태다.
+- 준비: 100px scrollport안300px대상과중첩양축scroll,이미노출된대상을준비한다.
+- 실행: scrollIntoView뒤box교차와입력이벤트를읽는다.
+- 판정: 최소양의교차면성공·전체포함/center/overlay제거를보장하지않고이미노출이면불필요scroll없다. click0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SCROLLINTOVIEW-002

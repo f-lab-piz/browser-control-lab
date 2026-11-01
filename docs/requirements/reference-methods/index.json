@@ -16,7 +16,7 @@
           "relatedClaims": [
             "CL-CODEX-guide-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-GUIDE-001-C01",
@@ -45,7 +45,7 @@
             "CL-ASIDE-guide-01",
             "CL-ASIDE-guide-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-GUIDE-001-C01",
@@ -83,7 +83,7 @@
           "relatedClaims": [
             "CL-CODEX-guide-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-GUIDE-002-C01",
@@ -112,7 +112,7 @@
             "CL-ASIDE-guide-01",
             "CL-ASIDE-guide-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-GUIDE-002-C01",
@@ -150,7 +150,7 @@
           "relatedClaims": [
             "CL-CODEX-reset-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-RESET-001-C01",
@@ -176,7 +176,7 @@
           "reference": "runtime-output.md#ref-reset",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-RESET-001-C01",
@@ -208,7 +208,7 @@
           "relatedClaims": [
             "CL-CODEX-reset-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-RESET-002-C01",
@@ -234,7 +234,7 @@
           "reference": "runtime-output.md#ref-reset",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-RESET-002-C01",
@@ -266,7 +266,7 @@
           "relatedClaims": [
             "CL-CODEX-reset-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-RESET-003-C01",
@@ -284,7 +284,7 @@
           "reference": "runtime-output.md#ref-reset",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-RESET-003-C01",
@@ -310,7 +310,7 @@
           "relatedClaims": [
             "CL-CODEX-js-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-JS-001-C01",
@@ -338,7 +338,7 @@
           "relatedClaims": [
             "CL-ASIDE-js-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-JS-001-C01",
@@ -374,7 +374,7 @@
           "relatedClaims": [
             "CL-CODEX-js-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-JS-002-C01",
@@ -402,7 +402,7 @@
           "relatedClaims": [
             "CL-ASIDE-js-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-JS-002-C01",
@@ -438,7 +438,7 @@
           "relatedClaims": [
             "CL-CODEX-js-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-JS-003-C01",
@@ -458,7 +458,7 @@
           "relatedClaims": [
             "CL-ASIDE-js-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-JS-003-C01",
@@ -486,7 +486,7 @@
           "relatedClaims": [
             "CL-CODEX-browser-list-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-LIST-001-C01",
@@ -515,7 +515,7 @@
             "CL-ASIDE-browser-list-01",
             "CL-ASIDE-browser-list-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-LIST-001-C01",
@@ -553,7 +553,7 @@
           "relatedClaims": [
             "CL-CODEX-browser-list-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-LIST-002-C01",
@@ -574,7 +574,7 @@
             "CL-ASIDE-browser-list-01",
             "CL-ASIDE-browser-list-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-LIST-002-C01",
@@ -603,7 +603,7 @@
           "relatedClaims": [
             "CL-CODEX-browser-tabs-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-TABS-001-C01",
@@ -631,7 +631,7 @@
           "relatedClaims": [
             "CL-ASIDE-browser-tabs-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-TABS-001-C01",
@@ -667,7 +667,7 @@
           "relatedClaims": [
             "CL-CODEX-browser-tabs-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-TABS-002-C01",
@@ -687,7 +687,7 @@
           "relatedClaims": [
             "CL-ASIDE-browser-tabs-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-TABS-002-C01",
@@ -716,7 +716,7 @@
             "CL-CODEX-browser-open-01",
             "CL-CODEX-browser-open-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-OPEN-001-C01",
@@ -746,7 +746,7 @@
           "relatedClaims": [
             "CL-ASIDE-browser-open-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-OPEN-001-C01",
@@ -783,7 +783,7 @@
             "CL-CODEX-browser-open-01",
             "CL-CODEX-browser-open-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-OPEN-002-C01",
@@ -813,7 +813,7 @@
           "relatedClaims": [
             "CL-ASIDE-browser-open-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-OPEN-002-C01",
@@ -849,7 +849,7 @@
           "relatedClaims": [
             "CL-CODEX-browser-attach-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-ATTACH-001-C01",
@@ -869,7 +869,7 @@
           "relatedClaims": [
             "CL-ASIDE-browser-attach-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-ATTACH-001-C01",
@@ -897,7 +897,7 @@
           "relatedClaims": [
             "CL-CODEX-browser-attach-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-ATTACH-002-C01",
@@ -917,7 +917,7 @@
           "relatedClaims": [
             "CL-ASIDE-browser-attach-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-BROWSER-ATTACH-002-C01",
@@ -945,7 +945,7 @@
           "relatedClaims": [
             "CL-CODEX-page-activate-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-ACTIVATE-001-C01",
@@ -963,7 +963,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-activate",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-ACTIVATE-001-C01",
@@ -989,7 +989,7 @@
           "relatedClaims": [
             "CL-CODEX-page-activate-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-ACTIVATE-002-C01",
@@ -1007,7 +1007,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-activate",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-ACTIVATE-002-C01",
@@ -1034,7 +1034,7 @@
             "CL-CODEX-page-close-01",
             "CL-CODEX-page-close-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-CLOSE-001-C01",
@@ -1056,7 +1056,7 @@
             "CL-ASIDE-page-close-01",
             "CL-ASIDE-page-close-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-CLOSE-001-C01",
@@ -1086,7 +1086,7 @@
             "CL-CODEX-page-close-01",
             "CL-CODEX-page-close-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-CLOSE-002-C01",
@@ -1108,7 +1108,7 @@
             "CL-ASIDE-page-close-01",
             "CL-ASIDE-page-close-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-CLOSE-002-C01",
@@ -1137,7 +1137,7 @@
           "relatedClaims": [
             "CL-CODEX-page-goto-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-GOTO-001-C01",
@@ -1163,7 +1163,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-goto",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-GOTO-001-C01",
@@ -1195,7 +1195,7 @@
           "relatedClaims": [
             "CL-CODEX-page-goto-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-GOTO-002-C01",
@@ -1229,7 +1229,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-goto",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-GOTO-002-C01",
@@ -1267,7 +1267,7 @@
           "relatedClaims": [
             "CL-CODEX-page-back-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-BACK-001-C01",
@@ -1285,7 +1285,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-back",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-BACK-001-C01",
@@ -1311,7 +1311,7 @@
           "relatedClaims": [
             "CL-CODEX-page-back-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-BACK-002-C01",
@@ -1337,7 +1337,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-back",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-BACK-002-C01",
@@ -1369,7 +1369,7 @@
           "relatedClaims": [
             "CL-CODEX-page-forward-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FORWARD-001-C01",
@@ -1387,7 +1387,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-forward",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FORWARD-001-C01",
@@ -1413,7 +1413,7 @@
           "relatedClaims": [
             "CL-CODEX-page-forward-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FORWARD-002-C01",
@@ -1439,7 +1439,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-forward",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FORWARD-002-C01",
@@ -1471,7 +1471,7 @@
           "relatedClaims": [
             "CL-CODEX-page-reload-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-RELOAD-001-C01",
@@ -1489,7 +1489,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-reload",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-RELOAD-001-C01",
@@ -1515,7 +1515,7 @@
           "relatedClaims": [
             "CL-CODEX-page-reload-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-RELOAD-002-C01",
@@ -1541,7 +1541,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-reload",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-RELOAD-002-C01",
@@ -1574,7 +1574,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-001-C01",
@@ -1598,7 +1598,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-001-C01",
@@ -1630,7 +1630,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-002-C01",
@@ -1654,7 +1654,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-002-C01",
@@ -1686,7 +1686,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-003-C01",
@@ -1719,7 +1719,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-003-C01",
@@ -1762,7 +1762,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-004-C01",
@@ -1795,7 +1795,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-004-C01",
@@ -1838,7 +1838,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-005-C01",
@@ -1871,7 +1871,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-005-C01",
@@ -1914,7 +1914,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-006-C01",
@@ -1938,7 +1938,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-006-C01",
@@ -1970,7 +1970,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-007-C01",
@@ -1994,7 +1994,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-007-C01",
@@ -2026,7 +2026,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-008-C01",
@@ -2050,7 +2050,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-008-C01",
@@ -2082,7 +2082,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-009-C01",
@@ -2106,7 +2106,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-009-C01",
@@ -2138,7 +2138,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-010-C01",
@@ -2162,7 +2162,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-010-C01",
@@ -2194,7 +2194,7 @@
             "CL-CODEX-scope-snapshot-01",
             "CL-CODEX-scope-snapshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-011-C01",
@@ -2218,7 +2218,7 @@
             "CL-ASIDE-scope-snapshot-03",
             "CL-ASIDE-scope-snapshot-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-SNAPSHOT-011-C01",
@@ -2250,7 +2250,7 @@
             "CL-CODEX-page-screenshot-01",
             "CL-CODEX-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-001-C01",
@@ -2272,7 +2272,7 @@
             "CL-ASIDE-page-screenshot-01",
             "CL-ASIDE-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-001-C01",
@@ -2302,7 +2302,7 @@
             "CL-CODEX-page-screenshot-01",
             "CL-CODEX-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-002-C01",
@@ -2333,7 +2333,7 @@
             "CL-ASIDE-page-screenshot-01",
             "CL-ASIDE-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-002-C01",
@@ -2372,7 +2372,7 @@
             "CL-CODEX-page-screenshot-01",
             "CL-CODEX-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-003-C01",
@@ -2394,7 +2394,7 @@
             "CL-ASIDE-page-screenshot-01",
             "CL-ASIDE-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-003-C01",
@@ -2424,7 +2424,7 @@
             "CL-CODEX-page-screenshot-01",
             "CL-CODEX-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-004-C01",
@@ -2446,7 +2446,7 @@
             "CL-ASIDE-page-screenshot-01",
             "CL-ASIDE-page-screenshot-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-SCREENSHOT-004-C01",
@@ -2476,7 +2476,7 @@
             "CL-CODEX-page-frames-01",
             "CL-CODEX-page-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAMES-001-C01",
@@ -2495,7 +2495,7 @@
           "reference": "snapshot-frames.md#ref-page-frames",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAMES-001-C01",
@@ -2522,7 +2522,7 @@
             "CL-CODEX-page-frames-01",
             "CL-CODEX-page-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAMES-002-C01",
@@ -2541,7 +2541,7 @@
           "reference": "snapshot-frames.md#ref-page-frames",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAMES-002-C01",
@@ -2567,7 +2567,7 @@
           "relatedClaims": [
             "CL-CODEX-page-frame-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAME-001-C01",
@@ -2588,7 +2588,7 @@
             "CL-ASIDE-page-frame-01",
             "CL-ASIDE-page-frame-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAME-001-C01",
@@ -2617,7 +2617,7 @@
           "relatedClaims": [
             "CL-CODEX-page-frame-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAME-002-C01",
@@ -2638,7 +2638,7 @@
             "CL-ASIDE-page-frame-01",
             "CL-ASIDE-page-frame-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-FRAME-002-C01",
@@ -2667,7 +2667,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-locator-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-LOCATOR-001-C01",
@@ -2696,7 +2696,7 @@
             "CL-ASIDE-scope-locator-01",
             "CL-ASIDE-scope-locator-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-LOCATOR-001-C01",
@@ -2734,7 +2734,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-locator-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-LOCATOR-002-C01",
@@ -2755,7 +2755,7 @@
             "CL-ASIDE-scope-locator-01",
             "CL-ASIDE-scope-locator-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-LOCATOR-002-C01",
@@ -2785,7 +2785,7 @@
             "CL-CODEX-scope-getByRole-01",
             "CL-CODEX-scope-getByRole-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYROLE-001-C01",
@@ -2825,7 +2825,7 @@
             "CL-ASIDE-scope-getByRole-01",
             "CL-ASIDE-scope-getByRole-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYROLE-001-C01",
@@ -2873,7 +2873,7 @@
             "CL-CODEX-scope-getByRole-01",
             "CL-CODEX-scope-getByRole-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYROLE-002-C01",
@@ -2904,7 +2904,7 @@
             "CL-ASIDE-scope-getByRole-01",
             "CL-ASIDE-scope-getByRole-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYROLE-002-C01",
@@ -2942,7 +2942,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-getByText-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYTEXT-001-C01",
@@ -2970,7 +2970,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-getByText-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYTEXT-001-C01",
@@ -3006,7 +3006,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-getByText-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYTEXT-002-C01",
@@ -3034,7 +3034,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-getByText-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYTEXT-002-C01",
@@ -3070,7 +3070,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-getByText-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYTEXT-003-C01",
@@ -3090,7 +3090,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-getByText-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYTEXT-003-C01",
@@ -3118,7 +3118,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-getByLabel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYLABEL-001-C01",
@@ -3146,7 +3146,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-getByLabel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYLABEL-001-C01",
@@ -3182,7 +3182,7 @@
           "relatedClaims": [
             "CL-CODEX-scope-getByLabel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYLABEL-002-C01",
@@ -3210,7 +3210,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-getByLabel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-GETBYLABEL-002-C01",
@@ -3247,7 +3247,7 @@
             "CL-CODEX-locator-filter-01",
             "CL-CODEX-locator-filter-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-001-C01",
@@ -3277,7 +3277,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-filter-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-001-C01",
@@ -3314,7 +3314,7 @@
             "CL-CODEX-locator-filter-01",
             "CL-CODEX-locator-filter-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-002-C01",
@@ -3344,7 +3344,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-filter-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-002-C01",
@@ -3381,7 +3381,7 @@
             "CL-CODEX-locator-filter-01",
             "CL-CODEX-locator-filter-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-003-C01",
@@ -3402,7 +3402,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-filter-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-003-C01",
@@ -3431,7 +3431,7 @@
             "CL-CODEX-locator-filter-01",
             "CL-CODEX-locator-filter-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-004-C01",
@@ -3452,7 +3452,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-filter-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILTER-004-C01",
@@ -3481,7 +3481,7 @@
             "CL-CODEX-locator-nth-01",
             "CL-CODEX-locator-nth-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-NTH-001-C01",
@@ -3502,7 +3502,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-nth-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-NTH-001-C01",
@@ -3531,7 +3531,7 @@
             "CL-CODEX-locator-nth-01",
             "CL-CODEX-locator-nth-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-NTH-002-C01",
@@ -3552,7 +3552,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-nth-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-NTH-002-C01",
@@ -3581,7 +3581,7 @@
             "CL-CODEX-locator-count-01",
             "CL-CODEX-locator-count-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-COUNT-001-C01",
@@ -3612,7 +3612,7 @@
             "CL-ASIDE-locator-count-01",
             "CL-ASIDE-locator-count-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-COUNT-001-C01",
@@ -3651,7 +3651,7 @@
             "CL-CODEX-locator-count-01",
             "CL-CODEX-locator-count-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-COUNT-002-C01",
@@ -3673,7 +3673,7 @@
             "CL-ASIDE-locator-count-01",
             "CL-ASIDE-locator-count-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-COUNT-002-C01",
@@ -3702,7 +3702,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-textContent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-TEXTCONTENT-001-C01",
@@ -3720,7 +3720,7 @@
           "reference": "selection-search.md#ref-locator-textcontent",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-TEXTCONTENT-001-C01",
@@ -3746,7 +3746,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-textContent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-TEXTCONTENT-002-C01",
@@ -3764,7 +3764,7 @@
           "reference": "selection-search.md#ref-locator-textcontent",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-TEXTCONTENT-002-C01",
@@ -3790,7 +3790,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-getAttribute-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-GETATTRIBUTE-001-C01",
@@ -3810,7 +3810,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-getAttribute-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-GETATTRIBUTE-001-C01",
@@ -3838,7 +3838,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-getAttribute-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
@@ -3858,7 +3858,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-getAttribute-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
@@ -3887,7 +3887,7 @@
             "CL-CODEX-locator-inputValue-01",
             "CL-CODEX-locator-inputValue-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-INPUTVALUE-001-C01",
@@ -3906,7 +3906,7 @@
           "reference": "input-state.md#ref-locator-inputvalue",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-INPUTVALUE-001-C01",
@@ -3933,7 +3933,7 @@
             "CL-CODEX-locator-inputValue-01",
             "CL-CODEX-locator-inputValue-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-INPUTVALUE-002-C01",
@@ -3952,7 +3952,7 @@
           "reference": "input-state.md#ref-locator-inputvalue",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-INPUTVALUE-002-C01",
@@ -3978,7 +3978,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-isVisible-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISVISIBLE-001-C01",
@@ -3996,7 +3996,7 @@
           "reference": "input-state.md#ref-locator-isvisible",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISVISIBLE-001-C01",
@@ -4022,7 +4022,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-isVisible-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISVISIBLE-002-C01",
@@ -4040,7 +4040,7 @@
           "reference": "input-state.md#ref-locator-isvisible",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISVISIBLE-002-C01",
@@ -4066,7 +4066,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-isEnabled-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISENABLED-001-C01",
@@ -4084,7 +4084,7 @@
           "reference": "input-state.md#ref-locator-isenabled",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISENABLED-001-C01",
@@ -4110,7 +4110,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-isEnabled-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISENABLED-002-C01",
@@ -4128,7 +4128,7 @@
           "reference": "input-state.md#ref-locator-isenabled",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISENABLED-002-C01",
@@ -4155,7 +4155,7 @@
             "CL-CODEX-locator-isEditable-01",
             "CL-CODEX-locator-isEditable-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISEDITABLE-001-C01",
@@ -4174,7 +4174,7 @@
           "reference": "input-state.md#ref-locator-iseditable",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISEDITABLE-001-C01",
@@ -4201,7 +4201,7 @@
             "CL-CODEX-locator-isEditable-01",
             "CL-CODEX-locator-isEditable-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISEDITABLE-002-C01",
@@ -4220,7 +4220,7 @@
           "reference": "input-state.md#ref-locator-iseditable",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISEDITABLE-002-C01",
@@ -4247,7 +4247,7 @@
             "CL-CODEX-locator-isChecked-01",
             "CL-CODEX-locator-isChecked-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISCHECKED-001-C01",
@@ -4266,7 +4266,7 @@
           "reference": "input-state.md#ref-locator-ischecked",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISCHECKED-001-C01",
@@ -4293,7 +4293,7 @@
             "CL-CODEX-locator-isChecked-01",
             "CL-CODEX-locator-isChecked-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISCHECKED-002-C01",
@@ -4312,7 +4312,7 @@
           "reference": "input-state.md#ref-locator-ischecked",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-ISCHECKED-002-C01",
@@ -4339,7 +4339,7 @@
             "CL-CODEX-locator-boundingBox-01",
             "CL-CODEX-locator-boundingBox-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-BOUNDINGBOX-001-C01",
@@ -4358,7 +4358,7 @@
           "reference": "snapshot-frames.md#ref-locator-boundingbox",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-BOUNDINGBOX-001-C01",
@@ -4385,7 +4385,7 @@
             "CL-CODEX-locator-boundingBox-01",
             "CL-CODEX-locator-boundingBox-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-BOUNDINGBOX-002-C01",
@@ -4404,7 +4404,7 @@
           "reference": "snapshot-frames.md#ref-locator-boundingbox",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-BOUNDINGBOX-002-C01",
@@ -4431,7 +4431,7 @@
             "CL-CODEX-locator-click-01",
             "CL-CODEX-locator-click-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-CLICK-001-C01",
@@ -4481,7 +4481,7 @@
             "CL-ASIDE-locator-click-02",
             "CL-ASIDE-locator-click-03"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-CLICK-001-C01",
@@ -4542,7 +4542,7 @@
             "CL-CODEX-locator-click-01",
             "CL-CODEX-locator-click-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-CLICK-002-C01",
@@ -4592,7 +4592,7 @@
             "CL-ASIDE-locator-click-02",
             "CL-ASIDE-locator-click-03"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-CLICK-002-C01",
@@ -4653,7 +4653,7 @@
             "CL-CODEX-locator-fill-01",
             "CL-CODEX-locator-fill-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILL-001-C01",
@@ -4683,7 +4683,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-fill-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILL-001-C01",
@@ -4720,7 +4720,7 @@
             "CL-CODEX-locator-fill-01",
             "CL-CODEX-locator-fill-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILL-002-C01",
@@ -4759,7 +4759,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-fill-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FILL-002-C01",
@@ -4803,7 +4803,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-press-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-PRESS-001-C01",
@@ -4829,7 +4829,7 @@
           "reference": "input-state.md#ref-locator-press",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-PRESS-001-C01",
@@ -4861,7 +4861,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-press-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-PRESS-002-C01",
@@ -4887,7 +4887,7 @@
           "reference": "input-state.md#ref-locator-press",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-PRESS-002-C01",
@@ -4919,7 +4919,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-hover-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-HOVER-001-C01",
@@ -4937,7 +4937,7 @@
           "reference": "input-state.md#ref-locator-hover",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-HOVER-001-C01",
@@ -4963,7 +4963,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-hover-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-HOVER-002-C01",
@@ -4981,7 +4981,7 @@
           "reference": "input-state.md#ref-locator-hover",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-HOVER-002-C01",
@@ -5007,7 +5007,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-focus-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FOCUS-001-C01",
@@ -5025,7 +5025,7 @@
           "reference": "input-state.md#ref-locator-focus",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FOCUS-001-C01",
@@ -5051,7 +5051,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-focus-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FOCUS-002-C01",
@@ -5069,7 +5069,7 @@
           "reference": "input-state.md#ref-locator-focus",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-FOCUS-002-C01",
@@ -5095,7 +5095,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-scrollIntoView-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
@@ -5113,7 +5113,7 @@
           "reference": "input-state.md#ref-locator-scrollintoview",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
@@ -5139,7 +5139,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-scrollIntoView-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-002-C01",
@@ -5157,7 +5157,7 @@
           "reference": "input-state.md#ref-locator-scrollintoview",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-002-C01",
@@ -5183,7 +5183,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-setChecked-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETCHECKED-001-C01",
@@ -5209,7 +5209,7 @@
           "reference": "input-state.md#ref-locator-setchecked",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETCHECKED-001-C01",
@@ -5241,7 +5241,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-setChecked-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETCHECKED-002-C01",
@@ -5259,7 +5259,7 @@
           "reference": "input-state.md#ref-locator-setchecked",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETCHECKED-002-C01",
@@ -5285,7 +5285,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-selectOption-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SELECTOPTION-001-C01",
@@ -5311,7 +5311,7 @@
           "reference": "input-state.md#ref-locator-selectoption",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SELECTOPTION-001-C01",
@@ -5343,7 +5343,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-selectOption-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SELECTOPTION-002-C01",
@@ -5369,7 +5369,7 @@
           "reference": "input-state.md#ref-locator-selectoption",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SELECTOPTION-002-C01",
@@ -5401,7 +5401,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-dragTo-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DRAGTO-001-C01",
@@ -5429,7 +5429,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-dragTo-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DRAGTO-001-C01",
@@ -5465,7 +5465,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-dragTo-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DRAGTO-002-C01",
@@ -5493,7 +5493,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-dragTo-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DRAGTO-002-C01",
@@ -5529,7 +5529,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-drop-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DROP-001-C01",
@@ -5555,7 +5555,7 @@
           "reference": "files-events.md#ref-locator-drop",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DROP-001-C01",
@@ -5587,7 +5587,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-drop-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DROP-002-C01",
@@ -5613,7 +5613,7 @@
           "reference": "files-events.md#ref-locator-drop",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-DROP-002-C01",
@@ -5645,7 +5645,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-move-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-MOVE-001-C01",
@@ -5663,7 +5663,7 @@
           "reference": "input-state.md#ref-mouse-move",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-MOVE-001-C01",
@@ -5689,7 +5689,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-move-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-MOVE-002-C01",
@@ -5707,7 +5707,7 @@
           "reference": "input-state.md#ref-mouse-move",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-MOVE-002-C01",
@@ -5733,7 +5733,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-down-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-DOWN-001-C01",
@@ -5751,7 +5751,7 @@
           "reference": "input-state.md#ref-mouse-down",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-DOWN-001-C01",
@@ -5777,7 +5777,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-down-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-DOWN-002-C01",
@@ -5795,7 +5795,7 @@
           "reference": "input-state.md#ref-mouse-down",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-DOWN-002-C01",
@@ -5821,7 +5821,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-up-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-UP-001-C01",
@@ -5839,7 +5839,7 @@
           "reference": "input-state.md#ref-mouse-up",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-UP-001-C01",
@@ -5865,7 +5865,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-up-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-UP-002-C01",
@@ -5883,7 +5883,7 @@
           "reference": "input-state.md#ref-mouse-up",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-UP-002-C01",
@@ -5909,7 +5909,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-click-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-CLICK-001-C01",
@@ -5927,7 +5927,7 @@
           "reference": "input-state.md#ref-mouse-click",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-CLICK-001-C01",
@@ -5953,7 +5953,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-click-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-CLICK-002-C01",
@@ -5979,7 +5979,7 @@
           "reference": "input-state.md#ref-mouse-click",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-CLICK-002-C01",
@@ -6011,7 +6011,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-wheel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-WHEEL-001-C01",
@@ -6029,7 +6029,7 @@
           "reference": "input-state.md#ref-mouse-wheel",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-WHEEL-001-C01",
@@ -6055,7 +6055,7 @@
           "relatedClaims": [
             "CL-CODEX-mouse-wheel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-WHEEL-002-C01",
@@ -6081,7 +6081,7 @@
           "reference": "input-state.md#ref-mouse-wheel",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-MOUSE-WHEEL-002-C01",
@@ -6113,7 +6113,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-down-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-DOWN-001-C01",
@@ -6131,7 +6131,7 @@
           "reference": "input-state.md#ref-keyboard-down",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-DOWN-001-C01",
@@ -6157,7 +6157,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-down-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-DOWN-002-C01",
@@ -6175,7 +6175,7 @@
           "reference": "input-state.md#ref-keyboard-down",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-DOWN-002-C01",
@@ -6201,7 +6201,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-up-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-UP-001-C01",
@@ -6219,7 +6219,7 @@
           "reference": "input-state.md#ref-keyboard-up",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-UP-001-C01",
@@ -6245,7 +6245,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-up-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-UP-002-C01",
@@ -6263,7 +6263,7 @@
           "reference": "input-state.md#ref-keyboard-up",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-UP-002-C01",
@@ -6289,7 +6289,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-press-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-PRESS-001-C01",
@@ -6315,7 +6315,7 @@
           "reference": "input-state.md#ref-keyboard-press",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-PRESS-001-C01",
@@ -6347,7 +6347,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-press-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-PRESS-002-C01",
@@ -6365,7 +6365,7 @@
           "reference": "input-state.md#ref-keyboard-press",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-PRESS-002-C01",
@@ -6391,7 +6391,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-type-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-TYPE-001-C01",
@@ -6417,7 +6417,7 @@
           "reference": "input-state.md#ref-keyboard-type",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-TYPE-001-C01",
@@ -6449,7 +6449,7 @@
           "relatedClaims": [
             "CL-CODEX-keyboard-type-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-TYPE-002-C01",
@@ -6475,7 +6475,7 @@
           "reference": "input-state.md#ref-keyboard-type",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-KEYBOARD-TYPE-002-C01",
@@ -6507,7 +6507,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-waitFor-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-WAITFOR-001-C01",
@@ -6527,7 +6527,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-waitFor-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-WAITFOR-001-C01",
@@ -6555,7 +6555,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-waitFor-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-WAITFOR-002-C01",
@@ -6583,7 +6583,7 @@
           "relatedClaims": [
             "CL-ASIDE-locator-waitFor-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-WAITFOR-002-C01",
@@ -6619,7 +6619,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForEvent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-001-C01",
@@ -6639,7 +6639,7 @@
           "relatedClaims": [
             "CL-ASIDE-page-waitForEvent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-001-C01",
@@ -6667,7 +6667,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForEvent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-002-C01",
@@ -6695,7 +6695,7 @@
           "relatedClaims": [
             "CL-ASIDE-page-waitForEvent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-002-C01",
@@ -6731,7 +6731,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForEvent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-003-C01",
@@ -6751,10 +6751,77 @@
           "relatedClaims": [
             "CL-ASIDE-page-waitForEvent-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-003-C01",
+              "coverage": "not-established",
+              "relatedClaims": [
+                "CL-ASIDE-page-waitForEvent-01"
+              ],
+              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004",
+      "spec": "internal/page.waitForEvent.md",
+      "planId": "PLAN-PAGE-WAITFOREVENT-004",
+      "workItem": "B05",
+      "slots": [
+        {
+          "provider": "codex",
+          "surface": "Codex CUA / ChatGPT in-app browser (iab)",
+          "reference": "files-events.md#ref-page-waitforevent",
+          "relation": "direct",
+          "relatedClaims": [
+            "CL-CODEX-page-waitForEvent-01",
+            "CL-CODEX-current-dialog-01"
+          ],
+          "support": "not-established",
+          "conditions": [
+            {
+              "conditionId": "REQ-PAGE-WAITFOREVENT-004-C01",
+              "coverage": "not-established",
+              "relatedClaims": [
+                "CL-CODEX-page-waitForEvent-01",
+                "CL-CODEX-current-dialog-01"
+              ],
+              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+            },
+            {
+              "conditionId": "REQ-PAGE-WAITFOREVENT-004-C02",
+              "coverage": "not-established",
+              "relatedClaims": [
+                "CL-CODEX-page-waitForEvent-01",
+                "CL-CODEX-current-dialog-01"
+              ],
+              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+            }
+          ]
+        },
+        {
+          "provider": "aside",
+          "surface": "Aside original CLI 1.26.1028.2335 / Skill version 3",
+          "reference": "files-events.md#ref-page-waitforevent",
+          "relation": "direct",
+          "relatedClaims": [
+            "CL-ASIDE-page-waitForEvent-01"
+          ],
+          "support": "not-established",
+          "conditions": [
+            {
+              "conditionId": "REQ-PAGE-WAITFOREVENT-004-C01",
+              "coverage": "not-established",
+              "relatedClaims": [
+                "CL-ASIDE-page-waitForEvent-01"
+              ],
+              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+            },
+            {
+              "conditionId": "REQ-PAGE-WAITFOREVENT-004-C02",
               "coverage": "not-established",
               "relatedClaims": [
                 "CL-ASIDE-page-waitForEvent-01"
@@ -6779,7 +6846,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForURL-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORURL-001-C01",
@@ -6797,7 +6864,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforurl",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORURL-001-C01",
@@ -6823,7 +6890,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForURL-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORURL-002-C01",
@@ -6849,7 +6916,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforurl",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORURL-002-C01",
@@ -6882,7 +6949,7 @@
             "CL-CODEX-page-waitForFunction-01",
             "CL-CODEX-page-waitForFunction-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-001-C01",
@@ -6901,7 +6968,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforfunction",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-001-C01",
@@ -6928,7 +6995,7 @@
             "CL-CODEX-page-waitForFunction-01",
             "CL-CODEX-page-waitForFunction-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C01",
@@ -6956,7 +7023,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforfunction",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C01",
@@ -6988,7 +7055,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForLoadState-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORLOADSTATE-001-C01",
@@ -7006,7 +7073,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforloadstate",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORLOADSTATE-001-C01",
@@ -7032,7 +7099,7 @@
           "relatedClaims": [
             "CL-CODEX-page-waitForLoadState-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORLOADSTATE-002-C01",
@@ -7050,7 +7117,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforloadstate",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFORLOADSTATE-002-C01",
@@ -7076,7 +7143,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-setFiles-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETFILES-001-C01",
@@ -7110,7 +7177,7 @@
           "reference": "files-events.md#ref-locator-setfiles",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETFILES-001-C01",
@@ -7148,7 +7215,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-setFiles-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETFILES-002-C01",
@@ -7182,7 +7249,7 @@
           "reference": "files-events.md#ref-locator-setfiles",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETFILES-002-C01",
@@ -7220,7 +7287,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-setFiles-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETFILES-003-C01",
@@ -7238,7 +7305,7 @@
           "reference": "files-events.md#ref-locator-setfiles",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-SETFILES-003-C01",
@@ -7264,7 +7331,7 @@
           "relatedClaims": [
             "CL-CODEX-chooser-setFiles-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CHOOSER-SETFILES-001-C01",
@@ -7282,7 +7349,7 @@
           "reference": "files-events.md#ref-chooser-setfiles",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CHOOSER-SETFILES-001-C01",
@@ -7308,7 +7375,7 @@
           "relatedClaims": [
             "CL-CODEX-chooser-setFiles-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CHOOSER-SETFILES-002-C01",
@@ -7334,7 +7401,7 @@
           "reference": "files-events.md#ref-chooser-setfiles",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CHOOSER-SETFILES-002-C01",
@@ -7366,7 +7433,7 @@
           "relatedClaims": [
             "CL-CODEX-download-save-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-SAVE-001-C01",
@@ -7397,7 +7464,7 @@
             "CL-ASIDE-download-save-03",
             "CL-ASIDE-download-save-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-SAVE-001-C01",
@@ -7439,7 +7506,7 @@
           "relatedClaims": [
             "CL-CODEX-download-save-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-SAVE-002-C01",
@@ -7470,7 +7537,7 @@
             "CL-ASIDE-download-save-03",
             "CL-ASIDE-download-save-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-SAVE-002-C01",
@@ -7512,7 +7579,7 @@
           "relatedClaims": [
             "CL-CODEX-download-cancel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-CANCEL-001-C01",
@@ -7530,7 +7597,7 @@
           "reference": "files-events.md#ref-download-cancel",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-CANCEL-001-C01",
@@ -7556,7 +7623,7 @@
           "relatedClaims": [
             "CL-CODEX-download-cancel-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-CANCEL-002-C01",
@@ -7574,7 +7641,7 @@
           "reference": "files-events.md#ref-download-cancel",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DOWNLOAD-CANCEL-002-C01",
@@ -7600,7 +7667,7 @@
           "relatedClaims": [
             "CL-CODEX-dialog-accept-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-ACCEPT-001-C01",
@@ -7618,7 +7685,7 @@
           "reference": "files-events.md#ref-dialog-accept",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-ACCEPT-001-C01",
@@ -7644,7 +7711,7 @@
           "relatedClaims": [
             "CL-CODEX-dialog-accept-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-ACCEPT-002-C01",
@@ -7662,7 +7729,7 @@
           "reference": "files-events.md#ref-dialog-accept",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-ACCEPT-002-C01",
@@ -7688,7 +7755,7 @@
           "relatedClaims": [
             "CL-CODEX-dialog-dismiss-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-DISMISS-001-C01",
@@ -7706,7 +7773,7 @@
           "reference": "files-events.md#ref-dialog-dismiss",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-DISMISS-001-C01",
@@ -7732,7 +7799,7 @@
           "relatedClaims": [
             "CL-CODEX-dialog-dismiss-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-DISMISS-002-C01",
@@ -7750,7 +7817,7 @@
           "reference": "files-events.md#ref-dialog-dismiss",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DIALOG-DISMISS-002-C01",
@@ -7777,7 +7844,7 @@
             "CL-CODEX-scope-evaluate-01",
             "CL-CODEX-scope-evaluate-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-EVALUATE-001-C01",
@@ -7807,7 +7874,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-evaluate-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-EVALUATE-001-C01",
@@ -7844,7 +7911,7 @@
             "CL-CODEX-scope-evaluate-01",
             "CL-CODEX-scope-evaluate-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-EVALUATE-002-C01",
@@ -7874,7 +7941,7 @@
           "relatedClaims": [
             "CL-ASIDE-scope-evaluate-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-SCOPE-EVALUATE-002-C01",
@@ -7910,7 +7977,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-evaluateAll-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-EVALUATEALL-001-C01",
@@ -7928,7 +7995,7 @@
           "reference": "lifecycle-evaluation.md#ref-locator-evaluateall",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-EVALUATEALL-001-C01",
@@ -7954,7 +8021,7 @@
           "relatedClaims": [
             "CL-CODEX-locator-evaluateAll-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-EVALUATEALL-002-C01",
@@ -7972,7 +8039,7 @@
           "reference": "lifecycle-evaluation.md#ref-locator-evaluateall",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-LOCATOR-EVALUATEALL-002-C01",
@@ -7998,7 +8065,7 @@
           "relatedClaims": [
             "CL-CODEX-page-logs-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-LOGS-001-C01",
@@ -8016,7 +8083,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-logs",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-LOGS-001-C01",
@@ -8042,7 +8109,7 @@
           "relatedClaims": [
             "CL-CODEX-page-logs-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-LOGS-002-C01",
@@ -8060,7 +8127,7 @@
           "reference": "lifecycle-evaluation.md#ref-page-logs",
           "relation": "unknown",
           "relatedClaims": [],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-LOGS-002-C01",
@@ -8087,7 +8154,7 @@
             "CL-CODEX-console-log-01",
             "CL-CODEX-console-log-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CONSOLE-LOG-001-C01",
@@ -8108,7 +8175,7 @@
           "relatedClaims": [
             "CL-ASIDE-console-log-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CONSOLE-LOG-001-C01",
@@ -8137,7 +8204,7 @@
             "CL-CODEX-console-log-01",
             "CL-CODEX-console-log-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CONSOLE-LOG-002-C01",
@@ -8167,7 +8234,7 @@
           "relatedClaims": [
             "CL-ASIDE-console-log-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-CONSOLE-LOG-002-C01",
@@ -8203,7 +8270,7 @@
           "relatedClaims": [
             "CL-CODEX-display-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DISPLAY-001-C01",
@@ -8223,7 +8290,7 @@
           "relatedClaims": [
             "CL-ASIDE-display-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DISPLAY-001-C01",
@@ -8251,7 +8318,7 @@
           "relatedClaims": [
             "CL-CODEX-display-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DISPLAY-002-C01",
@@ -8271,7 +8338,7 @@
           "relatedClaims": [
             "CL-ASIDE-display-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-DISPLAY-002-C01",
@@ -8299,7 +8366,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-001-C01",
@@ -8319,7 +8386,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-001-C01",
@@ -8347,7 +8414,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-002-C01",
@@ -8367,7 +8434,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-002-C01",
@@ -8395,7 +8462,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-003-C01",
@@ -8415,7 +8482,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-003-C01",
@@ -8443,7 +8510,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-004-C01",
@@ -8463,7 +8530,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-004-C01",
@@ -8491,7 +8558,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-005-C01",
@@ -8511,7 +8578,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-005-C01",
@@ -8539,7 +8606,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-006-C01",
@@ -8559,7 +8626,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-006-C01",
@@ -8587,7 +8654,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-007-C01",
@@ -8607,7 +8674,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-007-C01",
@@ -8635,7 +8702,7 @@
           "relatedClaims": [
             "CL-CODEX-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-008-C01",
@@ -8655,7 +8722,7 @@
           "relatedClaims": [
             "CL-ASIDE-runtime-01"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-008-C01",
@@ -8684,7 +8751,7 @@
             "CL-CODEX-dom-frames-01",
             "CL-CODEX-dom-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-001-C01",
@@ -8708,7 +8775,7 @@
             "CL-ASIDE-dom-frames-03",
             "CL-ASIDE-dom-frames-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-001-C01",
@@ -8740,7 +8807,7 @@
             "CL-CODEX-dom-frames-01",
             "CL-CODEX-dom-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-002-C01",
@@ -8764,7 +8831,7 @@
             "CL-ASIDE-dom-frames-03",
             "CL-ASIDE-dom-frames-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-002-C01",
@@ -8796,7 +8863,7 @@
             "CL-CODEX-dom-frames-01",
             "CL-CODEX-dom-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-003-C01",
@@ -8820,7 +8887,7 @@
             "CL-ASIDE-dom-frames-03",
             "CL-ASIDE-dom-frames-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-003-C01",
@@ -8852,7 +8919,7 @@
             "CL-CODEX-dom-frames-01",
             "CL-CODEX-dom-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-004-C01",
@@ -8876,7 +8943,7 @@
             "CL-ASIDE-dom-frames-03",
             "CL-ASIDE-dom-frames-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-004-C01",
@@ -8908,7 +8975,7 @@
             "CL-CODEX-dom-frames-01",
             "CL-CODEX-dom-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-005-C01",
@@ -8932,7 +8999,7 @@
             "CL-ASIDE-dom-frames-03",
             "CL-ASIDE-dom-frames-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-005-C01",
@@ -8964,7 +9031,7 @@
             "CL-CODEX-dom-frames-01",
             "CL-CODEX-dom-frames-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-006-C01",
@@ -8988,7 +9055,7 @@
             "CL-ASIDE-dom-frames-03",
             "CL-ASIDE-dom-frames-04"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-006-C01",
@@ -9020,7 +9087,7 @@
             "CL-CODEX-selection-01",
             "CL-CODEX-selection-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-001-C01",
@@ -9045,7 +9112,7 @@
             "CL-ASIDE-selection-04",
             "CL-ASIDE-selection-05"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-001-C01",
@@ -9078,7 +9145,7 @@
             "CL-CODEX-selection-01",
             "CL-CODEX-selection-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-002-C01",
@@ -9103,7 +9170,7 @@
             "CL-ASIDE-selection-04",
             "CL-ASIDE-selection-05"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-002-C01",
@@ -9136,7 +9203,7 @@
             "CL-CODEX-selection-01",
             "CL-CODEX-selection-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-003-C01",
@@ -9161,7 +9228,7 @@
             "CL-ASIDE-selection-04",
             "CL-ASIDE-selection-05"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-003-C01",
@@ -9194,7 +9261,7 @@
             "CL-CODEX-selection-01",
             "CL-CODEX-selection-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-004-C01",
@@ -9219,7 +9286,7 @@
             "CL-ASIDE-selection-04",
             "CL-ASIDE-selection-05"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-004-C01",
@@ -9252,7 +9319,7 @@
             "CL-CODEX-selection-01",
             "CL-CODEX-selection-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-005-C01",
@@ -9277,7 +9344,7 @@
             "CL-ASIDE-selection-04",
             "CL-ASIDE-selection-05"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-005-C01",
@@ -9310,7 +9377,7 @@
             "CL-CODEX-selection-01",
             "CL-CODEX-selection-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-006-C01",
@@ -9335,7 +9402,7 @@
             "CL-ASIDE-selection-04",
             "CL-ASIDE-selection-05"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-006-C01",
@@ -9368,7 +9435,7 @@
             "CL-CODEX-input-01",
             "CL-CODEX-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-001-C01",
@@ -9390,7 +9457,7 @@
             "CL-ASIDE-input-01",
             "CL-ASIDE-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-001-C01",
@@ -9420,7 +9487,7 @@
             "CL-CODEX-input-01",
             "CL-CODEX-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-002-C01",
@@ -9442,7 +9509,7 @@
             "CL-ASIDE-input-01",
             "CL-ASIDE-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-002-C01",
@@ -9472,7 +9539,7 @@
             "CL-CODEX-input-01",
             "CL-CODEX-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-003-C01",
@@ -9494,7 +9561,7 @@
             "CL-ASIDE-input-01",
             "CL-ASIDE-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-003-C01",
@@ -9524,7 +9591,7 @@
             "CL-CODEX-input-01",
             "CL-CODEX-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-004-C01",
@@ -9546,7 +9613,7 @@
             "CL-ASIDE-input-01",
             "CL-ASIDE-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-004-C01",
@@ -9576,7 +9643,7 @@
             "CL-CODEX-input-01",
             "CL-CODEX-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-005-C01",
@@ -9598,7 +9665,7 @@
             "CL-ASIDE-input-01",
             "CL-ASIDE-input-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-005-C01",
@@ -9628,7 +9695,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-001-C01",
@@ -9650,7 +9717,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-001-C01",
@@ -9680,7 +9747,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-002-C01",
@@ -9702,7 +9769,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-002-C01",
@@ -9732,7 +9799,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-003-C01",
@@ -9754,7 +9821,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-003-C01",
@@ -9784,7 +9851,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-004-C01",
@@ -9806,7 +9873,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-004-C01",
@@ -9836,7 +9903,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-005-C01",
@@ -9858,7 +9925,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-005-C01",
@@ -9888,7 +9955,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-006-C01",
@@ -9910,7 +9977,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-006-C01",
@@ -9940,7 +10007,7 @@
             "CL-CODEX-files-events-01",
             "CL-CODEX-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-007-C01",
@@ -9962,7 +10029,7 @@
             "CL-ASIDE-files-events-01",
             "CL-ASIDE-files-events-02"
           ],
-          "support": "partial-or-unknown",
+          "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-007-C01",

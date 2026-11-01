@@ -3277,6 +3277,32 @@
       "status": "unverified",
       "level": "MUST",
       "workItem": "B05"
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004-C01",
+      "requirement": "REQ-PAGE-WAITFOREVENT-004",
+      "api": "page.waitForEvent",
+      "owner": "page.waitForEvent",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-004-c01",
+      "tag": "current-dialog-recovery",
+      "planId": "PLAN-PAGE-WAITFOREVENT-004.C01",
+      "status": "unverified",
+      "level": "MUST",
+      "workItem": "B05"
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004-C02",
+      "requirement": "REQ-PAGE-WAITFOREVENT-004",
+      "api": "page.waitForEvent",
+      "owner": "page.waitForEvent",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-004-c02",
+      "tag": "current-dialog-recovery",
+      "planId": "PLAN-PAGE-WAITFOREVENT-004.C02",
+      "status": "unverified",
+      "level": "MUST",
+      "workItem": "B05"
     }
   ]
 }

@@ -1656,6 +1656,15 @@
       "verificationId": "PLAN-C-RUNTIME-008",
       "status": "not-started",
       "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-PAGE-WAITFOREVENT-004",
+      "status": "not-started",
+      "assessment": "새dialog조회옵션·세대/소비정책의정상/거절/복구fixture부터다음개발에서추가."
     }
   ]
 }

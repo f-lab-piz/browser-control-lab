@@ -85,7 +85,7 @@
 
 - 조건: 기본 행은 역할/이름/상태/ref만 압축하고 긴 href는 속성 조회로 복원한다.
 - 준비: 추적 URL1만 개·checked/selected/expanded/readonly/busy
-- 실행: snapshot 후 해당 ref.getAttribute href
+- 실행: 발급 ref 문자열로 scope.locator(ref)를 만든 뒤 getAttribute('href')로 원문을 읽는다.
 - 판정: 기본에 URL 원문 반복 없고 상태가 보존되며 속성은 원문이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 

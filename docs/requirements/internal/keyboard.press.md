@@ -41,10 +41,10 @@
 
 #### REQ-KEYBOARD-PRESS-001-C02
 
-- 조건: 더하기 문자 자체와 조합 구분 문자를 구분한다.
-- 준비: focus 된 텍스트 입력
-- 실행: press '+'와 Control+key
-- 판정: 문자+입력과 조합키 해석이 명시 규칙대로이며 빈 토큰 조합은 거절한다.
+- 조건: 키 문법은 input 상세표를 따른다. +와Control++는plus주키,Control+Shift+A는정상조합이다.
+- 준비: '+', 'Control++', 'Control+Shift+A', 'Control+', 'Control+Shift', 중복 modifier와 unknown 키를 준비한다.
+- 실행: 각 문자열을독립press하고key/modifier/down/up trace를읽는다.
+- 판정: 정상은표의순서·키1개·새소유만release,불량은focus/키이벤트0·기존down보존이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-KEYBOARD-PRESS-002

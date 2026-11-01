@@ -1706,6 +1706,17 @@
       "provider": "aside",
       "owner": "files-events",
       "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "id": "CL-CODEX-current-dialog-01",
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "provider": "codex",
+      "owner": "page.waitForEvent",
+      "claim": "tab.getJsDialog():Promise<Dialog|undefined>라는 현재dialog조회 공개서명이 있다.",
+      "location": "evidence/codex/raw/public-contract-excerpts.md :: getJsDialog signature",
+      "scope": "현재dialog조회개념만. 우리의 includeCurrent/세대/단일claim/복구 성공정책은미확인.",
+      "sourceFile": "evidence/codex/sources.md"
     }
   ],
   "sources": [
@@ -2041,6 +2052,18 @@
         "raw/historical-diagnostics-before-after.json#/codex/visibleFilter"
       ],
       "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CUA-LIVE-BOUNDARY1",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "LIVE"
+      ],
+      "locations": [
+        "evidence/codex/raw/boundary1.json"
+      ],
+      "scope": "보충Chrome표면9사례만, IAB조건확인에합산안함"
     }
   ],
   "runs": [
@@ -2073,5 +2096,13 @@
     "caseCount": 9,
     "primaryIabCoverageEligible": false,
     "scope": "9개부분관측·주비교표면과분리. fullConditionSatisfied 전부false."
-  }
+  },
+  "blockedAttempts": [
+    {
+      "id": "IAB-BLOCKED-BOUNDARY1",
+      "file": "evidence/codex/raw/boundary1-iab-blocked.json",
+      "surface": "Codex CUA/IAB",
+      "meaning": "가용성차단, 제품미지원/실패증거아님"
+    }
+  ]
 }

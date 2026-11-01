@@ -311,3 +311,7 @@ display // global exists; argument signature not documented
 구현 흐름(설계, 미실행): 입력/범위 확인 → 공개 방법으로 대상 관찰/선택 → 필요한 입력·대기 → 실제 상태/바이트/이벤트 판독 → 부분효과/정리 확인. 단일 정상 호출을 전체 요구 충족으로 취급하지 않는다.
 
 연결 PLAN: PLAN-C-RUNTIME-001, PLAN-C-RUNTIME-002, PLAN-C-RUNTIME-003, PLAN-C-RUNTIME-004, PLAN-C-RUNTIME-005, PLAN-C-RUNTIME-006, PLAN-C-RUNTIME-007, PLAN-C-RUNTIME-008. 세부 조건은 [condition index](../condition-index.json)에 있으며 정상·거절·부분효과 fixture가 없으면 다음 개발에서 먼저 작성한다.
+
+## 우리 구현 선택의 확정 규칙
+
+[공통 상세 정책](../common/runtime.md#실행과-수명-상세표)를 해당 정본과 함께 읽는다. 정책은 [2차 메인 판단](reviews/cycle-2/research-decisions.md)에서 이유와 대안을 기록했다. DOC/관측으로 확인된 경쟁방법과 우리 선택을 혼동하지 않는다.

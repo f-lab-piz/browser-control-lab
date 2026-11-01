@@ -43,7 +43,7 @@
 
 - 조건: button/right/middle 및 clickCount2는 요청한 이벤트 구성을 따른다.
 - 준비: contextmenu/auxclick/dblclick별 카운터
-- 실행: 각 옵션을 독립 run
+- 실행: button=right, button=middle, clickCount=2를각각독립run으로호출한다.
 - 판정: 우클릭/중클릭/더블클릭을 단일 left로 대체하지 않고 dblclick 업무 1 회다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
@@ -57,10 +57,10 @@
 
 #### REQ-LOCATOR-CLICK-001-C04
 
-- 조건: 안정은 연속 2animation frame에서 연결 문서와 box 변동이 CSS1px 이하인 상태다.
-- 준비: 버튼이 움직이다 정지하는 fixture
-- 실행: click
-- 판정: 기본 총 5초 내 정지한 대상만 클릭하고 계속 움직이면 ACTIONABILITY_TIMEOUT이다.
+- 조건: 연속2rAF에서같은연결문서/요소의x/y/width/height각절대차가1CSSpx이하면v1안정조건이다.
+- 준비: 표본당0.5px/2px이동·정지·rAF없음/문서교체sequence를제어하는fixture를설계한다.
+- 실행: 기본총5초안에상태표본뒤최종ref/hit를재검사해click한다.
+- 판정: 허용표본충족뒤만입력하고불충족/rAF없음은총예산timeout이다. 완전정지/무한미래불변을요구하지않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-CLICK-002

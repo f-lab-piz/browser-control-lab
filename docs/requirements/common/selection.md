@@ -138,3 +138,16 @@
 - 실행: old/new ref
 - 판정: 동일 연결 요소 ref 유지·교체 oldstale·다른 세션 ref 불가다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+## 이름 계산 상세표
+
+v1의 현재 지원 naming 소스만 순서를 정하며 전체 AX 표준 동등성을 추가 약속하지 않는다.
+
+1. aria-labelledby의 유효 IDREF를 지정 순서로 읽는다. 중복 IDREF는 첫 항목만, 일부 유효면 유효 참조만 사용한다. 참조가 전부 없거나 결합 결과가 비면 다음 소스로 fallback한다. document.getElementById 기준 첫 id요소를 사용하며 순환 분기는 빈 기여로 끊는다.
+2. 비어 있지 않은 aria-label.
+3. 연결된 native label들의 document 순서 텍스트.
+4. img/input image는 alt, 그 다음 title, input/textarea는 placeholder, 그 다음 본문 이름을 허용한 역할의 composed 본문. 본문 fallback 대상은 button/link/heading/option/tab 및 일반 텍스트 후보이며 main/region/navigation/table/row/list의 무명 본문을 긴 이름으로 합치지 않는다.
+
+각 단계는 공통 whitespace 정규화를 적용하고 검색 이름을 출력용300자 예산으로 자르지 않는다. 직접 참조한 label/aria-labelledby 본문은 CSS/ARIA 숨김이어도 이름 소스에 포함하되 script/style/noscript/template을 제외한다. 대상 자체 숨김은 getByRole.includeHidden이 결정한다.
+
+getByRole의 name은 최종 이름을 쓴다. getByLabel은 명시 ARIA/native label 소스가 연결된 지원 제어(input/textarea/select/button)에 한해 같은 우선순위의 명시 이름을 쓴다. 일반 본문/placeholder만으로 label 연결을 만들지 않는다. 유효 labelledby와 aria-label/native label이 충돌하면 최종 이름만 검색하며 하위 이름 합집합으로 우회하지 않는다.

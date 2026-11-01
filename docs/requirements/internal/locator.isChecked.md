@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-ISCHECKED-001-C01
 
-- 조건: native/지원 ARIA의 체크 상태를 읽는다.
-- 준비: checkbox/radio/switch true/false/mixed
-- 실행: 조회
-- 판정: getAttribute 원문과 boolean 계약이 일치하고 mixed를 true로 오인하지 않는다.
+- 조건: native checked와ARIA/mixed 충돌은 input 상태표를 따른다.
+- 준비: native checked=false/aria-checked=true,checked=true/indeterminate=true와customARIA true/false/mixed를준비한다.
+- 실행: isChecked와독립property/attribute를비교한다.
+- 판정: native는checkedproperty우선·indeterminate가boolean을덮지않는다. custommixed는false이며원문mixed는getAttribute로읽는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-ISCHECKED-002

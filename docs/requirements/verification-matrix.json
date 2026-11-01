@@ -5733,6 +5733,33 @@
       "sources": [
         "DESIGN"
       ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-004",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFOREVENT-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "자기Page에dialog가열린상태와reset후새핸들,dialog없음·이미claim상태를준비한다.",
+        "when": "includeCurrent:true의dialog조회와accept/dismiss·반복query를실행한다.",
+        "then": "현세대의정확한현재dialog만처리하고없음/이미claim/타event는명시오류며기존dialog를자동응답하지않는다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT",
+        "conditionIds": [
+          "REQ-PAGE-WAITFOREVENT-004-C01",
+          "REQ-PAGE-WAITFOREVENT-004-C02"
+        ]
+      },
+      "sources": [
+        "DESIGN"
+      ]
     }
   ]
 }

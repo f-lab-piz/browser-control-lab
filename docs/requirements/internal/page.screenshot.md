@@ -91,10 +91,10 @@
 
 #### REQ-PAGE-SCREENSHOT-003-C01
 
-- 조건: clip 음수 위치/0 크기/소수 크기/비유한 값/fullPage 병용은 거절한다.
-- 준비: 각 불량 clip
-- 실행: screenshot
-- 판정: INVALID_SCREENSHOT_CLIP/조합 오류·성공 이미지 없다.
+- 조건: clip전체사각형은viewport안에있어야하며소수크기/비유한/음수/0크기/fullPage병용은거절한다.
+- 준비: viewport800x600에clip(790,590,10,10),(790,590,20,20),x800을DPR1/2에서준비한다.
+- 실행: 각clip과불량옵션캡처를호출한다.
+- 판정: 완전포함10x10만정확크기이며밖으로나간요청은범위오류·이미지없음·clamp/padding없다. resize뒤정합성은기존3회정책이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-SCREENSHOT-004

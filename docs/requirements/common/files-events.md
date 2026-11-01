@@ -156,8 +156,23 @@
 
 #### REQ-C-FILESEVENTS-007-C01
 
-- 조건: 이름/MIME/개수는 공통 정책을 쓴다.
-- 준비: NUL/경로 구분자/Unicode·single/multiple·중복명
-- 실행: 전달
-- 판정: basename·기본명/MIME·단일 개수·총 32MiB·순서/중복명 바이트 분리가 맞다.
+- 조건: 파일메타/inline MIME/dropdata는파일상세표의타입·생략기본·정규화·빈값정책을쓴다.
+- 준비: name/mimeType 숫자/null/빈값·유효MIME대소문자·data{}와text/plain빈문자열·files[]조합을준비한다.
+- 실행: setFiles/chooser/drop을각입력으로호출한다.
+- 판정: invalid명시메타는사전입력0,유효MIME은소문자,data빈문자열은전달·빈record는payload없음·text-only파일목록[]이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+## 파일과 이벤트 상세표
+
+|정책|v1 계약|
+|---|---|
+|메타데이터|명시 inline name/mimeType은문자열만허용. 생략만file.bin/application/octet-stream 기본값. 명시빈name/빈mimeType/null/number는사전거절. 기존basename/NUL 규칙유지.|
+|MIME문법|명시inline mimeType/drop.data key는ASCII MIME token(type/subtype 각각 A-Z,a-z,0-9 및 !#$%&'*+-.^_`|~ 허용)의 type와subtype사이슬래시1개,공백/제어문자/매개변수없음. IANA등록목록으로제한하지않고ASCII소문자로정규화. native/asset 메타는브라우저/서버원본의ASCII MIME값(unknown빈type·매개변수포함가능)을File.type의소문자정규화로전달하며사용자inline문법과혼동하지않음.|
+|drop.data|일반 record의own MIME key→string value. key1개이상이면payload가있고빈문자열value도유효하다. {}는없음. files=[]단독은drop오류,[]+유효data는text-only이며반환파일목록[]. setFiles[]해제는별개.|
+|가변wait|같은Page/세션/event의dialog/filechooser 활성waiter는1개. 두번째등록을EVENT_WAITER_CONFLICT로즉시reject하고첫wait/arming/deadline보존. 첫terminal뒤다음등록허용.|
+|관찰wait|popup/download/close는같은다음event identity를각등록waiter에한번공유한다. download save/cancel은기존id멱등/최종상태정책을따른다.|
+|기존dialog복구|waitForEvent('dialog',{includeCurrent:true})는현재열린자기Page의기록된dialog를조회해현세대핸들을발급한다. 없으면CURRENT_EVENT_NOT_FOUND,같은세대에유효핸들이이미있으면EVENT_ALREADY_CLAIMED. reset은기존핸들만무효화하므로현세대에서다시획득할수있음. 자동accept/dismiss하지않음.|
+
+includeCurrent 기본false는등록후이벤트만기다리는기존계약이다. true는dialog에서만허용하고다른event는UNSUPPORTED_EVENT_OPTION으로거절한다. current-query는미래event를기다리는waiter가아니며없으면즉시오류다. 실제dialog identity는현재기록/native닫힘과대조한다. 다운로드/chooser의reset후범용재획득까지약속하지않으며기록된자산/완료파일수명은runtime표를따른다. 필요하면별도후속요구로조사한다.
+
+한도/스키마/소유검증은입력전이다. 전송중불가피한오류는적용목록/불확실과임시자원정리를기록하며원자적rollback을위장하지않는다.

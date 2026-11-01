@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-GOTO-001-C01
 
-- 조건: 탐색 준비는 목적 문서의 readyState가 interactive 이상이고 새 document identity에 연결된 상태다.
-- 준비: A 문서와 지연 로딩 B
-- 실행: goto(B) 후 즉시 snapshot
-- 판정: B의 URL/document에 연결되며 A 내용을 B로 반환하지 않는다.
+- 조건: goto는목적URL/현재문서의interactive이상준비를확인하되same-document이동이면기존문서identity/ref를유지한다.
+- 준비: A문서의ref/nonce와A#x,B문서,redirect C를준비한다.
+- 실행: A→A#x, A→B, reload를별도실행한다.
+- 판정: hash는nonce/ref유지,B는새문서와oldrefstale,reload는URL같고문서교체다. URL변경자체를문서교체증거로쓰지않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-GOTO-001-C02
