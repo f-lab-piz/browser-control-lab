@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><title>초기화 수명 검증</title>
+<style>body{font:16px system-ui;margin:24px}label,input,button,output{display:block;margin:12px 0}input{width:320px;height:48px}iframe{width:620px;height:350px;border:2px solid #555}</style>
+<h1>초기화 수명 검증</h1>
+<label for="marker">보존할 값</label><input id="marker" value="initial">
+<button id="arm">늦은 대상 준비</button><output id="armed">idle</output>
+<output id="click-count">0</output><output id="held">해제됨</output>
+<pre id="events">[]</pre><pre id="child-events">[]</pre><a href="/reset-file" download="reset-proof.txt">보존 파일 다운로드</a>
+<script>
+const events=[],keys=new Set();let buttons=0,clicks=0,armed=false;
+for(const type of ['keydown','keyup','mousedown','mouseup'])document.addEventListener(type,event=>{
+ events.push({type,key:event.key,button:event.button,buttons:event.buttons,ctrlKey:event.ctrlKey,trusted:event.isTrusted});
+ if(type==='keydown')keys.add(event.key);if(type==='keyup')keys.delete(event.key);
+ if(type==='mousedown'||type==='mouseup')buttons=event.buttons;
+ document.querySelector('#held').textContent=keys.size||buttons?'눌림':'해제됨';
+ document.querySelector('#events').textContent=JSON.stringify(events);
+ if(new URLSearchParams(location.search).has('embedded'))parent.postMessage({resetTrace:events},'*');
+});
+document.querySelector('#arm').addEventListener('click',()=>{
+ if(armed)return;armed=true;document.querySelector('#armed').textContent='armed';
+ setTimeout(()=>{const target=document.createElement('button');target.id='late';target.textContent='늦은 대상';target.addEventListener('click',()=>document.querySelector('#click-count').textContent=String(++clicks));document.body.append(target)},800);
+});
+if(!new URLSearchParams(location.search).has('embedded')){const frame=document.createElement('iframe');frame.title='교차 출처 입력';frame.src=location.protocol+'//mail.test:'+location.port+'/reset?embedded=1';window.addEventListener('message',event=>{if(event.source===frame.contentWindow&&Array.isArray(event.data?.resetTrace))document.querySelector('#child-events').textContent=JSON.stringify(event.data.resetTrace)});document.body.append(frame)}
+</script></html>

@@ -1,0 +1,99 @@
+✖ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (2291.052833ms)
+✖ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (389.799791ms)
+✖ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (327.318292ms)
+✖ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (446.843541ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1284.639667ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5310.401792
+
+✖ failing tests:
+
+test at tests/reset-runtime.test.mjs:19:1
+✖ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (2291.052833ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"96061d23-834b-4f50-8cdd-0e1df2137b7d","sessionId":"ec488826-5214-4b45-a490-e9dba53c41ad","generation":3,"status":"failed","createdAt":1793552220385,"startedAt":1793552220385,"result":{"error":{"code":"DISPATCH_ERROR","message":"SESSION_RESET: stale generation"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":540350623},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350623,"sessionId":"2E5A9C370964377079BD6BFEB8DF0749"},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[],"effectsMayHaveOccurred":false}},"finishedAt":1793552220389}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<repo>/tests/reset-runtime.test.mjs:6:23)
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:27:4)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/reset-runtime.test.mjs:35:1
+✖ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (389.799791ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"bf07d7c6-499e-45fb-8104-04d80d7f7202","sessionId":"ec488826-5214-4b45-a490-e9dba53c41ad","generation":7,"status":"failed","createdAt":1793552220776,"startedAt":1793552220776,"result":{"error":{"code":"DISPATCH_ERROR","message":"SESSION_RESET: stale generation"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":540350623},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350623,"sessionId":"2E5A9C370964377079BD6BFEB8DF0749"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350625},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350625,"sessionId":"23BF273EAE190621BD394D08E0B42F1F"},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"e42b6b58-0d31-48b3-97d4-8f614b1f267a","hostMethod":"scope.evaluate","method":"Runtime.callFunctionOn","tabId":540350625,"generation":4}],"effectsMayHaveOccurred":true}},"finishedAt":1793552220780}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<repo>/tests/reset-runtime.test.mjs:6:23)
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:40:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/reset-runtime.test.mjs:46:1
+✖ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (327.318292ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"04432e4e-1366-41e4-bdfc-f934f34dbca4","sessionId":"ec488826-5214-4b45-a490-e9dba53c41ad","generation":10,"status":"failed","createdAt":1793552221104,"startedAt":1793552221104,"result":{"error":{"code":"DISPATCH_ERROR","message":"SESSION_RESET: stale generation"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":540350623},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350623,"sessionId":"2E5A9C370964377079BD6BFEB8DF0749"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350625},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350625,"sessionId":"23BF273EAE190621BD394D08E0B42F1F"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350626},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350626,"sessionId":"D4D484973BC3207709F46E73D89C2A09"},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"e42b6b58-0d31-48b3-97d4-8f614b1f267a","hostMethod":"scope.evaluate","method":"Runtime.callFunctionOn","tabId":540350625,"generation":4}],"effectsMayHaveOccurred":true}},"finishedAt":1793552221109}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<repo>/tests/reset-runtime.test.mjs:6:23)
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:57:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/reset-runtime.test.mjs:60:1
+✖ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (446.843541ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"d64cf735-865a-4502-94a0-c7d428a26421","sessionId":"ec488826-5214-4b45-a490-e9dba53c41ad","generation":13,"status":"failed","createdAt":1793552221553,"startedAt":1793552221553,"result":{"error":{"code":"DISPATCH_ERROR","message":"SESSION_RESET: stale generation"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":540350623},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350623,"sessionId":"2E5A9C370964377079BD6BFEB8DF0749"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350625},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350625,"sessionId":"23BF273EAE190621BD394D08E0B42F1F"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350626},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350626,"sessionId":"D4D484973BC3207709F46E73D89C2A09"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350627},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":540350627,"sessionId":"C6BD97CD15A2B47362E43BFE86E4BD5A"},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"e42b6b58-0d31-48b3-97d4-8f614b1f267a","hostMethod":"scope.evaluate","method":"Runtime.callFunctionOn","tabId":540350625,"generation":4}],"effectsMayHaveOccurred":true}},"finishedAt":1793552221558}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<repo>/tests/reset-runtime.test.mjs:6:23)
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:68:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

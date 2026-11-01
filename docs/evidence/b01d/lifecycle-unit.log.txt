@@ -1,0 +1,14 @@
+✔ a refused attachment releases its new reservation instead of falsely owning the tab (35.525333ms)
+✔ an operation invalidated before the dispatch microtask never reaches the adapter (2.402167ms)
+✔ reset blocks unsent continuation while recording already transmitted uncertain effects (0.396292ms)
+✔ overlapping reset barriers block new work and stale reset cannot invalidate new generation (0.207583ms)
+✔ event wait and trigger stay concurrent and another session is independent (0.217541ms)
+✔ release failure and uncertainty retain held input and a later reset can retry it (13.592083ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.157792

@@ -11,7 +11,7 @@
 ## 실행 명령
 
 - `npm test`: 판정기/카탈로그/중계기와 프레임 상태 단위 검증. 단계별 고정 개수와 실행 결과는 해당 구현 보고서·manifest를 따른다.
-- `npm run test:fixtures`: 실제 브라우저의 테스트 사이트 동작 검증 7개.
+- `npm run test:fixtures`: 실제 브라우저의 테스트 사이트 동작 검증. 현재 단계의 고정 개수는 각 manifest를 따른다.
 - `npm run test:bootstrap`: 임시 개발 확장 로드 및 HTTP 왕복 실험 1개.
 - `npm run test:requirements`: 요구사항별 실제 HTTP→확장→QuickJS 검증. B01A 요구 조건9개에 연결된 테스트4개와 중첩 프레임 회귀1개를 포함하며, 후속 slice는 별도 테스트 파일에 추가한다. 결과는 output/requirements-runtime/의 run별 폴더에 저장한다. BCL_RUN_DIR로 명시 경로를 지정할 수 있다.
 - `npm run test:all`: 기본 단위·fixture·probe·제품 runtime·요구사항 회귀를 순서대로 실행. 새 경계 진단은 test:audit으로 별도 실행.
@@ -86,3 +86,8 @@ B01B부터 BCL_RUN_DIR 아래에 b01a/b01b 등 이름별 결과를 기록한다.
 
 
 B01C 출력 테스트는 /output-image의 정확한 파일 bytes와 PNG CRC를 생성한다. 독립 Chromium native decoder가 실제1×1 픽셀을 검증하고 제품 display의 원본 SHA와 구분한다. fixture 파일은 순차 실행하며 PNG oracle은45초/개별 decode10초의 관찰 제한을 둔다. 제품의 예산·실패 조건을 이 시간 제한으로 완화하지 않는다. 결과 JSON16MiB 단위 검증의 fake extension도 제품 성공으로 합산하지 않는다.
+
+
+## 초기화 수명 fixture
+
+`/reset`은 입력 값·trusted key/mouse event·실제800ms 지연 버튼의 클릭 횟수를 수동적으로 기록한다. mail.test 교차 출처 child target도 같은 기록을 parent에 전달한다. `test:fixtures`의 reset-fixture는 일반 브라우저 oracle이고 `tests/reset-runtime.test.mjs`는 실제 확장 경로다. 사이트 내부 verdict를 쓰거나 evaluate로 PASS를 주입하지 않는다. target 소실은 독립 관찰자로 자기 테스트 탭만 닫는 환경 실패 조건이며 reset/release 명령 자체는 제품이 수행한다.

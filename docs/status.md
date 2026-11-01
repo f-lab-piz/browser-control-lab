@@ -1,6 +1,6 @@
 # 현재 상태
 
-최신 구현 진행:문서 PR #6·계획 PR #8 머지 후 B01A를 구현했다. 해당6 REQ/9조건은 국소 제품 검증을 통과했으나 PR#10 리뷰의 긴 ID와 프레임 회귀를 보완해 전체64 PASS/외부1 SKIP다. Sol6.1 high 독립 재리뷰 PASS 후 PR#10이367a5d2로 머지됐다. B01B(이슈#11)는 네이티브 lexical 실행과4개 제품 검증을 보완해 전체68 PASS/외부1 SKIP이며 Sol6.1 high 독립 PASS 후 PR#12가0446e5b로 머지됐다. B01C(이슈#13)는6 REQ/7조건을 제품 검증했고 전체85 PASS/외부1 SKIP다. 세 독립 리뷰의 PNG/예외/압축 지적을 보완했고 정확41ff8e3 Sol6.1 high PASS 후 PR14가05b0e6a로 머지됐으며 [보고서](implementation/b01c.md)를 따른다. [B01B 보고서](implementation/b01b.md)를 따른다. [B01A 보고서](implementation/b01a.md), [실행 현황](../implementation/index.md), [조건 ledger](../planning/implementation-plan.json)를 따른다. B01D(이슈#15)는 초기화·세대·실제 입력 해제를 준비 중이며 아직 제품 판정은 미검증이다. 아래 기록은 각 단계 당시의 이력이다.
+최신 구현 진행:문서 PR #6·계획 PR #8 머지 후 B01A를 구현했다. 해당6 REQ/9조건은 국소 제품 검증을 통과했으나 PR#10 리뷰의 긴 ID와 프레임 회귀를 보완해 전체64 PASS/외부1 SKIP다. Sol6.1 high 독립 재리뷰 PASS 후 PR#10이367a5d2로 머지됐다. B01B(이슈#11)는 네이티브 lexical 실행과4개 제품 검증을 보완해 전체68 PASS/외부1 SKIP이며 Sol6.1 high 독립 PASS 후 PR#12가0446e5b로 머지됐다. B01C(이슈#13)는6 REQ/7조건을 제품 검증했고 전체85 PASS/외부1 SKIP다. 세 독립 리뷰의 PNG/예외/압축 지적을 보완했고 정확41ff8e3 Sol6.1 high PASS 후 PR14가05b0e6a로 머지됐으며 [보고서](implementation/b01c.md)를 따른다. [B01B 보고서](implementation/b01b.md)를 따른다. [B01A 보고서](implementation/b01a.md), [실행 현황](../implementation/index.md), [조건 ledger](../planning/implementation-plan.json)를 따른다. B01D(이슈#15)는4 REQ/6조건의 국소 제품 판정을 통과했고 전체100 PASS/외부1 SKIP·창 모드25 PASS다. [보고서](implementation/b01d.md)를 따르며 독립 리뷰·머지 전이다. 아래 기록은 각 단계 당시의 이력이다.
 
 2026-11-01. 독립 구현의 첫 실행 버전이다. 모든 브라우저·사이트 지원 또는 상용 배포 완료를 뜻하지 않는다.
 

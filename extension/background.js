@@ -6,6 +6,6 @@ chrome.runtime.onMessage.addListener((message,sender,respond)=>{
  if(message.target!=='background')return;
  if(sender.id!==chrome.runtime.id){respond({error:'Invalid sender'});return}
  (async()=>{
-  return browserCall(message.sessionId,message.method,message.args);
+  return browserCall(message.sessionId,message.method||'',message.args,{control:message.control,generation:message.generation,requestId:message.requestId});
  })().then(value=>respond({value}),error=>respond({error:error.message}));return true;
 });

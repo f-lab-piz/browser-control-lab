@@ -102,7 +102,9 @@
         "REQ-RESET-002",
         "REQ-RESET-003"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/implementation/b01d.md"
+      ],
       "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/15"
     },
     {
@@ -526,8 +528,10 @@
       "conditions": [
         "REQ-C-RUNTIME-003-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-c-runtime-003-c01"
+      ]
     },
     {
       "requirement": "REQ-C-RUNTIME-004",
@@ -847,8 +851,11 @@
         "REQ-RESET-001-C01",
         "REQ-RESET-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-001-c01",
+        "docs/implementation/b01d.md#req-reset-001-c02"
+      ]
     },
     {
       "requirement": "REQ-RESET-002",
@@ -859,8 +866,11 @@
         "REQ-RESET-002-C01",
         "REQ-RESET-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-002-c01",
+        "docs/implementation/b01d.md#req-reset-002-c02"
+      ]
     },
     {
       "requirement": "REQ-JS-001",
@@ -2488,8 +2498,10 @@
       "conditions": [
         "REQ-RESET-003-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-003-c01"
+      ]
     },
     {
       "requirement": "REQ-LOCATOR-SETFILES-003",
@@ -2668,36 +2680,46 @@
       "id": "REQ-RESET-001-C01",
       "requirement": "REQ-RESET-001",
       "slice": "B01D",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-001-c01"
+      ]
     },
     {
       "id": "REQ-RESET-001-C02",
       "requirement": "REQ-RESET-001",
       "slice": "B01D",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-001-c02"
+      ]
     },
     {
       "id": "REQ-RESET-002-C01",
       "requirement": "REQ-RESET-002",
       "slice": "B01D",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-002-c01"
+      ]
     },
     {
       "id": "REQ-RESET-002-C02",
       "requirement": "REQ-RESET-002",
       "slice": "B01D",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-002-c02"
+      ]
     },
     {
       "id": "REQ-RESET-003-C01",
       "requirement": "REQ-RESET-003",
       "slice": "B01D",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-reset-003-c01"
+      ]
     },
     {
       "id": "REQ-JS-001-C01",
@@ -4218,8 +4240,10 @@
       "id": "REQ-C-RUNTIME-003-C01",
       "requirement": "REQ-C-RUNTIME-003",
       "slice": "B01D",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01d.md#req-c-runtime-003-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-004-C01",

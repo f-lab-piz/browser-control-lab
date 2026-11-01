@@ -1,0 +1,36 @@
+✖ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1807.938083ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1551.195833ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (318.49425ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3096.920959ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1296.975791ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8603.85575
+
+✖ failing tests:
+
+test at tests/reset-runtime.test.mjs:19:1
+✖ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1807.938083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'undefined\ninitial\nnew-output'
+  - 'undefined\nA\nnew-output'
+                ^
+
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:28:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined\ninitial\nnew-output',
+    expected: 'undefined\nA\nnew-output',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

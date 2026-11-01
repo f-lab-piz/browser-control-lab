@@ -1,15 +1,40 @@
+import {SessionLifecycle,releaseHeldInputs} from './session-lifecycle.mjs';
 import {uploadFiles,saveDownload} from './files.mjs';
 import {installPageAgent} from './page-agent.mjs';
 import {recordTree,recordFrame,removeFrame,detachTarget,pruneFrames} from './frame-state.mjs';
-const tabs=new Map(),owners=new Map(),downloads=new Map();
+const tabs=new Map(),owners=new Map(),downloads=new Map(),held=new Map(),lifecycle=new SessionLifecycle(),OP=Symbol('operation');
+const scoped=(state,scope)=>scope?new Proxy(state,{get:(target,key)=>key===OP?scope:Reflect.get(target,key),set:(target,key,value)=>Reflect.set(target,key,value)}):state;
+const rawSend=(target,method,params={})=>chrome.debugger.sendCommand(target,method,params);
+function inputLedger(id){let value=held.get(id);if(!value){value=new Map();held.set(id,value)}return value}
+function inputDispatch(scope,target,method,params,dispatch){
+ if(!scope)return dispatch();
+ const ledger=inputLedger(scope.sessionId);let kind,name,release,record,up=false;
+ if(method==='Input.dispatchKeyEvent'){kind='key';name=params.key;up=params.type==='keyUp';if(params.type==='keyDown'||up)release={...params,type:'keyUp',modifiers:0};delete release?.text;delete release?.unmodifiedText}
+ if(method==='Input.dispatchMouseEvent'&&['mousePressed','mouseReleased'].includes(params.type)){kind='mouse';name=params.button;up=params.type==='mouseReleased';release={...params,type:'mouseReleased',buttons:0,modifiers:0}}
+ if(['Input.setInterceptDrags','Page.setInterceptFileChooserDialog'].includes(method)){kind='interception';name=method;up=!params.enabled;release={enabled:false}}
+ const id=JSON.stringify([target.tabId,target.sessionId||'',kind,name]);
+ if(release){record=up?ledger.get(id):{target,method,params:release,kind,...(kind==='key'?{key:name}:kind==='mouse'?{button:name}:{})};if(!up)ledger.set(id,record)}
+ return Promise.resolve(dispatch()).then(value=>{if(up&&record&&ledger.get(id)===record)ledger.delete(id);return value});
+}
+async function resetBrowserSession(sessionId,generation){
+ return lifecycle.reset(sessionId,generation,async({inFlight})=>{
+  const owned=[...owners].filter(([,owner])=>owner===sessionId).map(([id])=>tabs.get(id)).filter(Boolean),trace=[],warnings=[];
+  for(const state of owned){for(const w of state.waiters||[]){clearTimeout(w.timer);w.reject(Error('SESSION_RESET'))}state.waiters?.clear();state.arming=null;
+   for(const targetSession of [undefined,...state.childSessions]){let timer;const target={tabId:state.tabId,...(targetSession?{sessionId:targetSession}:{})};try{await Promise.race([rawSend(target,'Runtime.terminateExecution'),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Execution termination timed out; effect unknown')),2000)})]);trace.push({target,method:'Runtime.terminateExecution',status:'completed'})}catch(error){const entry={target,method:'Runtime.terminateExecution',status:'failed',message:error.message};trace.push(entry);warnings.push(entry)}finally{clearTimeout(timer)}}
+  }
+  const inputs=inputLedger(sessionId),release=await releaseHeldInputs(inputs,rawSend);trace.push(...release.trace);warnings.push(...release.warnings);
+  for(const state of owned){const remaining=[...inputs.values()].filter(i=>i.target.tabId===state.tabId);state.keys=new Set(remaining.filter(i=>i.kind==='key').map(i=>i.key));state.buttons=remaining.filter(i=>i.kind==='mouse').reduce((bits,i)=>bits|({left:1,right:2,middle:4}[i.button]||0),0)}
+  return {status:warnings.length?'partial':'complete',trace,warnings,inFlight,inFlightEffectsUncertain:inFlight.length>0};
+ });
+}
 function emit(state,type,payload){for(const waiter of [...(state.waiters||[])])if(waiter.type===type){state.waiters.delete(waiter);clearTimeout(waiter.timer);waiter.resolve(payload)}}
-function waitEvent(state,type,timeout=10000){state.waiters??=new Set();return new Promise((resolve,reject)=>{const waiter={type,resolve,reject,timer:setTimeout(()=>{state.waiters.delete(waiter);reject(Error('EVENT_TIMEOUT: '+type))},timeout)};state.waiters.add(waiter)})}
+function waitEvent(state,type,timeout=10000){state.waiters??=new Set();const pending=new Promise((resolve,reject)=>{const waiter={type,resolve,reject,timer:setTimeout(()=>{state.waiters.delete(waiter);reject(Error('EVENT_TIMEOUT: '+type))},timeout)};state.waiters.add(waiter)});pending.catch(()=>{});return pending}
 function matchPopup(tab){const source=tabs.get(tab.openerTabId)||[...tabs.values()].find(s=>s.pendingPopup&&(tab.pendingUrl===s.pendingPopup.url||tab.url===s.pendingPopup.url));if(source&&[...(source.waiters||[])].some(w=>w.type==='popup')){owners.set(tab.id,owners.get(source.tabId));source.pendingPopup=null;emit(source,'popup',{tabId:tab.id})}}
 chrome.tabs.onCreated.addListener(matchPopup);chrome.tabs.onUpdated.addListener((id,change,tab)=>{if(change.url)matchPopup(tab)});
 chrome.tabs.onRemoved.addListener(tabId=>{const state=tabs.get(tabId);if(state)emit(state,'close',{});tabs.delete(tabId);owners.delete(tabId)});
 chrome.downloads.onCreated.addListener(async item=>{const candidates=[];for(const state of tabs.values()){if(![...(state.waiters||[])].some(w=>w.type==='download'))continue;const tab=await chrome.tabs.get(state.tabId).catch(()=>null);if(!tab)continue;const origin=new URL(tab.url).origin;if((item.url||'').startsWith(origin)||(item.url||'').startsWith('blob:'+origin)||(item.referrer||'').startsWith(origin))candidates.push(state)}if(candidates.length===1){const state=candidates[0];downloads.set(item.id,{sessionId:owners.get(state.tabId),tabId:state.tabId});emit(state,'download',{id:item.id,url:item.url,name:item.filename?.split(/[\\/]/).at(-1)})}else if(candidates.length>1){for(const state of candidates)for(const w of [...state.waiters])if(w.type==='download'){state.waiters.delete(w);clearTimeout(w.timer);w.reject(Error('AMBIGUOUS_DOWNLOAD'))}}});
 const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-const send=(state,method,params={},sessionId)=>chrome.debugger.sendCommand({tabId:state.tabId,...(sessionId?{sessionId}:{})},method,params);
+const send=(state,method,params={},sessionId)=>{const scope=state[OP],target={tabId:state.tabId,...(sessionId?{sessionId}:{})},dispatch=()=>inputDispatch(scope,target,method,params,()=>rawSend(target,method,params));return scope?scope.call(dispatch,{method,tabId:state.tabId,targetSession:sessionId}):dispatch()};
 async function initializeTarget(state,sessionId){const epoch=state.frameEpoch||0;await send(state,'Page.enable',{},sessionId);await send(state,'Runtime.enable',{},sessionId);await send(state,'Target.setAutoAttach',{autoAttach:true,flatten:true,waitForDebuggerOnStart:false},sessionId);const tree=await send(state,'Page.getFrameTree',{},sessionId);if(!sessionId||epoch===(state.frameEpoch||0))recordTree(state,tree.frameTree,null,sessionId)}
 chrome.debugger.onEvent.addListener((source,method,params)=>{
  const state=tabs.get(source.tabId);if(!state)return;
@@ -33,11 +58,21 @@ chrome.debugger.onEvent.addListener((source,method,params)=>{
  if(state.logs.length>200)state.logs.shift();
 });
 chrome.debugger.onDetach.addListener(source=>{tabs.delete(source.tabId)});
-async function attach(sessionId,tabId){
- tabId=Number(tabId);let tab=await chrome.tabs.get(tabId);for(let retry=0;retry<100&&!tab.url&&!tab.pendingUrl;retry++){await delay(25);tab=await chrome.tabs.get(tabId)}const effectiveUrl=tab.pendingUrl||tab.url||'';if(!/^https?:/.test(effectiveUrl)&&!(effectiveUrl==='about:blank'&&owners.get(tabId)===sessionId))throw Error('Only HTTP(S) pages can be controlled');
- const owner=owners.get(tabId);if(owner&&owner!==sessionId)throw Error('TAB_OWNED_BY_ANOTHER_SESSION');owners.set(tabId,sessionId);
- let state=tabs.get(tabId);if(!state){state={tabId,frames:new Map(),childSessions:new Set(),logs:[],errors:[],snapshots:new Map(),frameAliases:new Map()};tabs.set(tabId,state);try{await chrome.debugger.attach({tabId},'1.3');await initializeTarget(state)}catch(error){tabs.delete(tabId);owners.delete(tabId);throw error}}
- return state;
+async function attach(sessionId,tabId,scope){
+ const call=(fn,method)=>scope?scope.call(fn,{method,tabId:Number(tabId)}):fn();
+ tabId=Number(tabId);let tab=await call(()=>chrome.tabs.get(tabId),'tabs.get');
+ for(let retry=0;retry<100&&!tab.url&&!tab.pendingUrl;retry++){await delay(25);tab=await call(()=>chrome.tabs.get(tabId),'tabs.get')}
+ const effectiveUrl=tab.pendingUrl||tab.url||'';if(!/^https?:/.test(effectiveUrl)&&!(effectiveUrl==='about:blank'&&owners.get(tabId)===sessionId))throw Error('Only HTTP(S) pages can be controlled');
+ scope?.assert();const owner=owners.get(tabId);if(owner&&owner!==sessionId)throw Error('TAB_OWNED_BY_ANOTHER_SESSION');owners.set(tabId,sessionId);
+ let state=tabs.get(tabId);
+ if(!state){state={tabId,frames:new Map(),childSessions:new Set(),logs:[],errors:[],snapshots:new Map(),frameAliases:new Map()};tabs.set(tabId,state)}
+ // Keep a real or in-flight attachment across reset, but release a new owner
+ // reservation when the adapter refused it or dispatch never happened.
+ const discardReservation=()=>{if(!state.attached&&!state.attaching&&tabs.get(tabId)===state){tabs.delete(tabId);if(!owner&&owners.get(tabId)===sessionId)owners.delete(tabId)}};
+ if(!state.attached){try{await call(()=>{state.attaching??=chrome.debugger.attach({tabId},'1.3').then(()=>{state.attached=true},error=>{state.attaching=null;discardReservation();throw error});return state.attaching},'debugger.attach')}catch(error){discardReservation();throw error}}
+ const bound=scoped(state,scope);
+ if(!state.initialized){await initializeTarget(bound);scope?.assert();state.initialized=true}
+ return bound;
 }
 async function context(state,frameId){
  const tree=await send(state,'Page.getFrameTree');recordTree(state,tree.frameTree);state.mainFrame=tree.frameTree.frame.id;const id=frameId||state.mainFrame;
@@ -48,7 +83,7 @@ async function context(state,frameId){
   for(const sessionId of sessions)try{
    const {executionContextId}=await send(state,'Page.createIsolatedWorld',{frameId:id,worldName:'browser-control-lab'},sessionId);
    const injected=await send(state,'Runtime.evaluate',{expression:'('+installPageAgent.toString()+')()',contextId:executionContextId,returnByValue:true},sessionId);if(injected.exceptionDetails)throw Error(injected.exceptionDetails.text);frame.contextId=executionContextId;frame.sessionId=sessionId;return frame;
-  }catch{}
+  }catch{state[OP]?.assert()}
   await delay(50);
  }
  throw Error('FRAME_CONTEXT_UNAVAILABLE');
@@ -57,13 +92,13 @@ async function refreshFrames(state){
  await context(state);const epoch=state.frameEpoch||0;
  await Promise.all([...state.childSessions].map(async sessionId=>{
   try{const tree=await send(state,'Page.getFrameTree',{},sessionId);if(epoch===(state.frameEpoch||0)&&state.childSessions.has(sessionId))recordTree(state,tree.frameTree,null,sessionId)}
-  catch(error){if(/session.*(?:not found|closed|detached)|no session/i.test(error.message))detachTarget(state,sessionId);else state.errors.push(error.message)}
+  catch(error){state[OP]?.assert();if(/session.*(?:not found|closed|detached)|no session/i.test(error.message))detachTarget(state,sessionId);else state.errors.push(error.message)}
  }));
  pruneFrames(state);
 }
 async function ready(state,loaderId){
  const deadline=Date.now()+10000;
- while(Date.now()<deadline){try{if(loaderId){const tree=await send(state,'Page.getFrameTree');if(tree.frameTree.frame.loaderId!==loaderId){await delay(25);continue}}const frame=await context(state);const result=await send(state,'Runtime.evaluate',{expression:'document.readyState!=="loading" && Boolean(document.body)',contextId:frame.contextId,returnByValue:true},frame.sessionId);if(result.result.value)return true}catch{for(const frame of state.frames.values())frame.contextId=undefined}await delay(50)}
+ while(Date.now()<deadline){try{if(loaderId){const tree=await send(state,'Page.getFrameTree');if(tree.frameTree.frame.loaderId!==loaderId){await delay(25);continue}}const frame=await context(state);const result=await send(state,'Runtime.evaluate',{expression:'document.readyState!=="loading" && Boolean(document.body)',contextId:frame.contextId,returnByValue:true},frame.sessionId);if(result.result.value)return true}catch{state[OP]?.assert();for(const frame of state.frames.values())frame.contextId=undefined}await delay(50)}
  throw Error('DOCUMENT_READY_TIMEOUT');
 }
 async function dom(state,frameId,method,args={}){const frame=await context(state,frameId);const result=await send(state,'Runtime.callFunctionOn',{functionDeclaration:'function(method,args){return globalThis.__bcl.call(method,args)}',executionContextId:frame.contextId,arguments:[{value:method},{value:args}],returnByValue:true,awaitPromise:true},frame.sessionId);if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description||result.exceptionDetails.text);return result.result.value}
@@ -79,7 +114,7 @@ async function rootPoint(state,frameId,p){
 async function point(state,args){const box=await dom(state,args.frameId,'point',{query:args.query});const p=await rootPoint(state,args.frameId,{x:box.x,y:box.y});await evaluate(state,{source:'()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))'});const frame=await context(state,args.frameId);return {...p,input:frame.sessionId?{x:box.x,y:box.y,sessionId:frame.sessionId}:undefined}}
 
 async function mouse(state,type,args){
- state.pointer??={x:0,y:0};
+ state[OP]?.assert();state.pointer??={x:0,y:0};
  const implicit=args.x===undefined&&args.y===undefined;
  const p={x:args.x??state.pointer.x,y:args.y??state.pointer.y,input:args.input??(implicit?state.pointer.input:undefined)};
  state.pointer=p;const wire=p.input||p,button=args.button||'left';
@@ -99,7 +134,7 @@ async function evaluate(state,args,all=false){
 }
 const keyCodes={Enter:13,Tab:9,Escape:27,Backspace:8,Delete:46,ArrowLeft:37,ArrowUp:38,ArrowRight:39,ArrowDown:40,Home:36,End:35,PageUp:33,PageDown:34,Control:17,Shift:16,Alt:18,Meta:91,' ':32};
 async function key(state,type,name){
- state.keys??=new Set();if(type==='keyDown'&&['Control','Shift','Alt','Meta'].includes(name))state.keys.add(name);
+ state[OP]?.assert();state.keys??=new Set();if(type==='keyDown')state.keys.add(name);
  const virtual=keyCodes[name]||(name.length===1?name.toUpperCase().charCodeAt(0):0),mods=modifiers([...state.keys]);
  const char=name.length===1&&!(mods&6)?name:undefined;
  await send(state,'Input.dispatchKeyEvent',{type,key:name,windowsVirtualKeyCode:virtual,nativeVirtualKeyCode:virtual,modifiers:mods,...(char&&type==='keyDown'?{text:char,unmodifiedText:name}:{})});
@@ -108,7 +143,7 @@ async function key(state,type,name){
 async function press(state,combination){const parts=combination==='+'?['+']:combination.split('+'),last=parts.pop();for(const mod of parts)await key(state,'keyDown',mod);await key(state,'keyDown',last);await key(state,'keyUp',last);for(const mod of parts.reverse())await key(state,'keyUp',mod);return true}
 async function snapshot(state,args){
  const options=args.options||{},main=await context(state,args.frameId);const selected=new Set([main.id]);if(args.frameId){let changed=true;while(changed){changed=false;for(const f of state.frames.values())if(selected.has(f.parent)&&!selected.has(f.id)){selected.add(f.id);changed=true}}}const frames=args.frameId?[...state.frames.values()].filter(f=>selected.has(f.id)):[...state.frames.values()];const result={snapshotId:crypto.randomUUID(),text:'',frames:[],refs:[],truncated:false,nextCursor:null},rows=[];
- for(const frame of frames){try{if(options.root&&frame.id!==main.id)continue;const data=await dom(state,frame.id,'snapshot',{options});let alias=state.frameAliases.get(frame.id);if(!alias){alias='f'+state.frameAliases.size;state.frameAliases.set(frame.id,alias)}result.frames.push({id:frame.id,alias,parent:frame.parent,url:frame.url.slice(0,240),urlTruncated:frame.url.length>240,name:frame.name,status:'observed',documentId:data.documentId,depthLimited:data.depthLimited,nodeCount:data.nodes.length});for(const node of data.nodes){const qualified=alias+':'+data.documentId.slice(0,8)+':'+node.ref;rows.push({text:qualified+' '+(node.role||node.tag)+' '+JSON.stringify(node.name)+(node.visible===false?' [hidden]':'')+(node.offscreen?' [offscreen]':'')+(node.enabled===false?' [disabled]':'')+['checked','selected','expanded','readonly','busy'].filter(k=>node[k]!==undefined&&node[k]!==null&&(k!=='readonly'||node[k])).map(k=>' ['+k+'='+node[k]+']').join(''),meta:{ref:qualified,frameId:frame.id,role:node.role,name:node.name,checked:node.checked??undefined,selected:node.selected??undefined,expanded:node.expanded??undefined,readonly:node.readonly||undefined,busy:node.busy??undefined}})}}catch(error){result.frames.push({id:frame.id,status:'error',error:error.message})}}
+ for(const frame of frames){try{if(options.root&&frame.id!==main.id)continue;const data=await dom(state,frame.id,'snapshot',{options});let alias=state.frameAliases.get(frame.id);if(!alias){alias='f'+state.frameAliases.size;state.frameAliases.set(frame.id,alias)}result.frames.push({id:frame.id,alias,parent:frame.parent,url:frame.url.slice(0,240),urlTruncated:frame.url.length>240,name:frame.name,status:'observed',documentId:data.documentId,depthLimited:data.depthLimited,nodeCount:data.nodes.length});for(const node of data.nodes){const qualified=alias+':'+data.documentId.slice(0,8)+':'+node.ref;rows.push({text:qualified+' '+(node.role||node.tag)+' '+JSON.stringify(node.name)+(node.visible===false?' [hidden]':'')+(node.offscreen?' [offscreen]':'')+(node.enabled===false?' [disabled]':'')+['checked','selected','expanded','readonly','busy'].filter(k=>node[k]!==undefined&&node[k]!==null&&(k!=='readonly'||node[k])).map(k=>' ['+k+'='+node[k]+']').join(''),meta:{ref:qualified,frameId:frame.id,role:node.role,name:node.name,checked:node.checked??undefined,selected:node.selected??undefined,expanded:node.expanded??undefined,readonly:node.readonly||undefined,busy:node.busy??undefined}})}}catch(error){state[OP]?.assert();result.frames.push({id:frame.id,status:'error',error:error.message})}}
  const cursor=Number(options.cursor)||0,maxChars=Math.min(100000,Math.max(1000,options.maxChars||16000)),maxNodes=Math.min(10000,options.maxNodes||500),maxOutputBytes=Math.min(60000,Math.max(4096,options.maxOutputBytes||48000));let index=cursor;
  for(;index<rows.length;index++){const row=rows[index];if(result.text.length+row.text.length>maxChars||result.refs.length>=maxNodes||new TextEncoder().encode(JSON.stringify({...result,text:result.text+row.text+'\n',refs:[...result.refs,row.meta]})).length>maxOutputBytes-2048){result.truncated=true;result.nextCursor=index;break}result.text+=row.text+'\n';result.refs.push(row.meta)}
  result.totalMatchedNodes=rows.length;result.metrics={chars:result.text.length,nodes:result.refs.length,frames:result.frames.length,bytes:new TextEncoder().encode(JSON.stringify(result)).length};
@@ -135,16 +170,22 @@ async function captureScreenshot(state,options){
  throw Error('VIEWPORT_CHANGED_DURING_SCREENSHOT');
 }
 function resolveRef(state,args){if(args.query?.kind!=='ref')return args;const parts=args.query.value.split(':');if(parts.length!==3)throw Error('INVALID_REF');const frameId=[...state.frameAliases].find(([,alias])=>alias===parts[0])?.[0];if(!frameId)throw Error('STALE_FRAME_REF');return {...args,frameId,query:{...args.query,value:parts[2],documentPrefix:parts[1]}}}
-export async function browserCall(sessionId,method,args={}){
- if(method==='session.reset'){for(const [tabId,owner] of owners)if(owner===sessionId){const state=tabs.get(tabId);if(!state)continue;for(const w of state.waiters||[]){clearTimeout(w.timer);w.reject(Error('SESSION_RESET'))}state.waiters?.clear();await send(state,'Runtime.terminateExecution').catch(()=>{});state.keys?.clear();state.buttons=0}return true}
- if(method==='download.save')return saveDownload({id:args.id,sessionId,downloads,destination:args.destination});
- if(method==='download.cancel'){if(downloads.get(args.id)?.sessionId!==sessionId)throw Error('DOWNLOAD_NOT_OWNED_BY_SESSION');await chrome.downloads.cancel(Number(args.id));return true}
- if(method==='runtime.delay'){await delay(Math.min(Number(args.ms)||0,1000));return true}
+export async function browserCall(sessionId,method,args={},provenance={}){
+ if(provenance.control==='start')return lifecycle.start(sessionId,provenance.generation).then(()=>true);
+ if(provenance.control==='reset')return resetBrowserSession(sessionId,provenance.generation);
+ if(method.startsWith('session.'))throw Error('UNKNOWN_API: private lifecycle operation');
+ return lifecycle.run(sessionId,provenance.generation,{requestId:provenance.requestId,hostMethod:method},scope=>runBrowserCall(sessionId,method,args,scope));
+}
+async function runBrowserCall(sessionId,method,args,scope){
+
+ if(method==='download.save')return saveDownload({id:args.id,sessionId,downloads,destination:args.destination,scope});
+ if(method==='download.cancel'){if(downloads.get(args.id)?.sessionId!==sessionId)throw Error('DOWNLOAD_NOT_OWNED_BY_SESSION');await scope.call(()=>chrome.downloads.cancel(Number(args.id)),{method:'downloads.cancel'});return true}
+ if(method==='runtime.delay'){await delay(Math.min(Number(args.ms)||0,1000));scope.assert();return true}
  if(method==='browser.list')return [{id:'current',name:'Connected Chrome profile'}];
- if(method==='browser.tabs')return (await chrome.tabs.query({})).filter(t=>/^https?:/.test(t.url||'')).map(t=>({id:t.id,url:t.url,title:t.title,active:t.active,windowId:t.windowId}));
- if(method==='browser.open'){const tab=await chrome.tabs.create({url:args.url,active:args.active??true});owners.set(tab.id,sessionId);await delay(50);const created=await attach(sessionId,tab.id);await ready(created);return {id:tab.id}}
- if(method==='browser.attach'){const state=await attach(sessionId,args.tabId);await ready(state);return {id:Number(args.tabId)}}
- const state=await attach(sessionId,args.tabId);if(method==='scope.snapshot'&&typeof args.options?.root==='string'){const root=args.options.root;if(/^f\d+:[a-f0-9]+:e\d+$/.test(root)){args=resolveRef(state,{...args,query:{kind:'ref',value:root}});args.options={...args.options,root:args.query};delete args.query}else args.options={...args.options,root:{kind:'css',value:root}}}args=resolveRef(state,args);
+ if(method==='browser.tabs')return (await scope.call(()=>chrome.tabs.query({}),{method:'tabs.query'})).filter(t=>/^https?:/.test(t.url||'')).map(t=>({id:t.id,url:t.url,title:t.title,active:t.active,windowId:t.windowId}));
+ if(method==='browser.open'){const tab=await scope.call(async()=>{const tab=await chrome.tabs.create({url:args.url,active:args.active??true});owners.set(tab.id,sessionId);return tab},{method:'tabs.create'});await delay(50);const created=await attach(sessionId,tab.id,scope);await ready(created);return {id:tab.id}}
+ if(method==='browser.attach'){const state=await attach(sessionId,args.tabId,scope);await ready(state);return {id:Number(args.tabId)}}
+ const state=await attach(sessionId,args.tabId,scope);if(method==='scope.snapshot'&&typeof args.options?.root==='string'){const root=args.options.root;if(/^f\d+:[a-f0-9]+:e\d+$/.test(root)){args=resolveRef(state,{...args,query:{kind:'ref',value:root}});args.options={...args.options,root:args.query};delete args.query}else args.options={...args.options,root:{kind:'css',value:root}}}args=resolveRef(state,args);
 
  if(['locator.click','locator.fill','locator.hover','locator.focus','locator.scrollIntoView','locator.setChecked','locator.selectOption','locator.dragTo','locator.drop','locator.setFiles','locator.press'].includes(method)&&args.query?.kind!=='ref'){
   const end=Date.now()+5000;let count=0;
@@ -153,9 +194,9 @@ export async function browserCall(sessionId,method,args={}){
  }
  if(method==='page.waitForEvent'){const pending=waitEvent(state,args.event,args.options?.timeout||10000);if(args.event==='filechooser'){state.arming=(async()=>{for(const targetSession of [undefined,...state.childSessions])await send(state,'Page.setInterceptFileChooserDialog',{enabled:true},targetSession).catch(()=>{})})();await state.arming}return pending}
  if(method==='dialog.accept'||method==='dialog.dismiss'){await send(state,'Page.handleJavaScriptDialog',{accept:method==='dialog.accept',promptText:args.value||''});return true}
- if(method==='locator.setFiles'||method==='chooser.setFiles'||method==='locator.drop')return uploadFiles({state,args,sessionId,context,send,dom,drop:method==='locator.drop'});
- if(method==='page.activate'){await chrome.tabs.update(state.tabId,{active:true});return true}
- if(method==='page.close'){await chrome.tabs.remove(state.tabId);emit(state,'close',{});owners.delete(state.tabId);tabs.delete(state.tabId);return true}
+ if(method==='locator.setFiles'||method==='chooser.setFiles'||method==='locator.drop')return uploadFiles({state,args,sessionId,context,send,dom,scope,drop:method==='locator.drop'});
+ if(method==='page.activate'){await scope.call(()=>chrome.tabs.update(state.tabId,{active:true}),{method:'tabs.update',tabId:state.tabId});return true}
+ if(method==='page.close'){await scope.call(()=>chrome.tabs.remove(state.tabId),{method:'tabs.remove',tabId:state.tabId});emit(state,'close',{});owners.delete(state.tabId);tabs.delete(state.tabId);return true}
  if(method==='page.goto'){const nav=await send(state,'Page.navigate',{url:args.url});if(nav.errorText)throw Error('NAVIGATION_FAILED: '+nav.errorText);await ready(state,nav.loaderId);return true}
  if(method==='page.reload'){await send(state,'Page.reload');await delay(50);await ready(state);return true}
  if(method==='page.back'||method==='page.forward'){const history=await send(state,'Page.getNavigationHistory');const target=history.entries[history.currentIndex+(method==='page.back'?-1:1)];if(target)await send(state,'Page.navigateToHistoryEntry',{entryId:target.id});return Boolean(target)}
@@ -163,7 +204,7 @@ export async function browserCall(sessionId,method,args={}){
  if(method==='scope.snapshot')return snapshot(state,args);
  if(method==='scope.evaluate'||method==='locator.evaluateAll')return evaluate(state,args,method==='locator.evaluateAll');
  if(method==='page.waitForURL'||method==='page.waitForFunction'||method==='page.waitForLoadState'){
-  if(method==='page.waitForLoadState'&&!['interactive','domcontentloaded','load'].includes(args.state))throw Error('Unsupported load state: '+args.state);const end=Date.now()+(args.options?.timeout||10000);while(Date.now()<end){try{const value=method==='page.waitForURL'?await evaluate(state,{source:'()=>location.href'}):method==='page.waitForLoadState'?await evaluate(state,{source:'()=>document.readyState'}):await evaluate(state,args);if(method==='page.waitForURL'?value===args.url:method==='page.waitForLoadState'?(args.state==='load'?value==='complete':value!=='loading'):Boolean(value))return value}catch{}await delay(50)}throw Error('WAIT_TIMEOUT: '+method);
+  if(method==='page.waitForLoadState'&&!['interactive','domcontentloaded','load'].includes(args.state))throw Error('Unsupported load state: '+args.state);const end=Date.now()+(args.options?.timeout||10000);while(Date.now()<end){try{const value=method==='page.waitForURL'?await evaluate(state,{source:'()=>location.href'}):method==='page.waitForLoadState'?await evaluate(state,{source:'()=>document.readyState'}):await evaluate(state,args);if(method==='page.waitForURL'?value===args.url:method==='page.waitForLoadState'?(args.state==='load'?value==='complete':value!=='loading'):Boolean(value))return value}catch{state[OP]?.assert()}await delay(50)}throw Error('WAIT_TIMEOUT: '+method);
  }
  if(method==='locator.press'){await dom(state,args.frameId,'focus',{query:args.query});return press(state,args.key)}
  if(method==='keyboard.type'){await send(state,'Input.insertText',{text:String(args.text)});return true}

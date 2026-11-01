@@ -20,6 +20,19 @@ async function setup(){
  await bridge.close();throw Error('Test poll did not connect');
 }
 
+test('explicit reset metadata does not advance generation twice while an execution reset advances once',async()=>{
+ const {bridge,request,session,next,route}=await setup();
+ try{
+  await request(route+'reset',{requestId:'reset-metadata'});const command=await next;assert.equal(command.generation,2);
+  assert.equal((await request('/v1/extension/result',{requestId:command.requestId,sessionId:session.id,generation:2,result:{reset:true,runtimeReset:true,rollback:false,cleanup:{status:'complete'}}},bridge.extensionToken)).status,200);
+  assert.equal(bridge.sessions.get(session.id).generation,2);
+  const poll=request('/v1/extension/next',undefined,bridge.extensionToken);
+  await request(route+'js',{requestId:'auto-limit',code:'while(true){}'});const execution=(await poll).value;
+  assert.equal((await request('/v1/extension/result',{requestId:execution.requestId,sessionId:session.id,generation:2,result:{error:{code:'TIMEOUT'},runtimeReset:true}},bridge.extensionToken)).status,200);
+  assert.equal(bridge.sessions.get(session.id).generation,3);
+ }finally{await bridge.close()}
+});
+
 test('REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts',async()=>{
  const {bridge,request,session,next,route}=await setup();
  try{

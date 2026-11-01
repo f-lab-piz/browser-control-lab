@@ -1,0 +1,37 @@
+✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (2740.818042ms)
+✔ B01D reset releases held input in a real cross-site child target (347.928792ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1511.6055ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (348.923292ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3159.268ms)
+✖ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (2833.507125ms)
+✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (286.643417ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11916.234917
+
+✖ failing tests:
+
+test at tests/reset-runtime.test.mjs:91:1
+✖ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (2833.507125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'TIMEOUT'
+  - 'RESOURCE_LIMIT'
+
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:98:87)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'TIMEOUT',
+    expected: 'RESOURCE_LIMIT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

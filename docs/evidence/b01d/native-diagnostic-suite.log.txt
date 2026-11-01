@@ -1,0 +1,21 @@
+
+> browser-control-lab@0.2.0 test:fixtures
+> node --test --test-concurrency=1 tests/fixture-ui.test.mjs tests/output-fixture.test.mjs tests/reset-fixture.test.mjs
+
+✔ basic form is judged by site state (3047.239625ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (1812.60275ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (629.892667ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3801.299167ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (265.826333ms)
+✔ file bytes are verified and browser download contents match (767.484209ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (369.422417ms)
+✔ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (4380.124709ms)
+✔ reset fixture observes trusted root and OOPIF releases and delayed real clicks without injecting verdicts (3105.853959ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19389.635
