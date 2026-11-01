@@ -1,5 +1,7 @@
 # 진단 12건 수정과 3개 브라우저 툴 비교
 
+이 문서와 evidence/diagnostics-before-after.json은 초기 수정 단계의 비교 기록이다. 이후 독립 리뷰에서 발견한3건과 후속 소스의 검증은 [review-round2.md](review-round2.md)를 따른다.
+
 2026-11-01. 기존 PR #2의 `06887ed`를 Before로 보존했다. 제품 파일은 이 시점에 `35077f5`와 같았다. 이번 수정은 별도 브랜치에서 진행했으며 기존 PR을 병합하거나 수정하지 않았다. 기계 판독 결과는 [evidence/diagnostics-before-after.json](evidence/diagnostics-before-after.json)에 있다.
 
 ## 결과

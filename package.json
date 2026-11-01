@@ -11,12 +11,13 @@
     "test": "node --test tests/contracts.test.mjs tests/bridge.test.mjs",
     "test:fixtures": "node --test tests/fixture-ui.test.mjs",
     "test:bootstrap": "node --test tests/extension-bootstrap.test.mjs",
-    "test:all": "npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime",
+    "test:all": "npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:review-boundaries",
     "bridge": "node bridge/cli.mjs",
     "test:runtime": "node --test tests/runtime-e2e.test.mjs",
     "test:audit": "node scripts/audit-tools.mjs",
     "test:audit-fixture": "node --test tests/audit-fixture.test.mjs",
-    "compare:aside": "node scripts/compare-aside.mjs"
+    "compare:aside": "node scripts/compare-aside.mjs",
+    "test:review-boundaries": "node --test tests/review-boundaries.test.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

@@ -107,6 +107,24 @@ async function snapshot(state,args){
  if(new TextEncoder().encode(JSON.stringify(result)).length>maxOutputBytes&&result.diff)result.diff={resetRequired:true,reason:'DIFF_OUTPUT_BUDGET'};
  state.snapshots.set(result.snapshotId,{text:result.text,documents:JSON.stringify(result.frames.map(f=>[f.id,f.documentId]))});if(state.snapshots.size>8)state.snapshots.delete(state.snapshots.keys().next().value);return result;
 }
+async function captureScreenshot(state,options){
+ const capture=params=>send(state,'Page.captureScreenshot',params);
+ if(!options.clip){const params={format:'png',captureBeyondViewport:Boolean(options.fullPage)};if(options.fullPage){const m=await send(state,'Page.getLayoutMetrics');params.clip={x:0,y:0,width:m.cssContentSize.width,height:m.cssContentSize.height,scale:1}}return {type:'image',mimeType:'image/png',data:(await capture(params)).data}}
+ if(options.fullPage)throw Error('clip and fullPage are mutually exclusive');
+ const c=options.clip;if(![c.x,c.y,c.width,c.height].every(Number.isFinite)||c.x<0||c.y<0||c.width<=0||c.height<=0)throw Error('INVALID_SCREENSHOT_CLIP');
+ const viewport=()=>evaluate(state,{source:'async()=>{await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));return {x:visualViewport?.pageLeft??scrollX,y:visualViewport?.pageTop??scrollY,w:innerWidth,h:innerHeight,dpr:devicePixelRatio}}'});
+ const size=data=>{const bytes=Uint8Array.from(atob(data.slice(0,48)),c=>c.charCodeAt(0)),view=new DataView(bytes.buffer);return {w:view.getUint32(16),h:view.getUint32(20)}};
+ for(let attempt=0;attempt<3;attempt++){
+  const before=await viewport();
+  const params={format:'png',captureBeyondViewport:true,clip:{x:c.x+before.x,y:c.y+before.y,width:c.width,height:c.height,scale:1/(before.dpr||1)}};
+  let result=await capture(params),actual=size(result.data);
+  if(actual.w!==c.width||actual.h!==c.height){params.clip.scale*=c.width/actual.w;result=await capture(params);actual=size(result.data);if(actual.w!==c.width||actual.h!==c.height)throw Error('SCREENSHOT_SIZE_MISMATCH')}
+  // Native capture can change Chrome's viewport under device emulation.
+  // Rebase after layout/scroll anchoring rather than returning stale pixels.
+  const after=await viewport();if(JSON.stringify(before)===JSON.stringify(after))return {type:'image',mimeType:'image/png',data:result.data};
+ }
+ throw Error('VIEWPORT_CHANGED_DURING_SCREENSHOT');
+}
 function resolveRef(state,args){if(args.query?.kind!=='ref')return args;const parts=args.query.value.split(':');if(parts.length!==3)throw Error('INVALID_REF');const frameId=[...state.frameAliases].find(([,alias])=>alias===parts[0])?.[0];if(!frameId)throw Error('STALE_FRAME_REF');return {...args,frameId,query:{...args.query,value:parts[2],documentPrefix:parts[1]}}}
 export async function browserCall(sessionId,method,args={}){
  if(method==='session.reset'){for(const [tabId,owner] of owners)if(owner===sessionId){const state=tabs.get(tabId);if(!state)continue;for(const w of state.waiters||[]){clearTimeout(w.timer);w.reject(Error('SESSION_RESET'))}state.waiters?.clear();await send(state,'Runtime.terminateExecution').catch(()=>{});state.keys?.clear();state.buttons=0}return true}
@@ -143,7 +161,7 @@ export async function browserCall(sessionId,method,args={}){
  if(method==='keyboard.press')return press(state,args.key);
  if(method==='keyboard.down'||method==='keyboard.up')return key(state,method==='keyboard.down'?'keyDown':'keyUp',args.key);
  if(method==='page.logs')return state.logs.filter(log=>(!args.options?.since||log.at>args.options.since)&&(!args.options?.level||log.level===args.options.level));
- if(method==='page.screenshot'){const params={format:'png',captureBeyondViewport:Boolean(args.options?.fullPage)};if(args.options?.clip){if(args.options.fullPage)throw Error('clip and fullPage are mutually exclusive');const c=args.options.clip;if(![c.x,c.y,c.width,c.height].every(Number.isFinite)||c.x<0||c.y<0||c.width<=0||c.height<=0)throw Error('INVALID_SCREENSHOT_CLIP');const frame=await context(state);const dpr=await send(state,'Runtime.evaluate',{expression:'devicePixelRatio',contextId:frame.contextId,returnByValue:true},frame.sessionId);params.clip={x:c.x,y:c.y,width:c.width,height:c.height,scale:1/(dpr.result.value||1)};params.captureBeyondViewport=true}else if(args.options?.fullPage){const m=await send(state,'Page.getLayoutMetrics');params.clip={x:0,y:0,width:m.cssContentSize.width,height:m.cssContentSize.height,scale:1}}let r=await send(state,'Page.captureScreenshot',params);if(args.options?.clip){const width=data=>{const bytes=Uint8Array.from(atob(data.slice(0,48)),c=>c.charCodeAt(0));return new DataView(bytes.buffer).getUint32(16)};const actual=width(r.data);if(actual!==args.options.clip.width){params.clip.scale*=args.options.clip.width/actual;r=await send(state,'Page.captureScreenshot',params);if(width(r.data)!==args.options.clip.width)throw Error('SCREENSHOT_SIZE_MISMATCH')}}return {type:'image',mimeType:'image/png',data:r.data}}
+ if(method==='page.screenshot')return captureScreenshot(state,args.options||{});
  if(method==='locator.click')return click(state,args);
  if(method==='locator.hover'){await mouse(state,'mouseMoved',await point(state,args));await evaluate(state,{source:'()=>new Promise(r=>requestAnimationFrame(r))'});return true}
  if(method==='locator.fill'){await dom(state,args.frameId,'prepareFill',{query:args.query});const frame=await context(state,args.frameId);await send(state,'Input.insertText',{text:String(args.value)},frame.sessionId);if(await dom(state,args.frameId,'inputValue',{query:args.query})!==String(args.value))throw Error('INPUT_VALUE_NOT_CHANGED');return true}

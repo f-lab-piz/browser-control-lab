@@ -64,7 +64,7 @@ export async function startFixture({port=0}={}){
    if(url.pathname==='/popup')return send('<h1>팝업 연결 확인</h1><button onclick="window.close()">닫기</button>',200,'text/html; charset=utf-8');
    if(url.pathname==='/noop')return send('잘못된 목적 링크입니다. 업무 대상은 작업 카드에 표시됩니다.',200,'text/plain; charset=utf-8');
    const file=url.pathname==='/'?'index.html':url.pathname==='/audit'?'audit.html':url.pathname==='/coverage'?'coverage.html':url.pathname==='/frame'?'frame.html':url.pathname.slice(1);
-   if(!['index.html','frame.html','fixture.js','style.css','audit.html','audit.js','coverage.html'].includes(file))return send({error:'Not found'},404);
+   if(!['index.html','frame.html','fixture.js','style.css','audit.html','audit.js','coverage.html','review-boundaries.html'].includes(file))return send({error:'Not found'},404);
    const type=file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html; charset=utf-8';
    return send(await readFile(path.join(ROOT,file)),200,type);
   }catch(error){send({error:error.message},400)}

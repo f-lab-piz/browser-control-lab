@@ -1,0 +1,66 @@
+{
+  "beforeHead": "d50339baf50b449d17e3a4474ee8dfab0e540310",
+  "sourceDigests": {
+    "extension/page-agent.mjs": "d8db289eca189ebb559ee335d0f54b598c88b226c31c08e120a1cc5145195ef1",
+    "extension/browser-engine.mjs": "9965bb20649d183ecdd525d6009220c1a1a8cebb7f1841160a96419cc5c22183",
+    "test-site/review-boundaries.html": "1988e83fa2705e27acdcb9d6afe7debc2757196470c7ca86cda383cf9c403030",
+    "tests/review-boundaries.test.mjs": "a33d0c4de1cd05bc09809afd8a12406a6f57f0e682e36cc73003803639ff394c"
+  },
+  "tests": {
+    "unit": {
+      "pass": 7,
+      "fail": 0
+    },
+    "audit": {
+      "pass": 36,
+      "fail": 0
+    },
+    "runtime": {
+      "pass": 24,
+      "fail": 0,
+      "skip": 1
+    },
+    "reviewBoundariesHeadless": {
+      "pass": 5,
+      "fail": 0
+    },
+    "reviewBoundariesHeaded": {
+      "pass": 5,
+      "fail": 0
+    }
+  },
+  "boundaryEvidence": {
+    "browser": "145.0.7632.6",
+    "evidence": [
+      {
+        "case": "full-text-filter",
+        "pass": true
+      },
+      {
+        "case": "accessible-labels",
+        "pass": true
+      },
+      {
+        "case": "summary-shadow",
+        "pass": true
+      },
+      {
+        "case": "viewport-clip-vertical",
+        "pass": true,
+        "oracle": {
+          "y": 732,
+          "hit": "bottom"
+        }
+      },
+      {
+        "case": "viewport-clip-horizontal",
+        "pass": true,
+        "oracle": {
+          "x": 700,
+          "y": 732,
+          "hit": "bottom"
+        }
+      }
+    ]
+  }
+}
