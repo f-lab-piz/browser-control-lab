@@ -133,3 +133,5 @@
 down/up은 단일 토큰만, press/locator.press는 중복 없는 modifier 목록+주키1개다. 단독 '+'는 plus, 최종 '++'는 plus 주키로 해석한다(Control++). 그 외 빈 token/주키없는 조합/주키2개/unknown은 사전거절이다. modifier는선언순down,주키down/up,새소유modifier역순up. 기존명시down은보존한다.
 
 사후관측 테스트는sync/microtask revert와API완료뒤별도gate로발생시키는변경을나눈다. 임의sleep이나무한미래불변을oracle로쓰지않는다.
+
+press 주키가 해당 Page에서 이미 명시 down이면 keyboard.press/locator.press 모두 focus/입력 전에 KEY_ALREADY_DOWN으로 거절한다. 기존 modifier 재사용과 구분한다. 주키down/up 시퀀스는 새로 획득할 수 있는 주키에만 적용한다.

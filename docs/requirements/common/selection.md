@@ -143,7 +143,7 @@
 
 v1의 현재 지원 naming 소스만 순서를 정하며 전체 AX 표준 동등성을 추가 약속하지 않는다.
 
-1. aria-labelledby의 유효 IDREF를 지정 순서로 읽는다. 중복 IDREF는 첫 항목만, 일부 유효면 유효 참조만 사용한다. 참조가 전부 없거나 결합 결과가 비면 다음 소스로 fallback한다. document.getElementById 기준 첫 id요소를 사용하며 순환 분기는 빈 기여로 끊는다.
+1. aria-labelledby의 유효 IDREF를 지정 순서로 읽는다. 중복 IDREF는 첫 항목만, 일부 유효면 유효 참조만 사용한다. 참조가 전부 없거나 결합 결과가 비면 다음 소스로 fallback한다. 대상 element의 getRootNode()가 반환한 Document/ShadowRoot 안에서 getElementById 기준 첫 id요소를 사용하며 다른 frame/ShadowRoot로 fallback하지 않는다. 순환 분기는 빈 기여로 끊는다.
 2. 비어 있지 않은 aria-label.
 3. 연결된 native label들의 document 순서 텍스트.
 4. img/input image는 alt, 그 다음 title, input/textarea는 placeholder, 그 다음 본문 이름을 허용한 역할의 composed 본문. 본문 fallback 대상은 button/link/heading/option/tab 및 일반 텍스트 후보이며 main/region/navigation/table/row/list의 무명 본문을 긴 이름으로 합치지 않는다.

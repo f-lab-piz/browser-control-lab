@@ -1,0 +1,392 @@
+{
+  "checked": 55,
+  "executionPerformed": false,
+  "failures": [],
+  "results": [
+    {
+      "file": "docs/requirements/reference-methods/runtime-output.md",
+      "id": "ref-guide",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/runtime-output.md",
+      "id": "ref-reset",
+      "mode": "JSON.parse only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/runtime-output.md",
+      "id": "ref-js",
+      "mode": "JSON.parse only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/runtime-output.md",
+      "id": "ref-console-log",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/runtime-output.md",
+      "id": "ref-display",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-scope-locator",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-scope-getbyrole",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-scope-getbytext",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-scope-getbylabel",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-locator-filter",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-locator-nth",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-locator-count",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-locator-textcontent",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/selection-search.md",
+      "id": "ref-locator-getattribute",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/snapshot-frames.md",
+      "id": "ref-scope-snapshot",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/snapshot-frames.md",
+      "id": "ref-page-screenshot",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/snapshot-frames.md",
+      "id": "ref-page-frames",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/snapshot-frames.md",
+      "id": "ref-page-frame",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/snapshot-frames.md",
+      "id": "ref-locator-boundingbox",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-inputvalue",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-isvisible",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-isenabled",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-iseditable",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-ischecked",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-click",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-fill",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-press",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-setchecked",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-locator-selectoption",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-mouse-click",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-mouse-wheel",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-keyboard-press",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/input-state.md",
+      "id": "ref-keyboard-type",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/files-events.md",
+      "id": "ref-page-waitforevent",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/files-events.md",
+      "id": "ref-locator-setfiles",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/files-events.md",
+      "id": "ref-chooser-setfiles",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/files-events.md",
+      "id": "ref-download-save",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/files-events.md",
+      "id": "ref-dialog-accept",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/files-events.md",
+      "id": "ref-dialog-dismiss",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-browser-list",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-browser-tabs",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-browser-open",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-browser-attach",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-close",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-goto",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-back",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-forward",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-reload",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-locator-waitfor",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-waitforurl",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-waitforfunction",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-waitforloadstate",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-scope-evaluate",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-locator-evaluateall",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    },
+    {
+      "file": "docs/requirements/reference-methods/lifecycle-evaluation.md",
+      "id": "ref-page-logs",
+      "mode": "async function compile only",
+      "status": "parse-ok",
+      "executed": false
+    }
+  ]
+}

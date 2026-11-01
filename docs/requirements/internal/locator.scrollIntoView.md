@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-SCROLLINTOVIEW-001-C01
 
-- 조건: 노출은각관련clip scrollport와main viewport의가로/세로교차길이가모두양수인상태다.
-- 준비: 100px scrollport안300px대상과중첩양축scroll,이미노출된대상을준비한다.
-- 실행: scrollIntoView뒤box교차와입력이벤트를읽는다.
-- 판정: 최소양의교차면성공·전체포함/center/overlay제거를보장하지않고이미노출이면불필요scroll없다. click0이다.
+- 조건: 최소 기하학적 노출은 같은 main CSS 좌표의 target∩viewport∩모든 관련 overflow clip의 누적 교집합 면적이 양수인 상태다.
+- 준비: 100px port/300px target 정상 사례와 V=[0,600],outer=[0,100],inner=[200,300],target=[0,300]의 중첩 반례를 준비한다. 가로축은 겹친다.
+- 실행: scrollIntoView 후 누적 교집합과 입력 이벤트를 독립 판독한다.
+- 판정: 정상은 누적면적>0, 반례는 개별교차가양수여도전체교차0이므로이미노출로판정하지않고필요scroll한다. 전체포함/center/overlay제거는보장하지않으며click0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SCROLLINTOVIEW-002

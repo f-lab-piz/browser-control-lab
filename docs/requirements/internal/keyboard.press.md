@@ -33,10 +33,10 @@
 
 #### REQ-KEYBOARD-PRESS-001-C01
 
-- 조건: 조합키가 새로 소유한 키만 해제한다.
-- 준비: 기존 Control down과 아무 down 없는 경우
-- 실행: press Control+A→press C
-- 판정: 기존 Control은 유지·임시 Control은 해제되어 두 후속 C의 flags가 다르다.
+- 조건: press는기존modifier를보존하지만주키가이미해당Page에명시down이면focus/새키전송전에상태충돌로거절한다.
+- 준비: 기존Control만down한경우,아무down없는경우,ArrowDown또는A주키가이미명시down인경우를준비한다.
+- 실행: Control+A→C와이미down한주키의keyboard.press/locator.press를별도실행한뒤명시up한다.
+- 판정: modifier재사용은정상·새소유만release. 기존주키동일press는KEY_ALREADY_DOWN·추가focus/key이벤트0·기존주키down유지·마지막명시up으로해제한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-KEYBOARD-PRESS-001-C02

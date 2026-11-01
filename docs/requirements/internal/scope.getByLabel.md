@@ -34,9 +34,9 @@
 #### REQ-SCOPE-GETBYLABEL-001-C01
 
 - 조건: label for/감싼 label/ARIA 이름이 연결된 제어를 찾는다.
-- 준비: 각 label 방식의 제어와 같은 일반 문자열
+- 준비: for/wrappedlabel/aria-label/labelledby 제어와 같은 일반본문을 둔다. main과open ShadowRoot에같은id/다른참조이름을추가한다.
 - 실행: exact/regex 조회
-- 판정: 연결된 제어 identity가 맞고 일반 본문으로 대체하지 않는다.
+- 판정: 연결된제어의최종명시이름만매칭하고일반본문으로대체하지않는다. IDREF는대상의Document/ShadowRoot범위로만조회해바깥같은id이름을섞지않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYLABEL-001-C02
