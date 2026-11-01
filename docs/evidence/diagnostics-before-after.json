@@ -1,0 +1,693 @@
+{
+  "date": "2026-11-01",
+  "baseline": "06887ed (product files identical to 35077f5)",
+  "browser": "145.0.7632.6",
+  "before": {
+    "pass": 19,
+    "fail": 12,
+    "snapshot": {
+      "textChars": 11972,
+      "nodes": 266,
+      "frames": 2,
+      "serializedBytes": 45913,
+      "truncated": true,
+      "cursor": 266
+    },
+    "cases": [
+      {
+        "id": "semantic-email",
+        "status": "PASS",
+        "serverPassed": {
+          "semantics": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-password-hidden",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-states",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "The input did not match the regular expression /aria-selected|selected|checked|expanded/. Input:\n\n'{\"snapshotId\":\"82428b8a-9bd5-4068-93bc-37676071769c\",\"text\":\"f0:8ced93c5:e1 heading \\\\\"01 · 접근 이름과 상태\\\\\"\\\\nf0:8ced93c5:e2 label \\\\\"받는 사람\\\\\"\\\\nf0:8ced93c5:e3 textbox \\\\\"받는 사람\\\\\"\\\\nf0:8ced93c5:e4 checkbox \\\\\"수신 동의\\\\\"\\\\nf0:8ced93c5:e5 textbox \\\\\"보안 입력\\\\\"\\\\nf0:8ced93c5:e6 button \\\\\"레이블 저장\\\\\"\\\\nf0:8ced93c5:e7 switch \\\\\"알림 전환\\\\\"\\\\nf0:8ced93c5:e8 tab \\\\\"활성 탭\\\\\"\\\\nf0:8ced93c5:e9 button \\\\\"접힌 메뉴\\\\\"\\\\nf0:8ced93c5:e10 output \\\\\"semantics 판정\\\\\"\\\\n\",\"frames\":[{\"id\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"alias\":\"f0\",\"parent\":null,\"url\":\"http://127.0.0.1:55472/audit\",\"urlTruncated\":false,\"name\":\"\",\"status\":\"observed\",\"documentId\":\"8ced93c5115c1600bfe1498f26c3f9e7\",\"depthLimited\":false,\"nodeCount\":10},{\"id\":\"E1EC070076A4F53948ABE0A58DFC525D\",\"status\":\"error\",\"error\":\"Error: ELEMENT_NOT_FOUND\\\\n    at single (<anonymous>:92:37)\\\\n    at Object.call (<anonymous>:113:65)\\\\n    at <anonymous>:1:48\"}],\"refs\":[{\"ref\":\"f0:8ced93c5:e1\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"heading\",\"name\":\"01 · 접근 이름과 상태\"},{\"ref\":\"f0:8ced93c5:e2\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"\",\"name\":\"받는 사람\"},{\"ref\":\"f0:8ced93c5:e3\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"textbox\",\"name\":\"받는 사람\"},{\"ref\":\"f0:8ced93c5:e4\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"checkbox\",\"name\":\"수신 동의\"},{\"ref\":\"f0:8ced93c5:e5\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"textbox\",\"name\":\"보안 입력\"},{\"ref\":\"f0:8ced93c5:e6\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"button\",\"name\":\"레이블 저장\"},{\"ref\":\"f0:8ced93c5:e7\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"switch\",\"name\":\"알림 전환\"},{\"ref\":\"f0:8ced93c5:e8\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"tab\",\"name\":\"활성 탭\"},{\"ref\":\"f0:8ced93c5:e9\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"button\",\"name\":\"접힌 메뉴\"},{\"ref\":\"f0:8ced93c5:e10\",\"frameId\":\"57964B4C59BE047E50DA81D7BC498FC5\",\"role\":\"\",\"name\":\"semantics 판정\"}],\"truncated\":false,\"nextCursor\":null,\"totalMatchedNodes\":10,\"metrics\":{\"chars\":318,\"nodes\":10,\"frames\":2,\"bytes\":2109}}'\n"
+      },
+      {
+        "id": "duplicate-strict",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "duplicate-scoped",
+        "status": "PASS",
+        "serverPassed": {
+          "duplicates": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "filter-hasText",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "regex-role",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "Expected values to be strictly equal:\n\n'0' !== '1'\n"
+      },
+      {
+        "id": "filter-visible",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "Expected values to be strictly equal:\n\n'3' !== '2'\n"
+      },
+      {
+        "id": "negative-nth",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "Expected values to be strictly equal:\n\n'0' !== '1'\n"
+      },
+      {
+        "id": "delayed-enabled",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "{\"code\":\"JS_ERROR\",\"message\":\"Error: ELEMENT_DISABLED\\n    at action (<anonymous>:97:87)\\n    at Object.call (<anonymous>:130:7)\\n    at <anonymous>:1:48\"}\n+ actual - expected\n\n+ 'failed'\n- 'completed'\n"
+      },
+      {
+        "id": "overlay-reject",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "overlay-recover",
+        "status": "PASS",
+        "serverPassed": {
+          "overlay": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "readonly-fill",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'failed'\n"
+      },
+      {
+        "id": "nested-shadow",
+        "status": "PASS",
+        "serverPassed": {
+          "shadow": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "slot-name",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "{\"code\":\"JS_ERROR\",\"message\":\"ELEMENT_NOT_FOUND_TIMEOUT\"}\n+ actual - expected\n\n+ 'failed'\n- 'completed'\n"
+      },
+      {
+        "id": "details-expand",
+        "status": "PASS",
+        "serverPassed": {
+          "details": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "html-drag",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "page.waitForFunction: Timeout 2000ms exceeded."
+      },
+      {
+        "id": "mime-drop",
+        "status": "PASS",
+        "serverPassed": {
+          "mime": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "multi-files",
+        "status": "PASS",
+        "serverPassed": {
+          "multi": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "local-file-drop",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "{\"code\":\"JS_ERROR\",\"message\":\"Local-path file drop requires a browser-readable transfer; use an imported file reference\"}\n+ actual - expected\n\n+ 'failed'\n- 'completed'\n"
+      },
+      {
+        "id": "blob-download",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "post-download",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "cookie-download",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "clipped-input",
+        "status": "PASS",
+        "serverPassed": {
+          "clipped": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-offscreen",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-full-budget",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-since-filter",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-collapsed",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "The expression evaluated to a falsy value:\n\n  assert(!s.refs.some(x=>x.name==='세부 확정'))\n"
+      },
+      {
+        "id": "snapshot-no-duplicate-label",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "screenshot-clip",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "Expected values to be strictly equal:\n\n2564 !== 320\n"
+      },
+      {
+        "id": "scaled-frame-click",
+        "status": "FAIL",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": "locator.waitFor: Timeout 1500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '좌표 성공', exact: true }) to be visible\u001b[22m\n"
+      }
+    ]
+  },
+  "after": {
+    "pass": 31,
+    "fail": 0,
+    "snapshot": {
+      "textChars": 12032,
+      "nodes": 264,
+      "frames": 2,
+      "serializedBytes": 45899,
+      "truncated": true,
+      "cursor": 264
+    },
+    "cases": [
+      {
+        "id": "semantic-email",
+        "status": "PASS",
+        "serverPassed": {
+          "semantics": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-password-hidden",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-states",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "duplicate-strict",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "duplicate-scoped",
+        "status": "PASS",
+        "serverPassed": {
+          "duplicates": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "filter-hasText",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "regex-role",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "filter-visible",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "negative-nth",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "delayed-enabled",
+        "status": "PASS",
+        "serverPassed": {
+          "delay": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "overlay-reject",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "overlay-recover",
+        "status": "PASS",
+        "serverPassed": {
+          "overlay": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "readonly-fill",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "nested-shadow",
+        "status": "PASS",
+        "serverPassed": {
+          "shadow": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "slot-name",
+        "status": "PASS",
+        "serverPassed": {
+          "slot": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "details-expand",
+        "status": "PASS",
+        "serverPassed": {
+          "details": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "html-drag",
+        "status": "PASS",
+        "serverPassed": {
+          "drag": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "mime-drop",
+        "status": "PASS",
+        "serverPassed": {
+          "mime": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "multi-files",
+        "status": "PASS",
+        "serverPassed": {
+          "multi": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "local-file-drop",
+        "status": "PASS",
+        "serverPassed": {
+          "localdrop": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "blob-download",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "post-download",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "cookie-download",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "clipped-input",
+        "status": "PASS",
+        "serverPassed": {
+          "clipped": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-offscreen",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-full-budget",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-since-filter",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-collapsed",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "snapshot-no-duplicate-label",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "screenshot-clip",
+        "status": "PASS",
+        "serverPassed": {},
+        "eventCount": 0,
+        "readonlyValue": "LOCKED",
+        "error": null
+      },
+      {
+        "id": "scaled-frame-click",
+        "status": "PASS",
+        "serverPassed": {
+          "coordinates": true
+        },
+        "eventCount": 1,
+        "readonlyValue": "LOCKED",
+        "error": null
+      }
+    ],
+    "sourceDigests": {
+      "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+      "extension/page-agent.mjs": "4874e943c5915a4f694db223430a82c5c0129e20d4567f36e62f0e37537e514e",
+      "extension/browser-engine.mjs": "321e7ca03afc1dfd89cf137a55f15c990028971d6c7c20cdb2955a63c1973796",
+      "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68"
+    }
+  },
+  "additional": {
+    "total": 36,
+    "pass": 36,
+    "fail": 0,
+    "sourceDigests": {
+      "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+      "extension/page-agent.mjs": "4874e943c5915a4f694db223430a82c5c0129e20d4567f36e62f0e37537e514e",
+      "extension/browser-engine.mjs": "321e7ca03afc1dfd89cf137a55f15c990028971d6c7c20cdb2955a63c1973796",
+      "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68"
+    }
+  },
+  "regression": {
+    "pass": 24,
+    "fail": 0,
+    "skip": 1
+  },
+  "codex": {
+    "source": "live in-app browser cua_repl, same /audit",
+    "snapshotChars": 2682070,
+    "tail": true,
+    "selected": true,
+    "secret": false,
+    "regex": 1,
+    "visibleFilter": 2,
+    "nthMinusOne": 1,
+    "slotClick": true,
+    "scaledFrameClick": true,
+    "readonly": "rejected",
+    "clip": {
+      "format": "JPEG",
+      "width": 320,
+      "height": 240
+    }
+  },
+  "aside": {
+    "engine": "Aside",
+    "cases": [
+      {
+        "id": "regex-role",
+        "status": "measured",
+        "value": 1
+      },
+      {
+        "id": "filter-visible",
+        "status": "measured",
+        "value": 3
+      },
+      {
+        "id": "negative-nth",
+        "status": "error",
+        "error": "DOMException"
+      },
+      {
+        "id": "slot-name",
+        "status": "error",
+        "error": "Role selector not found: role:button[name=%EC%8A%AC%EB%A1%AF%20%EC%8A%B9%EC%9D%B8]"
+      },
+      {
+        "id": "readonly-fill",
+        "status": "measured",
+        "value": "rejected"
+      },
+      {
+        "id": "scaled-frame-click",
+        "status": "measured",
+        "value": 0
+      },
+      {
+        "id": "html-drag",
+        "status": "measured",
+        "value": true
+      },
+      {
+        "id": "screenshot-clip",
+        "status": "measured",
+        "value": {
+          "width": 640,
+          "height": 480
+        }
+      }
+    ],
+    "snapshot": {
+      "chars": 13175,
+      "tail": false,
+      "selected": true,
+      "secret": false,
+      "mentionsTruncation": true
+    },
+    "scoped": {
+      "chars": 104,
+      "tail": true
+    },
+    "serverPassed": {
+      "drag": true
+    },
+    "events": [
+      {
+        "type": "audit-step",
+        "data": {
+          "key": "drag",
+          "value": "shipment-A"
+        },
+        "accepted": true,
+        "at": 1793520989505
+      },
+      {
+        "type": "audit-step",
+        "data": {
+          "key": "drag",
+          "value": "shipment-A"
+        },
+        "accepted": true,
+        "at": 1793520989512
+      }
+    ]
+  }
+}

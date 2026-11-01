@@ -1,5 +1,11 @@
 {
-  "productCommit": "35077f5",
+  "productRevision": "fix-3-working-tree",
+  "sourceDigests": {
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/page-agent.mjs": "4874e943c5915a4f694db223430a82c5c0129e20d4567f36e62f0e37537e514e",
+    "extension/browser-engine.mjs": "321e7ca03afc1dfd89cf137a55f15c990028971d6c7c20cdb2955a63c1973796",
+    "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68"
+  },
   "count": 64,
   "external": {
     "guide": "guide and authentication",
@@ -121,7 +127,7 @@
         },
         {
           "id": "snapshot-states",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "snapshot-offscreen",
@@ -133,7 +139,7 @@
         },
         {
           "id": "snapshot-collapsed",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "snapshot-since-filter",
@@ -156,7 +162,7 @@
       "diagnostics": [
         {
           "id": "screenshot-clip",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -171,7 +177,7 @@
       "diagnostics": [
         {
           "id": "scaled-frame-click",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -186,7 +192,7 @@
       "diagnostics": [
         {
           "id": "scaled-frame-click",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -211,11 +217,11 @@
       "diagnostics": [
         {
           "id": "regex-role",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "slot-name",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "duplicate-strict",
@@ -248,7 +254,7 @@
         },
         {
           "id": "readonly-fill",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -267,7 +273,7 @@
         },
         {
           "id": "filter-visible",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -282,7 +288,7 @@
       "diagnostics": [
         {
           "id": "negative-nth",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -387,7 +393,7 @@
       "diagnostics": [
         {
           "id": "delayed-enabled",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "overlay-reject",
@@ -403,11 +409,11 @@
         },
         {
           "id": "slot-name",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "scaled-frame-click",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "id": "clipped-input",
@@ -430,7 +436,7 @@
         },
         {
           "id": "readonly-fill",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -505,7 +511,7 @@
       "diagnostics": [
         {
           "id": "html-drag",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
@@ -524,7 +530,7 @@
         },
         {
           "id": "local-file-drop",
-          "status": "FAIL"
+          "status": "PASS"
         }
       ],
       "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"

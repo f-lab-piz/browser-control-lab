@@ -15,7 +15,8 @@
     "bridge": "node bridge/cli.mjs",
     "test:runtime": "node --test tests/runtime-e2e.test.mjs",
     "test:audit": "node scripts/audit-tools.mjs",
-    "test:audit-fixture": "node --test tests/audit-fixture.test.mjs"
+    "test:audit-fixture": "node --test tests/audit-fixture.test.mjs",
+    "compare:aside": "node scripts/compare-aside.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

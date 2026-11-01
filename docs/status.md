@@ -45,3 +45,7 @@ Chrome for Testing **145.0.7632.6**, macOS, 별도 임시 프로필.
 ## 2026-11-01 수정 전 추가 평가
 
 사용자의 요청에 따라 제품 툴 코드를 동결하고 요구사항·스킬·진단 페이지·테스트만 보완했다. 새 진단31개는19 PASS/12 FAIL이며 기존24개 회귀는 PASS다. 이전 verified-basic은 전체 옵션·실패 조건 검증을 뜻하지 않는다. 상세 결과와 우선순위는 tool-improvement-report.md,64 API 매핑은 api-test-matrix.json을 따른다. Aside 실측은 프로필 연결 문제로 차단됐으며 가이드 비교와 Codex 실제 호출을 구분했다. 툴 보완 구현은 아직 하지 않았다.
+
+## 2026-11-01 진단 수정 구현
+
+후속 사용자 요청으로12건을 수정했다. 원래 진단31/31·추가 경계 포함36/36·기존 회귀24/24·단위7/7을 통과했다. Codex와 Aside 모두 동일 fixture에서 실측했으며 Before/After와 남은 제약은 fixes-before-after.md 및 evidence/diagnostics-before-after.json을 따른다. 평가 당시 보고서는 변경하지 않고 이력으로 남긴다. 기존 PR #2 위의 별도 수정 PR로 검토한다.

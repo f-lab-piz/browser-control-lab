@@ -1,6 +1,7 @@
 // Evaluation harness only. Product engine is frozen during this audit.
 import {chromium} from 'playwright';
 import {mkdtemp,mkdir,writeFile,rm,readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import path from 'node:path';import os from 'node:os';import assert from 'node:assert/strict';
 import {startFixture} from '../test-site/server.mjs';import {startBridge} from '../bridge/server.mjs';import {bridgeClient} from '../bridge/client.mjs';import {buildExtension} from './build-extension.mjs';
 const out='output/tool-audit';await mkdir(out,{recursive:true});const root=await mkdtemp(path.join(os.tmpdir(),'bcl-audit-'));await mkdir(path.join(root,'downloads'));await writeFile(path.join(root,'local-proof.txt'),'local-proof');
@@ -39,6 +40,13 @@ add('snapshot-collapsed',`console.log(await p.snapshot({root:'#details'}));`,r=>
 add('snapshot-no-duplicate-label',`console.log(await p.snapshot({root:'#semantics'}));`,r=>{success(r);const s=JSON.parse(text(r));assert.equal(s.refs.filter(x=>x.name==='레이블 저장').length,1)},'버튼 라벨 leaf 중복 축소');
 add('screenshot-clip',`display(await p.screenshot({clip:{x:0,y:0,width:320,height:240}}));`,r=>{success(r);const im=r.result.content.find(x=>x.type==='image');const b=Buffer.from(im.data,'base64');assert.equal(b.readUInt32BE(16),320);assert.equal(b.readUInt32BE(20),240)},'clip 옵션의 실제 PNG 크기');
 add('scaled-frame-click',`var frame=(await p.frames()).find(f=>f.url.includes('/audit-frame'));await p.frame(frame.id).getByRole('button',{name:'좌표 내부 실행',exact:true}).click();`,async(r,page)=>{success(r);await page.frameLocator('iframe').getByRole('button',{name:'좌표 성공',exact:true}).waitFor({timeout:1500})},'CSS transform 적용 iframe 좌표 클릭');
+if(process.env.AUDIT_EXTRA==='1'){
+ add('exact-state-values',`console.log(await p.snapshot({root:'#semantics'}));`,r=>{success(r);const s=JSON.parse(text(r));assert.match(s.text,/checked=false/);assert.match(s.text,/selected=true/);assert.match(s.text,/expanded=false/)},'3種 상태를 각각 독립 확인');
+ add('invalid-filter',`console.log(await p.locator('button').filter({unknown:true}).count());`,r=>{assert.equal(r.status,'failed');assert.match(r.result.error.message,/UNSUPPORTED_FILTER/)},'미지원 옵션 명시적 거절');
+ add('invalid-clip',`display(await p.screenshot({clip:{x:0,y:0,width:-1,height:240}}));`,r=>{assert.equal(r.status,'failed');assert.match(r.result.error.message,/INVALID_SCREENSHOT_CLIP/)},'잘못된 캡처 크기 거절');
+ add('regex-flags-repeat',`console.log(await p.getByRole('button',{name:/레이블 저장/g}).count(),await p.getByRole('button',{name:/레이블 저장/g}).count());`,r=>{success(r);assert.equal(text(r),'1 1')},'정규식 flags와 반복 호출');
+ add('show-hidden-label',`console.log(await p.snapshot({root:'#details',showHidden:true}));`,r=>{success(r);assert.match(JSON.parse(text(r)).text,/세부 확정.*\[hidden\]/)},'숨김 요청 시 명시적 hidden 표시');
+}
 let session;
 try{
  const directory=await buildExtension({directory:path.join(root,'extension'),connection:{url:bridge.url,token:bridge.extensionToken}});
@@ -53,9 +61,9 @@ try{
    r=await client.js(session.id,c.code,{timeoutMs:12000});await c.check(r,page,run);results.push({id:c.id,status:'PASS',expectation:c.expectation,ms:Date.now()-start,result:r});
   }catch(error){results.push({id:c.id,status:'FAIL',expectation:c.expectation,error:error.message,ms:Date.now()-start,result:r});}
   if(run){const observed=await fetch(fixture.url+'/api/runs/'+run).then(r=>r.json());results.at(-1).serverPassed=observed.state.passed||{};results.at(-1).eventCount=observed.events.length;results.at(-1).readonlyValue=await page.getByLabel('고정 문서번호').inputValue();}
-  console.log(results.at(-1).status+' '+c.id);
+  if(c.id==='html-drag'){results.at(-1).logs=await client.js(session.id,'console.log(await p.logs())');if(results.at(-1).status==='PASS'){assert.match(text(results.at(-1).logs),/DRAGSTART true/);assert.equal(results.at(-1).eventCount,1)}}console.log(results.at(-1).status+' '+c.id);
   if(page){if(c.id==='semantic-email')await page.screenshot({path:out+'/audit-page.png'});await client.js(session.id,'await p.close()').catch(()=>{})}
  }
 }finally{
- const summary={date:new Date().toISOString(),grade:'frozen-product-extension-audit',browser:context?.browser()?.version(),productCommit:'35077f5',pass:results.filter(x=>x.status==='PASS').length,fail:results.filter(x=>x.status==='FAIL').length,total:results.length,cases:results};await writeFile(out+'/results.json',JSON.stringify(summary,null,2));console.log(JSON.stringify({pass:summary.pass,fail:summary.fail,total:summary.total}));process.exitCode=summary.fail?1:0;await context?.close();await bridge.close();await fixture.close();await rm(root,{recursive:true,force:true});
+ const summary={date:new Date().toISOString(),grade:'product-extension-audit',browser:context?.browser()?.version(),productRevision:process.env.PRODUCT_REVISION||'working-tree',sourceDigests:Object.fromEntries(await Promise.all(['extension/api-source.mjs','extension/page-agent.mjs','extension/browser-engine.mjs','extension/files.mjs'].map(async p=>[p,createHash('sha256').update(await readFile(p)).digest('hex')])) ),pass:results.filter(x=>x.status==='PASS').length,fail:results.filter(x=>x.status==='FAIL').length,total:results.length,cases:results};await writeFile(out+'/results.json',JSON.stringify(summary,null,2));console.log(JSON.stringify({pass:summary.pass,fail:summary.fail,total:summary.total}));process.exitCode=summary.fail?1:0;await context?.close();await bridge.close();await fixture.close();await rm(root,{recursive:true,force:true});
 }
