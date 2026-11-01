@@ -1,0 +1,331 @@
+{
+  "checked": 54,
+  "executionPerformed": false,
+  "failures": [],
+  "results": [
+    {
+      "api": "guide",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "reset",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "JSON"
+    },
+    {
+      "api": "js",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "JSON"
+    },
+    {
+      "api": "browser.list",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "browser.tabs",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "browser.open",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "browser.attach",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.close",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.goto",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.back",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.forward",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.reload",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "scope.snapshot",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.screenshot",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.frames",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.frame",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "scope.locator",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "scope.getByRole",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "scope.getByText",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "scope.getByLabel",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.filter",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.nth",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.count",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.textContent",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.getAttribute",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.inputValue",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.isVisible",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.isEnabled",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.isEditable",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.isChecked",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.boundingBox",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.click",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.fill",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.press",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.setChecked",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.selectOption",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "mouse.click",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "mouse.wheel",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "keyboard.press",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "keyboard.type",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.waitFor",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.waitForEvent",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.waitForURL",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.waitForLoadState",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.setFiles",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "chooser.setFiles",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "download.save",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "dialog.accept",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "dialog.dismiss",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "scope.evaluate",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "locator.evaluateAll",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "page.logs",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "console.log",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    },
+    {
+      "api": "display",
+      "status": "parse-ok",
+      "executed": false,
+      "mode": "async function compile only"
+    }
+  ]
+}

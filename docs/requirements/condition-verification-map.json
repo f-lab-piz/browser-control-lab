@@ -1,0 +1,2545 @@
+{
+  "schemaVersion": 1,
+  "conditions": [
+    {
+      "id": "REQ-GUIDE-001-C01",
+      "requirement": "REQ-GUIDE-001",
+      "planId": "PLAN-GUIDE-001.C01",
+      "spec": "external/guide.md",
+      "anchor": "req-guide-001-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-GUIDE-001-C02",
+      "requirement": "REQ-GUIDE-001",
+      "planId": "PLAN-GUIDE-001.C02",
+      "spec": "external/guide.md",
+      "anchor": "req-guide-001-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-GUIDE-002-C01",
+      "requirement": "REQ-GUIDE-002",
+      "planId": "PLAN-GUIDE-002.C01",
+      "spec": "external/guide.md",
+      "anchor": "req-guide-002-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-GUIDE-002-C02",
+      "requirement": "REQ-GUIDE-002",
+      "planId": "PLAN-GUIDE-002.C02",
+      "spec": "external/guide.md",
+      "anchor": "req-guide-002-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-RESET-001-C01",
+      "requirement": "REQ-RESET-001",
+      "planId": "PLAN-RESET-001.C01",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-001-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-RESET-001-C02",
+      "requirement": "REQ-RESET-001",
+      "planId": "PLAN-RESET-001.C02",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-001-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-RESET-002-C01",
+      "requirement": "REQ-RESET-002",
+      "planId": "PLAN-RESET-002.C01",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-002-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-RESET-002-C02",
+      "requirement": "REQ-RESET-002",
+      "planId": "PLAN-RESET-002.C02",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-002-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-RESET-003-C01",
+      "requirement": "REQ-RESET-003",
+      "planId": "PLAN-RESET-003.C01",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-003-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-JS-001-C01",
+      "requirement": "REQ-JS-001",
+      "planId": "PLAN-JS-001.C01",
+      "spec": "external/js.md",
+      "anchor": "req-js-001-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-JS-001-C02",
+      "requirement": "REQ-JS-001",
+      "planId": "PLAN-JS-001.C02",
+      "spec": "external/js.md",
+      "anchor": "req-js-001-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-JS-002-C01",
+      "requirement": "REQ-JS-002",
+      "planId": "PLAN-JS-002.C01",
+      "spec": "external/js.md",
+      "anchor": "req-js-002-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-JS-002-C02",
+      "requirement": "REQ-JS-002",
+      "planId": "PLAN-JS-002.C02",
+      "spec": "external/js.md",
+      "anchor": "req-js-002-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-JS-003-C01",
+      "requirement": "REQ-JS-003",
+      "planId": "PLAN-JS-003.C01",
+      "spec": "external/js.md",
+      "anchor": "req-js-003-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-LIST-001-C01",
+      "requirement": "REQ-BROWSER-LIST-001",
+      "planId": "PLAN-BROWSER-LIST-001.C01",
+      "spec": "internal/browser.list.md",
+      "anchor": "req-browser-list-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-LIST-001-C02",
+      "requirement": "REQ-BROWSER-LIST-001",
+      "planId": "PLAN-BROWSER-LIST-001.C02",
+      "spec": "internal/browser.list.md",
+      "anchor": "req-browser-list-001-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-LIST-002-C01",
+      "requirement": "REQ-BROWSER-LIST-002",
+      "planId": "PLAN-BROWSER-LIST-002.C01",
+      "spec": "internal/browser.list.md",
+      "anchor": "req-browser-list-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-TABS-001-C01",
+      "requirement": "REQ-BROWSER-TABS-001",
+      "planId": "PLAN-BROWSER-TABS-001.C01",
+      "spec": "internal/browser.tabs.md",
+      "anchor": "req-browser-tabs-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-TABS-001-C02",
+      "requirement": "REQ-BROWSER-TABS-001",
+      "planId": "PLAN-BROWSER-TABS-001.C02",
+      "spec": "internal/browser.tabs.md",
+      "anchor": "req-browser-tabs-001-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-TABS-002-C01",
+      "requirement": "REQ-BROWSER-TABS-002",
+      "planId": "PLAN-BROWSER-TABS-002.C01",
+      "spec": "internal/browser.tabs.md",
+      "anchor": "req-browser-tabs-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-001-C01",
+      "requirement": "REQ-BROWSER-OPEN-001",
+      "planId": "PLAN-BROWSER-OPEN-001.C01",
+      "spec": "internal/browser.open.md",
+      "anchor": "req-browser-open-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-001-C02",
+      "requirement": "REQ-BROWSER-OPEN-001",
+      "planId": "PLAN-BROWSER-OPEN-001.C02",
+      "spec": "internal/browser.open.md",
+      "anchor": "req-browser-open-001-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-002-C01",
+      "requirement": "REQ-BROWSER-OPEN-002",
+      "planId": "PLAN-BROWSER-OPEN-002.C01",
+      "spec": "internal/browser.open.md",
+      "anchor": "req-browser-open-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-002-C02",
+      "requirement": "REQ-BROWSER-OPEN-002",
+      "planId": "PLAN-BROWSER-OPEN-002.C02",
+      "spec": "internal/browser.open.md",
+      "anchor": "req-browser-open-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-ATTACH-001-C01",
+      "requirement": "REQ-BROWSER-ATTACH-001",
+      "planId": "PLAN-BROWSER-ATTACH-001.C01",
+      "spec": "internal/browser.attach.md",
+      "anchor": "req-browser-attach-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-BROWSER-ATTACH-002-C01",
+      "requirement": "REQ-BROWSER-ATTACH-002",
+      "planId": "PLAN-BROWSER-ATTACH-002.C01",
+      "spec": "internal/browser.attach.md",
+      "anchor": "req-browser-attach-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-ACTIVATE-001-C01",
+      "requirement": "REQ-PAGE-ACTIVATE-001",
+      "planId": "PLAN-PAGE-ACTIVATE-001.C01",
+      "spec": "internal/page.activate.md",
+      "anchor": "req-page-activate-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-ACTIVATE-002-C01",
+      "requirement": "REQ-PAGE-ACTIVATE-002",
+      "planId": "PLAN-PAGE-ACTIVATE-002.C01",
+      "spec": "internal/page.activate.md",
+      "anchor": "req-page-activate-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-CLOSE-001-C01",
+      "requirement": "REQ-PAGE-CLOSE-001",
+      "planId": "PLAN-PAGE-CLOSE-001.C01",
+      "spec": "internal/page.close.md",
+      "anchor": "req-page-close-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-CLOSE-002-C01",
+      "requirement": "REQ-PAGE-CLOSE-002",
+      "planId": "PLAN-PAGE-CLOSE-002.C01",
+      "spec": "internal/page.close.md",
+      "anchor": "req-page-close-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-001-C01",
+      "requirement": "REQ-PAGE-GOTO-001",
+      "planId": "PLAN-PAGE-GOTO-001.C01",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-001-C02",
+      "requirement": "REQ-PAGE-GOTO-001",
+      "planId": "PLAN-PAGE-GOTO-001.C02",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-001-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-002-C01",
+      "requirement": "REQ-PAGE-GOTO-002",
+      "planId": "PLAN-PAGE-GOTO-002.C01",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-002-C02",
+      "requirement": "REQ-PAGE-GOTO-002",
+      "planId": "PLAN-PAGE-GOTO-002.C02",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-002-C03",
+      "requirement": "REQ-PAGE-GOTO-002",
+      "planId": "PLAN-PAGE-GOTO-002.C03",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-002-c03",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-BACK-001-C01",
+      "requirement": "REQ-PAGE-BACK-001",
+      "planId": "PLAN-PAGE-BACK-001.C01",
+      "spec": "internal/page.back.md",
+      "anchor": "req-page-back-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-BACK-002-C01",
+      "requirement": "REQ-PAGE-BACK-002",
+      "planId": "PLAN-PAGE-BACK-002.C01",
+      "spec": "internal/page.back.md",
+      "anchor": "req-page-back-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-BACK-002-C02",
+      "requirement": "REQ-PAGE-BACK-002",
+      "planId": "PLAN-PAGE-BACK-002.C02",
+      "spec": "internal/page.back.md",
+      "anchor": "req-page-back-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-001-C01",
+      "requirement": "REQ-PAGE-FORWARD-001",
+      "planId": "PLAN-PAGE-FORWARD-001.C01",
+      "spec": "internal/page.forward.md",
+      "anchor": "req-page-forward-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-002-C01",
+      "requirement": "REQ-PAGE-FORWARD-002",
+      "planId": "PLAN-PAGE-FORWARD-002.C01",
+      "spec": "internal/page.forward.md",
+      "anchor": "req-page-forward-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-002-C02",
+      "requirement": "REQ-PAGE-FORWARD-002",
+      "planId": "PLAN-PAGE-FORWARD-002.C02",
+      "spec": "internal/page.forward.md",
+      "anchor": "req-page-forward-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-001-C01",
+      "requirement": "REQ-PAGE-RELOAD-001",
+      "planId": "PLAN-PAGE-RELOAD-001.C01",
+      "spec": "internal/page.reload.md",
+      "anchor": "req-page-reload-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-002-C01",
+      "requirement": "REQ-PAGE-RELOAD-002",
+      "planId": "PLAN-PAGE-RELOAD-002.C01",
+      "spec": "internal/page.reload.md",
+      "anchor": "req-page-reload-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-002-C02",
+      "requirement": "REQ-PAGE-RELOAD-002",
+      "planId": "PLAN-PAGE-RELOAD-002.C02",
+      "spec": "internal/page.reload.md",
+      "anchor": "req-page-reload-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-001-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-001",
+      "planId": "PLAN-SCOPE-SNAPSHOT-001.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-001-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-002-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-002",
+      "planId": "PLAN-SCOPE-SNAPSHOT-002.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-002-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-003-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-003",
+      "planId": "PLAN-SCOPE-SNAPSHOT-003.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-003-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-003-C02",
+      "requirement": "REQ-SCOPE-SNAPSHOT-003",
+      "planId": "PLAN-SCOPE-SNAPSHOT-003.C02",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-003-c02",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-004-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-004",
+      "planId": "PLAN-SCOPE-SNAPSHOT-004.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-004-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-004-C02",
+      "requirement": "REQ-SCOPE-SNAPSHOT-004",
+      "planId": "PLAN-SCOPE-SNAPSHOT-004.C02",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-004-c02",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-005-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-005",
+      "planId": "PLAN-SCOPE-SNAPSHOT-005.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-005-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-005-C02",
+      "requirement": "REQ-SCOPE-SNAPSHOT-005",
+      "planId": "PLAN-SCOPE-SNAPSHOT-005.C02",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-005-c02",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-006-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-006",
+      "planId": "PLAN-SCOPE-SNAPSHOT-006.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-006-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-007-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-007",
+      "planId": "PLAN-SCOPE-SNAPSHOT-007.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-007-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-008-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-008",
+      "planId": "PLAN-SCOPE-SNAPSHOT-008.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-008-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-009-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-009",
+      "planId": "PLAN-SCOPE-SNAPSHOT-009.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-009-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-010-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-010",
+      "planId": "PLAN-SCOPE-SNAPSHOT-010.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-010-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-011-C01",
+      "requirement": "REQ-SCOPE-SNAPSHOT-011",
+      "planId": "PLAN-SCOPE-SNAPSHOT-011.C01",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-011-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-001-C01",
+      "requirement": "REQ-PAGE-SCREENSHOT-001",
+      "planId": "PLAN-PAGE-SCREENSHOT-001.C01",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-001-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-002-C01",
+      "requirement": "REQ-PAGE-SCREENSHOT-002",
+      "planId": "PLAN-PAGE-SCREENSHOT-002.C01",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-002-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-002-C02",
+      "requirement": "REQ-PAGE-SCREENSHOT-002",
+      "planId": "PLAN-PAGE-SCREENSHOT-002.C02",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-002-c02",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-003-C01",
+      "requirement": "REQ-PAGE-SCREENSHOT-003",
+      "planId": "PLAN-PAGE-SCREENSHOT-003.C01",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-003-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-004-C01",
+      "requirement": "REQ-PAGE-SCREENSHOT-004",
+      "planId": "PLAN-PAGE-SCREENSHOT-004.C01",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-004-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FRAMES-001-C01",
+      "requirement": "REQ-PAGE-FRAMES-001",
+      "planId": "PLAN-PAGE-FRAMES-001.C01",
+      "spec": "internal/page.frames.md",
+      "anchor": "req-page-frames-001-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FRAMES-002-C01",
+      "requirement": "REQ-PAGE-FRAMES-002",
+      "planId": "PLAN-PAGE-FRAMES-002.C01",
+      "spec": "internal/page.frames.md",
+      "anchor": "req-page-frames-002-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FRAME-001-C01",
+      "requirement": "REQ-PAGE-FRAME-001",
+      "planId": "PLAN-PAGE-FRAME-001.C01",
+      "spec": "internal/page.frame.md",
+      "anchor": "req-page-frame-001-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-FRAME-002-C01",
+      "requirement": "REQ-PAGE-FRAME-002",
+      "planId": "PLAN-PAGE-FRAME-002.C01",
+      "spec": "internal/page.frame.md",
+      "anchor": "req-page-frame-002-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-001-C01",
+      "requirement": "REQ-SCOPE-LOCATOR-001",
+      "planId": "PLAN-SCOPE-LOCATOR-001.C01",
+      "spec": "internal/scope.locator.md",
+      "anchor": "req-scope-locator-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-001-C02",
+      "requirement": "REQ-SCOPE-LOCATOR-001",
+      "planId": "PLAN-SCOPE-LOCATOR-001.C02",
+      "spec": "internal/scope.locator.md",
+      "anchor": "req-scope-locator-001-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-002-C01",
+      "requirement": "REQ-SCOPE-LOCATOR-002",
+      "planId": "PLAN-SCOPE-LOCATOR-002.C01",
+      "spec": "internal/scope.locator.md",
+      "anchor": "req-scope-locator-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001-C01",
+      "requirement": "REQ-SCOPE-GETBYROLE-001",
+      "planId": "PLAN-SCOPE-GETBYROLE-001.C01",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001-C02",
+      "requirement": "REQ-SCOPE-GETBYROLE-001",
+      "planId": "PLAN-SCOPE-GETBYROLE-001.C02",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-001-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001-C03",
+      "requirement": "REQ-SCOPE-GETBYROLE-001",
+      "planId": "PLAN-SCOPE-GETBYROLE-001.C03",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-001-c03",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002-C01",
+      "requirement": "REQ-SCOPE-GETBYROLE-002",
+      "planId": "PLAN-SCOPE-GETBYROLE-002.C01",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002-C02",
+      "requirement": "REQ-SCOPE-GETBYROLE-002",
+      "planId": "PLAN-SCOPE-GETBYROLE-002.C02",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-002-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001-C01",
+      "requirement": "REQ-SCOPE-GETBYTEXT-001",
+      "planId": "PLAN-SCOPE-GETBYTEXT-001.C01",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001-C02",
+      "requirement": "REQ-SCOPE-GETBYTEXT-001",
+      "planId": "PLAN-SCOPE-GETBYTEXT-001.C02",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-001-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002-C01",
+      "requirement": "REQ-SCOPE-GETBYTEXT-002",
+      "planId": "PLAN-SCOPE-GETBYTEXT-002.C01",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002-C02",
+      "requirement": "REQ-SCOPE-GETBYTEXT-002",
+      "planId": "PLAN-SCOPE-GETBYTEXT-002.C02",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-002-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-003-C01",
+      "requirement": "REQ-SCOPE-GETBYTEXT-003",
+      "planId": "PLAN-SCOPE-GETBYTEXT-003.C01",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-003-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001-C01",
+      "requirement": "REQ-SCOPE-GETBYLABEL-001",
+      "planId": "PLAN-SCOPE-GETBYLABEL-001.C01",
+      "spec": "internal/scope.getByLabel.md",
+      "anchor": "req-scope-getbylabel-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001-C02",
+      "requirement": "REQ-SCOPE-GETBYLABEL-001",
+      "planId": "PLAN-SCOPE-GETBYLABEL-001.C02",
+      "spec": "internal/scope.getByLabel.md",
+      "anchor": "req-scope-getbylabel-001-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002-C01",
+      "requirement": "REQ-SCOPE-GETBYLABEL-002",
+      "planId": "PLAN-SCOPE-GETBYLABEL-002.C01",
+      "spec": "internal/scope.getByLabel.md",
+      "anchor": "req-scope-getbylabel-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002-C02",
+      "requirement": "REQ-SCOPE-GETBYLABEL-002",
+      "planId": "PLAN-SCOPE-GETBYLABEL-002.C02",
+      "spec": "internal/scope.getByLabel.md",
+      "anchor": "req-scope-getbylabel-002-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-001-C01",
+      "requirement": "REQ-LOCATOR-FILTER-001",
+      "planId": "PLAN-LOCATOR-FILTER-001.C01",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-001-C02",
+      "requirement": "REQ-LOCATOR-FILTER-001",
+      "planId": "PLAN-LOCATOR-FILTER-001.C02",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-001-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-002-C01",
+      "requirement": "REQ-LOCATOR-FILTER-002",
+      "planId": "PLAN-LOCATOR-FILTER-002.C01",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-002-C02",
+      "requirement": "REQ-LOCATOR-FILTER-002",
+      "planId": "PLAN-LOCATOR-FILTER-002.C02",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-002-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-003-C01",
+      "requirement": "REQ-LOCATOR-FILTER-003",
+      "planId": "PLAN-LOCATOR-FILTER-003.C01",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-003-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-004-C01",
+      "requirement": "REQ-LOCATOR-FILTER-004",
+      "planId": "PLAN-LOCATOR-FILTER-004.C01",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-004-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-NTH-001-C01",
+      "requirement": "REQ-LOCATOR-NTH-001",
+      "planId": "PLAN-LOCATOR-NTH-001.C01",
+      "spec": "internal/locator.nth.md",
+      "anchor": "req-locator-nth-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-NTH-002-C01",
+      "requirement": "REQ-LOCATOR-NTH-002",
+      "planId": "PLAN-LOCATOR-NTH-002.C01",
+      "spec": "internal/locator.nth.md",
+      "anchor": "req-locator-nth-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-001-C01",
+      "requirement": "REQ-LOCATOR-COUNT-001",
+      "planId": "PLAN-LOCATOR-COUNT-001.C01",
+      "spec": "internal/locator.count.md",
+      "anchor": "req-locator-count-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-001-C02",
+      "requirement": "REQ-LOCATOR-COUNT-001",
+      "planId": "PLAN-LOCATOR-COUNT-001.C02",
+      "spec": "internal/locator.count.md",
+      "anchor": "req-locator-count-001-c02",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-002-C01",
+      "requirement": "REQ-LOCATOR-COUNT-002",
+      "planId": "PLAN-LOCATOR-COUNT-002.C01",
+      "spec": "internal/locator.count.md",
+      "anchor": "req-locator-count-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-TEXTCONTENT-001-C01",
+      "requirement": "REQ-LOCATOR-TEXTCONTENT-001",
+      "planId": "PLAN-LOCATOR-TEXTCONTENT-001.C01",
+      "spec": "internal/locator.textContent.md",
+      "anchor": "req-locator-textcontent-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-TEXTCONTENT-002-C01",
+      "requirement": "REQ-LOCATOR-TEXTCONTENT-002",
+      "planId": "PLAN-LOCATOR-TEXTCONTENT-002.C01",
+      "spec": "internal/locator.textContent.md",
+      "anchor": "req-locator-textcontent-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-GETATTRIBUTE-001-C01",
+      "requirement": "REQ-LOCATOR-GETATTRIBUTE-001",
+      "planId": "PLAN-LOCATOR-GETATTRIBUTE-001.C01",
+      "spec": "internal/locator.getAttribute.md",
+      "anchor": "req-locator-getattribute-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
+      "requirement": "REQ-LOCATOR-GETATTRIBUTE-002",
+      "planId": "PLAN-LOCATOR-GETATTRIBUTE-002.C01",
+      "spec": "internal/locator.getAttribute.md",
+      "anchor": "req-locator-getattribute-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-INPUTVALUE-001-C01",
+      "requirement": "REQ-LOCATOR-INPUTVALUE-001",
+      "planId": "PLAN-LOCATOR-INPUTVALUE-001.C01",
+      "spec": "internal/locator.inputValue.md",
+      "anchor": "req-locator-inputvalue-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-INPUTVALUE-002-C01",
+      "requirement": "REQ-LOCATOR-INPUTVALUE-002",
+      "planId": "PLAN-LOCATOR-INPUTVALUE-002.C01",
+      "spec": "internal/locator.inputValue.md",
+      "anchor": "req-locator-inputvalue-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISVISIBLE-001-C01",
+      "requirement": "REQ-LOCATOR-ISVISIBLE-001",
+      "planId": "PLAN-LOCATOR-ISVISIBLE-001.C01",
+      "spec": "internal/locator.isVisible.md",
+      "anchor": "req-locator-isvisible-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISVISIBLE-002-C01",
+      "requirement": "REQ-LOCATOR-ISVISIBLE-002",
+      "planId": "PLAN-LOCATOR-ISVISIBLE-002.C01",
+      "spec": "internal/locator.isVisible.md",
+      "anchor": "req-locator-isvisible-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISENABLED-001-C01",
+      "requirement": "REQ-LOCATOR-ISENABLED-001",
+      "planId": "PLAN-LOCATOR-ISENABLED-001.C01",
+      "spec": "internal/locator.isEnabled.md",
+      "anchor": "req-locator-isenabled-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISENABLED-002-C01",
+      "requirement": "REQ-LOCATOR-ISENABLED-002",
+      "planId": "PLAN-LOCATOR-ISENABLED-002.C01",
+      "spec": "internal/locator.isEnabled.md",
+      "anchor": "req-locator-isenabled-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISEDITABLE-001-C01",
+      "requirement": "REQ-LOCATOR-ISEDITABLE-001",
+      "planId": "PLAN-LOCATOR-ISEDITABLE-001.C01",
+      "spec": "internal/locator.isEditable.md",
+      "anchor": "req-locator-iseditable-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISEDITABLE-002-C01",
+      "requirement": "REQ-LOCATOR-ISEDITABLE-002",
+      "planId": "PLAN-LOCATOR-ISEDITABLE-002.C01",
+      "spec": "internal/locator.isEditable.md",
+      "anchor": "req-locator-iseditable-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISCHECKED-001-C01",
+      "requirement": "REQ-LOCATOR-ISCHECKED-001",
+      "planId": "PLAN-LOCATOR-ISCHECKED-001.C01",
+      "spec": "internal/locator.isChecked.md",
+      "anchor": "req-locator-ischecked-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-ISCHECKED-002-C01",
+      "requirement": "REQ-LOCATOR-ISCHECKED-002",
+      "planId": "PLAN-LOCATOR-ISCHECKED-002.C01",
+      "spec": "internal/locator.isChecked.md",
+      "anchor": "req-locator-ischecked-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-BOUNDINGBOX-001-C01",
+      "requirement": "REQ-LOCATOR-BOUNDINGBOX-001",
+      "planId": "PLAN-LOCATOR-BOUNDINGBOX-001.C01",
+      "spec": "internal/locator.boundingBox.md",
+      "anchor": "req-locator-boundingbox-001-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-BOUNDINGBOX-002-C01",
+      "requirement": "REQ-LOCATOR-BOUNDINGBOX-002",
+      "planId": "PLAN-LOCATOR-BOUNDINGBOX-002.C01",
+      "spec": "internal/locator.boundingBox.md",
+      "anchor": "req-locator-boundingbox-002-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-001-C01",
+      "requirement": "REQ-LOCATOR-CLICK-001",
+      "planId": "PLAN-LOCATOR-CLICK-001.C01",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-001-C02",
+      "requirement": "REQ-LOCATOR-CLICK-001",
+      "planId": "PLAN-LOCATOR-CLICK-001.C02",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-001-C03",
+      "requirement": "REQ-LOCATOR-CLICK-001",
+      "planId": "PLAN-LOCATOR-CLICK-001.C03",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-001-c03",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-001-C04",
+      "requirement": "REQ-LOCATOR-CLICK-001",
+      "planId": "PLAN-LOCATOR-CLICK-001.C04",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-001-c04",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-002-C01",
+      "requirement": "REQ-LOCATOR-CLICK-002",
+      "planId": "PLAN-LOCATOR-CLICK-002.C01",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-002-C02",
+      "requirement": "REQ-LOCATOR-CLICK-002",
+      "planId": "PLAN-LOCATOR-CLICK-002.C02",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-002-C03",
+      "requirement": "REQ-LOCATOR-CLICK-002",
+      "planId": "PLAN-LOCATOR-CLICK-002.C03",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-002-c03",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-002-C04",
+      "requirement": "REQ-LOCATOR-CLICK-002",
+      "planId": "PLAN-LOCATOR-CLICK-002.C04",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-002-c04",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-001-C01",
+      "requirement": "REQ-LOCATOR-FILL-001",
+      "planId": "PLAN-LOCATOR-FILL-001.C01",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-001-C02",
+      "requirement": "REQ-LOCATOR-FILL-001",
+      "planId": "PLAN-LOCATOR-FILL-001.C02",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-002-C01",
+      "requirement": "REQ-LOCATOR-FILL-002",
+      "planId": "PLAN-LOCATOR-FILL-002.C01",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-002-C02",
+      "requirement": "REQ-LOCATOR-FILL-002",
+      "planId": "PLAN-LOCATOR-FILL-002.C02",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-002-C03",
+      "requirement": "REQ-LOCATOR-FILL-002",
+      "planId": "PLAN-LOCATOR-FILL-002.C03",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-002-c03",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-001-C01",
+      "requirement": "REQ-LOCATOR-PRESS-001",
+      "planId": "PLAN-LOCATOR-PRESS-001.C01",
+      "spec": "internal/locator.press.md",
+      "anchor": "req-locator-press-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-001-C02",
+      "requirement": "REQ-LOCATOR-PRESS-001",
+      "planId": "PLAN-LOCATOR-PRESS-001.C02",
+      "spec": "internal/locator.press.md",
+      "anchor": "req-locator-press-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-002-C01",
+      "requirement": "REQ-LOCATOR-PRESS-002",
+      "planId": "PLAN-LOCATOR-PRESS-002.C01",
+      "spec": "internal/locator.press.md",
+      "anchor": "req-locator-press-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-002-C02",
+      "requirement": "REQ-LOCATOR-PRESS-002",
+      "planId": "PLAN-LOCATOR-PRESS-002.C02",
+      "spec": "internal/locator.press.md",
+      "anchor": "req-locator-press-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-HOVER-001-C01",
+      "requirement": "REQ-LOCATOR-HOVER-001",
+      "planId": "PLAN-LOCATOR-HOVER-001.C01",
+      "spec": "internal/locator.hover.md",
+      "anchor": "req-locator-hover-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-HOVER-002-C01",
+      "requirement": "REQ-LOCATOR-HOVER-002",
+      "planId": "PLAN-LOCATOR-HOVER-002.C01",
+      "spec": "internal/locator.hover.md",
+      "anchor": "req-locator-hover-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FOCUS-001-C01",
+      "requirement": "REQ-LOCATOR-FOCUS-001",
+      "planId": "PLAN-LOCATOR-FOCUS-001.C01",
+      "spec": "internal/locator.focus.md",
+      "anchor": "req-locator-focus-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-FOCUS-002-C01",
+      "requirement": "REQ-LOCATOR-FOCUS-002",
+      "planId": "PLAN-LOCATOR-FOCUS-002.C01",
+      "spec": "internal/locator.focus.md",
+      "anchor": "req-locator-focus-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
+      "requirement": "REQ-LOCATOR-SCROLLINTOVIEW-001",
+      "planId": "PLAN-LOCATOR-SCROLLINTOVIEW-001.C01",
+      "spec": "internal/locator.scrollIntoView.md",
+      "anchor": "req-locator-scrollintoview-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SCROLLINTOVIEW-002-C01",
+      "requirement": "REQ-LOCATOR-SCROLLINTOVIEW-002",
+      "planId": "PLAN-LOCATOR-SCROLLINTOVIEW-002.C01",
+      "spec": "internal/locator.scrollIntoView.md",
+      "anchor": "req-locator-scrollintoview-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-001-C01",
+      "requirement": "REQ-LOCATOR-SETCHECKED-001",
+      "planId": "PLAN-LOCATOR-SETCHECKED-001.C01",
+      "spec": "internal/locator.setChecked.md",
+      "anchor": "req-locator-setchecked-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-001-C02",
+      "requirement": "REQ-LOCATOR-SETCHECKED-001",
+      "planId": "PLAN-LOCATOR-SETCHECKED-001.C02",
+      "spec": "internal/locator.setChecked.md",
+      "anchor": "req-locator-setchecked-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-002-C01",
+      "requirement": "REQ-LOCATOR-SETCHECKED-002",
+      "planId": "PLAN-LOCATOR-SETCHECKED-002.C01",
+      "spec": "internal/locator.setChecked.md",
+      "anchor": "req-locator-setchecked-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-001-C01",
+      "requirement": "REQ-LOCATOR-SELECTOPTION-001",
+      "planId": "PLAN-LOCATOR-SELECTOPTION-001.C01",
+      "spec": "internal/locator.selectOption.md",
+      "anchor": "req-locator-selectoption-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-001-C02",
+      "requirement": "REQ-LOCATOR-SELECTOPTION-001",
+      "planId": "PLAN-LOCATOR-SELECTOPTION-001.C02",
+      "spec": "internal/locator.selectOption.md",
+      "anchor": "req-locator-selectoption-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-002-C01",
+      "requirement": "REQ-LOCATOR-SELECTOPTION-002",
+      "planId": "PLAN-LOCATOR-SELECTOPTION-002.C01",
+      "spec": "internal/locator.selectOption.md",
+      "anchor": "req-locator-selectoption-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-002-C02",
+      "requirement": "REQ-LOCATOR-SELECTOPTION-002",
+      "planId": "PLAN-LOCATOR-SELECTOPTION-002.C02",
+      "spec": "internal/locator.selectOption.md",
+      "anchor": "req-locator-selectoption-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-001-C01",
+      "requirement": "REQ-LOCATOR-DRAGTO-001",
+      "planId": "PLAN-LOCATOR-DRAGTO-001.C01",
+      "spec": "internal/locator.dragTo.md",
+      "anchor": "req-locator-dragto-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-001-C02",
+      "requirement": "REQ-LOCATOR-DRAGTO-001",
+      "planId": "PLAN-LOCATOR-DRAGTO-001.C02",
+      "spec": "internal/locator.dragTo.md",
+      "anchor": "req-locator-dragto-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-002-C01",
+      "requirement": "REQ-LOCATOR-DRAGTO-002",
+      "planId": "PLAN-LOCATOR-DRAGTO-002.C01",
+      "spec": "internal/locator.dragTo.md",
+      "anchor": "req-locator-dragto-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-002-C02",
+      "requirement": "REQ-LOCATOR-DRAGTO-002",
+      "planId": "PLAN-LOCATOR-DRAGTO-002.C02",
+      "spec": "internal/locator.dragTo.md",
+      "anchor": "req-locator-dragto-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-001-C01",
+      "requirement": "REQ-LOCATOR-DROP-001",
+      "planId": "PLAN-LOCATOR-DROP-001.C01",
+      "spec": "internal/locator.drop.md",
+      "anchor": "req-locator-drop-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-001-C02",
+      "requirement": "REQ-LOCATOR-DROP-001",
+      "planId": "PLAN-LOCATOR-DROP-001.C02",
+      "spec": "internal/locator.drop.md",
+      "anchor": "req-locator-drop-001-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-002-C01",
+      "requirement": "REQ-LOCATOR-DROP-002",
+      "planId": "PLAN-LOCATOR-DROP-002.C01",
+      "spec": "internal/locator.drop.md",
+      "anchor": "req-locator-drop-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-002-C02",
+      "requirement": "REQ-LOCATOR-DROP-002",
+      "planId": "PLAN-LOCATOR-DROP-002.C02",
+      "spec": "internal/locator.drop.md",
+      "anchor": "req-locator-drop-002-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-MOVE-001-C01",
+      "requirement": "REQ-MOUSE-MOVE-001",
+      "planId": "PLAN-MOUSE-MOVE-001.C01",
+      "spec": "internal/mouse.move.md",
+      "anchor": "req-mouse-move-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-MOVE-002-C01",
+      "requirement": "REQ-MOUSE-MOVE-002",
+      "planId": "PLAN-MOUSE-MOVE-002.C01",
+      "spec": "internal/mouse.move.md",
+      "anchor": "req-mouse-move-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-DOWN-001-C01",
+      "requirement": "REQ-MOUSE-DOWN-001",
+      "planId": "PLAN-MOUSE-DOWN-001.C01",
+      "spec": "internal/mouse.down.md",
+      "anchor": "req-mouse-down-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-DOWN-002-C01",
+      "requirement": "REQ-MOUSE-DOWN-002",
+      "planId": "PLAN-MOUSE-DOWN-002.C01",
+      "spec": "internal/mouse.down.md",
+      "anchor": "req-mouse-down-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-UP-001-C01",
+      "requirement": "REQ-MOUSE-UP-001",
+      "planId": "PLAN-MOUSE-UP-001.C01",
+      "spec": "internal/mouse.up.md",
+      "anchor": "req-mouse-up-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-UP-002-C01",
+      "requirement": "REQ-MOUSE-UP-002",
+      "planId": "PLAN-MOUSE-UP-002.C01",
+      "spec": "internal/mouse.up.md",
+      "anchor": "req-mouse-up-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-001-C01",
+      "requirement": "REQ-MOUSE-CLICK-001",
+      "planId": "PLAN-MOUSE-CLICK-001.C01",
+      "spec": "internal/mouse.click.md",
+      "anchor": "req-mouse-click-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-002-C01",
+      "requirement": "REQ-MOUSE-CLICK-002",
+      "planId": "PLAN-MOUSE-CLICK-002.C01",
+      "spec": "internal/mouse.click.md",
+      "anchor": "req-mouse-click-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-002-C02",
+      "requirement": "REQ-MOUSE-CLICK-002",
+      "planId": "PLAN-MOUSE-CLICK-002.C02",
+      "spec": "internal/mouse.click.md",
+      "anchor": "req-mouse-click-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-001-C01",
+      "requirement": "REQ-MOUSE-WHEEL-001",
+      "planId": "PLAN-MOUSE-WHEEL-001.C01",
+      "spec": "internal/mouse.wheel.md",
+      "anchor": "req-mouse-wheel-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-002-C01",
+      "requirement": "REQ-MOUSE-WHEEL-002",
+      "planId": "PLAN-MOUSE-WHEEL-002.C01",
+      "spec": "internal/mouse.wheel.md",
+      "anchor": "req-mouse-wheel-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-002-C02",
+      "requirement": "REQ-MOUSE-WHEEL-002",
+      "planId": "PLAN-MOUSE-WHEEL-002.C02",
+      "spec": "internal/mouse.wheel.md",
+      "anchor": "req-mouse-wheel-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-DOWN-001-C01",
+      "requirement": "REQ-KEYBOARD-DOWN-001",
+      "planId": "PLAN-KEYBOARD-DOWN-001.C01",
+      "spec": "internal/keyboard.down.md",
+      "anchor": "req-keyboard-down-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-DOWN-002-C01",
+      "requirement": "REQ-KEYBOARD-DOWN-002",
+      "planId": "PLAN-KEYBOARD-DOWN-002.C01",
+      "spec": "internal/keyboard.down.md",
+      "anchor": "req-keyboard-down-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-UP-001-C01",
+      "requirement": "REQ-KEYBOARD-UP-001",
+      "planId": "PLAN-KEYBOARD-UP-001.C01",
+      "spec": "internal/keyboard.up.md",
+      "anchor": "req-keyboard-up-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-UP-002-C01",
+      "requirement": "REQ-KEYBOARD-UP-002",
+      "planId": "PLAN-KEYBOARD-UP-002.C01",
+      "spec": "internal/keyboard.up.md",
+      "anchor": "req-keyboard-up-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-001-C01",
+      "requirement": "REQ-KEYBOARD-PRESS-001",
+      "planId": "PLAN-KEYBOARD-PRESS-001.C01",
+      "spec": "internal/keyboard.press.md",
+      "anchor": "req-keyboard-press-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-001-C02",
+      "requirement": "REQ-KEYBOARD-PRESS-001",
+      "planId": "PLAN-KEYBOARD-PRESS-001.C02",
+      "spec": "internal/keyboard.press.md",
+      "anchor": "req-keyboard-press-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-002-C01",
+      "requirement": "REQ-KEYBOARD-PRESS-002",
+      "planId": "PLAN-KEYBOARD-PRESS-002.C01",
+      "spec": "internal/keyboard.press.md",
+      "anchor": "req-keyboard-press-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-001-C01",
+      "requirement": "REQ-KEYBOARD-TYPE-001",
+      "planId": "PLAN-KEYBOARD-TYPE-001.C01",
+      "spec": "internal/keyboard.type.md",
+      "anchor": "req-keyboard-type-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-001-C02",
+      "requirement": "REQ-KEYBOARD-TYPE-001",
+      "planId": "PLAN-KEYBOARD-TYPE-001.C02",
+      "spec": "internal/keyboard.type.md",
+      "anchor": "req-keyboard-type-001-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-002-C01",
+      "requirement": "REQ-KEYBOARD-TYPE-002",
+      "planId": "PLAN-KEYBOARD-TYPE-002.C01",
+      "spec": "internal/keyboard.type.md",
+      "anchor": "req-keyboard-type-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-002-C02",
+      "requirement": "REQ-KEYBOARD-TYPE-002",
+      "planId": "PLAN-KEYBOARD-TYPE-002.C02",
+      "spec": "internal/keyboard.type.md",
+      "anchor": "req-keyboard-type-002-c02",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-001-C01",
+      "requirement": "REQ-LOCATOR-WAITFOR-001",
+      "planId": "PLAN-LOCATOR-WAITFOR-001.C01",
+      "spec": "internal/locator.waitFor.md",
+      "anchor": "req-locator-waitfor-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-002-C01",
+      "requirement": "REQ-LOCATOR-WAITFOR-002",
+      "planId": "PLAN-LOCATOR-WAITFOR-002.C01",
+      "spec": "internal/locator.waitFor.md",
+      "anchor": "req-locator-waitfor-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-002-C02",
+      "requirement": "REQ-LOCATOR-WAITFOR-002",
+      "planId": "PLAN-LOCATOR-WAITFOR-002.C02",
+      "spec": "internal/locator.waitFor.md",
+      "anchor": "req-locator-waitfor-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-001-C01",
+      "requirement": "REQ-PAGE-WAITFOREVENT-001",
+      "planId": "PLAN-PAGE-WAITFOREVENT-001.C01",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-002-C01",
+      "requirement": "REQ-PAGE-WAITFOREVENT-002",
+      "planId": "PLAN-PAGE-WAITFOREVENT-002.C01",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-002-C02",
+      "requirement": "REQ-PAGE-WAITFOREVENT-002",
+      "planId": "PLAN-PAGE-WAITFOREVENT-002.C02",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-002-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-003-C01",
+      "requirement": "REQ-PAGE-WAITFOREVENT-003",
+      "planId": "PLAN-PAGE-WAITFOREVENT-003.C01",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-003-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-001-C01",
+      "requirement": "REQ-PAGE-WAITFORURL-001",
+      "planId": "PLAN-PAGE-WAITFORURL-001.C01",
+      "spec": "internal/page.waitForURL.md",
+      "anchor": "req-page-waitforurl-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-002-C01",
+      "requirement": "REQ-PAGE-WAITFORURL-002",
+      "planId": "PLAN-PAGE-WAITFORURL-002.C01",
+      "spec": "internal/page.waitForURL.md",
+      "anchor": "req-page-waitforurl-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-002-C02",
+      "requirement": "REQ-PAGE-WAITFORURL-002",
+      "planId": "PLAN-PAGE-WAITFORURL-002.C02",
+      "spec": "internal/page.waitForURL.md",
+      "anchor": "req-page-waitforurl-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-001-C01",
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-001",
+      "planId": "PLAN-PAGE-WAITFORFUNCTION-001.C01",
+      "spec": "internal/page.waitForFunction.md",
+      "anchor": "req-page-waitforfunction-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-002-C01",
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-002",
+      "planId": "PLAN-PAGE-WAITFORFUNCTION-002.C01",
+      "spec": "internal/page.waitForFunction.md",
+      "anchor": "req-page-waitforfunction-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-002-C02",
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-002",
+      "planId": "PLAN-PAGE-WAITFORFUNCTION-002.C02",
+      "spec": "internal/page.waitForFunction.md",
+      "anchor": "req-page-waitforfunction-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORLOADSTATE-001-C01",
+      "requirement": "REQ-PAGE-WAITFORLOADSTATE-001",
+      "planId": "PLAN-PAGE-WAITFORLOADSTATE-001.C01",
+      "spec": "internal/page.waitForLoadState.md",
+      "anchor": "req-page-waitforloadstate-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORLOADSTATE-002-C01",
+      "requirement": "REQ-PAGE-WAITFORLOADSTATE-002",
+      "planId": "PLAN-PAGE-WAITFORLOADSTATE-002.C01",
+      "spec": "internal/page.waitForLoadState.md",
+      "anchor": "req-page-waitforloadstate-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-001-C01",
+      "requirement": "REQ-LOCATOR-SETFILES-001",
+      "planId": "PLAN-LOCATOR-SETFILES-001.C01",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-001-C02",
+      "requirement": "REQ-LOCATOR-SETFILES-001",
+      "planId": "PLAN-LOCATOR-SETFILES-001.C02",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-001-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-001-C03",
+      "requirement": "REQ-LOCATOR-SETFILES-001",
+      "planId": "PLAN-LOCATOR-SETFILES-001.C03",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-001-c03",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-002-C01",
+      "requirement": "REQ-LOCATOR-SETFILES-002",
+      "planId": "PLAN-LOCATOR-SETFILES-002.C01",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-002-C02",
+      "requirement": "REQ-LOCATOR-SETFILES-002",
+      "planId": "PLAN-LOCATOR-SETFILES-002.C02",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-002-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-002-C03",
+      "requirement": "REQ-LOCATOR-SETFILES-002",
+      "planId": "PLAN-LOCATOR-SETFILES-002.C03",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-002-c03",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-003-C01",
+      "requirement": "REQ-LOCATOR-SETFILES-003",
+      "planId": "PLAN-LOCATOR-SETFILES-003.C01",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-003-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-001-C01",
+      "requirement": "REQ-CHOOSER-SETFILES-001",
+      "planId": "PLAN-CHOOSER-SETFILES-001.C01",
+      "spec": "internal/chooser.setFiles.md",
+      "anchor": "req-chooser-setfiles-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-002-C01",
+      "requirement": "REQ-CHOOSER-SETFILES-002",
+      "planId": "PLAN-CHOOSER-SETFILES-002.C01",
+      "spec": "internal/chooser.setFiles.md",
+      "anchor": "req-chooser-setfiles-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-002-C02",
+      "requirement": "REQ-CHOOSER-SETFILES-002",
+      "planId": "PLAN-CHOOSER-SETFILES-002.C02",
+      "spec": "internal/chooser.setFiles.md",
+      "anchor": "req-chooser-setfiles-002-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-001-C01",
+      "requirement": "REQ-DOWNLOAD-SAVE-001",
+      "planId": "PLAN-DOWNLOAD-SAVE-001.C01",
+      "spec": "internal/download.save.md",
+      "anchor": "req-download-save-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-001-C02",
+      "requirement": "REQ-DOWNLOAD-SAVE-001",
+      "planId": "PLAN-DOWNLOAD-SAVE-001.C02",
+      "spec": "internal/download.save.md",
+      "anchor": "req-download-save-001-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-002-C01",
+      "requirement": "REQ-DOWNLOAD-SAVE-002",
+      "planId": "PLAN-DOWNLOAD-SAVE-002.C01",
+      "spec": "internal/download.save.md",
+      "anchor": "req-download-save-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-002-C02",
+      "requirement": "REQ-DOWNLOAD-SAVE-002",
+      "planId": "PLAN-DOWNLOAD-SAVE-002.C02",
+      "spec": "internal/download.save.md",
+      "anchor": "req-download-save-002-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DOWNLOAD-CANCEL-001-C01",
+      "requirement": "REQ-DOWNLOAD-CANCEL-001",
+      "planId": "PLAN-DOWNLOAD-CANCEL-001.C01",
+      "spec": "internal/download.cancel.md",
+      "anchor": "req-download-cancel-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DOWNLOAD-CANCEL-002-C01",
+      "requirement": "REQ-DOWNLOAD-CANCEL-002",
+      "planId": "PLAN-DOWNLOAD-CANCEL-002.C01",
+      "spec": "internal/download.cancel.md",
+      "anchor": "req-download-cancel-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DIALOG-ACCEPT-001-C01",
+      "requirement": "REQ-DIALOG-ACCEPT-001",
+      "planId": "PLAN-DIALOG-ACCEPT-001.C01",
+      "spec": "internal/dialog.accept.md",
+      "anchor": "req-dialog-accept-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DIALOG-ACCEPT-002-C01",
+      "requirement": "REQ-DIALOG-ACCEPT-002",
+      "planId": "PLAN-DIALOG-ACCEPT-002.C01",
+      "spec": "internal/dialog.accept.md",
+      "anchor": "req-dialog-accept-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DIALOG-DISMISS-001-C01",
+      "requirement": "REQ-DIALOG-DISMISS-001",
+      "planId": "PLAN-DIALOG-DISMISS-001.C01",
+      "spec": "internal/dialog.dismiss.md",
+      "anchor": "req-dialog-dismiss-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DIALOG-DISMISS-002-C01",
+      "requirement": "REQ-DIALOG-DISMISS-002",
+      "planId": "PLAN-DIALOG-DISMISS-002.C01",
+      "spec": "internal/dialog.dismiss.md",
+      "anchor": "req-dialog-dismiss-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-001-C01",
+      "requirement": "REQ-SCOPE-EVALUATE-001",
+      "planId": "PLAN-SCOPE-EVALUATE-001.C01",
+      "spec": "internal/scope.evaluate.md",
+      "anchor": "req-scope-evaluate-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-001-C02",
+      "requirement": "REQ-SCOPE-EVALUATE-001",
+      "planId": "PLAN-SCOPE-EVALUATE-001.C02",
+      "spec": "internal/scope.evaluate.md",
+      "anchor": "req-scope-evaluate-001-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-002-C01",
+      "requirement": "REQ-SCOPE-EVALUATE-002",
+      "planId": "PLAN-SCOPE-EVALUATE-002.C01",
+      "spec": "internal/scope.evaluate.md",
+      "anchor": "req-scope-evaluate-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-002-C02",
+      "requirement": "REQ-SCOPE-EVALUATE-002",
+      "planId": "PLAN-SCOPE-EVALUATE-002.C02",
+      "spec": "internal/scope.evaluate.md",
+      "anchor": "req-scope-evaluate-002-c02",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-EVALUATEALL-001-C01",
+      "requirement": "REQ-LOCATOR-EVALUATEALL-001",
+      "planId": "PLAN-LOCATOR-EVALUATEALL-001.C01",
+      "spec": "internal/locator.evaluateAll.md",
+      "anchor": "req-locator-evaluateall-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-LOCATOR-EVALUATEALL-002-C01",
+      "requirement": "REQ-LOCATOR-EVALUATEALL-002",
+      "planId": "PLAN-LOCATOR-EVALUATEALL-002.C01",
+      "spec": "internal/locator.evaluateAll.md",
+      "anchor": "req-locator-evaluateall-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-LOGS-001-C01",
+      "requirement": "REQ-PAGE-LOGS-001",
+      "planId": "PLAN-PAGE-LOGS-001.C01",
+      "spec": "internal/page.logs.md",
+      "anchor": "req-page-logs-001-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-LOGS-002-C01",
+      "requirement": "REQ-PAGE-LOGS-002",
+      "planId": "PLAN-PAGE-LOGS-002.C01",
+      "spec": "internal/page.logs.md",
+      "anchor": "req-page-logs-002-c01",
+      "workItem": "B06",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-001-C01",
+      "requirement": "REQ-CONSOLE-LOG-001",
+      "planId": "PLAN-CONSOLE-LOG-001.C01",
+      "spec": "internal/console.log.md",
+      "anchor": "req-console-log-001-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-002-C01",
+      "requirement": "REQ-CONSOLE-LOG-002",
+      "planId": "PLAN-CONSOLE-LOG-002.C01",
+      "spec": "internal/console.log.md",
+      "anchor": "req-console-log-002-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-002-C02",
+      "requirement": "REQ-CONSOLE-LOG-002",
+      "planId": "PLAN-CONSOLE-LOG-002.C02",
+      "spec": "internal/console.log.md",
+      "anchor": "req-console-log-002-c02",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DISPLAY-001-C01",
+      "requirement": "REQ-DISPLAY-001",
+      "planId": "PLAN-DISPLAY-001.C01",
+      "spec": "internal/display.md",
+      "anchor": "req-display-001-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-DISPLAY-002-C01",
+      "requirement": "REQ-DISPLAY-002",
+      "planId": "PLAN-DISPLAY-002.C01",
+      "spec": "internal/display.md",
+      "anchor": "req-display-002-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-001-C01",
+      "requirement": "REQ-C-RUNTIME-001",
+      "planId": "PLAN-C-RUNTIME-001.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-001-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-002-C01",
+      "requirement": "REQ-C-RUNTIME-002",
+      "planId": "PLAN-C-RUNTIME-002.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-002-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-003-C01",
+      "requirement": "REQ-C-RUNTIME-003",
+      "planId": "PLAN-C-RUNTIME-003.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-003-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-004-C01",
+      "requirement": "REQ-C-RUNTIME-004",
+      "planId": "PLAN-C-RUNTIME-004.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-004-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-005-C01",
+      "requirement": "REQ-C-RUNTIME-005",
+      "planId": "PLAN-C-RUNTIME-005.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-005-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-006-C01",
+      "requirement": "REQ-C-RUNTIME-006",
+      "planId": "PLAN-C-RUNTIME-006.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-006-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-007-C01",
+      "requirement": "REQ-C-RUNTIME-007",
+      "planId": "PLAN-C-RUNTIME-007.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-007-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-RUNTIME-008-C01",
+      "requirement": "REQ-C-RUNTIME-008",
+      "planId": "PLAN-C-RUNTIME-008.C01",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-008-c01",
+      "workItem": "B01",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-001-C01",
+      "requirement": "REQ-C-DOMFRAMES-001",
+      "planId": "PLAN-C-DOMFRAMES-001.C01",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-001-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-002-C01",
+      "requirement": "REQ-C-DOMFRAMES-002",
+      "planId": "PLAN-C-DOMFRAMES-002.C01",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-002-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-003-C01",
+      "requirement": "REQ-C-DOMFRAMES-003",
+      "planId": "PLAN-C-DOMFRAMES-003.C01",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-003-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-004-C01",
+      "requirement": "REQ-C-DOMFRAMES-004",
+      "planId": "PLAN-C-DOMFRAMES-004.C01",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-004-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-005-C01",
+      "requirement": "REQ-C-DOMFRAMES-005",
+      "planId": "PLAN-C-DOMFRAMES-005.C01",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-005-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-006-C01",
+      "requirement": "REQ-C-DOMFRAMES-006",
+      "planId": "PLAN-C-DOMFRAMES-006.C01",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-006-c01",
+      "workItem": "B03",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-SELECTION-001-C01",
+      "requirement": "REQ-C-SELECTION-001",
+      "planId": "PLAN-C-SELECTION-001.C01",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-001-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-SELECTION-002-C01",
+      "requirement": "REQ-C-SELECTION-002",
+      "planId": "PLAN-C-SELECTION-002.C01",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-002-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-SELECTION-003-C01",
+      "requirement": "REQ-C-SELECTION-003",
+      "planId": "PLAN-C-SELECTION-003.C01",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-003-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-SELECTION-004-C01",
+      "requirement": "REQ-C-SELECTION-004",
+      "planId": "PLAN-C-SELECTION-004.C01",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-004-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-SELECTION-005-C01",
+      "requirement": "REQ-C-SELECTION-005",
+      "planId": "PLAN-C-SELECTION-005.C01",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-005-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-SELECTION-006-C01",
+      "requirement": "REQ-C-SELECTION-006",
+      "planId": "PLAN-C-SELECTION-006.C01",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-006-c01",
+      "workItem": "B02",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-INPUT-001-C01",
+      "requirement": "REQ-C-INPUT-001",
+      "planId": "PLAN-C-INPUT-001.C01",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-001-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-INPUT-002-C01",
+      "requirement": "REQ-C-INPUT-002",
+      "planId": "PLAN-C-INPUT-002.C01",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-002-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-INPUT-003-C01",
+      "requirement": "REQ-C-INPUT-003",
+      "planId": "PLAN-C-INPUT-003.C01",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-003-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-INPUT-004-C01",
+      "requirement": "REQ-C-INPUT-004",
+      "planId": "PLAN-C-INPUT-004.C01",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-004-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-INPUT-005-C01",
+      "requirement": "REQ-C-INPUT-005",
+      "planId": "PLAN-C-INPUT-005.C01",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-005-c01",
+      "workItem": "B04",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-001-C01",
+      "requirement": "REQ-C-FILESEVENTS-001",
+      "planId": "PLAN-C-FILESEVENTS-001.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-001-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-002-C01",
+      "requirement": "REQ-C-FILESEVENTS-002",
+      "planId": "PLAN-C-FILESEVENTS-002.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-002-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-003-C01",
+      "requirement": "REQ-C-FILESEVENTS-003",
+      "planId": "PLAN-C-FILESEVENTS-003.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-003-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-004-C01",
+      "requirement": "REQ-C-FILESEVENTS-004",
+      "planId": "PLAN-C-FILESEVENTS-004.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-004-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-005-C01",
+      "requirement": "REQ-C-FILESEVENTS-005",
+      "planId": "PLAN-C-FILESEVENTS-005.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-005-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-006-C01",
+      "requirement": "REQ-C-FILESEVENTS-006",
+      "planId": "PLAN-C-FILESEVENTS-006.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-006-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-007-C01",
+      "requirement": "REQ-C-FILESEVENTS-007",
+      "planId": "PLAN-C-FILESEVENTS-007.C01",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-007-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004-C01",
+      "requirement": "REQ-PAGE-WAITFOREVENT-004",
+      "planId": "PLAN-PAGE-WAITFOREVENT-004.C01",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-004-c01",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004-C02",
+      "requirement": "REQ-PAGE-WAITFOREVENT-004",
+      "planId": "PLAN-PAGE-WAITFOREVENT-004.C02",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-004-c02",
+      "workItem": "B05",
+      "status": "NOT_RUN",
+      "requires": "독립 준비/실행/판정식은정본조건. 정상/거절/부분효과 fixture가없으면다음개발에서추가."
+    }
+  ]
+}

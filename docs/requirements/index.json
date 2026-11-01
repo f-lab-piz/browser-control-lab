@@ -1,0 +1,923 @@
+{
+  "schemaVersion": 1,
+  "baseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "stage": "pre-development",
+  "external": [
+    {
+      "name": "guide",
+      "path": "external/guide.md",
+      "requirements": [
+        "REQ-GUIDE-001",
+        "REQ-GUIDE-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "reset",
+      "path": "external/reset.md",
+      "requirements": [
+        "REQ-RESET-001",
+        "REQ-RESET-002",
+        "REQ-RESET-003"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "js",
+      "path": "external/js.md",
+      "requirements": [
+        "REQ-JS-001",
+        "REQ-JS-002",
+        "REQ-JS-003"
+      ],
+      "common": [
+        "runtime"
+      ]
+    }
+  ],
+  "internal": [
+    {
+      "name": "browser.list",
+      "path": "internal/browser.list.md",
+      "requirements": [
+        "REQ-BROWSER-LIST-001",
+        "REQ-BROWSER-LIST-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "browser.tabs",
+      "path": "internal/browser.tabs.md",
+      "requirements": [
+        "REQ-BROWSER-TABS-001",
+        "REQ-BROWSER-TABS-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "browser.open",
+      "path": "internal/browser.open.md",
+      "requirements": [
+        "REQ-BROWSER-OPEN-001",
+        "REQ-BROWSER-OPEN-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "browser.attach",
+      "path": "internal/browser.attach.md",
+      "requirements": [
+        "REQ-BROWSER-ATTACH-001",
+        "REQ-BROWSER-ATTACH-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "page.activate",
+      "path": "internal/page.activate.md",
+      "requirements": [
+        "REQ-PAGE-ACTIVATE-001",
+        "REQ-PAGE-ACTIVATE-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "page.close",
+      "path": "internal/page.close.md",
+      "requirements": [
+        "REQ-PAGE-CLOSE-001",
+        "REQ-PAGE-CLOSE-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "page.goto",
+      "path": "internal/page.goto.md",
+      "requirements": [
+        "REQ-PAGE-GOTO-001",
+        "REQ-PAGE-GOTO-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "page.back",
+      "path": "internal/page.back.md",
+      "requirements": [
+        "REQ-PAGE-BACK-001",
+        "REQ-PAGE-BACK-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "page.forward",
+      "path": "internal/page.forward.md",
+      "requirements": [
+        "REQ-PAGE-FORWARD-001",
+        "REQ-PAGE-FORWARD-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "page.reload",
+      "path": "internal/page.reload.md",
+      "requirements": [
+        "REQ-PAGE-RELOAD-001",
+        "REQ-PAGE-RELOAD-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "scope.snapshot",
+      "path": "internal/scope.snapshot.md",
+      "requirements": [
+        "REQ-SCOPE-SNAPSHOT-001",
+        "REQ-SCOPE-SNAPSHOT-002",
+        "REQ-SCOPE-SNAPSHOT-003",
+        "REQ-SCOPE-SNAPSHOT-004",
+        "REQ-SCOPE-SNAPSHOT-005",
+        "REQ-SCOPE-SNAPSHOT-006",
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "page.screenshot",
+      "path": "internal/page.screenshot.md",
+      "requirements": [
+        "REQ-PAGE-SCREENSHOT-001",
+        "REQ-PAGE-SCREENSHOT-002",
+        "REQ-PAGE-SCREENSHOT-003",
+        "REQ-PAGE-SCREENSHOT-004"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ]
+    },
+    {
+      "name": "page.frames",
+      "path": "internal/page.frames.md",
+      "requirements": [
+        "REQ-PAGE-FRAMES-001",
+        "REQ-PAGE-FRAMES-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ]
+    },
+    {
+      "name": "page.frame",
+      "path": "internal/page.frame.md",
+      "requirements": [
+        "REQ-PAGE-FRAME-001",
+        "REQ-PAGE-FRAME-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ]
+    },
+    {
+      "name": "scope.locator",
+      "path": "internal/scope.locator.md",
+      "requirements": [
+        "REQ-SCOPE-LOCATOR-001",
+        "REQ-SCOPE-LOCATOR-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "scope.getByRole",
+      "path": "internal/scope.getByRole.md",
+      "requirements": [
+        "REQ-SCOPE-GETBYROLE-001",
+        "REQ-SCOPE-GETBYROLE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "scope.getByText",
+      "path": "internal/scope.getByText.md",
+      "requirements": [
+        "REQ-SCOPE-GETBYTEXT-001",
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "scope.getByLabel",
+      "path": "internal/scope.getByLabel.md",
+      "requirements": [
+        "REQ-SCOPE-GETBYLABEL-001",
+        "REQ-SCOPE-GETBYLABEL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.filter",
+      "path": "internal/locator.filter.md",
+      "requirements": [
+        "REQ-LOCATOR-FILTER-001",
+        "REQ-LOCATOR-FILTER-002",
+        "REQ-LOCATOR-FILTER-003",
+        "REQ-LOCATOR-FILTER-004"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.nth",
+      "path": "internal/locator.nth.md",
+      "requirements": [
+        "REQ-LOCATOR-NTH-001",
+        "REQ-LOCATOR-NTH-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.count",
+      "path": "internal/locator.count.md",
+      "requirements": [
+        "REQ-LOCATOR-COUNT-001",
+        "REQ-LOCATOR-COUNT-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.textContent",
+      "path": "internal/locator.textContent.md",
+      "requirements": [
+        "REQ-LOCATOR-TEXTCONTENT-001",
+        "REQ-LOCATOR-TEXTCONTENT-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.getAttribute",
+      "path": "internal/locator.getAttribute.md",
+      "requirements": [
+        "REQ-LOCATOR-GETATTRIBUTE-001",
+        "REQ-LOCATOR-GETATTRIBUTE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.inputValue",
+      "path": "internal/locator.inputValue.md",
+      "requirements": [
+        "REQ-LOCATOR-INPUTVALUE-001",
+        "REQ-LOCATOR-INPUTVALUE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.isVisible",
+      "path": "internal/locator.isVisible.md",
+      "requirements": [
+        "REQ-LOCATOR-ISVISIBLE-001",
+        "REQ-LOCATOR-ISVISIBLE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.isEnabled",
+      "path": "internal/locator.isEnabled.md",
+      "requirements": [
+        "REQ-LOCATOR-ISENABLED-001",
+        "REQ-LOCATOR-ISENABLED-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.isEditable",
+      "path": "internal/locator.isEditable.md",
+      "requirements": [
+        "REQ-LOCATOR-ISEDITABLE-001",
+        "REQ-LOCATOR-ISEDITABLE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.isChecked",
+      "path": "internal/locator.isChecked.md",
+      "requirements": [
+        "REQ-LOCATOR-ISCHECKED-001",
+        "REQ-LOCATOR-ISCHECKED-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.boundingBox",
+      "path": "internal/locator.boundingBox.md",
+      "requirements": [
+        "REQ-LOCATOR-BOUNDINGBOX-001",
+        "REQ-LOCATOR-BOUNDINGBOX-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.click",
+      "path": "internal/locator.click.md",
+      "requirements": [
+        "REQ-LOCATOR-CLICK-001",
+        "REQ-LOCATOR-CLICK-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.fill",
+      "path": "internal/locator.fill.md",
+      "requirements": [
+        "REQ-LOCATOR-FILL-001",
+        "REQ-LOCATOR-FILL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.press",
+      "path": "internal/locator.press.md",
+      "requirements": [
+        "REQ-LOCATOR-PRESS-001",
+        "REQ-LOCATOR-PRESS-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.hover",
+      "path": "internal/locator.hover.md",
+      "requirements": [
+        "REQ-LOCATOR-HOVER-001",
+        "REQ-LOCATOR-HOVER-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.focus",
+      "path": "internal/locator.focus.md",
+      "requirements": [
+        "REQ-LOCATOR-FOCUS-001",
+        "REQ-LOCATOR-FOCUS-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.scrollIntoView",
+      "path": "internal/locator.scrollIntoView.md",
+      "requirements": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.setChecked",
+      "path": "internal/locator.setChecked.md",
+      "requirements": [
+        "REQ-LOCATOR-SETCHECKED-001",
+        "REQ-LOCATOR-SETCHECKED-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.selectOption",
+      "path": "internal/locator.selectOption.md",
+      "requirements": [
+        "REQ-LOCATOR-SELECTOPTION-001",
+        "REQ-LOCATOR-SELECTOPTION-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.dragTo",
+      "path": "internal/locator.dragTo.md",
+      "requirements": [
+        "REQ-LOCATOR-DRAGTO-001",
+        "REQ-LOCATOR-DRAGTO-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.drop",
+      "path": "internal/locator.drop.md",
+      "requirements": [
+        "REQ-LOCATOR-DROP-001",
+        "REQ-LOCATOR-DROP-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input",
+        "files-events"
+      ]
+    },
+    {
+      "name": "mouse.move",
+      "path": "internal/mouse.move.md",
+      "requirements": [
+        "REQ-MOUSE-MOVE-001",
+        "REQ-MOUSE-MOVE-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "mouse.down",
+      "path": "internal/mouse.down.md",
+      "requirements": [
+        "REQ-MOUSE-DOWN-001",
+        "REQ-MOUSE-DOWN-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "mouse.up",
+      "path": "internal/mouse.up.md",
+      "requirements": [
+        "REQ-MOUSE-UP-001",
+        "REQ-MOUSE-UP-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "mouse.click",
+      "path": "internal/mouse.click.md",
+      "requirements": [
+        "REQ-MOUSE-CLICK-001",
+        "REQ-MOUSE-CLICK-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "mouse.wheel",
+      "path": "internal/mouse.wheel.md",
+      "requirements": [
+        "REQ-MOUSE-WHEEL-001",
+        "REQ-MOUSE-WHEEL-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "keyboard.down",
+      "path": "internal/keyboard.down.md",
+      "requirements": [
+        "REQ-KEYBOARD-DOWN-001",
+        "REQ-KEYBOARD-DOWN-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "keyboard.up",
+      "path": "internal/keyboard.up.md",
+      "requirements": [
+        "REQ-KEYBOARD-UP-001",
+        "REQ-KEYBOARD-UP-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "keyboard.press",
+      "path": "internal/keyboard.press.md",
+      "requirements": [
+        "REQ-KEYBOARD-PRESS-001",
+        "REQ-KEYBOARD-PRESS-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "keyboard.type",
+      "path": "internal/keyboard.type.md",
+      "requirements": [
+        "REQ-KEYBOARD-TYPE-001",
+        "REQ-KEYBOARD-TYPE-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ]
+    },
+    {
+      "name": "locator.waitFor",
+      "path": "internal/locator.waitFor.md",
+      "requirements": [
+        "REQ-LOCATOR-WAITFOR-001",
+        "REQ-LOCATOR-WAITFOR-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "page.waitForEvent",
+      "path": "internal/page.waitForEvent.md",
+      "requirements": [
+        "REQ-PAGE-WAITFOREVENT-001",
+        "REQ-PAGE-WAITFOREVENT-002",
+        "REQ-PAGE-WAITFOREVENT-003",
+        "REQ-PAGE-WAITFOREVENT-004"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "files-events"
+      ]
+    },
+    {
+      "name": "page.waitForURL",
+      "path": "internal/page.waitForURL.md",
+      "requirements": [
+        "REQ-PAGE-WAITFORURL-001",
+        "REQ-PAGE-WAITFORURL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ]
+    },
+    {
+      "name": "page.waitForFunction",
+      "path": "internal/page.waitForFunction.md",
+      "requirements": [
+        "REQ-PAGE-WAITFORFUNCTION-001",
+        "REQ-PAGE-WAITFORFUNCTION-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ]
+    },
+    {
+      "name": "page.waitForLoadState",
+      "path": "internal/page.waitForLoadState.md",
+      "requirements": [
+        "REQ-PAGE-WAITFORLOADSTATE-001",
+        "REQ-PAGE-WAITFORLOADSTATE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ]
+    },
+    {
+      "name": "locator.setFiles",
+      "path": "internal/locator.setFiles.md",
+      "requirements": [
+        "REQ-LOCATOR-SETFILES-001",
+        "REQ-LOCATOR-SETFILES-002",
+        "REQ-LOCATOR-SETFILES-003"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "files-events"
+      ]
+    },
+    {
+      "name": "chooser.setFiles",
+      "path": "internal/chooser.setFiles.md",
+      "requirements": [
+        "REQ-CHOOSER-SETFILES-001",
+        "REQ-CHOOSER-SETFILES-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ]
+    },
+    {
+      "name": "download.save",
+      "path": "internal/download.save.md",
+      "requirements": [
+        "REQ-DOWNLOAD-SAVE-001",
+        "REQ-DOWNLOAD-SAVE-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ]
+    },
+    {
+      "name": "download.cancel",
+      "path": "internal/download.cancel.md",
+      "requirements": [
+        "REQ-DOWNLOAD-CANCEL-001",
+        "REQ-DOWNLOAD-CANCEL-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ]
+    },
+    {
+      "name": "dialog.accept",
+      "path": "internal/dialog.accept.md",
+      "requirements": [
+        "REQ-DIALOG-ACCEPT-001",
+        "REQ-DIALOG-ACCEPT-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ]
+    },
+    {
+      "name": "dialog.dismiss",
+      "path": "internal/dialog.dismiss.md",
+      "requirements": [
+        "REQ-DIALOG-DISMISS-001",
+        "REQ-DIALOG-DISMISS-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ]
+    },
+    {
+      "name": "scope.evaluate",
+      "path": "internal/scope.evaluate.md",
+      "requirements": [
+        "REQ-SCOPE-EVALUATE-001",
+        "REQ-SCOPE-EVALUATE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "locator.evaluateAll",
+      "path": "internal/locator.evaluateAll.md",
+      "requirements": [
+        "REQ-LOCATOR-EVALUATEALL-001",
+        "REQ-LOCATOR-EVALUATEALL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ]
+    },
+    {
+      "name": "page.logs",
+      "path": "internal/page.logs.md",
+      "requirements": [
+        "REQ-PAGE-LOGS-001",
+        "REQ-PAGE-LOGS-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "console.log",
+      "path": "internal/console.log.md",
+      "requirements": [
+        "REQ-CONSOLE-LOG-001",
+        "REQ-CONSOLE-LOG-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    },
+    {
+      "name": "display",
+      "path": "internal/display.md",
+      "requirements": [
+        "REQ-DISPLAY-001",
+        "REQ-DISPLAY-002"
+      ],
+      "common": [
+        "runtime"
+      ]
+    }
+  ],
+  "common": [
+    {
+      "name": "runtime",
+      "path": "common/runtime.md",
+      "requirements": [
+        "REQ-C-RUNTIME-001",
+        "REQ-C-RUNTIME-002",
+        "REQ-C-RUNTIME-003",
+        "REQ-C-RUNTIME-004",
+        "REQ-C-RUNTIME-005",
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007",
+        "REQ-C-RUNTIME-008"
+      ]
+    },
+    {
+      "name": "dom-frames",
+      "path": "common/dom-frames.md",
+      "requirements": [
+        "REQ-C-DOMFRAMES-001",
+        "REQ-C-DOMFRAMES-002",
+        "REQ-C-DOMFRAMES-003",
+        "REQ-C-DOMFRAMES-004",
+        "REQ-C-DOMFRAMES-005",
+        "REQ-C-DOMFRAMES-006"
+      ]
+    },
+    {
+      "name": "selection",
+      "path": "common/selection.md",
+      "requirements": [
+        "REQ-C-SELECTION-001",
+        "REQ-C-SELECTION-002",
+        "REQ-C-SELECTION-003",
+        "REQ-C-SELECTION-004",
+        "REQ-C-SELECTION-005",
+        "REQ-C-SELECTION-006"
+      ]
+    },
+    {
+      "name": "input",
+      "path": "common/input.md",
+      "requirements": [
+        "REQ-C-INPUT-001",
+        "REQ-C-INPUT-002",
+        "REQ-C-INPUT-003",
+        "REQ-C-INPUT-004",
+        "REQ-C-INPUT-005"
+      ]
+    },
+    {
+      "name": "files-events",
+      "path": "common/files-events.md",
+      "requirements": [
+        "REQ-C-FILESEVENTS-001",
+        "REQ-C-FILESEVENTS-002",
+        "REQ-C-FILESEVENTS-003",
+        "REQ-C-FILESEVENTS-004",
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
+      ]
+    }
+  ]
+}

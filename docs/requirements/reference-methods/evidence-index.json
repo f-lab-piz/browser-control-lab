@@ -1,0 +1,2142 @@
+{
+  "schemaVersion": 1,
+  "claims": [
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:100-100; raw/public-contract-excerpts.md:117-117; raw/public-contract-excerpts.md:117-117",
+      "claim": "최초 호출 시 안내 자동 출력, 이름 기반 문서 읽기",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-guide-01",
+      "provider": "codex",
+      "owner": "guide",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "CLI main은 exec/repl 표면·프로필 선택·기본 운영을 안내한다.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-MAIN",
+      "location": "evidence/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Browser usage / Persistence / Remote control",
+      "id": "CL-ASIDE-guide-01",
+      "provider": "aside",
+      "owner": "guide",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control"
+    },
+    {
+      "claim": "REPL 가이드는 환경·snapshot 옵션·download 사용법을 공개한다.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment / Snapshot / Downloads",
+      "id": "CL-ASIDE-guide-02",
+      "provider": "aside",
+      "owner": "guide",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:108-110",
+      "claim": "JS bindings 제거, browser tabs/apps/state는 닫거나 지우지 않음",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-reset-01",
+      "provider": "codex",
+      "owner": "reset",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:96-96; raw/cua-entry-excerpts.md:106-106",
+      "claim": "persistent JS REPL과 명시 nodeRepl.write 출력; 기본30초",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-js-01",
+      "provider": "codex",
+      "owner": "js",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "ES2023+·async/await·120초·const/let 지속·import/require 금지·명시 console 출력은 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment; persistent const/let; Always use console.log",
+      "id": "CL-ASIDE-js-01",
+      "provider": "aside",
+      "owner": "js",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:33-41; raw/cua-entry-excerpts.md:83-83",
+      "claim": "BrowserInfo의 id/name/family/type/profileName/metadata 공개",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-browser-list-01",
+      "provider": "codex",
+      "owner": "browser.list",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "remote host별 profile 조회와 --profile 선택이 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-MAIN",
+      "location": "evidence/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Remote control: aside host profiles --host / --profile selection",
+      "id": "CL-ASIDE-browser-list-01",
+      "provider": "aside",
+      "owner": "browser.list",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection"
+    },
+    {
+      "claim": "조합 대응 판단: host/profile 목록 후 profile 선택",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-MAIN",
+      "location": "evidence/aside/current-main-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-browser-list-02",
+      "provider": "aside",
+      "owner": "browser.list",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-main-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:42-49; raw/cua-entry-excerpts.md:84-84; raw/cua-entry-excerpts.md:90-90",
+      "claim": "TabInfo id/browserId/providerTabId/title/url; listing does not claim",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-browser-tabs-01",
+      "provider": "codex",
+      "owner": "browser.tabs",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "attach 없이 브라우저 열린 탭 목록, targetId/active/title/url 예시는 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment listBrowserTabs / Open browser tabs list example",
+      "id": "CL-ASIDE-browser-tabs-01",
+      "provider": "aside",
+      "owner": "browser.tabs",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:73-78; raw/cua-entry-excerpts.md:52-52",
+      "claim": "createBrowserTab(browserId,url?,options?):Promise<Tab>; options는 visible/sessionName을 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-browser-open-01",
+      "provider": "codex",
+      "owner": "browser.open",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "LIVE",
+      "sourceId": "CUA-LIVE-BLANK",
+      "location": "raw/blank-probe.json#/createdTab",
+      "claim": "새 background about:blank 탭 생성 성공; createdTab=\"about:blank\".",
+      "scope": "about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님",
+      "id": "CL-CODEX-browser-open-02",
+      "provider": "codex",
+      "owner": "browser.open",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "openTab(url)는 새 탭을 열고 interactive까지 기다려 page/tabs를 갱신한다고 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment openTab: open, wait interactive, update page/tabs",
+      "id": "CL-ASIDE-browser-open-01",
+      "provider": "aside",
+      "owner": "browser.open",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:78-83",
+      "claim": "ID/mention/URL로 기존 탭 binding; create와 별도",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-browser-attach-01",
+      "provider": "codex",
+      "owner": "browser.attach",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "열린 targetId 탭을 attach하고 page로 설정하는 API는 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment attachBrowserTab / Open browser tabs",
+      "id": "CL-ASIDE-browser-attach-01",
+      "provider": "aside",
+      "owner": "browser.attach",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:112-116",
+      "claim": "IAB visible 생성/브라우저 visibility capability는 별도 존재",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-activate-01",
+      "provider": "codex",
+      "owner": "page.activate",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:30-30",
+      "claim": "Tab.close():Promise<void>를 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-close-01",
+      "provider": "codex",
+      "owner": "page.close",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "LIVE",
+      "sourceId": "CUA-LIVE-BLANK",
+      "location": "raw/blank-probe.json#/tabClosedAfterProbe",
+      "claim": "연구 탭 close가 예외 없이 반환; tabClosedAfterProbe=true.",
+      "scope": "about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님",
+      "id": "CL-CODEX-page-close-02",
+      "provider": "codex",
+      "owner": "page.close",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "반드시 closeTab(tab)을 쓰고 page.close()는 메모리누수 때문에 금지한다는 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
+      "id": "CL-ASIDE-page-close-01",
+      "provider": "aside",
+      "owner": "page.close",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close"
+    },
+    {
+      "claim": "조합 대응 판단: Page 메서드 대신 closeTab 전역",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-page-close-02",
+      "provider": "aside",
+      "owner": "page.close",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:33-33",
+      "claim": "goto(url):Promise<void>; boolean 반환 아님",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-goto-01",
+      "provider": "codex",
+      "owner": "page.goto",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:29-29",
+      "claim": "back():Promise<void>",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-back-01",
+      "provider": "codex",
+      "owner": "page.back",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:31-31",
+      "claim": "forward():Promise<void>",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-forward-01",
+      "provider": "codex",
+      "owner": "page.forward",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:36-36",
+      "claim": "reload():Promise<void>",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-reload-01",
+      "provider": "codex",
+      "owner": "page.reload",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:42-42; raw/public-contract-excerpts.md:150-150",
+      "claim": "domSnapshot():Promise<string>; 현재 DOM과 가능한 iframe 본문을 포함한다는 공개 설명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-scope-snapshot-01",
+      "provider": "codex",
+      "owner": "scope.snapshot",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/snapshotChars; raw/historical-diagnostics-before-after.json#/codex/tail; raw/historical-diagnostics-before-after.json#/codex/selected; raw/historical-diagnostics-before-after.json#/codex/secret",
+      "claim": "{\"snapshotChars\": 2682070, \"tail\": true, \"selected\": true, \"secret\": false}",
+      "observedValues": {
+        "snapshotChars": 2682070,
+        "tail": true,
+        "selected": true,
+        "secret": false
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-scope-snapshot-02",
+      "provider": "codex",
+      "owner": "scope.snapshot",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "snapshot(page,{interactive?,showHidden?,ref?,selector?}) => Promise<{tree,diff}> 명시 서명 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot TypeScript function signature",
+      "id": "CL-ASIDE-scope-snapshot-01",
+      "provider": "aside",
+      "owner": "scope.snapshot",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot TypeScript function signature"
+    },
+    {
+      "claim": "offscreen/child-iframe/title/url·CSS selector 또는 ref 부분조회 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
+      "id": "CL-ASIDE-scope-snapshot-02",
+      "provider": "aside",
+      "owner": "scope.snapshot",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets"
+    },
+    {
+      "claim": "새 snapshot은 이전 모든 ref 무효화; tree 후 action마다 diff 인쇄 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
+      "id": "CL-ASIDE-scope-snapshot-03",
+      "provider": "aside",
+      "owner": "scope.snapshot",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets"
+    },
+    {
+      "claim": "과거 audit에서 기본13175자/tail 미포함/생략표시, selector tail104자에서 발견 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-SNAPSHOT",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/snapshot,/aside/scoped; scripts/compare-aside.mjs snapshot/scoped :: snapshot/scoped values",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. snapshot/scoped values",
+      "id": "CL-ASIDE-scope-snapshot-04",
+      "provider": "aside",
+      "owner": "scope.snapshot",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:37-37; raw/public-contract-excerpts.md:119-119; raw/public-contract-excerpts.md:140-140",
+      "claim": "Tab.screenshot(options):Promise<Uint8Array>; ScreenshotOptions는 clip/fullPage를 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-screenshot-01",
+      "provider": "codex",
+      "owner": "page.screenshot",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/clip",
+      "claim": "{\"clip\": {\"format\": \"JPEG\", \"width\": 320, \"height\": 240}}",
+      "observedValues": {
+        "clip": {
+          "format": "JPEG",
+          "width": 320,
+          "height": 240
+        }
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-page-screenshot-02",
+      "provider": "codex",
+      "owner": "page.screenshot",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "raw screenshot 및 ref box 포함 annotatedScreenshot 사용은 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment visual verification / Reading Escalation step4",
+      "id": "CL-ASIDE-page-screenshot-01",
+      "provider": "aside",
+      "owner": "page.screenshot",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4"
+    },
+    {
+      "claim": "과거 clip320x240 CSS 요청이 PNG640x480이었음(HISTORICAL/DPR).",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-CLIP",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=screenshot-clip]; scripts/compare-aside.mjs screenshot-clip; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: screenshot-clip result and DPR note",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. screenshot-clip result and DPR note",
+      "id": "CL-ASIDE-page-screenshot-02",
+      "provider": "aside",
+      "owner": "page.screenshot",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:151-151",
+      "claim": "domSnapshot은 가능한 iframe 본문을 포함한다는 설명이며 page evaluate는 read-only 공개 서명이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-frames-01",
+      "provider": "codex",
+      "owner": "page.frames",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "INFERENCE",
+      "sourceId": "CODEX-RESEARCH-INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위",
+      "claim": "read-only evaluate로 iframe DOM element 메타데이터를 조회하는 조합을 제안한다. nested/OOPIF process tree 동등성은 미확인이다.",
+      "scope": "조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외",
+      "id": "CL-CODEX-page-frames-02",
+      "provider": "codex",
+      "owner": "page.frames",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:58-66; raw/public-contract-excerpts.md:45-45",
+      "claim": "CSS frame selector로 frame builder, 중첩 frameLocator 지원",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-frame-01",
+      "provider": "codex",
+      "owner": "page.frame",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 frameLocator→getByRole→click 문법 실행됨; 업무 이름변경0·서버PASS없음 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-FRAME",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: frameLocator call and observed business result",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. frameLocator call and observed business result",
+      "id": "CL-ASIDE-page-frame-01",
+      "provider": "aside",
+      "owner": "page.frame",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "조합 대응 판단: iframe selector 기반 frameLocator(과거 호출)",
+      "kind": "INFERENCE",
+      "sourceId": "A-HIST-FRAME",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-page-frame-02",
+      "provider": "aside",
+      "owner": "page.frame",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:51-51; raw/public-contract-excerpts.md:58-66",
+      "claim": "페이지/frame의 CSS locator builder",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-scope-locator-01",
+      "provider": "codex",
+      "owner": "scope.locator",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "virtual ref는 page.locator(ref)로 전달하며 DOM property/CSS와 혼합금지 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: ref IDs are virtual locators; page.locator(e31)",
+      "id": "CL-ASIDE-scope-locator-01",
+      "provider": "aside",
+      "owner": "scope.locator",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)"
+    },
+    {
+      "claim": "download button CSS locator 예시 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: page.locator(button.export).click example",
+      "id": "CL-ASIDE-scope-locator-02",
+      "provider": "aside",
+      "owner": "scope.locator",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:123-123",
+      "claim": "getByRole(role,{exact?,name?})와 TextMatcher=string|RegExp를 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-scope-getByRole-01",
+      "provider": "codex",
+      "owner": "scope.getByRole",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/slotClick",
+      "claim": "{\"regex\": 1, \"slotClick\": true}",
+      "observedValues": {
+        "regex": 1,
+        "slotClick": true
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-scope-getByRole-02",
+      "provider": "codex",
+      "owner": "scope.getByRole",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 regex role count1 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-REGEX",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex-role result value1",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. regex-role result value1",
+      "id": "CL-ASIDE-scope-getByRole-01",
+      "provider": "aside",
+      "owner": "scope.getByRole",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "slot 이름 role 탐색은 Role selector not found HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-SLOT",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot-name Role selector not found error",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. slot-name Role selector not found error",
+      "id": "CL-ASIDE-scope-getByRole-02",
+      "provider": "aside",
+      "owner": "scope.getByRole",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:50-50; raw/public-contract-excerpts.md:123-123",
+      "claim": "TextMatcher와 exact 공개",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-scope-getByText-01",
+      "provider": "codex",
+      "owner": "scope.getByText",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 drag 후 exact text waitFor가 완료되어 workflow 판단에 사용 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-DRAG",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: getByText exact waitFor followed by true; server drag PASS",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. getByText exact waitFor followed by true; server drag PASS",
+      "id": "CL-ASIDE-scope-getByText-01",
+      "provider": "aside",
+      "owner": "scope.getByText",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:46-46; raw/public-contract-excerpts.md:123-123",
+      "claim": "TextMatcher+exact로 label text 검색",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-scope-getByLabel-01",
+      "provider": "codex",
+      "owner": "scope.getByLabel",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 getByLabel→fill 호출에서 오류로 rejected를 기록 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-READONLY",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=readonly-fill]; scripts/compare-aside.mjs readonly-fill :: whole getByLabel→fill call rejected; exact cause unavailable",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. whole getByLabel→fill call rejected; exact cause unavailable",
+      "id": "CL-ASIDE-scope-getByLabel-01",
+      "provider": "aside",
+      "owner": "scope.getByLabel",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:79-79; raw/public-contract-excerpts.md:132-132",
+      "claim": "filter(options)와 has/hasNot/hasText/hasNotText/visible 공개 옵션을 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-filter-01",
+      "provider": "codex",
+      "owner": "locator.filter",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/visibleFilter",
+      "claim": "{\"visibleFilter\": 2}",
+      "observedValues": {
+        "visibleFilter": 2
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-locator-filter-02",
+      "provider": "codex",
+      "owner": "locator.filter",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 visible:true 요청 결과3(숨김 포함) HISTORICAL; 우리 기대2와 다름.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-FILTER",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible:true count3; hidden-included report note",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. visible:true count3; hidden-included report note",
+      "id": "CL-ASIDE-locator-filter-01",
+      "provider": "aside",
+      "owner": "locator.filter",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:92-92",
+      "claim": "nth(index:number):PlaywrightLocator를 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-nth-01",
+      "provider": "codex",
+      "owner": "locator.nth",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/nthMinusOne",
+      "claim": "{\"nthMinusOne\": 1}",
+      "observedValues": {
+        "nthMinusOne": 1
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-locator-nth-02",
+      "provider": "codex",
+      "owner": "locator.nth",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 nth(-1) 호출이 DOMException HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-NTH",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=negative-nth]; scripts/compare-aside.mjs negative-nth :: nth(-1) DOMException",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. nth(-1) DOMException",
+      "id": "CL-ASIDE-locator-nth-01",
+      "provider": "aside",
+      "owner": "locator.nth",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:73-73",
+      "claim": "count():Promise<number>를 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-count-01",
+      "provider": "codex",
+      "owner": "locator.count",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "LIVE",
+      "sourceId": "CUA-LIVE-BLANK",
+      "location": "raw/blank-probe.json#/output/count",
+      "claim": "about:blank button locator count=0.",
+      "scope": "about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님",
+      "id": "CL-CODEX-locator-count-02",
+      "provider": "codex",
+      "owner": "locator.count",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 regex role count1 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-REGEX",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: role count1",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. role count1",
+      "id": "CL-ASIDE-locator-count-01",
+      "provider": "aside",
+      "owner": "locator.count",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "과거 visible filter count3 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-FILTER",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible filter count3",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. visible filter count3",
+      "id": "CL-ASIDE-locator-count-02",
+      "provider": "aside",
+      "owner": "locator.count",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:98-98; raw/public-contract-excerpts.md:154-154",
+      "claim": "raw textContent first matched, string|null",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-textContent-01",
+      "provider": "codex",
+      "owner": "locator.textContent",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:81-81; raw/public-contract-excerpts.md:155-155",
+      "claim": "first matched attribute value, string|null",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-getAttribute-01",
+      "provider": "codex",
+      "owner": "locator.getAttribute",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 하니스 getAttribute(data-run) 문법과 서버판독 완료에서 호출 성공을 추론한다.",
+      "kind": "INFERENCE",
+      "sourceId": "A-HIST-HARNESS",
+      "location": "scripts/compare-aside.mjs body data-run getAttribute call; docs/evidence/diagnostics-before-after.json#/aside/serverPassed,/aside/events",
+      "scope": "자체 비교 하니스 코드와 요약결과의 연결 추론. 원본 API의 개별 반환/strict/null 동작을 확인한 DOC/HISTORICAL 분자에 넣지 않음.",
+      "id": "CL-ASIDE-locator-getAttribute-01",
+      "provider": "aside",
+      "owner": "locator.getAttribute",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:152-152",
+      "claim": "read-only 단일 element evaluate(fn,arg?,options?) 공개 서명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-inputValue-01",
+      "provider": "codex",
+      "owner": "locator.inputValue",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "INFERENCE",
+      "sourceId": "CODEX-RESEARCH-INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위",
+      "claim": "element.value 읽기 조합은 조사자 제안이며 제어요소/CE 타입정책·오류를 입증하지 않는다.",
+      "scope": "조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외",
+      "id": "CL-CODEX-locator-inputValue-02",
+      "provider": "codex",
+      "owner": "locator.inputValue",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:89-89; raw/public-contract-excerpts.md:157-157",
+      "claim": "first matched visible boolean",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-isVisible-01",
+      "provider": "codex",
+      "owner": "locator.isVisible",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:88-88; raw/public-contract-excerpts.md:156-156",
+      "claim": "first matched enabled boolean",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-isEnabled-01",
+      "provider": "codex",
+      "owner": "locator.isEnabled",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:152-152",
+      "claim": "read-only 단일 element evaluate(fn,arg?,options?) 공개 서명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-isEditable-01",
+      "provider": "codex",
+      "owner": "locator.isEditable",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "INFERENCE",
+      "sourceId": "CODEX-RESEARCH-INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위",
+      "claim": "공개 evaluate에 DOM 상태를 읽는 함수를 전달하는 조합을 제안한다. editable 공통정책은 자체 판단이며 미실행이다.",
+      "scope": "조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외",
+      "id": "CL-CODEX-locator-isEditable-02",
+      "provider": "codex",
+      "owner": "locator.isEditable",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:81-81",
+      "claim": "read-only 단일 element evaluate와 getAttribute 공개 서명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-isChecked-01",
+      "provider": "codex",
+      "owner": "locator.isChecked",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "INFERENCE",
+      "sourceId": "CODEX-RESEARCH-INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위",
+      "claim": "native property/ARIA attribute를 읽어 체크상태를 판정하는 조합을 제안한다. mixed/타입정책은 미확인이다.",
+      "scope": "조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외",
+      "id": "CL-CODEX-locator-isChecked-02",
+      "provider": "codex",
+      "owner": "locator.isChecked",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:152-152",
+      "claim": "read-only 단일 element evaluate(fn,arg?,options?) 공개 서명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-boundingBox-01",
+      "provider": "codex",
+      "owner": "locator.boundingBox",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "INFERENCE",
+      "sourceId": "CODEX-RESEARCH-INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위",
+      "claim": "getBoundingClientRect를 evaluate에서 읽는 조합을 제안한다. frame-local→main 변환 및 hidden null은 미확인이다.",
+      "scope": "조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외",
+      "id": "CL-CODEX-locator-boundingBox-02",
+      "provider": "codex",
+      "owner": "locator.boundingBox",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:74-74; raw/public-contract-excerpts.md:128-128",
+      "claim": "click/dblclick은 LocatorClickOptions(button/force/modifiers/timeoutMs)를 받아 Promise<void>를 반환하는 선언이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-click-01",
+      "provider": "codex",
+      "owner": "locator.click",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick",
+      "claim": "{\"slotClick\": true, \"scaledFrameClick\": true}",
+      "observedValues": {
+        "slotClick": true,
+        "scaledFrameClick": true
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-locator-click-02",
+      "provider": "codex",
+      "owner": "locator.click",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "click이 interactivity/DOM stability를 기다리고 필요시 scroll한다는 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click interactivity/stability wait and needed scroll",
+      "id": "CL-ASIDE-locator-click-01",
+      "provider": "aside",
+      "owner": "locator.click",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll"
+    },
+    {
+      "claim": "과거 slot 이름 role 검색 오류 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-SLOT",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: role lookup error before intended slot click",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. role lookup error before intended slot click",
+      "id": "CL-ASIDE-locator-click-02",
+      "provider": "aside",
+      "owner": "locator.click",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-FRAME",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: name-change count0/server success absent",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. name-change count0/server success absent",
+      "id": "CL-ASIDE-locator-click-03",
+      "provider": "aside",
+      "owner": "locator.click",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:78-78",
+      "claim": "fill(value:string,{timeoutMs?}):Promise<void>를 선언한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-fill-01",
+      "provider": "codex",
+      "owner": "locator.fill",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/readonly",
+      "claim": "{\"readonly\": \"rejected\"}",
+      "observedValues": {
+        "readonly": "rejected"
+      },
+      "scope": "2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존",
+      "id": "CL-CODEX-locator-fill-02",
+      "provider": "codex",
+      "owner": "locator.fill",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 readonly 사례 rejected HISTORICAL; 집계는 상세 오류 원인을 생략.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-READONLY",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=readonly-fill]; scripts/compare-aside.mjs readonly-fill :: getByLabel→fill catch returns rejected; error cause not preserved",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. getByLabel→fill catch returns rejected; error cause not preserved",
+      "id": "CL-ASIDE-locator-fill-01",
+      "provider": "aside",
+      "owner": "locator.fill",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/cua-entry-excerpts.md:139-139",
+      "claim": "locator focus후 key press 공개",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-press-01",
+      "provider": "codex",
+      "owner": "locator.press",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:21-31; raw/cua-entry-excerpts.md:54-54",
+      "claim": "native Target에는 coordinate actions가 있으나 DOM-only 입력은 throw",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-hover-01",
+      "provider": "codex",
+      "owner": "locator.hover",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/cua-entry-excerpts.md:139-139",
+      "claim": "locator.press는 대상이 focus된 상태에서 키를 누른다는 공개 설명이다. focus-only 동등성은 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-focus-01",
+      "provider": "codex",
+      "owner": "locator.focus",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:54-54",
+      "claim": "native Target.scroll 서명과 DOM-only tab의 native 입력 wrapper가 입력 전에 throw한다는 공개 설명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-scrollIntoView-01",
+      "provider": "codex",
+      "owner": "locator.scrollIntoView",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:71-71; raw/public-contract-excerpts.md:100-100; raw/public-contract-excerpts.md:127-127",
+      "claim": "boolean, force/timeoutMs, check/uncheck도 공개",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-setChecked-01",
+      "provider": "codex",
+      "owner": "locator.setChecked",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:96-96; raw/public-contract-excerpts.md:135-135; raw/public-contract-excerpts.md:144-144",
+      "claim": "string/descriptor/array, descriptor index/label/value; 반환void",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-selectOption-01",
+      "provider": "codex",
+      "owner": "locator.selectOption",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:26-26; raw/cua-entry-excerpts.md:54-54",
+      "claim": "native Target.drag(from,to) 서명과 DOM-only tab의 native 입력 wrapper가 입력 전에 throw한다는 공개 설명.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-dragTo-01",
+      "provider": "codex",
+      "owner": "locator.dragTo",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 audit에서 drag 서버PASS; 단일 호출에서 accepted 이벤트2개 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-DRAG",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: drag PASS and two accepted events in one invocation",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. drag PASS and two accepted events in one invocation",
+      "id": "CL-ASIDE-locator-dragTo-01",
+      "provider": "aside",
+      "owner": "locator.dragTo",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:106-109",
+      "claim": "chooser 업로드는 공개지만 drop/files+MIME 대체 근거 아님",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-drop-01",
+      "provider": "codex",
+      "owner": "locator.drop",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:21-31",
+      "claim": "native Target.drag/scroll은 존재, move primitive는 열거안됨",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-mouse-move-01",
+      "provider": "codex",
+      "owner": "mouse.move",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:21-31",
+      "claim": "Target 공개 발췌는 click/drag/scroll을 열거한다. down 지속상태·atomicity·cleanup은 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-mouse-down-01",
+      "provider": "codex",
+      "owner": "mouse.down",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:21-31",
+      "claim": "열람한 공개 인터페이스 발췌에는 개별 up 메서드가 열거되지 않았다. 제품 전체 실제지원은 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-mouse-up-01",
+      "provider": "codex",
+      "owner": "mouse.up",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:25-25; raw/cua-entry-excerpts.md:11-16; raw/cua-entry-excerpts.md:54-54",
+      "claim": "native click(Vec2/options) 계약; DOM-only tabs에서는 입력전 throw",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-mouse-click-01",
+      "provider": "codex",
+      "owner": "mouse.click",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:18-18",
+      "claim": "native scroll target/direction/pages 계약, raw deltaX/Y 아님",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-mouse-wheel-01",
+      "provider": "codex",
+      "owner": "mouse.wheel",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:57-57; raw/public-contract-excerpts.md:94-94",
+      "claim": "Tab.pressKey와 locator.press 공개 서명이다. 개별 down/지속 modifier는 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-keyboard-down-01",
+      "provider": "codex",
+      "owner": "keyboard.down",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:55-66; raw/public-contract-excerpts.md:67-113",
+      "claim": "열람한 공개 인터페이스 발췌에는 개별 up 메서드가 열거되지 않았다. 제품 전체 실제지원은 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-keyboard-up-01",
+      "provider": "codex",
+      "owner": "keyboard.up",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:57-57; raw/cua-entry-excerpts.md:54-54; raw/cua-entry-excerpts.md:139-139",
+      "claim": "locator.press는 focus대상 지정; native tab.pressKey는 DOM-only throw",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-keyboard-press-01",
+      "provider": "codex",
+      "owner": "keyboard.press",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/cua-entry-excerpts.md:141-141; raw/cua-entry-excerpts.md:140-140",
+      "claim": "기존내용을 지우지않는 type, pressSequentially 문자별 입력 공개",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-keyboard-type-01",
+      "provider": "codex",
+      "owner": "keyboard.type",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:101-101; raw/public-contract-excerpts.md:136-136; raw/public-contract-excerpts.md:145-145",
+      "claim": "attached/detached/visible/hidden과 timeoutMs; Promise<void>",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-waitFor-01",
+      "provider": "codex",
+      "owner": "locator.waitFor",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "과거 drag 후 텍스트 완료대기 문법이 실행됨 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-DRAG",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: exact text waitFor(timeout2000) completed before true",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. exact text waitFor(timeout2000) completed before true",
+      "id": "CL-ASIDE-locator-waitFor-01",
+      "provider": "aside",
+      "owner": "locator.waitFor",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:52-53; raw/public-contract-excerpts.md:158-158",
+      "claim": "download/filechooser overload, 호출을 조작전에 등록하라고 문서안내",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-waitForEvent-01",
+      "provider": "codex",
+      "owner": "page.waitForEvent",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "download waiter를 action 전에 등록하는 공개 예제 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: waitForEvent(download) before click example",
+      "id": "CL-ASIDE-page-waitForEvent-01",
+      "provider": "aside",
+      "owner": "page.waitForEvent",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:56-56; raw/public-contract-excerpts.md:126-126",
+      "claim": "string URL와 timeoutMs/waitUntil; 반환void",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-waitForURL-01",
+      "provider": "codex",
+      "owner": "page.waitForURL",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:120-120",
+      "claim": "page evaluate는 read-only 서명으로 Promise 결과 타입을 포함한다. 내장 waitForFunction 실제지원은 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-waitForFunction-01",
+      "provider": "codex",
+      "owner": "page.waitForFunction",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "INFERENCE",
+      "sourceId": "CODEX-RESEARCH-INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위",
+      "claim": "호스트에서 read-only evaluate를 순차 반복하는 조합은 의사코드다. 내장 waitForFunction 또는 effectful 함수 지원의 증거가 아니다.",
+      "scope": "조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외",
+      "id": "CL-CODEX-page-waitForFunction-02",
+      "provider": "codex",
+      "owner": "page.waitForFunction",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:54-54; raw/public-contract-excerpts.md:125-125; raw/public-contract-excerpts.md:122-122",
+      "claim": "load/domcontentloaded/networkidle 공개, 반환void",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-waitForLoadState-01",
+      "provider": "codex",
+      "owner": "page.waitForLoadState",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-UPLOAD",
+      "location": "raw/file-uploads.md:5-10; raw/file-uploads.md:15-15",
+      "claim": "file-uploads 문서는 waitForEvent(filechooser)→click→chooser.setFiles 순서를 안내하며 locator.setInputFiles를 찾지 말라고 한다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-setFiles-01",
+      "provider": "codex",
+      "owner": "locator.setFiles",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:106-109; raw/public-contract-excerpts.md:137-137; raw/public-contract-excerpts.md:159-159",
+      "claim": "browser-visible absolute path string|string[], chooser.isMultiple",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-chooser-setFiles-01",
+      "provider": "codex",
+      "owner": "chooser.setFiles",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105",
+      "claim": "download event 완료 후 local path string|null",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-download-save-01",
+      "provider": "codex",
+      "owner": "download.save",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "브라우저 download.path의 실제 완료파일은 현재 REPL 세션에서 읽기 가능 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: completed download.path readable in same REPL session",
+      "id": "CL-ASIDE-download-save-01",
+      "provider": "aside",
+      "owner": "download.save",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session"
+    },
+    {
+      "claim": "saveAs는 명시 artifact 복사가 필요할 때만; one-shot은 같은 command 내 검증 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
+      "id": "CL-ASIDE-download-save-02",
+      "provider": "aside",
+      "owner": "download.save",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation"
+    },
+    {
+      "claim": "POST/blob/redirect는 가능할 경우 브라우저 download handling; 안전한 직접 GET/HEAD fetch와 구분 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
+      "id": "CL-ASIDE-download-save-03",
+      "provider": "aside",
+      "owner": "download.save",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed"
+    },
+    {
+      "claim": "조합 대응 판단: Download.path + fs 검증 또는 saveAs 아티팩트 복사",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-download-save-04",
+      "provider": "aside",
+      "owner": "download.save",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:103-105",
+      "claim": "Download 공개서명은 path만",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-download-cancel-01",
+      "provider": "codex",
+      "owner": "download.cancel",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116",
+      "claim": "prompt accept(text), confirm accept(); alert/beforeunload accept 없음",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-dialog-accept-01",
+      "provider": "codex",
+      "owner": "dialog.accept",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116",
+      "claim": "alert/beforeunload/confirm/prompt 모두 dismiss 공개",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-dialog-dismiss-01",
+      "provider": "codex",
+      "owner": "dialog.dismiss",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:120-120; raw/public-contract-excerpts.md:130-130",
+      "claim": "read-only page/element evaluate, function|string, optional arg/options, Promise 반환타입",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-scope-evaluate-01",
+      "provider": "codex",
+      "owner": "scope.evaluate",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "LIVE",
+      "sourceId": "CUA-LIVE-BLANK",
+      "location": "raw/blank-probe.json#/output/readOnlyValue",
+      "claim": "read-only evaluate 결과={bodyText:\"\",title:\"\"}.",
+      "scope": "about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님",
+      "id": "CL-CODEX-scope-evaluate-02",
+      "provider": "codex",
+      "owner": "scope.evaluate",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "정확 selector를 알 때 외에는 evaluate/content 피하라는 DOC에 메서드명 등장.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
+      "id": "CL-ASIDE-scope-evaluate-01",
+      "provider": "aside",
+      "owner": "scope.evaluate",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/public-contract-excerpts.md:153-153; raw/public-contract-excerpts.md:131-131",
+      "claim": "read-only matched element array, optional arg/options Promise 타입",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-locator-evaluateAll-01",
+      "provider": "codex",
+      "owner": "locator.evaluateAll",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "location": "raw/cua-entry-excerpts.md:121-133",
+      "claim": "levels/filter substring/limit; ISO timestamp,message,url 배열",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-page-logs-01",
+      "provider": "codex",
+      "owner": "page.logs",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:96-96",
+      "claim": "명시 텍스트 출력용 nodeRepl.write(value)를 안내한다. console.log 별칭의 동등성은 미확인이다.",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-console-log-01",
+      "provider": "codex",
+      "owner": "console.log",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "LIVE",
+      "sourceId": "CUA-LIVE-BLANK",
+      "location": "raw/blank-probe.json#/output",
+      "claim": "nodeRepl.write로 URL/count/readOnlyValue 객체가 출력됨; 실제 console.log 호출은 아님.",
+      "scope": "about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님",
+      "id": "CL-CODEX-console-log-02",
+      "provider": "codex",
+      "owner": "console.log",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "자신에게 값을 돌려받으려면 항상 console.log 사용 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment: Always use console.log to return values",
+      "id": "CL-ASIDE-console-log-01",
+      "provider": "aside",
+      "owner": "console.log",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment: Always use console.log to return values"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "location": "raw/cua-entry-excerpts.md:94-94",
+      "claim": "data/file URL, PNG/JPEG/WebP bytes, {bytes,mimeType} 허용",
+      "scope": "public declaration only; limits in unknownConditions",
+      "id": "CL-CODEX-display-01",
+      "provider": "codex",
+      "owner": "display",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "display 전역 존재 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment available globals: fs,path,Buffer,sleep,display,pwd",
+      "id": "CL-ASIDE-display-01",
+      "provider": "aside",
+      "owner": "display",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-ENTRY",
+      "claim": "persistent CUA REPL, reset binding 제거, 명시 nodeRepl.write 출력 안내.",
+      "location": "raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:108-110; raw/cua-entry-excerpts.md:96-96",
+      "scope": "공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님",
+      "id": "CL-CODEX-runtime-01",
+      "provider": "codex",
+      "owner": "runtime",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "120초·ES2023+·const/let 지속·import/require 금지·명시console은 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment",
+      "id": "CL-ASIDE-runtime-01",
+      "provider": "aside",
+      "owner": "runtime",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "claim": "domSnapshot은 가능한 iframe 본문 포함 설명; frameLocator의 중첩 builder 선언.",
+      "location": "raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:58-66",
+      "scope": "공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님",
+      "id": "CL-CODEX-dom-frames-01",
+      "provider": "codex",
+      "owner": "dom-frames",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "claim": "{\"slotClick\": true, \"scaledFrameClick\": true}",
+      "observedValues": {
+        "slotClick": true,
+        "scaledFrameClick": true
+      },
+      "location": "raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick",
+      "scope": "과거 audit의 해당 필드만; 현재/모든 옵션/일반 환경으로 확대하지 않음",
+      "id": "CL-CODEX-dom-frames-02",
+      "provider": "codex",
+      "owner": "dom-frames",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "snapshot은 offscreen/child iframe을 포함한다고 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot offscreen/childiframe bullet",
+      "id": "CL-ASIDE-dom-frames-01",
+      "provider": "aside",
+      "owner": "dom-frames",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet"
+    },
+    {
+      "claim": "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-FRAME",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: scaled-frame name-change0 and absent server success",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. scaled-frame name-change0 and absent server success",
+      "id": "CL-ASIDE-dom-frames-02",
+      "provider": "aside",
+      "owner": "dom-frames",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "과거 slot 이름 role 검색 오류 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-SLOT",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot role error",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. slot role error",
+      "id": "CL-ASIDE-dom-frames-03",
+      "provider": "aside",
+      "owner": "dom-frames",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "조합 대응 판단: snapshot 관찰→frameLocator 또는 ref 대상→action→새 snapshot 사후판정",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-dom-frames-04",
+      "provider": "aside",
+      "owner": "dom-frames",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "claim": "TextMatcher=string|RegExp, exact 옵션과 filter/nth/count 서명.",
+      "location": "raw/public-contract-excerpts.md:123-123; raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:132-132; raw/public-contract-excerpts.md:92-92; raw/public-contract-excerpts.md:73-73",
+      "scope": "공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님",
+      "id": "CL-CODEX-selection-01",
+      "provider": "codex",
+      "owner": "selection",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "claim": "{\"regex\": 1, \"visibleFilter\": 2, \"nthMinusOne\": 1, \"slotClick\": true}",
+      "observedValues": {
+        "regex": 1,
+        "visibleFilter": 2,
+        "nthMinusOne": 1,
+        "slotClick": true
+      },
+      "location": "raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/visibleFilter; raw/historical-diagnostics-before-after.json#/codex/nthMinusOne; raw/historical-diagnostics-before-after.json#/codex/slotClick",
+      "scope": "과거 audit의 해당 필드만; 현재/모든 옵션/일반 환경으로 확대하지 않음",
+      "id": "CL-CODEX-selection-02",
+      "provider": "codex",
+      "owner": "selection",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "새 snapshot은 모든 이전 ref 무효화 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot ref invalidation bullet",
+      "id": "CL-ASIDE-selection-01",
+      "provider": "aside",
+      "owner": "selection",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet"
+    },
+    {
+      "claim": "과거 regex role count1 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-REGEX",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex count1",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. regex count1",
+      "id": "CL-ASIDE-selection-02",
+      "provider": "aside",
+      "owner": "selection",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "과거 visible filter count3 HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-FILTER",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible filter count3",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. visible filter count3",
+      "id": "CL-ASIDE-selection-03",
+      "provider": "aside",
+      "owner": "selection",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "과거 nth(-1) 호출 DOMException HISTORICAL.",
+      "kind": "HISTORICAL",
+      "sourceId": "A-HIST-NTH",
+      "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=negative-nth]; scripts/compare-aside.mjs negative-nth :: nth(-1) DOMException",
+      "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. nth(-1) DOMException",
+      "id": "CL-ASIDE-selection-04",
+      "provider": "aside",
+      "owner": "selection",
+      "sourceFile": "evidence/aside/sources.md"
+    },
+    {
+      "claim": "조합 대응 판단: 최신 snapshot virtual ref→locator→관찰/조작; 우리 stable ref는 별도 정책",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-selection-05",
+      "provider": "aside",
+      "owner": "selection",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "claim": "locator click/fill/press/setChecked/selectOption 공개 서명.",
+      "location": "raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:78-78; raw/public-contract-excerpts.md:94-94; raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:96-96",
+      "scope": "공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님",
+      "id": "CL-CODEX-input-01",
+      "provider": "codex",
+      "owner": "input",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "HISTORICAL",
+      "sourceId": "HIST-CODEX-AUDIT",
+      "claim": "{\"readonly\": \"rejected\", \"slotClick\": true, \"scaledFrameClick\": true}",
+      "observedValues": {
+        "readonly": "rejected",
+        "slotClick": true,
+        "scaledFrameClick": true
+      },
+      "location": "raw/historical-diagnostics-before-after.json#/codex/readonly; raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick",
+      "scope": "과거 audit의 해당 필드만; 현재/모든 옵션/일반 환경으로 확대하지 않음",
+      "id": "CL-CODEX-input-02",
+      "provider": "codex",
+      "owner": "input",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "click interactivity/DOM stability/필요시scroll·fresh snapshot 사후확인 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
+      "id": "CL-ASIDE-input-01",
+      "provider": "aside",
+      "owner": "input",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state"
+    },
+    {
+      "claim": "조합 대응 판단: 관찰→입력→새 snapshot·실제 업무상태; API 반환을 업무성공으로 일반화 금지",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-input-02",
+      "provider": "aside",
+      "owner": "input",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "claim": "download 완료 이벤트와 Download.path, browser-visible 절대경로 chooser.setFiles 선언.",
+      "location": "raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105; raw/public-contract-excerpts.md:159-159",
+      "scope": "공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님",
+      "id": "CL-CODEX-files-events-01",
+      "provider": "codex",
+      "owner": "files-events",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-UPLOAD",
+      "claim": "filechooser waiter를 click전에 시작하도록 안내.",
+      "location": "raw/file-uploads.md:11-11",
+      "scope": "공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님",
+      "id": "CL-CODEX-files-events-02",
+      "provider": "codex",
+      "owner": "files-events",
+      "sourceFile": "evidence/codex/sources.md"
+    },
+    {
+      "claim": "download waiter 사전등록→click→path→fs.stat/같은세션 bytes 검증 DOC.",
+      "kind": "DOC",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
+      "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads browser event example and same-session path verification",
+      "id": "CL-ASIDE-files-events-01",
+      "provider": "aside",
+      "owner": "files-events",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification"
+    },
+    {
+      "claim": "조합 대응 판단: 브라우저 다운로드 vs 검증된 안전 direct GET/HEAD fetch를 구분",
+      "kind": "INFERENCE",
+      "sourceId": "A-DOC-REPL",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
+      "id": "CL-ASIDE-files-events-02",
+      "provider": "aside",
+      "owner": "files-events",
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+    },
+    {
+      "id": "CL-CODEX-current-dialog-01",
+      "kind": "DOC",
+      "sourceId": "CUA-DOC-API",
+      "provider": "codex",
+      "owner": "page.waitForEvent",
+      "claim": "tab.getJsDialog():Promise<Dialog|undefined>라는 현재dialog조회 공개서명이 있다.",
+      "location": "evidence/codex/raw/public-contract-excerpts.md :: getJsDialog signature",
+      "scope": "현재dialog조회개념만. 우리의 includeCurrent/세대/단일claim/복구 성공정책은미확인.",
+      "sourceFile": "evidence/codex/sources.md"
+    }
+  ],
+  "sources": [
+    {
+      "id": "A-DOC-MAIN",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "DOC",
+        "INFERENCE"
+      ],
+      "locations": [
+        "evidence/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
+        "evidence/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
+        "evidence/aside/current-main-guide.txt :: underlying public/historical mechanism"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-DOC-REPL",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "DOC",
+        "INFERENCE"
+      ],
+      "locations": [
+        "evidence/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
+        "evidence/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
+        "evidence/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
+        "evidence/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
+        "evidence/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
+        "evidence/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
+        "evidence/aside/current-repl-guide.txt :: Environment",
+        "evidence/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
+        "evidence/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
+        "evidence/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
+        "evidence/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
+        "evidence/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
+        "evidence/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
+        "evidence/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
+        "evidence/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
+        "evidence/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
+        "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
+        "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
+        "evidence/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
+        "evidence/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
+        "evidence/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
+        "evidence/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
+        "evidence/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
+        "evidence/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
+        "evidence/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
+        "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-CLIP",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=screenshot-clip]; scripts/compare-aside.mjs screenshot-clip; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: screenshot-clip result and DPR note"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-DRAG",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: drag PASS and two accepted events in one invocation",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: exact text waitFor(timeout2000) completed before true",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: getByText exact waitFor followed by true; server drag PASS"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-FILTER",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible filter count3",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible:true count3; hidden-included report note"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-FRAME",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL",
+        "INFERENCE"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: frameLocator call and observed business result",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: name-change count0/server success absent",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: scaled-frame name-change0 and absent server success",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: underlying public/historical mechanism"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-HARNESS",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "INFERENCE"
+      ],
+      "locations": [
+        "scripts/compare-aside.mjs body data-run getAttribute call; docs/evidence/diagnostics-before-after.json#/aside/serverPassed,/aside/events"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-NTH",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=negative-nth]; scripts/compare-aside.mjs negative-nth :: nth(-1) DOMException"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-READONLY",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=readonly-fill]; scripts/compare-aside.mjs readonly-fill :: getByLabel→fill catch returns rejected; error cause not preserved",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=readonly-fill]; scripts/compare-aside.mjs readonly-fill :: whole getByLabel→fill call rejected; exact cause unavailable"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-REGEX",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex count1",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex-role result value1",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: role count1"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-SLOT",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: role lookup error before intended slot click",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot role error",
+        "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot-name Role selector not found error"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "A-HIST-SNAPSHOT",
+      "provider": "aside",
+      "registry": "evidence/aside/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "docs/evidence/diagnostics-before-after.json#/aside/snapshot,/aside/scoped; scripts/compare-aside.mjs snapshot/scoped :: snapshot/scoped values"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CODEX-RESEARCH-INFERENCE",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "INFERENCE"
+      ],
+      "locations": [
+        "sources.md#ref1-정리-조합-추론의-범위"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CUA-DOC-API",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "DOC"
+      ],
+      "locations": [
+        "raw/cua-entry-excerpts.md:121-133",
+        "raw/cua-entry-excerpts.md:139-139",
+        "raw/cua-entry-excerpts.md:141-141; raw/cua-entry-excerpts.md:140-140",
+        "raw/public-contract-excerpts.md:101-101; raw/public-contract-excerpts.md:136-136; raw/public-contract-excerpts.md:145-145",
+        "raw/public-contract-excerpts.md:103-105",
+        "raw/public-contract-excerpts.md:106-109",
+        "raw/public-contract-excerpts.md:106-109; raw/public-contract-excerpts.md:137-137; raw/public-contract-excerpts.md:159-159",
+        "raw/public-contract-excerpts.md:123-123; raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:132-132; raw/public-contract-excerpts.md:92-92; raw/public-contract-excerpts.md:73-73",
+        "raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:151-151",
+        "raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:58-66",
+        "raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:120-120",
+        "raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:120-120; raw/public-contract-excerpts.md:130-130",
+        "raw/public-contract-excerpts.md:152-152",
+        "raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:81-81",
+        "raw/public-contract-excerpts.md:153-153; raw/public-contract-excerpts.md:131-131",
+        "raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105",
+        "raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105; raw/public-contract-excerpts.md:159-159",
+        "raw/public-contract-excerpts.md:29-29",
+        "raw/public-contract-excerpts.md:30-30",
+        "raw/public-contract-excerpts.md:31-31",
+        "raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116",
+        "raw/public-contract-excerpts.md:33-33",
+        "raw/public-contract-excerpts.md:36-36",
+        "raw/public-contract-excerpts.md:37-37; raw/public-contract-excerpts.md:119-119; raw/public-contract-excerpts.md:140-140",
+        "raw/public-contract-excerpts.md:42-42; raw/public-contract-excerpts.md:150-150",
+        "raw/public-contract-excerpts.md:46-46; raw/public-contract-excerpts.md:123-123",
+        "raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:123-123",
+        "raw/public-contract-excerpts.md:50-50; raw/public-contract-excerpts.md:123-123",
+        "raw/public-contract-excerpts.md:51-51; raw/public-contract-excerpts.md:58-66",
+        "raw/public-contract-excerpts.md:52-53; raw/public-contract-excerpts.md:158-158",
+        "raw/public-contract-excerpts.md:54-54; raw/public-contract-excerpts.md:125-125; raw/public-contract-excerpts.md:122-122",
+        "raw/public-contract-excerpts.md:56-56; raw/public-contract-excerpts.md:126-126",
+        "raw/public-contract-excerpts.md:58-66; raw/public-contract-excerpts.md:45-45",
+        "raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:74-74; raw/public-contract-excerpts.md:128-128",
+        "raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:78-78; raw/public-contract-excerpts.md:94-94; raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:96-96",
+        "raw/public-contract-excerpts.md:73-73",
+        "raw/public-contract-excerpts.md:78-78",
+        "raw/public-contract-excerpts.md:79-79; raw/public-contract-excerpts.md:132-132",
+        "raw/public-contract-excerpts.md:81-81; raw/public-contract-excerpts.md:155-155",
+        "raw/public-contract-excerpts.md:88-88; raw/public-contract-excerpts.md:156-156",
+        "raw/public-contract-excerpts.md:89-89; raw/public-contract-excerpts.md:157-157",
+        "raw/public-contract-excerpts.md:92-92",
+        "raw/public-contract-excerpts.md:96-96; raw/public-contract-excerpts.md:135-135; raw/public-contract-excerpts.md:144-144",
+        "raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:71-71; raw/public-contract-excerpts.md:100-100; raw/public-contract-excerpts.md:127-127",
+        "raw/public-contract-excerpts.md:98-98; raw/public-contract-excerpts.md:154-154"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CUA-DOC-ENTRY",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "DOC"
+      ],
+      "locations": [
+        "raw/cua-entry-excerpts.md:100-100; raw/public-contract-excerpts.md:117-117; raw/public-contract-excerpts.md:117-117",
+        "raw/cua-entry-excerpts.md:108-110",
+        "raw/cua-entry-excerpts.md:112-116",
+        "raw/cua-entry-excerpts.md:21-31",
+        "raw/cua-entry-excerpts.md:21-31; raw/cua-entry-excerpts.md:54-54",
+        "raw/cua-entry-excerpts.md:25-25; raw/cua-entry-excerpts.md:11-16; raw/cua-entry-excerpts.md:54-54",
+        "raw/cua-entry-excerpts.md:26-26; raw/cua-entry-excerpts.md:54-54",
+        "raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:18-18",
+        "raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:54-54",
+        "raw/cua-entry-excerpts.md:33-41; raw/cua-entry-excerpts.md:83-83",
+        "raw/cua-entry-excerpts.md:42-49; raw/cua-entry-excerpts.md:84-84; raw/cua-entry-excerpts.md:90-90",
+        "raw/cua-entry-excerpts.md:55-66; raw/public-contract-excerpts.md:67-113",
+        "raw/cua-entry-excerpts.md:57-57; raw/cua-entry-excerpts.md:54-54; raw/cua-entry-excerpts.md:139-139",
+        "raw/cua-entry-excerpts.md:57-57; raw/public-contract-excerpts.md:94-94",
+        "raw/cua-entry-excerpts.md:73-78; raw/cua-entry-excerpts.md:52-52",
+        "raw/cua-entry-excerpts.md:78-83",
+        "raw/cua-entry-excerpts.md:94-94",
+        "raw/cua-entry-excerpts.md:96-96",
+        "raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:108-110; raw/cua-entry-excerpts.md:96-96",
+        "raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:96-96; raw/cua-entry-excerpts.md:106-106"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CUA-DOC-UPLOAD",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "DOC"
+      ],
+      "locations": [
+        "raw/file-uploads.md:11-11",
+        "raw/file-uploads.md:5-10; raw/file-uploads.md:15-15"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CUA-LIVE-BLANK",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "LIVE"
+      ],
+      "locations": [
+        "raw/blank-probe.json#/createdTab",
+        "raw/blank-probe.json#/output",
+        "raw/blank-probe.json#/output/count",
+        "raw/blank-probe.json#/output/readOnlyValue",
+        "raw/blank-probe.json#/tabClosedAfterProbe"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "HIST-CODEX-AUDIT",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "HISTORICAL"
+      ],
+      "locations": [
+        "raw/historical-diagnostics-before-after.json#/codex/clip",
+        "raw/historical-diagnostics-before-after.json#/codex/nthMinusOne",
+        "raw/historical-diagnostics-before-after.json#/codex/readonly",
+        "raw/historical-diagnostics-before-after.json#/codex/readonly; raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick",
+        "raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/slotClick",
+        "raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/visibleFilter; raw/historical-diagnostics-before-after.json#/codex/nthMinusOne; raw/historical-diagnostics-before-after.json#/codex/slotClick",
+        "raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick",
+        "raw/historical-diagnostics-before-after.json#/codex/snapshotChars; raw/historical-diagnostics-before-after.json#/codex/tail; raw/historical-diagnostics-before-after.json#/codex/selected; raw/historical-diagnostics-before-after.json#/codex/secret",
+        "raw/historical-diagnostics-before-after.json#/codex/visibleFilter"
+      ],
+      "scope": "개별claim의정확절/관측범위만"
+    },
+    {
+      "id": "CUA-LIVE-BOUNDARY1",
+      "provider": "codex",
+      "registry": "evidence/codex/sources.md",
+      "kinds": [
+        "LIVE"
+      ],
+      "locations": [
+        "evidence/codex/raw/boundary1.json"
+      ],
+      "scope": "보충Chrome표면9사례만, IAB조건확인에합산안함"
+    }
+  ],
+  "runs": [
+    {
+      "id": "CUA-LIVE-BLANK",
+      "kind": "LIVE",
+      "surface": "Codex CUA / IAB",
+      "file": "evidence/codex/raw/blank-probe.json",
+      "scope": "about:blank count0/빈 body/title만. fixture 업무·옵션 검증 아님."
+    },
+    {
+      "id": "HIST-AUDIT-20261101",
+      "kind": "HISTORICAL",
+      "file": "../../evidence/diagnostics-before-after.json",
+      "scope": "이전 동일 audit fixture의 일부 Codex/Aside 호출. 현재 재측정 아님."
+    },
+    {
+      "id": "codex-cua-chrome-boundary1-20261101",
+      "kind": "LIVE",
+      "surface": "Codex CUA / Chrome extension (supplemental, not IAB)",
+      "file": "evidence/codex/raw/boundary1.json",
+      "primaryCoverageEligible": false,
+      "scope": "별도보충표면의9부분관측. IAB확인에합산하지않음."
+    }
+  ],
+  "supplemental": {
+    "surface": "Codex CUA / Chrome extension (supplemental, not IAB)",
+    "sourceId": "CUA-LIVE-BOUNDARY1",
+    "file": "evidence/codex/raw/boundary1.json",
+    "caseCount": 9,
+    "primaryIabCoverageEligible": false,
+    "scope": "9개부분관측·주비교표면과분리. fullConditionSatisfied 전부false."
+  },
+  "blockedAttempts": [
+    {
+      "id": "IAB-BLOCKED-BOUNDARY1",
+      "file": "evidence/codex/raw/boundary1-iab-blocked.json",
+      "surface": "Codex CUA/IAB",
+      "meaning": "가용성차단, 제품미지원/실패증거아님"
+    }
+  ]
+}

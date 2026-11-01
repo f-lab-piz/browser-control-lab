@@ -1,0 +1,1670 @@
+{
+  "baseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "items": [
+    {
+      "id": "REQ-C-RUNTIME-001",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-002",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-003",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-004",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-005",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-005",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-006",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-006",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-001",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-C-DOMFRAMES-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-002",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-C-DOMFRAMES-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-003",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-C-DOMFRAMES-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-004",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-C-DOMFRAMES-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-005",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-C-DOMFRAMES-005",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-006",
+      "api": null,
+      "level": "SHOULD",
+      "workItem": "B03",
+      "verificationId": "PLAN-C-DOMFRAMES-006",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-SELECTION-001",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-C-SELECTION-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-SELECTION-002",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-C-SELECTION-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-SELECTION-003",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-C-SELECTION-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-SELECTION-004",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-C-SELECTION-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-SELECTION-005",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-C-SELECTION-005",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-SELECTION-006",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-C-SELECTION-006",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-INPUT-001",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-C-INPUT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-INPUT-002",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-C-INPUT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-INPUT-003",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-C-INPUT-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-INPUT-004",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-C-INPUT-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-INPUT-005",
+      "api": null,
+      "level": "SHOULD",
+      "workItem": "B04",
+      "verificationId": "PLAN-C-INPUT-005",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-001",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-002",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-003",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-004",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-005",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-005",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-GUIDE-001",
+      "api": "guide",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-GUIDE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-GUIDE-002",
+      "api": "guide",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-GUIDE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-RESET-001",
+      "api": "reset",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-RESET-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-RESET-002",
+      "api": "reset",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-RESET-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-JS-001",
+      "api": "js",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-JS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-JS-002",
+      "api": "js",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-JS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-LIST-001",
+      "api": "browser.list",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-LIST-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-LIST-002",
+      "api": "browser.list",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-LIST-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-TABS-001",
+      "api": "browser.tabs",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-TABS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-TABS-002",
+      "api": "browser.tabs",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-TABS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-001",
+      "api": "browser.open",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-OPEN-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-002",
+      "api": "browser.open",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-OPEN-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-ATTACH-001",
+      "api": "browser.attach",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-ATTACH-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-BROWSER-ATTACH-002",
+      "api": "browser.attach",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-BROWSER-ATTACH-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-ACTIVATE-001",
+      "api": "page.activate",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-ACTIVATE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-ACTIVATE-002",
+      "api": "page.activate",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-ACTIVATE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-CLOSE-001",
+      "api": "page.close",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-CLOSE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-CLOSE-002",
+      "api": "page.close",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-CLOSE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-001",
+      "api": "page.goto",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-GOTO-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-GOTO-002",
+      "api": "page.goto",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-GOTO-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-BACK-001",
+      "api": "page.back",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-BACK-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-BACK-002",
+      "api": "page.back",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-BACK-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-001",
+      "api": "page.forward",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-FORWARD-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-002",
+      "api": "page.forward",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-FORWARD-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-001",
+      "api": "page.reload",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-RELOAD-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-002",
+      "api": "page.reload",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-RELOAD-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-001",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-002",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-001",
+      "api": "page.screenshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-SCREENSHOT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-002",
+      "api": "page.screenshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-SCREENSHOT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-FRAMES-001",
+      "api": "page.frames",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-FRAMES-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-FRAMES-002",
+      "api": "page.frames",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-FRAMES-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-FRAME-001",
+      "api": "page.frame",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-FRAME-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-FRAME-002",
+      "api": "page.frame",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-FRAME-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-001",
+      "api": "scope.locator",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-LOCATOR-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-002",
+      "api": "scope.locator",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-LOCATOR-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001",
+      "api": "scope.getByRole",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYROLE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002",
+      "api": "scope.getByRole",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYROLE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001",
+      "api": "scope.getByText",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYTEXT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002",
+      "api": "scope.getByText",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYTEXT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001",
+      "api": "scope.getByLabel",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYLABEL-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002",
+      "api": "scope.getByLabel",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYLABEL-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-001",
+      "api": "locator.filter",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-FILTER-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-002",
+      "api": "locator.filter",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-FILTER-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-NTH-001",
+      "api": "locator.nth",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-NTH-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-NTH-002",
+      "api": "locator.nth",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-NTH-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-001",
+      "api": "locator.count",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-COUNT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-002",
+      "api": "locator.count",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-COUNT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-TEXTCONTENT-001",
+      "api": "locator.textContent",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-TEXTCONTENT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-TEXTCONTENT-002",
+      "api": "locator.textContent",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-TEXTCONTENT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-GETATTRIBUTE-001",
+      "api": "locator.getAttribute",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-GETATTRIBUTE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-GETATTRIBUTE-002",
+      "api": "locator.getAttribute",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-GETATTRIBUTE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-INPUTVALUE-001",
+      "api": "locator.inputValue",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-INPUTVALUE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-INPUTVALUE-002",
+      "api": "locator.inputValue",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-INPUTVALUE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISVISIBLE-001",
+      "api": "locator.isVisible",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISVISIBLE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISVISIBLE-002",
+      "api": "locator.isVisible",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISVISIBLE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISENABLED-001",
+      "api": "locator.isEnabled",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISENABLED-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISENABLED-002",
+      "api": "locator.isEnabled",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISENABLED-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISEDITABLE-001",
+      "api": "locator.isEditable",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISEDITABLE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISEDITABLE-002",
+      "api": "locator.isEditable",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISEDITABLE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISCHECKED-001",
+      "api": "locator.isChecked",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISCHECKED-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-ISCHECKED-002",
+      "api": "locator.isChecked",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-ISCHECKED-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-BOUNDINGBOX-001",
+      "api": "locator.boundingBox",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-LOCATOR-BOUNDINGBOX-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-BOUNDINGBOX-002",
+      "api": "locator.boundingBox",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-LOCATOR-BOUNDINGBOX-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-001",
+      "api": "locator.click",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-CLICK-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-002",
+      "api": "locator.click",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-CLICK-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-001",
+      "api": "locator.fill",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-FILL-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-002",
+      "api": "locator.fill",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-FILL-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-001",
+      "api": "locator.press",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-PRESS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-002",
+      "api": "locator.press",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-PRESS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-HOVER-001",
+      "api": "locator.hover",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-HOVER-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-HOVER-002",
+      "api": "locator.hover",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-HOVER-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FOCUS-001",
+      "api": "locator.focus",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-FOCUS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FOCUS-002",
+      "api": "locator.focus",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-FOCUS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SCROLLINTOVIEW-001",
+      "api": "locator.scrollIntoView",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-SCROLLINTOVIEW-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SCROLLINTOVIEW-002",
+      "api": "locator.scrollIntoView",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-SCROLLINTOVIEW-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-001",
+      "api": "locator.setChecked",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-SETCHECKED-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-002",
+      "api": "locator.setChecked",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-SETCHECKED-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-001",
+      "api": "locator.selectOption",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-SELECTOPTION-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-002",
+      "api": "locator.selectOption",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-SELECTOPTION-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-001",
+      "api": "locator.dragTo",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-DRAGTO-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-002",
+      "api": "locator.dragTo",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-LOCATOR-DRAGTO-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-001",
+      "api": "locator.drop",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-LOCATOR-DROP-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-002",
+      "api": "locator.drop",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-LOCATOR-DROP-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-MOVE-001",
+      "api": "mouse.move",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-MOVE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-MOVE-002",
+      "api": "mouse.move",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-MOVE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-DOWN-001",
+      "api": "mouse.down",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-DOWN-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-DOWN-002",
+      "api": "mouse.down",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-DOWN-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-UP-001",
+      "api": "mouse.up",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-UP-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-UP-002",
+      "api": "mouse.up",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-UP-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-001",
+      "api": "mouse.click",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-CLICK-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-002",
+      "api": "mouse.click",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-CLICK-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-001",
+      "api": "mouse.wheel",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-WHEEL-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-002",
+      "api": "mouse.wheel",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-MOUSE-WHEEL-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-DOWN-001",
+      "api": "keyboard.down",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-DOWN-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-DOWN-002",
+      "api": "keyboard.down",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-DOWN-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-UP-001",
+      "api": "keyboard.up",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-UP-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-UP-002",
+      "api": "keyboard.up",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-UP-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-001",
+      "api": "keyboard.press",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-PRESS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-002",
+      "api": "keyboard.press",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-PRESS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-001",
+      "api": "keyboard.type",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-TYPE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-002",
+      "api": "keyboard.type",
+      "level": "MUST",
+      "workItem": "B04",
+      "verificationId": "PLAN-KEYBOARD-TYPE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-001",
+      "api": "locator.waitFor",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-LOCATOR-WAITFOR-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-002",
+      "api": "locator.waitFor",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-LOCATOR-WAITFOR-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-001",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-PAGE-WAITFOREVENT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-002",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-PAGE-WAITFOREVENT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-001",
+      "api": "page.waitForURL",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-WAITFORURL-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-002",
+      "api": "page.waitForURL",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-WAITFORURL-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-001",
+      "api": "page.waitForFunction",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-WAITFORFUNCTION-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-002",
+      "api": "page.waitForFunction",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-WAITFORFUNCTION-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORLOADSTATE-001",
+      "api": "page.waitForLoadState",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-WAITFORLOADSTATE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFORLOADSTATE-002",
+      "api": "page.waitForLoadState",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-WAITFORLOADSTATE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-001",
+      "api": "locator.setFiles",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-LOCATOR-SETFILES-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-002",
+      "api": "locator.setFiles",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-LOCATOR-SETFILES-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-001",
+      "api": "chooser.setFiles",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-CHOOSER-SETFILES-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-002",
+      "api": "chooser.setFiles",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-CHOOSER-SETFILES-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-001",
+      "api": "download.save",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DOWNLOAD-SAVE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-002",
+      "api": "download.save",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DOWNLOAD-SAVE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DOWNLOAD-CANCEL-001",
+      "api": "download.cancel",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DOWNLOAD-CANCEL-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DOWNLOAD-CANCEL-002",
+      "api": "download.cancel",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DOWNLOAD-CANCEL-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DIALOG-ACCEPT-001",
+      "api": "dialog.accept",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DIALOG-ACCEPT-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DIALOG-ACCEPT-002",
+      "api": "dialog.accept",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DIALOG-ACCEPT-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DIALOG-DISMISS-001",
+      "api": "dialog.dismiss",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DIALOG-DISMISS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DIALOG-DISMISS-002",
+      "api": "dialog.dismiss",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-DIALOG-DISMISS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-001",
+      "api": "scope.evaluate",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-SCOPE-EVALUATE-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-002",
+      "api": "scope.evaluate",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-SCOPE-EVALUATE-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-EVALUATEALL-001",
+      "api": "locator.evaluateAll",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-LOCATOR-EVALUATEALL-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-EVALUATEALL-002",
+      "api": "locator.evaluateAll",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-LOCATOR-EVALUATEALL-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-LOGS-001",
+      "api": "page.logs",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-LOGS-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-LOGS-002",
+      "api": "page.logs",
+      "level": "MUST",
+      "workItem": "B06",
+      "verificationId": "PLAN-PAGE-LOGS-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-001",
+      "api": "console.log",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-CONSOLE-LOG-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-002",
+      "api": "console.log",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-CONSOLE-LOG-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DISPLAY-001",
+      "api": "display",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-DISPLAY-001",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-DISPLAY-002",
+      "api": "display",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-DISPLAY-002",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-003",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-004",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-005",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-005",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-006",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-006",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-007",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-007",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-003",
+      "api": "locator.filter",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-FILTER-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-004",
+      "api": "locator.filter",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-LOCATOR-FILTER-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-003",
+      "api": "page.screenshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-SCREENSHOT-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-004",
+      "api": "page.screenshot",
+      "level": "SHOULD",
+      "workItem": "B03",
+      "verificationId": "PLAN-PAGE-SCREENSHOT-004",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-JS-003",
+      "api": "js",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-JS-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-RESET-003",
+      "api": "reset",
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-RESET-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-003",
+      "api": "locator.setFiles",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-LOCATOR-SETFILES-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-003",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-PAGE-WAITFOREVENT-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-003",
+      "api": "scope.getByText",
+      "level": "MUST",
+      "workItem": "B02",
+      "verificationId": "PLAN-SCOPE-GETBYTEXT-003",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-008",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-008",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-009",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-009",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-010",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-010",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-006",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-006",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-007",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-C-FILESEVENTS-007",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-007",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-007",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-011",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "workItem": "B03",
+      "verificationId": "PLAN-SCOPE-SNAPSHOT-011",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-C-RUNTIME-008",
+      "api": null,
+      "level": "MUST",
+      "workItem": "B01",
+      "verificationId": "PLAN-C-RUNTIME-008",
+      "status": "not-started",
+      "assessment": "새 규범별 E2E 판정 필요. 기존 테스트 후보는 matrix 참조."
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-004",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "workItem": "B05",
+      "verificationId": "PLAN-PAGE-WAITFOREVENT-004",
+      "status": "not-started",
+      "assessment": "새dialog조회옵션·세대/소비정책의정상/거절/복구fixture부터다음개발에서추가."
+    }
+  ]
+}

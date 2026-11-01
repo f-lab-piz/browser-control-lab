@@ -1,0 +1,27 @@
+{
+  "sourceId": "CUA-LIVE-BOUNDARY1",
+  "runId": "codex-cua-iab-boundary1-blocked-20261101",
+  "surface": "Codex CUA / ChatGPT in-app browser (iab)",
+  "status": "BLOCKED",
+  "attempts": [
+    {
+      "call": "cua.createBrowserTab(\"iab\", \"http://127.0.0.1:60561/review-boundaries.html\", {visible:false})",
+      "error": "Browser is not available: iab"
+    },
+    {
+      "call": "cua.createBrowserTab(\"2\", \"http://127.0.0.1:60561/review-boundaries.html\", {visible:false})",
+      "error": "Browser is not available: 2"
+    }
+  ],
+  "fallbackInventoryCall": "cua.listBrowsers({emit:false})",
+  "observedBrowserSummary": [
+    {
+      "id": "3",
+      "name": "Chrome",
+      "type": "extension"
+    }
+  ],
+  "createdTab": false,
+  "primaryConditionSupportChanged": false,
+  "nextAction": "IAB reconnect and repeat fixture probes if required. Chrome supplemental run cannot replace primary surface."
+}

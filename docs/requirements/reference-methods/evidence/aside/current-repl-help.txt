@@ -1,0 +1,24 @@
+Usage: aside repl [options] [code...]
+
+Run Playwright-style JavaScript in Aside Browser.
+
+Arguments:
+  code            JavaScript to run in Aside Browser
+
+Options:
+  --account <id>  Account selector: u0 (first profile) or u0:<profile-id>
+  --host <host>   Run on a session host: 'local', a remote host id, or its
+                  device name
+  --profile <id>  Browser profile id on the selected host (see 'aside host
+                  profiles')
+  -h, --help      Print help
+
+Notes:
+  Playwright-style JavaScript, 120s timeout. page starts unset; call openTab(url) or getTabs() first.
+  Use console.log() to print return values.
+
+Examples:
+  aside repl
+  aside repl "const page = await openTab('https://example.com'); console.log(await page.title())"
+  aside repl --account u1 "const tabs = await getTabs(); console.log(tabs.length)"
+  aside repl --host my-macbook "await openTab('https://example.com')"

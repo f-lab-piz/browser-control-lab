@@ -1,0 +1,386 @@
+{
+  "runId": "codex-cua-chrome-boundary1-20261101",
+  "sourceId": "CUA-LIVE-BOUNDARY1",
+  "surface": "Codex CUA / Chrome extension (supplemental, not IAB)",
+  "browserId": "3",
+  "results": [
+    {
+      "id": "B01-adjacent-filter",
+      "expected": "foobar positive1 negative0; foo bar positive0 negative1",
+      "status": "completed",
+      "observed": {
+        "foobar": 1,
+        "notFoobar": 0,
+        "spaced": 0,
+        "notSpaced": 1,
+        "regex": 1
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.locator(\"#adjacent\").filter({hasText:\"foobar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#adjacent\").filter({hasNotText:\"foobar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#adjacent\").filter({hasText:\"foo bar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#adjacent\").filter({hasNotText:\"foo bar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#adjacent\").filter({hasText:/foobar/}).count()"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-FILTER-002-C02",
+          "scope": "partial",
+          "detail": "인접span 양음문자열/regex, 실제공백과의 차이 일부; long slot/출력예산 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B02-actual-space-filter",
+      "expected": "foobar positive0 negative1; foo bar positive1 negative0",
+      "status": "completed",
+      "observed": {
+        "foobar": 0,
+        "notFoobar": 1,
+        "spaced": 1,
+        "notSpaced": 0,
+        "regex": 1
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.locator(\"#spaced\").filter({hasText:\"foobar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#spaced\").filter({hasNotText:\"foobar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#spaced\").filter({hasText:\"foo bar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#spaced\").filter({hasNotText:\"foo bar\"}).count()",
+        "await boundaryTab.playwright.locator(\"#spaced\").filter({hasText:/foo bar/}).count()"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-FILTER-002-C02",
+          "scope": "partial",
+          "detail": "실제공백 양음문자열/regex 일부; long slot/출력예산 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B03-long-filter",
+      "expected": "positive1 negative0 regex1; raw body >600 chars",
+      "status": "completed",
+      "observed": {
+        "positive": 1,
+        "negative": 0,
+        "regex": 1,
+        "rawLength": 706
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.locator(\"#long\").filter({hasText:\"needle\"}).count()",
+        "await boundaryTab.playwright.locator(\"#long\").filter({hasNotText:\"needle\"}).count()",
+        "await boundaryTab.playwright.locator(\"#long\").filter({hasText:/needle$/}).count()",
+        "await boundaryTab.playwright.locator(\"#long\").evaluate(e=>e.textContent.length)"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-FILTER-002-C02",
+          "scope": "partial",
+          "detail": "706자본문 needle 양음문자열/regex 일부; slot/출력예산 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        },
+        {
+          "conditionId": "REQ-LOCATOR-FILTER-004-C01",
+          "scope": "partial",
+          "detail": "600자뒤needle 누락없음만; aria-hidden/CSS숨김/g,y/visible 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B04-text-whitespace",
+      "expected": "foobar nested/slot-adjacent; foo bar spaced",
+      "status": "completed",
+      "observed": {
+        "adjacent": [
+          {
+            "id": "nested",
+            "text": "foobar"
+          },
+          {
+            "id": "slot-adjacent",
+            "text": "foobar"
+          }
+        ],
+        "spaced": [
+          {
+            "id": "spaced",
+            "text": "foo bar"
+          }
+        ]
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.getByText(\"foobar\",{exact:true}).evaluateAll(es=>es.map(e=>({id:e.id,text:e.textContent})))",
+        "await boundaryTab.playwright.getByText(\"foo bar\",{exact:true}).evaluateAll(es=>es.map(e=>({id:e.id,text:e.textContent})))"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-SCOPE-GETBYTEXT-002-C01",
+          "scope": "partial",
+          "detail": "exact문자열 foobar와 foo bar, nested/slot-adjacent identity 일부; getByText regex 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B05-native-and-aria-label",
+      "expected": "one INPUT for native for-label and one for aria-labelledby",
+      "status": "completed",
+      "observed": {
+        "native": [
+          {
+            "id": "labelled",
+            "labels": [
+              "Only visible label"
+            ],
+            "tag": "INPUT"
+          }
+        ],
+        "aria": [
+          {
+            "ariaLabelledby": "aria-name",
+            "tag": "INPUT"
+          }
+        ]
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.getByLabel(\"Only visible label\",{exact:true}).evaluateAll(es=>es.map(e=>({tag:e.tagName,id:e.id,labels:Array.from(e.labels||[],l=>l.textContent)})))",
+        "await boundaryTab.playwright.getByLabel(\"Only aria labelled\",{exact:true}).evaluateAll(es=>es.map(e=>({tag:e.tagName,ariaLabelledby:e.getAttribute(\"aria-labelledby\")})))"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-SCOPE-GETBYLABEL-001-C01",
+          "scope": "partial",
+          "detail": "native label 연결/aria-labelledby exact 제어identity만; for-vs-wrap 구조 및 aria-label/regex 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B06-multiple-read-strict",
+      "expected": "our policy strict errors; public description says first matched",
+      "status": "completed",
+      "observed": {
+        "count": 2,
+        "text": {
+          "status": "error",
+          "error": "Error: Browser Use encountered an error interacting with this webpage: Error: strict mode violation: getByRole('textbox') resolved to 2 elements:\n    1) <input id=\"labelled\"/> aka getByRole('textbox', { name: 'Only visible label' })\n    2) <input aria-labelledby=\"aria-name\"/> aka getByRole('textbox', { name: 'Only aria labelled' })\n"
+        },
+        "attribute": {
+          "status": "error",
+          "error": "Error: Browser Use encountered an error interacting with this webpage: Error: strict mode violation: getByRole('textbox') resolved to 2 elements:\n    1) <input id=\"labelled\"/> aka getByRole('textbox', { name: 'Only visible label' })\n    2) <input aria-labelledby=\"aria-name\"/> aka getByRole('textbox', { name: 'Only aria labelled' })\n"
+        }
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).count()",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).textContent({timeoutMs:200})",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).getAttribute(\"id\",{timeoutMs:200})"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-TEXTCONTENT-002-C01",
+          "scope": "partial",
+          "detail": "N=2 strict만; 0은B07, 큰본문출력/예산 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        },
+        {
+          "conditionId": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
+          "scope": "partial",
+          "detail": "N=2 strict만; 빈name 미측정, 0은B07",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B07-zero-read-strict",
+      "expected": "our policy no-match errors; public textContent description allows null",
+      "status": "completed",
+      "observed": {
+        "count": 0,
+        "text": {
+          "status": "error",
+          "error": "Error: Playwright selector deadline exceeded"
+        },
+        "attribute": {
+          "status": "error",
+          "error": "Error: Playwright selector deadline exceeded"
+        }
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).nth(99).count()",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).nth(99).textContent({timeoutMs:200})",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).nth(99).getAttribute(\"id\",{timeoutMs:200})"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-TEXTCONTENT-002-C01",
+          "scope": "partial",
+          "detail": "0은null이아닌200ms deadline오류; 큰본문출력/예산 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        },
+        {
+          "conditionId": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
+          "scope": "partial",
+          "detail": "0은200ms deadline오류; 빈name 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B08-state-strict",
+      "expected": "our policy 0/N errors; declared first matched must be measured",
+      "status": "completed",
+      "observed": {
+        "multipleVisible": {
+          "status": "returned",
+          "value": true
+        },
+        "multipleEnabled": {
+          "status": "returned",
+          "value": true
+        },
+        "zeroVisible": {
+          "status": "returned",
+          "value": false
+        },
+        "zeroEnabled": {
+          "status": "returned",
+          "value": false
+        }
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).isVisible()",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).isEnabled()",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).nth(99).isVisible()",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{}).nth(99).isEnabled()"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-ISVISIBLE-002-C01",
+          "scope": "partial",
+          "detail": "0/N strict만측정; bool false/true로 우리정책과다름, hidden/details/summary 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        },
+        {
+          "conditionId": "REQ-LOCATOR-ISENABLED-002-C01",
+          "scope": "partial",
+          "detail": "0/N strict만측정; bool false/true로 우리정책과다름, stale 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "FAIL_OUR_STRICT_POLICY_DIFFERENCE",
+      "fixture": "/review-boundaries.html"
+    },
+    {
+      "id": "B09-readonly-fill",
+      "expected": "reject before value change; value remains LOCKED; no business PASS inference",
+      "status": "completed",
+      "observed": {
+        "before": {
+          "disabled": false,
+          "focused": false,
+          "readOnly": true,
+          "value": "LOCKED"
+        },
+        "fill": {
+          "status": "error",
+          "error": "Error: Error: Playwright selector deadline exceeded\nlocator.fill failed for selector internal:role=textbox[name=\"고정 문서번호\"s]\nLocator diagnostics: {\"kind\":\"action_failed\",\"action\":\"fill\",\"locator\":\"internal:role=textbox[name=\\\"고정 문서번호\\\"s]\",\"matchCount\":1,\"matches\":[{\"ariaLabel\":\"고정 문서번호\",\"disabled\":false,\"role\":null,\"tag\":\"input\",\"text\":\"\",\"type\":null,\"visible\":true}],\"visibleCount\":1,\"truncated\":false}"
+        },
+        "after": {
+          "disabled": false,
+          "focused": false,
+          "readOnly": true,
+          "value": "LOCKED"
+        }
+      },
+      "actualCalls": [
+        "await boundaryTab.playwright.getByRole(\"textbox\",{name:\"고정 문서번호\",exact:true}).evaluate(e=>({value:e.value,readOnly:e.readOnly,disabled:e.disabled,focused:document.activeElement===e}))",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{name:\"고정 문서번호\",exact:true}).fill(\"SHOULD-NOT-CHANGE\",{timeoutMs:300})",
+        "await boundaryTab.playwright.getByRole(\"textbox\",{name:\"고정 문서번호\",exact:true}).evaluate(e=>({value:e.value,readOnly:e.readOnly,disabled:e.disabled,focused:document.activeElement===e}))",
+        "await boundaryTab.playwright.domSnapshot()"
+      ],
+      "conditionScope": [
+        {
+          "conditionId": "REQ-LOCATOR-FILL-002-C01",
+          "scope": "partial",
+          "detail": "native readonly1개에서 error/LOCKED/focus불변만; aria-readonly/disabled/checkbox/inputcounter 미측정",
+          "fullConditionSatisfied": false,
+          "primaryIabCoverageEligible": false
+        }
+      ],
+      "comparisonVerdict": "PASS_OBSERVED_SUBCASE_ONLY",
+      "fixture": "/audit"
+    }
+  ],
+  "readonlySnapshotSection": "heading \"05 · 읽기 전용 필드\" [level=3]\n  - text: 고정 문서번호\n  - textbox \"고정 문서번호\": LOCKED\n  - status \"readonly 판정\": 대기\n  - ",
+  "version": "Chrome/browser build not exposed in consulted public contract",
+  "date": "2026-11-01",
+  "tabCreated": true,
+  "researchTabClosed": true,
+  "personalTabsRead": false,
+  "primaryIabCoverageEligible": false,
+  "allFullConditionsConfirmed": 0,
+  "conditionIndexSHA256": "ddb17f75507c784a07abaa043a9579389d328f9ce4207515fc25831f96ce98b1",
+  "selectionGroundTruth": "Snapshot first. CSS #adjacent from observed Select row parent, #long from observed needle parent, #spaced from observed exact text DOM read. nth(99) applied only to the already observed two textboxes to form zero-match case. No hidden answer oracle/source inspection.",
+  "notMeasured": [
+    "long slot filter",
+    "ARIA hidden/CSS hidden/filter visible",
+    "g/y regex repeat",
+    "wrapped label/aria-label",
+    "readonly input event counter",
+    "IAB live fixture conditions"
+  ],
+  "noMutationClaim": "All probes are read-only except one authorized readonly fill rejection test. Its value and focus stayed unchanged; no event-counter assertion. No server state/PASS injected.",
+  "discoveredSelectors": {
+    "#adjacent": {
+      "via": "observed Select row button parent DOM read",
+      "parentTag": "DIV",
+      "parentText": "foobarSelect row"
+    },
+    "#spaced": {
+      "via": "observed getByText(foo bar,exact:true) DOM read",
+      "tag": "DIV",
+      "text": "foo bar"
+    },
+    "#long": {
+      "via": "observed getByText(needle,exact:true) parent DOM read",
+      "parentTag": "DIV",
+      "parentTextLength": 706,
+      "tail": "xxxxxxxxxxxxxxneedle"
+    }
+  },
+  "auditSnapshot": {
+    "chars": 2682070,
+    "preservedSection": "readonlySnapshotSection",
+    "fullSnapshotPreservedLocally": false,
+    "reason": "read in tool; only relevant observed readonly section kept locally, not complete huge snapshot"
+  }
+}

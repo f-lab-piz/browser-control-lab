@@ -1,0 +1,495 @@
+{
+  "reviewHead": "ad821711153ffd8296b2557289214abaa9212774",
+  "reviewCandidates": [
+    "REF1-01",
+    "REF1-02",
+    "REF1-03"
+  ],
+  "allApiEvidenceClaimOwnersChecked": 67,
+  "apiEvidenceClaims": 85,
+  "kindCounts": {
+    "DOC": 73,
+    "LIVE": 5,
+    "HISTORICAL": 10,
+    "INFERENCE": 6
+  },
+  "supplementalUnchanged": true,
+  "primaryCoverageUnchanged": true,
+  "browserCallsDuringRemediation": 0,
+  "syntaxExecutionPromoted": false,
+  "locationReferences": [
+    {
+      "api": "guide",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:100-100; raw/public-contract-excerpts.md:117-117; raw/public-contract-excerpts.md:117-117"
+    },
+    {
+      "api": "reset",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:108-110"
+    },
+    {
+      "api": "js",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:96-96; raw/cua-entry-excerpts.md:106-106"
+    },
+    {
+      "api": "browser.list",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:33-41; raw/cua-entry-excerpts.md:83-83"
+    },
+    {
+      "api": "browser.tabs",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:42-49; raw/cua-entry-excerpts.md:84-84; raw/cua-entry-excerpts.md:90-90"
+    },
+    {
+      "api": "browser.open",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:73-78; raw/cua-entry-excerpts.md:52-52"
+    },
+    {
+      "api": "browser.open",
+      "kind": "LIVE",
+      "location": "raw/blank-probe.json#/createdTab"
+    },
+    {
+      "api": "browser.attach",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:78-83"
+    },
+    {
+      "api": "page.activate",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:112-116"
+    },
+    {
+      "api": "page.close",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:30-30"
+    },
+    {
+      "api": "page.close",
+      "kind": "LIVE",
+      "location": "raw/blank-probe.json#/tabClosedAfterProbe"
+    },
+    {
+      "api": "page.goto",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:33-33"
+    },
+    {
+      "api": "page.back",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:29-29"
+    },
+    {
+      "api": "page.forward",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:31-31"
+    },
+    {
+      "api": "page.reload",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:36-36"
+    },
+    {
+      "api": "scope.snapshot",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:42-42; raw/public-contract-excerpts.md:150-150"
+    },
+    {
+      "api": "scope.snapshot",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/snapshotChars; raw/historical-diagnostics-before-after.json#/codex/tail; raw/historical-diagnostics-before-after.json#/codex/selected; raw/historical-diagnostics-before-after.json#/codex/secret"
+    },
+    {
+      "api": "page.screenshot",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:37-37; raw/public-contract-excerpts.md:119-119; raw/public-contract-excerpts.md:140-140"
+    },
+    {
+      "api": "page.screenshot",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/clip"
+    },
+    {
+      "api": "page.frames",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:151-151"
+    },
+    {
+      "api": "page.frames",
+      "kind": "INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위"
+    },
+    {
+      "api": "page.frame",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:58-66; raw/public-contract-excerpts.md:45-45"
+    },
+    {
+      "api": "scope.locator",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:51-51; raw/public-contract-excerpts.md:58-66"
+    },
+    {
+      "api": "scope.getByRole",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:123-123"
+    },
+    {
+      "api": "scope.getByRole",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/slotClick"
+    },
+    {
+      "api": "scope.getByText",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:50-50; raw/public-contract-excerpts.md:123-123"
+    },
+    {
+      "api": "scope.getByLabel",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:46-46; raw/public-contract-excerpts.md:123-123"
+    },
+    {
+      "api": "locator.filter",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:79-79; raw/public-contract-excerpts.md:132-132"
+    },
+    {
+      "api": "locator.filter",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/visibleFilter"
+    },
+    {
+      "api": "locator.nth",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:92-92"
+    },
+    {
+      "api": "locator.nth",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/nthMinusOne"
+    },
+    {
+      "api": "locator.count",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:73-73"
+    },
+    {
+      "api": "locator.count",
+      "kind": "LIVE",
+      "location": "raw/blank-probe.json#/output/count"
+    },
+    {
+      "api": "locator.textContent",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:98-98; raw/public-contract-excerpts.md:154-154"
+    },
+    {
+      "api": "locator.getAttribute",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:81-81; raw/public-contract-excerpts.md:155-155"
+    },
+    {
+      "api": "locator.inputValue",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:152-152"
+    },
+    {
+      "api": "locator.inputValue",
+      "kind": "INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위"
+    },
+    {
+      "api": "locator.isVisible",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:89-89; raw/public-contract-excerpts.md:157-157"
+    },
+    {
+      "api": "locator.isEnabled",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:88-88; raw/public-contract-excerpts.md:156-156"
+    },
+    {
+      "api": "locator.isEditable",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:152-152"
+    },
+    {
+      "api": "locator.isEditable",
+      "kind": "INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위"
+    },
+    {
+      "api": "locator.isChecked",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:81-81"
+    },
+    {
+      "api": "locator.isChecked",
+      "kind": "INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위"
+    },
+    {
+      "api": "locator.boundingBox",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:152-152"
+    },
+    {
+      "api": "locator.boundingBox",
+      "kind": "INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위"
+    },
+    {
+      "api": "locator.click",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:74-74; raw/public-contract-excerpts.md:128-128"
+    },
+    {
+      "api": "locator.click",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick"
+    },
+    {
+      "api": "locator.fill",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:78-78"
+    },
+    {
+      "api": "locator.fill",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/readonly"
+    },
+    {
+      "api": "locator.press",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:139-139"
+    },
+    {
+      "api": "locator.hover",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:21-31; raw/cua-entry-excerpts.md:54-54"
+    },
+    {
+      "api": "locator.focus",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:139-139"
+    },
+    {
+      "api": "locator.scrollIntoView",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:54-54"
+    },
+    {
+      "api": "locator.setChecked",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:71-71; raw/public-contract-excerpts.md:100-100; raw/public-contract-excerpts.md:127-127"
+    },
+    {
+      "api": "locator.selectOption",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:96-96; raw/public-contract-excerpts.md:135-135; raw/public-contract-excerpts.md:144-144"
+    },
+    {
+      "api": "locator.dragTo",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:26-26; raw/cua-entry-excerpts.md:54-54"
+    },
+    {
+      "api": "locator.drop",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:106-109"
+    },
+    {
+      "api": "mouse.move",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:21-31"
+    },
+    {
+      "api": "mouse.down",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:21-31"
+    },
+    {
+      "api": "mouse.up",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:21-31"
+    },
+    {
+      "api": "mouse.click",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:25-25; raw/cua-entry-excerpts.md:11-16; raw/cua-entry-excerpts.md:54-54"
+    },
+    {
+      "api": "mouse.wheel",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:18-18"
+    },
+    {
+      "api": "keyboard.down",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:57-57; raw/public-contract-excerpts.md:94-94"
+    },
+    {
+      "api": "keyboard.up",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:55-66; raw/public-contract-excerpts.md:67-113"
+    },
+    {
+      "api": "keyboard.press",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:57-57; raw/cua-entry-excerpts.md:54-54; raw/cua-entry-excerpts.md:139-139"
+    },
+    {
+      "api": "keyboard.type",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:141-141; raw/cua-entry-excerpts.md:140-140"
+    },
+    {
+      "api": "locator.waitFor",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:101-101; raw/public-contract-excerpts.md:136-136; raw/public-contract-excerpts.md:145-145"
+    },
+    {
+      "api": "page.waitForEvent",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:52-53; raw/public-contract-excerpts.md:158-158"
+    },
+    {
+      "api": "page.waitForURL",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:56-56; raw/public-contract-excerpts.md:126-126"
+    },
+    {
+      "api": "page.waitForFunction",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:120-120"
+    },
+    {
+      "api": "page.waitForFunction",
+      "kind": "INFERENCE",
+      "location": "sources.md#ref1-정리-조합-추론의-범위"
+    },
+    {
+      "api": "page.waitForLoadState",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:54-54; raw/public-contract-excerpts.md:125-125; raw/public-contract-excerpts.md:122-122"
+    },
+    {
+      "api": "locator.setFiles",
+      "kind": "DOC",
+      "location": "raw/file-uploads.md:5-10; raw/file-uploads.md:15-15"
+    },
+    {
+      "api": "chooser.setFiles",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:106-109; raw/public-contract-excerpts.md:137-137; raw/public-contract-excerpts.md:159-159"
+    },
+    {
+      "api": "download.save",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105"
+    },
+    {
+      "api": "download.cancel",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:103-105"
+    },
+    {
+      "api": "dialog.accept",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116"
+    },
+    {
+      "api": "dialog.dismiss",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116"
+    },
+    {
+      "api": "scope.evaluate",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:120-120; raw/public-contract-excerpts.md:130-130"
+    },
+    {
+      "api": "scope.evaluate",
+      "kind": "LIVE",
+      "location": "raw/blank-probe.json#/output/readOnlyValue"
+    },
+    {
+      "api": "locator.evaluateAll",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:153-153; raw/public-contract-excerpts.md:131-131"
+    },
+    {
+      "api": "page.logs",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:121-133"
+    },
+    {
+      "api": "console.log",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:96-96"
+    },
+    {
+      "api": "console.log",
+      "kind": "LIVE",
+      "location": "raw/blank-probe.json#/output"
+    },
+    {
+      "api": "display",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:94-94"
+    },
+    {
+      "api": "common.runtime",
+      "kind": "DOC",
+      "location": "raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:108-110; raw/cua-entry-excerpts.md:96-96"
+    },
+    {
+      "api": "common.dom-frames",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:58-66"
+    },
+    {
+      "api": "common.dom-frames",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick"
+    },
+    {
+      "api": "common.selection",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:123-123; raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:132-132; raw/public-contract-excerpts.md:92-92; raw/public-contract-excerpts.md:73-73"
+    },
+    {
+      "api": "common.selection",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/visibleFilter; raw/historical-diagnostics-before-after.json#/codex/nthMinusOne; raw/historical-diagnostics-before-after.json#/codex/slotClick"
+    },
+    {
+      "api": "common.input",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:78-78; raw/public-contract-excerpts.md:94-94; raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:96-96"
+    },
+    {
+      "api": "common.input",
+      "kind": "HISTORICAL",
+      "location": "raw/historical-diagnostics-before-after.json#/codex/readonly; raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick"
+    },
+    {
+      "api": "common.files-events",
+      "kind": "DOC",
+      "location": "raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105; raw/public-contract-excerpts.md:159-159"
+    },
+    {
+      "api": "common.files-events",
+      "kind": "DOC",
+      "location": "raw/file-uploads.md:11-11"
+    }
+  ],
+  "allCommonEvidenceClaimOwnersChecked": 5,
+  "totalOwnersChecked": 72,
+  "commonEvidenceClaims": 9
+}
