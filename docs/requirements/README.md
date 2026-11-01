@@ -52,3 +52,8 @@
 새3사이클을완료했다. **개별문서67개+공통5개,185REQ·254상세판정사례,양쪽370참고슬롯**이다. [최종결과](reference-methods/completion.md)·[실제최종검토](reference-methods/reviews/cycle-3/review.md)·[전체집계](reference-methods/coverage.json)를확인한다. 위184개/진행중문장은각시점기록이며최신총수로재사용하지않는다. 마지막규범/근거리뷰는범위내PASS,제품적합성은미검증이다.
 
 문서구조·근거/PLAN연결·제품동결은 `python3 docs/requirements/tools/validate.py`로실제Git checkout에서재현한다. 이검사는문서도구이며제품/fixture테스트를대신하지않는다.
+
+
+## 구현 단계의 추적
+
+문서 PR #6 이후 구현은 [실행 계획](../../planning/spec-requirements-implementation.md)과 [조건별 상태](../../planning/implementation-plan.json)에서 추적한다. 이 색인/규범의 미검증 표시는 문서 단계 당시 상태이며 최신 제품 판정은 ledger의 조건별 증거를 따른다. 기본 문서 검사에는 제품 동결이 포함되지 않는다. 역사적 동결 재현은 `python3 docs/requirements/tools/validate.py --check-frozen-product`를 사용한다.

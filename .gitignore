@@ -5,3 +5,5 @@ output/
 *.log
 *.zip
 auth.json
+
+__pycache__/
