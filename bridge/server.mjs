@@ -52,7 +52,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
     const session={id:crypto.randomUUID(),generation:1,sequence:0};sessions.set(session.id,session);return json(res,session,201);
    }
    const resultPath=url.pathname.match(/^\/v1\/requests\/([^/]+)$/);
-   if(resultPath){const r=requests.get(resultPath[1]);if(!r)return json(res,{error:'Request not found'},404);const {timer,payloadDigest,...publicResult}=r;return json(res,publicResult)}
+   if(resultPath||url.pathname==='/v1/requests'){const id=resultPath?decodeURIComponent(resultPath[1]):url.searchParams.get('requestId');const r=requests.get(id);if(!r)return json(res,{error:'Request not found'},404);const {timer,payloadDigest,...publicResult}=r;return json(res,publicResult)}
    const match=url.pathname.match(/^\/v1\/sessions\/([^/]+)\/(js|reset)$/);
    if(match&&req.method==='POST'){
     const session=sessions.get(match[1]);if(!session)return json(res,{error:'Session not found'},404);
@@ -60,7 +60,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
     if(operation==='js'&&(typeof body.code!=='string'||Buffer.byteLength(body.code)>65536))throw Error('code must be a string of at most 64 KiB');
     const timeoutMs=body.timeoutMs===undefined?30000:body.timeoutMs;
     if(typeof timeoutMs!=='number'||!Number.isInteger(timeoutMs)||timeoutMs<50||timeoutMs>120000)throw Error('timeoutMs must be an integer from 50 to 120000');
-    if(body.requestId!==undefined&&(typeof body.requestId!=='string'||!body.requestId.length))throw Error('requestId must be a non-empty string');
+    if(body.requestId!==undefined&&(typeof body.requestId!=='string'||!body.requestId.length||!body.requestId.isWellFormed()))throw Error('requestId must be a non-empty well-formed Unicode string');
     const requestId=body.requestId??crypto.randomUUID();
     const payloadDigest=crypto.createHash('sha256').update(JSON.stringify({operation,code:operation==='js'?body.code:null,timeoutMs})).digest('hex');
     if(requests.has(requestId)){

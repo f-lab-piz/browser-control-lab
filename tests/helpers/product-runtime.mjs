@@ -19,7 +19,7 @@ export async function productRuntime(name){
  async function close(){
   try{
    await mkdir(output,{recursive:true});
-   const files=['bridge/server.mjs','extension/runtime-worker.mjs','extension/transform.mjs','extension/api-source.mjs','extension/offscreen.js','extension/browser-engine.mjs','extension/page-agent.mjs','extension/files.mjs','tests/helpers/product-runtime.mjs','tests/requirements-runtime.test.mjs','test-site/server.mjs','test-site/audit.html','test-site/audit.js','test-site/index.html','test-site/fixture.js','docs/runtime-usage.md','docs/api-catalog.json','package.json','package-lock.json'];
+   const files=['bridge/server.mjs','bridge/client.mjs','extension/runtime-worker.mjs','extension/transform.mjs','extension/api-source.mjs','extension/offscreen.js','extension/browser-engine.mjs','extension/page-agent.mjs','extension/files.mjs','tests/helpers/product-runtime.mjs','tests/requirements-runtime.test.mjs','test-site/server.mjs','test-site/audit.html','test-site/audit.js','test-site/index.html','test-site/fixture.js','docs/runtime-usage.md','docs/api-catalog.json','package.json','package-lock.json'];
    const sourceSha256=Object.fromEntries(await Promise.all(files.map(async f=>[f,createHash('sha256').update(await readFile(f)).digest('hex')])));
    await writeFile(path.join(output,'results.json'),JSON.stringify({grade:'HTTP-extension-QuickJS-product',name,startedAt,finishedAt:new Date().toISOString(),browser:context?.browser()?.version(),headed:process.env.HEADED==='1',head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),dirty:Boolean(execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim()),sourceSha256,evidence},null,2));
   }finally{

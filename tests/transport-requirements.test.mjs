@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import {startBridge} from '../bridge/server.mjs';
+import {bridgeClient} from '../bridge/client.mjs';
 
 async function setup(){
  const bridge=await startBridge();
@@ -55,11 +56,28 @@ test('REQ-JS-002: invalid timeout, identifiers, code and body fail before queue 
   for(const timeoutMs of ['100',true,null,0,-1,49,120001,100.5]){
    const result=await request(route+'js',{code:'console.log(1)',timeoutMs});assert.equal(result.status,400,JSON.stringify({timeoutMs,result}));
   }
-  for(const requestId of ['',null,1,{},[]])assert.equal((await request(route+'js',{code:'console.log(1)',requestId})).status,400);
+  for(const requestId of ['',null,1,{},[],'\ud800','\udfff'])assert.equal((await request(route+'js',{code:'console.log(1)',requestId})).status,400);
   for(const code of [null,1,{},'x'.repeat(65537)])assert.equal((await request(route+'js',{code})).status,400);
   for(const body of [null,[],true])assert.equal((await request(route+'reset',body)).status,400);
   assert.equal(bridge.requests.size,0);assert.equal(bridge.sessions.get(session.id).generation,1);
   for(const timeoutMs of [50,30000,120000])assert.equal((await request(route+'js',{code:'// boundary',timeoutMs})).status,202);
+ }finally{await bridge.close()}
+});
+
+test('REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request',async()=>{
+ const {bridge,request,session,next,route}=await setup();const client=bridgeClient(bridge.url,bridge.token);
+ try{
+  const ids=['job','job#part','job/a','한글','job?part','job%part','job%2Fa','.','..','a+b','a b','x\0y','é','e\u0301'];
+  for(const [index,id] of ids.entries()){
+   const polling=index===0?next:fetch(bridge.url+'/v1/extension/next',{headers:{authorization:'Bearer '+bridge.extensionToken}}).then(r=>r.json());
+   assert.equal((await request(route+'js',{requestId:id,code:'console.log(1)'})).status,202);
+   const command=await polling;assert.equal(command.requestId,id);
+   const result={content:[{type:'text',text:id}]};
+   assert.equal((await request('/v1/extension/result',{requestId:id,sessionId:session.id,generation:command.generation,result},bridge.extensionToken)).status,200);
+   const returned=await client.wait(id);assert.equal(returned.requestId,id);assert.equal(returned.result.content[0].text,id);
+   const query=await request('/v1/requests?'+new URLSearchParams({requestId:id}));assert.equal(query.value.requestId,id);
+   if(!['.','..'].includes(id))assert.equal((await request('/v1/requests/'+encodeURIComponent(id))).value.requestId,id);
+  }
  }finally{await bridge.close()}
 });
 

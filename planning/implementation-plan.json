@@ -53,7 +53,19 @@
         "REQ-DISPLAY-002",
         "REQ-C-RUNTIME-007"
       ],
-      "evidence": []
+      "evidence": [],
+      "knownSubcases": [
+        {
+          "requirement": "REQ-CONSOLE-LOG-001",
+          "condition": "REQ-CONSOLE-LOG-001-C01",
+          "finding": "console.log of actual NUL string x\\u0000y is returned as x. Request ID roundtrip itself is correct. Add direct explicit-output regression and preserve bytes in B01C.",
+          "evidence": [
+            "docs/evidence/b01a/console-nul-found.log.txt",
+            "docs/evidence/b01a/console-nul-found.json"
+          ],
+          "status": "unverified"
+        }
+      ]
     },
     {
       "id": "B01D",
@@ -171,7 +183,19 @@
         "REQ-LOCATOR-BOUNDINGBOX-001",
         "REQ-LOCATOR-BOUNDINGBOX-002"
       ],
-      "evidence": []
+      "evidence": [],
+      "knownSubcases": [
+        {
+          "requirement": "REQ-PAGE-FRAMES-001",
+          "finding": "PR10 reviewer first full runtime: nested cross-site mail/calendar3 failures (transient frame URL or discovery). Serial rerun passed. Reproduce initialization ordering/resource interaction in B03A; cause not established.",
+          "evidence": [
+            "docs/reviews/pr10-b01a.md",
+            "docs/evidence/b01a/reviewer-first-regression.log.txt",
+            "docs/evidence/b01a/reviewer-serial-regression.log.txt"
+          ],
+          "status": "unverified"
+        }
+      ]
     },
     {
       "id": "B03B",

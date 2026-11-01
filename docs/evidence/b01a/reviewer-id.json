@@ -1,0 +1,222 @@
+[
+  {
+    "requestId": "simple-ascii",
+    "accepted": {
+      "status": 202,
+      "value": {
+        "requestId": "simple-ascii",
+        "generation": 1,
+        "status": "running"
+      }
+    },
+    "raw": {
+      "status": 200,
+      "value": {
+        "requestId": "simple-ascii",
+        "sessionId": "f4614dbf-f6d5-4c5f-bfc8-4429d45e6feb",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793540720644,
+        "startedAt": 1793540720645,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "content": [
+            {
+              "type": "text",
+              "text": "finished"
+            }
+          ],
+          "truncated": false,
+          "metrics": {
+            "durationMs": 10.600000381469727,
+            "outputChars": 8
+          }
+        },
+        "finishedAt": 1793540720688
+      }
+    },
+    "encoded": {
+      "status": 200,
+      "value": {
+        "requestId": "simple-ascii",
+        "sessionId": "f4614dbf-f6d5-4c5f-bfc8-4429d45e6feb",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793540720644,
+        "startedAt": 1793540720645,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "content": [
+            {
+              "type": "text",
+              "text": "finished"
+            }
+          ],
+          "truncated": false,
+          "metrics": {
+            "durationMs": 10.600000381469727,
+            "outputChars": 8
+          }
+        },
+        "finishedAt": 1793540720688
+      }
+    },
+    "retry": {
+      "status": 202,
+      "value": {
+        "requestId": "simple-ascii",
+        "generation": 1,
+        "status": "completed"
+      }
+    },
+    "record": {
+      "status": "completed",
+      "output": "finished",
+      "execution": "extension-worker/QuickJS-WASM"
+    }
+  },
+  {
+    "requestId": "job/a",
+    "accepted": {
+      "status": 202,
+      "value": {
+        "requestId": "job/a",
+        "generation": 1,
+        "status": "running"
+      }
+    },
+    "raw": {
+      "status": 404,
+      "value": {
+        "error": "Not found"
+      }
+    },
+    "encoded": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "retry": {
+      "status": 202,
+      "value": {
+        "requestId": "job/a",
+        "generation": 1,
+        "status": "completed"
+      }
+    },
+    "record": {
+      "status": "completed",
+      "output": "finished",
+      "execution": "extension-worker/QuickJS-WASM"
+    }
+  },
+  {
+    "requestId": "한글",
+    "accepted": {
+      "status": 202,
+      "value": {
+        "requestId": "한글",
+        "generation": 1,
+        "status": "running"
+      }
+    },
+    "raw": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "encoded": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "retry": {
+      "status": 202,
+      "value": {
+        "requestId": "한글",
+        "generation": 1,
+        "status": "completed"
+      }
+    },
+    "record": {
+      "status": "completed",
+      "output": "finished",
+      "execution": "extension-worker/QuickJS-WASM"
+    }
+  },
+  {
+    "requestId": "job?part",
+    "accepted": {
+      "status": 202,
+      "value": {
+        "requestId": "job?part",
+        "generation": 1,
+        "status": "running"
+      }
+    },
+    "raw": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "encoded": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "retry": {
+      "status": 202,
+      "value": {
+        "requestId": "job?part",
+        "generation": 1,
+        "status": "completed"
+      }
+    },
+    "record": {
+      "status": "completed",
+      "output": "finished",
+      "execution": "extension-worker/QuickJS-WASM"
+    }
+  },
+  {
+    "requestId": "job#part",
+    "accepted": {
+      "status": 202,
+      "value": {
+        "requestId": "job#part",
+        "generation": 1,
+        "status": "running"
+      }
+    },
+    "raw": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "encoded": {
+      "status": 404,
+      "value": {
+        "error": "Request not found"
+      }
+    },
+    "retry": {
+      "status": 202,
+      "value": {
+        "requestId": "job#part",
+        "generation": 1,
+        "status": "completed"
+      }
+    },
+    "record": {
+      "status": "completed",
+      "output": "finished",
+      "execution": "extension-worker/QuickJS-WASM"
+    }
+  }
+]

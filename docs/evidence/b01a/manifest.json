@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-01T13:42:54.355433+00:00",
-  "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd:bridge/server.mjs",
-  "productComparison": "same final test/fixture/source hashes except bridge/server.mjs",
+  "at": "2026-11-01T13:54:32.085959+00:00",
+  "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd:bridge/{server,client}.mjs",
+  "productComparison": "same final test/fixture/source hashes except bridge/server.mjs and bridge/client.mjs",
   "unitBefore": {
     "pass": 0,
-    "fail": 5
+    "fail": 6
   },
   "unitAfter": {
-    "pass": 5,
+    "pass": 6,
     "fail": 0
   },
   "productBefore": {
@@ -21,10 +21,10 @@
   },
   "regression": {
     "command": "npm run test:all",
-    "pass": 55,
+    "pass": 56,
     "fail": 0,
     "skip": 1,
-    "note": "latest variable-isolation assertion rerun in headed target; full suite preceding it used same product code"
+    "note": "after ID fix, serial, includes final ID and JSON marker tests"
   },
   "conditions": [
     "REQ-C-RUNTIME-001-C01",
@@ -47,23 +47,23 @@
     },
     {
       "file": "before-unit.log.txt",
-      "source": "output/goal-b01a-before/unit.log",
-      "sourceSha256": "b1cdb0f43266298443201aced069332a7fcd2dacc2fbfb5ce8007e63249ff66b",
-      "sha256": "528b804155685b5f08a35d605b7791dfd3f8abc851173fa83fc59a77c0b8a0e7",
+      "source": "output/goal-b01a-round2/before/unit.log",
+      "sourceSha256": "8462373d6a4799d98c4c3f1910edc2bce64a5b1067ea27385c06d44f2925b208",
+      "sha256": "4c8692b78f4a9f05da5d5ce731d914154cf51b3e56208f0d12e6dd7fc27a12cf",
       "normalization": "repository path -> <repo>"
     },
     {
       "file": "before-product.log.txt",
-      "source": "output/goal-b01a-before/product.log",
-      "sourceSha256": "2d3e7624f0b8d23c380b72c9a593140aec3788d5ad0c007992e978bdd1cb6dec",
-      "sha256": "2f73b5b0a4f179cc240180fc5b2820cb1328b6ee76019ea2b9234f175aa22612",
+      "source": "output/goal-b01a-round2/before/product.log",
+      "sourceSha256": "e45e5f92bde0571b27c81db826a418a9216e81ec5c7c8d23bdebde0956ace29d",
+      "sha256": "d23fe7385f6446cc97317f32d5606f5b17a3698fddaea2d4273dc24a4694e844",
       "normalization": "repository path -> <repo>"
     },
     {
       "file": "before-product.json",
-      "source": "output/goal-b01a-before/product/results.json",
-      "sourceSha256": "8e707a0ec5d392e5fa0be4f72e10f7c2e474b4edc2986e3988f1a0777c6cc2f5",
-      "sha256": "8e707a0ec5d392e5fa0be4f72e10f7c2e474b4edc2986e3988f1a0777c6cc2f5",
+      "source": "output/goal-b01a-round2/before/product/results.json",
+      "sourceSha256": "e19c08cf94d693e30708d643cf0ad0950b7d8b645f24598d9e89b69ddd19c862",
+      "sha256": "e19c08cf94d693e30708d643cf0ad0950b7d8b645f24598d9e89b69ddd19c862",
       "normalization": "none"
     },
     {
@@ -75,31 +75,96 @@
     },
     {
       "file": "after-unit.log.txt",
-      "source": "output/goal-b01a-after/unit-all.log",
-      "sourceSha256": "7be11ac685be4e5628ebc7291ed7a0ff1fc9a7fd2a3ca01cc0880506995ea179",
-      "sha256": "7be11ac685be4e5628ebc7291ed7a0ff1fc9a7fd2a3ca01cc0880506995ea179",
+      "source": "output/goal-b01a-round2/all.log",
+      "sourceSha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
+      "sha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
       "normalization": "none"
     },
     {
       "file": "after-all.log.txt",
-      "source": "output/goal-b01a-after/all.log",
-      "sourceSha256": "335017a8227aa426bcb9381d206abb0d7c2dbf33ba0721c13d76339b31644788",
-      "sha256": "335017a8227aa426bcb9381d206abb0d7c2dbf33ba0721c13d76339b31644788",
+      "source": "output/goal-b01a-round2/all.log",
+      "sourceSha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
+      "sha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
       "normalization": "none"
     },
     {
       "file": "after-headed.log.txt",
-      "source": "output/goal-b01a-after/headed.log",
-      "sourceSha256": "d84eb4ad46766ad1313f487e522952075e67b516be9a60aa6e9e8d78c2b80126",
-      "sha256": "d84eb4ad46766ad1313f487e522952075e67b516be9a60aa6e9e8d78c2b80126",
+      "source": "output/goal-b01a-round2/headed.log",
+      "sourceSha256": "e148843ccfd41693ce18f278c872918edfb34588e3639a8e0ae63d9325688f69",
+      "sha256": "e148843ccfd41693ce18f278c872918edfb34588e3639a8e0ae63d9325688f69",
       "normalization": "none"
     },
     {
       "file": "after-product.json",
-      "source": "output/goal-b01a-after/headed/results.json",
-      "sourceSha256": "44968119b7002316cca480e1f05176c0fa01fd06600ad6489805b1150759ae71",
-      "sha256": "44968119b7002316cca480e1f05176c0fa01fd06600ad6489805b1150759ae71",
+      "source": "output/goal-b01a-round2/headed/results.json",
+      "sourceSha256": "6f0ceb906ca3f34d7ae1aa4a96305340263d935a143578be92f828854081ce5b",
+      "sha256": "6f0ceb906ca3f34d7ae1aa4a96305340263d935a143578be92f828854081ce5b",
       "normalization": "none"
+    },
+    {
+      "file": "request-id-before.log.txt",
+      "source": "output/goal-b01a-round2/id-before/product.log",
+      "sourceSha256": "6cd414f78287a7fd7ddb7089696cbbda44fb285e73f9486b2d15b49e08d467f3",
+      "sha256": "11946a0044fd830e312827d8ba2219f34ca363487622634cf9d9f7f3df6f015a",
+      "normalization": "repository path -> <repo>"
+    },
+    {
+      "file": "request-id-before-product.json",
+      "source": "output/goal-b01a-round2/id-before/product/results.json",
+      "sourceSha256": "c65bc26611f711baa0c805b7ff8a19b4a73d0e58a28f943ffc0aed1db7523a37",
+      "sha256": "c65bc26611f711baa0c805b7ff8a19b4a73d0e58a28f943ffc0aed1db7523a37",
+      "normalization": "none"
+    },
+    {
+      "file": "reviewer-id-collision.json",
+      "source": "output/review-b01a/request-id-collision.json",
+      "sourceSha256": "d9cf126c17bc10a96d99bc50f66e5435bbc5a7b118f6d2cfa69b429a2a3f88ef",
+      "sha256": "d9cf126c17bc10a96d99bc50f66e5435bbc5a7b118f6d2cfa69b429a2a3f88ef",
+      "normalization": "none"
+    },
+    {
+      "file": "reviewer-id.json",
+      "source": "output/review-b01a/request-id.json",
+      "sourceSha256": "d611e514387331fcb9a92901fe841d77408fc65015f4db70b6a4790eabf18d6a",
+      "sha256": "d611e514387331fcb9a92901fe841d77408fc65015f4db70b6a4790eabf18d6a",
+      "normalization": "none"
+    },
+    {
+      "file": "reviewer-first-regression.log.txt",
+      "source": "output/review-b01a/all.log",
+      "sourceSha256": "e56982231c69e53069822b68d923700caf38e050349cbce94beebf11ad1241cf",
+      "sha256": "38db226cc0c6a27f538115f1ea052e67c4f2d738019679a0d720242c1453c776",
+      "normalization": "repository path -> <repo>"
+    },
+    {
+      "file": "reviewer-serial-regression.log.txt",
+      "source": "output/review-b01a/all-serial.log",
+      "sourceSha256": "8bc8f6e5171d70d61c76d9039d22cfa8a9d289f0abc0dae8234c82a6f94238d5",
+      "sha256": "8bc8f6e5171d70d61c76d9039d22cfa8a9d289f0abc0dae8234c82a6f94238d5",
+      "normalization": "none"
+    },
+    {
+      "file": "console-nul-found.json",
+      "sha256": "c71f29a396e1525b9ab21034bf2c4ce9eb6d6e62cc272898a3fd4197e5731723",
+      "source": "B01A ID test before JSON marker; actual NUL console output found; B01C followup",
+      "normalization": "see report"
+    },
+    {
+      "file": "console-nul-found.log.txt",
+      "sha256": "a8cd5c4bcd6e17fc645bcc545ae591a82b37a1252283e998b8b19f814c1296b5",
+      "source": "B01A ID test before JSON marker; actual NUL console output found; B01C followup",
+      "normalization": "see report"
     }
-  ]
+  ],
+  "requestIdBeforeRef": "47e59e0aa608b9c2846365d21b872c1743a802e5:bridge/{server,client}.mjs",
+  "requestIdBefore": {
+    "pass": 3,
+    "fail": 1
+  },
+  "reviewerInitialRegression": {
+    "pass": 21,
+    "fail": 3,
+    "skip": 1,
+    "note": "nested cross-site frame failures; reviewer serial rerun 55 PASS/1 SKIP before ID fix; not hidden"
+  }
 }

@@ -1,7 +1,7 @@
-✖ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (2555.683125ms)
-✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (1006.894916ms)
-✔ B01A a second conversation cannot attach or upload another conversation asset (264.35425ms)
-✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (369.119708ms)
+✖ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (2452.533167ms)
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (678.62175ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (424.969958ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (403.419083ms)
 ℹ tests 4
 ℹ suites 0
 ℹ pass 2
@@ -9,12 +9,12 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 4759.852584
+ℹ duration_ms 4513.048166
 
 ✖ failing tests:
 
 test at tests/requirements-runtime.test.mjs:9:1
-✖ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (2555.683125ms)
+✖ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (2452.533167ms)
   AssertionError [ERR_ASSERTION]: The "string" argument must be of type string. Received type undefined (undefined)
       at TestContext.<anonymous> (file://<repo>/tests/requirements-runtime.test.mjs:16:108)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
@@ -29,7 +29,7 @@ test at tests/requirements-runtime.test.mjs:9:1
   }
 
 test at tests/requirements-runtime.test.mjs:30:1
-✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (1006.894916ms)
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (678.62175ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   
   202 !== 409

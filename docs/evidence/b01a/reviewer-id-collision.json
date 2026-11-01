@@ -1,0 +1,16 @@
+{
+  "first": {
+    "requestId": "job",
+    "output": "first-output"
+  },
+  "returned": {
+    "requestId": "job",
+    "output": "first-output"
+  },
+  "actual": {
+    "requestId": "job#part",
+    "status": "completed",
+    "output": "second-output",
+    "execution": "extension-worker/QuickJS-WASM"
+  }
+}

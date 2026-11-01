@@ -42,7 +42,10 @@ test('B01A concurrent retry clicks exactly once and conflicting payload/operatio
  const server=await fetch(h.fixture.url+'/api/runs/'+runId).then(r=>r.json());
  const clicks=server.events.filter(e=>e.type==='audit-step'&&e.data.key==='duplicates');assert.equal(clicks.length,1);assert.equal(clicks[0].accepted,true);
  const retry=await h.request(route+'js',payload);assert.equal(retry.status,202);assert.deepEqual(await h.client.wait(payload.requestId),first);
- h.evidence.push({conditions:['REQ-C-RUNTIME-005-C01','REQ-JS-002-C02'],status:'pass',serverClicks:clicks,execution:first.result.execution});
+ const ids=['job','job#part','job/a','한글','job?part','job%part','job%2Fa','.','..','a+b','a b','x\0y'];
+ // 식별자와 출력 문자열 계약을 분리한다. JSON marker로 NUL도 손실 없이 판독한다.
+ for(const requestId of ids){const r=await h.client.js(a.id,'console.log(JSON.stringify('+JSON.stringify(requestId)+'))',{requestId});completed(r);assert.equal(r.requestId,requestId);assert.equal(JSON.parse(text(r)),requestId)}
+ h.evidence.push({conditions:['REQ-C-RUNTIME-005-C01','REQ-JS-002-C02'],status:'pass',idRoundTrips:ids,serverClicks:clicks,execution:first.result.execution});
 });
 
 test('B01A a second conversation cannot attach or upload another conversation asset',async()=>{

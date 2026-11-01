@@ -201,3 +201,8 @@
 |데이터 ref|발급 ref 문자열은 같은 세션·Page·document·연결 element이면 reset만으로 대상이 바뀌지 않는다. JS 객체 핸들/구세대 명령과 구분. 실제 문서교체/분리는 stale.|
 
 기존 프로토타입의 top-level 선언 전역 property 변환과 달라지는 목표 계약이다. 기존 재선언 허용 테스트/guide는 구현 단계에서 버전·예제와 함께 이행한다. 이 선택은 현재 코드에 맞춰 요구를 낮추기보다 일반 lexical 예측 가능성을 우선한 결정이다.
+
+
+## 요청 식별자의 전송 정책
+
+requestId는 생략하거나 비어 있지 않은 올바른 Unicode 문자열이다. 예약문자·한글·dot segment도 ID 데이터로 보존한다. URI 왕복이 불가능한 lone surrogate는 접수 전에 거절한다. 임의 ID의 결과는 URLSearchParams로 인코딩한 query 조회를 기본으로 사용하고, 기존 경로 조회는 URI decoding을 적용한다. 잘못된 경로/ID를 다른 요청 결과로 대신하지 않는다. 이 전송 정책은 REQ-C-RUNTIME-005/REQ-JS-002의 기존 식별·충돌 계약을 명확히 하며 별도 도구를 추가하지 않는다.
