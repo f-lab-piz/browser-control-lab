@@ -42,7 +42,7 @@
   "adapterBoundary": "Refused attachment incorrectly retained owner in candidate; same callback unit probe before/after + permanent real-engine adapter unit. Not product Chrome PASS.",
   "competitors": "Codex bounded reset LIVE received-output transcription (not raw payload export); Aside fresh public guide/help DOC, explicit reset method not confirmed, not unsupported finding. Held release/late hostcall competitor LIVE not measured.",
   "sourceRetention": "Unique raw runtime-regression copy saved before later reviewer tests can overwrite output/runtime-e2e/results.json; source hashes identify actual dirty-source bytes at capture, exact-head independent review remains.",
-  "gate": "local7methods/6conditions pass; exact new-head Sol6.1 high independent review pending",
+  "gate": "PASS full independent3d4246f + exact0e05802 delta independent review; PR16 merged8d7c7d8",
   "artifacts": [
     {
       "file": "before-product.json",
@@ -232,7 +232,30 @@
       "sourceSha256": "e5c07c9d7565a43d922882790b6c0b0ffb9664caf79837cbd1493fd1a672546f",
       "sha256": "e5c07c9d7565a43d922882790b6c0b0ffb9664caf79837cbd1493fd1a672546f",
       "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "reviewer-probes.json",
+      "source": ".local/goal-development/b01d-review/probes.json",
+      "sourceSha256": "e939f470c26b1038428131cc2d108f2235288229c57d1bfdcabe7dea8cd2e059",
+      "sha256": "e939f470c26b1038428131cc2d108f2235288229c57d1bfdcabe7dea8cd2e059",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed; single final newline"
+    },
+    {
+      "file": "reviewer-format-audit.json",
+      "source": ".local/goal-development/b01d-format-review/audit.json",
+      "sourceSha256": "30b4ccb11eb1433c5d259ea2c9280c428f290e765c15224bf0721d56618f07f2",
+      "sha256": "30b4ccb11eb1433c5d259ea2c9280c428f290e765c15224bf0721d56618f07f2",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed; single final newline"
     }
   ],
-  "captureFormatting": "CLI sourceSha256 remains original capture. Two canonical guide files end with one newline for repository whitespace checks; delivered SHA and normalization describe that formatting only."
+  "captureFormatting": "CLI sourceSha256 remains original capture. Two canonical guide files end with one newline for repository whitespace checks; delivered SHA and normalization describe that formatting only.",
+  "review": {
+    "base": "05b0e6a71e2b112b5dbb75e1b0ac3c951887fbd2",
+    "fullHead": "3d4246f2821a67a9417585d8547782872eefbefa",
+    "finalHead": "0e0580250f115b2a170127a0eb9117cb382cf0b3",
+    "fullReport": "docs/reviews/pr16-b01d.md",
+    "deltaReport": "docs/reviews/pr16-b01d-format.md",
+    "verdict": "PASS",
+    "mergeCommit": "8d7c7d89ca48a8f75c5ac5a33e2b08c2e6254261"
+  }
 }

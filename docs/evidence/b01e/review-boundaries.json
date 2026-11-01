@@ -1,0 +1,42 @@
+{
+  "browser": "145.0.7632.6",
+  "evidence": [
+    {
+      "case": "full-text-filter",
+      "pass": true
+    },
+    {
+      "case": "adjacent-inline-filter",
+      "pass": true
+    },
+    {
+      "case": "explicit-whitespace-filter",
+      "pass": true
+    },
+    {
+      "case": "accessible-labels",
+      "pass": true
+    },
+    {
+      "case": "summary-shadow",
+      "pass": true
+    },
+    {
+      "case": "viewport-clip-vertical",
+      "pass": true,
+      "oracle": {
+        "y": 808,
+        "hit": "bottom"
+      }
+    },
+    {
+      "case": "viewport-clip-horizontal",
+      "pass": true,
+      "oracle": {
+        "x": 700,
+        "y": 808,
+        "hit": "bottom"
+      }
+    }
+  ]
+}

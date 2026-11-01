@@ -9,4 +9,6 @@
 
 - B01C: 이슈#13에서 출력·이미지·실행·전송 예산을 진행 중. 6 REQ/7조건 제품 판정 PASS, Before1/9→After9/9, 전체85 PASS/외부1 SKIP. 세 독립 리뷰의 지적 보완 후 정확41ff8e3 Sol6.1 high PASS로 PR14 머지(05b0e6a)됐다. 이전 전체 실행의 다운로드 취소 timeout1건도 원시 기록에 남긴다. [보고서](../docs/implementation/b01c.md)
 
-- B01D: 이슈#15에서4부모/6조건의 초기화·세대·실제 입력 해제를 국소 제품 검증. Before1/7→After7/7, 전체100 PASS/외부1 SKIP·창 모드25 PASS. 독립 리뷰·머지 전. [보고서](../docs/implementation/b01d.md)
+- B01D: 이슈#15에서4부모/6조건의 초기화·세대·실제 입력 해제를 국소 제품 검증. Before1/7→After7/7, 전체100 PASS/외부1 SKIP·창 모드25 PASS. 전체/정확head delta 독립 PASS 후 PR16 머지(8d7c7d8). [보고서](../docs/implementation/b01d.md)
+
+- B01E: 이슈#17,5부모/7조건의 비동기 평가·JSON 직렬화 국소 제품 PASS. Before0/7→After7/7, 전체114 PASS/외부1 SKIP·단독 창 모드32 PASS. 정확head 독립 리뷰 전. [보고서](../docs/implementation/b01e.md)

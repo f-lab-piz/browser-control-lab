@@ -1,0 +1,157 @@
+[
+  {
+    "requestId": "9f61a917-f1f4-4525-9f74-4fa17664c7ab",
+    "operation": "js",
+    "sessionId": "ffbb33f4-f703-4367-94f2-1f6a053186ef",
+    "generation": 1,
+    "status": "completed",
+    "createdAt": 1793555979846,
+    "startedAt": 1793555979846,
+    "result": {
+      "execution": "extension-worker/QuickJS-WASM",
+      "metrics": {
+        "durationMs": 601.1999998092651,
+        "outputChars": 0,
+        "outputBytes": 0,
+        "imageBytes": 0,
+        "imageCount": 0
+      },
+      "content": [],
+      "truncated": false,
+      "truncationReasons": []
+    },
+    "finishedAt": 1793555980496
+  },
+  {
+    "timeout": 10000,
+    "elapsed": 104,
+    "r": {
+      "requestId": "4e7212da-7730-4a51-a55b-6f64ea49d9a4",
+      "operation": "js",
+      "sessionId": "ffbb33f4-f703-4367-94f2-1f6a053186ef",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555980521,
+      "startedAt": 1793555980521,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 92.69999980926514,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555980615
+    },
+    "effect": "1"
+  },
+  {
+    "timeout": 2147483648,
+    "elapsed": 105,
+    "r": {
+      "requestId": "71abde99-bb72-4f9d-bd37-1e39834d4407",
+      "operation": "js",
+      "sessionId": "ffbb33f4-f703-4367-94f2-1f6a053186ef",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555980666,
+      "startedAt": 1793555980666,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 88.60000038146973,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555980757
+    },
+    "effect": "2"
+  },
+  {
+    "timeout": 4294967295,
+    "elapsed": 99,
+    "r": {
+      "requestId": "d6c0b380-f163-4a10-993f-cba8611be358",
+      "operation": "js",
+      "sessionId": "ffbb33f4-f703-4367-94f2-1f6a053186ef",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555980773,
+      "startedAt": 1793555980773,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 86.79999923706055,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555980862
+    },
+    "effect": "3"
+  },
+  {
+    "timeout": 9007199254740991,
+    "elapsed": 100,
+    "r": {
+      "requestId": "a5a617c9-0be6-4151-b60d-d655708481b9",
+      "operation": "js",
+      "sessionId": "ffbb33f4-f703-4367-94f2-1f6a053186ef",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793555980874,
+      "startedAt": 1793555980874,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 85.5,
+          "outputChars": 4,
+          "outputBytes": 4,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "true"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793555980961
+    },
+    "effect": "4"
+  }
+]

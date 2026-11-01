@@ -1,0 +1,43 @@
+✔︎ Opened a new tab and set it active: tabs[0], page → 평가와 JSON 경계 (http://127.0.0.1:60159/evaluation)
+# note: interactive (clickable / focusable) elements only.
+- title: "평가와 JSON 경계" [url=http://127.0.0.1:60159/evaluation]
+- heading "평가와 JSON 경계" [level=1]
+- text: "0 0 0 0 initial\n A L S T B"
+- button "순서 바꾸기" [ref=e1]
+- button "프레임 교체" [ref=e2]
+- button "프레임 분리" [ref=e3]
+{
+  rows: [
+    { name: 'async', status: 'returned', type: 'number', value: 7 },
+    { name: 'thenable', status: 'returned', type: 'number', value: 11 },
+    {
+      name: 'undefined',
+      status: 'returned',
+      type: 'undefined',
+      value: undefined
+    },
+    {
+      name: 'nan',
+      status: 'returned',
+      type: 'undefined',
+      value: undefined
+    },
+    {
+      name: 'throw',
+      status: 'error',
+      message: 'Error: expected b01e\n    at <anonymous>:1:60\n    at <anonymous>:1:84'
+    },
+    {
+      name: 'reject',
+      status: 'error',
+      message: 'Error: expected b01e async\n' +
+        '    at <anonymous>:1:65\n' +
+        '    at <anonymous>:1:95'
+    },
+    { name: 'DOMnode', status: 'returned', type: 'object', value: {} }
+  ],
+  all: [ 'a', 'light', 'b' ]
+}
+[system] last tab closed. `page` is now null. call openTab(url) to open a new one.
+[system] no current open tabs in this session.
+[ok | 1385ms]

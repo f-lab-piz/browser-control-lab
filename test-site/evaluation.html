@@ -1,0 +1,17 @@
+<!doctype html><html lang="ko"><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="script-src 'nonce-bcl-evaluation-fixture'; object-src 'none'">
+<title>평가와 JSON 경계</title><style>body{font:16px system-ui;margin:24px}output,button{display:block;margin:12px 0}iframe{width:650px;height:340px}</style>
+<h1>평가와 JSON 경계</h1><output id="effect">0</output><output id="empty-count">0</output><output id="poll">0</output><output id="child-effect">0</output><output id="frame-state">initial</output>
+<div id="order"><span class="item" id="a">A</span><div id="host"><span class="item" id="light" slot="placed">L</span></div><span class="item" id="b">B</span></div>
+<button id="reorder">순서 바꾸기</button><button id="navigate">프레임 교체</button><button id="detach">프레임 분리</button>
+<script nonce="bcl-evaluation-fixture">
+const params=new URLSearchParams(location.search);document.body.dataset.scope=params.has('embedded')?'child':'main';
+document.querySelector('#host').attachShadow({mode:'open'}).innerHTML='<span class="item" id="s">S</span><slot name="placed"></slot><span class="item" id="t">T</span>';
+document.querySelector('#reorder').addEventListener('click',()=>document.querySelector('#order').prepend(document.querySelector('#b')));
+if(!params.has('embedded')){
+ const frame=document.createElement('iframe');frame.id='child';frame.title='평가 child';frame.src=location.protocol+'//mail.test:'+location.port+'/evaluation?embedded=1';document.body.append(frame);
+ window.addEventListener('message',event=>{if(event.source===frame.contentWindow&&event.data?.evaluationEffect===true)document.querySelector('#child-effect').textContent=String(Number(document.querySelector('#child-effect').textContent)+1)});
+ document.querySelector('#navigate').addEventListener('click',()=>{frame.src=frame.src+'&version=2';document.querySelector('#frame-state').textContent='navigated'});
+ document.querySelector('#detach').addEventListener('click',()=>{frame.remove();document.querySelector('#frame-state').textContent='detached'});
+}
+</script></html>

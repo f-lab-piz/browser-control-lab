@@ -90,3 +90,13 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 - 본인이 도구로 누른 key/button과 drag/filechooser interception을 실제 해제한다. 다른 세션의 탭·입력은 건드리지 않는다. reset 전에 보낸 명령의 완료 여부가 불확실하면 `cleanup.inFlight`와 `inFlightEffectsUncertain`으로 구분한다. 이미 발생한 웹 효과의 취소를 뜻하지 않는다.
 - 이전 generation의 대기/조회·미전송 명령은 후속 브라우저 작업을 전송하거나 새 요청을 완료할 수 없다. 새 호출은 최근 초기화 정리 장벽 뒤에 시작하며 이벤트 대기와 이를 발생시키는 입력은 동시에 실행할 수 있다.
 - 탭과 소유권·현재 페이지 값·server asset/완료 다운로드는 보존한다. 기존 ref는 해당 문서가 그대로일 때 다시 사용할 수 있다. JS 핸들 변수는 사라지므로 탭 ID로 다시 attach한다. 이미 진행 중인 페이지 JS나 입력의 외부 효과를 되돌리거나 브라우저의 모든 변경을 원자적으로 취소한다고 보장하지 않는다.
+
+## 페이지 함수와 JSON 값
+
+- `page/frame.evaluate(fn,arg)`는 선택 문서의 `fn(arg)`, `locator.evaluate(fn,arg)`는 `fn(element,arg)`, `locator.evaluateAll(fn,arg)`는 `fn(elements,arg)`를 실행한다. QuickJS의 바깥 변수는 전달되지 않으므로 필요한 데이터는 arg로 준다. 생략/undefined arg는 null이다. 일반 함수·화살표·객체 메서드를 전달할 수 있으며 native/bound 함수는 거절한다.
+- 함수의 Promise/thenable이 끝날 때까지 기다린다. 인자와 최종 결과에는 null·boolean·문자열·유한 number·조밀한 배열·일반 객체만 허용한다. null prototype의 데이터 객체도 허용한다. 문자열의 NUL/Unicode, -0과 자신의 `__proto__` 키를 보존한다. 공유된 하위 객체는 값으로 복제하지만 순환은 오류다.
+- undefined 결과/필드, 희소 배열, NaN/Infinity, BigInt/Symbol/function/DOM node/Date 같은 비일반 객체, accessor·symbol key·비열거 필드·배열의 추가 속성은 `SERIALIZATION_ERROR`다. toJSON이나 getter를 호출해 값을 바꾸지 않는다. 실행 전 인자가 부적합하면 페이지 함수는 호출하지 않는다. 데이터를 바꾸기만 하는 함수도 명시적으로 `return null`을 한다.
+- 함수의 throw/async reject는 `EVALUATION_ERROR`, 선택 실패는 `EVALUATION_TARGET_ERROR`, 문서 교체·분리는 `EVALUATION_CONTEXT_ERROR`로 구분한다. 결과가 자동 출력되지는 않으므로 모델에 전달할 값은 `console.log`로 출력한다.
+- evaluateAll은 현재 선택 결과를 슬롯 배정을 반영한 composed 순서로 전달하고, 대상이 0개여도 빈 배열로 함수를 한 번 호출한다. 숨김/미배정 등 연결된 DOM의 선택 정책은 기존 locator를 따른다. 함수 실행 중 문서가 바뀌면 새 문서로 자동 재실행하지 않는다.
+- `page.waitForFunction(fn,arg,{timeout})`은 정상 falsy 결과만 다시 평가한다. async reject·직렬화 오류는 즉시 끝내고, 양의 정수 timeout(ms, 기본10000)은 JS 호출 시점의 인자 전달·연결 준비·Promise 대기를 모두 포함한다. 내부 deadline은 `WAIT_TIMEOUT`으로 기존 VM/변수를 유지한다. 외부 js timeout이 먼저 끝나면 기존 실행 제한/VM 재생성 정책을 따른다.
+- 오류·시간 초과 전에 발생한 페이지 효과는 남는다. 이미 전송된 사용자 JS 자체를 강제로 되돌리거나 종료한다고 보장하지 않으며, 취소 뒤의 후속 도구 호출·늦은 결과 전달을 막는다. 단일 evaluate를 자동 재실행하지 않는다.

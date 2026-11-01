@@ -1,0 +1,147 @@
+✖ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1225.511208ms)
+✖ B01E synchronous async thenable JSON and special string data round trip without automatic output (333.899208ms)
+✖ B01E invalid arguments fail before the page function and invalid results never become successful null (1369.979875ms)
+✖ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (506.360916ms)
+✖ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (2188.494375ms)
+✖ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (31433.701083ms)
+✖ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (4694.671416ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42620.409042
+
+✖ failing tests:
+
+test at tests/evaluation-runtime.test.mjs:16:1
+✖ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1225.511208ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /EVALUATION_ERROR/. Input:
+
+  'ReferenceError: b01eClosureSecret is not defined\n    at <anonymous>:1:6'
+
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:19:251)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'ReferenceError: b01eClosureSecret is not defined\n    at <anonymous>:1:6',
+    expected: /EVALUATION_ERROR/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/evaluation-runtime.test.mjs:23:1
+✖ B01E synchronous async thenable JSON and special string data round trip without automatic output (333.899208ms)
+  AssertionError [ERR_ASSERTION]: {"execution":"extension-worker/QuickJS-WASM","error":{"code":"JS_ERROR","guestName":"Error","message":"SyntaxError: Unexpected token '{'"},"runtimeReset":false,"metrics":{"durationMs":6.700000762939453,"outputChars":0,"outputBytes":0,"imageBytes":0,"imageCount":0},"content":[],"truncated":false,"truncationReasons":[]}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:5:23)
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:26:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/evaluation-runtime.test.mjs:31:1
+✖ B01E invalid arguments fail before the page function and invalid results never become successful null (1369.979875ms)
+  AssertionError [ERR_ASSERTION]: {"rows":[{"kind":"arg","expression":"NaN","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"Infinity","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"1n","status":"completed","diagnostic":"Error in invocation of tabs.get(integer tabId, function callback): No matching signature.","effect":99},{"kind":"arg","expression":"Symbol(\"x\")","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"(()=>1)","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"new Date()","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"({x:undefined})","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"[,1]","status":"completed","diagnostic":"accepted","effect":99},{"kind":"arg","expression":"page","status":"failed","diagnostic":"Maximum call stack size exceeded","effect":99},{"kind":"arg","expression":"Object.defineProperty({},\"x\",{enumerable:true,get(){throw Error(\"getter must not execute\")}})","status":"completed","diagnostic":"getter must not execute","effect":99},{"kind":"arg","expression":"(()=>{var v={};v.self=v;return v})()","status":"failed","diagnostic":"Maximum call stack size exceeded","effect":99},{"kind":"result","expression":"undefined","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"NaN","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"Infinity","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"1n","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"Symbol(\"x\")","status":"completed","diagnostic":"{\"code\":-32000,\"message\":\"Object couldn't be returned by value\"}"},{"kind":"result","expression":"(()=>1)","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"document.body","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"new Date()","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"({x:undefined})","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"[,1]","status":"completed","diagnostic":"accepted"},{"kind":"result","expression":"(()=>{var v={};v.self=v;return v})()","status":"completed","diagnostic":"{\"code\":-32000,\"message\":\"Object reference chain is too long\"}"}],"effect":99,"calls":11}
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:45:131)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/evaluation-runtime.test.mjs:48:1
+✖ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (506.360916ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'a',
+      's',
+  +   't',
+      'light',
+  -   't',
+      'b'
+    ]
+
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:51:80)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'a', 's', 't', 'light', 'b' ],
+    expected: [ 'a', 's', 'light', 't', 'b' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/evaluation-runtime.test.mjs:55:1
+✖ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (2188.494375ms)
+  AssertionError [ERR_ASSERTION]: [{"name":"throw","status":"failed","error":{"code":"JS_ERROR","guestName":"Error","message":"Error: expected throw\n    at <anonymous>:1:123"},"runtimeReset":false,"count":1,"stable":true,"output":""},{"name":"reject","status":"failed","error":{"code":"JS_ERROR","guestName":"Error","message":"Error: expected reject\n    at <anonymous>:1:139"},"runtimeReset":false,"count":1,"stable":true,"output":""},{"name":"never","status":"failed","error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"count":1,"stable":true}]
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:65:94)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/evaluation-runtime.test.mjs:68:1
+✖ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (31433.701083ms)
+  AssertionError [ERR_ASSERTION]: {"error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":1375754368},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754368,"sessionId":"ABC4A5B095EFF343C6FE012F86E4BB51"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754369},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754369,"sessionId":"E016A9740E3D864A37F4F13D635445EB"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754370},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754370,"sessionId":"0B11EE29591FFCBF7F4F1238C2F65B2E"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754371},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754371,"sessionId":"E53688FEBF8E257B135623304205ACFA"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754372},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754372,"sessionId":"9E5CDC0E1BF7FB8E3445C3236C2704B6"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754373},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754373,"sessionId":"635B15E1538737837D21579EF81A0362"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754374},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754374,"sessionId":"BEB9D7C0E308F6554C23FEFE6105EEA0"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754375},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754375,"sessionId":"4168DD34A879C894380642DAC28852A6"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1375754376},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"fa9b50f1-1be1-4d7c-9af4-cfe565f0a348","hostMethod":"locator.evaluateAll","method":"Runtime.callFunctionOn","tabId":1375754376,"targetSession":"3D0D1D34EA5E4034B1562351C9175376","generation":4}],"inFlightEffectsUncertain":true}}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:5:23)
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:72:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/evaluation-runtime.test.mjs:81:1
+✖ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (4694.671416ms)
+  AssertionError [ERR_ASSERTION]: [{"name":"reject","error":{"code":"JS_ERROR","guestName":"Error","message":"WAIT_TIMEOUT: page.waitForFunction"},"runtimeReset":false,"generation":[5,5],"binding":"17","count":4,"elapsed":313},{"name":"invalid","error":{"code":"JS_ERROR","guestName":"Error","message":"WAIT_TIMEOUT: page.waitForFunction"},"runtimeReset":false,"generation":[5,5],"binding":"17","count":4,"elapsed":274},{"name":"never","error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"generation":[5,6],"binding":"","count":1,"elapsed":2665}]
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/evaluation-runtime.test.mjs:96:126)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

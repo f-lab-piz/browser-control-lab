@@ -1,0 +1,306 @@
+[
+  {
+    "name": "multiple keys/buttons and other-session release isolation",
+    "status": "pass",
+    "reset": {
+      "content": [],
+      "execution": "extension-worker",
+      "reset": true,
+      "runtimeReset": true,
+      "rollback": false,
+      "cleanup": {
+        "status": "complete",
+        "trace": [
+          {
+            "target": {
+              "tabId": 1414314271
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1414314271
+            },
+            "method": "Input.dispatchKeyEvent",
+            "kind": "key",
+            "key": "Control",
+            "status": "released"
+          },
+          {
+            "target": {
+              "tabId": 1414314271
+            },
+            "method": "Input.dispatchKeyEvent",
+            "kind": "key",
+            "key": "a",
+            "status": "released"
+          },
+          {
+            "target": {
+              "tabId": 1414314271
+            },
+            "method": "Input.dispatchMouseEvent",
+            "kind": "mouse",
+            "button": "left",
+            "status": "released"
+          },
+          {
+            "target": {
+              "tabId": 1414314271
+            },
+            "method": "Input.dispatchMouseEvent",
+            "kind": "mouse",
+            "button": "right",
+            "status": "released"
+          }
+        ],
+        "warnings": [],
+        "inFlight": [],
+        "inFlightEffectsUncertain": false
+      }
+    },
+    "events": [
+      {
+        "type": "keydown",
+        "key": "Control",
+        "ctrlKey": true,
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "key": "a",
+        "ctrlKey": true,
+        "trusted": true
+      },
+      {
+        "type": "mousedown",
+        "button": 0,
+        "buttons": 1,
+        "ctrlKey": false,
+        "trusted": true
+      },
+      {
+        "type": "mousedown",
+        "button": 2,
+        "buttons": 2,
+        "ctrlKey": false,
+        "trusted": true
+      },
+      {
+        "type": "keyup",
+        "key": "Control",
+        "ctrlKey": false,
+        "trusted": true
+      },
+      {
+        "type": "keyup",
+        "key": "a",
+        "ctrlKey": false,
+        "trusted": true
+      },
+      {
+        "type": "mouseup",
+        "button": 0,
+        "buttons": 0,
+        "ctrlKey": false,
+        "trusted": true
+      },
+      {
+        "type": "mouseup",
+        "button": 2,
+        "buttons": 0,
+        "ctrlKey": false,
+        "trusted": true
+      }
+    ],
+    "otherEvents": [
+      {
+        "type": "keydown",
+        "key": "Shift",
+        "ctrlKey": false,
+        "trusted": true
+      }
+    ]
+  },
+  {
+    "name": "event timeout retains VM and generation",
+    "status": "pass",
+    "subordinate": {
+      "requestId": "08a1f0af-9bae-4a86-bf94-e14578c383ac",
+      "operation": "js",
+      "sessionId": "56a33460-eee7-40ca-b85f-07957de92302",
+      "generation": 2,
+      "status": "failed",
+      "createdAt": 1793553869699,
+      "startedAt": 1793553869699,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "error": {
+          "code": "JS_ERROR",
+          "guestName": "Error",
+          "message": "EVENT_TIMEOUT: popup"
+        },
+        "runtimeReset": false,
+        "metrics": {
+          "durationMs": 87.70000076293945,
+          "outputChars": 0,
+          "outputBytes": 0,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793553869788
+    },
+    "retained": {
+      "requestId": "135e8f9f-6225-43a0-a1ab-ea2aa5c26c99",
+      "operation": "js",
+      "sessionId": "56a33460-eee7-40ca-b85f-07957de92302",
+      "generation": 2,
+      "status": "completed",
+      "createdAt": 1793553869797,
+      "startedAt": 1793553869797,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 6.59999942779541,
+          "outputChars": 2,
+          "outputBytes": 2,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "42"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793553869805
+    }
+  },
+  {
+    "name": "real in-flight host read is uncertain, isolated and effect-preserving",
+    "status": "pass",
+    "inflight": {
+      "requestId": "54c0ed60-48b1-4b86-a84b-dd601cad8715",
+      "operation": "reset",
+      "sessionId": "56a33460-eee7-40ca-b85f-07957de92302",
+      "generation": 3,
+      "status": "completed",
+      "createdAt": 1793553869956,
+      "startedAt": 1793553869956,
+      "result": {
+        "content": [],
+        "execution": "extension-worker",
+        "reset": true,
+        "runtimeReset": true,
+        "rollback": false,
+        "cleanup": {
+          "status": "complete",
+          "trace": [
+            {
+              "target": {
+                "tabId": 1414314271
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            }
+          ],
+          "warnings": [],
+          "inFlight": [
+            {
+              "requestId": "af8cf9fd-7336-472e-b098-f3b40d26b08b",
+              "hostMethod": "scope.evaluate",
+              "method": "Runtime.callFunctionOn",
+              "tabId": 1414314271,
+              "generation": 2
+            }
+          ],
+          "inFlightEffectsUncertain": true
+        }
+      },
+      "finishedAt": 1793553869959
+    },
+    "pending": {
+      "requestId": "af8cf9fd-7336-472e-b098-f3b40d26b08b",
+      "operation": "js",
+      "sessionId": "56a33460-eee7-40ca-b85f-07957de92302",
+      "generation": 2,
+      "status": "cancelled",
+      "createdAt": 1793553869831,
+      "startedAt": 1793553869831,
+      "result": {
+        "error": {
+          "code": "RESET",
+          "message": "Session reset; previous browser side effects may have occurred"
+        }
+      }
+    },
+    "fresh": {
+      "requestId": "4ca10e9a-4eee-40fa-835c-b498f988b9df",
+      "operation": "js",
+      "sessionId": "56a33460-eee7-40ca-b85f-07957de92302",
+      "generation": 3,
+      "status": "completed",
+      "createdAt": 1793553869992,
+      "startedAt": 1793553869993,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 5.699999809265137,
+          "outputChars": 10,
+          "outputBytes": 10,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "undefined"
+          },
+          {
+            "type": "text",
+            "text": "A"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793553870022
+    },
+    "last": {
+      "requestId": "5078d05e-8170-4b96-b714-478f03fb86db",
+      "operation": "js",
+      "sessionId": "56a33460-eee7-40ca-b85f-07957de92302",
+      "generation": 3,
+      "status": "completed",
+      "createdAt": 1793553871031,
+      "startedAt": 1793553871031,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 8.09999942779541,
+          "outputChars": 8,
+          "outputBytes": 8,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ONLY-NEW"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793553871041
+    }
+  }
+]

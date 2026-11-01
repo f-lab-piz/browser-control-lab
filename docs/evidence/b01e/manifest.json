@@ -1,0 +1,215 @@
+{
+  "at": "2026-11-01T17:54:49.453230+00:00",
+  "baseline": "8d7c7d89ca48a8f75c5ac5a33e2b08c2e6254261",
+  "scope": "B01E5parents7conditions; personal single-user local transport; external3/internal64 unchanged",
+  "comparison": "Final fixture/tests/helper/docs/dependencies/new unused modules fixed; four owning product files restored only. Before executed with controlled baseline cwd, all recorded baseline hashes verified against git show. Not full historical environment replay.",
+  "sourceDifferences": [
+    "extension/runtime-worker.mjs",
+    "extension/api-source.mjs",
+    "extension/browser-engine.mjs",
+    "extension/page-agent.mjs"
+  ],
+  "beforeProduct": {
+    "pass": 0,
+    "fail": 7
+  },
+  "afterProduct": {
+    "pass": 7,
+    "fail": 0
+  },
+  "regression": {
+    "command": "BCL_RUN_DIR=output/goal-b01e/review-fix npm run test:all",
+    "pass": 114,
+    "fail": 0,
+    "skip": 1,
+    "grades": {
+      "unit": 40,
+      "fixture": 10,
+      "bootstrap": 1,
+      "legacyProduct": 24,
+      "requirementsProduct": 32,
+      "reviewBoundaries": 7
+    }
+  },
+  "headed": {
+    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b01e/review-fix-headed-isolated npm run test:requirements",
+    "pass": 32,
+    "fail": 0
+  },
+  "gradeSeparation": "Codec5 unit+native oracle1 preliminary focused run6; final fixture10 includes corrected actual child.waitForURL navigation check. Native/adapter are not Chrome product PASS.",
+  "rawHistory": "Initial Before0/7 retained; first all106PASS7FAIL1SKIP review-boundaries DOMnode predicate rejected in shared before hook. Predicate now Boolean(same selected node). One intermediate baseline invocation used root cwd, so its source fingerprint read wrong owning directory; not used as final comparison. Corrected baseline executes from its own cwd and hashes verified. No product expectation relaxed.",
+  "competitors": "Codex CUA IAB pure read-only LIVE received-output transcription; root only, child DNS blocked. Aside public guide and same root LIVE raw CLI. Different serialization/selection contracts, no general ranking or competitor full requirement PASS. No source/bundle/WASM copied.",
+  "gate": "First exact7bae78a independent CHANGES_REQUESTED; P2 fixed locally with full114PASS1SKIP/isolated headed32PASS, exact new-head independent rereview pending. B02-B06/final audit remain",
+  "artifacts": [
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b01e/before-review-fix/b01e/results.json",
+      "sourceSha256": "e926d2d3fb003986af4c61a7eaedc4a79f3d88afd5590b77c5430d6c261cf553",
+      "sha256": "489488204954dd21b513fb97fca3f4f3d9a1689e0c6bfc18ef854243f9c7ae94",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b01e-before-review-fix.log",
+      "sourceSha256": "416b776a56698e11ef19439912dcf9d89bcb2e7191343a2ed9922b8fa16b3fc5",
+      "sha256": "ed9514fa605834782d503ea7d1173896a3cf19c72b8d1d1e09614baa9396c77a",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b01e/review-fix/b01e/results.json",
+      "sourceSha256": "59a3d5a5ae889dc693312e175663954dd949f66031f30f811ec28c4af8f17b53",
+      "sha256": "161c22cef6836ea7f5aa1a80237d4a617c9dc9e4627de8e0c1e97c088808c565",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b01e-review-fix-all.log",
+      "sourceSha256": "ed34e7ec5b5975414e25edcefe82237fca04743a2013e19cb88ac05fd8805daf",
+      "sha256": "ed34e7ec5b5975414e25edcefe82237fca04743a2013e19cb88ac05fd8805daf",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.json",
+      "source": "output/goal-b01e/review-fix-headed-isolated/b01e/results.json",
+      "sourceSha256": "54ac26a8b6fdf7039dc18ae653c5cfbb03892028764be8e22a4df065f1634a5f",
+      "sha256": "e478fc6c80ae0a190df15c8a5c660f5c27384d66d12cd82e74e9faebf2924f46",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b01e-review-fix-headed-isolated.log",
+      "sourceSha256": "2866da2b14910391593c3b615df7a98c8aa51e03bd35e1f95200c301887173ce",
+      "sha256": "2866da2b14910391593c3b615df7a98c8aa51e03bd35e1f95200c301887173ce",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "unit-native.log.txt",
+      "source": "output/goal-b01e-focused.log",
+      "sourceSha256": "91ac41c8eab3ae3a1428582931fc9a323db1fd24ccb7910a58ffaa021ac41056",
+      "sha256": "91ac41c8eab3ae3a1428582931fc9a323db1fd24ccb7910a58ffaa021ac41056",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "candidate-review-boundary-failure.log.txt",
+      "source": "output/goal-b01e-all.log",
+      "sourceSha256": "cf1ceddbfc7fce581d711de5af9a6ec8f75cfd9d34aa5dcc4ab426fec28a9710",
+      "sha256": "9e514cdd7a68f8a5e0ab7e938cf0439d8f7ae71579187626e18f5248ddbb12b0",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "initial-before.log.txt",
+      "source": "output/goal-b01e-initial-before.log",
+      "sourceSha256": "afaf86cda46cdbf20ef087767cb9ecb64d91c1d1c04022cea5625705bb95bd62",
+      "sha256": "4e1882d19c89ed5776cc5d8a4112d849034fa7db494e4ed819c6c17466bb636b",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-codex-live.json",
+      "source": "output/goal-b01e/compare/codex-live.json",
+      "sourceSha256": "ea4230236c2324e0084bade103abc532023a2d0d054b25455627571440331f8e",
+      "sha256": "ea4230236c2324e0084bade103abc532023a2d0d054b25455627571440331f8e",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-aside-live.txt",
+      "source": "output/goal-b01e/compare/aside-live.txt",
+      "sourceSha256": "b30152fdfbefc1fc003b733618b09855fa15030cdd0c7270771f1baa0e8a066a",
+      "sha256": "dd4a9888200e8101743d1765fb5a811d38f125d5bbac34fe43b78b4494c811a0",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "aside-guide.txt",
+      "source": "output/goal-b01e/compare/aside-guide.txt",
+      "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "aside-repl-guide.txt",
+      "source": "output/goal-b01e/compare/aside-repl-guide.txt",
+      "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "runtime-regression.json",
+      "source": "output/runtime-e2e/results.json",
+      "sourceSha256": "e289ce3bfc7f73ba7e15ffbf1260bd70e53c57c108053c7409297e84cc76b6db",
+      "sha256": "e4d1aad86e385b5bddea7fd1000c741752f20989fdd69d7087f8889f4df9c1dc",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "review-boundaries.json",
+      "source": "output/review-fixes/boundaries.json",
+      "sourceSha256": "4ad51dcae6ee6c81a4debdfb29626fea4eb66f8fcd9ed2194b83dd847ffdd2f3",
+      "sha256": "4d7047e6c3d19a8ab9a7eae307b9bc643b5627f9c83a8bb8ff40732f194cc3c5",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "review-fix-unit.log.txt",
+      "source": "output/goal-b01e-review-fix-unit.log",
+      "sourceSha256": "d4e85e2021c1735c9b57835d99b6d91a700a4026e702e83d61e0a4b9733e84ac",
+      "sha256": "d4e85e2021c1735c9b57835d99b6d91a700a4026e702e83d61e0a4b9733e84ac",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-long-timeout.json",
+      "source": "output/pr18-review/long-timeout.json",
+      "sourceSha256": "364a673526b36d0337cd51eb9e103d4db0b44723a787f614b893b11373e507ff",
+      "sha256": "f9f3930a26e1dff52052ef703df1c73450e1f529816b298aa384f8bfb0730574",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-baseline-long-timeout.json",
+      "source": "output/pr18-review/baseline-long-timeout.json",
+      "sourceSha256": "01b85d4e4770a02e100f3829fdae02a0b9071d101eef7731b8c474e5452d260e",
+      "sha256": "e09b401573c7ed807728a0c750b5c9c04acc2146836886cfed14fa407e740d69",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-long-timeout-probe.mjs",
+      "source": "output/pr18-review/long-timeout.mjs",
+      "sourceSha256": "ca0673e131b6758a72714bbc3eb38fbbf24155d52b00b82b82484cc0739b9656",
+      "sha256": "ca0673e131b6758a72714bbc3eb38fbbf24155d52b00b82b82484cc0739b9656",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "review-fix-long-timeout.json",
+      "source": "output/goal-b01e-review-fix-timeout.json",
+      "sourceSha256": "3eef1f5312b9accb62a367d5812aaea04563e635a3504da0bac9eb5b467c3890",
+      "sha256": "7c6bb4dac2d9c549c676e9b63c8f60d036e9d4df0c90d4c1970368f4f3b34902",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "headed-frame-failure.json",
+      "source": "output/goal-b01e/review-fix-headed/b01a/results.json",
+      "sourceSha256": "b5e1ca6edc33c9d683410b337b2b21d9a06434e303ef0cd575afb8ba635cf159",
+      "sha256": "53e9b6db4fccdde2f7f40afba25d266cff1d93a6abd53d53080386c281bd2e85",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "headed-frame-failure.log.txt",
+      "source": "output/goal-b01e-review-fix-headed.log",
+      "sourceSha256": "c8333cd0a6936f7ee8a186cd7644dbb023759d487cf9bd190412d99f84a4469a",
+      "sha256": "b5ae8e55787b5faea8db9ebebd779c51bb593c1a5240001cb07845bc3d37c7d7",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "frame-path-audit.txt",
+      "source": "output/goal-b01e-frame-path-audit.txt",
+      "sourceSha256": "0771edd818db0e487f81b9606d94a3e14c876af4cadbd9bd8ffb331980f45308",
+      "sha256": "0771edd818db0e487f81b9606d94a3e14c876af4cadbd9bd8ffb331980f45308",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    }
+  ],
+  "reviewHistory": {
+    "head": "7bae78a2869160e5752a1118859fcdd4b1ac90ee",
+    "verdict": "CHANGES_REQUESTED",
+    "finding": "P2 signed32bit timer overflow for valid long wait timeout",
+    "originalRegression": "Independent full113PASS1SKIP/headed32PASS; exact first-head report docs/reviews/pr18-b01e.md",
+    "fix": "Bounded timer intervals rearm to absolute deadline; unit multi-interval and product4boundaries; same independent probe now4normal completed values/effects1,2,3,4",
+    "newReview": "pending"
+  },
+  "headedFailure": "Post-fix concurrent headed run31PASS1FAIL: first mail page.frames hung Page.getFrameTree on a session absent in later cleanup list. Saved failure JSON/log. refreshFrames byte-identical to merged baseline; failing method does not use evaluationDeadline, but root cause/timing interactions unproven. Same source isolated full headed32PASS; original failure not erased. B03A lifecycle work must investigate before final goal completion."
+}

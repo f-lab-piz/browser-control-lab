@@ -1,0 +1,14 @@
+✔ function source keeps method bodies without executing computed property keys or moving closure names (10.183959ms)
+✔ evaluation deadline includes setup and blocks continuation after a delayed adapter response (23.183208ms)
+✔ large deadlines use bounded timer intervals and rearm until the absolute deadline (0.259208ms)
+✔ a timed out page promise releases its private handle and context monitor (86.662167ms)
+✔ JSON codec keeps exact finite values own prototype-like keys shared references and cross-realm plain data (3.154083ms)
+✔ JSON codec rejects loss-prone data without invoking accessors or toJSON (1.496125ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 312.066792

@@ -1,0 +1,67 @@
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs tests/reset-runtime.test.mjs tests/evaluation-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (2702.668458ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (152.497834ms)
+✔ B01B only explicit console and display output is returned (710.078375ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (574.908292ms)
+✔ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1577.007709ms)
+✔ B01E synchronous async thenable JSON and special string data round trip without automatic output (200.969291ms)
+✔ B01E invalid arguments fail before the page function and invalid results never become successful null (978.7195ms)
+✔ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (303.680916ms)
+✔ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1552.663416ms)
+✔ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (1041.95025ms)
+✔ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (1879.340541ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1778.913125ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (315.062458ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (366.201917ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (141.675625ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (7148.9715ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (1013.993167ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (521.118875ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4329.595791ms)
+✔ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (270.912166ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1358.764208ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (685.037333ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (344.866417ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (453.35375ms)
+✖ nested cross-site frames initialize across repeated mail and booking navigation (30614.096417ms)
+✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1692.263917ms)
+✔ B01D reset releases held input in a real cross-site child target (347.4595ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1665.936333ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (318.024041ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3173.739542ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1350.035208ms)
+✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (280.450959ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 31
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 73164.637917
+
+✖ failing tests:
+
+test at tests/requirements-runtime.test.mjs:76:1
+✖ nested cross-site frames initialize across repeated mail and booking navigation (30614.096417ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"c5a261d8-c465-4899-b054-3a9e683af983","operation":"js","sessionId":"302f9301-6674-49ba-9891-02c9dcd4a23a","generation":2,"status":"failed","createdAt":1793555978748,"startedAt":1793555978748,"result":{"error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true,"rollback":false,"cleanup":{"status":"complete","trace":[{"target":{"tabId":1322981305},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1322981307},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1322981307,"sessionId":"453DE5874FF85B765CBA9B4FF65C948B"},"method":"Runtime.terminateExecution","status":"completed"},{"target":{"tabId":1322981307,"sessionId":"EB3C61E9E3E9B8338179F6B564F0FD2E"},"method":"Runtime.terminateExecution","status":"completed"}],"warnings":[],"inFlight":[{"requestId":"c5a261d8-c465-4899-b054-3a9e683af983","hostMethod":"page.frames","method":"Page.getFrameTree","tabId":1322981307,"targetSession":"0DA3CB7D07B901D6D89DD02D9DFD31E3","generation":2}],"inFlightEffectsUncertain":true}},"finishedAt":1793556009258}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at completed (file://<repo>/tests/requirements-runtime.test.mjs:5:27)
+      at TestContext.<anonymous> (file://<repo>/tests/requirements-runtime.test.mjs:92:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

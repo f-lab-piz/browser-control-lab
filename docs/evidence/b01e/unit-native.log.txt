@@ -1,0 +1,14 @@
+✔ function source keeps method bodies without executing computed property keys or moving closure names (8.033583ms)
+✔ evaluation deadline includes setup and blocks continuation after a delayed adapter response (23.69725ms)
+✔ a timed out page promise releases its private handle and context monitor (100.991666ms)
+✔ evaluation fixture exposes root shadow slot identities and real frame lifecycle independently (2872.019542ms)
+✔ JSON codec keeps exact finite values own prototype-like keys shared references and cross-realm plain data (2.491208ms)
+✔ JSON codec rejects loss-prone data without invoking accessors or toJSON (2.936625ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3268.251542
