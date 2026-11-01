@@ -118,3 +118,8 @@ B04D는 개별 요구를 중복 소유하지 않는 통합 검증 PR이다. 표�
 ## Next Actions
 
 문서 PR #6 독립 리뷰→지적 대응→gate 확인·머지. 이후 이 계획을 PR로 확정하고 B01A의 Before·단위/제품 검증부터 시작한다.
+
+
+## 계획 PR 리뷰 보완
+
+부모/조건의 pass·fail·blocked·deferred는 근거 참조가 필요하다. SHOULD 부모 보류는 하위 조건도 각각 보류 결정이 있어야 한다. slice는 not-started/in-progress/pass/blocked로 제한하고 시작/통과 시 선행 slice가 pass인지 검사한다. slice pass는 담당 부모 요구의 pass 또는 SHOULD deferred와 slice 자체 검증 근거를 요구한다. B04D처럼 부모를 중복 소유하지 않는 통합 slice도 자체 증거가 필요하다. 이 검사기는 상태의 구조·집계 일관성을 확인하며 증거 내용의 진실성·테스트 실행·독립 리뷰·GitHub checks는 메인의 머지 gate에서 별도 확인한다.

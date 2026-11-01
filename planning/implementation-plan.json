@@ -16,7 +16,8 @@
         "REQ-GUIDE-001",
         "REQ-GUIDE-002",
         "REQ-JS-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B01B",
@@ -30,7 +31,8 @@
         "REQ-C-RUNTIME-002",
         "REQ-JS-001",
         "REQ-JS-003"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B01C",
@@ -47,7 +49,8 @@
         "REQ-DISPLAY-001",
         "REQ-DISPLAY-002",
         "REQ-C-RUNTIME-007"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B01D",
@@ -62,7 +65,8 @@
         "REQ-RESET-001",
         "REQ-RESET-002",
         "REQ-RESET-003"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B01E",
@@ -78,7 +82,8 @@
         "REQ-LOCATOR-EVALUATEALL-001",
         "REQ-LOCATOR-EVALUATEALL-002",
         "REQ-C-RUNTIME-008"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B02A",
@@ -102,7 +107,8 @@
         "REQ-SCOPE-GETBYLABEL-001",
         "REQ-SCOPE-GETBYLABEL-002",
         "REQ-SCOPE-GETBYTEXT-003"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B02B",
@@ -120,7 +126,8 @@
         "REQ-LOCATOR-NTH-002",
         "REQ-LOCATOR-FILTER-003",
         "REQ-LOCATOR-FILTER-004"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B02C",
@@ -137,7 +144,8 @@
         "REQ-LOCATOR-TEXTCONTENT-002",
         "REQ-LOCATOR-GETATTRIBUTE-001",
         "REQ-LOCATOR-GETATTRIBUTE-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B03A",
@@ -159,7 +167,8 @@
         "REQ-PAGE-FRAME-002",
         "REQ-LOCATOR-BOUNDINGBOX-001",
         "REQ-LOCATOR-BOUNDINGBOX-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B03B",
@@ -183,7 +192,8 @@
         "REQ-SCOPE-SNAPSHOT-009",
         "REQ-SCOPE-SNAPSHOT-010",
         "REQ-SCOPE-SNAPSHOT-011"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B03C",
@@ -198,7 +208,8 @@
         "REQ-PAGE-SCREENSHOT-002",
         "REQ-PAGE-SCREENSHOT-003",
         "REQ-PAGE-SCREENSHOT-004"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B04A",
@@ -220,7 +231,8 @@
         "REQ-LOCATOR-ISEDITABLE-002",
         "REQ-LOCATOR-ISCHECKED-001",
         "REQ-LOCATOR-ISCHECKED-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B04B",
@@ -251,7 +263,8 @@
         "REQ-KEYBOARD-PRESS-002",
         "REQ-KEYBOARD-TYPE-001",
         "REQ-KEYBOARD-TYPE-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B04C",
@@ -282,7 +295,8 @@
         "REQ-MOUSE-CLICK-002",
         "REQ-MOUSE-WHEEL-001",
         "REQ-MOUSE-WHEEL-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B04D",
@@ -292,7 +306,8 @@
       ],
       "goal": "메일137·예약 격자·가상 메뉴230·실제 서버 판정",
       "status": "not-started",
-      "requirements": []
+      "requirements": [],
+      "evidence": []
     },
     {
       "id": "B05A",
@@ -312,7 +327,8 @@
         "REQ-LOCATOR-SETFILES-003",
         "REQ-C-FILESEVENTS-006",
         "REQ-C-FILESEVENTS-007"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B05B",
@@ -335,7 +351,8 @@
         "REQ-DIALOG-DISMISS-002",
         "REQ-PAGE-WAITFOREVENT-003",
         "REQ-PAGE-WAITFOREVENT-004"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B05C",
@@ -351,7 +368,8 @@
         "REQ-DOWNLOAD-SAVE-002",
         "REQ-DOWNLOAD-CANCEL-001",
         "REQ-DOWNLOAD-CANCEL-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B06A",
@@ -382,7 +400,8 @@
         "REQ-PAGE-FORWARD-002",
         "REQ-PAGE-RELOAD-001",
         "REQ-PAGE-RELOAD-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B06B",
@@ -401,7 +420,8 @@
         "REQ-PAGE-WAITFORFUNCTION-002",
         "REQ-PAGE-WAITFORLOADSTATE-001",
         "REQ-PAGE-WAITFORLOADSTATE-002"
-      ]
+      ],
+      "evidence": []
     },
     {
       "id": "B06C",
@@ -414,7 +434,8 @@
       "requirements": [
         "REQ-PAGE-LOGS-001",
         "REQ-PAGE-LOGS-002"
-      ]
+      ],
+      "evidence": []
     }
   ],
   "requirements": [

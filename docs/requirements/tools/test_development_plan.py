@@ -28,12 +28,37 @@ class DevelopmentPlanTest(unittest.TestCase):
             d['conditions'][0]['status'] = 'pass'
             d['conditions'][0]['evidence'] = []
         def defer_must(d): d['requirements'][0]['status'] = 'deferred'
-        for change in [missing_owner, cyclic, missing_case, partial_pass, pass_without_evidence, defer_must]:
+        def defer_should_without_decision(d):
+            row = next(r for r in d['requirements'] if r['level'] == 'SHOULD')
+            row.update(status='deferred', evidence=[])
+        def defer_should_with_unresolved_children(d):
+            row = next(r for r in d['requirements'] if r['level'] == 'SHOULD')
+            row.update(status='deferred', evidence=['decision.md'])
+            for case in d['conditions']:
+                if case['requirement'] == row['requirement']: case['status'] = 'unverified'
+        def invalid_slice(d): d['slices'][0]['status'] = 'INVALID'
+        def early_start(d):
+            d['slices'][0]['status'] = 'not-started'
+            d['slices'][1]['status'] = 'in-progress'
+        def false_slice_pass(d): d['slices'][0].update(status='pass', evidence=['report.md'])
+        def false_completion(d): d['status'] = 'complete'
+        for change in [missing_owner, cyclic, missing_case, partial_pass, pass_without_evidence,
+                       defer_must, defer_should_without_decision, defer_should_with_unresolved_children,
+                       invalid_slice, early_start, false_slice_pass, false_completion]:
             with self.subTest(probe=change.__name__):
                 broken = deepcopy(PLAN)
                 change(broken)
                 with self.assertRaises(AssertionError):
                     validate(broken, REQS, CASES)
+
+    def test_documented_should_deferral_is_allowed(self):
+        plan = deepcopy(PLAN)
+        row = next(r for r in plan['requirements'] if r['level'] == 'SHOULD')
+        row.update(status='deferred', evidence=['decision.md'])
+        for case in plan['conditions']:
+            if case['requirement'] == row['requirement']:
+                case.update(status='deferred', evidence=['decision.md'])
+        validate(plan, REQS, CASES)
 
 
 if __name__ == '__main__':
