@@ -1,0 +1,1 @@
+export const LIMITS=Object.freeze({timeoutMs:Object.freeze({default:30000,min:50,max:120000}),codeBytes:65536,memoryBytes:64*1024*1024,stackBytes:512*1024,textBytes:65536,imageBytes:4*1024*1024,imageTotalBytes:8*1024*1024,imageCount:4,blocks:256,resultBytes:16*1024*1024});

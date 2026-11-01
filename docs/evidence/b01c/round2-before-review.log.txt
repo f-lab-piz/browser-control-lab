@@ -1,0 +1,55 @@
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1487.270584ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (317.666166ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (197.488792ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (140.830125ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (7052.189417ms)
+✖ B01C declared code time memory and stack limits report resource failures and recover (346.931542ms)
+✖ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (36.415375ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 5
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10121.583375
+
+✖ failing tests:
+
+test at tests/output-runtime.test.mjs:73:1
+✖ B01C declared code time memory and stack limits report resource failures and recover (346.931542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'RESOURCE_LIMIT'
+  - 'JS_ERROR'
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round2-before-review/tests/output-runtime.test.mjs:81:42)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'RESOURCE_LIMIT',
+    expected: 'JS_ERROR',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:89:1
+✖ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (36.415375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 2
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round2-before-review/tests/output-runtime.test.mjs:93:39)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

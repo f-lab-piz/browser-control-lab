@@ -1,0 +1,29 @@
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1691.665625ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (137.059917ms)
+✔ B01B only explicit console and display output is returned (533.779ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (638.239708ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1143.1455ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (309.683875ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (427.238917ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (138.491125ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6113.702208ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (994.8665ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (864.274417ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4342.336417ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1299.565875ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (717.654833ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (277.277708ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (374.044917ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (947.283666ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22706.337792

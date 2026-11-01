@@ -1,0 +1,196 @@
+✖ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1100.940167ms)
+✖ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (107.090375ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (127.915416ms)
+✖ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (33.986ms)
+✖ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (9282.421125ms)
+✖ B01C declared code time memory and stack limits report resource failures and recover (173.340083ms)
+✖ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (34.487625ms)
+✖ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (11032.829541ms)
+✖ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (275.699542ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 1
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22795.564
+
+✖ failing tests:
+
+test at tests/output-runtime.test.mjs:19:1
+✖ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1100.940167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'x {"name":"한😀"} 7',
+  +   '[object Object]'
+  -   'x\x00y {"name":"한😀"} 7',
+  -   '{"name":"cycle","self":"[Circular]"}'
+    ]
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:21:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'x {"name":"한😀"} 7', '[object Object]' ],
+    expected: [ 'x\x00y {"name":"한😀"} 7', '{"name":"cycle","self":"[Circular]"}' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:26:1
+✖ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (107.090375ms)
+  AssertionError [ERR_ASSERTION]: {"truncated":true}
+      at reason (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:15:29)
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:31:100)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:47:1
+✖ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (33.986ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 2
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:50:195)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:54:1
+✖ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (9282.421125ms)
+  Error: Client wait timed out
+      at Object.wait (file://<repo>/.local/goal-development/b01c-round4-before-base/bridge/client.mjs:3:353)
+      at async js (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:12:13)
+      at async TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:57:16)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+
+test at tests/output-runtime.test.mjs:73:1
+✖ B01C declared code time memory and stack limits report resource failures and recover (173.340083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'JS_ERROR'
+  - 'RESOURCE_LIMIT'
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:78:121)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'JS_ERROR',
+    expected: 'RESOURCE_LIMIT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:89:1
+✖ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (34.487625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 2
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:93:39)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:100:1
+✖ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (11032.829541ms)
+  Error: Client wait timed out
+      at Object.wait (file://<repo>/.local/goal-development/b01c-round4-before-base/bridge/client.mjs:3:353)
+      at runNextTicks (node:internal/process/task_queues:64:5)
+      at process.processTimers (node:internal/timers:538:9)
+      at async js (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:12:13)
+      at async TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:103:16)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+
+test at tests/output-runtime.test.mjs:114:1
+✖ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (275.699542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-stored-nlen',
+  +     passed: false
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-stored-truncated',
+  +     passed: false
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-header-invalid',
+  +     passed: false
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-adler-invalid',
+  +     passed: false
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-metadata-nlen',
+  +     passed: false
+  +   }
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-base/tests/output-runtime.test.mjs:124:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { name: 'zlib-stored-nlen', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false }, { name: 'zlib-stored-truncated', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false }, { name: 'zlib-header-invalid', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false }, { name: 'zlib-adler-invalid', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false }, { name: 'zlib-metadata-nlen', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false } ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

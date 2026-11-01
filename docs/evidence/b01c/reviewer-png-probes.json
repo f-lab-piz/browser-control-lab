@@ -1,0 +1,57 @@
+[
+  {
+    "name": "interlaced-truncated",
+    "raw": [
+      0,
+      12
+    ],
+    "accepted": 67,
+    "pixels": [
+      12,
+      0,
+      0,
+      0
+    ],
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAACklEQVR4nGPgAQAADgANC0koaQAAAABJRU5ErkJggg=="
+  },
+  {
+    "name": "interlaced-extra",
+    "raw": [
+      0,
+      12,
+      34,
+      56,
+      255,
+      9,
+      9
+    ],
+    "accepted": 72,
+    "pixels": [
+      12,
+      34,
+      56,
+      255
+    ],
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAFoEvQfAAAAD0lEQVR4nGPgUbL4z8kJAATxAXh8E3TOAAAAAElFTkSuQmCC"
+  },
+  {
+    "name": "ICC-inflate-over-64MiB",
+    "fileBytes": 81634,
+    "iccProfileBytes": 83886080,
+    "accepted": 81634,
+    "memoryBefore": {
+      "rss": 138346496,
+      "heapTotal": 9060352,
+      "heapUsed": 5497816,
+      "external": 86416345,
+      "arrayBuffers": 84614530
+    },
+    "memoryAfter": {
+      "rss": 361103360,
+      "heapTotal": 10108928,
+      "heapUsed": 4493224,
+      "external": 211645794,
+      "arrayBuffers": 84598883
+    }
+  }
+]

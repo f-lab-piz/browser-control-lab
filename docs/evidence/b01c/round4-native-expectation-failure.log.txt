@@ -1,0 +1,33 @@
+✔ PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size (10.268834ms)
+✔ output errors cannot exceed the result JSON budget and never return partial images (47.303833ms)
+✔ Adam7 exact scanline bytes and compressed metadata workspace apply during bounded stream validation (397.997791ms)
+✔ PNG format corpus enforces IHDR combinations palettes indexes transparency and estimated raster workspace (1728.770208ms)
+✔ PNG compressed streams validate stored LEN/NLEN and zlib framing without rejecting fixed or dynamic blocks (3.389625ms)
+✖ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (3755.982042ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4154.649333
+
+✖ failing tests:
+
+test at tests/output-fixture.test.mjs:10:1
+✖ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (3755.982042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file://<repo>/tests/output-fixture.test.mjs:24:11)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

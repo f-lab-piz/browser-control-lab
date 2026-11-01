@@ -1,0 +1,103 @@
+✖ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1810.414958ms)
+✖ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (104.230375ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (102.012708ms)
+✖ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (36.190708ms)
+✖ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (9050.264292ms)
+✖ B01C declared code time memory and stack limits report resource failures and recover (202.763916ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 1
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11891.545375
+
+✖ failing tests:
+
+test at tests/output-runtime.test.mjs:19:1
+✖ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1810.414958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'x {"name":"한😀"} 7',
+  +   '[object Object]'
+  -   'x\x00y {"name":"한😀"} 7',
+  -   '{"name":"cycle","self":"[Circular]"}'
+    ]
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:21:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'x {"name":"한😀"} 7', '[object Object]' ],
+    expected: [ 'x\x00y {"name":"한😀"} 7', '{"name":"cycle","self":"[Circular]"}' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:26:1
+✖ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (104.230375ms)
+  AssertionError [ERR_ASSERTION]: {"truncated":true}
+      at reason (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:15:29)
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:31:100)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:47:1
+✖ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (36.190708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 2
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:50:195)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:54:1
+✖ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (9050.264292ms)
+  Error: Client wait timed out
+      at Object.wait (file://<repo>/.local/goal-development/b01c-before-source/bridge/client.mjs:3:353)
+      at async js (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:12:13)
+      at async TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:57:16)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+
+test at tests/output-runtime.test.mjs:73:1
+✖ B01C declared code time memory and stack limits report resource failures and recover (202.763916ms)
+  AssertionError [ERR_ASSERTION]: {"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"Maximum call stack size exceeded"},"runtimeReset":false,"metrics":{"durationMs":1.5}}
+  + actual - expected
+
+  + 'JS_ERROR'
+  - 'RESOURCE_LIMIT'
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-before-source/tests/output-runtime.test.mjs:79:61)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'JS_ERROR',
+    expected: 'RESOURCE_LIMIT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

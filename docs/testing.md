@@ -83,3 +83,6 @@ TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계
 
 
 B01B부터 BCL_RUN_DIR 아래에 b01a/b01b 등 이름별 결과를 기록한다. 비일시정지 Playwright 관찰자도 초기 iframe 부착 이벤트를 놓칠 수 있어 프레임 회귀의 독립 oracle은 별도 CDP 연결의 실제 target 문서/주소/selector를 읽는다. 이 연결은 auto-attach·Runtime 시작 pause·입력·page-agent·업무 상태 변경을 하지 않는다. 제품이 선택한 id가 실제 target의 frame id/주소/DOM과 일치해야 통과한다.
+
+
+B01C 출력 테스트는 /output-image의 정확한 파일 bytes와 PNG CRC를 생성한다. 독립 Chromium native decoder가 실제1×1 픽셀을 검증하고 제품 display의 원본 SHA와 구분한다. fixture 파일은 순차 실행하며 PNG oracle은45초/개별 decode10초의 관찰 제한을 둔다. 제품의 예산·실패 조건을 이 시간 제한으로 완화하지 않는다. 결과 JSON16MiB 단위 검증의 fake extension도 제품 성공으로 합산하지 않는다.

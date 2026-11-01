@@ -1,0 +1,8 @@
+{
+  "surface": "mcp__cua_repl.js / Codex IAB wrapper",
+  "observedAt": "2026-11-01T15:48:07.113188+00:00",
+  "provenance": "Transcription of directly received tool output in this conversation; not exported raw tool payload",
+  "code": "console.log(\"before\");console.log(\"x\"+String.fromCharCode(0)+\"y\",{name:\"한😀\"},7);var b01cComparisonCycle={name:\"cycle\"};b01cComparisonCycle.self=b01cComparisonCycle;console.log(b01cComparisonCycle);console.log(\"after\");42",
+  "stdout": "before\nx\u0000y { name: '한😀' } 7\n<ref *1> { name: 'cycle', self: [Circular *1] }\nafter",
+  "scope": "Explicit ordered console NUL Unicode object circular only. No budgets/image/transport comparisons. Temporary agent-created about:blank IAB tab6 was closed; no user tabs/data read."
+}

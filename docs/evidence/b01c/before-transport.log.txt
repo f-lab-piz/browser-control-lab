@@ -1,0 +1,67 @@
+✖ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (130.526542ms)
+✖ B01C guide declares execution and output limits with explicit units (7.56525ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 258.515709
+
+✖ failing tests:
+
+test at tests/output-transport.test.mjs:11:1
+✖ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (130.526542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  400 !== 200
+
+      at file://<repo>/.local/goal-development/b01c-before-source/tests/output-transport.test.mjs:20:10
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async harness (file://<repo>/.local/goal-development/b01c-before-source/tests/output-transport.test.mjs:8:2)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 400,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-transport.test.mjs:26:1
+✖ B01C guide declares execution and output limits with explicit units (7.56525ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + undefined
+  - {
+  -   blocks: 256,
+  -   codeBytes: 65536,
+  -   imageBytes: 4194304,
+  -   imageCount: 4,
+  -   imageTotalBytes: 8388608,
+  -   memoryBytes: 67108864,
+  -   resultBytes: 16777216,
+  -   stackBytes: 524288,
+  -   textBytes: 65536,
+  -   timeoutMs: {
+  -     default: 30000,
+  -     max: 120000,
+  -     min: 50
+  -   }
+  - }
+
+      at file://<repo>/.local/goal-development/b01c-before-source/tests/output-transport.test.mjs:28:9
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async harness (file://<repo>/.local/goal-development/b01c-before-source/tests/output-transport.test.mjs:8:2)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { timeoutMs: { default: 30000, min: 50, max: 120000 }, codeBytes: 65536, memoryBytes: 67108864, stackBytes: 524288, textBytes: 65536, imageBytes: 4194304, imageTotalBytes: 8388608, imageCount: 4, blocks: 256, resultBytes: 16777216 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

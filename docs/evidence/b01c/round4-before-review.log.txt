@@ -1,0 +1,56 @@
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (2087.118083ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (312.473084ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (200.831625ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (140.294208ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (5944.731708ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (955.564583ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (874.807292ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4323.2835ms)
+✖ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (284.833083ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15760.130458
+
+✖ failing tests:
+
+test at tests/output-runtime.test.mjs:114:1
+✖ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (284.833083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-stored-nlen',
+  +     passed: false
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'zlib-metadata-nlen',
+  +     passed: false
+  +   }
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round4-before-review/tests/output-runtime.test.mjs:124:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { name: 'zlib-stored-nlen', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false }, { name: 'zlib-metadata-nlen', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after', passed: false } ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

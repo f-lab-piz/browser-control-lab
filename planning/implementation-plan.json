@@ -33,16 +33,20 @@
         "B01A"
       ],
       "goal": "lexical 재선언 사전 거절·const·var·await·세션 격리",
-      "status": "in-progress",
+      "status": "pass",
       "requirements": [
         "REQ-C-RUNTIME-002",
         "REQ-JS-001",
         "REQ-JS-003"
       ],
       "evidence": [
-        "docs/implementation/b01b.md"
+        "docs/implementation/b01b.md",
+        "docs/reviews/pr12-b01b.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/11"
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/11",
+      "review": "docs/reviews/pr12-b01b.md",
+      "mergeCommit": "0446e5b3ae683bb7801184648078f99de96ea55d",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/12"
     },
     {
       "id": "B01C",
@@ -51,7 +55,7 @@
         "B01B"
       ],
       "goal": "UTF-8·이미지 bytes·블록·전체 JSON 한도와 명시 생략",
-      "status": "not-started",
+      "status": "in-progress",
       "requirements": [
         "REQ-C-RUNTIME-004",
         "REQ-CONSOLE-LOG-001",
@@ -60,19 +64,27 @@
         "REQ-DISPLAY-002",
         "REQ-C-RUNTIME-007"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/implementation/b01c.md",
+        "docs/reviews/pr14-b01c.md",
+        "docs/reviews/pr14-b01c-round2.md",
+        "docs/reviews/pr14-b01c-round3.md"
+      ],
       "knownSubcases": [
         {
           "requirement": "REQ-CONSOLE-LOG-001",
           "condition": "REQ-CONSOLE-LOG-001-C01",
-          "finding": "console.log of actual NUL string x\\u0000y is returned as x. Request ID roundtrip itself is correct. Add direct explicit-output regression and preserve bytes in B01C.",
+          "finding": "Actual NUL is escaped across guest/native string boundary and preserved in product output; cyclic output uses [Circular]. B01C condition evidence recorded.",
           "evidence": [
-            "docs/evidence/b01a/console-nul-found.log.txt",
-            "docs/evidence/b01a/console-nul-found.json"
+            "docs/implementation/b01c.md",
+            "docs/evidence/b01c/round4-after-product.json"
           ],
-          "status": "unverified"
+          "status": "pass"
         }
-      ]
+      ],
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/13",
+      "review": "docs/reviews/pr14-b01c-round3.md",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/14"
     },
     {
       "id": "B01D",
@@ -522,8 +534,10 @@
       "conditions": [
         "REQ-C-RUNTIME-004-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md"
+      ]
     },
     {
       "requirement": "REQ-C-RUNTIME-005",
@@ -2303,8 +2317,10 @@
       "conditions": [
         "REQ-CONSOLE-LOG-001-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md"
+      ]
     },
     {
       "requirement": "REQ-CONSOLE-LOG-002",
@@ -2315,8 +2331,10 @@
         "REQ-CONSOLE-LOG-002-C01",
         "REQ-CONSOLE-LOG-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md"
+      ]
     },
     {
       "requirement": "REQ-DISPLAY-001",
@@ -2326,8 +2344,10 @@
       "conditions": [
         "REQ-DISPLAY-001-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md"
+      ]
     },
     {
       "requirement": "REQ-DISPLAY-002",
@@ -2337,8 +2357,10 @@
       "conditions": [
         "REQ-DISPLAY-002-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-SNAPSHOT-003",
@@ -2562,8 +2584,10 @@
       "conditions": [
         "REQ-C-RUNTIME-007-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-SNAPSHOT-011",
@@ -4128,36 +4152,46 @@
       "id": "REQ-CONSOLE-LOG-001-C01",
       "requirement": "REQ-CONSOLE-LOG-001",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-console-log-001-c01"
+      ]
     },
     {
       "id": "REQ-CONSOLE-LOG-002-C01",
       "requirement": "REQ-CONSOLE-LOG-002",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-console-log-002-c01"
+      ]
     },
     {
       "id": "REQ-CONSOLE-LOG-002-C02",
       "requirement": "REQ-CONSOLE-LOG-002",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-console-log-002-c02"
+      ]
     },
     {
       "id": "REQ-DISPLAY-001-C01",
       "requirement": "REQ-DISPLAY-001",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-display-001-c01"
+      ]
     },
     {
       "id": "REQ-DISPLAY-002-C01",
       "requirement": "REQ-DISPLAY-002",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-display-002-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-001-C01",
@@ -4188,8 +4222,10 @@
       "id": "REQ-C-RUNTIME-004-C01",
       "requirement": "REQ-C-RUNTIME-004",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-c-runtime-004-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-005-C01",
@@ -4213,8 +4249,10 @@
       "id": "REQ-C-RUNTIME-007-C01",
       "requirement": "REQ-C-RUNTIME-007",
       "slice": "B01C",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01c.md#req-c-runtime-007-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-008-C01",

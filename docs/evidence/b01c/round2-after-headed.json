@@ -1,0 +1,190 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b01c",
+  "startedAt": "2026-11-01T16:01:31.172Z",
+  "finishedAt": "2026-11-01T16:01:41.641Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 3
+  },
+  "headed": true,
+  "head": "99aa57470c16e646d658180e2eca0f022381f1e4",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "00b6491bdbb353c4bfa03684f0609d26b33e2dee73162c51db16d6eb91ce2d8d",
+    "bridge/client.mjs": "eb47da8f72090b49bdc70647a6afbd58320ee6ec3db94ebca88f40e492427d3f",
+    "extension/runtime-worker.mjs": "0e30fcba77fea05bee86b93ecaca7a3fdcb063e1b8fc3f2ad999ba47ce76439b",
+    "extension/output.mjs": "144f1f5cbb8c0e868cb4b4da95108bc608376ee3eb96c4c40a2c98d5040debf3",
+    "shared/limits.mjs": "d31174b174ea6cd10351875fee19fdf395d82ccc1e7d8a02bb9ac2d8b81324e2",
+    "shared/png-crc.mjs": "5af9ce6471d4901a3e7739a767522576a412a63bf5186780b6d9bf713d69d304",
+    "extension/transform.mjs": "f0b60533a80ac92369c84c7c1b01784330e86ed58a09b4f8a9359249ce803ecf",
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/offscreen.js": "45bb3b0060d6f0eb2678687c415227608442c1a70f9b1ff053140ebd2f2e6cb9",
+    "extension/browser-engine.mjs": "116d8cd5c3300368110d7e4a2aac83dba00ff95672686f5824b9a1c7a2b63720",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68",
+    "tests/helpers/product-runtime.mjs": "0fb29ce171d3c609fbd6e87889e6456dfe6a37345f8f1cc22a51f8ec6f9fdc2b",
+    "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
+    "tests/requirements-runtime.test.mjs": "cdd67141dbb5ddd16a1a1ae1f9c269c0b443e53eb41422526a5ec095c8862b85",
+    "test-site/server.mjs": "0e8239075df02d15e88df5b52a888c527d6e5c4b88858418cafb9602a6b25989",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "64624ef4dccbb4f86a5c44668755eecd86b042fb9662155b4f7ad990206a9890",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "288b9a49914af0918cd056bbc2a7e03d2e65c49fbde04492ae342075be974863",
+    "package-lock.json": "8f4d301d1e74760d62761b53d4ad35bf5352279148c3d17042c8b27687b17cc6",
+    "tests/output-runtime.test.mjs": "2bc4eddf784072b141cd4f4601c8122c7cd60f4ac34d7e7584ac7c25836ef53a",
+    "test-site/output-png.mjs": "fd704820691a80a3890e7fb3778c0a4193919d48f647e8f2154ff1fd9ef666be",
+    "tests/output-fixture.test.mjs": "d1755b9486fc9866a12004a7ee9ccc3e4c8e989132d166388dbe89469312d71c"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-CONSOLE-LOG-001-C01",
+        "REQ-CONSOLE-LOG-002-C02"
+      ],
+      "status": "pass",
+      "texts": [
+        "x\u0000y {\"name\":\"한😀\"} 7",
+        "{\"name\":\"cycle\",\"self\":\"[Circular]\"}"
+      ]
+    },
+    {
+      "conditions": [
+        "REQ-CONSOLE-LOG-002-C01"
+      ],
+      "status": "pass",
+      "rows": [
+        {
+          "extra": 0,
+          "bytes": 65535,
+          "truncated": false
+        },
+        {
+          "extra": 1,
+          "bytes": 65536,
+          "truncated": false
+        },
+        {
+          "extra": 2,
+          "bytes": 65536,
+          "truncated": true
+        }
+      ],
+      "emojiBytes": 65536,
+      "blockBoundary": [
+        255,
+        256,
+        257
+      ]
+    },
+    {
+      "conditions": [
+        "REQ-DISPLAY-001-C01"
+      ],
+      "status": "pass",
+      "kinds": [
+        "text",
+        "image",
+        "image",
+        "text"
+      ],
+      "pngSha256": "bad8ce5158991dd08857711942520ede9002cb643dd3fbfc5c7e892477c04893"
+    },
+    {
+      "conditions": [
+        "REQ-DISPLAY-002-C01"
+      ],
+      "status": "pass",
+      "invalidCases": 4,
+      "imageBlocks": 0
+    },
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-007-C01",
+        "REQ-DISPLAY-002-C01"
+      ],
+      "status": "pass",
+      "rows": [
+        {
+          "size": 4194303,
+          "images": 1,
+          "truncated": false
+        },
+        {
+          "size": 4194304,
+          "images": 1,
+          "truncated": false
+        },
+        {
+          "size": 4194305,
+          "images": 0,
+          "truncated": true
+        }
+      ],
+      "totalImageBytes": 8388608,
+      "imagesAtCountLimit": 4,
+      "mixedBlocks": 256
+    },
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-004-C01"
+      ],
+      "status": "pass",
+      "codeBytes": 65536,
+      "timeBoundary": [
+        50,
+        30000,
+        120000
+      ],
+      "rows": [
+        {
+          "name": "host-stack",
+          "error": {
+            "code": "RESOURCE_LIMIT",
+            "reason": "stack",
+            "message": "Maximum call stack size exceeded"
+          },
+          "generation": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "guest-memory-exception",
+          "error": {
+            "code": "JS_ERROR",
+            "guestName": "InternalError",
+            "message": "out of memory"
+          },
+          "runtimeReset": false,
+          "generation": [
+            2,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        "REQ-DISPLAY-002-C01",
+        "REQ-C-RUNTIME-007-C01"
+      ],
+      "status": "pass",
+      "rows": [
+        {
+          "kind": "adam-short",
+          "error": "rejected INVALID_IMAGE: PNG scanline size mismatch"
+        },
+        {
+          "kind": "icc-large",
+          "error": "rejected IMAGE_RESOURCE_LIMIT: PNG metadata exceeds workspace"
+        }
+      ],
+      "validAdam7": true
+    }
+  ]
+}
