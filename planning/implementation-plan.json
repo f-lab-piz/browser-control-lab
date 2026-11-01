@@ -4625,5 +4625,10 @@
       "evidence": []
     }
   ],
-  "goal": "문서 PR→계획→B01~B06 구현/검증/독립 리뷰/머지→최종 현황 PR"
+  "goal": "문서 PR→계획→B01~B06 구현/검증/독립 리뷰/머지→최종 현황 PR",
+  "executionScope": {
+    "throughSlice": "B02A",
+    "afterCompletion": "stop",
+    "reason": "사용자가 기존 전체21단계 Goal을 중단하고 6단계까지만 마무리하도록 범위를 변경했다. B02B 이후는 착수하지 않는다."
+  }
 }

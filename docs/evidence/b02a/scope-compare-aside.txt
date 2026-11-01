@@ -1,0 +1,11 @@
+✔︎ Opened a new tab and set it active: tabs[0], page → Selection boundary metadata (http://127.0.0.1:51970/selection-boundaries)
+# note: interactive (clickable / focusable) elements only.
+- title: "Selection boundary metadata" [url=http://127.0.0.1:51970/selection-boundaries]
+- heading "Composed projection boundaries" [level=1]
+- text: "0[]준비\n Rendered Content\n Active Needle Fallback Needle\n Prune Needle"
+- button "Raw Slot Needle" [ref=e1]
+- text: "Active Fallback Needle"
+{"rows":[{"name":"scope","value":["HTML"]},{"name":"scope-head","value":1},{"name":"scope-body","value":"BODY"},{"name":"scope-is-head","value":["HTML","HEAD"]}]}
+[system] last tab closed. `page` is now null. call openTab(url) to open a new one.
+[system] no current open tabs in this session.
+[ok | 1859ms]

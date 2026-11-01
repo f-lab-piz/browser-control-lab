@@ -16,7 +16,7 @@
     "fail": 0
   },
   "regression": {
-    "command": "BCL_RUN_DIR=output/goal-b02a/review-final-all npm run test:all",
+    "command": "BCL_RUN_DIR=output/finish-stage6/final-all npm run test:all",
     "pass": 130,
     "fail": 0,
     "skip": 1,
@@ -30,55 +30,55 @@
     }
   },
   "headed": {
-    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b02a/review-final-headed npm run test:requirements",
+    "command": "HEADED=1 BCL_RUN_DIR=output/finish-stage6/final-headed npm run test:requirements",
     "pass": 44,
     "fail": 0
   },
   "rawHistory": "Initial Before included a test-code newline escaping error in one case; fixed test quoting before final comparison, no product change then. First full after naming changes failed legacy summary test: composed name correctly matches SUMMARY and nested BUTTON. Test now asserts both identities and explicitly selects native button via CSS+filter, preserving hidden-content exclusions and actual clicked result. Initial125 stage then unit/coverage audit strengthened to final127. No predicates weakened.",
   "competitors": "Same final root fixture: Codex IAB public locators LIVE received-output transcription, Aside CLI1.26.1028.2335 Skill3 LIVE raw CLI.16reads plus proof click/fill; root only, Codex child DNS blocked. Different contracts, no general ranking. Codex field value changes but trusted-input site verdict pending, exact cause unknown. Own comparison tabs closed; no source/bundle/WASM copied.",
   "remainingRisk": "B03A old PR18 headed frame-tree timeout remains root-cause unproven; not reproduced in this final full/headed, not declared resolved. B02B/B03-B06/final audit unverified.",
-  "gate": "First exactf664dd1 independent CHANGES_REQUESTED; both accepted P2 fixed with full130PASS1SKIP/headed44PASS, new exact-head rereview pending. B02B-B06/final audit remain",
+  "gate": "First2P2 and later :scope P2 accepted/fixed; final full130PASS1SKIP/headed44PASS; fresh exact-head independent review pending before normal merge. Stop after B02A.",
   "artifacts": [
     {
       "file": "before-product.json",
-      "source": "output/goal-b02a/review-final-before/b02a/results.json",
-      "sourceSha256": "7b88e5223e0e620a328add3762db41915de3f4bdf76873ca3377f5892fce713b",
-      "sha256": "aa1688f3dabfb54702143ed57d738684e2490a23cc70511c682d76abf9e3cf6b",
+      "source": "output/finish-stage6/final-before/b02a/results.json",
+      "sourceSha256": "29966bda1b4d481c6158711cd3aa6cdde1bce4d04c8ebf83b60197e94c9928bc",
+      "sha256": "444dc504c35b2cb2a2bc59cc81de4e08932f7e0b73b21a2e6c1806be32dad4ec",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "before-product.log.txt",
-      "source": "output/goal-b02a-review-final-before.log",
-      "sourceSha256": "ea57d57ad9c8eacf10736a7fa40c443abef56637e1e0f1f789b74948075e29cd",
-      "sha256": "61b844b96e4baad358aa23c5ccf451333b52fbc8d92511cbbb77a222b49a94d2",
+      "source": "output/finish-stage6-before.log",
+      "sourceSha256": "408ac6eb7e7f9fc4e93bfb0ddac697aafc441f43e9b353e5ed33349baf158a3d",
+      "sha256": "9991767e7acaeb043df7e82e01bcc1f86390bb0975226b7e0539d2538d40431e",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-product.json",
-      "source": "output/goal-b02a/review-final-all/b02a/results.json",
-      "sourceSha256": "c1abac92f865760d9a3add17f12a8fea114c74f6cf53950bbb2ef3d4a130beed",
-      "sha256": "ec7a05718c6476b2881873b8e4a979840b29b7e76d4c1915ad25eaa4b1bcb065",
+      "source": "output/finish-stage6/final-all/b02a/results.json",
+      "sourceSha256": "88a6280625661cce739cdfc926952f371f2447d41787f85248f11f5ea034f7f0",
+      "sha256": "ea626d4bb4b4a09c50912e25b19a64de66f9e3a32686d2cb57034d838be31777",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-all.log.txt",
-      "source": "output/goal-b02a-review-final-all.log",
-      "sourceSha256": "18a5dc561b8669c568f35c5ce6618b82f225dc26bb25b7ce5558cd347e2943ea",
-      "sha256": "18a5dc561b8669c568f35c5ce6618b82f225dc26bb25b7ce5558cd347e2943ea",
+      "source": "output/finish-stage6-all.log",
+      "sourceSha256": "3a884c696f34e30094842605ba8eef8c2f45fe97a87c7044eaa3e14106d33e44",
+      "sha256": "3a884c696f34e30094842605ba8eef8c2f45fe97a87c7044eaa3e14106d33e44",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-headed.json",
-      "source": "output/goal-b02a/review-final-headed/b02a/results.json",
-      "sourceSha256": "214d367efe9113e0e818bc1f25cc4d8e636570ea39034aa41c184aa6d528ac9a",
-      "sha256": "f4edb8aa91d83182e57aaec43d447f09bb1ba920d5aec0f264af56b0af0c0b98",
+      "source": "output/finish-stage6/final-headed/b02a/results.json",
+      "sourceSha256": "9fecc735b96fafb4a96a509ed194753ccacc6a5a0dae67405383dcd351c43b9b",
+      "sha256": "f00777a4ce02ed374297147ac2c95041ddfb0dda8da5c05e57cb1af3de7ac745",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
       "file": "after-headed.log.txt",
-      "source": "output/goal-b02a-review-final-headed.log",
-      "sourceSha256": "df89b59c7b8d43b75f4efe0ad8f09484ef4747ec7a15a1d6b5f57fd51dafbb06",
-      "sha256": "df89b59c7b8d43b75f4efe0ad8f09484ef4747ec7a15a1d6b5f57fd51dafbb06",
+      "source": "output/finish-stage6-headed.log",
+      "sourceSha256": "0d3b71c2f6aee12a7b8f260388eb4aece2dc4a2617124d6c08ab4c134f618e45",
+      "sha256": "0d3b71c2f6aee12a7b8f260388eb4aece2dc4a2617124d6c08ab4c134f618e45",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
@@ -147,8 +147,8 @@
     {
       "file": "runtime-regression.json",
       "source": "output/runtime-e2e/results.json",
-      "sourceSha256": "20054cda122ad0795e48c169b9329d76e3eec5440bb74154e8a8d3424e7fca66",
-      "sha256": "70d9bc2a35431ebe2b0917765d61234ef02bf7f2acfd0cc850fa52ee38e494be",
+      "sourceSha256": "9ad79ab186966c394c7097f0ff1035a1a9b2d279629e2faf2908a780cd2f494e",
+      "sha256": "979ffd4bdd1cf1b9edfd0dfb2908433b436bf3d5243741168dbddf8fe4da9df0",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
@@ -255,6 +255,104 @@
       "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
       "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-scope-report.txt",
+      "source": "output/pr20-rereview/report.md",
+      "sourceSha256": "2f2f2683314545bdc2a4178f4d80338813289e23d7050497c377d0227f2576f5",
+      "sha256": "2f2f2683314545bdc2a4178f4d80338813289e23d7050497c377d0227f2576f5",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-scope-probes.json",
+      "source": "output/pr20-rereview/independent-probes.json",
+      "sourceSha256": "156c64d3a6b9634cbe6fb2cc970b6e93cedfbb61c205d1c420e44a892fe88629",
+      "sha256": "0fdf14c687b9db37cd675bc0b99306f7d111dc474233cb750c8631a860ab71ba",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-scope-base-probes.json",
+      "source": "output/pr20-rereview/baseline-independent-probes.json",
+      "sourceSha256": "77b0c918659da51901c292976f75fda356350cfa9cade31f08237a5947e4ed38",
+      "sha256": "f250538cb7ce9b88b69292ce014279f872245a431699e469f5c3cb7cded3a952",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-scope-probe.mjs",
+      "source": "output/pr20-rereview/probe.mjs",
+      "sourceSha256": "4aa204b334983954176fe1cf33a34bdae1fe1004942a00ef16f01e29a45bdd3f",
+      "sha256": "4aa204b334983954176fe1cf33a34bdae1fe1004942a00ef16f01e29a45bdd3f",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-candidate-before.log.txt",
+      "source": "output/goal-b02a-scope-before.log",
+      "sourceSha256": "4c0943ac7211577f59ee9018c41bedf40a5b19893ee12301fe843f24e6b705ac",
+      "sha256": "c7c557e0c98535224b6afb3be3f3bd733940bba7b6f800dc198f8912fba11bbf",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-native.log.txt",
+      "source": "output/goal-b02a-scope-native.log",
+      "sourceSha256": "1d7cb29c23418f4372811e9b58a3f10989b20ff467e0c9ad9b7fd27bdabfca39",
+      "sha256": "1d7cb29c23418f4372811e9b58a3f10989b20ff467e0c9ad9b7fd27bdabfca39",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-compare-codex.json",
+      "source": "output/finish-stage6/compare/codex-scope.json",
+      "sourceSha256": "90cf37d378c543fb028cfef3bf491d1d7fd98db3dbf7ae99d980029ed68aa661",
+      "sha256": "90cf37d378c543fb028cfef3bf491d1d7fd98db3dbf7ae99d980029ed68aa661",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-compare-aside.txt",
+      "source": "output/finish-stage6/compare/aside-scope.txt",
+      "sourceSha256": "dba25215e20ec953438242169e9b0a094cd5821cef4a92dc865c00e9eff018aa",
+      "sha256": "45dec5c272275c399f2402165bb4a1bc5d6b9342b96345063399fcc687af69e6",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-compare-aside.json",
+      "source": "output/finish-stage6/compare/aside-scope.json",
+      "sourceSha256": "5cbc02ec94c1c68d7c048ac04c9d1e04298ec2061db4f7d2ace2f8a17c1d0ee6",
+      "sha256": "5cbc02ec94c1c68d7c048ac04c9d1e04298ec2061db4f7d2ace2f8a17c1d0ee6",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-aside-guide.txt",
+      "source": "output/finish-stage6/compare/aside-guide.txt",
+      "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "scope-aside-repl-guide.txt",
+      "source": "output/finish-stage6/compare/aside-repl-guide.txt",
+      "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "selector-errors.json",
+      "source": "output/finish-stage6/selector-errors.json",
+      "sourceSha256": "88d37db98c92b12cc8971b43e90da4c936362ae5e583d5ed7e5772a54a603587",
+      "sha256": "88d37db98c92b12cc8971b43e90da4c936362ae5e583d5ed7e5772a54a603587",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "selector-errors.log.txt",
+      "source": "output/finish-stage6-selector-errors.log",
+      "sourceSha256": "5705cd8e1e16de2aca9def7150f0b0efb22f97b21d9e18b5a5e17b1e46889be9",
+      "sha256": "5705cd8e1e16de2aca9def7150f0b0efb22f97b21d9e18b5a5e17b1e46889be9",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "selector-errors-probe.mjs",
+      "source": ".local/goal-development/stage6-selector-errors.mjs",
+      "sourceSha256": "7a05b340b9c7a320fd9e56d443357a9b45730d2ef3c2e40a3019a0c27f6c9f91",
+      "sha256": "7a05b340b9c7a320fd9e56d443357a9b45730d2ef3c2e40a3019a0c27f6c9f91",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
     }
   ],
   "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns.",
@@ -267,5 +365,28 @@
     "fixtureHistory": "First boundary fixture attempted button.attachShadow, initialization stopped; native oracle caught missing active fallback. Changed to valid div host before final comparison. Candidate harness/native failures retained only as harness history, not product improvement score.",
     "newReview": "Exact new-head fresh Sol6.1high pending"
   },
-  "boundaryComparison": "Fresh same selection-boundaries root10queries and explicit CSS3-control sequence: Codex root metadata works, ghost text candidate remains but explicitCSS3trusted/PASS; Aside ghost remains/fallback selector errors, explicitCSS2success+lastselectorerror/pending. Own getByText3controls/trusted/PASS. Scope-specific public methods only, no overall unsupported ranking. Child competitor not measured, no original source extraction."
+  "boundaryComparison": "Fresh same selection-boundaries root10queries and explicit CSS3-control sequence: Codex root metadata works, ghost text candidate remains but explicitCSS3trusted/PASS; Aside ghost remains/fallback selector errors, explicitCSS2success+lastselectorerror/pending. Own getByText3controls/trusted/PASS. Scope-specific public methods only, no overall unsupported ranking. Child competitor not measured, no original source extraction.",
+  "scopeReview": {
+    "head": "bf91d5615d82af9f0e1f2ab9923de17f105d2718",
+    "verdict": "CHANGES_REQUESTED",
+    "finding": "Existing :scope rebinding to each candidate via matches rather than selected document",
+    "fix": "Native Document/openShadowRoot querySelectorAll union keeps root-relative CSS, original result order and deduplication",
+    "newCoverage": "13 CSS selectors including :scope/head/body/is group, single root/body reads and child root; same12test cases",
+    "comparison": "Fresh Codex/Aside root :scope→HTML, >head1, >bodyBODY, :is→HTML/HEAD, same final boundary fixture. Raw/transcribed distinct.",
+    "rereview": "pending exact new code head"
+  },
+  "executionScope": "User stopped the full21-slice Goal and requested completion only through stage6/B02A. Do not start B02B or later. Full185REQ is not complete.",
+  "supplementalErrors": {
+    "grade": "HTTP-extension-QuickJS-product-supplement",
+    "pass": 4,
+    "clicks": 0,
+    "cases": [
+      "invalid CSS count",
+      "invalid CSS click",
+      "stale document ref count",
+      "stale document ref click"
+    ],
+    "counting": "Supplemental public-operation probes, not added to formal130/headed44 totals",
+    "artifact": "selector-errors.json"
+  }
 }

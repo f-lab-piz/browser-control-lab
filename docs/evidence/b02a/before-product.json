@@ -1,14 +1,14 @@
 {
   "grade": "HTTP-extension-QuickJS-product",
   "name": "b02a",
-  "startedAt": "2026-11-01T18:41:46.437Z",
-  "finishedAt": "2026-11-01T18:42:09.193Z",
+  "startedAt": "2026-11-01T21:03:44.122Z",
+  "finishedAt": "2026-11-01T21:04:08.649Z",
   "browser": "145.0.7632.6",
   "observer": {
     "pauseOverrides": 27
   },
   "headed": false,
-  "head": "f664dd19c3affcfe48262550366bab43b84a1135",
+  "head": "bf91d5615d82af9f0e1f2ab9923de17f105d2718",
   "dirty": true,
   "sourceSha256": {
     "bridge/server.mjs": "037a58d08e694a71255b9df64001c69a3ab87fb19bb01c17f3275ec6bef9e0c2",
@@ -32,12 +32,12 @@
     "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
     "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
     "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
-    "docs/runtime-usage.md": "8f142a0f24c23fdd23fb3530984d35dd7a78c03c845ba658ccceac0609a1f79a",
+    "docs/runtime-usage.md": "33440f2acfaca086a7572c0a95832a248d4800699586ca393a5e16518e47e4ef",
     "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
     "package.json": "ea250ac7e6b67e15bfd99b04a8b403e17ac028cca39464a648209bf2fbd38bf4",
     "package-lock.json": "410382cf6b025ca2a11be26259e0a237c54a49253cb45ed6b36adcf0ae2aa71a",
-    "tests/selection-runtime.test.mjs": "452412e7bf462da038feab28b1cc8e895b7473c7d100fcf085e84ef471081a54",
-    "tests/selection-fixture.test.mjs": "8756861666002fe50b40239385520aa35de8c5f487e7cea126f2b54a1056aba2",
+    "tests/selection-runtime.test.mjs": "be4dd7e1ed253315785dae59820add6007470b2a283d91ada393e64218f239c1",
+    "tests/selection-fixture.test.mjs": "70872d3d4646d93e3114c3f1cf812138b2f87d7597635ba384260d5a15447f79",
     "tests/selection-contract.test.mjs": "7d4bd536beb89174eea4b2e475c98c66c8d25c03c22727eddde6e14068943a3a",
     "tests/review-boundaries.test.mjs": "4d323c30c7eca67740fcd8a4f20773738203006ff83362a4617d8a530b91a053",
     "test-site/selection.html": "eebaeedae067c94f9ce5d4d6d75654328a592ad54039cdb39a0a49df0e36a5a7",
@@ -104,7 +104,7 @@
               "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
             }
           ],
-          "fresh": "f0:85d872b7:e3"
+          "fresh": "f0:127459f3:e3"
         },
         "oldDocument": "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:88:85)\n    at single (<anonymous>:116:22)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48",
         "cssError": "SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\n    at <anonymous>:96:71\n    at Array.filter (<anonymous>)\n    at find (<anonymous>:96:53)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48",
@@ -568,7 +568,11 @@
             0,
             0,
             0,
-            1
+            1,
+            24,
+            0,
+            0,
+            24
           ],
           "lang": {
             "error": "Error: ELEMENT_NOT_FOUND\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
@@ -589,6 +593,15 @@
             "error": "Error: ELEMENT_NOT_FOUND\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
           },
           "templateContent": 0,
+          "root": {
+            "error": "EVALUATION_TARGET_ERROR: Error: MULTIPLE_MATCHES: 24 elements\n    at Object.single [as resolve] (<anonymous>:117:38)\n    at <anonymous>:1:38"
+          },
+          "body": {
+            "error": "EVALUATION_TARGET_ERROR: Error: ELEMENT_NOT_FOUND\n    at Object.single [as resolve] (<anonymous>:117:38)\n    at <anonymous>:1:38"
+          },
+          "childRoot": {
+            "error": "Error: MULTIPLE_MATCHES: 23 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+          },
           "inertText": [
             0,
             0,
@@ -605,10 +618,14 @@
           1,
           1,
           1,
-          1
+          1,
+          1,
+          1,
+          1,
+          2
         ]
       },
-      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n    1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1\n  ]\n"
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n+   0,\n    1,\n+   24,\n+   0,\n+   0,\n+   24\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   1,\n-   2\n  ]\n"
     },
     {
       "conditions": [

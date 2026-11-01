@@ -1,15 +1,15 @@
-✔ B02A CSS scope is lazy and includes open shadow without crossing documents (2221.137375ms)
-✔ B02A qualified refs keep identity and reject replaced elements or documents without clicking lookalikes (607.316167ms)
-✖ B02A role and explicit label names use priority ordered local IDREFs and safe fallbacks (270.915708ms)
-✖ B02A role names distinguish omitted and empty names with hidden offscreen and native roles (241.725041ms)
-✖ B02A full label and body search are independent of short accessible names and snapshot output (267.913917ms)
-✖ B02A text candidates are minimal composed descendants with exact whitespace and independent regex state (314.24275ms)
-✖ B02A text excludes ARIA hidden and inert content but includes CSS hidden and offscreen without scrolling (239.295584ms)
-✖ B02A invalid selector names and options fail explicitly with no input effects (660.176542ms)
-✖ B02A single actions are strict while count all and CSS state waits keep their explicit zero or many exceptions (11664.925291ms)
-✔ B02A discovered controls produce trusted clicks and input and the fixture judges the outcome (527.746584ms)
-✖ B02A document CSS includes html head and inert elements in the selected frame (270.000458ms)
-✖ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (5462.639583ms)
+✔ B02A CSS scope is lazy and includes open shadow without crossing documents (4371.084ms)
+✔ B02A qualified refs keep identity and reject replaced elements or documents without clicking lookalikes (491.2515ms)
+✖ B02A role and explicit label names use priority ordered local IDREFs and safe fallbacks (167.3015ms)
+✖ B02A role names distinguish omitted and empty names with hidden offscreen and native roles (202.619333ms)
+✖ B02A full label and body search are independent of short accessible names and snapshot output (232.243292ms)
+✖ B02A text candidates are minimal composed descendants with exact whitespace and independent regex state (236.068291ms)
+✖ B02A text excludes ARIA hidden and inert content but includes CSS hidden and offscreen without scrolling (309.529708ms)
+✖ B02A invalid selector names and options fail explicitly with no input effects (811.983084ms)
+✖ B02A single actions are strict while count all and CSS state waits keep their explicit zero or many exceptions (11704.28475ms)
+✔ B02A discovered controls produce trusted clicks and input and the fixture judges the outcome (354.866375ms)
+✖ B02A document CSS includes html head and inert elements in the selected frame (231.459292ms)
+✖ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (5406.082833ms)
 ℹ tests 12
 ℹ suites 0
 ℹ pass 3
@@ -17,12 +17,12 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 23454.427625
+ℹ duration_ms 25226.187542
 
 ✖ failing tests:
 
 test at tests/selection-runtime.test.mjs:25:1
-✖ B02A role and explicit label names use priority ordered local IDREFs and safe fallbacks (270.915708ms)
+✖ B02A role and explicit label names use priority ordered local IDREFs and safe fallbacks (167.3015ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   ... Skipped lines
@@ -83,7 +83,7 @@ test at tests/selection-runtime.test.mjs:25:1
   }
 
 test at tests/selection-runtime.test.mjs:30:1
-✖ B02A role names distinguish omitted and empty names with hidden offscreen and native roles (241.725041ms)
+✖ B02A role names distinguish omitted and empty names with hidden offscreen and native roles (202.619333ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 
@@ -177,7 +177,7 @@ test at tests/selection-runtime.test.mjs:30:1
   }
 
 test at tests/selection-runtime.test.mjs:35:1
-✖ B02A full label and body search are independent of short accessible names and snapshot output (267.913917ms)
+✖ B02A full label and body search are independent of short accessible names and snapshot output (232.243292ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 
@@ -201,7 +201,7 @@ test at tests/selection-runtime.test.mjs:35:1
   }
 
 test at tests/selection-runtime.test.mjs:40:1
-✖ B02A text candidates are minimal composed descendants with exact whitespace and independent regex state (314.24275ms)
+✖ B02A text candidates are minimal composed descendants with exact whitespace and independent regex state (236.068291ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 
@@ -255,7 +255,7 @@ test at tests/selection-runtime.test.mjs:40:1
   }
 
 test at tests/selection-runtime.test.mjs:45:1
-✖ B02A text excludes ARIA hidden and inert content but includes CSS hidden and offscreen without scrolling (239.295584ms)
+✖ B02A text excludes ARIA hidden and inert content but includes CSS hidden and offscreen without scrolling (309.529708ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 
@@ -286,7 +286,7 @@ test at tests/selection-runtime.test.mjs:45:1
   }
 
 test at tests/selection-runtime.test.mjs:50:1
-✖ B02A invalid selector names and options fail explicitly with no input effects (660.176542ms)
+✖ B02A invalid selector names and options fail explicitly with no input effects (811.983084ms)
   AssertionError [ERR_ASSERTION]: [{"expression":"page.locator('[')","accepted":false,"error":"SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\n    at <anonymous>:96:71\n    at Array.filter (<anonymous>)\n    at find (<anonymous>:96:53)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"},{"expression":"page.getByRole('')","accepted":true,"value":49},{"expression":"page.getByRole(12)","accepted":true,"value":0},{"expression":"page.getByRole('not-a-real-role')","accepted":true,"value":0},{"expression":"page.getByRole('button',{includeHidden:'yes'})","accepted":true,"value":20},{"expression":"page.getByRole('button',{exact:'yes'})","accepted":true,"value":19},{"expression":"page.getByRole('button',{name:17})","accepted":true,"value":0},{"expression":"page.getByRole('button',{name:/A/,exact:true})","accepted":true,"value":3},{"expression":"page.getByText('')","accepted":true,"value":80},{"expression":"page.getByText('A',{exact:'yes'})","accepted":true,"value":2},{"expression":"page.getByText(/A/,{exact:true})","accepted":true,"value":10},{"expression":"page.getByLabel('')","accepted":true,"value":36},{"expression":"page.getByLabel('A',{exact:'yes'})","accepted":true,"value":1},{"expression":"page.getByLabel(/A/,{exact:true})","accepted":true,"value":7}]
       at file://<controlled-baseline>/tests/selection-runtime.test.mjs:54:305
       at record (file://<controlled-baseline>/tests/selection-runtime.test.mjs:9:47)
@@ -302,7 +302,7 @@ test at tests/selection-runtime.test.mjs:50:1
   }
 
 test at tests/selection-runtime.test.mjs:57:1
-✖ B02A single actions are strict while count all and CSS state waits keep their explicit zero or many exceptions (11664.925291ms)
+✖ B02A single actions are strict while count all and CSS state waits keep their explicit zero or many exceptions (11704.28475ms)
   AssertionError [ERR_ASSERTION]: [{"selector":".absent","state":"attached","expected":"timeout","error":"WAIT_TIMEOUT: attached"},{"selector":".absent","state":"detached","expected":"true","value":true},{"selector":".absent","state":"hidden","expected":"true","value":true},{"selector":".absent","state":"visible","expected":"timeout","error":"WAIT_TIMEOUT: visible"},{"selector":"#css-text","state":"attached","expected":"true","value":true},{"selector":"#css-text","state":"detached","expected":"timeout","error":"WAIT_TIMEOUT: detached"},{"selector":"#css-text","state":"hidden","expected":"true","value":true},{"selector":"#css-text","state":"visible","expected":"timeout","error":"WAIT_TIMEOUT: visible"},{"selector":"#role-a","state":"attached","expected":"true","value":true},{"selector":"#role-a","state":"detached","expected":"timeout","error":"WAIT_TIMEOUT: detached"},{"selector":"#role-a","state":"hidden","expected":"timeout","error":"WAIT_TIMEOUT: hidden"},{"selector":"#role-a","state":"visible","expected":"true","value":true},{"selector":".same","state":"attached","expected":"true","value":true},{"selector":".same","state":"detached","expected":"timeout","error":"Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"},{"selector":".same","state":"hidden","expected":"multiple","error":"Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"},{"selector":".same","state":"visible","expected":"multiple","error":"Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"}]
       at file://<controlled-baseline>/tests/selection-runtime.test.mjs:66:487
       at record (file://<controlled-baseline>/tests/selection-runtime.test.mjs:9:47)
@@ -318,7 +318,7 @@ test at tests/selection-runtime.test.mjs:57:1
   }
 
 test at tests/selection-runtime.test.mjs:73:1
-✖ B02A document CSS includes html head and inert elements in the selected frame (270.000458ms)
+✖ B02A document CSS includes html head and inert elements in the selected frame (231.459292ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 
@@ -332,6 +332,10 @@ test at tests/selection-runtime.test.mjs:73:1
   +   0,
   +   0,
       1,
+  +   24,
+  +   0,
+  +   0,
+  +   24
   -   1,
   -   1,
   -   1,
@@ -339,30 +343,36 @@ test at tests/selection-runtime.test.mjs:73:1
   -   1,
   -   1,
   -   1,
-  -   1
+  -   1,
+  -   1,
+  -   1,
+  -   1,
+  -   2
     ]
 
-      at file://<controlled-baseline>/tests/selection-runtime.test.mjs:75:325
+      at file://<controlled-baseline>/tests/selection-runtime.test.mjs:75:386
       at record (file://<controlled-baseline>/tests/selection-runtime.test.mjs:9:47)
-      at TestContext.<anonymous> (file://<controlled-baseline>/tests/selection-runtime.test.mjs:75:234)
+      at TestContext.<anonymous> (file://<controlled-baseline>/tests/selection-runtime.test.mjs:75:295)
       at async Test.run (node:internal/test_runner/test:1113:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
     generatedMessage: true,
     code: 'ERR_ASSERTION',
     actual: [
-      0, 0, 0, 0, 0,
-      0, 0, 0, 1
+       0, 0, 0,  0, 0, 0,
+       0, 0, 1, 24, 0, 0,
+      24
     ],
     expected: [
-      1, 1, 1, 1, 1,
-      1, 1, 1, 1
+      1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1,
+      2
     ],
     operator: 'deepStrictEqual',
     diff: 'simple'
   }
 
 test at tests/selection-runtime.test.mjs:78:1
-✖ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (5462.639583ms)
+✖ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (5406.082833ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
 

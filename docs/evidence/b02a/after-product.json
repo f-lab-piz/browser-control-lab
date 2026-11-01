@@ -1,14 +1,14 @@
 {
   "grade": "HTTP-extension-QuickJS-product",
   "name": "b02a",
-  "startedAt": "2026-11-01T18:43:11.542Z",
-  "finishedAt": "2026-11-01T18:43:28.069Z",
+  "startedAt": "2026-11-01T21:05:09.059Z",
+  "finishedAt": "2026-11-01T21:05:26.417Z",
   "browser": "145.0.7632.6",
   "observer": {
     "pauseOverrides": 27
   },
   "headed": false,
-  "head": "f664dd19c3affcfe48262550366bab43b84a1135",
+  "head": "bf91d5615d82af9f0e1f2ab9923de17f105d2718",
   "dirty": true,
   "sourceSha256": {
     "bridge/server.mjs": "037a58d08e694a71255b9df64001c69a3ab87fb19bb01c17f3275ec6bef9e0c2",
@@ -22,7 +22,7 @@
     "extension/offscreen.js": "e7c7e6c7d325c115f5011d53c89ec0a3d3d00ef4477b14bf7c0dbb94a0af3540",
     "extension/browser-engine.mjs": "a264485d1b567ba50cb51faea4a8ade98aaa088ae1244ab6a1853c2aa655b268",
     "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
-    "extension/page-agent.mjs": "61bbe6073248100d50b7321cd74512613dc4ec051ef0fb18d10339aff7143657",
+    "extension/page-agent.mjs": "53a5b534b6a7494d74b5b59ecc2b003c476e3f54ce70ff2bd95fae6c07639416",
     "extension/files.mjs": "bcc4db1066ec0c740f3e291009d156d624d084656d64642f92314a214cadb2c7",
     "tests/helpers/product-runtime.mjs": "0fb29ce171d3c609fbd6e87889e6456dfe6a37345f8f1cc22a51f8ec6f9fdc2b",
     "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
@@ -32,12 +32,12 @@
     "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
     "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
     "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
-    "docs/runtime-usage.md": "8f142a0f24c23fdd23fb3530984d35dd7a78c03c845ba658ccceac0609a1f79a",
+    "docs/runtime-usage.md": "33440f2acfaca086a7572c0a95832a248d4800699586ca393a5e16518e47e4ef",
     "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
     "package.json": "ea250ac7e6b67e15bfd99b04a8b403e17ac028cca39464a648209bf2fbd38bf4",
     "package-lock.json": "410382cf6b025ca2a11be26259e0a237c54a49253cb45ed6b36adcf0ae2aa71a",
-    "tests/selection-runtime.test.mjs": "452412e7bf462da038feab28b1cc8e895b7473c7d100fcf085e84ef471081a54",
-    "tests/selection-fixture.test.mjs": "8756861666002fe50b40239385520aa35de8c5f487e7cea126f2b54a1056aba2",
+    "tests/selection-runtime.test.mjs": "be4dd7e1ed253315785dae59820add6007470b2a283d91ada393e64218f239c1",
+    "tests/selection-fixture.test.mjs": "70872d3d4646d93e3114c3f1cf812138b2f87d7597635ba384260d5a15447f79",
     "tests/selection-contract.test.mjs": "7d4bd536beb89174eea4b2e475c98c66c8d25c03c22727eddde6e14068943a3a",
     "tests/review-boundaries.test.mjs": "4d323c30c7eca67740fcd8a4f20773738203006ff83362a4617d8a530b91a053",
     "test-site/selection.html": "eebaeedae067c94f9ce5d4d6d75654328a592ad54039cdb39a0a49df0e36a5a7",
@@ -81,33 +81,33 @@
           "stale": [
             {
               "action": "count",
-              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48"
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
             },
             {
               "action": "click",
-              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at single (<anonymous>:169:22)\n    at Object.call (<anonymous>:210:16)\n    at <anonymous>:1:48"
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at single (<anonymous>:172:22)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48"
             },
             {
               "action": "attached",
-              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48"
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
             },
             {
               "action": "detached",
-              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48"
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
             },
             {
               "action": "hidden",
-              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48"
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
             },
             {
               "action": "visible",
-              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48"
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:141:41)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
             }
           ],
-          "fresh": "f0:54beb839:e3"
+          "fresh": "f0:a4e53751:e3"
         },
-        "oldDocument": "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:137:85)\n    at single (<anonymous>:169:22)\n    at Object.call (<anonymous>:210:16)\n    at <anonymous>:1:48",
-        "cssError": "SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\n    at <anonymous>:145:71\n    at Array.filter (<anonymous>)\n    at find (<anonymous>:145:53)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48",
+        "oldDocument": "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:137:85)\n    at single (<anonymous>:172:22)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48",
+        "cssError": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '[' is not a valid selector.\n    at find (<anonymous>:147:57)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48",
         "clicks": "0"
       }
     },
@@ -302,7 +302,7 @@
           {
             "expression": "page.locator('[')",
             "accepted": false,
-            "error": "SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\n    at <anonymous>:145:71\n    at Array.filter (<anonymous>)\n    at find (<anonymous>:145:53)\n    at Object.call (<anonymous>:209:36)\n    at <anonymous>:1:48"
+            "error": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '[' is not a valid selector.\n    at find (<anonymous>:147:57)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
           },
           {
             "expression": "page.getByRole('')",
@@ -409,7 +409,7 @@
           {
             "expression": "page.locator('.absent').textContent()",
             "accepted": false,
-            "error": "Error: ELEMENT_NOT_FOUND\n    at single (<anonymous>:170:38)\n    at Object.call (<anonymous>:210:16)\n    at <anonymous>:1:48"
+            "error": "Error: ELEMENT_NOT_FOUND\n    at single (<anonymous>:173:38)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48"
           },
           {
             "expression": "page.locator('.absent').click()",
@@ -515,13 +515,13 @@
             "selector": ".same",
             "state": "hidden",
             "expected": "multiple",
-            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:170:38)\n    at Object.call (<anonymous>:210:16)\n    at <anonymous>:1:48"
+            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:173:38)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48"
           },
           {
             "selector": ".same",
             "state": "visible",
             "expected": "multiple",
-            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:170:38)\n    at Object.call (<anonymous>:210:16)\n    at <anonymous>:1:48"
+            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:173:38)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48"
           }
         ],
         "clicks": "0",
@@ -563,7 +563,11 @@
             1,
             1,
             1,
-            1
+            1,
+            1,
+            1,
+            1,
+            2
           ],
           "lang": {
             "value": "ko"
@@ -584,6 +588,15 @@
             "value": "child"
           },
           "templateContent": 0,
+          "root": {
+            "value": "HTML"
+          },
+          "body": {
+            "value": "BODY"
+          },
+          "childRoot": {
+            "value": "child"
+          },
           "inertText": [
             0,
             0,
@@ -600,7 +613,11 @@
           1,
           1,
           1,
-          1
+          1,
+          1,
+          1,
+          1,
+          2
         ]
       }
     },

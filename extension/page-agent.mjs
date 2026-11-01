@@ -48,7 +48,13 @@ export function installPageAgent(){
   if(query.documentPrefix&&!documentId.startsWith(query.documentPrefix))throw Error('STALE_DOCUMENT_REF');
   let elements;
   if(query.kind==='ref'){const el=registry.get(query.value);if(!el||!el.isConnected)throw Error('STALE_REF: element is detached; take a new snapshot');elements=[el]}
-  else {elements=query.kind==='css'?all(document.documentElement,Infinity,true):all();if(query.kind==='css')elements=elements.filter(el=>el.matches(query.value));
+  else {elements=query.kind==='css'?all(document.documentElement,Infinity,true):all();if(query.kind==='css'){
+    // Native root queries keep :scope bound to the document/ShadowRoot. Using
+    // Element.matches here would rebind :scope to every candidate instead.
+    const roots=[document,...elements.filter(el=>el.shadowRoot).map(el=>el.shadowRoot)],matched=new Set();
+    for(const root of roots)for(const el of root.querySelectorAll(query.value))matched.add(el);
+    elements=elements.filter(el=>matched.has(el));
+   }
    else if(query.kind==='role')elements=elements.filter(el=>role(el)===query.value&&(query.options?.name===undefined||matches(name(el),query.options.name,query.options.exact))&&(query.options?.includeHidden||visible(el)&&!ariaHidden(el)));
    else if(query.kind==='label')elements=elements.filter(el=>el.matches('input,textarea,select,button')&&matches(name(el,{explicitOnly:true}),query.value,query.options?.exact));
    else if(query.kind==='text'){elements=elements.filter(el=>el.tagName!=='SLOT'&&projected(el)&&!ariaHidden(el)&&matches(readableText(el),query.value,query.options?.exact));const matched=new Set(elements),ancestors=new Set();for(const el of elements)for(let node=parentOf(el);node;node=parentOf(node))if(matched.has(node))ancestors.add(node);elements=elements.filter(el=>!ancestors.has(el))}

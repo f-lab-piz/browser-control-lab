@@ -204,3 +204,5 @@ B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준�
 - B02A 이슈19: 공통 이름/본문/출력 분리·IDREF root/우선순위·composed 최소text·입력검증·detachedN 예외 보완. Before3/10→After10/10, 전체127 PASS/외부1 SKIP·단독 headed42 PASS. Codex/Aside 같은 최종root16조회+실제proof 비교와 원시 실패 보존. 독립 리뷰 전.
 
 - PR20 정확f664dd1 독립 CHANGES_REQUESTED: 기존 P2 composed ghost/문서CSS 누락2건을 수용. 선택projection/문서root/inertCSS를 보완하고 유효한 별도fixture·nativeoracle·2제품case추가. Before3/12→After12/12, 전체130 PASS/외부1 SKIP·단독 headed44 PASS. 추가3도구root실측·초기잘못된fixture실패를구분보존. 새head재리뷰전.
+
+- 사용자범위변경: 전체Goal중단,6단계B02A까지만마무리. 재리뷰bf91의기존 :scope P2를 native루트CSS로수정, 최신고정입력Before3/12→After12/12·전체130 PASS/외부1 SKIP·headed44 PASS. Codex/Aside :scope4조회도새실측. 새head독립리뷰후정상머지하고7단계는시작하지않는다.

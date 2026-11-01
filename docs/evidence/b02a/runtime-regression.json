@@ -2,7 +2,7 @@
   "grade": "product-extension-runtime",
   "browser": "145.0.7632.6",
   "observer": {
-    "pauseOverrides": 9
+    "pauseOverrides": 10
   },
   "evidence": [
     {
@@ -13,17 +13,17 @@
       "case": "wasm-execution",
       "passed": true,
       "result": {
-        "requestId": "3e90a497-5e76-4453-bc16-9012374618a4",
+        "requestId": "a321338f-80f5-4cf4-a5f1-be6babf23468",
         "operation": "js",
-        "sessionId": "ea352f31-cf66-4e2b-a592-8db02986a1be",
+        "sessionId": "3b6d50af-cb90-4cf3-bf85-9ded6fddcea5",
         "generation": 1,
         "status": "completed",
-        "createdAt": 1793558540104,
-        "startedAt": 1793558540104,
+        "createdAt": 1793567058414,
+        "startedAt": 1793567058414,
         "result": {
           "execution": "extension-worker/QuickJS-WASM",
           "metrics": {
-            "durationMs": 12.5,
+            "durationMs": 11.59999942779541,
             "outputChars": 2,
             "outputBytes": 2,
             "imageBytes": 0,
@@ -38,7 +38,7 @@
           "truncated": false,
           "truncationReasons": []
         },
-        "finishedAt": 1793558540151
+        "finishedAt": 1793567058463
       }
     },
     {
@@ -69,7 +69,7 @@
     {
       "case": "product-basic-form",
       "passed": true,
-      "tabId": 620880171
+      "tabId": 1251859205
     },
     {
       "case": "product-offscreen-snapshot",

@@ -1,0 +1,45 @@
+# PR20 B02A independent rereview
+
+## Confirmed findings
+
+### P2 — Bind CSS `:scope` to the selected document rather than every candidate
+
+- Exact location: `extension/page-agent.mjs:51`.
+- Condition: a normal HTTP HTML document contains `<body id="body">`; invoke `page.locator(':scope > body').count()` or `.getAttribute('id')` through HTTP → extension → QuickJS.
+- Expected: selected document CSS scope has one body and reads `body`. Native read-only `document.querySelectorAll(':scope > body')` returns 1. `document.querySelectorAll(':scope')` returns only HTML.
+- Actual: count is 0 and single read fails `ELEMENT_NOT_FOUND`. `locator(':scope')` returns every enumerated physical/open-shadow element (10 in the independent fixture).
+- Cause: `all(...).filter(el => el.matches(query.value))` binds the CSS `:scope` pseudo-class to each candidate element. This is unrelated to Chrome navigation/observer failures.
+- Impact: valid scope-relative CSS cannot select targets in the current document, and root discovery can incorrectly produce multi-match errors. It violates the document CSS meaning of REQ-SCOPE-LOCATOR-001/C01; no CSS `:scope` exclusion was found in the accepted contract.
+- Origin: existing base defect, not introduced as a new bug by this PR. The exact-base owning files (`api-source.mjs`, `page-agent.mjs`) reproduced 0 / ELEMENT_NOT_FOUND and `:scope` matching all 6 base-enumerated candidates. The current CSS enumeration expands those candidates to 10; that is not represented as a new root cause.
+- Reproduction: `BCL_RUN_DIR=output/pr20-rereview/probe node output/pr20-rereview/probe.mjs`. Current evidence: `output/pr20-rereview/independent-probes.json`. Base evidence: `output/pr20-rereview/baseline-independent-probes.json`. The base control is an archive of the reviewed head with only those two files restored using exact `git show 0452cbe...`; dependencies/fixture/harness are fixed and the control was executed from its own cwd. Its two SHA256 values match exact git-show bytes. This is not a complete historical environment replay.
+
+No confirmed P0/P1/P3 findings. The first review's inactive composed-descendant and html/head issues are fixed and covered by the current 12 B02A product tests. The new `:scope` finding is separate from those fixes.
+
+## Executed verification
+
+- `BCL_RUN_DIR=output/pr20-rereview/all npm run test:all`: exit 0; unit 42, native fixture 12, bootstrap 1, legacy product 24, requirements product 44, review boundaries 7 = 130 PASS, FAIL 0, external Naver 1 SKIP.
+- Subsequent independent `HEADED=1 BCL_RUN_DIR=output/pr20-rereview/headed npm run test:requirements`: exit 0, 44 PASS, FAIL 0. B02A 12 product cases; recorded condition-ID union exactly covers the plan's 21 conditions / 13 parents. This demonstrates those executed cases, not every possible input covered by the requirements.
+- `python3 docs/requirements/tools/validate.py`: exit 0, DOCUMENT_STRUCTURE_ONLY_PASS;185 requirements /254 detailed cases /508 condition units.
+- `python3 docs/requirements/tools/validate_development_plan.py`: exit 0, PLAN_STRUCTURE_PASS;21 slices /185 requirements /254 conditions.
+- `python3 -m unittest discover -s docs/requirements/tools -p 'test_*.py'`: exit 0,6 tests OK.
+- `git diff --check BASE HEAD`: exit 0.
+- B02A manifest31 artifact hashes and B01E manifest24 artifact hashes all match. B02A before3 PASS/9 FAIL, after12 PASS, headed12 PASS and all stored source fingerprints match the reviewed source, with the two before owning files matching exact base. Stored artifact git head fields are f664dd1, while fingerprints match the final precommit working content as documented; this is not substituted for this independent exact-head run.
+- Extra independent read-only oracle also checks hidden slotted role: default0/includeHidden1, CSS visibility hidden; no confirmed additional issue there.
+- Chrome145.0.7632.6, separate temporary test profiles. All product queries/actions use HTTP→extension→QuickJS. Native Playwright is fixture oracle/read-only observation, not replacement product input.
+
+## Not executed / blocked
+
+- New Codex/Aside live comparisons were not executed. Stored public-guide/live-comparison evidence, limits and normalization were inspected. No competitor implementation/bundle/WASM extraction.
+- External Naver remains the test's explicit SKIP. No corporate/account websites were tested.
+- Entire historical base suite was not replayed. Only the additional boundary used a fixed-environment base owning-file control.
+
+## Remaining risk
+
+B02B, B03–B06 and the final complete audit remain outside this acceptance. Full accessibility-standard equivalence, closed Shadow and arbitrary sites are not verified. The historic PR18 headed frame-tree timeout was not reproduced in these full/headed runs and its cause is not declared resolved. Existing fixture suites passing does not resolve the confirmed document CSS `:scope` defect.
+
+## Reviewed source and verdict
+
+- Base:0452cbe2474ed73069167c43d683ae1514c4f29c
+- Head:bf91d5615d82af9f0e1f2ab9923de17f105d2718
+- Local/source/remote PR head matched at start and finish; tracked working tree clean. No tracked product/test/document edits, remote comments, reviews, approvals or merges.
+- Verdict: CHANGES_REQUESTED for the confirmed existing P2 within the current accepted document-CSS scope.

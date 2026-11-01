@@ -1,0 +1,34 @@
+{
+  "grade": "LIVE_RECEIVED_OUTPUT_TRANSCRIPTION",
+  "surface": "Codex CUA IAB public locators",
+  "url": "http://127.0.0.1:51970/selection-boundaries",
+  "fixtureSha256": "d373b5f435d513bc43a671038df9871d8dca59e23be1ddb5434ec3f62075dfc2",
+  "rows": [
+    {
+      "name": "scope",
+      "value": [
+        "HTML"
+      ]
+    },
+    {
+      "name": "scope-head",
+      "value": 1
+    },
+    {
+      "name": "scope-body",
+      "value": "BODY"
+    },
+    {
+      "name": "scope-is-head",
+      "value": [
+        "HTML",
+        "HEAD"
+      ]
+    }
+  ],
+  "limits": [
+    "root only, child DNS blocked",
+    "not original payload export",
+    "own temporary tab12 closed, no page mutation"
+  ]
+}

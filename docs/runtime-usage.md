@@ -111,3 +111,5 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 - getByRole은 기본 layout/ARIA 숨김을 제외하고 화면 밖 요소는 포함한다. includeHidden:true는 숨김도 포함한다. 읽기 검색은 스크롤/클릭/추가 로딩을 일으키지 않는다. 단일 읽기/조작은0/N을 구분해 오류이며 자동 첫번째 선택은 없다. count/evaluateAll과 CSS 상태 대기의 명시 예외는 별도다: attached≥1, detached0, hidden0 또는1hidden, visible1visible. hidden/visible의N은 다중 오류이며 ref stale를 상태 성공으로 흡수하지 않는다. 모든 wait 옵션/deadline의 추가 검증은 B06B에 남아 있다.
 
 CSS 후보는 선택 document의 html/head와 inert 태그도 포함하며 각 open ShadowRoot를 탐색한다. template의 별도 content처럼 document에 연결되지 않은 노드는 자동으로 연결 DOM으로 간주하지 않는다. 텍스트 검색은 활성 composed 투영을 사용하므로 미할당 light child와 배정된 slot의 비활성 fallback을 후보로 삼지 않는다. 투명한 slot 자체가 raw 텍스트의 실제 host를 대신하지 않는다. CSS로는 해당 물리 DOM을 명시 조회할 수 있고, 일반 CSS 숨김 본문을 포함하는 기존 검색 정책은 유지한다. script/style 등의 본문 제외는 HTML/SVG 모두 적용하며 raw textContent와 구분한다.
+
+CSS는 각 document/open ShadowRoot의 native querySelectorAll로 평가하고 결과를 기존 순서로 합친다. `:scope`를 후보마다 다시 묶지 않는다. Page/Frame의 document에서 `locator(':scope')`는 HTML 루트, `locator(':scope > body')`는 body를 선택한다. Shadow DOM을 가로지르는 별도 Playwright CSS 확장 문법은 제공하지 않는다.
