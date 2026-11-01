@@ -21,7 +21,7 @@
 - POST /v1/sessions: 격리 세션 생성. sessionId 및 generation 반환.
 - GET /v1/guide?api=...: API 사용법 조회.
 - POST /v1/sessions/:id/js: {requestId,code,timeoutMs}; 실행은 확장에서 수행.
-- POST /v1/sessions/:id/reset: 실행·변수·참조 초기화. 이미 수행된 페이지 작업은 되돌리지 않는다.
+- POST /v1/sessions/:id/reset: 실행·JS 변수 초기화. 이미 수행된 페이지 작업은 되돌리지 않는다.
 - POST /v1/requests: {requestId} 본문으로 상태·출력·오류 조회. ID를 URL 길이에 종속시키지 않는다. 짧은 ID의 GET query와 기존 /v1/requests/:id는 호환 경로다. HTTP 완료와 브라우저 업무 성공은 다르다.
 
 요청 조회 응답은 {requestId,sessionId,generation,status,result:{content:[text|image],error?,metrics?}} 구조를 사용한다. 세션과 요청 식별자를 혼동하지 않는다. 로컬 인증 토큰과 출력 파일은 Git에 넣지 않는다. 연결 재시도 시 비멱등 클릭·제출·업로드를 자동 재실행하지 않는다.
@@ -36,3 +36,10 @@ MV3 service worker 종료에 내성이 필요하다. JS 상태를 서비스 워�
 로컬 경로는 브라우저 PC 기준이다. 서버·Pod 파일은 바이트/파일 참조로 전달한다. locator.setFiles와 chooser.setFiles는 같은 엔진을 쓴다. 바이너리 전송을 모델 텍스트 로그와 분리한다. local file path 접근 범위, POST/인증/blob 다운로드의 바이트 획득, 서버 export 경로는 실제 구현·검증이 필요하다.
 
 0.2.0의 사용자 요청은 QuickJS global async/strict 평가를 사용한다. AST 검증은 import/export를 거절하며 소스를 다시 쓰지 않는다. 선언·재선언·충돌·상수 의미는 세션 VM의 네이티브 lexical 환경에서 결정한다. top-level await의 Promise settle 후 명시 출력만 반환하며 마지막 표현식은 자동 출력하지 않는다.
+
+
+## 실행 세대와 초기화
+
+확장의 offscreen 문서가 Worker와 실행 세대를 소유하고 background는 세션별 초기화 장벽과 각 hostcall의 고정 provenance를 검사한다. CDP뿐 아니라 탭·다운로드·파일 전송 전후에도 세대 유효성을 확인한다. 대기 이벤트와 이를 발생시키는 입력은 직렬 큐에 함께 잠그지 않는다.
+
+초기화는 구 세대 호출을 먼저 무효화하고 대기를 거절한 뒤 실제 key/button 및 interception 정리를 시도한다. 정리 실패·이미 전송된 명령의 불확실성은 결과 metadata에 남긴다. 중계기는 세대와 요청 종결만 전달하며 브라우저 작업이나 JS 평가를 대신하지 않는다. 같은 문서의 DOM ref·탭/asset/완료 파일은 유지되고 JS 핸들 변수는 다시 얻어야 한다.

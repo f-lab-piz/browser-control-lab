@@ -15,7 +15,7 @@ const parseValue=value=>vm.unwrapResult(vm.evalCode('('+JSON.stringify(value===u
 function setFunction(name,fn){const handle=vm.newFunction(name,fn);vm.setProp(vm.global,name,handle);handle.dispose()}
 setFunction('__print',value=>{if(current)current.output.text(JSON.parse(vm.getString(value)));return vm.undefined});
 setFunction('__hostCall',(methodHandle,argsHandle)=>{
- const promise=vm.newPromise(),id=++nextId;pending.set(id,promise);postMessage({type:'host',id,method:vm.getString(methodHandle),args:vm.dump(argsHandle)});return promise.handle;
+ const promise=vm.newPromise(),id=++nextId;pending.set(id,promise);postMessage({type:'host',id,requestId:current?.id,method:vm.getString(methodHandle),args:vm.dump(argsHandle)});return promise.handle;
 });
 vm.unwrapResult(vm.evalCode('('+installConsole.toString()+')()')).dispose();
 vm.unwrapResult(vm.evalCode('('+installBrowserApi.toString()+')()')).dispose();
@@ -26,22 +26,21 @@ function guestError(handle){
  if(dumped&&typeof dumped==='object'){const property=vm.getProp(handle,'name');try{name=vm.getString(property)}finally{property.dispose()}}
  return Object.assign(Error(dumped?.message||JSON.stringify(dumped)),{guestName:name});
 }
-function pump(){const result=runtime.executePendingJobs(64);if(result.error){const error=vm.dump(result.error);result.error.dispose();if(current)current.jobError=error}}
+function pump(){try{const result=runtime.executePendingJobs(64);if(result.error){try{throw guestError(result.error)}finally{result.error.dispose()}}}catch(error){current?.rejectFailure(error)}}
 onmessage=async({data})=>{
  if(data.type==='hostResult'){
   const deferred=pending.get(data.id);if(!deferred)return;pending.delete(data.id);
-  if(data.error){const error=vm.newError(data.error);deferred.reject(error);error.dispose()}else{const handle=parseValue(data.value);deferred.resolve(handle);handle.dispose()}
-  deferred.dispose();pump();return;
+  try{if(data.error){const error=vm.newError(data.error);deferred.reject(error);error.dispose()}else{const handle=parseValue(data.value);deferred.resolve(handle);handle.dispose()}pump()}catch(error){current?.rejectFailure(error)}finally{deferred.dispose()}return;
  }
  if(data.type!=='execute')return;
  if(current){postMessage({type:'result',id:data.id,result:{error:{code:'SESSION_BUSY',message:'Runtime busy'}}});return}
- const started=performance.now();current={output:new OutputBuffer(),deadline:Date.now()+data.timeoutMs};let handle,timer;
+ const started=performance.now();let rejectFailure;const failure=new Promise((_,reject)=>rejectFailure=reject);failure.catch(()=>{});current={id:data.id,rejectFailure,output:new OutputBuffer(),deadline:Date.now()+data.timeoutMs};let handle,timer;
  try{
   // 임의 식별자를 C filename으로 넘기지 않고 짧은 진단용 이름을 쓴다.
   const code=transformCode(data.code),result=vm.evalCode(code,'request-'+(++nextRequest)+'.js',GLOBAL_ASYNC_STRICT);
   if(result.error){const error=guestError(result.error);result.error.dispose();throw error}
   handle=result.value;timer=setInterval(pump,5);pump();
-  const settled=await vm.resolvePromise(handle);
+  const settled=await Promise.race([vm.resolvePromise(handle),failure]);
   if(settled.error){const error=guestError(settled.error);settled.error.dispose();throw error}
   settled.value.dispose();
   postMessage({type:'result',id:data.id,result:current.output.result({execution:'extension-worker/QuickJS-WASM',metrics:{durationMs:performance.now()-started}})});

@@ -1,0 +1,50 @@
+[
+  {
+    "stage": "root",
+    "parent": {
+      "active": "<input id=\"marker\" value=\"initial\">",
+      "events": "[{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]",
+      "childEvents": "[]"
+    },
+    "child": {
+      "active": "<body><h1>초기화 수명 검증</h1>\n<label for=\"marker\">보존할 값</label><input id=\"marker\" value=\"initial\">\n<button id=\"arm\">늦은 대상 준비</button><output id=\"armed\">idle</output>\n<output id=\"click-count\">0</output><output id=\"held\">해제됨</output>\n<pre id=\"events\">[]</pre><pre id=\"child-events\">[]</pre><a href=\"/reset-f",
+      "events": "[]"
+    }
+  },
+  {
+    "stage": "child-click",
+    "parent": {
+      "active": "<iframe title=\"교차 출처 입력\" src=\"http://mail.test:58090/reset?embedded=1\"></iframe>",
+      "events": "[{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]",
+      "childEvents": "[{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":false,\"trusted\":true}]"
+    },
+    "child": {
+      "active": "<input id=\"marker\" value=\"initial\">",
+      "events": "[{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":false,\"trusted\":true}]"
+    }
+  },
+  {
+    "stage": "child-key",
+    "parent": {
+      "active": "<iframe title=\"교차 출처 입력\" src=\"http://mail.test:58090/reset?embedded=1\"></iframe>",
+      "events": "[{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]",
+      "childEvents": "[{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":false,\"trusted\":true}]"
+    },
+    "child": {
+      "active": "<input id=\"marker\" value=\"initial\">",
+      "events": "[{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]"
+    }
+  },
+  {
+    "stage": "child-press",
+    "parent": {
+      "active": "<iframe title=\"교차 출처 입력\" src=\"http://mail.test:58090/reset?embedded=1\"></iframe>",
+      "events": "[{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]",
+      "childEvents": "[{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true},{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]"
+    },
+    "child": {
+      "active": "<input id=\"marker\" value=\"initial\">",
+      "events": "[{\"type\":\"mousedown\",\"button\":0,\"buttons\":1,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"mouseup\",\"button\":0,\"buttons\":0,\"ctrlKey\":false,\"trusted\":true},{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true},{\"type\":\"keydown\",\"key\":\"Control\",\"ctrlKey\":true,\"trusted\":true},{\"type\":\"keyup\",\"key\":\"Control\",\"ctrlKey\":false,\"trusted\":true}]"
+    }
+  }
+]

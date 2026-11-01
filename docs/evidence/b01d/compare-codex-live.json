@@ -1,0 +1,25 @@
+{
+  "grade": "LIVE received-output transcription, not raw exported tool payload",
+  "surface": "Codex mcp__cua_repl.js / js_reset, IAB",
+  "at": "2026-11-01T17:05:50.010605+00:00",
+  "scope": "own /reset?embedded=1 fixture, variable reset and unchanged tab/input only",
+  "before": {
+    "variable": "b01dCodexOld",
+    "value": 7,
+    "tabId": "7",
+    "input": "A"
+  },
+  "action": "mcp__cua_repl.js_reset {}",
+  "after": {
+    "typeofOld": "undefined",
+    "tabId": "7",
+    "input": "A"
+  },
+  "cleanup": "only own temporary tab7 closed; no user tabs accessed",
+  "notMeasured": [
+    "actual held key/button release",
+    "late hostcall cancellation",
+    "failure cleanup warnings",
+    "generation transport metadata"
+  ]
+}

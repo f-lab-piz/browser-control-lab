@@ -392,9 +392,23 @@
       "sourceSha256": "6035b2353357e2bbb26fa4b52eda31ce6e1951f2c836cbc5993dec4dc833ef9b",
       "sha256": "6035b2353357e2bbb26fa4b52eda31ce6e1951f2c836cbc5993dec4dc833ef9b",
       "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "reviewer4-probes.json",
+      "source": ".local/goal-development/b01c-round4-review/probes.json",
+      "sourceSha256": "49386d8a37990e13a2f047347a7522e84ce5ca8d699ce4bf883e940e484710a3",
+      "sha256": "49386d8a37990e13a2f047347a7522e84ce5ca8d699ce4bf883e940e484710a3",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "reviewer4-evidence-audit.json",
+      "source": ".local/goal-development/b01c-round4-review/evidence-audit.json",
+      "sourceSha256": "feaede826f5ba85b511001e798382dd1693e2f5c49dc70615cfeeefaf10d1a1b",
+      "sha256": "feaede826f5ba85b511001e798382dd1693e2f5c49dc70615cfeeefaf10d1a1b",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     }
   ],
-  "gate": "Third review P2 stored LEN/NLEN repaired; new exact-head independent review pending",
+  "gate": "PASS exact41ff8e3 independent Sol6.1 high; merged PR14 as05b0e6a",
   "phase1Summary": {
     "at": "2026-11-01T15:50:32.663342+00:00",
     "sourceDifferences": [
@@ -521,5 +535,12 @@
     },
     "png": "Own PNG structure+indexed row filter validator; generic pixel decoder removed.66rows40valid26invalid/resource. Native oracle separate. W3C reference and generic fflate only."
   },
-  "sourceRetention": "sourceSha256 records bytes at capture time. Fixed output/runtime-e2e/results.json is overwritten by subsequent required tests/reviewer; round3-runtime-regression.json retains captured bytes/hash. Round4 runtime raw copied to unique round4/all-runtime-regression.json before later tests. All immutable delivered hashes verified; historical mutable raw path is not asserted unchanged."
+  "sourceRetention": "sourceSha256 records bytes at capture time. Fixed output/runtime-e2e/results.json is overwritten by subsequent required tests/reviewer; round3-runtime-regression.json retains captured bytes/hash. Round4 runtime raw copied to unique round4/all-runtime-regression.json before later tests. All immutable delivered hashes verified; historical mutable raw path is not asserted unchanged.",
+  "review": {
+    "report": "docs/reviews/pr14-b01c-round4.md",
+    "base": "0446e5b3ae683bb7801184648078f99de96ea55d",
+    "head": "41ff8e310d57a9366259163052cd17cf38e90f18",
+    "verdict": "PASS",
+    "mergeCommit": "05b0e6a71e2b112b5dbb75e1b0ac3c951887fbd2"
+  }
 }

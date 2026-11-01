@@ -1,0 +1,17 @@
+{
+  "grade": "DOC public CLI guide/help captured; no LIVE reset invocation",
+  "version": "Aside CLI1.26.1028.2335 / Skill3",
+  "sources": [
+    ".local/goal-development/b01d-aside-guide.txt",
+    ".local/goal-development/b01d-aside-repl-guide.txt",
+    ".local/goal-development/b01d-aside-repl-help.txt"
+  ],
+  "scope": "REPL bindings persist; one-shot temporary session closes afterwards; profile switch resets variables/attached tabs but was not performed",
+  "finding": "No direct public reset command/method in inspected guide/help. Not a finding of unsupported API. No reset API name invented.",
+  "notMeasured": [
+    "explicit reset",
+    "held input release",
+    "late hostcall",
+    "browser/asset preservation after explicit reset"
+  ]
+}

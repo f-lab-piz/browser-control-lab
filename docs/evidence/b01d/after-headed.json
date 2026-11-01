@@ -1,0 +1,1082 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b01d",
+  "startedAt": "2026-11-01T17:19:51.122Z",
+  "finishedAt": "2026-11-01T17:20:00.444Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 20
+  },
+  "headed": true,
+  "head": "343a6e1ca143b4092b2bd409dd7f36927a6b0f5e",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "037a58d08e694a71255b9df64001c69a3ab87fb19bb01c17f3275ec6bef9e0c2",
+    "bridge/client.mjs": "eb47da8f72090b49bdc70647a6afbd58320ee6ec3db94ebca88f40e492427d3f",
+    "extension/runtime-worker.mjs": "dcbbab19449df9b6bb8153c378cdc4c2e84b335af6ec63b8c478e1512cc7f239",
+    "extension/output.mjs": "b0bc71c792d29266541f45267779566a73b457f25a94a9afce8f9b2114deb489",
+    "shared/limits.mjs": "d31174b174ea6cd10351875fee19fdf395d82ccc1e7d8a02bb9ac2d8b81324e2",
+    "shared/png-crc.mjs": "5af9ce6471d4901a3e7739a767522576a412a63bf5186780b6d9bf713d69d304",
+    "extension/transform.mjs": "f0b60533a80ac92369c84c7c1b01784330e86ed58a09b4f8a9359249ce803ecf",
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/offscreen.js": "e7c7e6c7d325c115f5011d53c89ec0a3d3d00ef4477b14bf7c0dbb94a0af3540",
+    "extension/browser-engine.mjs": "ac3f499ab2e2aff1e5bf677d36a856458292436fab9452fb5ffdf2440e02fe4e",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "extension/files.mjs": "bcc4db1066ec0c740f3e291009d156d624d084656d64642f92314a214cadb2c7",
+    "tests/helpers/product-runtime.mjs": "0fb29ce171d3c609fbd6e87889e6456dfe6a37345f8f1cc22a51f8ec6f9fdc2b",
+    "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
+    "tests/requirements-runtime.test.mjs": "cdd67141dbb5ddd16a1a1ae1f9c269c0b443e53eb41422526a5ec095c8862b85",
+    "test-site/server.mjs": "654c4fac563664592bffb2799f9f05af729f935297e9614ee237ce86d62a6a02",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "6ea34f1ddc9d204dda975917a6c0de99a280b2f9f8a6877a0e1019846520a138",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "a1ea1384dce5cbd812214516b4aef477dd8e23f34e37998b12c809aa77e4d850",
+    "package-lock.json": "410382cf6b025ca2a11be26259e0a237c54a49253cb45ed6b36adcf0ae2aa71a",
+    "tests/browser-lifecycle.test.mjs": "0ad83875f1913aad8fb6715466f0cf5c1f2600c7f3aacfda296bfe1c019137c7",
+    "tests/reset-fixture.test.mjs": "c45f99f89073b5b70fe3d92cf16bcbafb0878ba19ae8ad5c73d02faca0b8d49c",
+    "tests/session-lifecycle.test.mjs": "45de11b0cf40ac5e0e252db763d694959142cf68c68c7765c0e6a48eddc9d7f4",
+    "docs/architecture.md": "6931fdb2a98fd594c4c88c82a6d55e0eee3b6d61d5f46a7cb15fad879c0c77b7",
+    "docs/testing.md": "c3f5cb2a15dfd6efc65f1e10ca3e82b8488a16636cdcb1279e96db53c9b667f2",
+    "extension/session-lifecycle.mjs": "521d44ed085f301ea04d7e9d0843278f66670a1eb176577f64624478ed8f360c",
+    "extension/background.js": "0b04c5b1610896f00768da1a9dc6a860d6b604143db4cfdd1be2f7428a823e2d",
+    "tests/reset-runtime.test.mjs": "11c1eb2e6447df7b98993e183a297552a7d8db115e1a1fb1abca4fcc1bcf39bf",
+    "test-site/reset.html": "ce817e32c5b4799704964aca60653e9530639e361b95543b3a5a805a367d462d"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-RESET-001-C01",
+        "REQ-RESET-001-C02"
+      ],
+      "status": "pass",
+      "reset": {
+        "content": [],
+        "execution": "extension-worker",
+        "reset": true,
+        "runtimeReset": true,
+        "rollback": false,
+        "cleanup": {
+          "status": "complete",
+          "trace": [
+            {
+              "target": {
+                "tabId": 1286344929
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            },
+            {
+              "target": {
+                "tabId": 1286344929,
+                "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            }
+          ],
+          "warnings": [],
+          "inFlight": [],
+          "inFlightEffectsUncertain": false
+        }
+      },
+      "generation": 2,
+      "preservedTab": 1286344929,
+      "ref": "f1:87a4601d:e1",
+      "assetBytes": 13,
+      "fileBytes": 16
+    },
+    {
+      "conditions": [
+        "REQ-RESET-002-C02"
+      ],
+      "status": "pass",
+      "target": {
+        "id": "23BD2A6D6FB797BB0088C7BEB9E862D4",
+        "parent": "F1A3A4A2B219F2766660989D1DCB6E5A",
+        "name": "",
+        "url": "http://mail.test:59060/reset?embedded=1",
+        "process": "child-target"
+      },
+      "events": [
+        {
+          "type": "keydown",
+          "key": "Control",
+          "ctrlKey": true,
+          "trusted": true
+        },
+        {
+          "type": "mousedown",
+          "button": 0,
+          "buttons": 1,
+          "ctrlKey": false,
+          "trusted": true
+        },
+        {
+          "type": "keyup",
+          "key": "Control",
+          "ctrlKey": false,
+          "trusted": true
+        },
+        {
+          "type": "mouseup",
+          "button": 0,
+          "buttons": 0,
+          "ctrlKey": false,
+          "trusted": true
+        }
+      ],
+      "cleanup": {
+        "status": "complete",
+        "trace": [
+          {
+            "target": {
+              "tabId": 1286344929
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344929,
+              "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344931
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344931,
+              "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344931
+            },
+            "method": "Input.dispatchKeyEvent",
+            "kind": "key",
+            "key": "Control",
+            "status": "released"
+          },
+          {
+            "target": {
+              "tabId": 1286344931,
+              "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+            },
+            "method": "Input.dispatchMouseEvent",
+            "kind": "mouse",
+            "button": "left",
+            "status": "released"
+          }
+        ],
+        "warnings": [],
+        "inFlight": [],
+        "inFlightEffectsUncertain": false
+      }
+    },
+    {
+      "conditions": [
+        "REQ-RESET-002-C01"
+      ],
+      "status": "pass",
+      "first": "cancelled",
+      "second": "completed",
+      "generation": 5,
+      "eventReset": {
+        "content": [],
+        "execution": "extension-worker",
+        "reset": true,
+        "runtimeReset": true,
+        "rollback": false,
+        "cleanup": {
+          "status": "complete",
+          "trace": [
+            {
+              "target": {
+                "tabId": 1286344929
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            },
+            {
+              "target": {
+                "tabId": 1286344929,
+                "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            },
+            {
+              "target": {
+                "tabId": 1286344931
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            },
+            {
+              "target": {
+                "tabId": 1286344931,
+                "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            },
+            {
+              "target": {
+                "tabId": 1286344932
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            },
+            {
+              "target": {
+                "tabId": 1286344932,
+                "sessionId": "09433E8D7E085B0E361069657D4484EF"
+              },
+              "method": "Runtime.terminateExecution",
+              "status": "completed"
+            }
+          ],
+          "warnings": [],
+          "inFlight": [],
+          "inFlightEffectsUncertain": false
+        }
+      }
+    },
+    {
+      "conditions": [
+        "REQ-RESET-002-C02"
+      ],
+      "status": "pass",
+      "before": [
+        {
+          "type": "keydown",
+          "key": "Control",
+          "ctrlKey": true,
+          "trusted": true
+        },
+        {
+          "type": "mousedown",
+          "button": 0,
+          "buttons": 1,
+          "ctrlKey": false,
+          "trusted": true
+        }
+      ],
+      "after": [
+        {
+          "type": "keydown",
+          "key": "Control",
+          "ctrlKey": true,
+          "trusted": true
+        },
+        {
+          "type": "mousedown",
+          "button": 0,
+          "buttons": 1,
+          "ctrlKey": false,
+          "trusted": true
+        },
+        {
+          "type": "keyup",
+          "key": "Control",
+          "ctrlKey": false,
+          "trusted": true
+        },
+        {
+          "type": "mouseup",
+          "button": 0,
+          "buttons": 0,
+          "ctrlKey": false,
+          "trusted": true
+        }
+      ],
+      "cleanup": {
+        "status": "complete",
+        "trace": [
+          {
+            "target": {
+              "tabId": 1286344929
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344929,
+              "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344931
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344931,
+              "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344932
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344932,
+              "sessionId": "09433E8D7E085B0E361069657D4484EF"
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344933
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344933,
+              "sessionId": "11EA6CCFF2A094CEA1CC1CB4DD7B6469"
+            },
+            "method": "Runtime.terminateExecution",
+            "status": "completed"
+          },
+          {
+            "target": {
+              "tabId": 1286344933
+            },
+            "method": "Input.dispatchKeyEvent",
+            "kind": "key",
+            "key": "Control",
+            "status": "released"
+          },
+          {
+            "target": {
+              "tabId": 1286344933
+            },
+            "method": "Input.dispatchMouseEvent",
+            "kind": "mouse",
+            "button": "left",
+            "status": "released"
+          }
+        ],
+        "warnings": [],
+        "inFlight": [],
+        "inFlightEffectsUncertain": false
+      }
+    },
+    {
+      "conditions": [
+        "REQ-RESET-003-C01"
+      ],
+      "status": "pass",
+      "rows": [
+        {
+          "count": 0,
+          "value": "initial",
+          "old": "cancelled",
+          "queued": "cancelled",
+          "cleanup": {
+            "status": "complete",
+            "trace": [
+              {
+                "target": {
+                  "tabId": 1286344929
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344929,
+                  "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931,
+                  "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932,
+                  "sessionId": "09433E8D7E085B0E361069657D4484EF"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933,
+                  "sessionId": "11EA6CCFF2A094CEA1CC1CB4DD7B6469"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934,
+                  "sessionId": "46E7784443E195D48957084778A75486"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              }
+            ],
+            "warnings": [],
+            "inFlight": [
+              {
+                "requestId": "99cf186f-ad3b-486c-a37f-4f7ee2271c7c",
+                "hostMethod": "locator.click",
+                "method": "Page.getFrameTree",
+                "tabId": 1286344934,
+                "generation": 7
+              }
+            ],
+            "inFlightEffectsUncertain": true
+          }
+        },
+        {
+          "count": 0,
+          "value": "initial",
+          "old": "cancelled",
+          "queued": "cancelled",
+          "cleanup": {
+            "status": "complete",
+            "trace": [
+              {
+                "target": {
+                  "tabId": 1286344929
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344929,
+                  "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931,
+                  "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932,
+                  "sessionId": "09433E8D7E085B0E361069657D4484EF"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933,
+                  "sessionId": "11EA6CCFF2A094CEA1CC1CB4DD7B6469"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934,
+                  "sessionId": "46E7784443E195D48957084778A75486"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935,
+                  "sessionId": "452074F8882778FBCF9589E904A6BC72"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              }
+            ],
+            "warnings": [],
+            "inFlight": [],
+            "inFlightEffectsUncertain": false
+          }
+        }
+      ]
+    },
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-003-C01"
+      ],
+      "status": "pass",
+      "subordinate": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "error": {
+          "code": "JS_ERROR",
+          "guestName": "Error",
+          "message": "WAIT_TIMEOUT: page.waitForFunction"
+        },
+        "runtimeReset": false,
+        "metrics": {
+          "durationMs": 121.60000038146973,
+          "outputChars": 0,
+          "outputBytes": 0,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "rows": [
+        {
+          "expectedCode": "TIMEOUT",
+          "error": {
+            "code": "TIMEOUT",
+            "guestName": "InternalError",
+            "message": "interrupted"
+          },
+          "cleanup": {
+            "status": "complete",
+            "trace": [
+              {
+                "target": {
+                  "tabId": 1286344929
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344929,
+                  "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931,
+                  "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932,
+                  "sessionId": "09433E8D7E085B0E361069657D4484EF"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933,
+                  "sessionId": "11EA6CCFF2A094CEA1CC1CB4DD7B6469"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934,
+                  "sessionId": "46E7784443E195D48957084778A75486"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935,
+                  "sessionId": "452074F8882778FBCF9589E904A6BC72"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936,
+                  "sessionId": "23D54F68418BD7EAC7D404C6CE0E49D5"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936
+                },
+                "method": "Input.dispatchKeyEvent",
+                "kind": "key",
+                "key": "Control",
+                "status": "released"
+              }
+            ],
+            "warnings": [],
+            "inFlight": [],
+            "inFlightEffectsUncertain": false
+          },
+          "held": "해제됨",
+          "generations": [
+            9,
+            10
+          ],
+          "passed": true
+        },
+        {
+          "expectedCode": "TIMEOUT",
+          "error": {
+            "code": "TIMEOUT",
+            "message": "Execution timed out; runtime was reset"
+          },
+          "cleanup": {
+            "status": "complete",
+            "trace": [
+              {
+                "target": {
+                  "tabId": 1286344929
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344929,
+                  "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931,
+                  "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932,
+                  "sessionId": "09433E8D7E085B0E361069657D4484EF"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933,
+                  "sessionId": "11EA6CCFF2A094CEA1CC1CB4DD7B6469"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934,
+                  "sessionId": "46E7784443E195D48957084778A75486"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935,
+                  "sessionId": "452074F8882778FBCF9589E904A6BC72"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936,
+                  "sessionId": "23D54F68418BD7EAC7D404C6CE0E49D5"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936
+                },
+                "method": "Input.dispatchKeyEvent",
+                "kind": "key",
+                "key": "Control",
+                "status": "released"
+              }
+            ],
+            "warnings": [],
+            "inFlight": [],
+            "inFlightEffectsUncertain": false
+          },
+          "held": "해제됨",
+          "generations": [
+            10,
+            11
+          ],
+          "passed": true
+        },
+        {
+          "expectedCode": "RESOURCE_LIMIT",
+          "error": {
+            "code": "RESOURCE_LIMIT",
+            "reason": "stack",
+            "message": "Maximum call stack size exceeded"
+          },
+          "cleanup": {
+            "status": "complete",
+            "trace": [
+              {
+                "target": {
+                  "tabId": 1286344929
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344929,
+                  "sessionId": "C54B20A9FDE16D8A20BCFAADF52D90D7"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344931,
+                  "sessionId": "815818FF9D65AA37DA5B8E56674A5575"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344932,
+                  "sessionId": "09433E8D7E085B0E361069657D4484EF"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344933,
+                  "sessionId": "11EA6CCFF2A094CEA1CC1CB4DD7B6469"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344934,
+                  "sessionId": "46E7784443E195D48957084778A75486"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344935,
+                  "sessionId": "452074F8882778FBCF9589E904A6BC72"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936,
+                  "sessionId": "23D54F68418BD7EAC7D404C6CE0E49D5"
+                },
+                "method": "Runtime.terminateExecution",
+                "status": "completed"
+              },
+              {
+                "target": {
+                  "tabId": 1286344936
+                },
+                "method": "Input.dispatchKeyEvent",
+                "kind": "key",
+                "key": "Control",
+                "status": "released"
+              }
+            ],
+            "warnings": [],
+            "inFlight": [],
+            "inFlightEffectsUncertain": false
+          },
+          "held": "해제됨",
+          "generations": [
+            11,
+            12
+          ],
+          "passed": true
+        }
+      ]
+    },
+    {
+      "conditions": [
+        "REQ-RESET-002-C02",
+        "REQ-RESET-003-C01"
+      ],
+      "status": "pass",
+      "reset": {
+        "content": [],
+        "execution": "extension-worker",
+        "reset": true,
+        "runtimeReset": true,
+        "rollback": false,
+        "cleanup": {
+          "status": "partial",
+          "trace": [
+            {
+              "target": {
+                "tabId": 1286344937
+              },
+              "method": "Input.dispatchKeyEvent",
+              "kind": "key",
+              "key": "Control",
+              "status": "failed",
+              "message": "No tab with given id 1286344937."
+            }
+          ],
+          "warnings": [
+            {
+              "target": {
+                "tabId": 1286344937
+              },
+              "method": "Input.dispatchKeyEvent",
+              "kind": "key",
+              "key": "Control",
+              "status": "failed",
+              "message": "No tab with given id 1286344937."
+            }
+          ],
+          "inFlight": [],
+          "inFlightEffectsUncertain": false
+        }
+      },
+      "recovered": "undefined current"
+    }
+  ]
+}

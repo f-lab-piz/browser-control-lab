@@ -81,3 +81,12 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 - 이미지 한 장4MiB/요청 합8MiB/최대4장이다. 기준은 base64 글자 수가 아니라 디코딩한 PNG **파일 bytes**다. 텍스트와 별도로 계산하며 텍스트·이미지 합256블록이다.
 - 유효 이미지가 출력 한도를 넘으면 전체 이미지를 생략하고 실행을 계속한다. 부분 base64를 반환하지 않는다. 결과의 truncated와 truncationReasons(text-bytes/blocks/image-bytes/image-total-bytes/image-count 등)를 확인한다. 이후 로그는 남은 텍스트/블록 예산 안에서 보존된다.
 - 전체 결과 JSON은16MiB UTF-8 이내이며 상관 ID가 든 전송 envelope는 별도다. 초과는 RESULT_LIMIT로 명시한다. metrics.outputBytes는 텍스트 UTF-8 bytes, imageBytes는 원본 이미지 파일 bytes다. 기존 outputChars는 호환용 bytes 카운터이며 글자 수가 아니다.
+
+
+## 초기화와 실제 입력 정리
+
+- 명시 reset과 실제 VM 재생성은 `runtimeReset:true`, `rollback:false`와 `cleanup`을 반환한다. 명시 reset은 접수 시 한 번만 새 generation으로 이동하고, 자동 실행 제한은 실패 결과를 종결할 때 한 번 이동한다. 이후 JS는 새 VM에서 시작한다. VM을 재생성하지 않는 하위 wait timeout은 기존 binding·generation을 유지한다.
+- `cleanup.status`는 `complete` 또는 `partial`이다. `trace`의 명령·target·released/completed/failed와 `warnings`를 확인한다. complete는 정리 명령의 성공 응답을 확인했다는 의미다. 실패한 release 기록은 삭제하지 않고 다음 reset에서 다시 시도할 수 있다. 사라진 target의 실패도 경고로 남으며 새 VM 실행을 막지는 않는다.
+- 본인이 도구로 누른 key/button과 drag/filechooser interception을 실제 해제한다. 다른 세션의 탭·입력은 건드리지 않는다. reset 전에 보낸 명령의 완료 여부가 불확실하면 `cleanup.inFlight`와 `inFlightEffectsUncertain`으로 구분한다. 이미 발생한 웹 효과의 취소를 뜻하지 않는다.
+- 이전 generation의 대기/조회·미전송 명령은 후속 브라우저 작업을 전송하거나 새 요청을 완료할 수 없다. 새 호출은 최근 초기화 정리 장벽 뒤에 시작하며 이벤트 대기와 이를 발생시키는 입력은 동시에 실행할 수 있다.
+- 탭과 소유권·현재 페이지 값·server asset/완료 다운로드는 보존한다. 기존 ref는 해당 문서가 그대로일 때 다시 사용할 수 있다. JS 핸들 변수는 사라지므로 탭 ID로 다시 attach한다. 이미 진행 중인 페이지 JS나 입력의 외부 효과를 되돌리거나 브라우저의 모든 변경을 원자적으로 취소한다고 보장하지 않는다.

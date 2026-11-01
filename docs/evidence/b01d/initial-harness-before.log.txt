@@ -1,0 +1,76 @@
+✖ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (32634.232458ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1591.728041ms)
+✖ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (290.151833ms)
+✖ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3200.771166ms)
+✖ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (518.387459ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38798.091875
+
+✖ failing tests:
+
+test at tests/reset-runtime.test.mjs:19:1
+✖ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (32634.232458ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"430d7eac-fd94-4824-93f4-4ec971f7b187","sessionId":"d82b723a-fb2c-4c10-b71a-91527dd673c7","generation":1,"status":"failed","createdAt":1793551927699,"startedAt":1793551927699,"result":{"error":{"code":"TIMEOUT","message":"Execution timed out; runtime was reset"},"runtimeReset":true},"finishedAt":1793551958207}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at done (file://<repo>/tests/reset-runtime.test.mjs:6:23)
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:23:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/reset-runtime.test.mjs:46:1
+✖ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (290.151833ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert(events.some(e=>e.type==='keyup'&&e.key==='Control'&&e.trusted))
+
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:53:3)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/reset-runtime.test.mjs:60:1
+✖ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3200.771166ms)
+  AssertionError [ERR_ASSERTION]: [{"count":1,"value":"initial","old":"cancelled","queued":"cancelled"},{"count":1,"value":"initial","old":"cancelled","queued":"cancelled"}]
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:74:2)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/reset-runtime.test.mjs:77:1
+✖ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (518.387459ms)
+  TypeError: Cannot read properties of undefined (reading 'status')
+      at TestContext.<anonymous> (file://<repo>/tests/reset-runtime.test.mjs:84:163)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)

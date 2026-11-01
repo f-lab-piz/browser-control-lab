@@ -1,0 +1,37 @@
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs tests/reset-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1460.311042ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (136.167792ms)
+✔ B01B only explicit console and display output is returned (426.935917ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (628.17125ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1164.275667ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (321.288958ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (363.729042ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (137.98675ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6047.792542ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (980.5095ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (481.981875ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4174.528916ms)
+✔ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (277.023625ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1848.482666ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (685.757583ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (272.505292ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (429.953ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (1001.652542ms)
+✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1903.163583ms)
+✔ B01D reset releases held input in a real cross-site child target (434.208291ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1803.838333ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (305.919958ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3179.450875ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1400.339ms)
+✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (287.211792ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32806.050541

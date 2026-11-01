@@ -11,7 +11,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
  const extensionToken=crypto.randomBytes(32).toString('hex'),assets=new Map();
  const sessions=new Map(),requests=new Map(),queue=[];let poll=null,lastSeen=0;
  const json=(res,value,status=200)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(value))};
- const finish=(req,result)=>{if(!req||['completed','failed','cancelled'].includes(req.status))return;clearTimeout(req.timer);req.status=result.error?'failed':'completed';req.result=result;req.finishedAt=Date.now();const session=sessions.get(req.sessionId);if(result.runtimeReset&&session&&req.generation===session.generation)session.generation++;pump()};
+ const finish=(req,result)=>{if(!req||['completed','failed','cancelled'].includes(req.status))return;clearTimeout(req.timer);req.status=result.error?'failed':'completed';req.result=result;req.finishedAt=Date.now();const session=sessions.get(req.sessionId);if(result.runtimeReset&&req.operation!=='reset'&&session&&req.generation===session.generation)session.generation++;pump()};
  const dispatch=()=>{if(!poll)return;const index=queue.findIndex(c=>c.operation==='reset'||!queue.some(q=>q.sessionId===c.sessionId&&q!==c&&q.sequence<c.sequence)&&!Array.from(requests.values()).some(r=>r.sessionId===c.sessionId&&r.status==='running'));if(index<0)return;const command=queue.splice(index,1)[0],waiting=poll;poll=null;clearTimeout(waiting.timer);const req=requests.get(command.requestId);if(req){req.status='running';req.startedAt=Date.now()}json(waiting.res,command)};
  function pump(){dispatch()}
  const server=http.createServer(async(req,res)=>{
@@ -76,7 +76,7 @@ export async function startBridge({port=0,token=crypto.randomBytes(32).toString(
      for(const r of requests.values())if(r.sessionId===session.id&&['queued','running'].includes(r.status)){clearTimeout(r.timer);r.status='cancelled';r.result={error:{code:'RESET',message:'Session reset; previous browser side effects may have occurred'}}}
     }
     const command={requestId,sessionId:session.id,generation:session.generation,sequence:++session.sequence,operation,code:body.code,timeoutMs};
-    const request={requestId,payloadDigest,sessionId:session.id,generation:session.generation,status:'queued',createdAt:Date.now(),timer:setTimeout(()=>{const index=queue.findIndex(c=>c.requestId===requestId);if(index>=0)queue.splice(index,1);finish(request,{error:{code:'TRANSPORT_TIMEOUT',message:'Extension did not complete the request; inspect before retrying'},runtimeReset:false})},timeoutMs+20000)};
+    const request={requestId,payloadDigest,operation,sessionId:session.id,generation:session.generation,status:'queued',createdAt:Date.now(),timer:setTimeout(()=>{const index=queue.findIndex(c=>c.requestId===requestId);if(index>=0)queue.splice(index,1);finish(request,{error:{code:'TRANSPORT_TIMEOUT',message:'Extension did not complete the request; inspect before retrying'},runtimeReset:false})},timeoutMs+20000)};
     requests.set(requestId,request);operation==='reset'?queue.unshift(command):queue.push(command);pump();return json(res,{requestId,generation:session.generation,status:request.status},202);
    }
    json(res,{error:'Not found'},404);

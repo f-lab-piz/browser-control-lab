@@ -171,3 +171,19 @@ guest 예외 이름과 메시지는 원인 증명이 아니므로 자동 VM 재�
 정확64f2de4의 세 번째 독립 리뷰는 stored DEFLATE LEN/NLEN 불일치73bytes PNG를 실제 이미지로 수용하는 P2 한 건으로 CHANGES_REQUESTED였다. Node zlib·Chromium은 거절하지만 기존 fflate 스트림이 허용했다. 범용 pako3.0.3(MIT AND Zlib)의 zlib-only Inflate로 교체하고 고정64KiB 출력 조각/256bytes 입력·예산 callback·종결/입력 전체 소비 검사를 적용했다. 자체 행 검사·원본 bytes·64MiB 한도는 유지한다.
 
 추가8개 압축 사례 중 정상 stored/fixed/dynamic과 손상 LEN/NLEN·truncated/header/Adler/metadata를 실제 확장에서 구분했다. 동일 최종9개 테스트 base1/9→9/9, 직전64 output만 복원8/9→9/9다. 정상 native 지원과 일부 손상 checksum/ancillary 관대함을 분리하고 첫 native 기대값 오류를 성공으로 숨기지 않는다. 최종 전체/창 모드 검증과 새 head 독립 리뷰 결과는 round4 manifest를 따른다. B01C 이후 단계의 완료를 선언하지 않는다.
+
+
+## 2026-11-02 · PR14 독립 PASS·머지와 B01D 착수
+
+정확41ff8e3의 Sol6.1 high 독립 4차 리뷰가 PASS였다. 전체85 PASS/외부1 SKIP·headed18 PASS·문서/계획 및 검사기6개 회귀, 별도 실제 PNG11개/console1개와 증거 hash/Before 차이를 독립 확인했다. P0~P3 없음·정확 원격base/head·CLEAN/MERGEABLE 확인 후 PR14를05b0e6a로 squash merge하고 이슈13을 닫았다. 보고서·독립 probe를 보존한다. B01C6부모/7조건만 완료다.
+
+B01D 이슈15·feat/15-reset-lifecycle에서4부모/6조건을 시작한다. 기존 session.reset은 내부 keys/buttons만 지우며 실제 release하지 않고, worker 종료 뒤 background hostcall continuation도 남는다. 먼저 페이지/input event 추적·늦은 대상 fixture와 최종 동일 Before를 준비한다. 실제 해제 실패 경고와 이미 전송된 효과의 불확실성을 숨기지 않고 탭/페이지/asset/완료 파일은 유지한다. 다중 사용자 계정 서비스는 범위 밖이다. B01D 조건은 아직 미검증이다.
+
+
+## 2026-11-02 · B01D 세대 차단·실제 입력 해제와 최종 국소 검증
+
+이슈15의4부모/6조건을7개 실제 제품 테스트로 판정했다. offscreen/background/worker에 고정 provenance와 세대 장벽을 연결하고 CDP·직접 탭/다운로드/file broker 후속 전송을 차단한다. 실제 down/interception의 release 응답·실패 trace/warnings/inFlight 불확실을 반환한다. 명시 reset의 중복 generation 증가, await 이후 실제 stack pump 오류의 늦은 종결, 거절된 attach의 소유 예약 회귀를 찾아 고정했다. 탭·A·ref·다른 세션77·asset/완료 파일은 보존된다.
+
+같은 최종 소스 입력에서 기존 소유6파일만05b0e6a로 복원한 Before1 PASS/6 FAIL→After7 PASS다. 기존 보존 자체는 Before에서도 됐으며 명시 metadata·실제 release·늦은 클릭 차단·해제 오류 보고가 개선된 점을 구분한다. 최종 전체100 PASS/외부1 SKIP·창 모드25 PASS, 기록 소스 일치·정확 baseline6파일 hash 확인. native oracle의 rAF/relay 관찰 실패를 raw로 남기고 child focused press+DOM polling으로 원래 trusted keyup 조건을 유지했다.3회 native oracle와 최종 전체 통과는 원인 보편적 해결 주장과 구분한다.
+
+Codex의 own fixture reset은 변수undefined·동일 tab7·A 보존을 LIVE 전사로 기록하고 임시 탭만 닫았다. Aside는 fresh guide/repl guide/help DOC에서 explicit reset 방법을 확인하지 못했으며 지원 불가로 해석하거나 API를 발명하지 않았다. 경쟁 actual release/late hostcall 실측은 없다고 명시한다. 새 정확 head 독립 Sol6.1 high 리뷰와 gate·머지가 남아 있으므로 slice는in-progress다. 전체 Goal의 B01E~B06와 최종 현황/전체 회귀는 계속 남는다.

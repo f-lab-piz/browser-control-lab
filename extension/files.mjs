@@ -1,7 +1,7 @@
 const connectionPromise=fetch(chrome.runtime.getURL('connection.json')).then(r=>r.json());
-async function broker(path,data){const connection=await connectionPromise;const response=await fetch(connection.url+path,{method:data===undefined?'GET':'POST',headers:{authorization:'Bearer '+connection.token,'Content-Type':'application/json'},...(data===undefined?{}:{body:JSON.stringify(data)})});if(!response.ok)throw Error('File bridge: '+await response.text());return response}
+async function broker(path,data,scope){const connection=await connectionPromise;const dispatch=()=>fetch(connection.url+path,{method:data===undefined?'GET':'POST',headers:{authorization:'Bearer '+connection.token,'Content-Type':'application/json'},...(data===undefined?{}:{body:JSON.stringify(data)})});const response=await (scope?scope.call(dispatch,{method:data===undefined?'file.read':'file.export'}):dispatch());if(!response.ok)throw Error('File bridge: '+await response.text());return response}
 function base64(bytes){let s='';for(let offset=0;offset<bytes.length;offset+=8192)s+=String.fromCharCode(...bytes.subarray(offset,offset+8192));return btoa(s)}
-export async function uploadFiles({state,args,sessionId,context,send,dom,drop=false}){
+export async function uploadFiles({state,args,sessionId,context,send,dom,scope,drop=false}){
  const frame=await context(state,args.frameId);let objectId,localObjectId;
  try{
   const target=args.backendNodeId?await send(state,'DOM.resolveNode',{backendNodeId:args.backendNodeId,executionContextId:frame.contextId},frame.sessionId):await send(state,'Runtime.callFunctionOn',{functionDeclaration:'function(q){return globalThis.__bcl.resolve(q)}',executionContextId:frame.contextId,arguments:[{value:args.query}],returnByValue:false},frame.sessionId);
@@ -15,7 +15,7 @@ export async function uploadFiles({state,args,sessionId,context,send,dom,drop=fa
   if(localObjectId){const imported=await send(state,'Runtime.callFunctionOn',{objectId,functionDeclaration:'function(id,input){const files=Array.from(input.files);if(files.some(f=>f.size>32*1024*1024))throw Error("File exceeds 32 MiB");this.__bclTransfers.get(id).files=files}',arguments:[{value:transferId},{objectId:localObjectId}],returnByValue:true},frame.sessionId);if(imported.exceptionDetails)throw Error(imported.exceptionDetails.exception?.description||imported.exceptionDetails.text)}
    for(const file of remote){
     let bytes,name=file.name||'file.bin',mimeType=file.mimeType||'application/octet-stream';
-    if(file.fileId){const response=await broker('/v1/assets/'+encodeURIComponent(file.fileId)+'?sessionId='+encodeURIComponent(sessionId));bytes=new Uint8Array(await response.arrayBuffer());name=decodeURIComponent(response.headers.get('X-File-Name')||name);mimeType=response.headers.get('Content-Type')||mimeType}
+    if(file.fileId){const response=await broker('/v1/assets/'+encodeURIComponent(file.fileId)+'?sessionId='+encodeURIComponent(sessionId),undefined,scope);bytes=new Uint8Array(await response.arrayBuffer());name=decodeURIComponent(response.headers.get('X-File-Name')||name);mimeType=response.headers.get('Content-Type')||mimeType}
     else if(file.bytes)bytes=new Uint8Array(file.bytes);else if(file.base64)bytes=Uint8Array.from(atob(file.base64),c=>c.charCodeAt(0));else throw Error('Expected fileId, bytes or base64 file content');
     if(bytes.length>32*1024*1024)throw Error('File exceeds 32 MiB');
     for(let offset=0;offset<bytes.length;offset+=196608){const chunk=base64(bytes.subarray(offset,offset+196608));await send(state,'Runtime.callFunctionOn',{functionDeclaration:'function(id,b64){this.__bclTransfers.get(id).chunks.push(Uint8Array.from(atob(b64),c=>c.charCodeAt(0)))}',objectId,arguments:[{value:transferId},{value:chunk}],returnByValue:true},frame.sessionId)}
@@ -26,11 +26,11 @@ export async function uploadFiles({state,args,sessionId,context,send,dom,drop=fa
   }finally{await send(state,'Runtime.callFunctionOn',{functionDeclaration:'function(id){this.__bclTransfers?.delete(id)}',objectId,arguments:[{value:transferId}],returnByValue:true},frame.sessionId).catch(()=>{})}
  }finally{if(localObjectId){await send(state,'Runtime.callFunctionOn',{objectId:localObjectId,functionDeclaration:'function(){this.remove()}'},frame.sessionId).catch(()=>{});await send(state,'Runtime.releaseObject',{objectId:localObjectId},frame.sessionId).catch(()=>{})}if(objectId)await send(state,'Runtime.releaseObject',{objectId},frame.sessionId).catch(()=>{})}
 }
-export async function saveDownload({id,sessionId,downloads,roots,destination}){
+export async function saveDownload({id,sessionId,downloads,roots,destination,scope}){
  const info=downloads.get(id);if(!info||info.sessionId!==sessionId)throw Error('DOWNLOAD_NOT_OWNED_BY_SESSION');
  const deadline=Date.now()+30000;let item;
- while(Date.now()<deadline){[item]=await chrome.downloads.search({id:Number(id)});if(item?.state==='interrupted')throw Error('DOWNLOAD_INTERRUPTED: '+item.error);if(item?.state==='complete')break;await new Promise(r=>setTimeout(r,50))}
+ while(Date.now()<deadline){[item]=await scope.call(()=>chrome.downloads.search({id:Number(id)}),{method:'downloads.search'});if(item?.state==='interrupted')throw Error('DOWNLOAD_INTERRUPTED: '+item.error);if(item?.state==='complete')break;await new Promise(r=>setTimeout(r,50))}
  if(item?.state!=='complete')throw Error('DOWNLOAD_TIMEOUT');
  if(destination?.target==='local'||destination==='local')return {name:item.filename.split(/[\\/]/).at(-1),path:item.filename,size:item.fileSize,state:item.state};
- const response=await broker('/v1/extension/download',{sessionId,path:item.filename,mimeType:item.mime});return response.json();
+ const response=await broker('/v1/extension/download',{sessionId,path:item.filename,mimeType:item.mime},scope);return response.json();
 }
