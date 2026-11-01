@@ -18,13 +18,13 @@
 
 ### REQ-LOCATOR-WAITFOR-001
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: attached는매칭존재, detached는0개, hidden은0개또는숨김, visible은단일visible로정의한다.
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: CSS 기반 대기는 attached=1개 이상이면 true, detached=0개면 true, hidden=0개 또는 단일 hidden이면 true, visible=단일 visible이면 true다. attached/detached 외 hidden/visible에서 N>1은 즉시 다중 오류다. 아직 만족하지 않는 유효 상태는 timeout까지 기다린다. ref는 어떤 state에서도 detach/document 교체 시 stale 오류다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.state?:visible/hidden/attached/detached(기본visible),timeout?:positive ms(기본5000).
-- When: `locator.waitFor`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: attached는매칭존재, detached는0개, hidden은0개또는숨김, visible은단일visible로정의한다.
+- Given: CSS가 0개/1 visible/1 hidden/2개인 네 상태와 연결 ref 및 detach ref를 준비한다.
+- When: 각 조건에 attached/detached/hidden/visible를 모두 적용한다.
+- Then: 표의 성공 조합은 true, 미충족 조합은 timeout, hidden/visible N>1은 다중 오류, ref detach는 stale이며 scroll은 변하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-WAITFOR-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ### REQ-LOCATOR-WAITFOR-002

@@ -29,8 +29,8 @@
 
 ### REQ-LOCATOR-PRESS-002
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: focus 불가·stale·비활성 대상은 다른 요소 입력 없이 실패한다. 키 입력 단계는 keyboard.press와 같은 modifier 소유 정책을 따르며, focus 이전 실패는 기존 명시 down 상태를 임의 해제하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; 예:Enter,Control+A. 반례 조건: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.

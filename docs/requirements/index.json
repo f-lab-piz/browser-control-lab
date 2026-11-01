@@ -160,7 +160,10 @@
         "REQ-SCOPE-SNAPSHOT-004",
         "REQ-SCOPE-SNAPSHOT-005",
         "REQ-SCOPE-SNAPSHOT-006",
-        "REQ-SCOPE-SNAPSHOT-007"
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010"
       ],
       "common": [
         "runtime",
@@ -237,7 +240,8 @@
       "path": "internal/scope.getByText.md",
       "requirements": [
         "REQ-SCOPE-GETBYTEXT-001",
-        "REQ-SCOPE-GETBYTEXT-002"
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
       ],
       "common": [
         "runtime",
@@ -860,7 +864,8 @@
         "REQ-C-RUNTIME-003",
         "REQ-C-RUNTIME-004",
         "REQ-C-RUNTIME-005",
-        "REQ-C-RUNTIME-006"
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007"
       ]
     },
     {
@@ -906,7 +911,9 @@
         "REQ-C-FILESEVENTS-002",
         "REQ-C-FILESEVENTS-003",
         "REQ-C-FILESEVENTS-004",
-        "REQ-C-FILESEVENTS-005"
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
       ]
     }
   ]

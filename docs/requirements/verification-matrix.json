@@ -1776,9 +1776,9 @@
         "id": "PLAN-SCOPE-GETBYTEXT-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false).",
-        "when": "`scope.getByText`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "검색용 본문 텍스트를 사용하며 화면 출력용 이름 길이 제한 때문에 뒤쪽 목표를 잃지 않는다.",
+        "given": "<div><button><span>확인</span></button></div>, 직접 텍스트와 자식 텍스트가 섞인 div, 두 형제 버튼, open slot을 준비한다.",
+        "when": "exact/부분일치/정규식으로 getByText를 만들고 count·evaluateAll identity·click을 확인한다.",
+        "then": "첫 DOM은 span만 남으며 click은 button으로 버블링한다. 두 형제의 동일 텍스트는 둘 다 남아 직접 click이 다중 오류다. slot 경계에서도 조상 중복이 없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -3516,9 +3516,9 @@
         "id": "PLAN-KEYBOARD-PRESS-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; Enter/Control+A 등의 조합.",
-        "when": "`keyboard.press`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "정의된 순서로 조합키 down/주키/up을 보내고 마지막에 release한다.",
+        "given": "Control을 명시 down한 상태와 아무 modifier가 없는 상태를 각각 준비한다.",
+        "when": "press('Control+A')→press('C')→up('Control')를 실행하고 중간 오류도 주입한다.",
+        "then": "첫 경우 Control이 C까지 유지되고 마지막 up에만 풀린다. 새로 누른 modifier만 정리되며 오류 후 잔류 상태/정리 실패를 확인할 수 있다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -3632,9 +3632,9 @@
         "id": "PLAN-LOCATOR-WAITFOR-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.state?:visible/hidden/attached/detached(기본visible),timeout?:positive ms(기본5000).",
-        "when": "`locator.waitFor`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "attached는매칭존재, detached는0개, hidden은0개또는숨김, visible은단일visible로정의한다.",
+        "given": "CSS가 0개/1 visible/1 hidden/2개인 네 상태와 연결 ref 및 detach ref를 준비한다.",
+        "when": "각 조건에 attached/detached/hidden/visible를 모두 적용한다.",
+        "then": "표의 성공 조합은 true, 미충족 조합은 timeout, hidden/visible N>1은 다중 오류, ref detach는 stale이며 scroll은 변하지 않는다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4096,9 +4096,9 @@
         "id": "PLAN-DOWNLOAD-CANCEL-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기Download핸들;인자없음.",
-        "when": "`download.cancel`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "실제진행중다운로드를중단하고최종interrupted상태를확인할수있다.",
+        "given": "충분히 느린 전송을 시작해 download 핸들을 받는다.",
+        "when": "cancel 후 반환값과 독립 브라우저 전송 상태를 판독한다.",
+        "then": "실제 중단일 때만 status=cancelled/state=interrupted이고 저장 완료 파일 삭제는 하지 않는다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4125,9 +4125,9 @@
         "id": "PLAN-DOWNLOAD-CANCEL-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기Download핸들;인자없음. 반례 조건: 이미완료/취소된download는상태를구분하고다른세션다운로드를취소하지않는다.",
-        "when": "`download.cancel`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "이미완료/취소된download는상태를구분하고다른세션다운로드를취소하지않는다.",
+        "given": "완료 직전·이미 완료·이미 취소·네트워크 interrupted·타세션 다운로드를 준비한다.",
+        "when": "cancel을 반복 호출한다.",
+        "then": "반환 상태는 실제 최종 상태와 같고 다른 세션과 완료 파일에는 부작용이 없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4415,9 +4415,9 @@
         "id": "PLAN-PAGE-LOGS-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.since?:epoch ms, level?:지원level. 반례 조건: 버퍼범위·유실·미수집기간을표시하며다른페이지/세션의민감로그를섞지않는다.",
-        "when": "`page.logs`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "버퍼범위·유실·미수집기간을표시하며다른페이지/세션의민감로그를섞지않는다.",
+        "given": "attach 이전 로그, 1002개 이후 로그, 빈 로그와 같은시각의 로그를 준비한다.",
+        "when": "since 경계와 level 필터로 page.logs를 조회한다.",
+        "then": "entries는 at>since와 level 정확 일치, collection은 필터 전 수집 보관 범위와 dropped를 표시하며 미수집을 무로그로 오인하지 않는다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4531,9 +4531,9 @@
         "id": "PLAN-DISPLAY-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: image:{type:'image',mimeType:'image/png',data:base64};지원타입은guide안내. 반례 조건: 잘못된MIME/base64·초과이미지는명시오류/생략이며다른요청이미지를재사용하지않는다.",
-        "when": "`display`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "잘못된MIME/base64·초과이미지는명시오류/생략이며다른요청이미지를재사용하지않는다.",
+        "given": "지원 PNG와 잘못된 MIME/base64 및 이미지 한도 초과 데이터를 준비한다.",
+        "when": "before 로그→display→after 로그를 실행한다.",
+        "then": "형식 오류는 명시 JS/입력 오류다. 한도 초과는 이미지 생략·truncated/이유와 이후 유효 로그가 남고 다음 요청은 독립이다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4890,9 +4890,9 @@
         "id": "PLAN-PAGE-WAITFOREVENT-003",
         "grade": "product-e2e",
         "planned": true,
-        "given": "즉시popup/chooser/dialog를만드는버튼",
-        "when": "waitpromise선언직후click",
-        "then": "반복실행에서도timeout누락없이정확한event를받으며발생전등록을trace로검증한다.",
+        "given": "등록 ack를 지연시키고 즉시 popup/chooser/dialog를 발생시키는 fixture를 준비한다.",
+        "when": "var pending=page.waitForEvent('dialog'); await button.click(); var d=await pending;를 임의 sleep 없이 반복한다.",
+        "then": "trace가 register-ready→action→event 순서이며 이벤트 누락/늦은 waiter 누수/중복 소비가 없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4903,6 +4903,167 @@
       },
       "sources": [
         "USR",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-003",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-003",
+      "api": "scope.getByText",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYTEXT-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "빈 문자열, /확인/와 exact:true, /확인/만을 준비한다.",
+        "when": "getByText를 호출하고 count로 평가한다.",
+        "then": "앞 두 입력은 명시 입력 오류, 정규식 단독은 정규식 의미대로 동작하며 입력 부작용은 없다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-008",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-008",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-008",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "생략 옵션과 0/음수/소수/NaN/각 상하한, 한글/이모지 페이지를 준비한다.",
+        "when": "기본 및 옵션별 snapshot을 호출한다.",
+        "then": "기본 전체/숨김 제외 계약, 허용 경계 수용, 잘못된 값의 사전 거절과 scroll 불변을 확인한다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-009",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-009",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-009",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "큰 frame 메타데이터와 긴 한국어/이모지 행, 세 예산을 서로 다르게 설정한다.",
+        "when": "snapshot을 직렬화하고 길이·바이트·노드 및 query 결과를 독립 판독한다.",
+        "then": "모든 상한을 동시에 지키며 작은 예산을 유일 우선순위로 삼지 않는다. metadata 초과는 거짓 완전 응답 대신 오류다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-010",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-010",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-010",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "정적 페이지에서 받은 cursor/snapshotId와 root·예산·문서가 바뀐 후속 요청을 준비한다.",
+        "when": "같은 cursor 순회, 다른 옵션/세션·since 병용 및 불완전 since를 요청한다.",
+        "then": "정적 합집합과 순서가 유지된다. 잘못된 조합은 입력/정합성 오류, 비교 불가능 since는 resetRequired이며 가짜 삭제가 없다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-006",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-006",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-006",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "정상 바이너리/0-byte와 [256,-1], Uint8Array, 중복 source, 공백/URL-safe base64를 준비한다.",
+        "when": "setFiles/chooser.setFiles/drop의 공통 입력으로 전달한다.",
+        "then": "정상 바이트 hash 일치, 잘못된 형식은 강제 변환 없이 전달 전 오류며 기존 선택/대상은 불변이다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-007",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-007",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-007",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "Unicode·중복명·경로분리자·빈basename·single/multiple과 혼합 source를 준비한다.",
+        "when": "파일 선택/삭제 또는 drop한다.",
+        "then": "기본/안전이름·MIME·원본바이트를 보존하며 invalid 이름/개수는 전달 전 거절한다. 중복명은 허용하고 서로 다른 파일 바이트를 합치지 않는다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-007",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-007",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-007",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "텍스트/고엔트로피 PNG를 각 한도 직전·정확히·초과로 준비하고 혼합 출력한다.",
+        "when": "before 로그→display→after 로그 및 블록 경계를 실행한다.",
+        "then": "정상 이미지는 원바이트의 완전 블록이다. 한도 초과 이미지는 통째로 생략하고 truncated/이유를 출력 envelope에 남기며 다른 유효 로그는 예산 내 보존한다. 결과가 한도를 넘으면 전송 실패로 구분한다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
         "DESIGN"
       ]
     }

@@ -4,7 +4,7 @@
 
 이 문서는 **목표 계약**이다. 기존 코드·카탈로그의 기본 PASS와 이 계약의 충족을 구분한다. 현재 모든 요구의 새 검증 결과는 미검증이며, 실제 구현/테스트의 차이는 개발 backlog로 넘긴다. 제품 구현은 이번 작업에 포함하지 않는다.
 
-읽는 순서: [범위/불일치](inventory.md) → [색인](index.json)의 개별 명세 → [공통 계약](common/selection.md) → [근거](sources.md) → [검증 매핑](verification-matrix.json) → [개발 backlog](backlog.md). 외부 3개·내부 64개 명세가 있으며 공통 5개 문서는 API 수에 더하지 않는다.
+읽는 순서: [범위/불일치](inventory.md) → [색인](index.json)의 개별 명세 → [공통 계약](common/selection.md) → [근거](sources.md) → [검증 매핑](verification-matrix.json) → [복합 검증 설계](test-design.md) → [개발 backlog](backlog.md). 외부 3개·내부 64개 명세가 있으며 공통 5개 문서는 API 수에 더하지 않는다.
 
 ## 명세와 상태 해석
 
@@ -28,3 +28,7 @@
 새 컨텍스트의 Sol 6.1 high가 세 번 순차 검토한다. 기본 계약 → Codex/Aside 비교·조합 → 반례·검증 가능성이다. 각 회차의 원문 보고서와 모든 제안의 수용/기각/보류 이유를 reviews에 남긴 뒤 다음 회차를 진행한다. 비교가 필요하다는 이유로 경쟁 도구의 미측정 수치나 옵션 지원을 만들어내지 않는다. 코드/테스트 실행과 문서 검증을 구분한다.
 
 수용된 요구마다 구체적 검증계획이 연결되고 필수 충돌을 정리하면 개발 전 단계 완료다. 이는 제품 개발·배포 완료나 PR 승인을 뜻하지 않는다.
+
+## 반환 형식 이행
+
+이 v1은 다음 개발의 목표다. page.logs는 배열→entries/collection envelope, download.cancel은 boolean→최종 상태 객체, snapshot cursor는 숫자→불투명 문자열로 변경하는 계약을 포함한다. 현재 제품이 이 형식을 제공한다고 가이드하지 않는다. 구현 PR에서 버전/guide/호출 예제·기존 테스트 이행을 한 단위로 수행하고, 다른 형식을 조용히 혼용하지 않는다.

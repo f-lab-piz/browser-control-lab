@@ -18,13 +18,13 @@
 
 ### REQ-KEYBOARD-PRESS-001
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: 정의된 순서로 조합키 down/주키/up을 보내고 마지막에 release한다.
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: press는 호출 전 이미 유지되던 modifier를 보존한다. 자신이 새로 누른 modifier/주키만 정해진 순서로 해제하며 중도 오류에도 같은 정리를 시도한다. 명시 down의 소유 상태는 대응 up 또는 reset/close가 끝낸다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; Enter/Control+A 등의 조합.
-- When: `keyboard.press`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 정의된 순서로 조합키 down/주키/up을 보내고 마지막에 release한다.
+- Given: Control을 명시 down한 상태와 아무 modifier가 없는 상태를 각각 준비한다.
+- When: press('Control+A')→press('C')→up('Control')를 실행하고 중간 오류도 주입한다.
+- Then: 첫 경우 Control이 C까지 유지되고 마지막 up에만 풀린다. 새로 누른 modifier만 정리되며 오류 후 잔류 상태/정리 실패를 확인할 수 있다.
 - 검증 계획: `PLAN-KEYBOARD-PRESS-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ### REQ-KEYBOARD-PRESS-002

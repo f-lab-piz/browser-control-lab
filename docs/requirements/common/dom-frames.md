@@ -5,7 +5,7 @@
 ### REQ-C-DOMFRAMES-001
 
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: 기본 관찰 범위는 현재 연결 DOM의 화면 밖 영역까지다. 관찰은 scroll·click·추가 데이터 로딩을 발생시키지 않는다.
+- 규범: snapshot/selector/상태 조회 등 관찰 API의 기본 범위는 현재 연결 DOM의 화면 밖 영역까지다. 이들 관찰은 scroll·click·추가 데이터 로딩을 발생시키지 않는다. evaluate/evaluateAll/waitForFunction의 사용자 함수는 명시적으로 효과를 낼 수 있으며 무조작 관찰 보장의 예외다.
 - 근거: USR, SKILL. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: offscreen과가상화미로드row가함께있는메일iframe

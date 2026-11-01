@@ -77,8 +77,8 @@
 
 ### REQ-SCOPE-SNAPSHOT-006
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: since diff는 같은 비교범위/옵션/문서·보관중snapshot에만 비교한다. 부분 출력끼리의 차이는 전체 DOM 삭제로 표시하지 않는다.
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: since diff는 같은 비교범위/모든 옵션/문서·보관중 snapshot이고 이전·현재 출력 모두 완전할 때만 비교한다. 하나라도 다르면 resetRequired다. 부분 출력 차이를 전체 DOM 삭제로 표시하지 않는다.
 - 근거: DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: 예산이다른두snapshot와문서교체
@@ -96,3 +96,36 @@
 - When: root/interactive/showHidden조합
 - Then: 관련없는frame오류없음·숨김과생략구분·다음조회경로존재다.
 - 검증 계획: `PLAN-SCOPE-SNAPSHOT-007`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+### REQ-SCOPE-SNAPSHOT-008
+
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: 기본값은 root=선택 Scope의 body, interactive=false, showHidden=false, query 없음, maxDepth=무제한, maxChars=16000 UTF-16 code unit, maxNodes=500, maxOutputBytes=48000 UTF-8 bytes, cursor/since 없음이다. maxChars는1000..100000 정수, maxNodes는1..10000 정수, maxOutputBytes는4096..60000 정수, maxDepth는0이상 정수(0=root만)다. 명시한 잘못된 값은 clamp/무시하지 않고 사전 입력 오류다.
+- 근거: DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
+- 충족 상태: **미검증**. 구현/테스트는 다음 개발 범위다.
+- Given: 생략 옵션과 0/음수/소수/NaN/각 상하한, 한글/이모지 페이지를 준비한다.
+- When: 기본 및 옵션별 snapshot을 호출한다.
+- Then: 기본 전체/숨김 제외 계약, 허용 경계 수용, 잘못된 값의 사전 거절과 scroll 불변을 확인한다.
+- 검증 계획: `PLAN-SCOPE-SNAPSHOT-008`; [매핑](../verification-matrix.json).
+
+### REQ-SCOPE-SNAPSHOT-009
+
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: text는 maxChars, refs/행은 maxNodes, 전체 JSON envelope는 maxOutputBytes를 동시에 만족한다. UTF-16 surrogate pair를 잘라 잘못된 문자열을 만들지 않는다. 메타데이터/생략 표지만으로 bytes 상한을 넘으면 SNAPSHOT_METADATA_BUDGET 오류다. query는 정규화된 이름의 대소문자 무시 부분 문자열이며 RegExp는 미지원이다.
+- 근거: DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
+- 충족 상태: **미검증**. 구현/테스트는 다음 개발 범위다.
+- Given: 큰 frame 메타데이터와 긴 한국어/이모지 행, 세 예산을 서로 다르게 설정한다.
+- When: snapshot을 직렬화하고 길이·바이트·노드 및 query 결과를 독립 판독한다.
+- Then: 모든 상한을 동시에 지키며 작은 예산을 유일 우선순위로 삼지 않는다. metadata 초과는 거짓 완전 응답 대신 오류다.
+- 검증 계획: `PLAN-SCOPE-SNAPSHOT-009`; [매핑](../verification-matrix.json).
+
+### REQ-SCOPE-SNAPSHOT-010
+
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: cursor는 불투명 문자열 토큰으로 발급된 session/snapshot/document·query·root·interactive/showHidden/maxDepth와 예산 옵션에 결합한다. 후속 요청은 cursor만 또는 동일 옵션만 허용한다. cursor와 since는 배타적이다. since는 동일 문서/범위/옵션이고 두 출력이 완전할 때만 diff를 제공하고 그 외에는 resetRequired다. root는 유일 CSS/ref이며 접근 불가 body는 명시 오류다.
+- 근거: DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
+- 충족 상태: **미검증**. 구현/테스트는 다음 개발 범위다.
+- Given: 정적 페이지에서 받은 cursor/snapshotId와 root·예산·문서가 바뀐 후속 요청을 준비한다.
+- When: 같은 cursor 순회, 다른 옵션/세션·since 병용 및 불완전 since를 요청한다.
+- Then: 정적 합집합과 순서가 유지된다. 잘못된 조합은 입력/정합성 오류, 비교 불가능 since는 resetRequired이며 가짜 삭제가 없다.
+- 검증 계획: `PLAN-SCOPE-SNAPSHOT-010`; [매핑](../verification-matrix.json).

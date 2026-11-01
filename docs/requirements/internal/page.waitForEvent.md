@@ -44,11 +44,11 @@
 
 ### REQ-PAGE-WAITFOREVENT-003
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: waiter 등록 완료와 조작 사이의 경합을 닫는 사용법을 guide에 제시한다. 비동기 등록 중 즉시 발생 이벤트를 놓칠 수 있으면 ready/arming 계약을 정한다.
+- 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
+- 규범: 같은 세션 JS에서 waitForEvent 호출 다음에 발행한 host action은 해당 waiter의 브라우저 등록/chooser arming 완료 뒤에만 실행한다. event Promise 자체는 이벤트 때 resolve하며 별도 공개 ready API는 추가하지 않는다. timeout/reset 시 미완료 등록도 취소해 늦은 waiter를 남기지 않는다.
 - 근거: USR, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 즉시popup/chooser/dialog를만드는버튼
-- When: waitpromise선언직후click
-- Then: 반복실행에서도timeout누락없이정확한event를받으며발생전등록을trace로검증한다.
+- Given: 등록 ack를 지연시키고 즉시 popup/chooser/dialog를 발생시키는 fixture를 준비한다.
+- When: var pending=page.waitForEvent('dialog'); await button.click(); var d=await pending;를 임의 sleep 없이 반복한다.
+- Then: trace가 register-ready→action→event 순서이며 이벤트 누락/늦은 waiter 누수/중복 소비가 없다.
 - 검증 계획: `PLAN-PAGE-WAITFOREVENT-003`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
