@@ -1,0 +1,21 @@
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1592.156166ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (136.74175ms)
+✔ B01B only explicit console and display output is returned (241.3525ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (613.48875ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1269.759166ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (713.6325ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (307.236417ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (444.524958ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (1057.73ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7565.218792

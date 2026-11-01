@@ -8,7 +8,7 @@
       "title": "요청 식별·인증·도구 안내",
       "dependsOn": [],
       "goal": "동일 ID payload 충돌·중복 효과·접수 입력 검증·인증/소유·guide",
-      "status": "in-progress",
+      "status": "pass",
       "requirements": [
         "REQ-C-RUNTIME-001",
         "REQ-C-RUNTIME-005",
@@ -18,9 +18,13 @@
         "REQ-JS-002"
       ],
       "evidence": [
-        "docs/implementation/b01a.md"
+        "docs/implementation/b01a.md",
+        "docs/reviews/pr10-b01a-round3.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/9"
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/9",
+      "review": "docs/reviews/pr10-b01a-round3.md",
+      "mergeCommit": "367a5d2d7f8b3015828354e709a404a9cf456f3c",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/10"
     },
     {
       "id": "B01B",
@@ -29,13 +33,16 @@
         "B01A"
       ],
       "goal": "lexical 재선언 사전 거절·const·var·await·세션 격리",
-      "status": "not-started",
+      "status": "in-progress",
       "requirements": [
         "REQ-C-RUNTIME-002",
         "REQ-JS-001",
         "REQ-JS-003"
       ],
-      "evidence": []
+      "evidence": [
+        "docs/implementation/b01b.md"
+      ],
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/11"
     },
     {
       "id": "B01C",
@@ -491,8 +498,10 @@
       "conditions": [
         "REQ-C-RUNTIME-002-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md"
+      ]
     },
     {
       "requirement": "REQ-C-RUNTIME-003",
@@ -845,8 +854,10 @@
         "REQ-JS-001-C01",
         "REQ-JS-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md"
+      ]
     },
     {
       "requirement": "REQ-JS-002",
@@ -2439,8 +2450,10 @@
       "conditions": [
         "REQ-JS-003-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md"
+      ]
     },
     {
       "requirement": "REQ-RESET-003",
@@ -2663,15 +2676,19 @@
       "id": "REQ-JS-001-C01",
       "requirement": "REQ-JS-001",
       "slice": "B01B",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md#req-js-001-c01"
+      ]
     },
     {
       "id": "REQ-JS-001-C02",
       "requirement": "REQ-JS-001",
       "slice": "B01B",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md#req-js-001-c02"
+      ]
     },
     {
       "id": "REQ-JS-002-C01",
@@ -2695,8 +2712,10 @@
       "id": "REQ-JS-003-C01",
       "requirement": "REQ-JS-003",
       "slice": "B01B",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md#req-js-003-c01"
+      ]
     },
     {
       "id": "REQ-BROWSER-LIST-001-C01",
@@ -4153,8 +4172,10 @@
       "id": "REQ-C-RUNTIME-002-C01",
       "requirement": "REQ-C-RUNTIME-002",
       "slice": "B01B",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01b.md#req-c-runtime-002-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-003-C01",

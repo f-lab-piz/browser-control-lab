@@ -2,6 +2,9 @@ import {newQuickJSWASMModuleFromVariant,newVariant} from 'quickjs-emscripten-cor
 import variant from '@jitl/quickjs-wasmfile-release-sync';
 import {transformCode} from './transform.mjs';
 import {installBrowserApi} from './api-source.mjs';
+// QuickJS public flags: GLOBAL(0) | STRICT(1<<3) | ASYNC(1<<7).
+// https://github.com/bellard/quickjs/blob/master/quickjs.h
+const GLOBAL_ASYNC_STRICT=(1<<3)|(1<<7);
 const binary=await fetch(new URL('quickjs.wasm',import.meta.url)).then(r=>r.arrayBuffer());
 const engine=await newQuickJSWASMModuleFromVariant(newVariant(variant,{wasmBinary:binary}));
 const runtime=engine.newRuntime();runtime.setMemoryLimit(64*1024*1024);runtime.setMaxStackSize(512*1024);
@@ -30,7 +33,7 @@ onmessage=async({data})=>{
  const started=performance.now();current={content:[],bytes:0,truncated:false,deadline:Date.now()+data.timeoutMs};let handle,timer;
  try{
   // 임의 식별자를 C filename으로 넘기지 않고 짧은 진단용 이름을 쓴다.
-  const code=transformCode(data.code),result=vm.evalCode(code,'request-'+(++nextRequest)+'.mjs',{type:'module'});
+  const code=transformCode(data.code),result=vm.evalCode(code,'request-'+(++nextRequest)+'.js',GLOBAL_ASYNC_STRICT);
   if(result.error){const error=vm.dump(result.error);result.error.dispose();throw Error(error?.message||JSON.stringify(error))}
   handle=result.value;timer=setInterval(pump,5);pump();
   const settled=await vm.resolvePromise(handle);

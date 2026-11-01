@@ -1,0 +1,101 @@
+{
+  "at": "2026-11-01T15:26:41.994602+00:00",
+  "baseline": "367a5d2d7f8b3015828354e709a404a9cf456f3c",
+  "comparison": "final tests, fixture, observer, package0.2.0, docs and all recorded sources held constant except baseline runtime-worker/transform; not a full historical environment replay",
+  "baselineDependency": "astring1.9.0 installed only in ignored scratch for historical transform; final dependency removed",
+  "sourceDifferences": [
+    "extension/runtime-worker.mjs",
+    "extension/transform.mjs"
+  ],
+  "before": {
+    "pass": 2,
+    "fail": 2
+  },
+  "after": {
+    "pass": 4,
+    "fail": 0
+  },
+  "regression": {
+    "pass": 68,
+    "fail": 0,
+    "skip": 1,
+    "command": "npm run test:all"
+  },
+  "headed": {
+    "pass": 9,
+    "fail": 0,
+    "command": "HEADED=1 npm run test:requirements"
+  },
+  "conditions": [
+    "REQ-C-RUNTIME-002-C01",
+    "REQ-JS-001-C01",
+    "REQ-JS-001-C02",
+    "REQ-JS-003-C01"
+  ],
+  "artifacts": [
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b01b/before/final-comparison/b01b/results.json",
+      "sourceSha256": "1fb498d0ce06c9fe4802b601847c8d5b962515d0c92fdac26bf1a7f089e403ce",
+      "sha256": "5bcd1261e6e6e31d1d9c212889d5a388361b27a9371d64e368c621ffddbcd760",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b01b/before/final-comparison.log",
+      "sourceSha256": "d9a12ba66db260343183c90304e42835f1dfbb398dbb174d1bf12bd9f2d060c0",
+      "sha256": "e50a160f05a4dd23d8c990c821cf3c3202fd90a0cbf5b400a9d5ac84b83eaefa",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b01b/after/final-separated/b01b/results.json",
+      "sourceSha256": "416d96033f4296b0747cc7bb22e6ec80f79af6d7a75233284c772d137c14af59",
+      "sha256": "fcfeb7aae22f25ea3f0685a3aca7c80e970423cf2b1ef40a1325da85fc7a2706",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-b01a-regression.json",
+      "source": "output/goal-b01b/after/final-separated/b01a/results.json",
+      "sourceSha256": "8a3dd3f666296128906912520952b9adacdc18a20eafa226d94efd7da22843ae",
+      "sha256": "31a6a74e329fb2a609dda61be92042e40782c1022cb0ca81b14f372b1bf6a394",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b01b/after/all-separated.log",
+      "sourceSha256": "f0f3e22dcfa34bd22c414edb11d82e99cbba04959755084b69d7100888f15141",
+      "sha256": "f0f3e22dcfa34bd22c414edb11d82e99cbba04959755084b69d7100888f15141",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-headed-b01b.json",
+      "source": "output/goal-b01b/after/headed/b01b/results.json",
+      "sourceSha256": "a3551e3a3c20907532c1d61899214615da6f6767b1ec5006f82b0c9e9706009e",
+      "sha256": "1302a6c619ec2f061e1cafcacf37c6219c657d6679e61217d8d3d0e35816aba2",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-headed-b01a.json",
+      "source": "output/goal-b01b/after/headed/b01a/results.json",
+      "sourceSha256": "9cdb1c64af0e5a693bb163542ecedd49b6c496da18ff0dee51f3687f432a82b6",
+      "sha256": "51f04f49f5e4aa0f9c1be653136d7aaa089c35aa2490d61b70d2e6bb31750328",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b01b/after/headed.log",
+      "sourceSha256": "8d87e5503290d56f495b17739e3f5119106b4f02ccf66c4c3a6f6b5156ef17ab",
+      "sha256": "8d87e5503290d56f495b17739e3f5119106b4f02ccf66c4c3a6f6b5156ef17ab",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "observer-frame-list-failure.log.txt",
+      "source": "output/goal-b01b/after/all.log",
+      "sourceSha256": "ac7d2cff6d7288e27d29542174ac064913956e8d768b510cc7ea2192397f3827",
+      "sha256": "fcce8efcd5c8ddd857e3d6638e466112f5e96014ca4c321f3e4ecb567ba7c696",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    }
+  ],
+  "gate": "exact-head independent review pending"
+}

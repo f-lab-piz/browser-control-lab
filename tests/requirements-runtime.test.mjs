@@ -90,8 +90,9 @@ test('nested cross-site frames initialize across repeated mail and booking navig
    h.evidence.push({conditions:[],case:'nested-frame-failure',status:'fail',index,scenario,frames,targets,productFrames,result:r});
   }
   completed(r);assert.match(text(r),new RegExp(expectedHost.replace('.', '\\.')));
-  const page=h.context.pages().find(p=>p.url()===url);assert(page);assert(page.frames().some(f=>f.url().includes(expectedHost)));
-  cycles.push({scenario,expectedHost,actual:text(r)});
+  const page=h.context.pages().find(p=>p.url()===url);assert(page);const selected=await h.client.js(a.id,'console.log(targetFrame.id)');completed(selected);
+  const observed=await h.inspectFrame(text(selected),selector);assert.equal(observed.frame.id,text(selected));assert.match(observed.document.url,new RegExp(expectedHost.replace('.', '\\.')));assert.equal(observed.document.found,true);
+  cycles.push({scenario,expectedHost,actual:text(r),observed});
  }
  h.evidence.push({conditions:[],case:'nested-frame-initialization-regression',status:'pass',cycles,meaning:'B03A 전체 요구 PASS가 아닌 기존 프레임 회귀'});
 });

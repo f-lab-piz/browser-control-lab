@@ -34,8 +34,8 @@ test('JavaScript executes inside extension WASM and explicit output is collected
  const r=await client.js(session.id,'console.log(6 * 7);');assert.equal(r.status,'completed',JSON.stringify(r));assert.equal(text(r),'42');assert.equal(r.result.execution,'extension-worker/QuickJS-WASM');evidence.push({case:'wasm-execution',passed:true,result:r});
 });
 test('bindings persist and top-level await invokes browser APIs asynchronously',async()=>{
- let r=await client.js(session.id,'const saved = 40; const {x,y}={x:1,y:2}; console.log(saved+x+y);');assert.equal(text(r),'43',JSON.stringify(r));
- r=await client.js(session.id,'const saved = saved + 2; const profiles = await browser.list(); console.log(saved, profiles[0].id);');assert.equal(text(r),'42 current',JSON.stringify(r));evidence.push({case:'persistent-async',passed:true});
+ let r=await client.js(session.id,'let saved = 40; const {x,y}={x:1,y:2}; console.log(saved+x+y);');assert.equal(text(r),'43',JSON.stringify(r));
+ r=await client.js(session.id,'saved = saved + 2; const profiles = await browser.list(); console.log(saved, profiles[0].id);');assert.equal(text(r),'42 current',JSON.stringify(r));evidence.push({case:'persistent-async',passed:true});
 });
 test('sessions do not share JavaScript variables',async()=>{
  const other=await client.session();const r=await client.js(other.id,'console.log(typeof saved)');assert.equal(text(r),'undefined',JSON.stringify(r));evidence.push({case:'session-isolation',passed:true});

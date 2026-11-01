@@ -103,3 +103,26 @@ npm test13 PASS, npm run test:requirements4 PASS. 변경 후 전체 회귀와 �
 같은 최종 테스트·fixture·관찰 연결의 Before는 base3c87245 제품 네 파일만 다르다. 전송0/6→6/6, 실제 제품2/5→5/5다. 전체 test:all은64 PASS/외부1 SKIP/FAIL0이고 창을 띄운 요구사항 제품 테스트도5 PASS다. 문서/계획 구조·각 검사기 음성 회귀3개도 통과했다. 실패한 관찰자·다운로드 설정 대조를 삭제하지 않고 manifest에 포함했다. 기존9조건의 evidence는 새 실행으로 연결하되 B03A 전체 요구를 pass로 올리지 않는다.
 
 정확 head로 Sol6.1 high 독립 재리뷰를 요청하며 PR10은 아직 미머지다. 본 검증만으로 리뷰 gate를 대신하지 않는다.
+
+
+## 2026-11-02 · B01A 머지와 B01B 선언 실행 구현
+
+### Plan Input
+
+PR10 정확 head bcaa0ba의 Sol6.1 high 독립 PASS. 전체64 PASS/외부1 SKIP, headed5 PASS와 동일 Before/A-B를 직접 재현했다. P0/P1/P2 없음, P3 문서 개수1건을 이슈11로 연결했다. 승인된 gate를 확인해 PR10을367a5d2로 squash merge했고 이슈9는 닫혔다. 이슈11·feat/11-runtime-bindings에서 B01B를 진행한다.
+
+### Implemented
+
+범용 QuickJS의 global async/strict 평가로 선언 종류·지속 lexical 환경을 보존한다. AST는 import/export를 검증하고 선언을 바꾸지 않는다. generator astring 의존성을 제거하고 package/확장0.2.0·사용 예제를 이행했다. B01B3 REQ/4조건에 실제 확장 테스트4개를 연결했다.
+
+### Test Coverage
+
+두 세션의 같은 변수/출력/서로 다른 자기 탭, 실제 host await·구조분해·closure/class, var 무초기값 재선언, 표현식과 명시 텍스트/실제 이미지, lexical 충돌5개와 선행 실제 클릭·변수 증가0·세대/기존 값/타세션 보존을 판정한다. 대상 탭을 준비에서 activate하고 import/export/구문 오류도 기존 상태 유지로 확인한다. 최종 Before는 같은 테스트/fixture/helper/version에서 worker/transform만367a5d2로 두었다. 이전 generator는 scratch에만 공급했다.
+
+### Test Command and Result
+
+동일 제품 Before2 PASS/2 FAIL→After4 PASS. 전체68 PASS/외부1 SKIP/FAIL0, headed 요구 제품9 PASS. 문서/계획 구조·각 검사기3개 회귀도 통과했다. 초기 비일시정지 Playwright의 프레임 목록 누락 실패를 보존하고 독립 CDP의 실제 target id/주소/DOM 읽기로 oracle을 보완했다. 제품 입력·selector·10초 제한을 완화하지 않았다. 두 요구 테스트의 결과 디렉터리를 이름별로 구분했다.
+
+### Decisions and Next Actions
+
+Codex/Aside의 공개 지속/명시 출력 계약과 미확인 세부 의미를 구분한다. 신규 경쟁 실측0이며 네이티브 VM 선택은 우리 구현 결정이다. B01B 전체 slice는 리뷰 전 in-progress이며3부모/4조건만 제품 pass다. PR 작성→정확 head Sol6.1 high 독립 리뷰→필요 수정/재리뷰→gate 충족 머지 후 B01C로 진행한다. NUL/예산·late hostcall·평가 직렬화는 이번 PASS에 포함하지 않는다.

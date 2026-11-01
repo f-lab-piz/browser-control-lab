@@ -10,10 +10,10 @@
 
 ## 실행 명령
 
-- `npm test`: 판정기/카탈로그/중계기 단위 검증. B01A 전송 경계6개를 추가해 현재13개다.
+- `npm test`: 판정기/카탈로그/중계기와 프레임 상태 단위 검증. 단계별 고정 개수와 실행 결과는 해당 구현 보고서·manifest를 따른다.
 - `npm run test:fixtures`: 실제 브라우저의 테스트 사이트 동작 검증 7개.
 - `npm run test:bootstrap`: 임시 개발 확장 로드 및 HTTP 왕복 실험 1개.
-- `npm run test:requirements`: 요구사항별 실제 HTTP→확장→QuickJS 검증. 현재 B01A4개 테스트/9개 상세조건, 결과는 output/requirements-runtime/의 run별 폴더에 저장한다. BCL_RUN_DIR로 명시 경로를 지정할 수 있다.
+- `npm run test:requirements`: 요구사항별 실제 HTTP→확장→QuickJS 검증. B01A 요구 조건9개에 연결된 테스트4개와 중첩 프레임 회귀1개를 포함하며, 후속 slice는 별도 테스트 파일에 추가한다. 결과는 output/requirements-runtime/의 run별 폴더에 저장한다. BCL_RUN_DIR로 명시 경로를 지정할 수 있다.
 - `npm run test:all`: 기본 단위·fixture·probe·제품 runtime·요구사항 회귀를 순서대로 실행. 새 경계 진단은 test:audit으로 별도 실행.
 
 임시 확장 bootstrap은 브라우저 API 조회만 수행하며, 구현되지 않은 제품 런타임/HTTP 계약을 통과한 것으로 표시하지 않는다. 보고서 grade를 `extension-transport-probe`로 구분한다.
@@ -80,3 +80,6 @@ TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계
 `tests/helpers/observed-chrome.mjs`는 별도 Chrome 프로필을 기동하고 Playwright의 공개 CDP transport로 독립 관찰한다. 관찰자가 보내는 Target.setAutoAttach의 waitForDebuggerOnStart만 false로 바꾼다. 제품 확장의 CDP/HTTP/QuickJS 명령이나 결과는 이 전송을 통과하지 않는다. 관찰자의 기본 focus/media/download override도 적용하지 않는다. 다운로드 위치는 테스트 전용 폴더로 명시 설정하며 설정 세션은 브라우저 정리까지 유지한다.
 
 배경: 동일 브라우저의 일반 연결 관찰자가 중첩 교차 사이트 문서를 about:blank에서 일시정지시킨 사례를 재현했다. 관찰자 없음/일반 연결/일시정지 없는 연결의 원시 대조를 B01A 증거에 보존한다. 이 변경을 제품 프레임 수정과 구분하며, 테스트의 10초 발견 제한·업무 selector·서버 PASS·파일 bytes 판정은 유지한다. 결과에는 관찰자가 바꾼 pause 설정 횟수를 기록한다. 관찰자가 사이트 업무를 대신 수행하거나 PASS를 주입해서는 안 된다.
+
+
+B01B부터 BCL_RUN_DIR 아래에 b01a/b01b 등 이름별 결과를 기록한다. 비일시정지 Playwright 관찰자도 초기 iframe 부착 이벤트를 놓칠 수 있어 프레임 회귀의 독립 oracle은 별도 CDP 연결의 실제 target 문서/주소/selector를 읽는다. 이 연결은 auto-attach·Runtime 시작 pause·입력·page-agent·업무 상태 변경을 하지 않는다. 제품이 선택한 id가 실제 target의 frame id/주소/DOM과 일치해야 통과한다.

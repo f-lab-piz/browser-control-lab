@@ -13,7 +13,7 @@ export async function observedChrome({profile,executablePath,headless=true,downl
   '--enable-unsafe-extension-debugging','--no-first-run','--no-default-browser-check',
   '--remote-debugging-port=0','--user-data-dir='+profile,...args,'about:blank'
  ],{stdio:['ignore','ignore','pipe']});
- let browser,socket,stderr='';const observer={pauseOverrides:0};
+ let browser,socket,endpoint,stderr='';const observer={pauseOverrides:0};
  child.stderr.on('data',chunk=>{if(stderr.length<4000)stderr+=chunk});
  const exited=new Promise(resolve=>{child.once('error',error=>resolve({error}));child.once('exit',()=>resolve({}))});
  let spawnError;child.once('error',error=>{spawnError=error});
@@ -35,7 +35,7 @@ export async function observedChrome({profile,executablePath,headless=true,downl
   }
   if(!port)throw Error('Test Chrome startup timeout: '+stderr);
   const info=await fetch('http://127.0.0.1:'+port+'/json/version').then(r=>r.json());
-  socket=new WebSocket(info.webSocketDebuggerUrl);
+  endpoint=info.webSocketDebuggerUrl;socket=new WebSocket(endpoint);
   await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=()=>reject(Error('Observer websocket failed'))});
   const transport={
    send(message){
@@ -53,6 +53,25 @@ export async function observedChrome({profile,executablePath,headless=true,downl
    // Keep the configuration session alive: Chrome resets its download override on detach.
    await configuration.send('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:downloadsPath,eventsEnabled:true});
   }
-  return {context:browser.contexts()[0],close,observer};
+  return {context:browser.contexts()[0],close,observer,inspectFrame:(id,selector)=>inspectFrame(endpoint,id,selector)};
  }catch(error){await close();throw error}
+}
+
+// Separate read-only oracle: no auto-attach, start pause, page-agent or product RPC.
+// A nonpausing Playwright observer may miss an early iframe attachment event.
+async function inspectFrame(endpoint,targetId,selector){
+ const connection=new WebSocket(endpoint);const pending=new Map();let next=0;
+ connection.onmessage=event=>{const message=JSON.parse(event.data),entry=pending.get(message.id);if(entry){pending.delete(message.id);clearTimeout(entry.timer);message.error?entry.reject(Error(message.error.message)):entry.resolve(message.result)}};
+ const closed=()=>{for(const entry of pending.values()){clearTimeout(entry.timer);entry.reject(Error('Independent observer closed'))}pending.clear()};
+ connection.onclose=closed;
+ function send(method,params={},sessionId){return new Promise((resolve,reject)=>{const id=++next,timer=setTimeout(()=>{pending.delete(id);reject(Error('Independent observation timeout: '+method))},5000);pending.set(id,{resolve,reject,timer});connection.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}))})}
+ try{
+  await new Promise((resolve,reject)=>{connection.onopen=resolve;connection.onerror=()=>reject(Error('Independent observation connection failed'))});
+  const {sessionId}=await send('Target.attachToTarget',{targetId,flatten:true});
+  const tree=await send('Page.getFrameTree',{},sessionId);
+  const expression='({url:location.href,ready:document.readyState,found:Boolean(document.querySelector('+JSON.stringify(selector)+'))})';
+  const result=await send('Runtime.evaluate',{expression,returnByValue:true},sessionId);
+  if(result.exceptionDetails)throw Error('Independent DOM observation failed: '+result.exceptionDetails.text);
+  return {frame:tree.frameTree.frame,document:result.result.value};
+ }finally{connection.close();closed()}
 }

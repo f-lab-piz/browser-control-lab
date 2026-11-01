@@ -1,6 +1,6 @@
 {
   "name": "browser-control-lab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,7 +12,7 @@
     "test:fixtures": "node --test tests/fixture-ui.test.mjs",
     "test:bootstrap": "node --test tests/extension-bootstrap.test.mjs",
     "test:all": "npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries",
-    "test:requirements": "node --test tests/requirements-runtime.test.mjs",
+    "test:requirements": "node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs",
     "bridge": "node bridge/cli.mjs",
     "test:runtime": "node --test tests/runtime-e2e.test.mjs",
     "test:audit": "node scripts/audit-tools.mjs",
@@ -27,7 +27,6 @@
   "dependencies": {
     "@jitl/quickjs-wasmfile-release-sync": "^0.32.0",
     "acorn": "^8.19.0",
-    "astring": "^1.9.0",
     "quickjs-emscripten-core": "^0.32.0"
   }
 }

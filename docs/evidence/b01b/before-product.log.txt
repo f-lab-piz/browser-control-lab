@@ -1,0 +1,55 @@
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (2023.990708ms)
+✖ B01B declarations, destructuring and closures persist across actual awaited host calls (69.026583ms)
+✔ B01B only explicit console and display output is returned (170.183417ms)
+✖ B01B lexical conflicts reject the entire request before variable or real click effects (133.5075ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2919.417667
+
+✖ failing tests:
+
+test at tests/bindings-runtime.test.mjs:26:1
+✖ B01B declarations, destructuring and closures persist across actual awaited host calls (69.026583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '2 [3,4] 42 kept  7 42'
+  - '2 [3,4] 42 kept 40 7 42'
+                     ^
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01b-before-source/tests/bindings-runtime.test.mjs:29:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '2 [3,4] 42 kept  7 42',
+    expected: '2 [3,4] 42 kept 40 7 42',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/bindings-runtime.test.mjs:43:1
+✖ B01B lexical conflicts reject the entire request before variable or real click effects (133.5075ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"48924fdc-243d-4906-bb4f-d018bd73e74e","sessionId":"fa48543d-4a15-420d-989f-0df9be8a340c","generation":1,"status":"completed","createdAt":1793546745105,"startedAt":1793546745105,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"truncated":false,"metrics":{"durationMs":95.69999980926514,"outputChars":0}},"finishedAt":1793546745203}
+  + actual - expected
+
+  + 'completed'
+  - 'failed'
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01b-before-source/tests/bindings-runtime.test.mjs:49:54)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'completed',
+    expected: 'failed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
