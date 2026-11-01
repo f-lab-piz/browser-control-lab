@@ -216,15 +216,15 @@
       "file": "aside-guide.txt",
       "source": ".local/goal-development/b01d-aside-guide.txt",
       "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
-      "sha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
-      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed; trailing blank lines collapsed to one final newline"
     },
     {
       "file": "aside-repl-guide.txt",
       "source": ".local/goal-development/b01d-aside-repl-guide.txt",
       "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
-      "sha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
-      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed; trailing blank lines collapsed to one final newline"
     },
     {
       "file": "aside-repl-help.txt",
@@ -233,5 +233,6 @@
       "sha256": "e5c07c9d7565a43d922882790b6c0b0ffb9664caf79837cbd1493fd1a672546f",
       "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     }
-  ]
+  ],
+  "captureFormatting": "CLI sourceSha256 remains original capture. Two canonical guide files end with one newline for repository whitespace checks; delivered SHA and normalization describe that formatting only."
 }
