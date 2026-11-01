@@ -1,0 +1,60 @@
+{
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "high",
+  "freshContextEachCycle": true,
+  "productBaseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "cycles": [
+    {
+      "cycle": 1,
+      "reviewedHead": "6561d2227c8c0bbc34f6dd902428d35e38a79dcd",
+      "agent": "/root/requirements_cycle1",
+      "apiCoverage": {
+        "external": 3,
+        "internal": 64,
+        "unreviewed": 0
+      },
+      "verdictAtReviewedHead": "CHANGES_REQUESTED_SPECIFICATION",
+      "candidates": 9,
+      "accepted": 9,
+      "rejected": 0,
+      "deferred": 0,
+      "review": "cycle-1/review.md",
+      "decisions": "cycle-1/decisions.md"
+    },
+    {
+      "cycle": 2,
+      "reviewedHead": "0a470f0541719ae987e3bc04825186204fa27f86",
+      "agent": "/root/requirements_cycle2",
+      "apiCoverage": {
+        "external": 3,
+        "internal": 64,
+        "unreviewed": 0
+      },
+      "verdictAtReviewedHead": "CHANGES_REQUESTED_SPECIFICATION",
+      "candidates": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "deferred": 0,
+      "review": "cycle-2/review.md",
+      "decisions": "cycle-2/decisions.md"
+    },
+    {
+      "cycle": 3,
+      "reviewedHead": "0e2e7fb28c75d2ae181a660556eb47f0ee4c853d",
+      "agent": "/root/requirements_cycle3",
+      "apiCoverage": {
+        "external": 3,
+        "internal": 64,
+        "unreviewed": 0
+      },
+      "verdictAtReviewedHead": "CHANGES_REQUESTED_SPECIFICATION",
+      "candidates": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "deferred": 0,
+      "review": "cycle-3/review.md",
+      "decisions": "cycle-3/decisions.md"
+    }
+  ],
+  "finalEditorialUpdate": "메인 에이전트가 세 회차 후보 전부를 판단하고 반영했다. 마지막 갱신본에 대한 별도 독립 승인/제품 PASS는 선언하지 않는다."
+}

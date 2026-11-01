@@ -56,12 +56,12 @@
 ### REQ-SCOPE-SNAPSHOT-004
 
 - 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
-- 규범: 키워드를 모르는 상태에서 프레임/landmark/heading/영역 요약과 현재 DOM의 탐색 가능한 scrollport 단서로 목표 영역을 좁힐 수 있어야 한다. 이름 없는 scrollport도 ref·frameId·scrollAxes(x/y/xy)·현재 축 위치 및 해당 축 진행 가능 여부를 제공한다. 스냅샷은 직접 스크롤/로딩하지 않으며 미로드 데이터 수를 추정해 사실로 표시하지 않는다. 요약의 생략은 후속 root/cursor 경로로 연결한다.
+- 규범: 키워드를 모르는 상태에서도 공개된 업무 조건으로 식별 가능한 목표를 프레임/landmark/heading/영역 요약과 현재 DOM의 scrollport 단서를 따라 찾을 수 있어야 한다. 정확한 제목/CSS/ref/프레임 ID를 사전 제공하지 않아도 관찰 가능한 업무 predicate가 있어야 한다. 이름 없는 scrollport의 ref·frameId·축·현재 위치/진행 단서를 제공하며 관찰이 직접 스크롤/로딩하지 않는다. 예산 생략과 미로드를 구분하고 후속 root/cursor로 연결한다.
 - 근거: USR, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 동일 iframe에 이름 없는 가로/세로 overflow 컨테이너 두 개와 가상화된 미로드 목표를 둔다. 실행자에게 CSS/목표명은 숨기고 업무 유형만 준다.
-- When: 첫 snapshot 단서→scrollport ref/box→mouse.move/wheel→새 snapshot→목표 제어를 수행한다.
-- Then: 첫 관찰의 scroll/request count는 불변이고, 명시 wheel 이후에만 선택한 컨테이너의 DOM/scroll이 바뀐다. 실제 서버 업무 판정과 발견 trace를 남기며 미로드 목표를 관찰했다고 주장하지 않는다.
+- Given: 두 scrollport와 decoy를 가진 seed fixture에 공개 과제(첨부 있는 미읽음 승인 요청 중 가장 최근 메일)를 제공한다. 정확한 제목/selector/ref/정답 ID는 숨기고 날짜·유형·읽음·첨부 조건은 UI로 관찰할 수 있게 한다.
+- When: 첫 구조 관찰→영역/ref→명시 wheel→새 관찰로 공개 predicate를 판독해 목표를 연다. 고정 예산 안에서 부재/동률/접근불가 변형도 평가한다.
+- Then: 유일 목표만 열고 읽음1회·decoy 변경0으로 서버가 판정한다. 미로드 목표는 사전 관찰로 주장하지 않는다. 완전 부재는 NOT_FOUND, 동률은 AMBIGUOUS, 접근/예산 미완료는 INCOMPLETE이며 임의 클릭하지 않는다. 업무 결과와 제품 API 오류는 구분한다.
 - 검증 계획: `PLAN-SCOPE-SNAPSHOT-004`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ### REQ-SCOPE-SNAPSHOT-005

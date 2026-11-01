@@ -26,13 +26,13 @@
 
 ### REQ-C-INPUT-003
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: 좌표 primitive는 main viewport CSS 좌표를 쓴다. finite입력·버튼/키값을 검증하고 reset/close/입력실패때 실제 눌림과 내부상태를 함께 정리한다.
+- 수준/판단: **MUST / 수용** (검토 3차 반영, 2026-11-01).
+- 규범: 좌표 primitive는 main viewport CSS 좌표와 유효한 버튼/키를 사용한다. 사전 검증/focus 실패는 기존 명시 down 상태를 보존한다. 입력 중 실패는 그 연산이 새로 획득한 키/버튼만 정리하고 이전 명시 down은 보존한다. reset/close는 해당 세션이 소유한 전체 실제 눌림 정리를 시도한다. 실제 release 실패를 내부 상태 초기화로 숨기지 않고 잔류/불확실을 보고한다. click/drag가 사용할 버튼이 이미 명시 down이면 사전 상태충돌로 거절하며 다른 down을 해제하지 않는다.
 - 근거: DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: down후오류또는reset
-- When: 새요청에서move/type
-- Then: 눌린버튼/수정키가잔류하지않으며정리실패는명시한다.
+- Given: 기존 Control/left button down이 있는/없는 상태와 focus 이전 실패·키/버튼 전송 중 실패·reset/close를 각각 준비한다.
+- When: press/click/drag의 각 실패 단계 및 별도 reset/close를 실행한다.
+- Then: 사전 실패는 새 입력0·기존 down 유지, 중도 실패는 새로 소유한 키/버튼만 release, reset/close는 전체 release 시도다. event trace와 후속 실제 입력으로 확인하고 이미 발생한 효과는 rollback하지 않는다.
 - 검증 계획: `PLAN-C-INPUT-003`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ### REQ-C-INPUT-004

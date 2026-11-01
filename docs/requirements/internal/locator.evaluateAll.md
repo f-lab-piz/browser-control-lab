@@ -18,13 +18,13 @@
 
 ### REQ-LOCATOR-EVALUATEALL-001
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: 현재선택결과전체를문서순서배열로전달하며0개도정상이다.
+- 수준/판단: **MUST / 수용** (검토 3차 반영, 2026-11-01).
+- 규범: evaluateAll은 현재 선택 결과 전체를 composed 문서 순서 배열로 첫 인자, arg를 둘째 인자로 전달하며 0개는 빈 배열로 한 번 호출한다. Promise settle과 JSON 결과·실패는 REQ-C-RUNTIME-008을 따른다. 단일 대상 strict는 적용하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:(elements,arg)=>value,arg?:JSON.
-- When: `locator.evaluateAll`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 현재선택결과전체를문서순서배열로전달하며0개도정상이다.
+- Given: 0/1/N 매칭과 명시 arg, 동기/async 콜백을 준비한다.
+- When: fn(elements,arg)에서 ID 배열과 arg, 지연 JSON 결과를 반환한다.
+- Then: 0개는 []이며 정상 JSON이 반환된다. undefined/순환/DOM node는 오류, async reject는 함수 오류이며 callback의 부분효과는 별도 판독한다.
 - 검증 계획: `PLAN-LOCATOR-EVALUATEALL-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ### REQ-LOCATOR-EVALUATEALL-002

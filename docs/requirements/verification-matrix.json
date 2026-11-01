@@ -492,9 +492,9 @@
         "id": "PLAN-C-INPUT-003",
         "grade": "product-e2e",
         "planned": true,
-        "given": "down후오류또는reset",
-        "when": "새요청에서move/type",
-        "then": "눌린버튼/수정키가잔류하지않으며정리실패는명시한다.",
+        "given": "기존 Control/left button down이 있는/없는 상태와 focus 이전 실패·키/버튼 전송 중 실패·reset/close를 각각 준비한다.",
+        "when": "press/click/drag의 각 실패 단계 및 별도 reset/close를 실행한다.",
+        "then": "사전 실패는 새 입력0·기존 down 유지, 중도 실패는 새로 소유한 키/버튼만 release, reset/close는 전체 release 시도다. event trace와 후속 실제 입력으로 확인하고 이미 발생한 효과는 rollback하지 않는다.",
         "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
         "existingCandidate": null,
         "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
@@ -2994,7 +2994,7 @@
         "id": "PLAN-LOCATOR-DRAGTO-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: target:같은 세션·지원 target의 단일 Locator.",
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: target:같은 세션·Page·frame document·CDP 입력 target의 단일 Locator. cross-target은 frame 이름이 아니라 debugger 입력 target 경계다.",
         "when": "`locator.dragTo`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
         "then": "draggable은 실제 dragstart/native DragData, 격자는 연속 pointer 경로로 조작한다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
@@ -3023,9 +3023,9 @@
         "id": "PLAN-LOCATOR-DRAGTO-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: target:같은 세션·지원 target의 단일 Locator. 반례 조건: cross-target drag·모호한 대상은 사전 거절하고 중도 오류에도 버튼·drag 상태를 정리하며 drop을 자동 재전송하지 않는다.",
-        "when": "`locator.dragTo`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "cross-target drag·모호한 대상은 사전 거절하고 중도 오류에도 버튼·drag 상태를 정리하며 drop을 자동 재전송하지 않는다.",
+        "given": "같은 document, 동일 process 다른 frame, OOPIF 다른 CDP target, 다른 Page의 source/destination과 중도 detach를 준비한다.",
+        "when": "dragTo를 호출하고 trace·drop 서버 카운터·잔류 버튼을 판독한다.",
+        "then": "지원 범위는 drop1회 업무 판정, 사전 거절 범위는 dragstart/drop0이다. 중도 실패는 이미발생이벤트와정리결과를표시하고다른대상으로재지정하지않는다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -3806,9 +3806,9 @@
         "id": "PLAN-PAGE-WAITFORFUNCTION-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:직렬화가능함수,arg?:JSON, options.timeout?:positive ms(기본10000).",
-        "when": "`page.waitForFunction`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "Page main frame에서 arg를 받아 truthy를 제한시간까지 기다리고 closure는지원하지않는다.",
+        "given": "async resolve(false), 이후 true/7로 바뀌는 predicate와 never-settle 함수를 준비한다.",
+        "when": "waitForFunction을 충분한/짧은 deadline에서 호출한다.",
+        "then": "Promise 자체로 즉시 성공하지 않는다. truthy JSON일 때만 반환, 계속false/never-settle은대기timeout 또는 더빠른바깥실행취소이며 중복polling은없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -3835,9 +3835,9 @@
         "id": "PLAN-PAGE-WAITFORFUNCTION-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:직렬화가능함수,arg?:JSON, options.timeout?:positive ms(기본10000). 반례 조건: 함수오류·navigation재시도·직렬화불가를구분하며 sideeffect있는함수는반복실행됨을안내한다.",
-        "when": "`page.waitForFunction`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "함수오류·navigation재시도·직렬화불가를구분하며 sideeffect있는함수는반복실행됨을안내한다.",
+        "given": "ReferenceError/reject, undefined, navigation 중 context 소멸, marker 변경 후 reject/never-settle을 준비한다.",
+        "when": "함수 대기와 timeout/reset을 수행하고 독립 marker/호출 횟수/late 출력을 판독한다.",
+        "then": "사용자 오류를 timeout까지 흡수하지 않는다. navigation만 재평가 가능하고 기존 효과는 남는다. 종료는 한 번이며 late 결과와 겹친 polling은 없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4270,9 +4270,9 @@
         "id": "PLAN-SCOPE-EVALUATE-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:function,arg?:JSON; Scope이면document, Locator.evaluate별칭이면단일element인자.",
-        "when": "`scope.evaluate`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "확장QuickJS closure와페이지context를분리하고명시arg로만데이터전달한다.",
+        "given": "main/child document 구분과 단일 Locator 및 명시 JSON arg를 준비한다.",
+        "when": "동기 및 async 함수에서 document identity/arg/element identity를 반환한다.",
+        "then": "Scope는fn(arg), 별칭은fn(element,arg), async resolve(7)는7이다. 명시null은null, undefined는직렬화오류이며 다른프레임에영향없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4299,7 +4299,7 @@
         "id": "PLAN-SCOPE-EVALUATE-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:function,arg?:JSON; Scope이면document, Locator.evaluate별칭이면단일element인자. 반례 조건: navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다.",
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:function,arg?:JSON(생략 시 null); Scope는 fn(arg), Locator.evaluate 별칭은 fn(element,arg). document는 선택 프레임의 전역 context다. 반례 조건: navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다.",
         "when": "`scope.evaluate`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
         "then": "navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
@@ -4328,9 +4328,9 @@
         "id": "PLAN-LOCATOR-EVALUATEALL-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:(elements,arg)=>value,arg?:JSON.",
-        "when": "`locator.evaluateAll`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "현재선택결과전체를문서순서배열로전달하며0개도정상이다.",
+        "given": "0/1/N 매칭과 명시 arg, 동기/async 콜백을 준비한다.",
+        "when": "fn(elements,arg)에서 ID 배열과 arg, 지연 JSON 결과를 반환한다.",
+        "then": "0개는 []이며 정상 JSON이 반환된다. undefined/순환/DOM node는 오류, async reject는 함수 오류이며 callback의 부분효과는 별도 판독한다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4588,9 +4588,9 @@
         "id": "PLAN-SCOPE-SNAPSHOT-004",
         "grade": "product-e2e",
         "planned": true,
-        "given": "동일 iframe에 이름 없는 가로/세로 overflow 컨테이너 두 개와 가상화된 미로드 목표를 둔다. 실행자에게 CSS/목표명은 숨기고 업무 유형만 준다.",
-        "when": "첫 snapshot 단서→scrollport ref/box→mouse.move/wheel→새 snapshot→목표 제어를 수행한다.",
-        "then": "첫 관찰의 scroll/request count는 불변이고, 명시 wheel 이후에만 선택한 컨테이너의 DOM/scroll이 바뀐다. 실제 서버 업무 판정과 발견 trace를 남기며 미로드 목표를 관찰했다고 주장하지 않는다.",
+        "given": "두 scrollport와 decoy를 가진 seed fixture에 공개 과제(첨부 있는 미읽음 승인 요청 중 가장 최근 메일)를 제공한다. 정확한 제목/selector/ref/정답 ID는 숨기고 날짜·유형·읽음·첨부 조건은 UI로 관찰할 수 있게 한다.",
+        "when": "첫 구조 관찰→영역/ref→명시 wheel→새 관찰로 공개 predicate를 판독해 목표를 연다. 고정 예산 안에서 부재/동률/접근불가 변형도 평가한다.",
+        "then": "유일 목표만 열고 읽음1회·decoy 변경0으로 서버가 판정한다. 미로드 목표는 사전 관찰로 주장하지 않는다. 완전 부재는 NOT_FOUND, 동률은 AMBIGUOUS, 접근/예산 미완료는 INCOMPLETE이며 임의 클릭하지 않는다. 업무 결과와 제품 API 오류는 구분한다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -5088,6 +5088,29 @@
       },
       "sources": [
         "USR",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-008",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-008",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-008",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "동기 JSON/null, async resolve(7)/resolve(false)/reject/never-settle, undefined·순환·DOM node와 효과 후 실패 함수를 격리 fixture에 둔다.",
+        "when": "각 평가·함수 대기에서 정상/오류/deadline/reset을 적용한다.",
+        "then": "평가는 JSON 결과만 반환하고 Promise 자체를 truthy로 판단하지 않는다. 부적합 결과/함수 오류가 구분되며 부분 효과와 late 결과 차단이 확인된다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
         "DESIGN"
       ]
     }

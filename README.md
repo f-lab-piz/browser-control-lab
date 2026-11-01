@@ -93,3 +93,7 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 ## 진단 수정 Before/After
 
 진단12건의 수정 결과는 [3개 툴 비교 보고서](docs/fixes-before-after.md)와 [증거 요약 JSON](docs/evidence/diagnostics-before-after.json)에 기록했습니다. 원래 진단은19/31→31/31, 추가 경계 포함36/36, 기존 회귀24/24가 통과했습니다. `AUDIT_EXTRA=1 npm run test:audit`으로 추가 검사를 실행합니다. 평가 전 보고서는 이력으로 보존합니다.
+
+## 요구사항과 다음 개발
+
+[개발 전 명세](docs/requirements/README.md)에 외부3·내부64 API와 공통 계약, 근거·검증계획·독립3회 판단을 정리했다. 이 문서는 다음 개발의 목표이며 현재 지원 기능은 기존 실행 안내/카탈로그를 확인한다. [개발 backlog](docs/requirements/backlog.md)는 요구 ID별 재현·검증·구현 순서를 정한다.

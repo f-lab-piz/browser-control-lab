@@ -78,3 +78,14 @@
 - When: before 로그→display→after 로그 및 블록 경계를 실행한다.
 - Then: 정상 이미지는 원바이트의 완전 블록이다. 한도 초과 이미지는 통째로 생략하고 truncated/이유를 출력 envelope에 남기며 다른 유효 로그는 예산 내 보존한다. 결과가 한도를 넘으면 전송 실패로 구분한다.
 - 검증 계획: `PLAN-C-RUNTIME-007`; [매핑](../verification-matrix.json).
+
+### REQ-C-RUNTIME-008
+
+- 수준/판단: **MUST / 수용** (검토 3차 반영, 2026-11-01).
+- 규범: 페이지 evaluate/evaluateAll/waitForFunction은 Promise/thenable 반환을 최종 settle까지 기다린 뒤 값을 판정한다. arg 생략/undefined는 null로 전달한다. 인자/최종 결과는 null/boolean/string/유한 number/이들로만 구성된 조밀한 Array·일반 Object의 JSON 값이어야 한다. 결과 undefined, NaN/Infinity, BigInt/Symbol/function/DOM node/순환/undefined 필드·희소배열은 직렬화 오류로 거절하며 성공 null로 바꾸지 않는다. async reject/throw는 함수 오류, timeout/reset은 실행/대기 취소로 구분한다. 이미 일어난 사용자 함수 효과는 남으며 단일 evaluate를 자동 재실행하지 않는다.
+- 근거: DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
+- 충족 상태: **미검증**. 구현/테스트는 다음 개발 범위다.
+- Given: 동기 JSON/null, async resolve(7)/resolve(false)/reject/never-settle, undefined·순환·DOM node와 효과 후 실패 함수를 격리 fixture에 둔다.
+- When: 각 평가·함수 대기에서 정상/오류/deadline/reset을 적용한다.
+- Then: 평가는 JSON 결과만 반환하고 Promise 자체를 truthy로 판단하지 않는다. 부적합 결과/함수 오류가 구분되며 부분 효과와 late 결과 차단이 확인된다.
+- 검증 계획: `PLAN-C-RUNTIME-008`; [매핑](../verification-matrix.json).

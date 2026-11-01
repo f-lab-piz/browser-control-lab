@@ -85,4 +85,3 @@ On the remote host, remote control needs to be enabled on Settings > Developers 
 With multiple browser profiles, the account's first profile (by profile index, then ID) is used by default. To select another, choose an ID from `aside host profiles` and pass `--profile <id>` to `exec`, `repl`, or `mcp`. `--account u1:<profile-id>` combines account and explicit profile selection; saved local profile IDs do not apply to remote hosts. Existing sessions keep their original profile.
 In MCP, call `browser_profiles`, then pass its `profileId` as `profile_id` to `repl` or a new `exec` session. REPL remembers the selected profile; changing it resets variables and attached tabs. Omit `profile_id` when continuing an `exec` session with `session_id`.
 > Use `aside host use` to remember the host as the default for future commands.
-

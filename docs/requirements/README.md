@@ -32,3 +32,9 @@
 ## 반환 형식 이행
 
 이 v1은 다음 개발의 목표다. page.logs는 배열→entries/collection envelope, download.cancel은 boolean→최종 상태 객체, snapshot cursor는 숫자→불투명 문자열로 변경하는 계약을 포함한다. 현재 제품이 이 형식을 제공한다고 가이드하지 않는다. 구현 PR에서 버전/guide/호출 예제·기존 테스트 이행을 한 단위로 수행하고, 다른 형식을 조용히 혼용하지 않는다.
+
+평가의 반환형도 이행 대상이다. evaluate/evaluateAll의 성공 undefined를 null로 바꾸지 않고 직렬화 오류로 구분한다. 페이지에 효과만 내는 함수도 성공하려면 명시적으로 return null을 사용한다. Promise settle 지원과 waitForFunction의 settled truthiness를 guide/테스트에 함께 반영한다.
+
+## 개발 전 단계 완료 기록
+
+개별 명세67개·공통5개·요구184개(MUST181/SHOULD3), [독립 검토3회](reviews/index.json)와 제안17개 판단을 완료했다. [최종 결과](completion.md), [요구별 개발 매핑](backlog-map.json), [문서 검사](evidence/document-validation.json)를 확인한다. 알려진 필수 충돌은 정리했으며 신규 규범의 실제 제품 충족은 전부 미검증이다. 개발은 시작하지 않았다. 마지막 메인 갱신을 독립 리뷰어가 재승인한 것으로 표현하지 않는다.

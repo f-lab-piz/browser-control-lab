@@ -8,7 +8,7 @@
 
 - 목적: Chrome호스트 로컬경로와 서버asset을 구분하며 실제 업로드된 바이트·이름·MIME을 검증한다.
 - 입력/기본값: files:FileInput 또는 FileInput[]; []는비우기. FileInput=로컬경로/{fileId}/{name,mimeType,bytes}/{name,mimeType,base64}.
-- 출력/성공 의미: Promise<Array<{name:string,size:number,type:string}>>; 적용 파일의 메타데이터. 
+- 출력/성공 의미: Promise<Array<{name:string,size:number,type:string}>>; 적용 파일의 메타데이터.
 - 허용 부작용: file input선택·input/change;공통파일전달.
 - 오류/경계: single/multiple·파일수·32MiB제한·권한·없는경로·다른세션asset을 전체사전검증하고 실패시기존선택보존여부를알린다.
 - 재시도: 읽기는 최신 문서 상태로 다시 관찰할 수 있다. 입력은 완료 여부를 먼저 확인하며 응답 유실만으로 재전송하지 않는다.
