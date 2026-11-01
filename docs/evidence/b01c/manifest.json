@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01T15:50:32.663342+00:00",
+  "at": "2026-11-01T16:03:46.201000+00:00",
   "baseline": "0446e5b3ae683bb7801184648078f99de96ea55d",
   "comparison": "final test/fixture/dependencies/docs/helper plus new unused output/limits modules fixed; baseline server/worker entry files only changed. Not a full historical environment replay.",
   "sourceDifferences": [
@@ -8,10 +8,10 @@
   ],
   "beforeProduct": {
     "pass": 1,
-    "fail": 5
+    "fail": 6
   },
   "afterProduct": {
-    "pass": 6,
+    "pass": 7,
     "fail": 0
   },
   "beforeTransport": {
@@ -23,13 +23,13 @@
     "fail": 0
   },
   "regression": {
-    "pass": 79,
+    "pass": 81,
     "fail": 0,
     "skip": 1,
     "command": "npm run test:all"
   },
   "headed": {
-    "pass": 15,
+    "pass": 16,
     "fail": 0,
     "command": "HEADED=1 npm run test:requirements"
   },
@@ -140,7 +140,120 @@
       "sourceSha256": "09cf9c7c37acc505ed7787431b9acac5dfdb887e68fb3e21bd10e15c6ea4b302",
       "sha256": "09cf9c7c37acc505ed7787431b9acac5dfdb887e68fb3e21bd10e15c6ea4b302",
       "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-before-base.json",
+      "source": "output/goal-b01c/round2/before-base/b01c/results.json",
+      "sourceSha256": "125f18862daf311f204ce54a8411ad821d4a2a1c8b2b1f007d1a7ca861c0b6b2",
+      "sha256": "718ca62f9dc8cad93732d50ed310c83378e14a51eb0e4ac0d30c76f94ab57a93",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-before-base.log.txt",
+      "source": "output/goal-b01c/round2/before-base/product.log",
+      "sourceSha256": "c75fa8897046ecd04c2d2614ff6368ad7ad8482161e644317fb9625ad61ff50d",
+      "sha256": "8439faa5f35526c1bd997c8dce669673f05988333714df1af848fa824a5b0891",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-before-review.json",
+      "source": "output/goal-b01c/round2/before-review/b01c/results.json",
+      "sourceSha256": "ad3813ba39b8b421151471196c21d4dde68e2f5261400dc0fc94eaf2cb648c44",
+      "sha256": "def3f688b0a0d762d9076fedbacfec2fa5247ea399803d12d5d1a0bb16cfb03c",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-before-review.log.txt",
+      "source": "output/goal-b01c/round2/before-review/product.log",
+      "sourceSha256": "853cbc935da681fd49b0d2e2e0b451575c6104fab126b57556c09c9e65a12d37",
+      "sha256": "cf1b610b772ba3c85ea0b9b224a1b2c92e619c254bcced3f67871af7cf9733d0",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-after-product.json",
+      "source": "output/goal-b01c/round2/full/b01c/results.json",
+      "sourceSha256": "45aac93b508a9ea666c3ee017d13e3b009591252772ba61e4364c4c86c600f2e",
+      "sha256": "bfc0c1a847299329120993f05c1ebf82306cd494481c4a54033371b29b3d3186",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-after-all.log.txt",
+      "source": "output/goal-b01c/round2/all.log",
+      "sourceSha256": "40bde2978c8b211955452b6dd3b7163901786a2f776e9bce2dce39045fb9b1c6",
+      "sha256": "40bde2978c8b211955452b6dd3b7163901786a2f776e9bce2dce39045fb9b1c6",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-after-headed.json",
+      "source": "output/goal-b01c/round2/headed/b01c/results.json",
+      "sourceSha256": "33a736e27a80feeeefba475ebd7367695539fd8047c4fb3438dbe5e433500e98",
+      "sha256": "6f986eb2ce0194ccda16c1cf29811617ed243ad289ae454d6f615474ff2b42e2",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round2-after-headed.log.txt",
+      "source": "output/goal-b01c/round2/headed.log",
+      "sourceSha256": "842e87ac0bbb676253dd379efefed7a64115099d68196b301711df791b8a626f",
+      "sha256": "842e87ac0bbb676253dd379efefed7a64115099d68196b301711df791b8a626f",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "reviewer-png-probes.json",
+      "source": ".local/goal-development/b01c-review/probe-png.json",
+      "sourceSha256": "30692d0095b6410e479a75969079b48b23342d16c766ff0ead692b6c53e87dbc",
+      "sha256": "7c6f5bd6659eb44fee28490f85bf9d8f1fb93cc51fbf73d3e7ff28fefd49d0cf",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "reviewer-product-probes.json",
+      "source": ".local/goal-development/b01c-review/probe-product.json",
+      "sourceSha256": "4afb6cfff645eb7de52334ec0f73433ab7c7f7d908ca1a04a0de59d81359db02",
+      "sha256": "06d25d280a07522dd707588f5b5de5fa2e69f7638ff335c522f5c7f7cbbf9a88",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     }
   ],
-  "gate": "independent exact-head review pending"
+  "gate": "three P2 findings at99aa574 repaired; exact new-head independent rereview pending",
+  "phase1Summary": {
+    "at": "2026-11-01T15:50:32.663342+00:00",
+    "sourceDifferences": [
+      "bridge/server.mjs",
+      "extension/runtime-worker.mjs"
+    ],
+    "beforeProduct": {
+      "pass": 1,
+      "fail": 5
+    },
+    "afterProduct": {
+      "pass": 6,
+      "fail": 0
+    },
+    "regression": {
+      "pass": 79,
+      "fail": 0,
+      "skip": 1,
+      "command": "npm run test:all"
+    },
+    "headed": {
+      "pass": 15,
+      "fail": 0,
+      "command": "HEADED=1 npm run test:requirements"
+    },
+    "gate": "independent exact-head review pending"
+  },
+  "reviewComparison": {
+    "baseline": "99aa57470c16e646d658180e2eca0f022381f1e4",
+    "before": {
+      "pass": 5,
+      "fail": 2
+    },
+    "after": {
+      "pass": 7,
+      "fail": 0
+    },
+    "sourceDifferences": [
+      "extension/runtime-worker.mjs",
+      "extension/output.mjs"
+    ]
+  },
+  "memoryErrorPolicy": "Only actual host WASM stack RangeError or deadline forces reset; guest exceptions including native memory-limit InternalError are reported as JS_ERROR with untrusted guestName and runtimeReset:false when VM survives. Resource recovery/explicit limit evidence retained; no cause inferred from name/message."
 }

@@ -13,7 +13,7 @@ async function js(code,session=a){
 }
 const imageCode=size=>`await outputPage.evaluate(async size=>{const r=await fetch('/output-image?bytes='+size);return r.json()},${size})`;
 const reason=(result,name)=>assert(result.truncationReasons?.includes(name),JSON.stringify({truncated:result.truncated,reasons:result.truncationReasons}));
-before(async()=>{h=await productRuntime('b01c',{extraSources:['tests/output-runtime.test.mjs','test-site/output-png.mjs']});a=await h.client.session();b=await h.client.session();done(await js(`var outputPage=await browser.open(${JSON.stringify(h.fixture.url+'/audit')});`))});
+before(async()=>{h=await productRuntime('b01c',{extraSources:['tests/output-runtime.test.mjs','test-site/output-png.mjs','tests/output-fixture.test.mjs']});a=await h.client.session();b=await h.client.session();done(await js(`var outputPage=await browser.open(${JSON.stringify(h.fixture.url+'/audit')});`))});
 after(async()=>await h?.close());
 
 test('B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage',async()=>{
@@ -75,10 +75,23 @@ test('B01C declared code time memory and stack limits report resource failures a
  let r=await js('//'+'한'.repeat(21844)+'xx',b);done(r);
  const rejected=await h.request('/v1/sessions/'+b.id+'/js',{code:'x'.repeat(65537)});assert.equal(rejected.status,400);
  const rows=[];
- for(const [name,code] of [['stack','function resourceRecur(){return resourceRecur()}resourceRecur()'],['memory','var retained=[];while(true)retained.push(new Uint8Array(1048576))']]){
-  r=await js(code,b);assert.equal(r.status,'failed');assert.equal(r.result.error.code,'RESOURCE_LIMIT',JSON.stringify(r.result));assert.equal(r.result.error.reason,name);assert.equal(r.result.runtimeReset,true);
-  const next=await js('console.log("recovered",typeof retained)',b);assert.equal(text(next),'recovered undefined');assert.equal(next.generation,r.generation+1);rows.push({name,error:r.result.error,generation:[r.generation,next.generation]});
+ r=await js('function resourceRecur(){return resourceRecur()}resourceRecur()',b);assert.equal(r.status,'failed');assert.equal(r.result.error.code,'RESOURCE_LIMIT');assert.equal(r.result.error.reason,'stack');assert.equal(r.result.runtimeReset,true);
+ let next=await js('var protectedValue=123;console.log("recovered",typeof retained)',b);assert.equal(text(next),'recovered undefined');assert.equal(next.generation,r.generation+1);rows.push({name:'host-stack',error:r.result.error,generation:[r.generation,next.generation]});
+ for(const code of ['throw new Error("out of memory")','throw new RangeError("out of memory")','throw new InternalError("out of memory")','throw Object.assign(new Error("out of memory"),{name:"InternalError"})','throw Object.assign(new Error("Maximum call stack size exceeded"),{name:"RangeError"})']){
+  const ordinary=await js(code,b);assert.equal(ordinary.result.error.code,'JS_ERROR');assert.equal(ordinary.result.runtimeReset,false);assert.equal(text(await js('console.log(protectedValue)',b)),'123');assert.equal(h.bridge.sessions.get(b.id).generation,ordinary.generation);
  }
- const ordinary=await js('throw new Error(\"out of memory\")',b);assert.equal(ordinary.result.error.code,'JS_ERROR');assert.equal(ordinary.result.runtimeReset,false);
+ r=await js('var retained=[];while(true)retained.push(new Uint8Array(1048576))',b);assert.equal(r.status,'failed');assert.equal(r.result.error.code,'JS_ERROR');assert.equal(r.result.error.guestName,'InternalError');assert.match(r.result.error.message,/out of memory/i);assert.equal(r.result.runtimeReset,false);
+ next=await js('retained=null;console.log("recovered",protectedValue)',b);assert.equal(text(next),'recovered 123');assert.equal(next.generation,r.generation);rows.push({name:'guest-memory-exception',error:r.result.error,runtimeReset:r.result.runtimeReset,generation:[r.generation,next.generation]});
  h.evidence.push({conditions:['REQ-C-RUNTIME-004-C01'],status:'pass',codeBytes:65536,timeBoundary:[50,30000,120000],rows});
+});
+
+
+test('B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete',async()=>{
+ const rows=[];
+ for(const [kind,expected] of [['adam-short','INVALID_IMAGE'],['icc-large','IMAGE_RESOURCE_LIMIT']]){
+  const code=`var candidate=await outputPage.evaluate(async kind=>fetch('/output-review-image?kind='+kind).then(r=>r.json()),${JSON.stringify(kind)});try{display(candidate);console.log('accepted')}catch(error){console.log('rejected',error.message)}console.log('after');candidate=null;`;
+  const r=done(await js(code));assert.equal(r.content.length,2);assert.match(r.content[0].text,new RegExp('^rejected '+expected));assert.equal(r.content[1].text,'after');rows.push({kind,error:r.content[0].text});
+ }
+ const r=done(await js(`var adam=await outputPage.evaluate(async()=>fetch('/output-review-image?kind=adam-valid').then(r=>r.json()));display(adam);console.log('after-valid');adam=null`));assert.equal(r.content[0].type,'image');assert.equal(r.content[1].text,'after-valid');
+ h.evidence.push({conditions:['REQ-DISPLAY-002-C01','REQ-C-RUNTIME-007-C01'],status:'pass',rows,validAdam7:true});
 });

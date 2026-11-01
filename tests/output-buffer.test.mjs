@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {deflateSync} from 'node:zlib';
 import {OutputBuffer,imageBytes} from '../extension/output.mjs';
-import {outputPng,pngChunk} from '../test-site/output-png.mjs';
+import {outputPng,pngChunk,reviewPng} from '../test-site/output-png.mjs';
 const image=bytes=>({type:'image',mimeType:'image/png',data:bytes.toString('base64')});
 function replaceData(data){const p=outputPng(128);return Buffer.concat([p.subarray(0,33),pngChunk('IDAT',data),pngChunk('IEND',Buffer.alloc(0))])}
 test('PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size',()=>{
@@ -17,4 +17,10 @@ test('output errors cannot exceed the result JSON budget and never return partia
  const b=new OutputBuffer();b.image(image(outputPng(128)));const r=b.result({error:{code:'JS_ERROR',message:'한'.repeat(100000)}});
  assert(r.truncated);assert(r.truncationReasons.includes('error-bytes'));assert(Buffer.byteLength(r.error.message)<=65536);assert.equal(r.content[0].data,outputPng(128).toString('base64'));
  const fallback=b.result({unbounded:'x'.repeat(16*1024*1024)});assert.equal(fallback.error.code,'RESULT_LIMIT');assert.deepEqual(fallback.content,[]);
+});
+
+test('Adam7 exact scanline bytes and compressed metadata workspace apply before library pixel decoding',()=>{
+ assert.throws(()=>imageBytes(image(reviewPng('adam-short'))),/INVALID_IMAGE/);
+ assert.throws(()=>imageBytes(image(reviewPng('icc-large'))),/IMAGE_RESOURCE_LIMIT/);
+ assert(imageBytes(image(reviewPng('adam-valid')))>0);
 });

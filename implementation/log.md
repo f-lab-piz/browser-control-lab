@@ -146,3 +146,14 @@ B01C는 이슈13·feat/13-output-budgets에서 준비 중이다. 아직 제품 �
 Codex CUA js와 Aside CLI1.26.1028.2335 one-shot REPL에서 같은 값의 bounded console/NUL/circular를 실제 비교했다. 사용자 탭/데이터를 읽지 않았고 Codex 임시 빈 탭은 닫았다. Codex는 NUL·[Circular *1]·after를 보존했고 Aside는 NUL 뒤가 잘리고 circular에서 RangeError가 나 after에 도달하지 않았다. CLI exit0과 런타임 오류를 구분했다. 우리 Before는 NUL 잘림/[object Object], After는 NUL/[Circular]/after다. Codex 증거는 수신 출력 전사, Aside는 CLI stdout 캡처로 출처를 구분한다. 그 외 예산/이미지/전송은 경쟁 신규 실측이 없으며 지원·성능을 추론하지 않는다.
 
 정확 head 독립 Sol6.1 high 리뷰가 아직 필요하다. B01C slice는 in-progress이며185개 전체의 완료가 아니다. B01D 이후 전체 작업은 유지한다.
+
+
+## 2026-11-02 · PR14 독립 P2 세 건 수정
+
+정확99aa574의 Sol6.1 high 독립 리뷰는 CHANGES_REQUESTED였다. CRC가 맞는 잘린 Adam7이 정상 수용되고(native decode 실패),81,634bytes PNG의 ICC80MiB 확장이 workspace를 우회했으며 사용자 RangeError('out of memory')가 자동 reset/binding 소실을 일으켰다. 리뷰 보고서와 원시 반례를 보존했다.
+
+Adam7 각 pass의 정확한 scanline 길이·전체 CRC·압축 메타데이터를 작은 입력 조각 스트림으로 확인한다. 검증용 pixel 사본에서는 ICC/텍스트를 제거해 범용 decoder의 별도 무제한 해제를 막고 반환 원본은 유지한다. 정상 Adam7/잘린 Adam7의 native oracle와 실제 display·ICC 과도 확장 거절/후속 log를 추가했다.
+
+guest 예외 이름과 메시지는 원인 증명이 아니므로 자동 VM 재생성에 사용하지 않는다. 실제 호스트 WASM 스택 trap만 RESOURCE_LIMIT·새 generation이고, guest 메모리 한도 InternalError는 JS_ERROR·guestName·유지된 VM의 runtimeReset:false를 명시한다. 이는 실제 재생성 여부를 구분하는 정본 계약을 따른다. 실제64MiB 한도 실패/후속 정리·복구를 확인하고 Error/RangeError/위조 InternalError 등5개 사용자 예외가 binding123과 generation을 보존하는 반례를 보강했다.
+
+같은 최종7개 제품 테스트: base0446e5b의 entry2파일 비교1 PASS/6 FAIL→7 PASS, review99aa574의 worker/output 비교5 PASS/2 FAIL→7 PASS. 두 비교 모두 그 두 파일 외 기록 source hash는 같다. 전체81 PASS/외부1 SKIP/FAIL0, headed 요구 제품16 PASS, 문서/계획·각 검사기 회귀 통과. 초기6개/79개 phase는 이력으로 보존한다. 새 정확 head의 독립 재리뷰가 남아 있으며 아직 미머지다.

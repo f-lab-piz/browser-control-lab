@@ -74,12 +74,13 @@
           "finding": "Actual NUL is escaped across guest/native string boundary and preserved in product output; cyclic output uses [Circular]. B01C condition evidence recorded.",
           "evidence": [
             "docs/implementation/b01c.md",
-            "docs/evidence/b01c/after-product.json"
+            "docs/evidence/b01c/round2-after-product.json"
           ],
           "status": "pass"
         }
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/13"
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/13",
+      "review": "docs/reviews/pr14-b01c.md"
     },
     {
       "id": "B01D",

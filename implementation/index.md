@@ -7,4 +7,4 @@
 
 - B01B: 이슈#11, 세션 lexical/await/출력·소유 격리3 REQ/4조건의 국소 제품 판정 PASS. Before2/4→After4/4, 전체68 PASS/외부1 SKIP. Sol6.1 high 독립 PASS 후 PR#12 머지(0446e5b). [보고서](../docs/implementation/b01b.md)
 
-- B01C: 이슈#13에서 출력·이미지·실행·전송 예산을 진행 중. 6 REQ/7조건 제품 판정 PASS, Before1/6→After6/6, 전체79 PASS/외부1 SKIP. 독립 리뷰·머지 전이다. [보고서](../docs/implementation/b01c.md)
+- B01C: 이슈#13에서 출력·이미지·실행·전송 예산을 진행 중. 6 REQ/7조건 제품 판정 PASS, Before1/7→After7/7, 전체81 PASS/외부1 SKIP. 첫 독립 리뷰 P2 세 건 보완 후 재리뷰·머지 전이다. [보고서](../docs/implementation/b01c.md)

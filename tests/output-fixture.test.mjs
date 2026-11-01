@@ -19,5 +19,10 @@ test('PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixe
    let timer;const observed=await Promise.race([observation,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Native PNG oracle timeout at '+size+' bytes')),10000)})]).finally(()=>clearTimeout(timer));
    assert.equal(observed.length,size);assert.deepEqual(observed.pixel,[12,34,56,255]);
   }
+  for(const [kind,expected] of [['adam-valid',true],['adam-short',false]]){
+   const decoded=await page.evaluate(async kind=>{const data=await fetch('/output-review-image?kind='+kind).then(r=>r.json());const bytes=Uint8Array.from(atob(data.data),c=>c.charCodeAt(0));try{const image=await createImageBitmap(new Blob([bytes],{type:'image/png'}));image.close();return true}catch{return false}},kind);
+   assert.equal(decoded,expected);
+  }
+
  }finally{await browser?.close();await fixture.close()}
 });

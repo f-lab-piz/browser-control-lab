@@ -47,8 +47,9 @@ onmessage=async({data})=>{
   postMessage({type:'result',id:data.id,result:current.output.result({execution:'extension-worker/QuickJS-WASM',metrics:{durationMs:performance.now()-started}})});
  }catch(error){
   const timeout=Date.now()>current.deadline;
-  const resource=error instanceof RangeError&&/call stack|stack overflow/i.test(error.message)?'stack':['InternalError','RangeError'].includes(error.guestName)?(/out of memory/i.test(error.message)?'memory':/stack (?:size |overflow)|call stack/i.test(error.message)?'stack':null):null;
-  postMessage({type:'result',id:data.id,result:current.output.result({execution:'extension-worker/QuickJS-WASM',error:{code:timeout?'TIMEOUT':resource?'RESOURCE_LIMIT':'JS_ERROR',...(resource?{reason:resource}:{}),message:error.message},runtimeReset:timeout||Boolean(resource),metrics:{durationMs:performance.now()-started}})})
+  // Only a host WASM stack trap proves the VM must be discarded. Guest error names/messages are user-controlled.
+  const resource=error instanceof RangeError&&/call stack|stack overflow/i.test(error.message)?'stack':null;
+  postMessage({type:'result',id:data.id,result:current.output.result({execution:'extension-worker/QuickJS-WASM',error:{code:timeout?'TIMEOUT':resource?'RESOURCE_LIMIT':'JS_ERROR',...(resource?{reason:resource}:{}),...(error.guestName?{guestName:error.guestName}:{}),message:error.message},runtimeReset:timeout||Boolean(resource),metrics:{durationMs:performance.now()-started}})})
  }
  finally{clearInterval(timer);handle?.dispose();current=null}
 };
