@@ -1,0 +1,554 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b02a",
+  "startedAt": "2026-11-01T18:27:01.707Z",
+  "finishedAt": "2026-11-01T18:27:18.466Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 23
+  },
+  "headed": false,
+  "head": "5c61396faaab64261c6c69cb9166d93851e277b8",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "037a58d08e694a71255b9df64001c69a3ab87fb19bb01c17f3275ec6bef9e0c2",
+    "bridge/client.mjs": "eb47da8f72090b49bdc70647a6afbd58320ee6ec3db94ebca88f40e492427d3f",
+    "extension/runtime-worker.mjs": "b7e4ed2eff877a5c74e854024ac81bb933c462ab6c66a24bc0e23c3b655febaf",
+    "extension/output.mjs": "b0bc71c792d29266541f45267779566a73b457f25a94a9afce8f9b2114deb489",
+    "shared/limits.mjs": "d31174b174ea6cd10351875fee19fdf395d82ccc1e7d8a02bb9ac2d8b81324e2",
+    "shared/png-crc.mjs": "5af9ce6471d4901a3e7739a767522576a412a63bf5186780b6d9bf713d69d304",
+    "extension/transform.mjs": "f0b60533a80ac92369c84c7c1b01784330e86ed58a09b4f8a9359249ce803ecf",
+    "extension/api-source.mjs": "4691c082db7d60a677719f50876615d110c9de59fe1a7fc2a7b51889408d9864",
+    "extension/offscreen.js": "e7c7e6c7d325c115f5011d53c89ec0a3d3d00ef4477b14bf7c0dbb94a0af3540",
+    "extension/browser-engine.mjs": "a264485d1b567ba50cb51faea4a8ade98aaa088ae1244ab6a1853c2aa655b268",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "4bad0a0ec67ba3d6a40a5ded04c2e2df71f50bce0d584847a098905b5f6ccb2e",
+    "extension/files.mjs": "bcc4db1066ec0c740f3e291009d156d624d084656d64642f92314a214cadb2c7",
+    "tests/helpers/product-runtime.mjs": "0fb29ce171d3c609fbd6e87889e6456dfe6a37345f8f1cc22a51f8ec6f9fdc2b",
+    "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
+    "tests/requirements-runtime.test.mjs": "cdd67141dbb5ddd16a1a1ae1f9c269c0b443e53eb41422526a5ec095c8862b85",
+    "test-site/server.mjs": "3f0c51cdb8bd8a6d570ce31bf71e564d5465a886446e3e362473a85ef48daf24",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "674b29e5bfb5bb95c2cc3c30e4f6693521f8b8b33d796a7ba483cc643299aae8",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "ea250ac7e6b67e15bfd99b04a8b403e17ac028cca39464a648209bf2fbd38bf4",
+    "package-lock.json": "410382cf6b025ca2a11be26259e0a237c54a49253cb45ed6b36adcf0ae2aa71a",
+    "tests/selection-runtime.test.mjs": "82d4d4fe65b9b61a3572bbbb56ab9d1d02d1b46c62b12d71070a846f3a420b40",
+    "tests/selection-fixture.test.mjs": "8438199c162892f992cf824f71de9c157d06bff0d757b25b577aecbfdcbd74a2",
+    "tests/selection-contract.test.mjs": "7d4bd536beb89174eea4b2e475c98c66c8d25c03c22727eddde6e14068943a3a",
+    "tests/review-boundaries.test.mjs": "4d323c30c7eca67740fcd8a4f20773738203006ff83362a4617d8a530b91a053",
+    "test-site/selection.html": "eebaeedae067c94f9ce5d4d6d75654328a592ad54039cdb39a0a49df0e36a5a7",
+    "extension/background.js": "0b04c5b1610896f00768da1a9dc6a860d6b604143db4cfdd1be2f7428a823e2d",
+    "extension/session-lifecycle.mjs": "521d44ed085f301ea04d7e9d0843278f66670a1eb176577f64624478ed8f360c",
+    "extension/evaluation.mjs": "1b5ac8509f5ef44a8e52aa80fcde23dcd03c95b8f90c693a72fe72abc453cd58",
+    "shared/json-value.mjs": "9014ec571f1c8451a323430066707c9f10108994c97d9ecfe5a87d890bcd2b9d"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-SCOPE-LOCATOR-001-C01"
+      ],
+      "status": "pass",
+      "actual": {
+        "root": [
+          "css-main",
+          "shadow-main"
+        ],
+        "child": [
+          "css-child",
+          "shadow-child"
+        ],
+        "after": [
+          "css-main",
+          "shadow-main",
+          "css-added"
+        ]
+      }
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-LOCATOR-001-C02",
+        "REQ-SCOPE-LOCATOR-002-C01"
+      ],
+      "status": "pass",
+      "actual": {
+        "first": {
+          "same": true,
+          "stale": [
+            {
+              "action": "count",
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
+            },
+            {
+              "action": "click",
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at single (<anonymous>:116:22)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+            },
+            {
+              "action": "attached",
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
+            },
+            {
+              "action": "detached",
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
+            },
+            {
+              "action": "hidden",
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
+            },
+            {
+              "action": "visible",
+              "error": "Error: STALE_REF: element is detached; take a new snapshot\n    at find (<anonymous>:92:41)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
+            }
+          ],
+          "fresh": "f0:c968a204:e3"
+        },
+        "oldDocument": "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:88:85)\n    at single (<anonymous>:116:22)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48",
+        "cssError": "SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\n    at <anonymous>:96:71\n    at Array.filter (<anonymous>)\n    at find (<anonymous>:96:53)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48",
+        "clicks": "0"
+      }
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYROLE-001-C02",
+        "REQ-SCOPE-GETBYLABEL-001-C01"
+      ],
+      "status": "fail",
+      "actual": {
+        "priority": [],
+        "label": [],
+        "wrong": 1,
+        "nativeWrong": 0,
+        "partial": [],
+        "broken": [
+          "broken"
+        ],
+        "empty": [
+          "empty-fallback"
+        ],
+        "hidden": [],
+        "self": [
+          "self-cycle"
+        ],
+        "cycle": [
+          "cycle-fallback"
+        ],
+        "shadow": [],
+        "multiple": [
+          "multiple"
+        ],
+        "wrapped": [
+          "wrapped"
+        ]
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    broken: [\n      'broken'\n    ],\n    cycle: [\n...\n    ],\n+   hidden: [],\n+   label: [],\n-   hidden: [\n-     'hidden-name'\n-   ],\n-   label: [\n-     'priority'\n-   ],\n    multiple: [\n      'multiple'\n    ],\n    nativeWrong: 0,\n+   partial: [],\n+   priority: [],\n-   partial: [\n-     'partial'\n-   ],\n-   priority: [\n-     'priority'\n-   ],\n    self: [\n      'self-cycle'\n    ],\n+   shadow: [],\n-   shadow: [\n-     'shadow-name'\n-   ],\n    wrapped: [\n      'wrapped'\n    ],\n+   wrong: 1\n-   wrong: 0\n  }\n"
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYROLE-001-C01",
+        "REQ-SCOPE-GETBYROLE-001-C03",
+        "REQ-SCOPE-GETBYLABEL-002-C02"
+      ],
+      "status": "fail",
+      "actual": {
+        "v": {
+          "omitted": 19,
+          "fallbackRole": 0,
+          "empty": [
+            "css-main",
+            "shadow-main",
+            "add",
+            "role-a",
+            "empty-name",
+            "explicit-role",
+            "offscreen-role",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "long-body",
+            "",
+            "ref-target",
+            "replace",
+            "remove",
+            "navigate-child",
+            "proof-button"
+          ],
+          "a": [
+            "role-a"
+          ],
+          "link": 1,
+          "explicit": 1,
+          "heading": 0,
+          "hidden": 0,
+          "included": 1,
+          "offscreen": 1,
+          "region": 1,
+          "regionWrong": 0,
+          "picture": 1,
+          "image": 0,
+          "placeholder": 1,
+          "notLabel": 1,
+          "plain": 0,
+          "unconnected": 0
+        },
+        "before": {
+          "x": 0,
+          "y": 0
+        },
+        "after": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    a: [\n      'role-a'\n    ],\n    empty: [\n+     'css-main',\n+     'shadow-main',\n+     'add',\n+     'role-a',\n      'empty-name',\n+     'explicit-role',\n+     'offscreen-role',\n+     '',\n+     '',\n+     '',\n+     '',\n+     '',\n+     'long-body',\n+     '',\n+     'ref-target',\n+     'replace',\n+     'remove',\n+     'navigate-child',\n+     'proof-button'\n    ],\n    explicit: 1,\n+   fallbackRole: 0,\n+   heading: 0,\n-   fallbackRole: 1,\n-   heading: 1,\n    hidden: 0,\n+   image: 0,\n-   image: 1,\n    included: 1,\n    link: 1,\n+   notLabel: 1,\n-   notLabel: 0,\n    offscreen: 1,\n+   omitted: 19,\n-   omitted: 21,\n    picture: 1,\n    placeholder: 1,\n    plain: 0,\n    region: 1,\n    regionWrong: 0,\n"
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYLABEL-001-C02",
+        "REQ-SCOPE-GETBYTEXT-001-C01",
+        "REQ-C-SELECTION-005-C01"
+      ],
+      "status": "fail",
+      "actual": {
+        "longLabel": [],
+        "longRole": [],
+        "slot": [],
+        "body": [],
+        "bodyName": 1,
+        "notBody": 1,
+        "filter": 1,
+        "raw": "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv 본문끝🧭"
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'long-label'\n- ]\n"
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYTEXT-001-C02",
+        "REQ-SCOPE-GETBYTEXT-002-C01",
+        "REQ-C-SELECTION-003-C01",
+        "REQ-C-SELECTION-004-C01"
+      ],
+      "status": "fail",
+      "actual": {
+        "minimum": [
+          "minimum-span"
+        ],
+        "siblings": [
+          "text-sibling-a",
+          "text-sibling-b"
+        ],
+        "adjacent": [],
+        "spaced": [
+          "adjacent",
+          "spaced"
+        ],
+        "normalized": 0,
+        "g1": 2,
+        "g2": 2,
+        "y": 2,
+        "lower": 0,
+        "ignoreCase": 2,
+        "roleNormalized": 0,
+        "labelNormalized": 0,
+        "roleG": 2,
+        "roleY": 2,
+        "labelG": 2,
+        "labelY": 2,
+        "raw": "foo \n bar"
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   adjacent: [],\n-   adjacent: [\n-     'adjacent',\n-     'adjacent-shadow'\n-   ],\n    g1: 2,\n    g2: 2,\n    ignoreCase: 2,\n    labelG: 2,\n+   labelNormalized: 0,\n-   labelNormalized: 2,\n    labelY: 2,\n    lower: 0,\n    minimum: [\n      'minimum-span'\n    ],\n+   normalized: 0,\n-   normalized: 2,\n    raw: 'foo \\n bar',\n    roleG: 2,\n+   roleNormalized: 0,\n-   roleNormalized: 2,\n    roleY: 2,\n    siblings: [\n      'text-sibling-a',\n      'text-sibling-b'\n    ],\n    spaced: [\n+     'adjacent',\n      'spaced'\n    ],\n    y: 2\n  }\n"
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYTEXT-002-C02",
+        "REQ-C-SELECTION-004-C01"
+      ],
+      "status": "fail",
+      "actual": {
+        "v": {
+          "aria": 0,
+          "nested": 1,
+          "css": 1,
+          "offscreen": 1,
+          "template": 0,
+          "script": 0,
+          "style": 0,
+          "noscript": 0,
+          "cssFilter": 1,
+          "ariaFilter": 0
+        },
+        "before": {
+          "x": 0,
+          "y": 0
+        },
+        "after": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    aria: 0,\n    ariaFilter: 0,\n    css: 1,\n    cssFilter: 1,\n+   nested: 1,\n-   nested: 0,\n    noscript: 0,\n    offscreen: 1,\n    script: 0,\n    style: 0,\n    template: 0\n"
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYROLE-002-C01",
+        "REQ-SCOPE-GETBYTEXT-003-C01",
+        "REQ-SCOPE-GETBYLABEL-002-C02"
+      ],
+      "status": "fail",
+      "actual": {
+        "rows": [
+          {
+            "expression": "page.locator('[')",
+            "accepted": false,
+            "error": "SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\n    at <anonymous>:96:71\n    at Array.filter (<anonymous>)\n    at find (<anonymous>:96:53)\n    at Object.call (<anonymous>:156:36)\n    at <anonymous>:1:48"
+          },
+          {
+            "expression": "page.getByRole('')",
+            "accepted": true,
+            "value": 49
+          },
+          {
+            "expression": "page.getByRole(12)",
+            "accepted": true,
+            "value": 0
+          },
+          {
+            "expression": "page.getByRole('not-a-real-role')",
+            "accepted": true,
+            "value": 0
+          },
+          {
+            "expression": "page.getByRole('button',{includeHidden:'yes'})",
+            "accepted": true,
+            "value": 20
+          },
+          {
+            "expression": "page.getByRole('button',{exact:'yes'})",
+            "accepted": true,
+            "value": 19
+          },
+          {
+            "expression": "page.getByRole('button',{name:17})",
+            "accepted": true,
+            "value": 0
+          },
+          {
+            "expression": "page.getByRole('button',{name:/A/,exact:true})",
+            "accepted": true,
+            "value": 3
+          },
+          {
+            "expression": "page.getByText('')",
+            "accepted": true,
+            "value": 80
+          },
+          {
+            "expression": "page.getByText('A',{exact:'yes'})",
+            "accepted": true,
+            "value": 2
+          },
+          {
+            "expression": "page.getByText(/A/,{exact:true})",
+            "accepted": true,
+            "value": 10
+          },
+          {
+            "expression": "page.getByLabel('')",
+            "accepted": true,
+            "value": 36
+          },
+          {
+            "expression": "page.getByLabel('A',{exact:'yes'})",
+            "accepted": true,
+            "value": 1
+          },
+          {
+            "expression": "page.getByLabel(/A/,{exact:true})",
+            "accepted": true,
+            "value": 7
+          }
+        ],
+        "clicks": "0",
+        "inputs": [
+          "initial",
+          "initial"
+        ]
+      },
+      "error": "[{\"expression\":\"page.locator('[')\",\"accepted\":false,\"error\":\"SyntaxError: Failed to execute 'matches' on 'Element': '[' is not a valid selector.\\n    at <anonymous>:96:71\\n    at Array.filter (<anonymous>)\\n    at find (<anonymous>:96:53)\\n    at Object.call (<anonymous>:156:36)\\n    at <anonymous>:1:48\"},{\"expression\":\"page.getByRole('')\",\"accepted\":true,\"value\":49},{\"expression\":\"page.getByRole(12)\",\"accepted\":true,\"value\":0},{\"expression\":\"page.getByRole('not-a-real-role')\",\"accepted\":true,\"value\":0},{\"expression\":\"page.getByRole('button',{includeHidden:'yes'})\",\"accepted\":true,\"value\":20},{\"expression\":\"page.getByRole('button',{exact:'yes'})\",\"accepted\":true,\"value\":19},{\"expression\":\"page.getByRole('button',{name:17})\",\"accepted\":true,\"value\":0},{\"expression\":\"page.getByRole('button',{name:/A/,exact:true})\",\"accepted\":true,\"value\":3},{\"expression\":\"page.getByText('')\",\"accepted\":true,\"value\":80},{\"expression\":\"page.getByText('A',{exact:'yes'})\",\"accepted\":true,\"value\":2},{\"expression\":\"page.getByText(/A/,{exact:true})\",\"accepted\":true,\"value\":10},{\"expression\":\"page.getByLabel('')\",\"accepted\":true,\"value\":36},{\"expression\":\"page.getByLabel('A',{exact:'yes'})\",\"accepted\":true,\"value\":1},{\"expression\":\"page.getByLabel(/A/,{exact:true})\",\"accepted\":true,\"value\":7}]"
+    },
+    {
+      "conditions": [
+        "REQ-C-SELECTION-001-C01",
+        "REQ-SCOPE-GETBYROLE-002-C02",
+        "REQ-SCOPE-GETBYLABEL-002-C01"
+      ],
+      "status": "fail",
+      "actual": {
+        "actions": [
+          {
+            "expression": "page.getByRole('button',{name:'Save Duplicate',exact:true}).click()",
+            "accepted": false,
+            "error": "MULTIPLE_MATCHES: 2 elements"
+          },
+          {
+            "expression": "page.getByLabel('Same Label',{exact:true}).fill('wrong')",
+            "accepted": false,
+            "error": "MULTIPLE_MATCHES: 2 elements"
+          },
+          {
+            "expression": "page.getByText('Sibling Text',{exact:true}).click()",
+            "accepted": false,
+            "error": "MULTIPLE_MATCHES: 2 elements"
+          },
+          {
+            "expression": "page.getByLabel('Unconnected Label',{exact:true}).fill('wrong')",
+            "accepted": false,
+            "error": "ELEMENT_NOT_FOUND_TIMEOUT"
+          },
+          {
+            "expression": "page.locator('.absent').textContent()",
+            "accepted": false,
+            "error": "Error: ELEMENT_NOT_FOUND\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+          },
+          {
+            "expression": "page.locator('.absent').click()",
+            "accepted": false,
+            "error": "ELEMENT_NOT_FOUND_TIMEOUT"
+          }
+        ],
+        "values": {
+          "zero": 0,
+          "many": 2,
+          "empty": 0,
+          "all": [
+            "css-main",
+            "shadow-main"
+          ]
+        },
+        "waits": [
+          {
+            "selector": ".absent",
+            "state": "attached",
+            "expected": "timeout",
+            "error": "WAIT_TIMEOUT: attached"
+          },
+          {
+            "selector": ".absent",
+            "state": "detached",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": ".absent",
+            "state": "hidden",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": ".absent",
+            "state": "visible",
+            "expected": "timeout",
+            "error": "WAIT_TIMEOUT: visible"
+          },
+          {
+            "selector": "#css-text",
+            "state": "attached",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": "#css-text",
+            "state": "detached",
+            "expected": "timeout",
+            "error": "WAIT_TIMEOUT: detached"
+          },
+          {
+            "selector": "#css-text",
+            "state": "hidden",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": "#css-text",
+            "state": "visible",
+            "expected": "timeout",
+            "error": "WAIT_TIMEOUT: visible"
+          },
+          {
+            "selector": "#role-a",
+            "state": "attached",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": "#role-a",
+            "state": "detached",
+            "expected": "timeout",
+            "error": "WAIT_TIMEOUT: detached"
+          },
+          {
+            "selector": "#role-a",
+            "state": "hidden",
+            "expected": "timeout",
+            "error": "WAIT_TIMEOUT: hidden"
+          },
+          {
+            "selector": "#role-a",
+            "state": "visible",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": ".same",
+            "state": "attached",
+            "expected": "true",
+            "value": true
+          },
+          {
+            "selector": ".same",
+            "state": "detached",
+            "expected": "timeout",
+            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+          },
+          {
+            "selector": ".same",
+            "state": "hidden",
+            "expected": "multiple",
+            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+          },
+          {
+            "selector": ".same",
+            "state": "visible",
+            "expected": "multiple",
+            "error": "Error: MULTIPLE_MATCHES: 2 elements\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+          }
+        ],
+        "clicks": "0",
+        "inputs": [
+          "initial",
+          "initial"
+        ]
+      },
+      "error": "[{\"selector\":\".absent\",\"state\":\"attached\",\"expected\":\"timeout\",\"error\":\"WAIT_TIMEOUT: attached\"},{\"selector\":\".absent\",\"state\":\"detached\",\"expected\":\"true\",\"value\":true},{\"selector\":\".absent\",\"state\":\"hidden\",\"expected\":\"true\",\"value\":true},{\"selector\":\".absent\",\"state\":\"visible\",\"expected\":\"timeout\",\"error\":\"WAIT_TIMEOUT: visible\"},{\"selector\":\"#css-text\",\"state\":\"attached\",\"expected\":\"true\",\"value\":true},{\"selector\":\"#css-text\",\"state\":\"detached\",\"expected\":\"timeout\",\"error\":\"WAIT_TIMEOUT: detached\"},{\"selector\":\"#css-text\",\"state\":\"hidden\",\"expected\":\"true\",\"value\":true},{\"selector\":\"#css-text\",\"state\":\"visible\",\"expected\":\"timeout\",\"error\":\"WAIT_TIMEOUT: visible\"},{\"selector\":\"#role-a\",\"state\":\"attached\",\"expected\":\"true\",\"value\":true},{\"selector\":\"#role-a\",\"state\":\"detached\",\"expected\":\"timeout\",\"error\":\"WAIT_TIMEOUT: detached\"},{\"selector\":\"#role-a\",\"state\":\"hidden\",\"expected\":\"timeout\",\"error\":\"WAIT_TIMEOUT: hidden\"},{\"selector\":\"#role-a\",\"state\":\"visible\",\"expected\":\"true\",\"value\":true},{\"selector\":\".same\",\"state\":\"attached\",\"expected\":\"true\",\"value\":true},{\"selector\":\".same\",\"state\":\"detached\",\"expected\":\"timeout\",\"error\":\"Error: MULTIPLE_MATCHES: 2 elements\\n    at single (<anonymous>:117:38)\\n    at Object.call (<anonymous>:157:16)\\n    at <anonymous>:1:48\"},{\"selector\":\".same\",\"state\":\"hidden\",\"expected\":\"multiple\",\"error\":\"Error: MULTIPLE_MATCHES: 2 elements\\n    at single (<anonymous>:117:38)\\n    at Object.call (<anonymous>:157:16)\\n    at <anonymous>:1:48\"},{\"selector\":\".same\",\"state\":\"visible\",\"expected\":\"multiple\",\"error\":\"Error: MULTIPLE_MATCHES: 2 elements\\n    at single (<anonymous>:117:38)\\n    at Object.call (<anonymous>:157:16)\\n    at <anonymous>:1:48\"}]"
+    },
+    {
+      "conditions": [],
+      "status": "pass",
+      "actual": {
+        "click": "PASS: proof clicked",
+        "fill": "PASS: proof filled",
+        "events": [
+          {
+            "type": "click",
+            "id": "proof-button",
+            "trusted": true
+          }
+        ]
+      }
+    }
+  ]
+}

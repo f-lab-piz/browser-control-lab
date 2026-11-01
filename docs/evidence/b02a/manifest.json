@@ -1,0 +1,177 @@
+{
+  "at": "2026-11-01T18:25:28.134834+00:00",
+  "baseline": "0452cbe2474ed73069167c43d683ae1514c4f29c",
+  "scope": "B02A13parents21conditions; personal single-user local transport, external3/internal64 unchanged",
+  "comparison": "Final fixture/tests/helper/docs/deps fixed. Controlled baseline executed with its own cwd, only owning api-source/page-agent restored. Both baseline file hashes match git show. Not full historical environment replay.",
+  "sourceDifferences": [
+    "extension/api-source.mjs",
+    "extension/page-agent.mjs"
+  ],
+  "beforeProduct": {
+    "pass": 3,
+    "fail": 7
+  },
+  "afterProduct": {
+    "pass": 10,
+    "fail": 0
+  },
+  "regression": {
+    "command": "BCL_RUN_DIR=output/goal-b02a/encoded-all npm run test:all",
+    "pass": 127,
+    "fail": 0,
+    "skip": 1,
+    "grades": {
+      "unit": 42,
+      "fixture": 11,
+      "bootstrap": 1,
+      "legacyProduct": 24,
+      "requirementsProduct": 42,
+      "reviewBoundaries": 7
+    }
+  },
+  "headed": {
+    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b02a/encoded-headed npm run test:requirements",
+    "pass": 42,
+    "fail": 0
+  },
+  "rawHistory": "Initial Before included a test-code newline escaping error in one case; fixed test quoting before final comparison, no product change then. First full after naming changes failed legacy summary test: composed name correctly matches SUMMARY and nested BUTTON. Test now asserts both identities and explicitly selects native button via CSS+filter, preserving hidden-content exclusions and actual clicked result. Initial125 stage then unit/coverage audit strengthened to final127. No predicates weakened.",
+  "competitors": "Same final root fixture: Codex IAB public locators LIVE received-output transcription, Aside CLI1.26.1028.2335 Skill3 LIVE raw CLI.16reads plus proof click/fill; root only, Codex child DNS blocked. Different contracts, no general ranking. Codex field value changes but trusted-input site verdict pending, exact cause unknown. Own comparison tabs closed; no source/bundle/WASM copied.",
+  "remainingRisk": "B03A old PR18 headed frame-tree timeout remains root-cause unproven; not reproduced in this final full/headed, not declared resolved. B02B/B03-B06/final audit unverified.",
+  "gate": "Exact-head Sol6.1 high independent review pending; slice remains in-progress",
+  "artifacts": [
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b02a/encoded-before/b02a/results.json",
+      "sourceSha256": "dbc7226bc9b1723019b2e23c6a2bde2ecd96ab521a545e5d9a4a0f9dcdfabffa",
+      "sha256": "0a1f1e25522170fe48c9ae107219644a359132268bd8be4493d4cee04851201c",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b02a-encoded-before.log",
+      "sourceSha256": "f68b8ce65c43c7fdabcc2a821e267019bdc28c777956566b87a2193264a953f2",
+      "sha256": "440b22f3f2600b4116087400be4405bbf679744d0b189513c5627fdb7f1640b7",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b02a/encoded-all/b02a/results.json",
+      "sourceSha256": "afbcc7ea19ca3527ccac01cd766a4349dec594c4f61ab95d36f61a880a62dbfa",
+      "sha256": "990151ab2c5d6d5f37418ad45ac50c8b9994846ba56b1483a6fb644ebad26bf0",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b02a-encoded-all.log",
+      "sourceSha256": "adda4c10deda87c63fb69dcf46c3a91baaa4bef028dec5f552789143937d2819",
+      "sha256": "adda4c10deda87c63fb69dcf46c3a91baaa4bef028dec5f552789143937d2819",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.json",
+      "source": "output/goal-b02a/encoded-headed/b02a/results.json",
+      "sourceSha256": "2097bed5786de1a149181c3ab55eb58476d88592bce9c3d5ea0b1f71adad623d",
+      "sha256": "3d8c0d0d8a6455aff95d84576c91dc29f80e61652e0ca3642d0d312fab20b8a8",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b02a-encoded-headed.log",
+      "sourceSha256": "c697fc0fcf3fb313f74607a6ec2264873924adab45c5365cee816a1dc34d7cc5",
+      "sha256": "c697fc0fcf3fb313f74607a6ec2264873924adab45c5365cee816a1dc34d7cc5",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "unit-contract.log.txt",
+      "source": "output/goal-b02a-unit.log",
+      "sourceSha256": "d66e00894c9821c8b74aec71afec1f6e5948807f644103b00b22807dab524af1",
+      "sha256": "d66e00894c9821c8b74aec71afec1f6e5948807f644103b00b22807dab524af1",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "native-initial.log.txt",
+      "source": "output/goal-b02a-native-initial.log",
+      "sourceSha256": "1fd67703489a1ff3e8bbb6c3b4bd838d2ec7d95a997046a7f1cd66641cefa111",
+      "sha256": "1fd67703489a1ff3e8bbb6c3b4bd838d2ec7d95a997046a7f1cd66641cefa111",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "initial-harness-before.log.txt",
+      "source": "output/goal-b02a-initial-before.log",
+      "sourceSha256": "5f8022e285af9ac3a32733c684b3eee82dfc8573c2a3106195d2544cbda4435d",
+      "sha256": "7cb930e16ff6b349f3ec87b741655252c8a2c33c417d0d455890efc2d400a161",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "candidate-summary-failure.log.txt",
+      "source": "output/goal-b02a-all1.log",
+      "sourceSha256": "99d57829f491c7348ac98e2e93d707c118fda8381daca2c0398aba6c80adf3ec",
+      "sha256": "c555534b453fd655fac48dad02c30a379f8c336b8ab8abfce76ca1b1db516d66",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-codex-live.json",
+      "source": "output/goal-b02a/compare/codex-live.json",
+      "sourceSha256": "352b21362a585bdfb00933edf0e7a38337f5b7da6c0893d7d5fd9d24bb498c5d",
+      "sha256": "352b21362a585bdfb00933edf0e7a38337f5b7da6c0893d7d5fd9d24bb498c5d",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-aside-live.txt",
+      "source": "output/goal-b02a/compare/aside-final-live.txt",
+      "sourceSha256": "b137d384361903ed1c7ea5a3ce9d9dfe41d54cbae3c8a56249cfd5cdfc18156b",
+      "sha256": "180be352c131237e1f632c6f44e78434cceb9086f1e9809114c5ed8c414b1002",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-aside-summary.json",
+      "source": "output/goal-b02a/compare/aside-final-summary.json",
+      "sourceSha256": "3e420d8a6686a7ae84aa07b8a549d47e6713daa1f15aef8c0c4e74116bdf7018",
+      "sha256": "3e420d8a6686a7ae84aa07b8a549d47e6713daa1f15aef8c0c4e74116bdf7018",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "aside-guide.txt",
+      "source": "output/goal-b02a/compare/aside-guide.txt",
+      "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "aside-repl-guide.txt",
+      "source": "output/goal-b02a/compare/aside-repl-guide.txt",
+      "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "runtime-regression.json",
+      "source": "output/runtime-e2e/results.json",
+      "sourceSha256": "5282f111ff4ab10b36b764d76a4cae3c3e57bedc20005e6f83cdf21650fa9e63",
+      "sha256": "cc14806714b761ab09552c63c05fe4ebdf02b1105d25f900e20171a3bb46d012",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "review-boundaries.json",
+      "source": "output/review-fixes/boundaries.json",
+      "sourceSha256": "4ad51dcae6ee6c81a4debdfb29626fea4eb66f8fcd9ed2194b83dd847ffdd2f3",
+      "sha256": "4d7047e6c3d19a8ab9a7eae307b9bc643b5627f9c83a8bb8ff40732f194cc3c5",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "fixture-format-audit.json",
+      "source": "output/goal-b02a/fixture-format-audit.json",
+      "sourceSha256": "cbd8d560e397f3a405eedbc5573897930a7215ca2a51630198eb8492cf3cf0fc",
+      "sha256": "cbd8d560e397f3a405eedbc5573897930a7215ca2a51630198eb8492cf3cf0fc",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "native-format-audit.json",
+      "source": "output/goal-b02a/native-format-audit.json",
+      "sourceSha256": "bb8481311e71f758c7075899fcad660c30c7ff1ea6f2c708eaaeaa2b0f9a4d28",
+      "sha256": "bb8481311e71f758c7075899fcad660c30c7ff1ea6f2c708eaaeaa2b0f9a4d28",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    }
+  ],
+  "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Final Before/After/full127/headed42 rerun with encoded source. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns."
+}

@@ -1,0 +1,109 @@
+✔︎ Opened a new tab and set it active: tabs[0], page → 검색과 이름 경계 (http://127.0.0.1:63771/selection)
+# note: interactive (clickable / focusable) elements only.
+- title: "검색과 이름 경계" [url=http://127.0.0.1:63771/selection]
+- heading "검색과 이름 경계" [level=1]
+- text: "0[]준비 준비"
+- region:
+  - button "Main CSS" [ref=e1]
+  - button "Shadow CSS" [ref=e2]
+  - button "Add CSS target" [ref=e3]
+- region:
+  - button "A" [ref=e4]
+  - button [ref=e5]
+  - link "A" [ref=e6]: "Link body"
+  - button "Explicit" [ref=e7]
+  - button "Fallback Explicit" [ref=e8]
+  - heading "Fifth Heading" [level=5]
+  - button "Offscreen Role" [ref=e9]
+  - button "Save Duplicate" [ref=e10]
+  - button "Save Duplicate" [ref=e11]
+  - button "같은 😀" [ref=e12]
+  - button "같은 😀" [ref=e13]
+  - region:
+    - button "Region Child" [ref=e14]
+  - text: "Picture"
+  - textbox "Image Submit" [ref=e15]
+- region:
+  - text: "Beta Alpha Native"
+  - textbox "Beta Alpha Beta" [ref=e16]: "initial"
+  - textbox "Beta" [ref=e17]
+  - textbox "Fallback ARIA" [ref=e18]
+  - textbox "After Empty" [ref=e19]
+  - textbox "Hidden Explicit" [ref=e20]
+  - textbox "Alpha" [ref=e21]
+  - textbox "Cycle Fallback" [ref=e22]
+  - text: "Shadow Beta"
+  - textbox "Beta" [ref=e23]
+  - text: "First"
+  - textbox "First Second" [ref=e24]
+  - text: "Second Wrapped"
+  - textbox "Wrapped" [ref=e25]
+  - text: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx…[+846 chars]"
+  - textbox "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" [ref=e26]
+  - text: "Slot Name Shadow"
+  - textbox "Slot Name" [ref=e27]
+  - textbox "Hint Label" [ref=e28] [placeholder="Hint Label"]
+  - text: "Plain Unconnected Label Unconnected Label"
+  - textbox "Same Label" [ref=e29]: "initial"
+  - textbox "Same Label" [ref=e30]: "initial"
+- region:
+  - button "Accessible A" [ref=e31]: "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv 본문끝🧭"
+  - button "Unique Confirm" [ref=e32]
+  - text: "Sibling Text Sibling Text foo bar foo \n  bar foo bar Case  한글 \n 😀Case 한글 😀Offscreen Text"
+- region:
+  - button "Stable Ref" [ref=e33]
+- button "Replace Ref" [ref=e34]
+- button "Remove Ref" [ref=e35]
+- button "Navigate Child" [ref=e36]
+- button "Proof Button" [ref=e37]
+- text: "Proof Field"
+- textbox "Proof Field" [ref=e38]
+- title: "검색과 이름 경계" [url=http://127.0.0.1:63771/selection]
+- heading "검색과 이름 경계" [level=1]
+- text: "1[{\"type\":\"click\",\"id\":\"proof-button\",\"trusted\":true}]PASS: proof clicked PASS: proof filled"
+- region:
+  - button "Main CSS" [ref=e1]
+  - button "Shadow CSS" [ref=e2]
+  - button "Add CSS target" [ref=e3]
+- region:
+  - button "A" [ref=e4]
+  - button [ref=e5]
+  - link "A" [ref=e6]: "Link body"
+  - button "Explicit" [ref=e7]
+  - button "Fallback Explicit" [ref=e8]
+  - heading "Fifth Heading" [level=5]
+  - button "Offscreen Role" [ref=e9]
+  - button "Save Duplicate" [ref=e10]
+  - button "Save Duplicate" [ref=e11]
+  - button "같은 😀" [ref=e12]
+  - button "같은 😀" [ref=e13]
+  - region:
+    - button "Region Child" [ref=e14]
+- region:
+  - text: "Beta Alpha"
+  - label: "Native"
+  - text: "Shadow Beta"
+  - label: "First"
+  - label: "Second"
+  - label: "Wrapped"
+  - label: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 라벨끝🧭"
+  - label: "Slot Name Shadow"
+  - text: "Plain Unconnected Label"
+  - label: "Unconnected Label"
+- region:
+  - button "Accessible A" [ref=e31]: "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv 본문끝🧭"
+  - button "Unique Confirm" [ref=e32]
+  - text: "Sibling Text Sibling Text foo bar foo \n  bar foo bar Case  한글 \n 😀Case 한글 😀Offscreen Text"
+- region:
+  - button "Stable Ref" [ref=e33]
+- button "Replace Ref" [ref=e34]
+- button "Remove Ref" [ref=e35]
+- button "Navigate Child" [ref=e36]
+- button "Proof Button" [ref=e37]
+- label: "Proof Field"
+- textbox "Proof Field" [ref=e38] [focused]: "selection-proof"
+- iframe "Selection child" [ref=e39]
+{"rows":[{"name":"fallback-role","status":"returned","value":0},{"name":"priority","status":"returned","value":0},{"name":"repeated-idref","status":"returned","value":0},{"name":"lower-priority-aria","status":"returned","value":0},{"name":"long-label","status":"returned","value":1},{"name":"long-role","status":"returned","value":1},{"name":"slot-label","status":"returned","value":0},{"name":"long-body","status":"returned","value":2},{"name":"accessible-name-is-text","status":"returned","value":0},{"name":"minimum","status":"returned","value":["minimum-span"]},{"name":"adjacent","status":"returned","value":["adjacent"]},{"name":"regex-g","status":"returned","value":1},{"name":"nested-aria-hidden","status":"returned","value":1},{"name":"css-hidden-text","status":"returned","value":1},{"name":"placeholder-label","status":"returned","value":0},{"name":"empty-role-name","status":"error","message":"locator.evaluateAll() does not support role selectors yet; use a CSS selector."}],"proof":{"click":"PASS: proof clicked","fill":"PASS: proof filled","value":"selection-proof"}}
+[system] last tab closed. `page` is now null. call openTab(url) to open a new one.
+[system] no current open tabs in this session.
+[ok | 1779ms]

@@ -1,0 +1,9 @@
+{
+  "grade": "NATIVE_FIXTURE_ENCODING_AUDIT_ONLY",
+  "browser": "145.0.7632.6",
+  "oldSourceSha256": "6e2418628ec8b3c13a314de1d0c312a359d0fbf93f52a2d6a6044e30acd11c14",
+  "currentSourceSha256": "eebaeedae067c94f9ce5d4d6d75654328a592ad54039cdb39a0a49df0e36a5a7",
+  "rootAndOpenShadowTopologyExactlyEqual": true,
+  "domSignatureSha256": "ed6ce9a6b2ff6bed23150618bc20cfbd8aa635ab708e8fe0108676eff0e3797f",
+  "notProductPass": true
+}

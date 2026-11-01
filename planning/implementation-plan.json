@@ -159,7 +159,10 @@
         "REQ-SCOPE-GETBYLABEL-002",
         "REQ-SCOPE-GETBYTEXT-003"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ],
       "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/19"
     },
     {
@@ -659,8 +662,11 @@
       "conditions": [
         "REQ-C-SELECTION-001-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-C-SELECTION-002",
@@ -681,8 +687,11 @@
       "conditions": [
         "REQ-C-SELECTION-003-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-C-SELECTION-004",
@@ -692,8 +701,11 @@
       "conditions": [
         "REQ-C-SELECTION-004-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-C-SELECTION-005",
@@ -703,8 +715,11 @@
       "conditions": [
         "REQ-C-SELECTION-005-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-C-SELECTION-006",
@@ -1241,8 +1256,11 @@
         "REQ-SCOPE-LOCATOR-001-C01",
         "REQ-SCOPE-LOCATOR-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-LOCATOR-002",
@@ -1252,8 +1270,11 @@
       "conditions": [
         "REQ-SCOPE-LOCATOR-002-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-GETBYROLE-001",
@@ -1265,8 +1286,11 @@
         "REQ-SCOPE-GETBYROLE-001-C02",
         "REQ-SCOPE-GETBYROLE-001-C03"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-GETBYROLE-002",
@@ -1277,8 +1301,11 @@
         "REQ-SCOPE-GETBYROLE-002-C01",
         "REQ-SCOPE-GETBYROLE-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-GETBYTEXT-001",
@@ -1289,8 +1316,11 @@
         "REQ-SCOPE-GETBYTEXT-001-C01",
         "REQ-SCOPE-GETBYTEXT-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-GETBYTEXT-002",
@@ -1301,8 +1331,11 @@
         "REQ-SCOPE-GETBYTEXT-002-C01",
         "REQ-SCOPE-GETBYTEXT-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-GETBYLABEL-001",
@@ -1313,8 +1346,11 @@
         "REQ-SCOPE-GETBYLABEL-001-C01",
         "REQ-SCOPE-GETBYLABEL-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-GETBYLABEL-002",
@@ -1325,8 +1361,11 @@
         "REQ-SCOPE-GETBYLABEL-002-C01",
         "REQ-SCOPE-GETBYLABEL-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-LOCATOR-FILTER-001",
@@ -2558,8 +2597,11 @@
       "conditions": [
         "REQ-SCOPE-GETBYTEXT-003-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-SNAPSHOT-008",
@@ -3169,120 +3211,171 @@
       "id": "REQ-SCOPE-LOCATOR-001-C01",
       "requirement": "REQ-SCOPE-LOCATOR-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-locator-001-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-LOCATOR-001-C02",
       "requirement": "REQ-SCOPE-LOCATOR-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-locator-001-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-LOCATOR-002-C01",
       "requirement": "REQ-SCOPE-LOCATOR-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-locator-002-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYROLE-001-C01",
       "requirement": "REQ-SCOPE-GETBYROLE-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbyrole-001-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYROLE-001-C02",
       "requirement": "REQ-SCOPE-GETBYROLE-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbyrole-001-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYROLE-001-C03",
       "requirement": "REQ-SCOPE-GETBYROLE-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbyrole-001-c03",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYROLE-002-C01",
       "requirement": "REQ-SCOPE-GETBYROLE-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbyrole-002-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYROLE-002-C02",
       "requirement": "REQ-SCOPE-GETBYROLE-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbyrole-002-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYTEXT-001-C01",
       "requirement": "REQ-SCOPE-GETBYTEXT-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbytext-001-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYTEXT-001-C02",
       "requirement": "REQ-SCOPE-GETBYTEXT-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbytext-001-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYTEXT-002-C01",
       "requirement": "REQ-SCOPE-GETBYTEXT-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbytext-002-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYTEXT-002-C02",
       "requirement": "REQ-SCOPE-GETBYTEXT-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbytext-002-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYTEXT-003-C01",
       "requirement": "REQ-SCOPE-GETBYTEXT-003",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbytext-003-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYLABEL-001-C01",
       "requirement": "REQ-SCOPE-GETBYLABEL-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbylabel-001-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYLABEL-001-C02",
       "requirement": "REQ-SCOPE-GETBYLABEL-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbylabel-001-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYLABEL-002-C01",
       "requirement": "REQ-SCOPE-GETBYLABEL-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbylabel-002-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-GETBYLABEL-002-C02",
       "requirement": "REQ-SCOPE-GETBYLABEL-002",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-scope-getbylabel-002-c02",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-LOCATOR-FILTER-001-C01",
@@ -4383,8 +4476,11 @@
       "id": "REQ-C-SELECTION-001-C01",
       "requirement": "REQ-C-SELECTION-001",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-c-selection-001-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-C-SELECTION-002-C01",
@@ -4397,22 +4493,31 @@
       "id": "REQ-C-SELECTION-003-C01",
       "requirement": "REQ-C-SELECTION-003",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-c-selection-003-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-C-SELECTION-004-C01",
       "requirement": "REQ-C-SELECTION-004",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-c-selection-004-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-C-SELECTION-005-C01",
       "requirement": "REQ-C-SELECTION-005",
       "slice": "B02A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b02a.md#req-c-selection-005-c01",
+        "docs/evidence/b02a/manifest.json"
+      ]
     },
     {
       "id": "REQ-C-SELECTION-006-C01",

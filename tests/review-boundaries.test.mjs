@@ -44,8 +44,11 @@ test('snapshot text budget does not alter native labels or aria-labelledby',asyn
  const r=await run(`console.log(await p.getByLabel('Only visible label',{exact:true}).count(),await p.getByRole('textbox',{name:'Only aria labelled',exact:true}).count());`);assert.equal(text(r),'1 1');evidence.push({case:'accessible-labels',pass:true});
 });
 test('closed details exposes summary shadow control and hides content controls',async()=>{
- const r=await run(`console.log(await p.getByRole('button',{name:'Shadow summary',exact:true}).count(),await p.getByRole('button',{name:'Hidden shadow content',exact:true}).count(),await p.getByRole('button',{name:'Hidden content',exact:true}).count());console.log((await p.snapshot({root:'details'})).text);await p.getByRole('button',{name:'Shadow summary',exact:true}).click();`);
- assert.match(text(r),/^1 0 0/);assert.match(text(r),/Shadow summary/);assert(!text(r).includes('Hidden shadow content'));assert(!text(r).includes('Hidden content'));assert.equal(await page.locator('#host').getByRole('button').textContent(),'clicked');evidence.push({case:'summary-shadow',pass:true});
+ // The summary now receives its composed shadow text too, so both the summary
+ // and its nested native button have this name. Select the native button
+ // explicitly; do not weaken strict matching or click an arbitrary first match.
+ const r=await run(`console.log(await p.getByRole('button',{name:'Shadow summary',exact:true}).evaluateAll(els=>els.map(el=>el.tagName)));console.log(await p.locator('button').filter({hasText:/^Shadow summary$/}).count(),await p.getByRole('button',{name:'Hidden shadow content',exact:true}).count(),await p.getByRole('button',{name:'Hidden content',exact:true}).count());console.log((await p.snapshot({root:'details'})).text);await p.locator('button').filter({hasText:/^Shadow summary$/}).click();`);
+ assert.match(text(r),/^\["SUMMARY","BUTTON"\]\n1 0 0/);assert.match(text(r),/Shadow summary/);assert(!text(r).includes('Hidden shadow content'));assert(!text(r).includes('Hidden content'));assert.equal(await page.locator('#host').getByRole('button').textContent(),'clicked');evidence.push({case:'summary-shadow',pass:true});
 });
 test('scrolled viewport clip captures current blue area rather than document red top',async()=>{
  const r=await run(`await p.locator('#bottom').scrollIntoView();await p.waitForFunction(()=>scrollY>500);display(await p.screenshot({clip:{x:0,y:0,width:100,height:100}}));`);

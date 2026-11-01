@@ -200,3 +200,5 @@ B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준�
 - PR18 정확7bae78a Sol6.1 high 독립 CHANGES_REQUESTED(P2 큰 timeout 타이머 overflow). bounded interval 재설정으로 수정하고 제품4경계/단위1 추가. 전체114 PASS/외부1 SKIP·단독 headed32 PASS, 병렬 headed의 프레임조회1건 실패도 원시 보존·B03A 추적. 새head 재리뷰 대기.
 
 - PR18 정확70ba037 독립 재리뷰 PASS(114/외부1 SKIP·headed32·추가15행), 원격 exact gate 확인 후0452cbe 정상 머지·이슈17 닫힘. B02A 이슈19와 feat/19-selection-naming 시작.
+
+- B02A 이슈19: 공통 이름/본문/출력 분리·IDREF root/우선순위·composed 최소text·입력검증·detachedN 예외 보완. Before3/10→After10/10, 전체127 PASS/외부1 SKIP·단독 headed42 PASS. Codex/Aside 같은 최종root16조회+실제proof 비교와 원시 실패 보존. 독립 리뷰 전.

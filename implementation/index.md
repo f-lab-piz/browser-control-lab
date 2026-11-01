@@ -14,4 +14,4 @@
 - B01E: 이슈#17,5부모/7조건의 비동기 평가·JSON 직렬화 국소 제품 PASS. Before0/7→After7/7, 전체114 PASS/외부1 SKIP·단독 창 모드32 PASS. 정확head 독립 리뷰 전. [보고서](../docs/implementation/b01e.md)
 
 - B01E: 정확70ba037 새 컨텍스트 Sol6.1 high 재리뷰 PASS, PR18 머지0452cbe·이슈17 CLOSED. [재리뷰](../docs/reviews/pr18-b01e-rereview.md).
-- B02A: 이슈19,13부모/21조건의 공통 검색/이름 정책 준비. 제품 미검증.
+- B02A: 이슈19,13부모/21조건 국소 제품 PASS. Before3/10→After10/10, 전체127 PASS/외부1 SKIP·단독 headed42 PASS. 정확head 독립 리뷰 전. [보고서](../docs/implementation/b02a.md)
