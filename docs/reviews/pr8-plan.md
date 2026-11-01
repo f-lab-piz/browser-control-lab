@@ -14,7 +14,7 @@
 
 ## 검증/재현 명령 및 결과
 
-검토 경로: `/Users/kihoon/Documents/Codex/2026-10-29/files-pasted-by-the-user-1/browser-control-lab`.
+검토 경로: `.` (저장소 루트; 개인 경로 표기만 일반화).
 
 |명령/검사|결과|
 |---|---|
@@ -26,7 +26,7 @@
 |`python3 docs/requirements/tools/test_validate.py`|종료0. 3 unittest 메서드 통과. 기존 매핑 손상과 명시 동결 옵션 검사 포함|
 |`python3 docs/requirements/tools/test_development_plan.py`|종료0. 2 unittest 메서드 통과. 손상 검사 메서드는6개 subtest 포함|
 |`npm test`|종료0. 7 tests / 7 pass / 0 fail / 0 skip|
-|`PYTHONPATH=.local/skill-validation-deps python3 /Users/kihoon/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/browser-control-development`|종료0. Skill is valid|
+|`PYTHONPATH=.local/skill-validation-deps python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/browser-control-development`|종료0. Skill is valid|
 |`git diff --check d5bd4ffddbb70cbfc4e6c908663c30c2ab8468ea 2bb9cb4ff0c1af2f1c3252984801f2f3b0a72819`|종료0. 이번 diff whitespace 오류 없음|
 |`python3 .local/goal-development/review-plan/probe_plan.py`|종료0. 메모리 손상4개를 독립 실행, 모두 ACCEPTED. 결과는 `probe-results.json`; 첫 probe가 PLAN-01 재현|
 
@@ -48,7 +48,7 @@
 
 ## 검토 SHA와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/8
+- PR: #8
 - Base: `d5bd4ffddbb70cbfc4e6c908663c30c2ab8468ea`
 - Head: `2bb9cb4ff0c1af2f1c3252984801f2f3b0a72819` (검토 시작/종료 동일)
 - 판정: **CHANGES_REQUESTED — PLAN-01 P2 해결 후 해당 검사와 회귀 재확인 필요.** 이번 판정은 계획/문서 검사기 범위이며 제품 구현 승인이나 원격 PR 리뷰를 뜻하지 않는다.

@@ -233,7 +233,7 @@
     "mergedAt": null,
     "number": 20,
     "state": "OPEN",
-    "url": "https://github.com/f-lab-piz/browser-control-lab/pull/20"
+    "url": "<REPOSITORY_URL>/pull/20"
   },
   "exactB02AConditions": {
     "before-product": true,

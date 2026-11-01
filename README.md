@@ -84,7 +84,7 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 - [검증 등급·복잡 시나리오·성공 판정](docs/testing.md)
 - [개발·검증 스킬](.agents/skills/browser-control-development/SKILL.md) — 프로젝트 AGENTS.md에서 로드
 
-개발은 API 계약→단위 검증→기본 fixture→복잡 fixture→제품 확장 E2E→외부 사이트 검증 순으로 진행합니다. GitHub 원격은 비공개 [browser-control-lab](https://github.com/f-lab-piz/browser-control-lab)입니다.
+개발은 API 계약→단위 검증→기본 fixture→복잡 fixture→제품 확장 E2E→외부 사이트 검증 순으로 진행합니다. 원격 저장소는 해당 작업 환경의 `origin` 설정을 따릅니다.
 
 ## 수정 전 진단 평가
 

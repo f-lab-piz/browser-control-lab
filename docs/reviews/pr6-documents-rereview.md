@@ -13,7 +13,7 @@
 
 ## 검증/재현 명령 및 결과
 
-작업 경로: `/Users/kihoon/Documents/Codex/2026-10-29/files-pasted-by-the-user-1/browser-control-lab`.
+작업 경로: `.` (저장소 루트; 개인 경로 표기만 일반화).
 
 |실행|종료 코드·결과|
 |---|---|
@@ -49,7 +49,7 @@ Aside 원문 바이트/hash 독립 대조:
 
 ## 검토 SHA와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/6
+- PR: #6
 - Base: `700a6a06af3f97729327afaf9becb4ee29bb475b`
 - 이전 검토 head: `b9f6db00fe997f7841caf3b31af452dd3c110a5c`
 - 이번 검토 head: `3c742660c1d42c33c7fcbe2dfaad38cfd130df93`

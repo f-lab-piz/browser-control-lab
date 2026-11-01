@@ -2,7 +2,7 @@
 
 사용자가 요청한 **6단계 B02A까지 구현·검증·독립 제품 리뷰를 완료**했다. 정확23aff96의 Sol6.1/high 독립 리뷰는 PASS이며 범위 내 미해결 P0/P1/P2는 없다. 전체132 PASS/외부1 SKIP, 전체 종료 후 단독 창 모드45 PASS, 별도 독립 경계3그룹 PASS다. [B02A 보고서](implementation/b02a.md), [최종 리뷰](reviews/pr20-b02a-final.md), [증거](evidence/b02a/manifest.json)를 따른다.
 
-1~6단계 합계는37부모/54조건이다. 최종 증거 형식 P3 정리 후 정확d513cfa의 [문서 delta 독립 PASS](reviews/pr20-b02a-docs-delta.md)와 원격 gate를 거쳐 [PR20](https://github.com/f-lab-piz/browser-control-lab/pull/20)을b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47로 정상 머지했다. 새 PC 재개 절차와 남은 이식성 개선은 [개발 재개 안내](development-handoff.md)를 따른다.
+1~6단계 합계는37부모/54조건이다. 최종 증거 형식 P3 정리 후 정확d513cfa의 [문서 delta 독립 PASS](reviews/pr20-b02a-docs-delta.md)와 원격 gate를 거쳐 PR #20을b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47로 정상 머지했다. 새 PC 재개 절차와 남은 이식성 개선은 [개발 재개 안내](development-handoff.md)를 따른다.
 
 기존 전체21단계 Goal은 중단 상태를 유지한다. **7단계 B02B부터 이후15단계는 모두 미착수이며 자동으로 이어서 진행하지 않는다.** 전체185REQ의 완료를 주장하지 않는다. 과거 headed 프레임조회 원인 미확정 위험과 외부/회사 사이트의 미검증 범위는 남긴다. 아래 수치와 대기 문구는 각 단계 당시 이력이다.
 

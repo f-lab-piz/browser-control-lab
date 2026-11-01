@@ -79,7 +79,7 @@ PNG 검사는 범용 엄격 zlib inflater와 자체 구조/행 검사 조합이�
 
 ## 정확 base/head와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/14
+- PR: #14
 - base: `0446e5b3ae683bb7801184648078f99de96ea55d`
 - head: `41ff8e310d57a9366259163052cd17cf38e90f18`
 - 범위: 전체 base→head diff와 연결 코드·B01C6 REQ/7조건·안내·Before/After·현재/과거 phase·증거/비교 등급.

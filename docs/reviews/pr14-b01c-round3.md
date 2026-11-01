@@ -62,7 +62,7 @@ B01C 6 REQ/7조건의 명시 출력/NUL/순환/Unicode·UTF8 64KiB·256블록·�
 
 ## 정확 base/head와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/14
+- PR: #14
 - base: `0446e5b3ae683bb7801184648078f99de96ea55d`
 - head: `64f2de4e7bf62413ed93a0382c6c565798430dcf`
 - 범위: 전체 base→head diff·연결 코드·B01C6 REQ/7조건·Before/After/안내·증거/비교 등급.

@@ -21,7 +21,7 @@
 
 ## 검증/재현 명령 및 결과
 
-작업 경로: `/Users/kihoon/Documents/Codex/2026-10-29/files-pasted-by-the-user-1/browser-control-lab`.
+작업 경로: `.` (저장소 루트; 개인 경로 표기만 일반화).
 
 - `git rev-parse HEAD`: 요청한 `b9f6db00fe997f7841caf3b31af452dd3c110a5c`와 일치. 리뷰 시작/종료 시 tracked 변경 없음.
 - `python3 docs/requirements/tools/validate.py`: exit 0. 185 REQ, 254 상세조건, 370 슬롯, 508 조건단위, 152 claims, 19 sources, 35 동결 제품파일을 출력했다. 이 결과가 확인하는 범위와 DOC-01에서 빠지는 범위를 구분한다.

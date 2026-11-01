@@ -12,7 +12,7 @@
 
 ## 검증/재현 명령 및 결과
 
-작업 경로: `/Users/kihoon/Documents/Codex/2026-10-29/files-pasted-by-the-user-1/browser-control-lab`.
+작업 경로: `.` (저장소 루트; 개인 경로 표기만 일반화).
 
 |명령/확인|결과|
 |---|---|
@@ -46,7 +46,7 @@
 
 ## 검토 SHA와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/8
+- PR: #8
 - Base: `d5bd4ffddbb70cbfc4e6c908663c30c2ab8468ea`
 - 이전 검토 head: `2bb9cb4ff0c1af2f1c3252984801f2f3b0a72819`
 - 재리뷰 head: `65de20ab53dd0926f08c1e884807361e2a987c3b` (검토 시작/종료 동일, 종료 시 `git status --short` 출력 없음)

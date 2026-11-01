@@ -302,8 +302,8 @@
       "file": "reviewer-label-report.txt",
       "source": "output/stage6-final-review/report.md",
       "sourceSha256": "934bd3d9ff52887198cce375a9ca52ef5b3518d114ba68a534b4c710e0df9aa8",
-      "sha256": "934bd3d9ff52887198cce375a9ca52ef5b3518d114ba68a534b4c710e0df9aa8",
-      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+      "sha256": "ec359b65bc46202cbe8e08f46c756f06985e2a003911d42805cb5fcaaec45169",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed; personal repository URL/account/workspace references generalized; historical raw-source digest retained"
     },
     {
       "file": "reviewer-label-probe.json",
@@ -526,15 +526,15 @@
       "file": "reviewer-docs-delta-report.txt",
       "source": "output/stage6-docs-delta/report.md",
       "sourceSha256": "9a2fb8240108a731836ee98e1e39bc80003e6a54fcc3542ac2e86722d7e8b0bd",
-      "sha256": "9a2fb8240108a731836ee98e1e39bc80003e6a54fcc3542ac2e86722d7e8b0bd",
-      "normalization": "repository path placeholder; ANSI/trailing whitespace/terminal blank lines removed"
+      "sha256": "2c911efc6069c4dd334f64af30571e414d4fa3da1dc1718f2f6e33ef93fe5dc8",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace/terminal blank lines removed; personal repository URL/account/workspace references generalized; historical raw-source digest retained"
     },
     {
       "file": "reviewer-docs-delta-audit.json",
       "source": "output/stage6-docs-delta/audit.json",
       "sourceSha256": "c0baa74e262646d4a8c49a4d45c54874bbf414d1fd28f19271a80fccfcf5f940",
-      "sha256": "c0baa74e262646d4a8c49a4d45c54874bbf414d1fd28f19271a80fccfcf5f940",
-      "normalization": "repository path placeholder; ANSI/trailing whitespace/terminal blank lines removed"
+      "sha256": "b088ae08a18055139125f7ab1bf1fe38d5423c6b95c72d6623672d02ffc5535c",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace/terminal blank lines removed; personal repository URL/account/workspace references generalized; historical raw-source digest retained"
     }
   ],
   "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns. Latest separate label fixture adds one formal product/native case without changing selection/boundary DOM; final13 Before/After132/headed45 use the latest source36 fingerprint. Prior12/130/44 results remain historical in earlier commits/review reports.",
@@ -605,5 +605,14 @@
     "scope": "Final docs-only delta; approved36inputs unchanged, then69 retained artifacts matched; these historical counts predate current handoff retention additions",
     "newBrowserRun": false,
     "mergeCommit": "b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47"
+  },
+  "privacyNormalization": {
+    "scope": "Tracked retained text only; ignored raw files and Git history unchanged",
+    "changedArtifacts": [
+      "reviewer-label-report.txt",
+      "reviewer-docs-delta-report.txt",
+      "reviewer-docs-delta-audit.json"
+    ],
+    "historicalRecords": "PR and Issue numbers are historical references; captured url fields use REPOSITORY_URL placeholders. Existing sourceSha256 values retain original raw bytes; sha256 reflects the normalized copy. Test results and reviewed commits are unchanged."
   }
 }

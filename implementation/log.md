@@ -221,3 +221,12 @@ B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준�
 - 실제 검증: skill-creator quick_validate PASS(시스템 Python은 PyYAML이 없어 첫 실행 실패, 기존 .local/skill-validation-deps를 PYTHONPATH로 지정해 해결), 문서/계획 validator PASS, Python 검사기6 PASS, 변경 Markdown 로컬 링크 PASS, B02A71/B01E24 보존hash PASS, staged diff-check PASS. 제품/테스트/fixture/빌드/의존성 변경0.
 - git checkout-index로 추적 파일만 .local/portable-handoff-checkout에 내보낸 뒤 .git/node_modules/output/.local이 없는 상태에서 두 validator·Python6·재개 링크·보존71hash PASS. 새 OS/PC의 npm 설치·브라우저/확장 전체 실행을 한 증거는 아니며 기존132/45를 신규 실행으로 집계하지 않는다.
 - 남은 코드/환경 후보: Chrome 경로 공통탐색/환경진단, 모든 legacy 출력의 run별 격리, 새 PC/OS에서 실제 확장 bootstrap·전체/단독headed 검증. 현재 문서는 TEST_CHROME 명시/고정출력 즉시보존 방법을 안내한다. 문서 PR로 원격에 보존하고 머지는 이번 요청에서 자동 수행하지 않는다. 다음 제품 후보는 B02B이나 실행은 사용자 재개 범위를 따른다.
+
+
+## 2026-11-02 · 이슈21 추가: 추적 기록의 계정/PC 표기 일반화
+
+사용자는 기존 PR22에 추가 커밋·독립 검토 후 정상 머지를 승인했다. 현재 추적 파일의 개인 저장소 URL/SSH별칭/사용자 절대 경로를 제거하고 저장소 기준 경로·환경변수·PR/Issue 번호·REPOSITORY_URL로 일반화했다. 새 스킬 규칙은 실행에 필요한 실제 경로와 추적 기록의 표기를 구분한다. 공식 외부 소스·라이선스 링크, 검토 SHA·테스트 판정과 원시 sourceSha256은 유지했다. 수정한 보존 증거3개의 sha256/정규화 설명만 갱신했다.
+
+제품·테스트·fixture·빌드·의존성 변경은 없으며 이번 작업은 문서/계정중립 인계 범위다. 기존 ignored 로컬 출력/설정 및 Git 과거 이력은 정리 대상이 아니다.7단계 이후15slice와 기존 중단 범위도 유지한다. 구조/검사기·증거 hash·개인표기 잔존·전체 diff·추적파일 전용 내보내기를 확인하고 정확한 추가 커밋에서 새 컨텍스트 Sol6.1/high 독립 리뷰 후 머지한다. 이후 실행 결과/판정과 실제 merge는 아래 후속 기록 또는 해당 PR 원격 기록을 따른다.
+
+추가 커밋 전 확인: tracked516개에서 개인 계정/사용자/절대홈경로 패턴0개,6개 manifest의 보존215개 hash 일치와 기존 sourceSha256 불변, 승인 제품 입력36개 불변, 스킬검사·문서/계획 validator·Python6 PASS, 변경 Markdown 링크와 staged diff-check PASS. 과거 raw 문서 사본1개의 원문 위치 기준 상대링크2개는 기존부터 있었고 이번에 새로 깨진 링크는0개다. 추적 파일만 별도 폴더로 내보낸 문서/계획/Python6도 PASS다. 제품 브라우저/새 PC 검증은 신규 실행하지 않았다.

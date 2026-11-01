@@ -21,7 +21,7 @@ AGENTS.md, `.agents/skills/browser-control-development/SKILL.md`, `references/pr
 | `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s docs/requirements/tools -p 'test_*.py'` | exit 0, 6 tests PASS |
 | 승인 SHA→최종 SHA 전체 이름/내용 diff 및 36개 sourceSha256 대조 | 실행 입력 변경 0, 각 지문은 승인 SHA와 현재 파일 모두 일치 |
 | 보존 manifest 및 원시 source 해시/정규화 대조 | B02A 보존 69/69 일치, B01E 보존 24/24 일치. 기존 61개의 sourceSha256 변경 0. 새 8개 원시 source 해시와 보존 정규화 바이트 모두 일치 |
-| `gh pr view 20 --repo f-lab-piz/browser-control-lab --json number,state,headRefOid,baseRefOid,mergeCommit,mergedAt,url` | 읽기 전용 조회. PR OPEN, base/head 위 SHA와 일치, mergeCommit/mergedAt null |
+| `gh pr view 20 --json number,state,headRefOid,baseRefOid,mergeCommit,mergedAt,url` | 읽기 전용 조회. PR OPEN, base/head 위 SHA와 일치, mergeCommit/mergedAt null |
 
 기계 대조 결과는 같은 디렉터리의 `audit.json`에 보존했다.
 
