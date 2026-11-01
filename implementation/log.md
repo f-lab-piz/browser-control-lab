@@ -157,3 +157,10 @@ Adam7 각 pass의 정확한 scanline 길이·전체 CRC·압축 메타데이터�
 guest 예외 이름과 메시지는 원인 증명이 아니므로 자동 VM 재생성에 사용하지 않는다. 실제 호스트 WASM 스택 trap만 RESOURCE_LIMIT·새 generation이고, guest 메모리 한도 InternalError는 JS_ERROR·guestName·유지된 VM의 runtimeReset:false를 명시한다. 이는 실제 재생성 여부를 구분하는 정본 계약을 따른다. 실제64MiB 한도 실패/후속 정리·복구를 확인하고 Error/RangeError/위조 InternalError 등5개 사용자 예외가 binding123과 generation을 보존하는 반례를 보강했다.
 
 같은 최종7개 제품 테스트: base0446e5b의 entry2파일 비교1 PASS/6 FAIL→7 PASS, review99aa574의 worker/output 비교5 PASS/2 FAIL→7 PASS. 두 비교 모두 그 두 파일 외 기록 source hash는 같다. 전체81 PASS/외부1 SKIP/FAIL0, headed 요구 제품16 PASS, 문서/계획·각 검사기 회귀 통과. 초기6개/79개 phase는 이력으로 보존한다. 새 정확 head의 독립 재리뷰가 남아 있으며 아직 미머지다.
+
+
+## 2026-11-02 · PR14 두 번째 독립 P2 보완과 형식 corpus 확대
+
+정확5747487의 재리뷰가 찾은 금지 color/depth·필수 PLTE 누락과 과도한 palette 할당을 보완했다. generic fast-png/iobuffer를 제품 의존성에서 제거하고 자체 색상·palette·transparency·행/Adam7·필터 검사와 제한 fflate 스트림을 사용한다. 전체 raster/palette 배열 없이 indexed 두 행만 복원하며 IDAT는 파일 길이 이내 단일 버퍼로 모은다. 확장64MiB와 작업 공간 예산을 분리 검사한다. 정상40·거절26의66행과 native oracle의 필터별 픽셀 판독을 추가했다.
+
+최종8개 제품 비교 base1/8→8/8, 직전 리뷰574의 output만 복원하면7/8→8/8(66행 중26개 오판)이다. base 형식 행렬은1MiB wire timeout으로 중도 실패해66행 기록이 없고, 이를 전부 실행한 것처럼 표시하지 않는다. 최종 final4 전체83 PASS/외부1 SKIP, 최종 source hash 일치. 직전 final2 실행의 다운로드 취소 TIMEOUT1건도 실패 기록으로 보존한다. 비중첩 재실행은 통과했지만 간헐 원인은 미확정이다. 새 정확 head의 Sol6.1 high 재리뷰가 남아 있고 B01C는in-progress다. 중계기는 개인용 로컬 전송이며 다중 사용자 계정/할당량 기능은 범위 밖이다.

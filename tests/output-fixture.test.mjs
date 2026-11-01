@@ -6,7 +6,7 @@ import {existsSync} from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {startFixture} from '../test-site/server.mjs';
-import {outputPng} from '../test-site/output-png.mjs';
+import {outputPng,pngFormatCases} from '../test-site/output-png.mjs';
 test('PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel',{timeout:45000},async()=>{
  const fixture=await startFixture();let browser;
  try{
@@ -22,6 +22,15 @@ test('PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixe
   for(const [kind,expected] of [['adam-valid',true],['adam-short',false]]){
    const decoded=await page.evaluate(async kind=>{const data=await fetch('/output-review-image?kind='+kind).then(r=>r.json());const bytes=Uint8Array.from(atob(data.data),c=>c.charCodeAt(0));try{const image=await createImageBitmap(new Blob([bytes],{type:'image/png'}));image.close();return true}catch{return false}},kind);
    assert.equal(decoded,expected);
+  }
+
+  for(const row of pngFormatCases()){
+   const observed=await page.evaluate(async ({name,samples})=>{
+    const data=await fetch('/output-format-image?name='+name).then(r=>r.json()),bytes=Uint8Array.from(atob(data.data),c=>c.charCodeAt(0));
+    try{const bitmap=await createImageBitmap(new Blob([bytes],{type:'image/png'}));let pixels=[];if(samples){const canvas=new OffscreenCanvas(bitmap.width,bitmap.height),context=canvas.getContext('2d');context.drawImage(bitmap,0,0);pixels=samples.map(([x,y])=>[...context.getImageData(x,y,1,1).data])}bitmap.close();return {decoded:true,pixels}}catch{return {decoded:false}}
+   },{name:row.name,samples:row.samples});
+   if(row.nativeExpected!==undefined)assert.equal(observed.decoded,row.nativeExpected,row.name);
+   if(row.samples)assert.deepEqual(observed.pixels,row.samples.map(s=>s[2]),row.name);
   }
 
  }finally{await browser?.close();await fixture.close()}

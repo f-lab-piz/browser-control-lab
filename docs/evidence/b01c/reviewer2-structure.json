@@ -1,0 +1,245 @@
+[
+  {
+    "name": "rgb-depth1",
+    "bytes": 67,
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQIAAACdZzGvAAAACklEQVR4nGNgAAAAAgABSK+kcQAAAABJRU5ErkJggg==",
+    "direct": {
+      "accepted": 67
+    },
+    "product": {
+      "requestId": "f8d6ef4c-47b4-4166-af89-16c1e1f65fc7",
+      "sessionId": "3373cd13-4ee0-4af1-981a-56aaae33fee7",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793549159076,
+      "startedAt": 1793549159076,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 12.199999809265137,
+          "outputChars": 13,
+          "outputBytes": 13,
+          "imageBytes": 67,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQIAAACdZzGvAAAACklEQVR4nGNgAAAAAgABSK+kcQAAAABJRU5ErkJggg=="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793549159174
+    },
+    "oracle": {
+      "decoded": false,
+      "name": "InvalidStateError",
+      "message": "The source image could not be decoded."
+    }
+  },
+  {
+    "name": "rgba-depth4",
+    "bytes": 68,
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABBAYAAADa5SmIAAAAC0lEQVR4nGNgYAAAAAMAAbitOmMAAAAASUVORK5CYII=",
+    "direct": {
+      "accepted": 68
+    },
+    "product": {
+      "requestId": "2c33f067-2294-4f58-b41d-b2db479c05e8",
+      "sessionId": "3373cd13-4ee0-4af1-981a-56aaae33fee7",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793549159187,
+      "startedAt": 1793549159187,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 8.5,
+          "outputChars": 13,
+          "outputBytes": 13,
+          "imageBytes": 68,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABBAYAAADa5SmIAAAAC0lEQVR4nGNgYAAAAAMAAbitOmMAAAAASUVORK5CYII="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793549159197
+    },
+    "oracle": {
+      "decoded": false,
+      "name": "InvalidStateError",
+      "message": "The source image could not be decoded."
+    }
+  },
+  {
+    "name": "indexed-no-palette",
+    "bytes": 67,
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAACklEQVR4nGNgAAAAAgABSK+kcQAAAABJRU5ErkJggg==",
+    "direct": {
+      "accepted": 67
+    },
+    "product": {
+      "requestId": "0622bc8d-e091-4f38-a8f1-a71eef864733",
+      "sessionId": "3373cd13-4ee0-4af1-981a-56aaae33fee7",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793549159226,
+      "startedAt": 1793549159226,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 8.300000190734863,
+          "outputChars": 13,
+          "outputBytes": 13,
+          "imageBytes": 67,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAACklEQVR4nGNgAAAAAgABSK+kcQAAAABJRU5ErkJggg=="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793549159236
+    },
+    "oracle": {
+      "decoded": false,
+      "name": "InvalidStateError",
+      "message": "The source image could not be decoded."
+    }
+  },
+  {
+    "name": "grayscale-alpha-depth1",
+    "bytes": 67,
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQQAAAC4DG5zAAAACklEQVR4nGNgAAAAAgABSK+kcQAAAABJRU5ErkJggg==",
+    "direct": {
+      "accepted": 67
+    },
+    "product": {
+      "requestId": "2b790d8e-5486-4aae-b0f2-6759fa7dfc8c",
+      "sessionId": "3373cd13-4ee0-4af1-981a-56aaae33fee7",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793549159263,
+      "startedAt": 1793549159263,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 8.300000190734863,
+          "outputChars": 13,
+          "outputBytes": 13,
+          "imageBytes": 67,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQQAAAC4DG5zAAAACklEQVR4nGNgAAAAAgABSK+kcQAAAABJRU5ErkJggg=="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793549159273
+    },
+    "oracle": {
+      "decoded": false,
+      "name": "InvalidStateError",
+      "message": "The source image could not be decoded."
+    }
+  },
+  {
+    "name": "valid-rgba",
+    "bytes": 70,
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGPgUbL4DwACCgFmeGgpMwAAAABJRU5ErkJggg==",
+    "direct": {
+      "accepted": 70
+    },
+    "product": {
+      "requestId": "364bf5c9-82de-40e0-bb93-ec9a3e8b1c99",
+      "sessionId": "3373cd13-4ee0-4af1-981a-56aaae33fee7",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793549159299,
+      "startedAt": 1793549159299,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 8.399999618530273,
+          "outputChars": 13,
+          "outputBytes": 13,
+          "imageBytes": 70,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGPgUbL4DwACCgFmeGgpMwAAAABJRU5ErkJggg=="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793549159308
+    },
+    "oracle": {
+      "decoded": true
+    }
+  }
+]

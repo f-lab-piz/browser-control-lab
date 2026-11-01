@@ -1,0 +1,221 @@
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1189.569583ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (314.003792ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (198.906041ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (139.848625ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6037.955542ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (961.878375ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (877.798208ms)
+✖ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4522.621875ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14923.639625
+
+✖ failing tests:
+
+test at tests/output-runtime.test.mjs:100:1
+✖ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4522.621875ms)
+  AssertionError [ERR_ASSERTION]: All PNG format cases must match their specified admission and continuation
+  + actual - expected
+
+  + [
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-color-0-depth-1'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-color-0-depth-2'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-color-0-depth-4'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-2-depth-1'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-2-depth-2'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-2-depth-4'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-color-3-depth-1'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-color-3-depth-2'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-color-3-depth-4'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-3-depth-16'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-4-depth-1'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-4-depth-2'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-4-depth-4'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-6-depth-1'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-6-depth-2'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'color-6-depth-4'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'missing-palette'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'empty-palette'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'palette-exceeds-depth'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'palette-index-missing'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'palette-after-data'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'duplicate-palette'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'gray-palette'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'accepted',
+  +     expectedValid: false,
+  +     imageBlocks: 1,
+  +     name: 'excessive-palette'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: tRNS chunk contains more alpha values than there are pixels (3 vs 1)',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'rgb-transparency'
+  +   },
+  +   {
+  +     after: 'after',
+  +     diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: 64',
+  +     expectedValid: true,
+  +     imageBlocks: 0,
+  +     name: 'adam-indexed-paeth'
+  +   }
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-review/tests/output-runtime.test.mjs:109:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ { name: 'adam-color-0-depth-1', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined', after: 'after' }, { name: 'adam-color-0-depth-2', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined', after: 'after' }, { name: 'adam-color-0-depth-4', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined', after: 'after' }, { name: 'color-2-depth-1', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-2-depth-2', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-2-depth-4', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'adam-color-3-depth-1', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined', after: 'after' }, { name: 'adam-color-3-depth-2', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined', after: 'after' }, { name: 'adam-color-3-depth-4', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: undefined', after: 'after' }, { name: 'color-3-depth-16', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-4-depth-1', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-4-depth-2', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-4-depth-4', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-6-depth-1', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-6-depth-2', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'color-6-depth-4', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'missing-palette', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'empty-palette', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'palette-exceeds-depth', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'palette-index-missing', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'palette-after-data', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'duplicate-palette', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'gray-palette', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'excessive-palette', expectedValid: false, imageBlocks: 1, diagnostic: 'accepted', after: 'after' }, { name: 'rgb-transparency', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: tRNS chunk contains more alpha values than there are pixels (3 vs 1)', after: 'after' }, { name: 'adam-indexed-paeth', expectedValid: true, imageBlocks: 0, diagnostic: 'rejected INVALID_IMAGE: Unsupported filter: 64', after: 'after' } ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

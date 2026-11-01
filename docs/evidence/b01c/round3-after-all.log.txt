@@ -1,0 +1,160 @@
+
+> browser-control-lab@0.2.0 test:all
+> npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries
+
+
+> browser-control-lab@0.2.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs tests/output-buffer.test.mjs tests/output-transport.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (52.349334ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (60.805083ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (5.957917ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.467542ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.108042ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.086917ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (43.402916ms)
+✔ foreign frame stubs cannot overwrite live child-target document or context (2.763583ms)
+✔ detached targets remove descendants without removing another live branch (2.451458ms)
+✔ late detach cannot remove a frame already mapped to a new target session (0.439542ms)
+✔ new root document invalidates old contexts and child frames (0.610042ms)
+✔ current tree edges prune orphan frames even if a late child tree still replies (0.337917ms)
+✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.275584ms)
+✔ a child target own root replaces an inherited parent session (0.121292ms)
+✔ PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size (20.216333ms)
+✔ output errors cannot exceed the result JSON budget and never return partial images (55.378292ms)
+✔ Adam7 exact scanline bytes and compressed metadata workspace apply during bounded stream validation (1142.434333ms)
+✔ PNG format corpus enforces IHDR combinations palettes indexes transparency and estimated raster workspace (1776.373625ms)
+✔ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (613.290667ms)
+✔ B01C guide declares execution and output limits with explicit units (16.580916ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (55.214917ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (34.6895ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (47.891ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (54.456ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (8.716958ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (30.173416ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3152.450709
+
+> browser-control-lab@0.2.0 test:fixtures
+> node --test --test-concurrency=1 tests/fixture-ui.test.mjs tests/output-fixture.test.mjs
+
+✔ basic form is judged by site state (2868.682583ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (1806.702625ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (666.135917ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3801.498208ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (251.567666ms)
+✔ file bytes are verified and browser download contents match (762.544167ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (351.446375ms)
+✔ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (4351.293625ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15776.962417
+
+> browser-control-lab@0.2.0 test:bootstrap
+> node --test tests/extension-bootstrap.test.mjs
+
+✔ unpacked extension receives an HTTP command and returns browser data through bridge (1480.231ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1811.771791
+
+> browser-control-lab@0.2.0 test:runtime
+> node --test tests/runtime-e2e.test.mjs
+
+✔ guide and authentication (798.150917ms)
+✔ JavaScript executes inside extension WASM and explicit output is collected (70.453125ms)
+✔ bindings persist and top-level await invokes browser APIs asynchronously (69.119792ms)
+✔ sessions do not share JavaScript variables (34.100917ms)
+✔ syntax and execution errors return failures and later requests still work (69.592833ms)
+✔ infinite computation is interrupted by its deadline (162.729209ms)
+✔ reset cancels unresolved execution, clears variables and creates a usable generation (174.590292ms)
+✔ output budget truncation is explicit (35.07625ms)
+✔ product extension opens a tab, observes DOM and completes the basic form using real input (373.179292ms)
+✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (197.56625ms)
+✔ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (224.720375ms)
+✔ product extension scrolls nested mailbox, loads mail 137 and marks it read (1231.702333ms)
+✔ product extension selects booking cells by drag and double click, then saves reservation (707.693125ms)
+✔ product extension scrolls a virtualized dropdown and selects the requested option (5165.251ms)
+✔ product snapshot ref becomes stale after Shadow DOM element replacement (342.150625ms)
+✔ server-staged bytes upload through product setFiles and actual browser download exports to server (295.259916ms)
+✔ local path upload and intercepted file chooser use the same product upload engine (321.263375ms)
+✔ file data drop uses the product file resolver (128.277417ms)
+✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (130.292458ms)
+✔ navigation history, load and URL waits work through product APIs (481.2295ms)
+✔ snapshot scope, output budget, continuation and diff are explicit (716.799792ms)
+✔ popup and dialog events return controllable objects (415.616041ms)
+✔ viewport and full-page screenshots are actual images returned through display (458.232334ms)
+✔ download cancellation interrupts an actual browser transfer (290.43575ms)
+﹣ read-only Naver search observes actual external DOM through extension (0.112666ms) # SKIP
+ℹ tests 25
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 13347.97725
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1484.794792ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (138.591416ms)
+✔ B01B only explicit console and display output is returned (268.950833ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (651.637958ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (952.515166ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (310.401541ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (198.769292ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (141.277958ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6016.776375ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (969.590834ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (889.595084ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4371.953291ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1310.192917ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (716.283ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (307.846ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (367.199125ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (808.35775ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21731.199584
+
+> browser-control-lab@0.2.0 test:review-boundaries
+> node --test tests/review-boundaries.test.mjs
+
+✔ long hasText and hasNotText search the full text independently of snapshot budget (992.129458ms)
+✔ adjacent inline nodes preserve DOM text in positive negative and regex filters (37.099542ms)
+✔ explicit DOM whitespace keeps separated words distinct from adjacent text (34.703209ms)
+✔ snapshot text budget does not alter native labels or aria-labelledby (34.324209ms)
+✔ closed details exposes summary shadow control and hides content controls (589.91775ms)
+✔ scrolled viewport clip captures current blue area rather than document red top (271.532625ms)
+✔ clip respects horizontal scroll and nonzero viewport origin (174.718334ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2577.638625

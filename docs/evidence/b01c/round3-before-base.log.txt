@@ -1,0 +1,132 @@
+✖ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1582.99725ms)
+✖ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (106.216541ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (131.203917ms)
+✖ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (34.959666ms)
+✖ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (9267.252834ms)
+✖ B01C declared code time memory and stack limits report resource failures and recover (172.072ms)
+✖ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (34.028875ms)
+✖ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (10947.551583ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 1
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22870.768708
+
+✖ failing tests:
+
+test at tests/output-runtime.test.mjs:19:1
+✖ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1582.99725ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'x {"name":"한😀"} 7',
+  +   '[object Object]'
+  -   'x\x00y {"name":"한😀"} 7',
+  -   '{"name":"cycle","self":"[Circular]"}'
+    ]
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:21:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'x {"name":"한😀"} 7', '[object Object]' ],
+    expected: [ 'x\x00y {"name":"한😀"} 7', '{"name":"cycle","self":"[Circular]"}' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:26:1
+✖ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (106.216541ms)
+  AssertionError [ERR_ASSERTION]: {"truncated":true}
+      at reason (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:15:29)
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:31:100)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:47:1
+✖ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (34.959666ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 2
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:50:195)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:54:1
+✖ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (9267.252834ms)
+  Error: Client wait timed out
+      at Object.wait (file://<repo>/.local/goal-development/b01c-round3-before-base/bridge/client.mjs:3:353)
+      at async js (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:12:13)
+      at async TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:57:16)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+
+test at tests/output-runtime.test.mjs:73:1
+✖ B01C declared code time memory and stack limits report resource failures and recover (172.072ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'JS_ERROR'
+  - 'RESOURCE_LIMIT'
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:78:121)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'JS_ERROR',
+    expected: 'RESOURCE_LIMIT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:89:1
+✖ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (34.028875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 2
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:93:39)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/output-runtime.test.mjs:100:1
+✖ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (10947.551583ms)
+  Error: Client wait timed out
+      at Object.wait (file://<repo>/.local/goal-development/b01c-round3-before-base/bridge/client.mjs:3:353)
+      at async js (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:12:13)
+      at async TestContext.<anonymous> (file://<repo>/.local/goal-development/b01c-round3-before-base/tests/output-runtime.test.mjs:103:16)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)

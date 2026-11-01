@@ -65,7 +65,9 @@
         "REQ-C-RUNTIME-007"
       ],
       "evidence": [
-        "docs/implementation/b01c.md"
+        "docs/implementation/b01c.md",
+        "docs/reviews/pr14-b01c.md",
+        "docs/reviews/pr14-b01c-round2.md"
       ],
       "knownSubcases": [
         {
@@ -74,13 +76,14 @@
           "finding": "Actual NUL is escaped across guest/native string boundary and preserved in product output; cyclic output uses [Circular]. B01C condition evidence recorded.",
           "evidence": [
             "docs/implementation/b01c.md",
-            "docs/evidence/b01c/round2-after-product.json"
+            "docs/evidence/b01c/round3-after-product.json"
           ],
           "status": "pass"
         }
       ],
       "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/13",
-      "review": "docs/reviews/pr14-b01c.md"
+      "review": "docs/reviews/pr14-b01c-round2.md",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/14"
     },
     {
       "id": "B01D",

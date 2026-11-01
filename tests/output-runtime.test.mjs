@@ -2,14 +2,14 @@ import test,{before,after} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {productRuntime,resultText as text} from './helpers/product-runtime.mjs';
-import {outputPng} from '../test-site/output-png.mjs';
+import {outputPng,pngFormatCases} from '../test-site/output-png.mjs';
 let h,a,b;
 const KiB=1024,MiB=1024*KiB;
 const done=r=>{assert.equal(r.status,'completed',JSON.stringify(r.result?.error));assert.equal(r.result.execution,'extension-worker/QuickJS-WASM');return r.result};
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 async function js(code,session=a){
  const accepted=await h.client.request('/v1/sessions/'+session.id+'/js',{code,timeoutMs:5000});
- try{return await h.client.wait(accepted.requestId,9000)}catch(error){await h.client.reset(session.id);throw error}
+ try{return await h.client.wait(accepted.requestId,9000)}catch(error){await h.client.reset(session.id);if(session===a)done(await h.client.js(a.id,'var outputPage=await browser.open('+JSON.stringify(h.fixture.url+'/audit')+')'));throw error}
 }
 const imageCode=size=>`await outputPage.evaluate(async size=>{const r=await fetch('/output-image?bytes='+size);return r.json()},${size})`;
 const reason=(result,name)=>assert(result.truncationReasons?.includes(name),JSON.stringify({truncated:result.truncated,reasons:result.truncationReasons}));
@@ -94,4 +94,18 @@ test('B01C malformed Adam7 and expanded ICC are rejected through real display wh
  }
  const r=done(await js(`var adam=await outputPage.evaluate(async()=>fetch('/output-review-image?kind=adam-valid').then(r=>r.json()));display(adam);console.log('after-valid');adam=null`));assert.equal(r.content[0].type,'image');assert.equal(r.content[1].text,'after-valid');
  h.evidence.push({conditions:['REQ-DISPLAY-002-C01','REQ-C-RUNTIME-007-C01'],status:'pass',rows,validAdam7:true});
+});
+
+
+test('B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures',async()=>{
+ const rows=[],failures=[];
+ for(const row of pngFormatCases()){
+  const r=done(await js(`var matrixPng=await outputPage.evaluate(async name=>fetch('/output-format-image?name='+name).then(r=>r.json()),${JSON.stringify(row.name)});try{display(matrixPng);console.log('accepted')}catch(error){console.log('rejected',error.message)}console.log('after');matrixPng=null;`));
+  const imageBlocks=r.content.filter(c=>c.type==='image').length,diagnostic=r.content.find(c=>c.type==='text')?.text,after=r.content.at(-1).text;
+  const valid=imageBlocks===(row.valid?1:0)&&after==='after'&&(row.valid?diagnostic==='accepted':(row.resource?/^rejected IMAGE_RESOURCE_LIMIT/:/^rejected INVALID_IMAGE/).test(diagnostic));
+  const record={name:row.name,expectedValid:row.valid,imageBlocks,diagnostic,after};rows.push(record);if(!valid)failures.push(record);
+ }
+ h.evidence.push({conditions:['REQ-DISPLAY-001-C01','REQ-DISPLAY-002-C01','REQ-C-RUNTIME-007-C01'],status:failures.length?'fail':'pass',rows});
+ assert.deepEqual(failures,[],'All PNG format cases must match their specified admission and continuation');
+
 });

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {deflateSync} from 'node:zlib';
 import {OutputBuffer,imageBytes} from '../extension/output.mjs';
-import {outputPng,pngChunk,reviewPng} from '../test-site/output-png.mjs';
+import {outputPng,pngChunk,reviewPng,formatPng,pngFormatCases} from '../test-site/output-png.mjs';
 const image=bytes=>({type:'image',mimeType:'image/png',data:bytes.toString('base64')});
 function replaceData(data){const p=outputPng(128);return Buffer.concat([p.subarray(0,33),pngChunk('IDAT',data),pngChunk('IEND',Buffer.alloc(0))])}
 test('PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size',()=>{
@@ -19,8 +19,16 @@ test('output errors cannot exceed the result JSON budget and never return partia
  const fallback=b.result({unbounded:'x'.repeat(16*1024*1024)});assert.equal(fallback.error.code,'RESULT_LIMIT');assert.deepEqual(fallback.content,[]);
 });
 
-test('Adam7 exact scanline bytes and compressed metadata workspace apply before library pixel decoding',()=>{
+test('Adam7 exact scanline bytes and compressed metadata workspace apply during bounded stream validation',()=>{
  assert.throws(()=>imageBytes(image(reviewPng('adam-short'))),/INVALID_IMAGE/);
  assert.throws(()=>imageBytes(image(reviewPng('icc-large'))),/IMAGE_RESOURCE_LIMIT/);
  assert(imageBytes(image(reviewPng('adam-valid')))>0);
+});
+
+test('PNG format corpus enforces IHDR combinations palettes indexes transparency and estimated raster workspace',()=>{
+ for(const row of pngFormatCases()){
+  const bytes=formatPng(row.options);
+  if(row.valid)assert.equal(imageBytes(image(bytes)),bytes.length,row.name);
+  else assert.throws(()=>imageBytes(image(bytes)),row.resource?/IMAGE_RESOURCE_LIMIT/:/INVALID_IMAGE/,row.name);
+ }
 });
