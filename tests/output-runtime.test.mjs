@@ -17,7 +17,7 @@ before(async()=>{h=await productRuntime('b01c',{extraSources:['tests/output-runt
 after(async()=>await h?.close());
 
 test('B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage',async()=>{
- const r=done(await js(String.raw`console.log("x\0y",{name:"한😀"},7);var cyclic={name:"cycle"};cyclic.self=cyclic;console.log(cyclic);await outputPage.evaluate(()=>console.log('page-only'));42`));
+ const r=done(await js(String.raw`console.log("x\0y",{name:"한😀"},7);var cyclic={name:"cycle"};cyclic.self=cyclic;console.log(cyclic);await outputPage.evaluate(()=>{console.log('page-only');return null});42`));
  assert.deepEqual(r.content.map(c=>c.text),['x\0y {"name":"한😀"} 7','{"name":"cycle","self":"[Circular]"}']);
  assert.equal(text(await js('console.log("next")',b)),'next');
  h.evidence.push({conditions:['REQ-CONSOLE-LOG-001-C01','REQ-CONSOLE-LOG-002-C02'],status:'pass',texts:r.content.map(c=>c.text)});

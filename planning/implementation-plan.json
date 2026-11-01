@@ -127,7 +127,10 @@
         "REQ-LOCATOR-EVALUATEALL-002",
         "REQ-C-RUNTIME-008"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/implementation/b01e.md",
+        "docs/evidence/b01e/manifest.json"
+      ],
       "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/17"
     },
     {
@@ -2269,8 +2272,11 @@
         "REQ-SCOPE-EVALUATE-001-C01",
         "REQ-SCOPE-EVALUATE-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-SCOPE-EVALUATE-002",
@@ -2281,8 +2287,11 @@
         "REQ-SCOPE-EVALUATE-002-C01",
         "REQ-SCOPE-EVALUATE-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-LOCATOR-EVALUATEALL-001",
@@ -2292,8 +2301,11 @@
       "conditions": [
         "REQ-LOCATOR-EVALUATEALL-001-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-LOCATOR-EVALUATEALL-002",
@@ -2303,8 +2315,11 @@
       "conditions": [
         "REQ-LOCATOR-EVALUATEALL-002-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-PAGE-LOGS-001",
@@ -2629,8 +2644,11 @@
       "conditions": [
         "REQ-C-RUNTIME-008-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "requirement": "REQ-PAGE-WAITFOREVENT-004",
@@ -4127,43 +4145,61 @@
       "id": "REQ-SCOPE-EVALUATE-001-C01",
       "requirement": "REQ-SCOPE-EVALUATE-001",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-scope-evaluate-001-c01",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-EVALUATE-001-C02",
       "requirement": "REQ-SCOPE-EVALUATE-001",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-scope-evaluate-001-c02",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-EVALUATE-002-C01",
       "requirement": "REQ-SCOPE-EVALUATE-002",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-scope-evaluate-002-c01",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-SCOPE-EVALUATE-002-C02",
       "requirement": "REQ-SCOPE-EVALUATE-002",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-scope-evaluate-002-c02",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-LOCATOR-EVALUATEALL-001-C01",
       "requirement": "REQ-LOCATOR-EVALUATEALL-001",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-locator-evaluateall-001-c01",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-LOCATOR-EVALUATEALL-002-C01",
       "requirement": "REQ-LOCATOR-EVALUATEALL-002",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-locator-evaluateall-002-c01",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-PAGE-LOGS-001-C01",
@@ -4291,8 +4327,11 @@
       "id": "REQ-C-RUNTIME-008-C01",
       "requirement": "REQ-C-RUNTIME-008",
       "slice": "B01E",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01e.md#req-c-runtime-008-c01",
+        "docs/evidence/b01e/manifest.json"
+      ]
     },
     {
       "id": "REQ-C-DOMFRAMES-001-C01",

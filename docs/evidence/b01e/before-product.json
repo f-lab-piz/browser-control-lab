@@ -1,0 +1,306 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b01e",
+  "startedAt": "2026-11-01T17:53:15.354Z",
+  "finishedAt": "2026-11-01T17:53:55.782Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 28
+  },
+  "headed": false,
+  "head": "ad1f8255e0934f59bc6167cc105468151011a846",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "037a58d08e694a71255b9df64001c69a3ab87fb19bb01c17f3275ec6bef9e0c2",
+    "bridge/client.mjs": "eb47da8f72090b49bdc70647a6afbd58320ee6ec3db94ebca88f40e492427d3f",
+    "extension/runtime-worker.mjs": "dcbbab19449df9b6bb8153c378cdc4c2e84b335af6ec63b8c478e1512cc7f239",
+    "extension/output.mjs": "b0bc71c792d29266541f45267779566a73b457f25a94a9afce8f9b2114deb489",
+    "shared/limits.mjs": "d31174b174ea6cd10351875fee19fdf395d82ccc1e7d8a02bb9ac2d8b81324e2",
+    "shared/png-crc.mjs": "5af9ce6471d4901a3e7739a767522576a412a63bf5186780b6d9bf713d69d304",
+    "extension/transform.mjs": "f0b60533a80ac92369c84c7c1b01784330e86ed58a09b4f8a9359249ce803ecf",
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/offscreen.js": "e7c7e6c7d325c115f5011d53c89ec0a3d3d00ef4477b14bf7c0dbb94a0af3540",
+    "extension/browser-engine.mjs": "ac3f499ab2e2aff1e5bf677d36a856458292436fab9452fb5ffdf2440e02fe4e",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "extension/files.mjs": "bcc4db1066ec0c740f3e291009d156d624d084656d64642f92314a214cadb2c7",
+    "tests/helpers/product-runtime.mjs": "0fb29ce171d3c609fbd6e87889e6456dfe6a37345f8f1cc22a51f8ec6f9fdc2b",
+    "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
+    "tests/requirements-runtime.test.mjs": "cdd67141dbb5ddd16a1a1ae1f9c269c0b443e53eb41422526a5ec095c8862b85",
+    "test-site/server.mjs": "7333128db69ac43ad2b5b99b82f154939f75c4af79f80ffcc413b8a052a135e2",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "6709c5a3b3705ac7b4dd671ab73fa78aebd912b5955f64fbadf422234d0b8de5",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "c1d26cd07f83a6a7f3766118b4a521fe9e333557ad49c73c22c91d109e9b835d",
+    "package-lock.json": "410382cf6b025ca2a11be26259e0a237c54a49253cb45ed6b36adcf0ae2aa71a",
+    "shared/json-value.mjs": "9014ec571f1c8451a323430066707c9f10108994c97d9ecfe5a87d890bcd2b9d",
+    "extension/evaluation.mjs": "184682e75fae02131497ec923ceb7b99428981a1bc2df01e7c04247d38db3c36",
+    "extension/background.js": "0b04c5b1610896f00768da1a9dc6a860d6b604143db4cfdd1be2f7428a823e2d",
+    "extension/session-lifecycle.mjs": "521d44ed085f301ea04d7e9d0843278f66670a1eb176577f64624478ed8f360c",
+    "tests/evaluation-runtime.test.mjs": "ce2e46e58bff898974ddaa7d174e443e32735faff591a1ad4fa2e2fb7dffdd0b",
+    "tests/evaluation-boundaries.test.mjs": "2f6dd3ff11d17d6d646e23f7b2ae1212e1b8ba41a28c5ef71214344334abb553",
+    "tests/json-value.test.mjs": "e58ea25046852ac699f664c8878a2f942b76c25445a50525822a2c486f2d4d59",
+    "tests/evaluation-fixture.test.mjs": "45839db6f7da75649dbabb59218f26774ac30b42b52b8beaaf67981d33e22211",
+    "test-site/evaluation.html": "3bb411614c6f721c7b972a2da1d1ce53ff87e91c3b8a38ba1aa2c547b54520b6"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-SCOPE-EVALUATE-002-C01",
+        "REQ-C-RUNTIME-008-C01"
+      ],
+      "status": "fail",
+      "rows": [
+        {
+          "kind": "arg",
+          "expression": "NaN",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "Infinity",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "1n",
+          "status": "completed",
+          "diagnostic": "Error in invocation of tabs.get(integer tabId, function callback): No matching signature.",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "Symbol(\"x\")",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "(()=>1)",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "new Date()",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "({x:undefined})",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "[,1]",
+          "status": "completed",
+          "diagnostic": "accepted",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "page",
+          "status": "failed",
+          "diagnostic": "Maximum call stack size exceeded",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "Object.defineProperty({},\"x\",{enumerable:true,get(){throw Error(\"getter must not execute\")}})",
+          "status": "completed",
+          "diagnostic": "getter must not execute",
+          "effect": 99
+        },
+        {
+          "kind": "arg",
+          "expression": "(()=>{var v={};v.self=v;return v})()",
+          "status": "failed",
+          "diagnostic": "Maximum call stack size exceeded",
+          "effect": 99
+        },
+        {
+          "kind": "result",
+          "expression": "undefined",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "NaN",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "Infinity",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "1n",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "Symbol(\"x\")",
+          "status": "completed",
+          "diagnostic": "{\"code\":-32000,\"message\":\"Object couldn't be returned by value\"}"
+        },
+        {
+          "kind": "result",
+          "expression": "(()=>1)",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "document.body",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "new Date()",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "({x:undefined})",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "[,1]",
+          "status": "completed",
+          "diagnostic": "accepted"
+        },
+        {
+          "kind": "result",
+          "expression": "(()=>{var v={};v.self=v;return v})()",
+          "status": "completed",
+          "diagnostic": "{\"code\":-32000,\"message\":\"Object reference chain is too long\"}"
+        }
+      ],
+      "effect": 99,
+      "calls": 11
+    },
+    {
+      "conditions": [
+        "REQ-SCOPE-EVALUATE-002-C02"
+      ],
+      "status": "fail",
+      "rows": [
+        {
+          "name": "throw",
+          "status": "failed",
+          "error": {
+            "code": "JS_ERROR",
+            "guestName": "Error",
+            "message": "Error: expected throw\n    at <anonymous>:1:123"
+          },
+          "runtimeReset": false,
+          "count": 1,
+          "stable": true,
+          "output": ""
+        },
+        {
+          "name": "reject",
+          "status": "failed",
+          "error": {
+            "code": "JS_ERROR",
+            "guestName": "Error",
+            "message": "Error: expected reject\n    at <anonymous>:1:139"
+          },
+          "runtimeReset": false,
+          "count": 1,
+          "stable": true,
+          "output": ""
+        },
+        {
+          "name": "never",
+          "status": "failed",
+          "error": {
+            "code": "TIMEOUT",
+            "message": "Execution timed out; runtime was reset"
+          },
+          "runtimeReset": true,
+          "count": 1,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-008-C01"
+      ],
+      "status": "fail",
+      "rows": [
+        {
+          "name": "reject",
+          "error": {
+            "code": "JS_ERROR",
+            "guestName": "Error",
+            "message": "WAIT_TIMEOUT: page.waitForFunction"
+          },
+          "runtimeReset": false,
+          "generation": [
+            5,
+            5
+          ],
+          "binding": "17",
+          "count": 4,
+          "elapsed": 286
+        },
+        {
+          "name": "invalid",
+          "error": {
+            "code": "JS_ERROR",
+            "guestName": "Error",
+            "message": "WAIT_TIMEOUT: page.waitForFunction"
+          },
+          "runtimeReset": false,
+          "generation": [
+            5,
+            5
+          ],
+          "binding": "17",
+          "count": 4,
+          "elapsed": 309
+        },
+        {
+          "name": "never",
+          "error": {
+            "code": "TIMEOUT",
+            "message": "Execution timed out; runtime was reset"
+          },
+          "runtimeReset": true,
+          "generation": [
+            5,
+            6
+          ],
+          "binding": "",
+          "count": 1,
+          "elapsed": 2638
+        }
+      ],
+      "positive": "true"
+    }
+  ]
+}

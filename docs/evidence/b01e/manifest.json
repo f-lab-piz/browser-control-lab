@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-01T17:54:49.453230+00:00",
+  "baseline": "8d7c7d89ca48a8f75c5ac5a33e2b08c2e6254261",
+  "scope": "B01E5parents7conditions; personal single-user local transport; external3/internal64 unchanged",
+  "comparison": "Final fixture/tests/helper/docs/dependencies/new unused modules fixed; four owning product files restored only. Before executed with controlled baseline cwd, all recorded baseline hashes verified against git show. Not full historical environment replay.",
+  "sourceDifferences": [
+    "extension/runtime-worker.mjs",
+    "extension/api-source.mjs",
+    "extension/browser-engine.mjs",
+    "extension/page-agent.mjs"
+  ],
+  "beforeProduct": {
+    "pass": 0,
+    "fail": 7
+  },
+  "afterProduct": {
+    "pass": 7,
+    "fail": 0
+  },
+  "regression": {
+    "command": "BCL_RUN_DIR=output/goal-b01e/after-final2 npm run test:all",
+    "pass": 113,
+    "fail": 0,
+    "skip": 1,
+    "grades": {
+      "unit": 39,
+      "fixture": 10,
+      "bootstrap": 1,
+      "legacyProduct": 24,
+      "requirementsProduct": 32,
+      "reviewBoundaries": 7
+    }
+  },
+  "headed": {
+    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b01e/headed-final npm run test:requirements",
+    "pass": 32,
+    "fail": 0
+  },
+  "gradeSeparation": "Codec5 unit+native oracle1 preliminary focused run6; final fixture10 includes corrected actual child.waitForURL navigation check. Native/adapter are not Chrome product PASS.",
+  "rawHistory": "Initial Before0/7 retained; first all106PASS7FAIL1SKIP review-boundaries DOMnode predicate rejected in shared before hook. Predicate now Boolean(same selected node). One intermediate baseline invocation used root cwd, so its source fingerprint read wrong owning directory; not used as final comparison. Corrected baseline executes from its own cwd and hashes verified. No product expectation relaxed.",
+  "competitors": "Codex CUA IAB pure read-only LIVE received-output transcription; root only, child DNS blocked. Aside public guide and same root LIVE raw CLI. Different serialization/selection contracts, no general ranking or competitor full requirement PASS. No source/bundle/WASM copied.",
+  "gate": "Independent exact-head Sol6.1 high review pending; slice in-progress; B02-B06/final audit remain",
+  "artifacts": [
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b01e/before-correct/b01e/results.json",
+      "sourceSha256": "deec592cc39ababf2d1c427b4d4d2ebcb4c1e11823d8ba026acf68ead034464e",
+      "sha256": "175d8f86a2f356f575829c49b483c376c37dc1178f7c582ff9a967af40549309",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b01e-before-correct.log",
+      "sourceSha256": "6b545104aa498a52e08b5ca9d096e13e4ef3e1044c3b01ac675060b238006301",
+      "sha256": "7477da8f1f283cfe0438c33cecacf965b0c2952ae0065b498f49330e15a6cc93",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b01e/after-final2/b01e/results.json",
+      "sourceSha256": "2a75bbf1dec2174bc4a57911a19708abb82696b2899a5fcf27725d6f5de23a4c",
+      "sha256": "3202a3e8ac814796f9d05a80a913e1bc6e629a273b81d470ffff7e7e1faba31f",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b01e-all2.log",
+      "sourceSha256": "1d965a4b7fcf08e2d3606e4aa974a329c9808d4d63f02e43cd131852f77902e4",
+      "sha256": "1d965a4b7fcf08e2d3606e4aa974a329c9808d4d63f02e43cd131852f77902e4",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.json",
+      "source": "output/goal-b01e/headed-final/b01e/results.json",
+      "sourceSha256": "91435ad258f51f81950c652ea820465762b5396548eb81cca095d609fa678c99",
+      "sha256": "1dfe8fbf0dc929286e7b8782653f570bc90183b1c76822ee855f7a038dfcc94b",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b01e-headed.log",
+      "sourceSha256": "2a1516783a79d38fd22d722059e91736b83a7b87707b0c341d4871d2debda147",
+      "sha256": "2a1516783a79d38fd22d722059e91736b83a7b87707b0c341d4871d2debda147",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "unit-native.log.txt",
+      "source": "output/goal-b01e-focused.log",
+      "sourceSha256": "91ac41c8eab3ae3a1428582931fc9a323db1fd24ccb7910a58ffaa021ac41056",
+      "sha256": "91ac41c8eab3ae3a1428582931fc9a323db1fd24ccb7910a58ffaa021ac41056",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "candidate-review-boundary-failure.log.txt",
+      "source": "output/goal-b01e-all.log",
+      "sourceSha256": "cf1ceddbfc7fce581d711de5af9a6ec8f75cfd9d34aa5dcc4ab426fec28a9710",
+      "sha256": "9e514cdd7a68f8a5e0ab7e938cf0439d8f7ae71579187626e18f5248ddbb12b0",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "initial-before.log.txt",
+      "source": "output/goal-b01e-initial-before.log",
+      "sourceSha256": "afaf86cda46cdbf20ef087767cb9ecb64d91c1d1c04022cea5625705bb95bd62",
+      "sha256": "4e1882d19c89ed5776cc5d8a4112d849034fa7db494e4ed819c6c17466bb636b",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-codex-live.json",
+      "source": "output/goal-b01e/compare/codex-live.json",
+      "sourceSha256": "ea4230236c2324e0084bade103abc532023a2d0d054b25455627571440331f8e",
+      "sha256": "ea4230236c2324e0084bade103abc532023a2d0d054b25455627571440331f8e",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "compare-aside-live.txt",
+      "source": "output/goal-b01e/compare/aside-live.txt",
+      "sourceSha256": "b30152fdfbefc1fc003b733618b09855fa15030cdd0c7270771f1baa0e8a066a",
+      "sha256": "dd4a9888200e8101743d1765fb5a811d38f125d5bbac34fe43b78b4494c811a0",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "aside-guide.txt",
+      "source": "output/goal-b01e/compare/aside-guide.txt",
+      "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "aside-repl-guide.txt",
+      "source": "output/goal-b01e/compare/aside-repl-guide.txt",
+      "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "runtime-regression.json",
+      "source": "output/runtime-e2e/results.json",
+      "sourceSha256": "b96ac2fb089e831a82d054c2bec4508c1bb7b8f129c731524025fd4f78d18750",
+      "sha256": "a5669c9fe44275fc00f303cb6730d1e713363966db84f52500a8f6d888f82ffb",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "review-boundaries.json",
+      "source": "output/review-fixes/boundaries.json",
+      "sourceSha256": "4ad51dcae6ee6c81a4debdfb29626fea4eb66f8fcd9ed2194b83dd847ffdd2f3",
+      "sha256": "4d7047e6c3d19a8ab9a7eae307b9bc643b5627f9c83a8bb8ff40732f194cc3c5",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    }
+  ]
+}

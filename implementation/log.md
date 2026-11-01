@@ -194,3 +194,5 @@ Codex의 own fixture reset은 변수undefined·동일 tab7·A 보존을 LIVE 전
 정확3d4246f의 Sol6.1 high 독립 전체 리뷰는100 PASS/외부1 SKIP·headed25 PASS·추가 제품3 PASS와 증거/소스를 재검증했고 P0~P3 없음으로 PASS였다. 캡처 EOF2개/manifest만 정리한 정확0e05802는 별도 새 컨텍스트 delta 리뷰 PASS. 제품·실행 입력389개 동일성과 기존 exactclean 실행의 현재 소스fingerprint를 확인해 불필요한 브라우저 재실행 없이 결합gate를 충족했다. 원격 base/head·CLEAN/MERGEABLE 확인 뒤 PR16을8d7c7d8로 정상 squash merge, 이슈15를 닫았다. 두 보고서·독립 probe/감사를 보존한다.
 
 B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준비한다. 아직 제품 코드는 바꾸지 않았다. 현재 returnByValue/parseValue가 undefined 등을 null로 숨길 수 있고 waitForFunction의 catch-all이 reject/직렬화 오류를 timeout으로 오인할 수 있어 공통 strict JSON/Promise settle·에러 경로를 먼저 명세와 대조했다. 최종 fixture/테스트와 Before를 고정한 뒤 구현한다. B02~B06와 최종 전체 요구/회귀 문서까지 이어지는 Goal은 유지한다.
+
+- B01E 이슈17: 엄격한 JSON/Promise settle/오류·문서 경계와 wait deadline을 구현. 실제 제품7 PASS·전체113 PASS/외부1 SKIP·headed32 PASS. Before0/7, 원시 준비 predicate 실패를 보존. Codex/Aside root LIVE 계약 비교 기록. 독립 리뷰 전이며 slice in-progress.

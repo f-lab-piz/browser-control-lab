@@ -1,7 +1,15 @@
 // This function is serialized into the isolated QuickJS context.
-export function installBrowserApi(){
+export function installBrowserApi(stringifyJsonValue){
  const encode=value=>value instanceof RegExp?{__bclRegex:true,source:value.source,flags:value.flags}:Array.isArray(value)?value.map(encode):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,encode(v)])):value;
  const call=(method,args)=>__hostCall(method,encode(args));
+ const evaluation=async(method,args,fn,arg)=>{
+  if(typeof fn!=='function')throw Error('EVALUATION_ERROR: expected a function');
+  let argJson;
+  try{argJson=stringifyJsonValue(arg===undefined?null:arg)}catch(error){throw Error('SERIALIZATION_ERROR: argument '+error.message)}
+  const result=await call(method,{...args,source:Function.prototype.toString.call(fn),argJson});
+  if(result?.__bclEvaluation!==true||typeof result.json!=='string')throw Error('EVALUATION_ERROR: invalid evaluation response');
+  return JSON.parse(result.json);
+ };
  class Scope{
   constructor(tabId,frameId){this.tabId=tabId;this.frameId=frameId}
   args(extra={}){return {tabId:this.tabId,frameId:this.frameId,...extra}}
@@ -9,7 +17,7 @@ export function installBrowserApi(){
   getByRole(value,options={}){return new Locator(this,{kind:'role',value,options})}
   getByText(value,options={}){return new Locator(this,{kind:'text',value,options})}
   getByLabel(value,options={}){return new Locator(this,{kind:'label',value,options})}
-  evaluate(fn,arg){return call('scope.evaluate',this.args({source:fn.toString(),arg}))}
+  evaluate(fn,arg){return evaluation('scope.evaluate',this.args(),fn,arg)}
   snapshot(options={}){return call('scope.snapshot',this.args({options}))}
  }
  class Locator{
@@ -33,8 +41,8 @@ export function installBrowserApi(){
   scrollIntoView(){return call('locator.scrollIntoView',this.args())}
   setChecked(value){return call('locator.setChecked',this.args({value}))}
   selectOption(value){return call('locator.selectOption',this.args({value}))}
-  evaluate(fn,arg){return call('scope.evaluate',this.args({source:fn.toString(),arg}))}
-  evaluateAll(fn,arg){return call('locator.evaluateAll',this.args({source:fn.toString(),arg}))}
+  evaluate(fn,arg){return evaluation('scope.evaluate',this.args(),fn,arg)}
+  evaluateAll(fn,arg){return evaluation('locator.evaluateAll',this.args(),fn,arg)}
   press(key){return call('locator.press',this.args({key}))}
   setFiles(files){return call('locator.setFiles',this.args({files}))}
   drop(options={}){return call('locator.drop',this.args(options))}
@@ -83,7 +91,11 @@ export function installBrowserApi(){
   screenshot(options={}){return call('page.screenshot',this.args({options}))}
   async waitForEvent(event,options={}){const result=await call('page.waitForEvent',this.args({event,options}));return event==='popup'?new Page(result.tabId):event==='filechooser'?new FileChooser(this,result):event==='download'?new Download(result):event==='dialog'?new Dialog(this,result):result}
   waitForURL(url,options={}){return call('page.waitForURL',this.args({url,options}))}
-  waitForFunction(fn,arg,options={}){return call('page.waitForFunction',this.args({source:fn.toString(),arg,options}))}
+  waitForFunction(fn,arg,options={}){
+   const timeout=options.timeout===undefined?10000:options.timeout;
+   if(!Number.isFinite(timeout)||!Number.isInteger(timeout)||timeout<=0)return Promise.reject(Error('INVALID_TIMEOUT: expected a positive integer'));
+   return evaluation('page.waitForFunction',this.args({options,deadlineAt:Date.now()+timeout}),fn,arg);
+  }
   waitForLoadState(state='interactive',options={}){return call('page.waitForLoadState',this.args({state,options}))}
   logs(options={}){return call('page.logs',this.args({options}))}
  }

@@ -1,0 +1,62 @@
+{
+  "grade": "LIVE_RECEIVED_OUTPUT_TRANSCRIPTION",
+  "surface": "Codex CUA IAB read-only playwright.evaluate / locator.evaluateAll",
+  "url": "http://127.0.0.1:60159/evaluation",
+  "tab": "8, created then closed",
+  "frameLimit": "mail.test DNS unavailable; root comparison only",
+  "rows": [
+    {
+      "name": "async",
+      "status": "returned",
+      "type": "number",
+      "value": 7
+    },
+    {
+      "name": "thenable",
+      "status": "returned",
+      "type": "number",
+      "value": 11
+    },
+    {
+      "name": "undefined",
+      "status": "returned",
+      "type": "undefined",
+      "valueOmitted": true
+    },
+    {
+      "name": "nan",
+      "status": "returned",
+      "type": "object",
+      "value": null
+    },
+    {
+      "name": "throw",
+      "status": "error",
+      "messageStart": "Error: expected b01e"
+    },
+    {
+      "name": "reject",
+      "status": "error",
+      "messageStart": "Error: expected b01e async"
+    },
+    {
+      "name": "DOMnode",
+      "status": "returned",
+      "type": "object",
+      "value": {
+        "id": "a",
+        "tagName": "SPAN",
+        "textContent": "A"
+      }
+    }
+  ],
+  "evaluateAll": [
+    "a",
+    "light",
+    "b",
+    "s",
+    "t"
+  ],
+  "input": "Pure return functions only, no page mutation; async7, thenable11, undefined, NaN, Error throw/reject, document.querySelector(#a).",
+  "note": "Tool output manually transcribed; not an export of original payload or full versioned runtime. Read-only evaluation contract differs from our mutable strict JSON contract."
+}

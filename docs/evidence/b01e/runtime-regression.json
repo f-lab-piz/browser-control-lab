@@ -1,0 +1,139 @@
+{
+  "grade": "product-extension-runtime",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 10
+  },
+  "evidence": [
+    {
+      "case": "guide-auth",
+      "passed": true
+    },
+    {
+      "case": "wasm-execution",
+      "passed": true,
+      "result": {
+        "requestId": "8f09d3ce-722b-4e86-b336-4ce599cc0648",
+        "operation": "js",
+        "sessionId": "69dd5d3a-7b22-4556-a503-7f787526fad5",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793555610654,
+        "startedAt": 1793555610654,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 11.899999618530273,
+            "outputChars": 2,
+            "outputBytes": 2,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "42"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793555610697
+      }
+    },
+    {
+      "case": "persistent-async",
+      "passed": true
+    },
+    {
+      "case": "session-isolation",
+      "passed": true
+    },
+    {
+      "case": "error-recovery",
+      "passed": true
+    },
+    {
+      "case": "cpu-deadline",
+      "passed": true
+    },
+    {
+      "case": "reset-cancel",
+      "passed": true,
+      "generation": 3
+    },
+    {
+      "case": "output-budget",
+      "passed": true
+    },
+    {
+      "case": "product-basic-form",
+      "passed": true,
+      "tabId": 644984730
+    },
+    {
+      "case": "product-offscreen-snapshot",
+      "passed": true,
+      "outputChars": 215
+    },
+    {
+      "case": "product-cross-site-frames",
+      "passed": true
+    },
+    {
+      "case": "product-nested-mail-scroll",
+      "passed": true
+    },
+    {
+      "case": "product-booking-grid",
+      "passed": true
+    },
+    {
+      "case": "product-virtual-dropdown",
+      "passed": true
+    },
+    {
+      "case": "product-shadow-stale-ref",
+      "passed": true
+    },
+    {
+      "case": "product-server-upload-download",
+      "passed": true,
+      "size": 28
+    },
+    {
+      "case": "product-local-and-chooser-upload",
+      "passed": true
+    },
+    {
+      "case": "product-file-drop",
+      "passed": true
+    },
+    {
+      "case": "product-basic-primitives",
+      "passed": true
+    },
+    {
+      "case": "product-navigation",
+      "passed": true
+    },
+    {
+      "case": "product-snapshot-budget-diff",
+      "passed": true
+    },
+    {
+      "case": "product-popup-dialogs",
+      "passed": true
+    },
+    {
+      "case": "product-screenshots",
+      "passed": true,
+      "viewportHeight": 957,
+      "fullHeight": 2070
+    },
+    {
+      "case": "product-download-cancel",
+      "passed": true
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+import {stringifyJsonValue} from '../shared/json-value.mjs';
+import {evaluationSource,EVALUATION_WRAPPER,evaluationDeadline} from './evaluation.mjs';
 import {SessionLifecycle,releaseHeldInputs} from './session-lifecycle.mjs';
 import {uploadFiles,saveDownload} from './files.mjs';
 import {installPageAgent} from './page-agent.mjs';
@@ -111,7 +113,7 @@ async function rootPoint(state,frameId,p){
   if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description||result.exceptionDetails.text);return rootPoint(state,frame.parent,{x:p.x*result.result.value.sx+result.result.value.x,y:p.y*result.result.value.sy+result.result.value.y});
  }finally{await send(state,'Runtime.releaseObject',{objectId:object.objectId},parent.sessionId).catch(()=>{})}
 }
-async function point(state,args){const box=await dom(state,args.frameId,'point',{query:args.query});const p=await rootPoint(state,args.frameId,{x:box.x,y:box.y});await evaluate(state,{source:'()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))'});const frame=await context(state,args.frameId);return {...p,input:frame.sessionId?{x:box.x,y:box.y,sessionId:frame.sessionId}:undefined}}
+async function point(state,args){const box=await dom(state,args.frameId,'point',{query:args.query});const p=await rootPoint(state,args.frameId,{x:box.x,y:box.y});await evaluate(state,{source:'()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r(null))))'});const frame=await context(state,args.frameId);return {...p,input:frame.sessionId?{x:box.x,y:box.y,sessionId:frame.sessionId}:undefined}}
 
 async function mouse(state,type,args){
  state[OP]?.assert();state.pointer??={x:0,y:0};
@@ -123,14 +125,42 @@ async function mouse(state,type,args){
 }
 function modifiers(keys=[]){return keys.reduce((mask,key)=>mask|({Alt:1,Control:2,Meta:4,Shift:8}[key]||0),0)}
 async function click(state,args){if(state.arming)await state.arming;state.lastActionAt=Date.now();const p=await point(state,args),options=args.options||{},count=options.clickCount||1;await mouse(state,'mouseMoved',p);for(let i=1;i<=count;i++){await mouse(state,'mousePressed',{...p,button:options.button,clickCount:i,modifiers:modifiers(options.modifiers)});await mouse(state,'mouseReleased',{...p,button:options.button,clickCount:i,modifiers:modifiers(options.modifiers)})}return true}
-async function evaluate(state,args,all=false){
- const frame=await context(state,args.frameId);let objectId;
+async function evaluate(state,args,all=false,packet=false){
+ let argumentJson;
+ try{argumentJson=args.argJson===undefined?stringifyJsonValue(args.arg===undefined?null:args.arg):stringifyJsonValue(JSON.parse(args.argJson))}catch(error){throw Error('SERIALIZATION_ERROR: argument '+error.message)}
+ const source=evaluationSource(args.source),frame=await context(state,args.frameId);
+ const contextId=frame.contextId,loaderId=frame.loaderId,targetSession=frame.sessionId,objects=[];let timer;
+ const valid=()=>{state[OP]?.assert();const current=state.frames.get(frame.id);if(!current||current.contextId!==contextId||current.loaderId!==loaderId||current.sessionId!==targetSession)throw Error('EVALUATION_CONTEXT_ERROR: selected document was replaced or detached')};
+ const contextLost=new Promise((_,reject)=>{timer=setInterval(()=>{try{valid()}catch(error){reject(error)}},20)});
+ contextLost.catch(()=>{});
+ const command=async(method,params)=>{
+  valid();
+  try{return await Promise.race([send(state,method,params,targetSession),contextLost])}
+  catch(error){if(/^(?:SESSION_RESET|EVALUATION_CONTEXT_ERROR|WAIT_TIMEOUT)/.test(error.message))throw error;throw Error('EVALUATION_CONTEXT_ERROR: '+error.message)}
+ };
  try{
-  const argumentsList=[];
-  if(args.query){const target=await send(state,'Runtime.callFunctionOn',{functionDeclaration:all?'function(q){return globalThis.__bcl.find(q)}':'function(q){return globalThis.__bcl.resolve(q)}',executionContextId:frame.contextId,arguments:[{value:args.query}],returnByValue:false},frame.sessionId);if(target.exceptionDetails)throw Error(target.exceptionDetails.exception?.description||target.exceptionDetails.text);objectId=target.result.objectId;argumentsList.push({objectId})}
-  argumentsList.push({value:args.arg??null});
-  const result=await send(state,'Runtime.callFunctionOn',{functionDeclaration:args.source,executionContextId:frame.contextId,arguments:argumentsList,returnByValue:true,awaitPromise:true},frame.sessionId);if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description||result.exceptionDetails.text);return result.result.value;
- }finally{if(objectId)await send(state,'Runtime.releaseObject',{objectId},frame.sessionId).catch(()=>{})}
+  const compiled=await command('Runtime.evaluate',{expression:source,contextId,returnByValue:false});
+  if(compiled.exceptionDetails)throw Error('EVALUATION_ERROR: '+(compiled.exceptionDetails.exception?.description||compiled.exceptionDetails.text));
+  const fn=compiled.result?.objectId;if(compiled.result?.type!=='function'||!fn)throw Error('EVALUATION_ERROR: expected transferable function');objects.push(fn);
+  let receiver={value:null};
+  if(args.query){
+   const target=await command('Runtime.callFunctionOn',{functionDeclaration:all?'function(q){return globalThis.__bcl.find(q)}':'function(q){return globalThis.__bcl.resolve(q)}',executionContextId:contextId,arguments:[{value:args.query}],returnByValue:false});
+   if(target.exceptionDetails)throw Error('EVALUATION_TARGET_ERROR: '+(target.exceptionDetails.exception?.description||target.exceptionDetails.text));
+   const objectId=target.result?.objectId;if(!objectId)throw Error('EVALUATION_TARGET_ERROR: target is unavailable');objects.push(objectId);receiver={objectId};
+  }
+  valid();const result=await command('Runtime.callFunctionOn',{functionDeclaration:EVALUATION_WRAPPER,executionContextId:contextId,arguments:[{objectId:fn},receiver,{value:argumentJson},{value:Boolean(args.query)}],returnByValue:true,awaitPromise:true});
+  if(result.exceptionDetails)throw Error('EVALUATION_CONTEXT_ERROR: '+(result.exceptionDetails.exception?.description||result.exceptionDetails.text));
+  const value=result.result?.value;
+  if(!value||typeof value.ok!=='boolean')throw Error('EVALUATION_CONTEXT_ERROR: evaluation did not produce a result');
+  if(!value.ok){const code=value.code==='SERIALIZATION_ERROR'?'SERIALIZATION_ERROR':'EVALUATION_ERROR';throw Error(code+': '+value.message)}
+  if(typeof value.json!=='string')throw Error('SERIALIZATION_ERROR: evaluation did not produce JSON');
+  return packet?{__bclEvaluation:true,json:value.json}:JSON.parse(value.json);
+ }finally{
+  clearInterval(timer);
+  // Release only these private remote handles even after cancellation. This
+  // performs no page function/input and cannot retarget a new document.
+  for(const objectId of objects)Promise.resolve().then(()=>rawSend({tabId:state.tabId,...(targetSession?{sessionId:targetSession}:{})},'Runtime.releaseObject',{objectId})).catch(()=>{});
+ }
 }
 const keyCodes={Enter:13,Tab:9,Escape:27,Backspace:8,Delete:46,ArrowLeft:37,ArrowUp:38,ArrowRight:39,ArrowDown:40,Home:36,End:35,PageUp:33,PageDown:34,Control:17,Shift:16,Alt:18,Meta:91,' ':32};
 async function key(state,type,name){
@@ -177,7 +207,19 @@ export async function browserCall(sessionId,method,args={},provenance={}){
  return lifecycle.run(sessionId,provenance.generation,{requestId:provenance.requestId,hostMethod:method},scope=>runBrowserCall(sessionId,method,args,scope));
 }
 async function runBrowserCall(sessionId,method,args,scope){
-
+ if(method==='page.waitForFunction'){
+  const timeout=args.options?.timeout===undefined?10000:args.options.timeout;
+  if(!Number.isFinite(timeout)||!Number.isInteger(timeout)||timeout<=0)throw Error('INVALID_TIMEOUT: expected a positive integer');
+  const deadline=Math.min(Number.isFinite(args.deadlineAt)?args.deadlineAt:Date.now()+timeout,Date.now()+timeout),budget=evaluationDeadline(scope,deadline);
+  try{
+   budget.scope.assert();const state=await budget.wait(attach(sessionId,args.tabId,budget.scope));
+   for(;;){
+    budget.scope.assert();const result=await budget.wait(evaluate(state,args,false,true));
+    if(JSON.parse(result.json))return result;
+    await budget.wait(delay(Math.min(50,Math.max(0,deadline-Date.now()))));
+   }
+  }finally{budget.close()}
+ }
  if(method==='download.save')return saveDownload({id:args.id,sessionId,downloads,destination:args.destination,scope});
  if(method==='download.cancel'){if(downloads.get(args.id)?.sessionId!==sessionId)throw Error('DOWNLOAD_NOT_OWNED_BY_SESSION');await scope.call(()=>chrome.downloads.cancel(Number(args.id)),{method:'downloads.cancel'});return true}
  if(method==='runtime.delay'){await delay(Math.min(Number(args.ms)||0,1000));scope.assert();return true}
@@ -202,9 +244,9 @@ async function runBrowserCall(sessionId,method,args,scope){
  if(method==='page.back'||method==='page.forward'){const history=await send(state,'Page.getNavigationHistory');const target=history.entries[history.currentIndex+(method==='page.back'?-1:1)];if(target)await send(state,'Page.navigateToHistoryEntry',{entryId:target.id});return Boolean(target)}
  if(method==='page.frames'){await refreshFrames(state);return [...state.frames.values()].map(({id,parent,name,url,sessionId})=>({id,parent,name,url,process:sessionId?'child-target':'root-target'}))}
  if(method==='scope.snapshot')return snapshot(state,args);
- if(method==='scope.evaluate'||method==='locator.evaluateAll')return evaluate(state,args,method==='locator.evaluateAll');
- if(method==='page.waitForURL'||method==='page.waitForFunction'||method==='page.waitForLoadState'){
-  if(method==='page.waitForLoadState'&&!['interactive','domcontentloaded','load'].includes(args.state))throw Error('Unsupported load state: '+args.state);const end=Date.now()+(args.options?.timeout||10000);while(Date.now()<end){try{const value=method==='page.waitForURL'?await evaluate(state,{source:'()=>location.href'}):method==='page.waitForLoadState'?await evaluate(state,{source:'()=>document.readyState'}):await evaluate(state,args);if(method==='page.waitForURL'?value===args.url:method==='page.waitForLoadState'?(args.state==='load'?value==='complete':value!=='loading'):Boolean(value))return value}catch{state[OP]?.assert()}await delay(50)}throw Error('WAIT_TIMEOUT: '+method);
+ if(method==='scope.evaluate'||method==='locator.evaluateAll')return evaluate(state,args,method==='locator.evaluateAll',true);
+ if(method==='page.waitForURL'||method==='page.waitForLoadState'){
+  if(method==='page.waitForLoadState'&&!['interactive','domcontentloaded','load'].includes(args.state))throw Error('Unsupported load state: '+args.state);const end=Date.now()+(args.options?.timeout||10000);while(Date.now()<end){try{const value=method==='page.waitForURL'?await evaluate(state,{source:'()=>location.href'}):await evaluate(state,{source:'()=>document.readyState'});if(method==='page.waitForURL'?value===args.url:args.state==='load'?value==='complete':value!=='loading')return value}catch{state[OP]?.assert()}await delay(50)}throw Error('WAIT_TIMEOUT: '+method);
  }
  if(method==='locator.press'){await dom(state,args.frameId,'focus',{query:args.query});return press(state,args.key)}
  if(method==='keyboard.type'){await send(state,'Input.insertText',{text:String(args.text)});return true}
@@ -213,7 +255,7 @@ async function runBrowserCall(sessionId,method,args,scope){
  if(method==='page.logs')return state.logs.filter(log=>(!args.options?.since||log.at>args.options.since)&&(!args.options?.level||log.level===args.options.level));
  if(method==='page.screenshot')return captureScreenshot(state,args.options||{});
  if(method==='locator.click')return click(state,args);
- if(method==='locator.hover'){await mouse(state,'mouseMoved',await point(state,args));await evaluate(state,{source:'()=>new Promise(r=>requestAnimationFrame(r))'});return true}
+ if(method==='locator.hover'){await mouse(state,'mouseMoved',await point(state,args));await evaluate(state,{source:'()=>new Promise(r=>requestAnimationFrame(()=>r(null)))'});return true}
  if(method==='locator.fill'){await dom(state,args.frameId,'prepareFill',{query:args.query});const frame=await context(state,args.frameId);await send(state,'Input.insertText',{text:String(args.value)},frame.sessionId);if(await dom(state,args.frameId,'inputValue',{query:args.query})!==String(args.value))throw Error('INPUT_VALUE_NOT_CHANGED');return true}
  if(method==='locator.setChecked'){const current=await dom(state,args.frameId,'isChecked',{query:args.query});if(current!==args.value)await click(state,args);if(await dom(state,args.frameId,'isChecked',{query:args.query})!==args.value)throw Error('CHECK_STATE_NOT_CHANGED');return true}
  if(method==='locator.dragTo'){

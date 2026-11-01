@@ -1,0 +1,332 @@
+
+> browser-control-lab@0.2.0 test:all
+> npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries
+
+
+> browser-control-lab@0.2.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs tests/output-buffer.test.mjs tests/output-transport.test.mjs tests/session-lifecycle.test.mjs tests/browser-lifecycle.test.mjs tests/json-value.test.mjs tests/evaluation-boundaries.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (64.73425ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (48.19775ms)
+✔ a refused attachment releases its new reservation instead of falsely owning the tab (71.304375ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (8.559459ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (2.381542ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.3725ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.362625ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (49.056833ms)
+✔ function source keeps method bodies without executing computed property keys or moving closure names (20.971083ms)
+✔ evaluation deadline includes setup and blocks continuation after a delayed adapter response (24.329208ms)
+✔ a timed out page promise releases its private handle and context monitor (120.890625ms)
+✔ foreign frame stubs cannot overwrite live child-target document or context (0.979083ms)
+✔ detached targets remove descendants without removing another live branch (1.184542ms)
+✔ late detach cannot remove a frame already mapped to a new target session (1.181708ms)
+✔ new root document invalidates old contexts and child frames (0.487916ms)
+✔ current tree edges prune orphan frames even if a late child tree still replies (0.281167ms)
+✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.267166ms)
+✔ a child target own root replaces an inherited parent session (0.244625ms)
+✔ JSON codec keeps exact finite values own prototype-like keys shared references and cross-realm plain data (2.674959ms)
+✔ JSON codec rejects loss-prone data without invoking accessors or toJSON (5.067708ms)
+✔ PNG validation rejects corrupt CRC truncated files malformed scanlines and excessive inflate independent of encoded size (19.060958ms)
+✔ output errors cannot exceed the result JSON budget and never return partial images (56.71275ms)
+✔ Adam7 exact scanline bytes and compressed metadata workspace apply during bounded stream validation (445.210792ms)
+✔ PNG format corpus enforces IHDR combinations palettes indexes transparency and estimated raster workspace (1527.469917ms)
+✔ PNG compressed streams validate stored LEN/NLEN and zlib framing without rejecting fixed or dynamic blocks (2.616125ms)
+✔ B01C extension result JSON exact16MiB is independent of correlation envelope; excess terminates explicitly (526.433709ms)
+✔ B01C guide declares execution and output limits with explicit units (7.627375ms)
+✔ an operation invalidated before the dispatch microtask never reaches the adapter (2.522792ms)
+✔ reset blocks unsent continuation while recording already transmitted uncertain effects (0.834042ms)
+✔ overlapping reset barriers block new work and stale reset cannot invalidate new generation (0.622541ms)
+✔ event wait and trigger stay concurrent and another session is independent (0.283167ms)
+✔ release failure and uncertainty retain held input and a later reset can retry it (12.789208ms)
+✔ explicit reset metadata does not advance generation twice while an execution reset advances once (40.035875ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (24.77825ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (8.746042ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (20.099667ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (61.5925ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (15.439834ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (29.6135ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2222.6535
+
+> browser-control-lab@0.2.0 test:fixtures
+> node --test --test-concurrency=1 tests/fixture-ui.test.mjs tests/output-fixture.test.mjs tests/reset-fixture.test.mjs tests/evaluation-fixture.test.mjs
+
+✔ evaluation fixture exposes root shadow slot identities and real frame lifecycle independently (2329.593667ms)
+✔ basic form is judged by site state (2243.10675ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (1853.578541ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (812.146125ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3920.067875ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (289.9695ms)
+✔ file bytes are verified and browser download contents match (772.707291ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (330.064333ms)
+✔ PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel (4790.414917ms)
+✔ reset fixture observes trusted root and OOPIF releases and delayed real clicks without injecting verdicts (4820.597542ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 23855.82025
+
+> browser-control-lab@0.2.0 test:bootstrap
+> node --test tests/extension-bootstrap.test.mjs
+
+✔ unpacked extension receives an HTTP command and returns browser data through bridge (2020.080375ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2416.703125
+
+> browser-control-lab@0.2.0 test:runtime
+> node --test tests/runtime-e2e.test.mjs
+
+✔ guide and authentication (907.215708ms)
+✔ JavaScript executes inside extension WASM and explicit output is collected (70.69575ms)
+✔ bindings persist and top-level await invokes browser APIs asynchronously (69.921791ms)
+✔ sessions do not share JavaScript variables (32.83725ms)
+✔ syntax and execution errors return failures and later requests still work (70.510166ms)
+✔ infinite computation is interrupted by its deadline (193.177458ms)
+✔ reset cancels unresolved execution, clears variables and creates a usable generation (170.47225ms)
+✔ output budget truncation is explicit (34.945333ms)
+✔ product extension opens a tab, observes DOM and completes the basic form using real input (382.249166ms)
+✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (231.315083ms)
+✔ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (225.724042ms)
+✔ product extension scrolls nested mailbox, loads mail 137 and marks it read (1242.339083ms)
+✔ product extension selects booking cells by drag and double click, then saves reservation (883.262916ms)
+✔ product extension scrolls a virtualized dropdown and selects the requested option (5265.15425ms)
+✔ product snapshot ref becomes stale after Shadow DOM element replacement (353.244333ms)
+✔ server-staged bytes upload through product setFiles and actual browser download exports to server (259.169083ms)
+✔ local path upload and intercepted file chooser use the same product upload engine (291.922375ms)
+✔ file data drop uses the product file resolver (98.946625ms)
+✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (160.978916ms)
+✔ navigation history, load and URL waits work through product APIs (509.99925ms)
+✔ snapshot scope, output budget, continuation and diff are explicit (719.404ms)
+✔ popup and dialog events return controllable objects (490.746708ms)
+✔ viewport and full-page screenshots are actual images returned through display (433.760666ms)
+✔ download cancellation interrupts an actual browser transfer (267.200291ms)
+﹣ read-only Naver search observes actual external DOM through extension (0.082084ms) # SKIP
+ℹ tests 25
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 13888.223416
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs tests/reset-runtime.test.mjs tests/evaluation-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1803.286625ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (135.409292ms)
+✔ B01B only explicit console and display output is returned (232.007458ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (618.558209ms)
+✔ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (984.506458ms)
+✔ B01E synchronous async thenable JSON and special string data round trip without automatic output (196.884459ms)
+✔ B01E invalid arguments fail before the page function and invalid results never become successful null (961.912792ms)
+✔ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (271.005875ms)
+✔ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1435.781667ms)
+✔ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (849.215583ms)
+✔ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (1261.12475ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1132.638ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (311.592666ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (167.28025ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (137.238875ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6656.105167ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (1002.677625ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (485.976375ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4220.232625ms)
+✔ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (264.310792ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1427.29925ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (693.703709ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (308.236208ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (371.131167ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (835.946041ms)
+✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (1516.753625ms)
+✔ B01D reset releases held input in a real cross-site child target (310.039375ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1727.366125ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (308.748708ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3226.142666ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (2279.489708ms)
+✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (458.72325ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 39714.312666
+
+> browser-control-lab@0.2.0 test:review-boundaries
+> node --test tests/review-boundaries.test.mjs
+
+✖ long hasText and hasNotText search the full text independently of snapshot budget (1774.300209ms)
+✖ adjacent inline nodes preserve DOM text in positive negative and regex filters (0.389ms)
+✖ explicit DOM whitespace keeps separated words distinct from adjacent text (0.043458ms)
+✖ snapshot text budget does not alter native labels or aria-labelledby (0.204458ms)
+✖ closed details exposes summary shadow control and hides content controls (0.058ms)
+✖ scrolled viewport clip captures current blue area rather than document red top (0.029917ms)
+✖ clip respects horizontal scroll and nonzero viewport origin (0.024875ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3187.288041
+
+✖ failing tests:
+
+test at tests/review-boundaries.test.mjs:32:1
+✖ long hasText and hasNotText search the full text independently of snapshot budget (1774.300209ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-boundaries.test.mjs:36:1
+✖ adjacent inline nodes preserve DOM text in positive negative and regex filters (0.389ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-boundaries.test.mjs:40:1
+✖ explicit DOM whitespace keeps separated words distinct from adjacent text (0.043458ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-boundaries.test.mjs:43:1
+✖ snapshot text budget does not alter native labels or aria-labelledby (0.204458ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-boundaries.test.mjs:46:1
+✖ closed details exposes summary shadow control and hides content controls (0.058ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-boundaries.test.mjs:50:1
+✖ scrolled viewport clip captures current blue area rather than document red top (0.029917ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-boundaries.test.mjs:54:1
+✖ clip respects horizontal scroll and nonzero viewport origin (0.024875ms)
+  AssertionError [ERR_ASSERTION]: {"code":"JS_ERROR","guestName":"Error","message":"SERIALIZATION_ERROR: SERIALIZATION_ERROR: $ must be a plain object"}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at run (file://<repo>/tests/review-boundaries.test.mjs:14:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file://<repo>/tests/review-boundaries.test.mjs:29:2)
+      at async TestHook.run (node:internal/test_runner/test:1113:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

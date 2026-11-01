@@ -26,7 +26,7 @@ before(async()=>{
  const extension=await buildExtension({directory:path.join(root,'extension'),connection:{url:bridge.url,token:bridge.extensionToken}});
  context=await chromium.launchPersistentContext(path.join(root,'profile'),{executablePath:process.env.TEST_CHROME||path.join(os.homedir(),'Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'),headless:process.env.HEADED!=='1',args:['--window-size=1440,1100','--disable-extensions-except='+extension,'--load-extension='+extension]});
  for(let i=0;i<200;i++){if((await client.request('/v1/status')).connected)break;await new Promise(r=>setTimeout(r,50))}session=await client.session();
- await run(`var p=await browser.open(${JSON.stringify(site.url+'/review-boundaries.html')});await p.waitForFunction(()=>document.getElementById('host')?.shadowRoot?.querySelector('button'));`);page=context.pages().find(p=>p.url().includes('review-boundaries'));
+ await run(`var p=await browser.open(${JSON.stringify(site.url+'/review-boundaries.html')});await p.waitForFunction(()=>Boolean(document.getElementById('host')?.shadowRoot?.querySelector('button')));`);page=context.pages().find(p=>p.url().includes('review-boundaries'));
 });
 after(async()=>{await writeFile('output/review-fixes/boundaries.json',JSON.stringify({browser:context?.browser()?.version(),evidence},null,2));await context?.close();await bridge?.close();await site?.close();if(root)await rm(root,{recursive:true,force:true})});
 test('long hasText and hasNotText search the full text independently of snapshot budget',async()=>{

@@ -4,6 +4,7 @@ import {transformCode} from './transform.mjs';
 import {OutputBuffer,installConsole} from './output.mjs';
 import {LIMITS} from '../shared/limits.mjs';
 import {installBrowserApi} from './api-source.mjs';
+import {stringifyJsonValue} from '../shared/json-value.mjs';
 // QuickJS public flags: GLOBAL(0) | STRICT(1<<3) | ASYNC(1<<7).
 // https://github.com/bellard/quickjs/blob/master/quickjs.h
 const GLOBAL_ASYNC_STRICT=(1<<3)|(1<<7);
@@ -11,14 +12,14 @@ const binary=await fetch(new URL('quickjs.wasm',import.meta.url)).then(r=>r.arra
 const engine=await newQuickJSWASMModuleFromVariant(newVariant(variant,{wasmBinary:binary}));
 const runtime=engine.newRuntime();runtime.setMemoryLimit(LIMITS.memoryBytes);runtime.setMaxStackSize(LIMITS.stackBytes);
 const vm=runtime.newContext(),pending=new Map();let nextId=0,nextRequest=0,current=null;
-const parseValue=value=>vm.unwrapResult(vm.evalCode('('+JSON.stringify(value===undefined?null:value)+')'));
+const parseValue=value=>vm.unwrapResult(vm.evalCode('JSON.parse('+JSON.stringify(JSON.stringify(value===undefined?null:value))+')'));
 function setFunction(name,fn){const handle=vm.newFunction(name,fn);vm.setProp(vm.global,name,handle);handle.dispose()}
 setFunction('__print',value=>{if(current)current.output.text(JSON.parse(vm.getString(value)));return vm.undefined});
 setFunction('__hostCall',(methodHandle,argsHandle)=>{
  const promise=vm.newPromise(),id=++nextId;pending.set(id,promise);postMessage({type:'host',id,requestId:current?.id,method:vm.getString(methodHandle),args:vm.dump(argsHandle)});return promise.handle;
 });
 vm.unwrapResult(vm.evalCode('('+installConsole.toString()+')()')).dispose();
-vm.unwrapResult(vm.evalCode('('+installBrowserApi.toString()+')()')).dispose();
+vm.unwrapResult(vm.evalCode('('+installBrowserApi.toString()+')('+stringifyJsonValue.toString()+')')).dispose();
 setFunction('display',value=>{if(current)current.output.image(vm.dump(value));return vm.undefined});
 runtime.setInterruptHandler(()=>Boolean(current&&Date.now()>current.deadline));
 function guestError(handle){

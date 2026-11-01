@@ -7,7 +7,7 @@
 | quickjs-emscripten-core | 0.32.0 | 확장 내부 QuickJS 호스트 | MIT |
 | @jitl/quickjs-wasmfile-release-sync | 0.32.0 | 범용 QuickJS WASM 엔진 | MIT |
 | pako | 3.0.3 | 고정 출력 조각 스트림으로 PNG zlib/DEFLATE·체크섬 검증 | MIT AND Zlib |
-| acorn | 8.19.0 | REPL 소스 구문 분석 | MIT |
+| acorn | 8.19.0 | REPL 및 전달할 페이지 함수 소스 구문 분석 | MIT |
 | esbuild | 0.28.2 | 확장 번들 빌드 | MIT |
 | playwright | 1.64.1 | 시험 브라우저 기동·독립 판독 | Apache-2.0 |
 
