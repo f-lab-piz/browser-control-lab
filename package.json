@@ -13,7 +13,9 @@
     "test:bootstrap": "node --test tests/extension-bootstrap.test.mjs",
     "test:all": "npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime",
     "bridge": "node bridge/cli.mjs",
-    "test:runtime": "node --test tests/runtime-e2e.test.mjs"
+    "test:runtime": "node --test tests/runtime-e2e.test.mjs",
+    "test:audit": "node scripts/audit-tools.mjs",
+    "test:audit-fixture": "node --test tests/audit-fixture.test.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

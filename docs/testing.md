@@ -10,10 +10,10 @@
 
 ## 실행 명령
 
-- `npm test`: 판정기/카탈로그 검증 5개.
+- `npm test`: 판정기/카탈로그/중계기 검증 7개.
 - `npm run test:fixtures`: 실제 브라우저의 테스트 사이트 동작 검증 7개.
 - `npm run test:bootstrap`: 임시 개발 확장 로드 및 HTTP 왕복 실험 1개.
-- `npm run test:all`: 위 세 등급을 순서대로 실행. 제품 확장 E2E가 아니다.
+- `npm run test:all`: 기본 단위·fixture·probe·제품 runtime 회귀를 순서대로 실행. 새 경계 진단은 test:audit으로 별도 실행.
 
 임시 확장 bootstrap은 브라우저 API 조회만 수행하며, 구현되지 않은 제품 런타임/HTTP 계약을 통과한 것으로 표시하지 않는다. 보고서 grade를 `extension-transport-probe`로 구분한다.
 
@@ -62,3 +62,9 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 
 TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계기·확장을 만들고 시험 종료 시 지운다. 실제 입력은 HTTP 경로로만 수행한다. Playwright 대화상자 자동 닫기가 제품 검증을 방해하지 않도록 수동 처리 리스너를 설치하며 실제 accept/dismiss는 제품 API가 수행한다. DOM 준비와 비동기 업무 화면 준비는 구별해 대상 요소를 기다린다.
 결과는 output/runtime-e2e/results.json, 실제 네이버 관찰은 external.json, 캡처는 viewport.png다. 네이버 시험은 EXTERNAL_SITE=1일 때만 실행하며 환경 차단은 SKIP/blocked로 기록한다.
+
+## 수정 전 경계 진단
+
+`npm run test:audit`: `/audit`의31개 요구 조건을 현재 확장 경로로 검사. FAIL을 제외하지 않고 JSON에 보존하며 명령도 종료 코드1을 반환한다.
+`npm run test:audit-fixture`: 독립 Playwright로 fixture의 DnD/slot/disabled/readonly/변형 frame/clip과 서버 판정을 확인한다.
+전체64 API는 api-test-matrix.json에서 기본 호출과 경계 진단을 구분한다. 동결 평가에서는 extension/bridge/빌드 엔진의 해시를 기준 커밋과 비교한다.

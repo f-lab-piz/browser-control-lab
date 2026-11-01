@@ -81,3 +81,11 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 - [개발·검증 스킬](.agents/skills/browser-control-development/SKILL.md) — 프로젝트 AGENTS.md에서 로드
 
 개발은 API 계약→단위 검증→기본 fixture→복잡 fixture→제품 확장 E2E→외부 사이트 검증 순으로 진행합니다. GitHub 원격 저장소는 아직 연결하지 않았습니다.
+
+## 수정 전 진단 평가
+
+`npm run site` 후 `/audit`에서16개 진단 구역을, `/coverage`에서64 API의 테스트 매핑을 확인합니다. `npm run test:audit`은 현 툴의 경계 진단31개를 실행합니다. 현재19 PASS/12 FAIL이며 실패가 있으면 종료 코드1을 반환합니다. 이는 알려진 미지원 옵션과 거짓 성공을 포함한 진단 결과입니다. 툴은 아직 수정하지 않았습니다.
+
+- `npm run test:audit-fixture`: 독립 fixture oracle, 제품 성능과 구분
+- `node scripts/build-audit-matrix.mjs`: 진단 결과를 반영해64 API 매핑과 정적 coverage 페이지 생성
+- [요구사항](docs/development-requirements.md), [평가 계획](docs/evaluation-plan.md), [개선 제안](docs/tool-improvement-report.md)

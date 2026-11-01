@@ -1,0 +1,801 @@
+{
+  "productCommit": "35077f5",
+  "count": 64,
+  "external": {
+    "guide": "guide and authentication",
+    "reset": "reset cancels unresolved execution, clears variables and creates a usable generation",
+    "js": "JavaScript executes inside extension WASM and explicit output is collected"
+  },
+  "internal": [
+    {
+      "api": "browser.list",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "bindings persist and top-level await invokes browser APIs asynchronously",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "browser.tabs",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "browser.open",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "browser.attach",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.activate",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.close",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.goto",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.back",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.forward",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.reload",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "scope.snapshot",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "snapshot scope, output budget, continuation and diff are explicit",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "snapshot-password-hidden",
+          "status": "PASS"
+        },
+        {
+          "id": "snapshot-states",
+          "status": "FAIL"
+        },
+        {
+          "id": "snapshot-offscreen",
+          "status": "PASS"
+        },
+        {
+          "id": "snapshot-full-budget",
+          "status": "PASS"
+        },
+        {
+          "id": "snapshot-collapsed",
+          "status": "FAIL"
+        },
+        {
+          "id": "snapshot-since-filter",
+          "status": "PASS"
+        },
+        {
+          "id": "snapshot-no-duplicate-label",
+          "status": "PASS"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.screenshot",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "viewport and full-page screenshots are actual images returned through display",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "screenshot-clip",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.frames",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "scaled-frame-click",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.frame",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension scrolls nested mailbox, loads mail 137 and marks it read",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "scaled-frame-click",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "scope.locator",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "scope.getByRole",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "regex-role",
+          "status": "FAIL"
+        },
+        {
+          "id": "slot-name",
+          "status": "FAIL"
+        },
+        {
+          "id": "duplicate-strict",
+          "status": "PASS"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "scope.getByText",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "scope.getByLabel",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "semantic-email",
+          "status": "PASS"
+        },
+        {
+          "id": "readonly-fill",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.filter",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "filter-hasText",
+          "status": "PASS"
+        },
+        {
+          "id": "filter-visible",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.nth",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "negative-nth",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.count",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.textContent",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.getAttribute",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.inputValue",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.isVisible",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.isEnabled",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.isEditable",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.isChecked",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.boundingBox",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.click",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "delayed-enabled",
+          "status": "FAIL"
+        },
+        {
+          "id": "overlay-reject",
+          "status": "PASS"
+        },
+        {
+          "id": "overlay-recover",
+          "status": "PASS"
+        },
+        {
+          "id": "nested-shadow",
+          "status": "PASS"
+        },
+        {
+          "id": "slot-name",
+          "status": "FAIL"
+        },
+        {
+          "id": "scaled-frame-click",
+          "status": "FAIL"
+        },
+        {
+          "id": "clipped-input",
+          "status": "PASS"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.fill",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "semantic-email",
+          "status": "PASS"
+        },
+        {
+          "id": "readonly-fill",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.press",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.hover",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension scrolls a virtualized dropdown and selects the requested option",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.focus",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.scrollIntoView",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.setChecked",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.selectOption",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.dragTo",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension selects booking cells by drag and double click, then saves reservation",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "html-drag",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.drop",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "file data drop uses the product file resolver",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "mime-drop",
+          "status": "PASS"
+        },
+        {
+          "id": "local-file-drop",
+          "status": "FAIL"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "mouse.move",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "mouse.down",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "mouse.up",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "mouse.click",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "mouse.wheel",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension scrolls a virtualized dropdown and selects the requested option",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "keyboard.down",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "keyboard.up",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "keyboard.press",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "keyboard.type",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.waitFor",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "product extension scrolls nested mailbox, loads mail 137 and marks it read",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.waitForEvent",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "popup and dialog events return controllable objects",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.waitForURL",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.waitForFunction",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.waitForLoadState",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "navigation history, load and URL waits work through product APIs",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.setFiles",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "multi-files",
+          "status": "PASS"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "chooser.setFiles",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "local path upload and intercepted file chooser use the same product upload engine",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "download.save",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [
+        {
+          "id": "blob-download",
+          "status": "PASS"
+        },
+        {
+          "id": "post-download",
+          "status": "PASS"
+        },
+        {
+          "id": "cookie-download",
+          "status": "PASS"
+        }
+      ],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "download.cancel",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "download cancellation interrupts an actual browser transfer",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "dialog.accept",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "popup and dialog events return controllable objects",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "dialog.dismiss",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "popup and dialog events return controllable objects",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "scope.evaluate",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "locator.evaluateAll",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "page.logs",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "console.log",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "JavaScript executes inside extension WASM and explicit output is collected",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    },
+    {
+      "api": "display",
+      "baseline": {
+        "file": "tests/runtime-e2e.test.mjs",
+        "test": "viewport and full-page screenshots are actual images returned through display",
+        "grade": "basic-call regression; 일부는 복합 assertion"
+      },
+      "diagnostics": [],
+      "scope": "기본 호출 매핑. 모든 옵션/실패/환경 조합 검증을 의미하지 않음"
+    }
+  ]
+}
