@@ -1,0 +1,105 @@
+✖ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (29.72125ms)
+✖ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (11.085292ms)
+✖ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (4.1955ms)
+✖ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (6.87675ms)
+✖ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (27.943083ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 193.710583
+
+✖ failing tests:
+
+test at tests/transport-requirements.test.mjs:22:1
+✖ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (29.72125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  202 !== 409
+  
+      at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:29:60)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 202,
+    expected: 409,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/transport-requirements.test.mjs:38:1
+✖ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (11.085292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  503 !== 202
+  
+      at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:44:56)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 503,
+    expected: 202,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/transport-requirements.test.mjs:52:1
+✖ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (4.1955ms)
+  AssertionError [ERR_ASSERTION]: {"timeoutMs":"100","result":{"status":202,"value":{"requestId":"c18f2d15-98e5-435b-9a62-0a40a86fd795","generation":1,"status":"running"}}}
+  
+  202 !== 400
+  
+      at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:56:84)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 202,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/transport-requirements.test.mjs:66:1
+✖ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (6.87675ms)
+  AssertionError [ERR_ASSERTION]: The "string" argument must be of type string. Received type undefined (undefined)
+      at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:72:72)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /^\d+\.\d+\.\d+/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/transport-requirements.test.mjs:86:1
+✖ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (27.943083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'console.log("���🙂")'
+  - 'console.log("한🙂")'
+                  ^
+  
+      at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:96:44)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'console.log("���🙂")',
+    expected: 'console.log("한🙂")',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

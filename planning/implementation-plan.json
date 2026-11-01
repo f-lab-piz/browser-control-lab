@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "requirementsBaseline": "d5bd4ffddbb70cbfc4e6c908663c30c2ab8468ea",
-  "status": "planned",
+  "status": "in-progress",
   "slices": [
     {
       "id": "B01A",
       "title": "요청 식별·인증·도구 안내",
       "dependsOn": [],
       "goal": "동일 ID payload 충돌·중복 효과·접수 입력 검증·인증/소유·guide",
-      "status": "not-started",
+      "status": "in-progress",
       "requirements": [
         "REQ-C-RUNTIME-001",
         "REQ-C-RUNTIME-005",
@@ -17,7 +17,10 @@
         "REQ-GUIDE-002",
         "REQ-JS-002"
       ],
-      "evidence": []
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ],
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/9"
     },
     {
       "id": "B01B",
@@ -447,8 +450,10 @@
       "conditions": [
         "REQ-C-RUNTIME-001-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ]
     },
     {
       "requirement": "REQ-C-RUNTIME-002",
@@ -491,8 +496,10 @@
       "conditions": [
         "REQ-C-RUNTIME-005-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ]
     },
     {
       "requirement": "REQ-C-RUNTIME-006",
@@ -502,8 +509,10 @@
       "conditions": [
         "REQ-C-RUNTIME-006-C01"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ]
     },
     {
       "requirement": "REQ-C-DOMFRAMES-001",
@@ -756,8 +765,10 @@
         "REQ-GUIDE-001-C01",
         "REQ-GUIDE-001-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ]
     },
     {
       "requirement": "REQ-GUIDE-002",
@@ -768,8 +779,10 @@
         "REQ-GUIDE-002-C01",
         "REQ-GUIDE-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ]
     },
     {
       "requirement": "REQ-RESET-001",
@@ -816,8 +829,10 @@
         "REQ-JS-002-C01",
         "REQ-JS-002-C02"
       ],
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md"
+      ]
     },
     {
       "requirement": "REQ-BROWSER-LIST-001",
@@ -2549,29 +2564,37 @@
       "id": "REQ-GUIDE-001-C01",
       "requirement": "REQ-GUIDE-001",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-guide-001-c01"
+      ]
     },
     {
       "id": "REQ-GUIDE-001-C02",
       "requirement": "REQ-GUIDE-001",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-guide-001-c02"
+      ]
     },
     {
       "id": "REQ-GUIDE-002-C01",
       "requirement": "REQ-GUIDE-002",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-guide-002-c01"
+      ]
     },
     {
       "id": "REQ-GUIDE-002-C02",
       "requirement": "REQ-GUIDE-002",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-guide-002-c02"
+      ]
     },
     {
       "id": "REQ-RESET-001-C01",
@@ -2626,15 +2649,19 @@
       "id": "REQ-JS-002-C01",
       "requirement": "REQ-JS-002",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-js-002-c01"
+      ]
     },
     {
       "id": "REQ-JS-002-C02",
       "requirement": "REQ-JS-002",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-js-002-c02"
+      ]
     },
     {
       "id": "REQ-JS-003-C01",
@@ -4089,8 +4116,10 @@
       "id": "REQ-C-RUNTIME-001-C01",
       "requirement": "REQ-C-RUNTIME-001",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-c-runtime-001-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-002-C01",
@@ -4117,15 +4146,19 @@
       "id": "REQ-C-RUNTIME-005-C01",
       "requirement": "REQ-C-RUNTIME-005",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-c-runtime-005-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-006-C01",
       "requirement": "REQ-C-RUNTIME-006",
       "slice": "B01A",
-      "status": "unverified",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "docs/implementation/b01a.md#req-c-runtime-006-c01"
+      ]
     },
     {
       "id": "REQ-C-RUNTIME-007-C01",

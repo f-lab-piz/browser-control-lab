@@ -10,10 +10,11 @@
 
 ## 실행 명령
 
-- `npm test`: 판정기/카탈로그/중계기 검증 7개.
+- `npm test`: 판정기/카탈로그/중계기 단위 검증. B01A 전송 경계5개를 추가해 현재12개다.
 - `npm run test:fixtures`: 실제 브라우저의 테스트 사이트 동작 검증 7개.
 - `npm run test:bootstrap`: 임시 개발 확장 로드 및 HTTP 왕복 실험 1개.
-- `npm run test:all`: 기본 단위·fixture·probe·제품 runtime 회귀를 순서대로 실행. 새 경계 진단은 test:audit으로 별도 실행.
+- `npm run test:requirements`: 요구사항별 실제 HTTP→확장→QuickJS 검증. 현재 B01A4개 테스트/9개 상세조건, 결과는 output/requirements-runtime/의 run별 폴더에 저장한다. BCL_RUN_DIR로 명시 경로를 지정할 수 있다.
+- `npm run test:all`: 기본 단위·fixture·probe·제품 runtime·요구사항 회귀를 순서대로 실행. 새 경계 진단은 test:audit으로 별도 실행.
 
 임시 확장 bootstrap은 브라우저 API 조회만 수행하며, 구현되지 않은 제품 런타임/HTTP 계약을 통과한 것으로 표시하지 않는다. 보고서 grade를 `extension-transport-probe`로 구분한다.
 

@@ -1,5 +1,7 @@
 # 로컬 실행과 HTTP 호출
 
+중계기는 한 사람이 로컬에서 사용하는 전송 프로그램이다. 대화별 세션은 JS 상태와 탭·파일 작업을 구분하며 사용자 계정 체계를 만들지 않는다. 클라이언트 토큰은 본인의 모든 세션을 관리하는 로컬 자격이고, 확장 토큰은 중계기와 확장 사이의 연결에 사용한다.
+
 Node 22 이상과 확장을 로드할 수 있는 Chrome for Testing이 필요하다.
 
 ```sh
@@ -63,3 +65,10 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 - draggable 요소의 dragTo는 Chrome의 실제 dragstart를 가로채 native DragData와 dispatchDragEvent로 전달한다. 비 draggable 격자는 기존 포인터 드래그를 유지한다. 서로 다른 target 간 드래그는 미지원이다.
 - 로컬 파일 drop은 일시적인 숨은 file input으로 파일을 읽고 기존 파일 전달 엔진으로 처리한다. 임시 요소는 정리한다. 외부 파일/MIME drop 이벤트는 DOM DataTransfer 방식이므로 trusted 이벤트를 필수로 요구하는 사이트는 별도 검증이 필요하다.
 - root snapshot은 지정한 프레임 안에서 범위를 좁힌다. 다른 프레임은 page.frames()/page.frame(id)로 명시하여 관찰한다. 기본 전체 snapshot은 모든 현재 프레임을 관찰한다.
+
+
+## 요청 재전송과 안내 조회
+
+- `requestId`는 생략하거나 비어 있지 않은 문자열을 준다. 같은 세션에서 같은 ID의 operation/code/effective timeout을 다시 보내면 기존 요청 상태와 결과를 조회하며 다시 실행하지 않는다. timeoutMs 생략은30000과 같게 취급한다. 코드·실효 timeout·operation 또는 세션이 다르면 HTTP409/REQUEST_ID_CONFLICT다. reset 이후에도 이 기록은 중계기 프로세스가 살아 있는 동안 유지한다. 연결이 끊겼어도 기존 ID의 동일 요청 조회는 가능하지만 신규 JS는503으로 거절한다. 프로세스 재시작 뒤의 복구·업무 취소를 보장하지 않는다.
+- 외부 js의 timeoutMs는50..120000 범위의 정수 number(ms), 기본30000이다. 문자열·boolean·null·소수·범위 밖 값은 접수 전에 거절한다. code는 UTF-8 기준64KiB까지이며 HTTP 조각 사이에 걸친 한글도 원문으로 전달한다.
+- guide는 현재 package version, 외부3개·내부64개, 실행 위치, 명시 출력 방법과 기존 기본 검증의 범위를 알려준다. `?api=js`, `?api=scope.snapshot`처럼 정확한 이름을 조회할 수 있고 없는 이름은 HTTP404/UNKNOWN_API다. 카탈로그의 기존 status는 새 요구사항 전체 충족을 뜻하지 않는다.

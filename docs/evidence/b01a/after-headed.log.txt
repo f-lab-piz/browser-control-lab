@@ -1,0 +1,16 @@
+
+> browser-control-lab@0.1.0 test:requirements
+> node --test tests/requirements-runtime.test.mjs
+
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (2317.1765ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (571.036208ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (275.839542ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (390.437459ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4084.12975

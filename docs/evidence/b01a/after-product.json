@@ -1,0 +1,106 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b01a",
+  "startedAt": "2026-11-01T13:41:16.627Z",
+  "finishedAt": "2026-11-01T13:41:20.188Z",
+  "browser": "145.0.7632.6",
+  "headed": true,
+  "head": "3c87245964a3f15565897320708fc88092975dfd",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "a93a97bac8a13bbafceee93a90a1c711d69fa701a32bf956670fa8f7a81a8431",
+    "extension/runtime-worker.mjs": "5e2aa9d5b00fe25fa8dc2fd5e9e7c8633a8e68fe780b593fe32d078daa3a190a",
+    "extension/transform.mjs": "2f425837e9c4f0d2261442db5acb02816c617c77f2da124d3b43e0b20cead6f9",
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/offscreen.js": "45bb3b0060d6f0eb2678687c415227608442c1a70f9b1ff053140ebd2f2e6cb9",
+    "extension/browser-engine.mjs": "9965bb20649d183ecdd525d6009220c1a1a8cebb7f1841160a96419cc5c22183",
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68",
+    "tests/helpers/product-runtime.mjs": "2ff1456f467c3245e5852006b4ebc2f5c834b8483be287f9ab1b94f7874b8be4",
+    "tests/requirements-runtime.test.mjs": "a594d53e6e84487868c5a2b7fe8ee2711cdfadc543b93bd6ee097522bc997d72",
+    "test-site/server.mjs": "25b230f99e8864be78b3fb7d15740b1bafdefb8b6159b7057df84d03e40dce9f",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "9fad03b1f2b6eaea303627f925c0e0ae07d190e020a878087cd5e07cdf0aaea5",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "a6398b14966cead2a95a882445fd8818f1813dffac5d04408a3c15e1a1607feb",
+    "package-lock.json": "6c793dbd02242bd2d7bfaea02f5b9fb344cf2e1c274aaa27417e069760ba1921"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-001-C01",
+        "REQ-GUIDE-001-C01",
+        "REQ-GUIDE-001-C02",
+        "REQ-GUIDE-002-C01",
+        "REQ-GUIDE-002-C02"
+      ],
+      "status": "pass",
+      "tabId": 914427228,
+      "guideVersion": "0.1.0",
+      "unknown": {
+        "error": "Unknown API",
+        "code": "UNKNOWN_API",
+        "api": "does.not.exist"
+      },
+      "readonlyState": {
+        "sessions": 2,
+        "requests": 1,
+        "tabs": [
+          {
+            "url": "about:blank",
+            "focused": true
+          },
+          {
+            "url": "http://127.0.0.1:63056/audit",
+            "focused": true
+          }
+        ],
+        "generation": 1
+      }
+    },
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-005-C01",
+        "REQ-JS-002-C02"
+      ],
+      "status": "pass",
+      "serverClicks": [
+        {
+          "type": "audit-step",
+          "data": {
+            "key": "duplicates",
+            "value": "right"
+          },
+          "accepted": true,
+          "at": 1793540479469
+        }
+      ],
+      "execution": "extension-worker/QuickJS-WASM"
+    },
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-006-C01"
+      ],
+      "status": "pass",
+      "otherBinding": "undefined",
+      "deniedAssetHTTP": 403,
+      "otherInputFiles": [],
+      "ownerAssetPreserved": true,
+      "ownerTabPreserved": true
+    },
+    {
+      "conditions": [
+        "REQ-JS-002-C01"
+      ],
+      "status": "pass",
+      "codeBytes": 65536,
+      "syntaxCode": "JS_ERROR",
+      "cpuCode": "TIMEOUT",
+      "newGeneration": 2,
+      "oldBinding": "undefined"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "grade": "bridge-only-probe; extension poll simulated; no browser effect claimed",
+  "head": "3c87245964a3f15565897320708fc88092975dfd",
+  "at": "2026-11-01T13:30:46.556Z",
+  "observations": [
+    {
+      "name": "same-payload",
+      "expected": 202,
+      "status": 202,
+      "body": {
+        "requestId": "b01a-duplicate",
+        "generation": 1,
+        "status": "running"
+      },
+      "matches": true
+    },
+    {
+      "name": "changed-code",
+      "expected": 409,
+      "status": 409,
+      "body": {
+        "error": "Request ID belongs to a different session or payload",
+        "code": "REQUEST_ID_CONFLICT"
+      },
+      "matches": true
+    },
+    {
+      "name": "changed-timeout",
+      "expected": 409,
+      "status": 409,
+      "body": {
+        "error": "Request ID belongs to a different session or payload",
+        "code": "REQUEST_ID_CONFLICT"
+      },
+      "matches": true
+    },
+    {
+      "name": "changed-operation",
+      "expected": 409,
+      "status": 409,
+      "body": {
+        "error": "Request ID belongs to a different session or payload",
+        "code": "REQUEST_ID_CONFLICT"
+      },
+      "matches": true
+    },
+    {
+      "name": "string-timeout",
+      "expected": 400,
+      "status": 400,
+      "body": {
+        "error": "timeoutMs must be an integer from 50 to 120000"
+      },
+      "matches": true
+    },
+    {
+      "name": "fractional-timeout",
+      "expected": 400,
+      "status": 400,
+      "body": {
+        "error": "timeoutMs must be an integer from 50 to 120000"
+      },
+      "matches": true
+    },
+    {
+      "name": "object-request-id",
+      "expected": 400,
+      "status": 400,
+      "body": {
+        "error": "requestId must be a non-empty string"
+      },
+      "matches": true
+    },
+    {
+      "name": "unknown-guide",
+      "expected": 404,
+      "status": 404,
+      "body": {
+        "api": "does.not.exist",
+        "error": "Unknown API"
+      },
+      "matches": true
+    }
+  ]
+}

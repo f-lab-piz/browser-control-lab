@@ -1,0 +1,105 @@
+{
+  "at": "2026-11-01T13:42:54.355433+00:00",
+  "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd:bridge/server.mjs",
+  "productComparison": "same final test/fixture/source hashes except bridge/server.mjs",
+  "unitBefore": {
+    "pass": 0,
+    "fail": 5
+  },
+  "unitAfter": {
+    "pass": 5,
+    "fail": 0
+  },
+  "productBefore": {
+    "pass": 2,
+    "fail": 2
+  },
+  "productAfter": {
+    "pass": 4,
+    "fail": 0,
+    "headed": true
+  },
+  "regression": {
+    "command": "npm run test:all",
+    "pass": 55,
+    "fail": 0,
+    "skip": 1,
+    "note": "latest variable-isolation assertion rerun in headed target; full suite preceding it used same product code"
+  },
+  "conditions": [
+    "REQ-C-RUNTIME-001-C01",
+    "REQ-C-RUNTIME-005-C01",
+    "REQ-C-RUNTIME-006-C01",
+    "REQ-GUIDE-001-C01",
+    "REQ-GUIDE-001-C02",
+    "REQ-GUIDE-002-C01",
+    "REQ-GUIDE-002-C02",
+    "REQ-JS-002-C01",
+    "REQ-JS-002-C02"
+  ],
+  "artifacts": [
+    {
+      "file": "before-transport.json",
+      "source": "output/goal-b01a-before/transport.json",
+      "sourceSha256": "eb7b14ee8ba445ce24eb4ab5f9b6f23b161e9cdce4f1e5239aa3b0d053ef07a6",
+      "sha256": "eb7b14ee8ba445ce24eb4ab5f9b6f23b161e9cdce4f1e5239aa3b0d053ef07a6",
+      "normalization": "none"
+    },
+    {
+      "file": "before-unit.log.txt",
+      "source": "output/goal-b01a-before/unit.log",
+      "sourceSha256": "b1cdb0f43266298443201aced069332a7fcd2dacc2fbfb5ce8007e63249ff66b",
+      "sha256": "528b804155685b5f08a35d605b7791dfd3f8abc851173fa83fc59a77c0b8a0e7",
+      "normalization": "repository path -> <repo>"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b01a-before/product.log",
+      "sourceSha256": "2d3e7624f0b8d23c380b72c9a593140aec3788d5ad0c007992e978bdd1cb6dec",
+      "sha256": "2f73b5b0a4f179cc240180fc5b2820cb1328b6ee76019ea2b9234f175aa22612",
+      "normalization": "repository path -> <repo>"
+    },
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b01a-before/product/results.json",
+      "sourceSha256": "8e707a0ec5d392e5fa0be4f72e10f7c2e474b4edc2986e3988f1a0777c6cc2f5",
+      "sha256": "8e707a0ec5d392e5fa0be4f72e10f7c2e474b4edc2986e3988f1a0777c6cc2f5",
+      "normalization": "none"
+    },
+    {
+      "file": "after-transport.json",
+      "source": "output/goal-b01a-after/transport.json",
+      "sourceSha256": "fc051d34f25d00dd4d3cccaa4bc7061fc35e9e5edef42412506d1e3c0dc4f8c8",
+      "sha256": "fc051d34f25d00dd4d3cccaa4bc7061fc35e9e5edef42412506d1e3c0dc4f8c8",
+      "normalization": "none"
+    },
+    {
+      "file": "after-unit.log.txt",
+      "source": "output/goal-b01a-after/unit-all.log",
+      "sourceSha256": "7be11ac685be4e5628ebc7291ed7a0ff1fc9a7fd2a3ca01cc0880506995ea179",
+      "sha256": "7be11ac685be4e5628ebc7291ed7a0ff1fc9a7fd2a3ca01cc0880506995ea179",
+      "normalization": "none"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b01a-after/all.log",
+      "sourceSha256": "335017a8227aa426bcb9381d206abb0d7c2dbf33ba0721c13d76339b31644788",
+      "sha256": "335017a8227aa426bcb9381d206abb0d7c2dbf33ba0721c13d76339b31644788",
+      "normalization": "none"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b01a-after/headed.log",
+      "sourceSha256": "d84eb4ad46766ad1313f487e522952075e67b516be9a60aa6e9e8d78c2b80126",
+      "sha256": "d84eb4ad46766ad1313f487e522952075e67b516be9a60aa6e9e8d78c2b80126",
+      "normalization": "none"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b01a-after/headed/results.json",
+      "sourceSha256": "44968119b7002316cca480e1f05176c0fa01fd06600ad6489805b1150759ae71",
+      "sha256": "44968119b7002316cca480e1f05176c0fa01fd06600ad6489805b1150759ae71",
+      "normalization": "none"
+    }
+  ]
+}
