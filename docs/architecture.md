@@ -14,15 +14,15 @@
 
 중계기는 에이전트용 MCP 등록 없이도 검증할 수 있게 HTTP 계약을 제공한다. 에이전트 코드를 Node에서 실행하거나 Playwright로 제품 조작을 대체하지 않는다. QuickJS 등 범용 엔진의 브라우저 빌드를 사용할 수 있으나 Aside의 실행 코드·번들·WASM은 가져오지 않는다. 엔진 버전·라이선스·패키지 출처를 기록한다.
 
-## Proposed HTTP contract
-아래 엔드포인트는 구현 전 계약이다.
+## HTTP contract
+실제 실행 예제와 현재 지원 범위는 runtime-usage.md를 따른다.
 - POST /v1/sessions: 격리 세션 생성. sessionId 및 generation 반환.
 - GET /v1/guide?api=...: API 사용법 조회.
 - POST /v1/sessions/:id/js: {requestId,code,timeoutMs}; 실행은 확장에서 수행.
 - POST /v1/sessions/:id/reset: 실행·변수·참조 초기화. 이미 수행된 페이지 작업은 되돌리지 않는다.
 - GET /v1/requests/:id: 실행 상태·출력·오류 조회. HTTP 완료와 브라우저 업무 성공은 다르다.
 
-응답은 {requestId,sessionId,generation,status,content:[text|image|artifact],error,metrics} 구조를 사용한다. 세션과 요청 식별자를 혼동하지 않는다. 로컬 인증 토큰과 출력 파일은 Git에 넣지 않는다. 연결 재시도 시 비멱등 클릭·제출·업로드를 자동 재실행하지 않는다.
+요청 조회 응답은 {requestId,sessionId,generation,status,result:{content:[text|image],error?,metrics?}} 구조를 사용한다. 세션과 요청 식별자를 혼동하지 않는다. 로컬 인증 토큰과 출력 파일은 Git에 넣지 않는다. 연결 재시도 시 비멱등 클릭·제출·업로드를 자동 재실행하지 않는다.
 
 ## Runtime lifecycle
 MV3 service worker 종료에 내성이 필요하다. JS 상태를 서비스 워커 전역 변수에만 두지 않는다. offscreen document의 Worker에 런타임을 두는 후보를 최소 실험으로 검증한다. 무한 반복은 deadline/메모리 제한과 worker 종료로 해제한다. reset과 예기치 않은 재시작은 generation 변경으로 알리고 stale 핸들을 사용하지 않는다.

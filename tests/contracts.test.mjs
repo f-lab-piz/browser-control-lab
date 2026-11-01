@@ -7,7 +7,9 @@ test('64 internal APIs and 3 external tools have distinct entries and honest imp
  const catalog=JSON.parse(await readFile(new URL('../docs/api-catalog.json',import.meta.url)));
  assert.equal(catalog.external.length,3);assert.equal(catalog.internal.length,64);
  assert.equal(new Set(catalog.internal.map(a=>a.name)).size,64);
- assert(catalog.internal.every(a=>a.status==='planned'));
+ assert(catalog.internal.every(a=>['planned','partial','verified-basic'].includes(a.status)));
+ assert(catalog.internal.filter(a=>a.status!=='planned').every(a=>a.test&&a.evidence));
+ assert(catalog.internal.filter(a=>a.status==='partial').every(a=>a.limitations));
 });
 test('mail requires loading through inner scrolling and reading the correct mail',()=>{
  const run=createRun('mail');assert.equal(applyEvent(run,{type:'mail-read',id:137}).accepted,false);

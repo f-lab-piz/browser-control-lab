@@ -4,11 +4,11 @@
 
 ## 현재 상태
 
-프로젝트 기반·개발 문서·테스트 사이트를 준비한 단계입니다. 제품 확장·HTTP 중계기·JS 런타임과 내부64 API는 아직 구현하지 않았습니다. [상태](docs/status.md)를 기준으로 진행합니다.
+개발 확장·HTTP 중계기·확장 내부 QuickJS WASM 실행기와 내부64 API의 기본 호출을 구현했습니다. 복잡한 iframe 업무와 파일 전송을 실제 확장 경로로 검증했습니다. 일부 고급 옵션과 상용 배포 조건은 남아 있습니다. [상태](docs/status.md)를 기준으로 진행합니다.
 
 ## 도구
 
-외부 MCP 도구는 **guide / reset / js 세 개**입니다. JS 실행은 확장 내부에서 수행하고 외부 중계기는 통신을 담당합니다. 내부 API **64종**은 아래와 같습니다. Page/Frame 공통 메서드·옵션·이벤트 이름은 중복 계산하지 않습니다.
+외부 도구 계약은 **guide / reset / js 세 개**입니다. JS 실행은 확장 내부에서 수행하고 외부 중계기는 통신을 담당합니다. 내부 API **64종**은 아래와 같습니다. 현재 MCP 등록 없이 HTTP로 호출합니다. Page/Frame 공통 메서드·옵션·이벤트 이름은 중복 계산하지 않습니다.
 
 | 분류 | API |
 |---|---|
@@ -53,22 +53,39 @@ HEADED=1 npm run test:fixtures
 - 큰 문서·긴 URL·화면 밖 요소
 - 파일 내용 검증과 실제 다운로드, Shadow DOM·동적 요소 교체
 
-제품 E2E는 별도 Chrome 프로필에 확장을 로드하고 **HTTP → 확장 → 내부 런타임 → 브라우저** 경로로 수행할 예정입니다. 외부 Playwright가 제품 클릭을 대신해서 성공했다고 기록하지 않습니다.
+제품 E2E는 별도 Chrome 프로필에 확장을 로드하고 **HTTP → 확장 → 내부 런타임 → 브라우저** 경로로 수행합니다. 외부 Playwright가 제품 클릭을 대신해서 성공했다고 기록하지 않습니다.
 
-## 확인한 초기 결과
+## 실행과 검증
 
-- 계약·판정기 5개 통과.
-- 실제 Chrome에서 fixture 시나리오 7개 통과.
-- 개발 모드 임시 확장 로드 및 HTTP 명령 왕복 실험 1개 통과.
-- 프로젝트 스킬 검증 통과.
+```sh
+npm run bridge
+npm run test:runtime
+HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
+```
 
-이는 제품 64 API의 구현·통과를 의미하지 않습니다. 결과는 `output/`에 생성하며 Git에서 제외합니다.
+브리지 실행 후 출력된 `.local/extension`을 Chrome 개발자 모드에서 로드합니다. 설치·세션·HTTP 호출·파일 전달 예제는 [사용 안내](docs/runtime-usage.md)를 참고합니다. 테스트는 임시 프로필에 확장을 자동 설치하므로 수동 설치가 필요 없습니다.
+
+- 계약·판정기·중계기 검증 7개.
+- fixture UI 검증 7개, 초기 확장 왕복 probe 1개.
+- 제품 확장 경로 24개와 실제 네이버 검색 관찰 1개. 최신 결과는 [상태 문서](docs/status.md)에서 확인합니다.
+
+`verified-basic`은 기본 호출의 실제 검증이며 모든 옵션을 지원한다는 뜻은 아닙니다. 카탈로그의 partial 항목과 사용 안내의 제약을 함께 확인합니다. 결과는 `output/`에 생성하며 Git에서 제외합니다.
 
 ## 개발 문서와 스킬
 
+- [순차 구현 계획](docs/implementation-plan.md)
+- [의존성·라이선스](docs/third-party.md)
 - [아키텍처·HTTP 계약](docs/architecture.md)
 - [스냅샷 전략](docs/snapshot-strategy.md)
 - [검증 등급·복잡 시나리오·성공 판정](docs/testing.md)
 - [개발·검증 스킬](.agents/skills/browser-control-development/SKILL.md) — 프로젝트 AGENTS.md에서 로드
 
 개발은 API 계약→단위 검증→기본 fixture→복잡 fixture→제품 확장 E2E→외부 사이트 검증 순으로 진행합니다. GitHub 원격 저장소는 아직 연결하지 않았습니다.
+
+## 수정 전 진단 평가
+
+`npm run site` 후 `/audit`에서16개 진단 구역을, `/coverage`에서64 API의 테스트 매핑을 확인합니다. `npm run test:audit`은 현 툴의 경계 진단31개를 실행합니다. 현재19 PASS/12 FAIL이며 실패가 있으면 종료 코드1을 반환합니다. 이는 알려진 미지원 옵션과 거짓 성공을 포함한 진단 결과입니다. 툴은 아직 수정하지 않았습니다.
+
+- `npm run test:audit-fixture`: 독립 fixture oracle, 제품 성능과 구분
+- `node scripts/build-audit-matrix.mjs`: 진단 결과를 반영해64 API 매핑과 정적 coverage 페이지 생성
+- [요구사항](docs/development-requirements.md), [평가 계획](docs/evaluation-plan.md), [개선 제안](docs/tool-improvement-report.md)

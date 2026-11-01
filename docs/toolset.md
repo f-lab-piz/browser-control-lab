@@ -153,3 +153,7 @@ alert/confirm/prompt 확인·입력·닫기.
 ## 상용화 구현 기준
 
 프레임/별도 프로세스 세션 추적, 접근 가능한 Shadow DOM, 가상 스크롤, stale ref 감지, 다중 매칭 오류, 입력 actionability, 타임아웃·취소·자원 제한, 브라우저별 어댑터와 연결 복구를 검증한다. 이들은 추가 도구가 아니라 엔진의 동작 계약이다. 모든 브라우저·사이트를 무조건 지원한다고 약속하지 않고 검증한 브라우저·버전·제약을 명시한다.
+
+## 구현 상태 해석
+
+위 명세에는 목표 계약이 포함되어 있다. 현재 실제 기본 검증과 미지원 옵션은 api-catalog.json, runtime-usage.md, status.md를 우선한다. 특히 screenshot의 clip/ref/주석, dragTo의 HTML DnD와 서로 다른 프로세스 target 간 이동, 로컬 경로 직접 drop, 임의 Pod 목적지 다운로드는 아직 목표 계약이다. 요소 boundingBox는 해당 프레임 좌표이고 page.mouse의 명시적 좌표는 최상위 페이지 기준이다. hover 후 wheel은 해당 포인터 위치와 target을 유지한다.
