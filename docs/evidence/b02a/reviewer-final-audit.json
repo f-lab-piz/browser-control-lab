@@ -1,0 +1,268 @@
+{
+  "manifests": [
+    {
+      "name": "b01e",
+      "count": 24,
+      "failed": []
+    },
+    {
+      "name": "b02a",
+      "count": 61,
+      "failed": []
+    }
+  ],
+  "sources": {
+    "before-product": {
+      "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+      "dirty": true,
+      "count": 36,
+      "pass": 3,
+      "fail": 10,
+      "mismatches": []
+    },
+    "after-product": {
+      "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+      "dirty": true,
+      "count": 36,
+      "pass": 13,
+      "fail": 0,
+      "mismatches": []
+    },
+    "after-headed": {
+      "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+      "dirty": true,
+      "count": 36,
+      "pass": 13,
+      "fail": 0,
+      "mismatches": []
+    }
+  },
+  "parents": [
+    {
+      "id": "REQ-C-SELECTION-001",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-C-SELECTION-003",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-C-SELECTION-004",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-C-SELECTION-005",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-001",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-002",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002",
+      "status": "pass"
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-003",
+      "status": "pass"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "REQ-SCOPE-LOCATOR-001-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-001-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-002-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001-C03",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-003-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002-C02",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-C-SELECTION-001-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-C-SELECTION-003-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-C-SELECTION-004-C01",
+      "status": "pass",
+      "inSuite": true
+    },
+    {
+      "id": "REQ-C-SELECTION-005-C01",
+      "status": "pass",
+      "inSuite": true
+    }
+  ],
+  "future": [
+    {
+      "id": "B02B",
+      "status": "not-started"
+    },
+    {
+      "id": "B02C",
+      "status": "not-started"
+    },
+    {
+      "id": "B03A",
+      "status": "not-started"
+    },
+    {
+      "id": "B03B",
+      "status": "not-started"
+    },
+    {
+      "id": "B03C",
+      "status": "not-started"
+    },
+    {
+      "id": "B04A",
+      "status": "not-started"
+    },
+    {
+      "id": "B04B",
+      "status": "not-started"
+    },
+    {
+      "id": "B04C",
+      "status": "not-started"
+    },
+    {
+      "id": "B04D",
+      "status": "not-started"
+    },
+    {
+      "id": "B05A",
+      "status": "not-started"
+    },
+    {
+      "id": "B05B",
+      "status": "not-started"
+    },
+    {
+      "id": "B05C",
+      "status": "not-started"
+    },
+    {
+      "id": "B06A",
+      "status": "not-started"
+    },
+    {
+      "id": "B06B",
+      "status": "not-started"
+    },
+    {
+      "id": "B06C",
+      "status": "not-started"
+    }
+  ],
+  "scope": {
+    "throughSlice": "B02A",
+    "afterCompletion": "stop",
+    "reason": "사용자가 기존 전체21단계 Goal을 중단하고 6단계까지만 마무리하도록 범위를 변경했다. B02B 이후는 착수하지 않는다."
+  }
+}

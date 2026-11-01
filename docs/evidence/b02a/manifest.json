@@ -37,7 +37,7 @@
   "rawHistory": "Initial Before included a test-code newline escaping error in one case; fixed test quoting before final comparison, no product change then. First full after naming changes failed legacy summary test: composed name correctly matches SUMMARY and nested BUTTON. Test now asserts both identities and explicitly selects native button via CSS+filter, preserving hidden-content exclusions and actual clicked result. Initial125 stage then unit/coverage audit strengthened to final127. No predicates weakened.",
   "competitors": "Same final root fixture: Codex IAB public locators LIVE received-output transcription, Aside CLI1.26.1028.2335 Skill3 LIVE raw CLI.16reads plus proof click/fill; root only, Codex child DNS blocked. Different contracts, no general ranking. Codex field value changes but trusted-input site verdict pending, exact cause unknown. Own comparison tabs closed; no source/bundle/WASM copied.",
   "remainingRisk": "B03A old PR18 headed frame-tree timeout remains root-cause unproven; not reproduced in this final full/headed, not declared resolved. B02B/B03-B06/final audit unverified.",
-  "gate": "Accepted/fixed all current in-scope findings; final full132PASS1externalSKIP/headed45PASS, fresh exact-head independent review pending. Stop after B02A.",
+  "gate": "Exact23aff96 independent Sol6.1 high product review PASS; no in-scope P0/P1/P2. Nonblocking P3 evidence EOF2files fixed in docs-only closeout with preserved-source SHA and refreshed retained SHA. Final docs-delta exact-head review and remote normal-merge gate follow. Stop after B02A.",
   "artifacts": [
     {
       "file": "unit-contract.log.txt",
@@ -379,15 +379,15 @@
       "file": "label-aside-guide.txt",
       "source": "output/finish-stage6/aside-label-guide.txt",
       "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
-      "sha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
-      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+      "sha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed; terminal blank lines removed in final closeout (P3)"
     },
     {
       "file": "label-aside-repl-guide.txt",
       "source": "output/finish-stage6/aside-label-repl-guide.txt",
       "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
-      "sha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
-      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+      "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed; terminal blank lines removed in final closeout (P3)"
     },
     {
       "file": "label-compare-aside.txt",
@@ -465,6 +465,62 @@
       "sourceSha256": "4ad51dcae6ee6c81a4debdfb29626fea4eb66f8fcd9ed2194b83dd847ffdd2f3",
       "sha256": "4d7047e6c3d19a8ab9a7eae307b9bc643b5627f9c83a8bb8ff40732f194cc3c5",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-final-report.txt",
+      "source": "output/stage6-label-rereview/report.md",
+      "sourceSha256": "83dad24d7cc381d3be00e36413189e9c5db641540f7777842bcb058ecb924d14",
+      "sha256": "0ca0e93515c0d3590f2ba59f5ebe60cbb2655f5d52d059233292890f62fa6613",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-probes.json",
+      "source": "output/stage6-label-rereview/probe.json",
+      "sourceSha256": "9bee62abb54b027dfaadb6f442533537d390cc4be75711b7fc49308b00a36e3b",
+      "sha256": "834ecdddcca6b1b0258d9ed89291088ab0c31c2f4dd28907c3385a9f45826399",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-probe.mjs",
+      "source": "output/stage6-label-rereview/probe.mjs",
+      "sourceSha256": "ac2fc34f3872c1649396ba4906d5aa1f2e063605b8cd0163c3f37add4eaf4f4b",
+      "sha256": "ac2fc34f3872c1649396ba4906d5aa1f2e063605b8cd0163c3f37add4eaf4f4b",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-audit.json",
+      "source": "output/stage6-label-rereview/audit.json",
+      "sourceSha256": "28dcbbafc68944353571aa8c619510f4bc4ccea14c8290a8b302f7a2f3af641f",
+      "sha256": "996b875c6f0cd300cbd39ab9519405e26b485d1970339c6eb649db4d2dda303a",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-all.log.txt",
+      "source": "output/stage6-label-rereview/all.log",
+      "sourceSha256": "09bf5860fdb5c44ead8bfb661b6df86684c8d2ec318a854fa537ddd3045f9a54",
+      "sha256": "09bf5860fdb5c44ead8bfb661b6df86684c8d2ec318a854fa537ddd3045f9a54",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-headed.log.txt",
+      "source": "output/stage6-label-rereview/headed.log",
+      "sourceSha256": "1af47ff4bb92ca0aae7d8c8e8a401dfb7d1aed23c6c33dd5b54f9e893cf38e5b",
+      "sha256": "1af47ff4bb92ca0aae7d8c8e8a401dfb7d1aed23c6c33dd5b54f9e893cf38e5b",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-product.json",
+      "source": "output/stage6-label-rereview/all/b02a/results.json",
+      "sourceSha256": "05b0982cf8b7e0018659ab4d32193878efba6b240a0b95610a0113a2e710b344",
+      "sha256": "fece754fd4dda14e350cd2e2e5815f34f648fe608b0ec0612e165d5fb882bf97",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-final-headed.json",
+      "source": "output/stage6-label-rereview/headed/b02a/results.json",
+      "sourceSha256": "df83c0f9d9a42dead547f728befa9ee6ec24bda8983a0d7155d1a902715bf9fa",
+      "sha256": "214cc39171586b133773eabfd1c76b7bb4c61714b3dcbe5dbbfd3023c9cd9ac7",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
     }
   ],
   "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns. Latest separate label fixture adds one formal product/native case without changing selection/boundary DOM; final13 Before/After132/headed45 use the latest source36 fingerprint. Prior12/130/44 results remain historical in earlier commits/review reports.",
@@ -508,5 +564,23 @@
     "decision": "Accepted; absent explicit source now null sentinel, connected native/valid IDREF empty name remains empty string; no placeholder or empty aria-label connection fabricated",
     "candidateBefore": "Same final label regression fails on a59c560 with actual unintended trusted input; native fixture oracle passes. Final exact-base controlled comparison3PASS10FAIL→After13PASS; source36 fingerprints differ only owner2, base owner hashes match git show.",
     "comparison": "Fresh same selection-labels root public locators: Codex absent0/connected empty native+IDREF; Aside absent0/connected queries return only native-empty and Named empty result. Surface-specific raw observations, no whole-tool ranking. No source extraction, owned tabs/server closed."
+  },
+  "independentReview": {
+    "head": "23aff96a23710c41702eb0079cd99b7e221144f4",
+    "verdict": "PASS",
+    "model": "gpt-6.1-sol",
+    "reasoning": "high",
+    "context": "fresh",
+    "formalFull": {
+      "pass": 132,
+      "fail": 0,
+      "externalSkip": 1
+    },
+    "standaloneHeaded": 45,
+    "extraProbeGroups": 3,
+    "scope": "B02A13parents21conditions only",
+    "p0p1p2": 0,
+    "p3": "Evidence EOF blank lines2files resolved in docs-only closeout; reviewed23aff96 diff-check exit2 preserved in original report",
+    "report": "reviewer-final-report.txt"
   }
 }

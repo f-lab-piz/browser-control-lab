@@ -143,7 +143,7 @@
         "B01E"
       ],
       "goal": "텍스트 최소 후보·접근성 이름·정규식·hidden·scope",
-      "status": "in-progress",
+      "status": "pass",
       "requirements": [
         "REQ-C-SELECTION-001",
         "REQ-C-SELECTION-003",
@@ -161,9 +161,12 @@
       ],
       "evidence": [
         "docs/implementation/b02a.md",
-        "docs/evidence/b02a/manifest.json"
+        "docs/evidence/b02a/manifest.json",
+        "docs/reviews/pr20-b02a-final.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/19"
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/19",
+      "review": "docs/reviews/pr20-b02a-final.md",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/20"
     },
     {
       "id": "B02B",
@@ -4629,6 +4632,9 @@
   "executionScope": {
     "throughSlice": "B02A",
     "afterCompletion": "stop",
-    "reason": "사용자가 기존 전체21단계 Goal을 중단하고 6단계까지만 마무리하도록 범위를 변경했다. B02B 이후는 착수하지 않는다."
+    "reason": "사용자가 기존 전체21단계 Goal을 중단하고 6단계까지만 마무리하도록 범위를 변경했다. B02B 이후는 착수하지 않는다.",
+    "completedThrough": "B02A",
+    "executionStatus": "stopped-after-requested-scope",
+    "oldGoalStatus": "paused"
   }
 }

@@ -1,0 +1,61 @@
+{
+  "grade": "Independent HTTP-extension-QuickJS supplemental probe",
+  "rows": [
+    {
+      "case": "names-provenance-fallback-root-and-inert",
+      "actual": {
+        "empty": [
+          "empty-native",
+          "empty-reference",
+          "inert-empty"
+        ],
+        "all": [
+          "empty-native",
+          "empty-reference",
+          "fallback",
+          "hidden-named",
+          "local",
+          "inert-empty"
+        ],
+        "hidden": [
+          "hidden-named"
+        ],
+        "local": [
+          "local"
+        ],
+        "outside": 0,
+        "fallback": 1,
+        "root": "ko",
+        "inertText": 0
+      },
+      "pass": true
+    },
+    {
+      "case": "negative-strict-and-unconnected-no-effects",
+      "actual": [
+        "MULTIPLE_MATCHES: 3 elements",
+        "ELEMENT_NOT_FOUND_TIMEOUT",
+        "ELEMENT_NOT_FOUND_TIMEOUT"
+      ],
+      "pass": true
+    },
+    {
+      "case": "positive-trusted-input-and-click",
+      "actual": [
+        {
+          "type": "input",
+          "id": "fallback",
+          "value": "valid",
+          "trusted": true
+        },
+        {
+          "type": "click",
+          "id": "trusted",
+          "trusted": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "status": "PASS"
+}
