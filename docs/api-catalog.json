@@ -1,0 +1,657 @@
+{
+  "external": [
+    {
+      "name": "guide",
+      "status": "planned"
+    },
+    {
+      "name": "reset",
+      "status": "planned"
+    },
+    {
+      "name": "js",
+      "status": "planned"
+    }
+  ],
+  "internal": [
+    {
+      "name": "browser.list",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "browser.tabs",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "browser.open",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "browser.attach",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.activate",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.close",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.goto",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.back",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.forward",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.reload",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "scope.snapshot",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "page.screenshot",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "page.frames",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "page.frame",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "scope.locator",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "scope.getByRole",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "scope.getByText",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "scope.getByLabel",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.filter",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "locator.nth",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.count",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.textContent",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.getAttribute",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.inputValue",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.isVisible",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.isEnabled",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.isEditable",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.isChecked",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.boundingBox",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.click",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.fill",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "locator.press",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "locator.hover",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.focus",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.scrollIntoView",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.setChecked",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.selectOption",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "locator.dragTo",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "locator.drop",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "mouse.move",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "mouse.down",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "mouse.up",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "mouse.click",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "mouse.wheel",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "booking",
+        "files"
+      ]
+    },
+    {
+      "name": "keyboard.down",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "keyboard.up",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "keyboard.press",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "keyboard.type",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "dropdown",
+        "booking"
+      ]
+    },
+    {
+      "name": "locator.waitFor",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "page.waitForEvent",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.waitForURL",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.waitForFunction",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "page.waitForLoadState",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "locator.setFiles",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "files"
+      ]
+    },
+    {
+      "name": "chooser.setFiles",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "files"
+      ]
+    },
+    {
+      "name": "download.save",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "files"
+      ]
+    },
+    {
+      "name": "download.cancel",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "files"
+      ]
+    },
+    {
+      "name": "dialog.accept",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "dialog.dismiss",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "scope.evaluate",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "locator.evaluateAll",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic",
+        "mail",
+        "booking",
+        "large",
+        "dynamic"
+      ]
+    },
+    {
+      "name": "page.logs",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "console.log",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    },
+    {
+      "name": "display",
+      "status": "planned",
+      "test": null,
+      "plannedScenarios": [
+        "basic"
+      ]
+    }
+  ]
+}
