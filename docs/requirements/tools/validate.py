@@ -1,6 +1,6 @@
-"""문서 구조/추적/제품 동결 검사. 제품 테스트/브라우저 실행이 아니다. 실제 Git checkout에서 실행한다."""
+"""문서 구조 검사. --check-frozen-product는 문서 단계의 제품 동결까지 검사한다."""
 from pathlib import Path
-import re,json,hashlib,subprocess,collections,os
+import re,json,hashlib,subprocess,collections,os,sys
 os.chdir(Path(__file__).resolve().parents[3])
 R=Path('docs/requirements');D=R/'reference-methods';i=json.loads((R/'index.json').read_text());m=json.loads((R/'verification-matrix.json').read_text());c=json.loads((R/'condition-index.json').read_text())['conditions'];r=json.loads((D/'index.json').read_text());e=json.loads((D/'evidence-index.json').read_text());ids={x['id'] for x in m['requirements']};caseids={x['id'] for x in c}
 assert len(ids)==len(m['requirements']);assert len(caseids)==len(c)
@@ -55,10 +55,12 @@ for category in ['external','internal']:
     assert len(names)==len(set(names)) and set(names)=={x['name'] for x in catalog[category]},category
 
 f=json.loads((R/'evidence/product-freeze.json').read_text())
-for p,h in f['paths'].items():
- assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h
- assert subprocess.check_output(['git','show',f['baseline']+':'+p])==Path(p).read_bytes()
-print(json.dumps({'requirements':len(ids),'detailedCases':len(c),'slots':len(ids)*2,'conditionUnits':len(c)*2,'claims':len(claims),'sources':len(sources),'productFilesUnchanged':len(f['paths']),'status':'DOCUMENT_STRUCTURE_ONLY_PASS'}))
+check_frozen='--check-frozen-product' in sys.argv[1:]
+if check_frozen:
+ for p,h in f['paths'].items():
+  assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h
+  assert subprocess.check_output(['git','show',f['baseline']+':'+p])==Path(p).read_bytes()
+print(json.dumps({'requirements':len(ids),'detailedCases':len(c),'slots':len(ids)*2,'conditionUnits':len(c)*2,'claims':len(claims),'sources':len(sources),'frozenProductCheck':check_frozen,'productFilesUnchanged':len(f['paths']) if check_frozen else None,'status':'DOCUMENT_STRUCTURE_ONLY_PASS'}))
 
 for c in e['claims']:
  assert (D/c['sourceFile']).is_file(),c['id']

@@ -5,6 +5,7 @@ import contextlib
 import io
 import json
 import runpy
+import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -26,6 +27,17 @@ class TraceabilityTest(unittest.TestCase):
 
     def test_canonical_documents(self):
         self.run_validator()
+
+    def test_frozen_product_is_an_explicit_historical_check(self):
+        read_bytes = Path.read_bytes
+        def changed(path):
+            value = read_bytes(path)
+            return value + b'changed' if path.as_posix() == 'bridge/server.mjs' else value
+        with patch.object(Path, 'read_bytes', changed), patch.object(sys, 'argv', ['validate.py']):
+            self.run_validator()
+        with patch.object(Path, 'read_bytes', changed), patch.object(sys, 'argv', ['validate.py', '--check-frozen-product']):
+            with self.assertRaises(AssertionError):
+                self.run_validator()
 
     def test_broken_links_are_rejected(self):
         probes = [

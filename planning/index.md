@@ -28,3 +28,8 @@
 ## 최신 · 참고 방식/상세화 루프 완료
 
 현재185REQ/254상세사례/양쪽370슬롯. 조사A/B협업과새컨텍스트Sol6.1 high 독립3회완료, 마지막367c16f의문서범위PASS·신규0건이다. 규범72파일/참고6본문은마지막검토와해시동일. [최종결과](../docs/requirements/reference-methods/completion.md)와 [개발backlog](../docs/requirements/backlog.md)를기준으로다음구현을진행한다. 이번제품/테스트/fixture/빌드변경0이며구현은미시작이다. 위진행중/184개표현은당시기록이다.
+
+
+## 2026-11-01 · 요구사항 기반 구현 Goal 착수
+
+문서 PR #6은 Sol6.1 high 재리뷰 PASS 후 main d5bd4ff로 머지했다. 다음 기준은 [실행 계획](spec-requirements-implementation.md), [185 REQ/254조건의 담당·상태](implementation-plan.json)이다. 21 slice를 순서대로 개발·검증·독립 리뷰하고 gate 충족 시 사용자의 재확인 없이 메인이 머지한다. 구현 상태는 계획 ledger와 implementation/log.md에 기록하고 이전 문서 단계의 미실행 기록은 당시 이력으로 유지한다.
