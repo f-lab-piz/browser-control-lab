@@ -89,3 +89,7 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 - `npm run test:audit-fixture`: 독립 fixture oracle, 제품 성능과 구분
 - `node scripts/build-audit-matrix.mjs`: 진단 결과를 반영해64 API 매핑과 정적 coverage 페이지 생성
 - [요구사항](docs/development-requirements.md), [평가 계획](docs/evaluation-plan.md), [개선 제안](docs/tool-improvement-report.md)
+
+## 진단 수정 Before/After
+
+진단12건의 수정 결과는 [3개 툴 비교 보고서](docs/fixes-before-after.md)와 [증거 요약 JSON](docs/evidence/diagnostics-before-after.json)에 기록했습니다. 원래 진단은19/31→31/31, 추가 경계 포함36/36, 기존 회귀24/24가 통과했습니다. `AUDIT_EXTRA=1 npm run test:audit`으로 추가 검사를 실행합니다. 평가 전 보고서는 이력으로 보존합니다.

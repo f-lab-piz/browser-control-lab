@@ -1,0 +1,69 @@
+{
+  "beforeHead": "6bae21c6a184d3aff6167eba077f3b9417feb1b1",
+  "beforeProductMatchesReviewedHead": "01ad334d1aa367041692b063722c2fcd106ef7d1",
+  "before": {
+    "hasText": 0,
+    "hasNotText": 1,
+    "evidence": "docs/reviews/sol-rereview-01ad334.md"
+  },
+  "after": {
+    "hasText": 1,
+    "hasNotText": 0,
+    "nativeText": "foobarSelect row"
+  },
+  "tests": {
+    "boundariesHeadless": 7,
+    "boundariesHeaded": 7,
+    "audit": 36,
+    "runtimePass": 24,
+    "runtimeSkip": 1,
+    "unit": 7
+  },
+  "sourceDigests": {
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "test-site/review-boundaries.html": "07ab36c2919e23593e7fd5c4afdef57a1fc5698ec3931cc5a1317fb50c98af80",
+    "tests/review-boundaries.test.mjs": "3076b6e069f84a58facd80dd7b33965cd614fb4b2ca41007574630f4dddd104f"
+  },
+  "boundaryEvidence": {
+    "browser": "145.0.7632.6",
+    "evidence": [
+      {
+        "case": "full-text-filter",
+        "pass": true
+      },
+      {
+        "case": "adjacent-inline-filter",
+        "pass": true
+      },
+      {
+        "case": "explicit-whitespace-filter",
+        "pass": true
+      },
+      {
+        "case": "accessible-labels",
+        "pass": true
+      },
+      {
+        "case": "summary-shadow",
+        "pass": true
+      },
+      {
+        "case": "viewport-clip-vertical",
+        "pass": true,
+        "oracle": {
+          "y": 812,
+          "hit": "bottom"
+        }
+      },
+      {
+        "case": "viewport-clip-horizontal",
+        "pass": true,
+        "oracle": {
+          "x": 700,
+          "y": 812,
+          "hit": "bottom"
+        }
+      }
+    ]
+  }
+}

@@ -68,3 +68,7 @@ TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계
 `npm run test:audit`: `/audit`의31개 요구 조건을 현재 확장 경로로 검사. FAIL을 제외하지 않고 JSON에 보존하며 명령도 종료 코드1을 반환한다.
 `npm run test:audit-fixture`: 독립 Playwright로 fixture의 DnD/slot/disabled/readonly/변형 frame/clip과 서버 판정을 확인한다.
 전체64 API는 api-test-matrix.json에서 기본 호출과 경계 진단을 구분한다. 동결 평가에서는 extension/bridge/빌드 엔진의 해시를 기준 커밋과 비교한다.
+
+## 독립 리뷰 발견 사항의 회귀
+
+`npm run test:review-boundaries`는 긴 텍스트 필터, label, closed details summary의 Shadow DOM, 스크롤 후 clip의 실제 내용까지7개를 검증한다. 인접/중첩/슬롯 텍스트 및 실제 공백의 구분을 포함하며 fixture는 review-boundaries.html이다. 독립 PNG 픽셀 검사로 위치 오류를 검출한다. HEAD/리뷰 범위와 결과는 docs/review-round2.md를 따른다.

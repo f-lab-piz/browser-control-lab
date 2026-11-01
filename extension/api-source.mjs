@@ -1,6 +1,7 @@
 // This function is serialized into the isolated QuickJS context.
 export function installBrowserApi(){
- const call=(method,args)=>__hostCall(method,args);
+ const encode=value=>value instanceof RegExp?{__bclRegex:true,source:value.source,flags:value.flags}:Array.isArray(value)?value.map(encode):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,encode(v)])):value;
+ const call=(method,args)=>__hostCall(method,encode(args));
  class Scope{
   constructor(tabId,frameId){this.tabId=tabId;this.frameId=frameId}
   args(extra={}){return {tabId:this.tabId,frameId:this.frameId,...extra}}

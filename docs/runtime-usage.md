@@ -52,4 +52,14 @@ console.log(await download.save({target:'server'}));
 
 ## 현재 제약
 
-Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 웹스토어 배포, 닫힌 Shadow DOM, PDF/캔버스의 의미 분석은 검증하지 않았다. 스냅샷은 현재 DOM을 대상으로 하므로 아직 로드되지 않은 데이터는 내부 스크롤 등으로 불러온 뒤 다시 관찰한다. role/name 계산은 자체 기본 구현이며 전체 접근성 표준과 동등하다고 보장하지 않는다. selector의 정규식, screenshot 영역/주석, 모든 HTML Drag and Drop 이벤트의 호환성은 추가 작업이다.
+Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 웹스토어 배포, 닫힌 Shadow DOM, PDF/캔버스의 의미 분석은 검증하지 않았다. 스냅샷은 현재 DOM을 대상으로 하므로 아직 로드되지 않은 데이터는 내부 스크롤 등으로 불러온 뒤 다시 관찰한다. role/name 계산은 자체 기본 구현이며 전체 접근성 표준과 동등하다고 보장하지 않는다. 이름/텍스트의 정규식(source/flags), visible/hasText/hasNotText 필터, 음수 nth, viewport 좌표 clip을 지원한다. clip은 요청한 CSS 크기의 픽셀 출력으로 정규화한다. screenshot 주석, 전체 접근성 이름 표준, 모든 HTML DnD 호환성은 추가 작업이다.
+
+## 진단 수정 후 계약
+
+- readonly fill은 변경 전에 거절하며, fill 후 실제 값이 요청과 다르면 INPUT_VALUE_NOT_CHANGED를 반환한다. contenteditable도 내용을 확인한다.
+- click/hover/drag의 대상은 visible/enabled를 제한 시간 안에 기다린다. 중복·낡은 ref·실제 가림은 명시적으로 거절한다.
+- slot으로 배정된 텍스트를 접근 이름에 포함하고 composed ancestry로 히트 대상을 확인한다. 닫힌 details 내부는 기본 snapshot에서 제외하고 showHidden에는 hidden을 표시한다. checked/selected/expanded/readonly/busy 상태를 출력한다.
+- 양의 scale·translate iframe 좌표를 변환한다. 회전·기울임·음수 scale·3D 프레임은 명시적 미지원이다.
+- draggable 요소의 dragTo는 Chrome의 실제 dragstart를 가로채 native DragData와 dispatchDragEvent로 전달한다. 비 draggable 격자는 기존 포인터 드래그를 유지한다. 서로 다른 target 간 드래그는 미지원이다.
+- 로컬 파일 drop은 일시적인 숨은 file input으로 파일을 읽고 기존 파일 전달 엔진으로 처리한다. 임시 요소는 정리한다. 외부 파일/MIME drop 이벤트는 DOM DataTransfer 방식이므로 trusted 이벤트를 필수로 요구하는 사이트는 별도 검증이 필요하다.
+- root snapshot은 지정한 프레임 안에서 범위를 좁힌다. 다른 프레임은 page.frames()/page.frame(id)로 명시하여 관찰한다. 기본 전체 snapshot은 모든 현재 프레임을 관찰한다.

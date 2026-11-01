@@ -122,7 +122,8 @@
         "dynamic"
       ],
       "evidence": "output/runtime-e2e/results.json",
-      "limitations": "기본 DOM 의미화만 지원. 전체 접근성 표준·닫힌 Shadow DOM·캔버스 의미 분석 미지원."
+      "limitations": "기본 DOM/접근 이름 규칙. 전체 AX 표준·닫힌 Shadow·canvas 미지원.",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "page.screenshot",
@@ -136,7 +137,8 @@
         "dynamic"
       ],
       "evidence": "output/runtime-e2e/results.json",
-      "limitations": "viewport/fullPage PNG 검증. clip/ref/주석은 미구현."
+      "limitations": "viewport/fullPage/clip 검증. ref/주석 미지원.",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "page.frames",
@@ -188,7 +190,8 @@
         "large",
         "dynamic"
       ],
-      "evidence": "output/runtime-e2e/results.json"
+      "evidence": "output/runtime-e2e/results.json",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "scope.getByText",
@@ -214,7 +217,8 @@
         "large",
         "dynamic"
       ],
-      "evidence": "output/runtime-e2e/results.json"
+      "evidence": "output/runtime-e2e/results.json",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "locator.filter",
@@ -225,7 +229,8 @@
         "dropdown",
         "booking"
       ],
-      "evidence": "output/runtime-e2e/results.json"
+      "evidence": "output/runtime-e2e/results.json",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "locator.nth",
@@ -238,7 +243,8 @@
         "large",
         "dynamic"
       ],
-      "evidence": "output/runtime-e2e/results.json"
+      "evidence": "output/runtime-e2e/results.json",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "locator.count",
@@ -368,7 +374,8 @@
         "large",
         "dynamic"
       ],
-      "evidence": "output/runtime-e2e/results.json"
+      "evidence": "output/runtime-e2e/results.json",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "locator.fill",
@@ -379,7 +386,8 @@
         "dropdown",
         "booking"
       ],
-      "evidence": "output/runtime-e2e/results.json"
+      "evidence": "output/runtime-e2e/results.json",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "locator.press",
@@ -464,7 +472,8 @@
         "files"
       ],
       "evidence": "output/runtime-e2e/results.json",
-      "limitations": "같은 CDP target의 포인터 드래그 검증. HTML DnD 전용 DataTransfer 및 서로 다른 target 간 드래그 미지원."
+      "limitations": "native HTML DnD 및 격자 포인터 드래그 검증. 서로 다른 target 간 드래그 미지원.",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "locator.drop",
@@ -475,7 +484,8 @@
         "files"
       ],
       "evidence": "output/runtime-e2e/results.json",
-      "limitations": "서버 참조·bytes/base64 및 MIME 데이터 지원. 로컬 경로 직접 드롭은 미지원."
+      "limitations": "로컬 경로·서버 참조·bytes/MIME 검증. 파일/MIME drop은 DOM DataTransfer 이벤트이며 trusted 필요 사이트 미검증.",
+      "diagnosticTest": "scripts/audit-tools.mjs"
     },
     {
       "name": "mouse.move",
@@ -646,7 +656,7 @@
         "files"
       ],
       "evidence": "output/runtime-e2e/results.json",
-      "limitations": "Chrome 기본 다운로드 경로 또는 로컬 중계기 asset 반환. 임의 원격 Pod 목적지는 미구현."
+      "limitations": "기본 로컬 경로 또는 중계기 asset. 임의 Pod 목적지 미지원."
     },
     {
       "name": "download.cancel",
