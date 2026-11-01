@@ -42,9 +42,9 @@ test('B01A concurrent retry clicks exactly once and conflicting payload/operatio
  const server=await fetch(h.fixture.url+'/api/runs/'+runId).then(r=>r.json());
  const clicks=server.events.filter(e=>e.type==='audit-step'&&e.data.key==='duplicates');assert.equal(clicks.length,1);assert.equal(clicks[0].accepted,true);
  const retry=await h.request(route+'js',payload);assert.equal(retry.status,202);assert.deepEqual(await h.client.wait(payload.requestId),first);
- const ids=['job','job#part','job/a','한글','job?part','job%part','job%2Fa','.','..','a+b','a b','x\0y'];
- // 식별자와 출력 문자열 계약을 분리한다. JSON marker로 NUL도 손실 없이 판독한다.
- for(const requestId of ids){const r=await h.client.js(a.id,'console.log(JSON.stringify('+JSON.stringify(requestId)+'))',{requestId});completed(r);assert.equal(r.requestId,requestId);assert.equal(JSON.parse(text(r)),requestId)}
+ const ids=['job','job#part','job/a','한글','job?part','job%part','job%2Fa','.','..','a+b','a b','x\0y','한'.repeat(2000),'a'.repeat(20000),'\ud800','\udfff'];
+ // 원문 ID와 고유 ASCII marker를 따로 대조해 출력 인코딩과 식별을 혼동하지 않는다.
+ for(const [index,requestId] of ids.entries()){const marker='id-proof-'+index,r=await h.client.js(a.id,'console.log('+JSON.stringify(marker)+')',{requestId});completed(r);assert.equal(r.requestId,requestId);assert.equal(text(r),marker)}
  h.evidence.push({conditions:['REQ-C-RUNTIME-005-C01','REQ-JS-002-C02'],status:'pass',idRoundTrips:ids,serverClicks:clicks,execution:first.result.execution});
 });
 
@@ -71,4 +71,27 @@ test('B01A code limits, syntax errors and CPU deadline are distinct and the new 
  r=await h.client.js(a.id,'while(true){}',{timeoutMs:150});assert.equal(r.status,'failed');assert.equal(r.result.error.code,'TIMEOUT');assert.equal(r.result.runtimeReset,true);
  const next=await h.client.js(a.id,'console.log(typeof b01Page)');completed(next);assert.equal(text(next),'undefined');assert.equal(next.generation,generation+1);
  h.evidence.push({conditions:['REQ-JS-002-C01'],status:'pass',codeBytes:65536,syntaxCode:'JS_ERROR',cpuCode:'TIMEOUT',newGeneration:next.generation,oldBinding:'undefined'});
+});
+
+test('nested cross-site frames initialize across repeated mail and booking navigation',async()=>{
+ const cycles=[];
+ for(const [index,scenario] of ['mail','booking','mail','booking'].entries()){
+  const url='http://app.test:'+h.fixture.port+'/?scenario='+scenario+'&cross=1';
+  const expectedHost=scenario==='mail'?'mail.test':'calendar.test';
+  const selector=scenario==='mail'?'[role="list"]':'[data-row="2"][data-col="8"]';
+  const code=(index===0?'var framePage=await browser.open('+JSON.stringify(url)+');':'await framePage.goto('+JSON.stringify(url)+');')+
+   `var targetFrame;for(var stop=Date.now()+10000;Date.now()<stop;){targetFrame=(await framePage.frames()).find(f=>f.url.includes(${JSON.stringify(expectedHost)}));if(targetFrame)break}if(!targetFrame)throw Error('FRAME_DISCOVERY_TIMEOUT');await framePage.frame(targetFrame.id).locator(${JSON.stringify(selector)}).waitFor({state:'attached'});console.log(targetFrame.url);`;
+  const r=await h.client.js(a.id,code);
+  if(r.status!=='completed'){
+   const page=h.context.pages().find(p=>p.url()===url),worker=h.context.serviceWorkers()[0];
+   const frames=page?await Promise.all(page.frames().map(async f=>({url:f.url(),observed:await f.evaluate(()=>({ready:document.readyState,iframes:[...document.querySelectorAll('iframe')].map(e=>e.src)})).catch(error=>({error:error.message}))}))):[];
+   const targets=await worker?.evaluate(()=>chrome.debugger.getTargets()).catch(error=>({error:error.message}));
+   const productFrames=await h.client.js(a.id,'console.log({tabId:framePage.id,frames:await framePage.frames()})');
+   h.evidence.push({conditions:[],case:'nested-frame-failure',status:'fail',index,scenario,frames,targets,productFrames,result:r});
+  }
+  completed(r);assert.match(text(r),new RegExp(expectedHost.replace('.', '\\.')));
+  const page=h.context.pages().find(p=>p.url()===url);assert(page);assert(page.frames().some(f=>f.url().includes(expectedHost)));
+  cycles.push({scenario,expectedHost,actual:text(r)});
+ }
+ h.evidence.push({conditions:[],case:'nested-frame-initialization-regression',status:'pass',cycles,meaning:'B03A 전체 요구 PASS가 아닌 기존 프레임 회귀'});
 });

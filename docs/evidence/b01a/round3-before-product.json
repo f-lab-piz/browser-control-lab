@@ -1,0 +1,216 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b01a",
+  "startedAt": "2026-11-01T15:11:58.414Z",
+  "finishedAt": "2026-11-01T15:12:03.013Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 12
+  },
+  "headed": false,
+  "head": "565602b02a3fd478073fe80947ce6ef24ae823b0",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "6cc02aad1d8098326e088ba93851ac62dfa3f9dc33c151037656afdce0c0401e",
+    "bridge/client.mjs": "8451f08853b4cbcaf11354aea69002fb6ab5477a0ae8e4fa29dbfc513efcdb2f",
+    "extension/runtime-worker.mjs": "5e2aa9d5b00fe25fa8dc2fd5e9e7c8633a8e68fe780b593fe32d078daa3a190a",
+    "extension/transform.mjs": "2f425837e9c4f0d2261442db5acb02816c617c77f2da124d3b43e0b20cead6f9",
+    "extension/api-source.mjs": "0e6933d43763dc96ca67ad8e5859a909f77711031fb0f87224beeb74623110b6",
+    "extension/offscreen.js": "45bb3b0060d6f0eb2678687c415227608442c1a70f9b1ff053140ebd2f2e6cb9",
+    "extension/browser-engine.mjs": "9965bb20649d183ecdd525d6009220c1a1a8cebb7f1841160a96419cc5c22183",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "ba37160180a78207412c94dbe9e1dcbd518242dad5298ed44a7071b9cccfa027",
+    "extension/files.mjs": "b94eae49ab49ca7339452ffa570353821221d8f9d66577b625757b5127bc2d68",
+    "tests/helpers/product-runtime.mjs": "45f73b9fe99ecbf42ccfe957570248c9ef4cb98bcb6d0d17e4cfc0acabecb32a",
+    "tests/helpers/observed-chrome.mjs": "5cee6056b68591a918dbda34409d2af165f11cacdae527085ff65a2513637947",
+    "tests/requirements-runtime.test.mjs": "89ac619468270633bb6828a0391d3ad3c8f801d59f554e90560fbb5c2b32badd",
+    "test-site/server.mjs": "25b230f99e8864be78b3fb7d15740b1bafdefb8b6159b7057df84d03e40dce9f",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "eaec5bc48e64b148e4799f6291d31df7f1a2a8dd22351ae71c52060b2554fcd8",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "855063c0ce8df8e59bc0b12a711c51ec86020a32c0f36ff322eafb804e8e6089",
+    "package-lock.json": "6c793dbd02242bd2d7bfaea02f5b9fb344cf2e1c274aaa27417e069760ba1921"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-C-RUNTIME-006-C01"
+      ],
+      "status": "pass",
+      "otherBinding": "undefined",
+      "deniedAssetHTTP": 403,
+      "otherInputFiles": [],
+      "ownerAssetPreserved": true,
+      "ownerTabPreserved": true
+    },
+    {
+      "conditions": [
+        "REQ-JS-002-C01"
+      ],
+      "status": "pass",
+      "codeBytes": 65536,
+      "syntaxCode": "JS_ERROR",
+      "cpuCode": "TIMEOUT",
+      "newGeneration": 2,
+      "oldBinding": "undefined"
+    },
+    {
+      "conditions": [],
+      "case": "nested-frame-failure",
+      "status": "fail",
+      "index": 2,
+      "scenario": "mail",
+      "frames": [
+        {
+          "url": "http://app.test:50221/?scenario=mail&cross=1",
+          "observed": {
+            "ready": "complete",
+            "iframes": [
+              "http://portal.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=shell&cross=1"
+            ]
+          }
+        },
+        {
+          "url": "http://portal.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=shell&cross=1",
+          "observed": {
+            "ready": "complete",
+            "iframes": [
+              "http://mail.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=mail"
+            ]
+          }
+        },
+        {
+          "url": "http://mail.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=mail",
+          "observed": {
+            "ready": "complete",
+            "iframes": []
+          }
+        }
+      ],
+      "targets": [
+        {
+          "attached": true,
+          "id": "E2F4511844E26314CB9BC959447BB8A4",
+          "title": "Service Worker chrome-extension://ofolbcnafoeplllpohaiebcbinghendb/background.js",
+          "type": "worker",
+          "url": "chrome-extension://ofolbcnafoeplllpohaiebcbinghendb/background.js"
+        },
+        {
+          "attached": false,
+          "id": "38F0DC22E614A0FCB8239FE239D2D164",
+          "title": "",
+          "type": "other",
+          "url": ""
+        },
+        {
+          "attached": false,
+          "id": "FC2AD1F7CB2CA77422F5C6E8377E5F74",
+          "title": "",
+          "type": "other",
+          "url": ""
+        },
+        {
+          "attached": true,
+          "id": "28D9D07BC49B3772E2521BF7551DD598",
+          "tabId": 1312258,
+          "title": "Browser Control Lab · 검증 사이트",
+          "type": "page",
+          "url": "http://127.0.0.1:50221/?scenario=files"
+        },
+        {
+          "attached": true,
+          "id": "93B08212392C80DD47C58240E43A1A2B",
+          "tabId": 1312257,
+          "title": "Browser Control Lab · 진단 실험실",
+          "type": "page",
+          "url": "http://127.0.0.1:50221/audit"
+        },
+        {
+          "attached": true,
+          "id": "B82130C9105C3DD68789E7B3D2F89697",
+          "tabId": 1312256,
+          "title": "about:blank",
+          "type": "page",
+          "url": "about:blank"
+        },
+        {
+          "attached": false,
+          "extensionId": "ofolbcnafoeplllpohaiebcbinghendb",
+          "id": "86662464370AA83CC275C4B4F72597B6",
+          "title": "chrome-extension://ofolbcnafoeplllpohaiebcbinghendb/offscreen.html",
+          "type": "background_page",
+          "url": "chrome-extension://ofolbcnafoeplllpohaiebcbinghendb/offscreen.html"
+        },
+        {
+          "attached": true,
+          "id": "BA2EE7CA942D1618F2A54094ABB9C3C7",
+          "tabId": 1312259,
+          "title": "Browser Control Lab · 검증 사이트",
+          "type": "page",
+          "url": "http://app.test:50221/?scenario=mail&cross=1"
+        },
+        {
+          "attached": true,
+          "id": "58AC5560D9CD2803819389C1B27CC8BA",
+          "title": "http://portal.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=shell&cross=1",
+          "type": "other",
+          "url": "http://portal.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=shell&cross=1"
+        },
+        {
+          "attached": true,
+          "id": "AD80CCB19680786F82B4DBFE64D19FDA",
+          "title": "http://mail.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=mail",
+          "type": "other",
+          "url": "http://mail.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=mail"
+        }
+      ],
+      "productFrames": {
+        "requestId": "e50c4603-6dbb-4f0e-b80c-5af57fc0d567",
+        "sessionId": "3bc665d5-e986-4835-8a52-f86b93e8dc85",
+        "generation": 2,
+        "status": "completed",
+        "createdAt": 1793545922977,
+        "startedAt": 1793545922977,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"tabId\":1312259,\"frames\":[{\"id\":\"BA2EE7CA942D1618F2A54094ABB9C3C7\",\"parent\":null,\"name\":\"\",\"url\":\"http://app.test:50221/?scenario=mail&cross=1\",\"process\":\"root-target\"},{\"id\":\"CDB5B61F2B16DA9FF8D9CF7AB5929AB9\",\"parent\":\"1177067A653B412C2F5A1868590F1511\",\"name\":\"\",\"url\":\"http://mail.test:50221/frame?run=b2020744-d8a5-4058-8abe-c576346b1313&kind=mail\",\"process\":\"child-target\"},{\"id\":\"2DC178FFF90C21F09750411D9ECDFCAF\",\"parent\":\"E0A6EA1B8DF99F0AED6827EC2A870680\",\"name\":\"\",\"url\":\"http://calendar.test:50221/frame?run=4695fff0-8352-4a40-9557-63dbbab85cb3&kind=booking\",\"process\":\"child-target\"},{\"id\":\"58AC5560D9CD2803819389C1B27CC8BA\",\"parent\":\"BA2EE7CA942D1618F2A54094ABB9C3C7\",\"name\":\"\",\"url\":\"http://portal.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=shell&cross=1\",\"process\":\"child-target\"},{\"id\":\"AD80CCB19680786F82B4DBFE64D19FDA\",\"parent\":\"58AC5560D9CD2803819389C1B27CC8BA\",\"name\":\"\",\"url\":\"http://mail.test:50221/frame?run=7967a4b7-cfc5-4f4b-a904-2ff8d52cb303&kind=mail\",\"process\":\"child-target\"}]}"
+            }
+          ],
+          "truncated": false,
+          "metrics": {
+            "durationMs": 1.3999996185302734,
+            "outputChars": 1025
+          }
+        },
+        "finishedAt": 1793545922979
+      },
+      "result": {
+        "requestId": "16d4bbf2-c424-418c-ae6f-d3d3bb17dd9c",
+        "sessionId": "3bc665d5-e986-4835-8a52-f86b93e8dc85",
+        "generation": 2,
+        "status": "failed",
+        "createdAt": 1793545922757,
+        "startedAt": 1793545922757,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "content": [],
+          "error": {
+            "code": "JS_ERROR",
+            "message": "{\"code\":-32001,\"message\":\"Session with given id not found.\"}"
+          },
+          "runtimeReset": false,
+          "metrics": {
+            "durationMs": 193.19999980926514
+          }
+        },
+        "finishedAt": 1793545922952
+      }
+    }
+  ]
+}

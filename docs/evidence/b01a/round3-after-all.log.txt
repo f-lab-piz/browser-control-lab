@@ -1,0 +1,141 @@
+
+> browser-control-lab@0.1.0 test:all
+> npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries
+
+
+> browser-control-lab@0.1.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (39.434167ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (38.424166ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (4.23775ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.441458ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.104292ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.079291ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (28.359292ms)
+✔ foreign frame stubs cannot overwrite live child-target document or context (1.005209ms)
+✔ detached targets remove descendants without removing another live branch (0.948083ms)
+✔ late detach cannot remove a frame already mapped to a new target session (0.104833ms)
+✔ new root document invalidates old contexts and child frames (0.1335ms)
+✔ current tree edges prune orphan frames even if a late child tree still replies (0.100625ms)
+✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.103875ms)
+✔ a child target own root replaces an inherited parent session (0.080125ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (44.537917ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (17.597584ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (23.880041ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (44.624625ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (7.718042ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (28.2675ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 294.433959
+
+> browser-control-lab@0.1.0 test:fixtures
+> node --test tests/fixture-ui.test.mjs
+
+✔ basic form is judged by site state (2532.528917ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (1749.893ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (615.623042ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3799.393209ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (253.599083ms)
+✔ file bytes are verified and browser download contents match (784.335917ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (246.6665ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10436.47
+
+> browser-control-lab@0.1.0 test:bootstrap
+> node --test tests/extension-bootstrap.test.mjs
+
+✔ unpacked extension receives an HTTP command and returns browser data through bridge (1537.216416ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1902.39775
+
+> browser-control-lab@0.1.0 test:runtime
+> node --test tests/runtime-e2e.test.mjs
+
+✔ guide and authentication (713.8435ms)
+✔ JavaScript executes inside extension WASM and explicit output is collected (70.766916ms)
+✔ bindings persist and top-level await invokes browser APIs asynchronously (67.967625ms)
+✔ sessions do not share JavaScript variables (32.586958ms)
+✔ syntax and execution errors return failures and later requests still work (67.7145ms)
+✔ infinite computation is interrupted by its deadline (162.635083ms)
+✔ reset cancels unresolved execution, clears variables and creates a usable generation (169.686458ms)
+✔ output budget truncation is explicit (34.332208ms)
+✔ product extension opens a tab, observes DOM and completes the basic form using real input (370.037708ms)
+✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (200.236541ms)
+✔ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (193.124917ms)
+✔ product extension scrolls nested mailbox, loads mail 137 and marks it read (1233.85775ms)
+✔ product extension selects booking cells by drag and double click, then saves reservation (705.029708ms)
+✔ product extension scrolls a virtualized dropdown and selects the requested option (5066.282583ms)
+✔ product snapshot ref becomes stale after Shadow DOM element replacement (342.740083ms)
+✔ server-staged bytes upload through product setFiles and actual browser download exports to server (292.297708ms)
+✔ local path upload and intercepted file chooser use the same product upload engine (326.57575ms)
+✔ file data drop uses the product file resolver (129.288417ms)
+✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (133.705417ms)
+✔ navigation history, load and URL waits work through product APIs (442.355625ms)
+✔ snapshot scope, output budget, continuation and diff are explicit (712.650625ms)
+✔ popup and dialog events return controllable objects (414.351666ms)
+✔ viewport and full-page screenshots are actual images returned through display (228.098667ms)
+✔ download cancellation interrupts an actual browser transfer (256.892ms)
+﹣ read-only Naver search observes actual external DOM through extension (0.076625ms) # SKIP
+ℹ tests 25
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 12843.243083
+
+> browser-control-lab@0.1.0 test:requirements
+> node --test tests/requirements-runtime.test.mjs
+
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (995.679459ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (706.366416ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (312.65725ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (375.123541ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (675.310625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3581.67175
+
+> browser-control-lab@0.1.0 test:review-boundaries
+> node --test tests/review-boundaries.test.mjs
+
+✔ long hasText and hasNotText search the full text independently of snapshot budget (863.19075ms)
+✔ adjacent inline nodes preserve DOM text in positive negative and regex filters (37.658292ms)
+✔ explicit DOM whitespace keeps separated words distinct from adjacent text (35.777459ms)
+✔ snapshot text budget does not alter native labels or aria-labelledby (35.35375ms)
+✔ closed details exposes summary shadow control and hides content controls (555.956042ms)
+✔ scrolled viewport clip captures current blue area rather than document red top (268.606ms)
+✔ clip respects horizontal scroll and nonzero viewport origin (202.70975ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2424.015375

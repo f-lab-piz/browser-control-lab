@@ -5,7 +5,7 @@ import {installBrowserApi} from './api-source.mjs';
 const binary=await fetch(new URL('quickjs.wasm',import.meta.url)).then(r=>r.arrayBuffer());
 const engine=await newQuickJSWASMModuleFromVariant(newVariant(variant,{wasmBinary:binary}));
 const runtime=engine.newRuntime();runtime.setMemoryLimit(64*1024*1024);runtime.setMaxStackSize(512*1024);
-const vm=runtime.newContext(),pending=new Map();let nextId=0,current=null;
+const vm=runtime.newContext(),pending=new Map();let nextId=0,nextRequest=0,current=null;
 const parseValue=value=>vm.unwrapResult(vm.evalCode('('+JSON.stringify(value===undefined?null:value)+')'));
 function setFunction(name,fn){const handle=vm.newFunction(name,fn);vm.setProp(vm.global,name,handle);handle.dispose()}
 setFunction('__print',(...args)=>{
@@ -29,7 +29,8 @@ onmessage=async({data})=>{
  if(current){postMessage({type:'result',id:data.id,result:{error:{code:'SESSION_BUSY',message:'Runtime busy'}}});return}
  const started=performance.now();current={content:[],bytes:0,truncated:false,deadline:Date.now()+data.timeoutMs};let handle,timer;
  try{
-  const code=transformCode(data.code),result=vm.evalCode(code,'request-'+data.id+'.mjs',{type:'module'});
+  // 임의 식별자를 C filename으로 넘기지 않고 짧은 진단용 이름을 쓴다.
+  const code=transformCode(data.code),result=vm.evalCode(code,'request-'+(++nextRequest)+'.mjs',{type:'module'});
   if(result.error){const error=vm.dump(result.error);result.error.dispose();throw Error(error?.message||JSON.stringify(error))}
   handle=result.value;timer=setInterval(pump,5);pump();
   const settled=await vm.resolvePromise(handle);

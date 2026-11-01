@@ -32,7 +32,7 @@ console.log(await client.reset(session.id));
 
 - `GET /v1/guide`: API 목록과 실행 안내. `?api=scope.snapshot`으로 항목 조회.
 - `POST /v1/sessions`: 세션 생성.
-- `POST /v1/sessions/:id/js`: `{code,timeoutMs?,requestId?}`. 접수 결과의 requestId로 `GET /v1/requests?requestId=…` 조회(식별자는 URL 인코딩한다).
+- `POST /v1/sessions/:id/js`: `{code,timeoutMs?,requestId?}`. 접수 결과의 requestId로 `POST /v1/requests`의 `{requestId}` 본문으로 조회.
 - `POST /v1/sessions/:id/reset`: 진행 요청 취소, 변수 초기화. 이미 발생한 브라우저 변경은 되돌리지 않는다.
 - `POST /v1/assets?sessionId=…&name=…&mimeType=…`: 파일 바이트 업로드, 반환된 id를 `setFiles({fileId:id})`에 전달.
 - `GET /v1/assets/:id?sessionId=…`: 저장된 바이트 읽기.
@@ -69,6 +69,6 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 
 ## 요청 재전송과 안내 조회
 
-- `requestId`는 생략하거나 비어 있지 않은 올바른 Unicode 문자열을 준다. 한글·예약문자·`.`/`..`·NUL도 ID 데이터로 왕복하며 잘못 짝지어진 UTF-16 surrogate는 접수 전에 거절한다. 결과 조회는 `GET /v1/requests?requestId=…`와 URLSearchParams를 사용한다. 기존 단일 경로 형식 `/v1/requests/:id`도 URI decoding을 지원하되 dot segment 등 URL 경로 의미를 피하려면 query 형식을 쓴다. 같은 세션에서 같은 ID의 operation/code/effective timeout을 다시 보내면 기존 요청 상태와 결과를 조회하며 다시 실행하지 않는다. timeoutMs 생략은30000과 같게 취급한다. 코드·실효 timeout·operation 또는 세션이 다르면 HTTP409/REQUEST_ID_CONFLICT다. reset 이후에도 이 기록은 중계기 프로세스가 살아 있는 동안 유지한다. 연결이 끊겼어도 기존 ID의 동일 요청 조회는 가능하지만 신규 JS는503으로 거절한다. 프로세스 재시작 뒤의 복구·업무 취소를 보장하지 않는다.
+- `requestId`는 생략하거나 비어 있지 않은 JavaScript 문자열을 준다. 한글·예약문자·`.`/`..`·NUL·UTF-16 surrogate도 JSON escape를 통해 ID 데이터로 왕복한다. `POST /v1/requests`에 `{requestId}`를 보내는 방식이 기본이며 client.wait도 이 방식을 쓴다. 접수 가능한 본문 범위 안에서 조회 본문은 원래 접수보다 작으므로 URL/header 길이 한도에 의존하지 않는다. 짧은 ID의 GET query/인코딩 경로 조회도 호환 제공한다. 같은 세션의 operation/code/effective timeout이 같은 재전송은 기존 상태/결과를 반환하고 다시 실행하지 않는다. timeoutMs 생략은30000과 같다. 다른 payload/operation/세션은409/REQUEST_ID_CONFLICT다. reset 이후에도 기록은 중계기 프로세스 동안 유지한다. 연결이 끊겨도 기존 요청 조회는 가능하고 신규 JS는503이다. 프로세스 재시작 뒤 복구·업무 취소는 보장하지 않는다. 원문 ID는 실행의 식별 데이터로만 쓰고 VM 진단 파일명은 짧은 순번을 사용한다.
 - 외부 js의 timeoutMs는50..120000 범위의 정수 number(ms), 기본30000이다. 문자열·boolean·null·소수·범위 밖 값은 접수 전에 거절한다. code는 UTF-8 기준64KiB까지이며 HTTP 조각 사이에 걸친 한글도 원문으로 전달한다.
 - guide는 현재 package version, 외부3개·내부64개, 실행 위치, 명시 출력 방법과 기존 기본 검증의 범위를 알려준다. `?api=js`, `?api=scope.snapshot`처럼 정확한 이름을 조회할 수 있고 없는 이름은 HTTP404/UNKNOWN_API다. 카탈로그의 기존 status는 새 요구사항 전체 충족을 뜻하지 않는다.

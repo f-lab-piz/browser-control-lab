@@ -1,6 +1,6 @@
 # 현재 상태
 
-최신 구현 진행:문서 PR #6·계획 PR #8 머지 후 B01A를 구현했다. 해당6 REQ/9조건은 제품 검증을 통과했고 독립 PR 리뷰 전이다. [B01A 보고서](implementation/b01a.md), [실행 현황](../implementation/index.md), [조건 ledger](../planning/implementation-plan.json)를 따른다. 아래 기록은 각 단계 당시의 이력이다.
+최신 구현 진행:문서 PR #6·계획 PR #8 머지 후 B01A를 구현했다. 해당6 REQ/9조건은 국소 제품 검증을 통과했으나 PR#10 리뷰의 긴 ID와 프레임 회귀를 보완해 전체64 PASS/외부1 SKIP다. 정확 head 독립 재리뷰가 남아 미머지다. [B01A 보고서](implementation/b01a.md), [실행 현황](../implementation/index.md), [조건 ledger](../planning/implementation-plan.json)를 따른다. 아래 기록은 각 단계 당시의 이력이다.
 
 2026-11-01. 독립 구현의 첫 실행 버전이다. 모든 브라우저·사이트 지원 또는 상용 배포 완료를 뜻하지 않는다.
 

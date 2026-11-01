@@ -1,0 +1,73 @@
+
+> browser-control-lab@0.1.0 test:requirements
+> node --test tests/requirements-runtime.test.mjs
+
+✖ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1990.967667ms)
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (989.188667ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (428.031833ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (388.24625ms)
+✖ nested cross-site frames initialize across repeated mail and booking navigation (795.308417ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5242.527875
+
+✖ failing tests:
+
+test at tests/requirements-runtime.test.mjs:9:1
+✖ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1990.967667ms)
+  AssertionError [ERR_ASSERTION]: The "string" argument must be of type string. Received type undefined (undefined)
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/round3-before/tests/requirements-runtime.test.mjs:16:108)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /^\d+\.\d+\.\d+/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/requirements-runtime.test.mjs:30:1
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (989.188667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  202 !== 409
+
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/round3-before/tests/requirements-runtime.test.mjs:37:63)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 202,
+    expected: 409,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/requirements-runtime.test.mjs:76:1
+✖ nested cross-site frames initialize across repeated mail and booking navigation (795.308417ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"16d4bbf2-c424-418c-ae6f-d3d3bb17dd9c","sessionId":"3bc665d5-e986-4835-8a52-f86b93e8dc85","generation":2,"status":"failed","createdAt":1793545922757,"startedAt":1793545922757,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"{\"code\":-32001,\"message\":\"Session with given id not found.\"}"},"runtimeReset":false,"metrics":{"durationMs":193.19999980926514}},"finishedAt":1793545922952}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at completed (file://<repo>/.local/goal-development/round3-before/tests/requirements-runtime.test.mjs:5:27)
+      at TestContext.<anonymous> (file://<repo>/.local/goal-development/round3-before/tests/requirements-runtime.test.mjs:92:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

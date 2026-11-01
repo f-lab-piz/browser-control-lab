@@ -1,7 +1,7 @@
 {
-  "at": "2026-11-01T13:54:32.085959+00:00",
+  "at": "2026-11-01T15:13:14.998104+00:00",
   "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd",
-  "productComparison": "same final test/fixture/source hashes except bridge/server.mjs and bridge/client.mjs",
+  "productComparison": "same final tests, fixture, nonpausing observer and source hashes except four baseline product files: bridge/server.mjs, bridge/client.mjs, extension/runtime-worker.mjs, extension/browser-engine.mjs",
   "unitBefore": {
     "pass": 0,
     "fail": 6
@@ -12,19 +12,19 @@
   },
   "productBefore": {
     "pass": 2,
-    "fail": 2
+    "fail": 3
   },
   "productAfter": {
-    "pass": 4,
+    "pass": 5,
     "fail": 0,
-    "headed": true
+    "headed": false
   },
   "regression": {
     "command": "npm run test:all",
-    "pass": 56,
+    "pass": 64,
     "fail": 0,
     "skip": 1,
-    "note": "after ID fix, serial, includes final ID and JSON marker tests"
+    "note": "unit20 fixture7 bootstrap1 runtime24 requirements5 boundaries7; external default skip1"
   },
   "conditions": [
     "REQ-C-RUNTIME-001-C01",
@@ -159,6 +159,90 @@
       "source": "B01A ID test before JSON marker; actual NUL console output found; B01C followup",
       "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
       "priorPackagedSha256": "a8cd5c4bcd6e17fc645bcc545ae591a82b37a1252283e998b8b19f814c1296b5"
+    },
+    {
+      "file": "round3-before-unit.log.txt",
+      "source": "output/goal-b01a-round3/before/unit.log",
+      "sourceSha256": "c79aafd00e193a971ad0ce3aeae3edc5fc7bfaa860af00b9b7efd0972ca0cb25",
+      "sha256": "f89f7771aba8e3f748362a39b3e0507ff64d87d4506e1bfd2ec5a78e01e183df",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-before-product.log.txt",
+      "source": "output/goal-b01a-round3/before/product.log",
+      "sourceSha256": "ab39b38d1fd47b24c911eb2383e81ef0225e968d0974c0d529ff0e5b0a64dcc1",
+      "sha256": "a98e2019ce961897e713035c0704c9b69085a010b40632522d53161b054889ba",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-before-product.json",
+      "source": "output/goal-b01a-round3/before/product/results.json",
+      "sourceSha256": "e61c10b2b8b438772f97ccf532513f0893bd1aa4175694ab3dab4a9878ae4a1b",
+      "sha256": "2a88ed56934c149daed5ec0f2df5b4dccbfc7cca5ba481f4b603a9cd3b95122f",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-after-all.log.txt",
+      "source": "output/goal-b01a-round3/final/all.log",
+      "sourceSha256": "a0ca4a17b110536aab5dfced799ad5e58775371a2a0a5328e866adbfa562bb0a",
+      "sha256": "a0ca4a17b110536aab5dfced799ad5e58775371a2a0a5328e866adbfa562bb0a",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-after-product.json",
+      "source": "output/goal-b01a-round3/final/requirements/results.json",
+      "sourceSha256": "52498ed2344664247c409da86970ac07361d3b315e2b8342efc82afca378ba20",
+      "sha256": "327d86a34aeece8cba21ba08541eebb225f2a9ad1fd5c7d4da24e7156aaf423a",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-runtime-product.json",
+      "source": "output/runtime-e2e/results.json",
+      "sourceSha256": "7a82debaddc46c9842b50884cc0b3795c08b70cc6edb041f1f6ec2f385af386c",
+      "sha256": "2b3f1d73de6806e80e7ceba3c189b0405c5e267db3a1ff02c2b9a02d64a31137",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-frame-observer-standard.json",
+      "source": "output/raw-frame-ab/owned-roots-fixed/results.json",
+      "sourceSha256": "27fa5a9c4925eb5ffe1100de0634e7268ac3c5efce2365560127c736ac2905b6",
+      "sha256": "1914e85815b921145877a404709cca89fe95b826b55b1ef23db51a6011b8941c",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-frame-observer-nonpausing.json",
+      "source": "output/raw-frame-ab/nonpausing-observer/results.json",
+      "sourceSha256": "46deed6a1f7ef25a966ab1a65899e2bccc39b7d4b536f708099d3e2ba4701d5c",
+      "sha256": "b43dd9201bde34975e75d7cea4f0b5e49bceb4a5d37dcb913d5c248ce6b176bb",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-frame-owned-roots-failure.json",
+      "source": "output/frame-state-product-fixed/run-1/results.json",
+      "sourceSha256": "a706a4bede44fc8aded55b486f96911034a498b31b6b0f3638a2b9490782fde5",
+      "sha256": "56706a374f190248c772d9fbb4180638b63542b245b8bd5dc2daac4ce2421a9e",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-observer-download-failure.log.txt",
+      "source": "output/goal-b01a-round3/all-final.log",
+      "sourceSha256": "4048d54c49681303d8443c9551cb7851ac28782454da52c1bb216c72b296c75b",
+      "sha256": "135c63bc6eabc27a201ff40b8671494bd1c2f67b8e06497fc0bfe8dcea2d050f",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-headed-product.json",
+      "source": "output/goal-b01a-round3/final/headed/results.json",
+      "sourceSha256": "f0f215bcfea212b1e9d2019d4d053d7d008f33be816ec4ad40162484adfaecad",
+      "sha256": "df2014041432d59b068238caa8075d6af21dbb749fd237f39cce66c0c55ca1b9",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-headed.log.txt",
+      "source": "output/goal-b01a-round3/final/headed.log",
+      "sourceSha256": "8954cfd4f54e9dbdb9978d63966f9c5b2f91d14705ad4540d2526f7b0ffd4927",
+      "sha256": "8954cfd4f54e9dbdb9978d63966f9c5b2f91d14705ad4540d2526f7b0ffd4927",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     }
   ],
   "requestIdBeforeRef": "47e59e0aa608b9c2846365d21b872c1743a802e5",
@@ -175,5 +259,49 @@
   "beforeProductFiles": [
     "bridge/server.mjs",
     "bridge/client.mjs"
-  ]
+  ],
+  "priorPhaseSummary": {
+    "at": "2026-11-01T13:54:32.085959+00:00",
+    "productComparison": "same final test/fixture/source hashes except bridge/server.mjs and bridge/client.mjs",
+    "unitBefore": {
+      "pass": 0,
+      "fail": 6
+    },
+    "unitAfter": {
+      "pass": 6,
+      "fail": 0
+    },
+    "productBefore": {
+      "pass": 2,
+      "fail": 2
+    },
+    "productAfter": {
+      "pass": 4,
+      "fail": 0,
+      "headed": true
+    },
+    "regression": {
+      "command": "npm run test:all",
+      "pass": 56,
+      "fail": 0,
+      "skip": 1,
+      "note": "after ID fix, serial, includes final ID and JSON marker tests"
+    }
+  },
+  "round3": {
+    "baseline": "3c87245964a3f15565897320708fc88092975dfd",
+    "lookup": "POST JSON body; legacy GET query/path retained",
+    "idCases": {
+      "unit": 18,
+      "product": 16
+    },
+    "observer": "public CDP transport disables observer startup pause; no product request rewriting; noDefaults true; download configuration session kept alive",
+    "frameCases": "main/child own-root and parent stub ownership; own OOPIF parent edges; recursive detach; root loader epoch; repeated mail/booking transitions",
+    "gate": "independent exact-head rereview pending",
+    "headed": {
+      "command": "HEADED=1 npm run test:requirements",
+      "pass": 5,
+      "fail": 0
+    }
+  }
 }

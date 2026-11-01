@@ -73,3 +73,10 @@ TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계
 ## 독립 리뷰 발견 사항의 회귀
 
 `npm run test:review-boundaries`는 긴 텍스트 필터, label, closed details summary의 Shadow DOM, 스크롤 후 clip의 실제 내용까지7개를 검증한다. 인접/중첩/슬롯 텍스트 및 실제 공백의 구분을 포함하며 fixture는 review-boundaries.html이다. 독립 PNG 픽셀 검사로 위치 오류를 검출한다. HEAD/리뷰 범위와 결과는 docs/review-round2.md를 따른다.
+
+
+## 제품 경로의 관찰자 연결
+
+`tests/helpers/observed-chrome.mjs`는 별도 Chrome 프로필을 기동하고 Playwright의 공개 CDP transport로 독립 관찰한다. 관찰자가 보내는 Target.setAutoAttach의 waitForDebuggerOnStart만 false로 바꾼다. 제품 확장의 CDP/HTTP/QuickJS 명령이나 결과는 이 전송을 통과하지 않는다. 관찰자의 기본 focus/media/download override도 적용하지 않는다. 다운로드 위치는 테스트 전용 폴더로 명시 설정하며 설정 세션은 브라우저 정리까지 유지한다.
+
+배경: 동일 브라우저의 일반 연결 관찰자가 중첩 교차 사이트 문서를 about:blank에서 일시정지시킨 사례를 재현했다. 관찰자 없음/일반 연결/일시정지 없는 연결의 원시 대조를 B01A 증거에 보존한다. 이 변경을 제품 프레임 수정과 구분하며, 테스트의 10초 발견 제한·업무 selector·서버 PASS·파일 bytes 판정은 유지한다. 결과에는 관찰자가 바꾼 pause 설정 횟수를 기록한다. 관찰자가 사이트 업무를 대신 수행하거나 PASS를 주입해서는 안 된다.

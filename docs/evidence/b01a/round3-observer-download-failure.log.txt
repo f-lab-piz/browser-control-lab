@@ -1,0 +1,127 @@
+
+> browser-control-lab@0.1.0 test:all
+> npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries
+
+
+> browser-control-lab@0.1.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (42.586416ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (43.322583ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (3.85125ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.461666ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.104625ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.084333ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (33.059708ms)
+✔ foreign frame stubs cannot overwrite live child-target document or context (1.024291ms)
+✔ detached targets remove descendants without removing another live branch (1.591625ms)
+✔ late detach cannot remove a frame already mapped to a new target session (0.137042ms)
+✔ new root document invalidates old contexts and child frames (0.153792ms)
+✔ current tree edges prune orphan frames even if a late child tree still replies (0.111417ms)
+✔ child target roots remain discoverable when parent trees omit OOPIF descendants (0.104666ms)
+✔ a child target own root replaces an inherited parent session (0.089875ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (52.510625ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (24.465125ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (24.441209ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (45.534375ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (7.873792ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (29.330375ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 320.481208
+
+> browser-control-lab@0.1.0 test:fixtures
+> node --test tests/fixture-ui.test.mjs
+
+✔ basic form is judged by site state (3037.666125ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (1839.922042ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (601.144833ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3882.263417ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (279.464875ms)
+✔ file bytes are verified and browser download contents match (769.586084ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (234.4985ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11142.072916
+
+> browser-control-lab@0.1.0 test:bootstrap
+> node --test tests/extension-bootstrap.test.mjs
+
+✔ unpacked extension receives an HTTP command and returns browser data through bridge (2162.540792ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2524.282041
+
+> browser-control-lab@0.1.0 test:runtime
+> node --test tests/runtime-e2e.test.mjs
+
+✔ guide and authentication (934.090334ms)
+✔ JavaScript executes inside extension WASM and explicit output is collected (73.888167ms)
+✔ bindings persist and top-level await invokes browser APIs asynchronously (82.541208ms)
+✔ sessions do not share JavaScript variables (37.698708ms)
+✔ syntax and execution errors return failures and later requests still work (69.234916ms)
+✔ infinite computation is interrupted by its deadline (165.468375ms)
+✔ reset cancels unresolved execution, clears variables and creates a usable generation (173.736375ms)
+✔ output budget truncation is explicit (35.156208ms)
+✔ product extension opens a tab, observes DOM and completes the basic form using real input (384.957625ms)
+✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (230.928ms)
+✔ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (225.839709ms)
+✔ product extension scrolls nested mailbox, loads mail 137 and marks it read (1253.140625ms)
+✔ product extension selects booking cells by drag and double click, then saves reservation (862.965041ms)
+✔ product extension scrolls a virtualized dropdown and selects the requested option (5044.454625ms)
+✔ product snapshot ref becomes stale after Shadow DOM element replacement (383.380042ms)
+✖ server-staged bytes upload through product setFiles and actual browser download exports to server (324.516458ms)
+✔ local path upload and intercepted file chooser use the same product upload engine (298.367458ms)
+✔ file data drop uses the product file resolver (134.710875ms)
+✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (164.928417ms)
+✔ navigation history, load and URL waits work through product APIs (449.0825ms)
+✔ snapshot scope, output budget, continuation and diff are explicit (704.647292ms)
+✔ popup and dialog events return controllable objects (489.197334ms)
+✔ viewport and full-page screenshots are actual images returned through display (229.262458ms)
+✔ download cancellation interrupts an actual browser transfer (291.996667ms)
+﹣ read-only Naver search observes actual external DOM through extension (0.0985ms) # SKIP
+ℹ tests 25
+ℹ suites 0
+ℹ pass 23
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 13576.222625
+
+✖ failing tests:
+
+test at tests/runtime-e2e.test.mjs:91:1
+✖ server-staged bytes upload through product setFiles and actual browser download exports to server (324.516458ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"0b74dcb6-a3c3-46dc-b8c8-cb6886c6a596","sessionId":"412a4d37-b371-4dfc-9d6e-731c75ae30d1","generation":3,"status":"failed","createdAt":1793545901952,"startedAt":1793545901952,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"File bridge: {\"error\":\"Download is outside allowed download roots\"}"},"runtimeReset":false,"metrics":{"durationMs":312.9000005722046}},"finishedAt":1793545902266}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:94:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

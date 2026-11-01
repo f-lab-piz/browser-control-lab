@@ -1,7 +1,7 @@
 // Product-path tests: actions must travel via HTTP → extension → QuickJS worker.
 import test,{before,after} from 'node:test';
 import assert from 'node:assert/strict';
-import {chromium} from 'playwright';
+import {observedChrome} from './helpers/observed-chrome.mjs';
 import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import os from 'node:os';
@@ -10,20 +10,20 @@ import {startBridge} from '../bridge/server.mjs';
 import {bridgeClient} from '../bridge/client.mjs';
 import {startFixture} from '../test-site/server.mjs';
 import {buildExtension} from '../scripts/build-extension.mjs';
-let bridge,client,context,root,session,fixture;const evidence=[];
+let bridge,client,context,root,session,fixture,browser;const evidence=[];
 const text=result=>result.result?.content?.filter(c=>c.type==='text').map(c=>c.text).join('\n');
 before(async()=>{
  fixture=await startFixture();root=await mkdtemp(path.join(os.tmpdir(),'bcl-runtime-'));await mkdir(path.join(root,'downloads'));bridge=await startBridge({downloadRoots:[path.join(root,'downloads')]});client=bridgeClient(bridge.url,bridge.token);
  const directory=await buildExtension({directory:path.join(root,'extension'),connection:{url:bridge.url,token:bridge.extensionToken}});
  const fallback=path.join(os.homedir(),'Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing');
- context=await chromium.launchPersistentContext(path.join(root,'profile'),{executablePath:process.env.TEST_CHROME||(existsSync(fallback)?fallback:undefined),headless:process.env.HEADED!=='1',downloadsPath:path.join(root,'downloads'),acceptDownloads:true,args:['--window-size=1440,1100','--site-per-process','--host-resolver-rules=MAP app.test 127.0.0.1, MAP portal.test 127.0.0.1, MAP mail.test 127.0.0.1, MAP calendar.test 127.0.0.1','--no-proxy-server','--disable-extensions-except='+directory,'--load-extension='+directory]});
+ browser=await observedChrome({profile:path.join(root,'profile'),executablePath:process.env.TEST_CHROME||(existsSync(fallback)?fallback:undefined),headless:process.env.HEADED!=='1',downloadsPath:path.join(root,'downloads'),args:['--window-size=1440,1100','--site-per-process','--host-resolver-rules=MAP app.test 127.0.0.1, MAP portal.test 127.0.0.1, MAP mail.test 127.0.0.1, MAP calendar.test 127.0.0.1','--no-proxy-server','--disable-extensions-except='+directory,'--load-extension='+directory]});context=browser.context;
  for(let i=0;i<200;i++){if((await client.request('/v1/status')).connected)break;await new Promise(r=>setTimeout(r,50))}
  context.on('page',p=>p.on('dialog',()=>{}));for(const p of context.pages())p.on('dialog',()=>{});
  assert((await client.request('/v1/status')).connected,'Extension did not connect');session=await client.session();
 });
 after(async()=>{
- await mkdir('output/runtime-e2e',{recursive:true});await writeFile('output/runtime-e2e/results.json',JSON.stringify({grade:'product-extension-runtime',browser:context?.browser()?.version(),evidence},null,2));
- await context?.close();await bridge?.close();await fixture?.close();if(root)await rm(root,{recursive:true,force:true});
+ await mkdir('output/runtime-e2e',{recursive:true});await writeFile('output/runtime-e2e/results.json',JSON.stringify({grade:'product-extension-runtime',browser:context?.browser()?.version(),observer:browser?.observer,evidence},null,2));
+ await browser?.close();await bridge?.close();await fixture?.close();if(root)await rm(root,{recursive:true,force:true});
 });
 test('guide and authentication',async()=>{
  const r=await fetch(bridge.url+'/v1/status');assert.equal(r.status,401);

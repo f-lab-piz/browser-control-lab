@@ -205,4 +205,4 @@
 
 ## 요청 식별자의 전송 정책
 
-requestId는 생략하거나 비어 있지 않은 올바른 Unicode 문자열이다. 예약문자·한글·dot segment도 ID 데이터로 보존한다. URI 왕복이 불가능한 lone surrogate는 접수 전에 거절한다. 임의 ID의 결과는 URLSearchParams로 인코딩한 query 조회를 기본으로 사용하고, 기존 경로 조회는 URI decoding을 적용한다. 잘못된 경로/ID를 다른 요청 결과로 대신하지 않는다. 이 전송 정책은 REQ-C-RUNTIME-005/REQ-JS-002의 기존 식별·충돌 계약을 명확히 하며 별도 도구를 추가하지 않는다.
+requestId는 생략하거나 비어 있지 않은 JavaScript 문자열이다. 한글·예약문자·dot segment·NUL·UTF-16 surrogate도 JSON escape로 ID 원문을 유지한다. 기본 결과 조회는 POST /v1/requests의 {requestId} 본문이며 수용된 접수 본문보다 작은 조회 데이터를 같은 JSON 경로로 전달한다. 짧은 ID의 GET query/경로 조회도 호환한다. ID를 URL/header 길이로 제한하거나 다른 요청 결과로 대체하지 않는다. 런타임 진단 파일명에는 임의 ID를 삽입하지 않고 짧은 순번을 사용한다. 이는 REQ-C-RUNTIME-005/REQ-JS-002의 기존 식별 계약을 구현하며 별도 외부 도구를 추가하지 않는다.

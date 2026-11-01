@@ -187,11 +187,15 @@
       "knownSubcases": [
         {
           "requirement": "REQ-PAGE-FRAMES-001",
-          "finding": "PR10 reviewer first full runtime: nested cross-site mail/calendar3 failures (transient frame URL or discovery). Serial rerun passed. Reproduce initialization ordering/resource interaction in B03A; cause not established.",
+          "finding": "PR10 repeated frame regression exposed stale descendants and parent-tree OOPIF omission; limited fix and unchanged repeated navigation regression pass in B01A round3. Independent observer startup-pause interference reproduced separately and disabled only on its transport. B03A full condition set remains unverified.",
           "evidence": [
             "docs/reviews/pr10-b01a.md",
             "docs/evidence/b01a/reviewer-first-regression.log.txt",
-            "docs/evidence/b01a/reviewer-serial-regression.log.txt"
+            "docs/evidence/b01a/reviewer-serial-regression.log.txt",
+            "docs/implementation/b01a.md",
+            "docs/evidence/b01a/round3-after-product.json",
+            "docs/evidence/b01a/round3-frame-observer-standard.json",
+            "docs/evidence/b01a/round3-frame-observer-nonpausing.json"
           ],
           "status": "unverified"
         }
