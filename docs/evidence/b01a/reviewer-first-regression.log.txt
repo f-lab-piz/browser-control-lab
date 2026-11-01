@@ -102,10 +102,10 @@ test at tests/runtime-e2e.test.mjs:67:1
 ✖ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (10154.230416ms)
   AssertionError [ERR_ASSERTION]: {"requestId":"4979729e-4073-48f5-b7a6-4da1d5b69ec2","sessionId":"9cdaf76d-68d7-4d49-a2a3-bf17d44290f5","generation":3,"status":"failed","createdAt":1793540699839,"startedAt":1793540699839,"result":{"execution":"extension-worker/QuickJS-WASM","content":[{"type":"text","text":"[{\"id\":\"851F85C23E7D1AA18381B46B519EBEFD\",\"parent\":null,\"name\":\"\",\"url\":\"http://app.test:63265/?scenario=mail&cross=1\",\"process\":\"root-target\"},{\"id\":\"E2DA8C8AACDF5358C73AF0B27CEC4406\",\"parent\":\"851F85C23E7D1AA18381B46B519EBEFD\",\"name\":\"\",\"url\":\"http://portal.test:63265/frame?run=7e5b253f-1bd4-45f7-af2d-08135e5e9841&kind=shell&cross=1\",\"process\":\"child-target\"},{\"id\":\"D35913036242D22741D0A7FAA98D984A\",\"parent\":\"E2DA8C8AACDF5358C73AF0B27CEC4406\",\"name\":\"\",\"url\":\":\",\"process\":\"child-target\"}]"}],"error":{"code":"JS_ERROR","message":"mail frame missing"},"runtimeReset":false,"metrics":{"durationMs":10120.300000190735}},"finishedAt":1793540709961}
   + actual - expected
-  
+
   + 'failed'
   - 'completed'
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:70:9)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -122,10 +122,10 @@ test at tests/runtime-e2e.test.mjs:73:1
 ✖ product extension scrolls nested mailbox, loads mail 137 and marks it read (35.153541ms)
   AssertionError [ERR_ASSERTION]: {"requestId":"b278c582-3fd1-42d2-aff0-0bf28da398c6","sessionId":"9cdaf76d-68d7-4d49-a2a3-bf17d44290f5","generation":3,"status":"failed","createdAt":1793540709994,"startedAt":1793540709994,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"cannot read property 'id' of undefined"},"runtimeReset":false,"metrics":{"durationMs":6.800000190734863}},"finishedAt":1793540710003}
   + actual - expected
-  
+
   + 'failed'
   - 'completed'
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:75:9)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -142,10 +142,10 @@ test at tests/runtime-e2e.test.mjs:77:1
 ✖ product extension selects booking cells by drag and double click, then saves reservation (10155.246834ms)
   AssertionError [ERR_ASSERTION]: {"requestId":"b3d2fe21-f236-4fc3-9c4c-b1671c993b6d","sessionId":"9cdaf76d-68d7-4d49-a2a3-bf17d44290f5","generation":3,"status":"failed","createdAt":1793540710029,"startedAt":1793540710029,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"calendar missing"},"runtimeReset":false,"metrics":{"durationMs":10144.800000190735}},"finishedAt":1793540720178}
   + actual - expected
-  
+
   + 'failed'
   - 'completed'
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:80:9)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)

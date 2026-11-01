@@ -1,6 +1,6 @@
 {
   "at": "2026-11-01T13:54:32.085959+00:00",
-  "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd:bridge/{server,client}.mjs",
+  "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd",
   "productComparison": "same final test/fixture/source hashes except bridge/server.mjs and bridge/client.mjs",
   "unitBefore": {
     "pass": 0,
@@ -49,15 +49,17 @@
       "file": "before-unit.log.txt",
       "source": "output/goal-b01a-round2/before/unit.log",
       "sourceSha256": "8462373d6a4799d98c4c3f1910edc2bce64a5b1067ea27385c06d44f2925b208",
-      "sha256": "4c8692b78f4a9f05da5d5ce731d914154cf51b3e56208f0d12e6dd7fc27a12cf",
-      "normalization": "repository path -> <repo>"
+      "sha256": "ea10855b69e502634001faaec37403298b0dc13015bd0fe1b63457d895a1585a",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "4c8692b78f4a9f05da5d5ce731d914154cf51b3e56208f0d12e6dd7fc27a12cf"
     },
     {
       "file": "before-product.log.txt",
       "source": "output/goal-b01a-round2/before/product.log",
       "sourceSha256": "e45e5f92bde0571b27c81db826a418a9216e81ec5c7c8d23bdebde0956ace29d",
-      "sha256": "d23fe7385f6446cc97317f32d5606f5b17a3698fddaea2d4273dc24a4694e844",
-      "normalization": "repository path -> <repo>"
+      "sha256": "b789559bcd012b7bea0e29c8e90240d665fd9cfb2457d35b28dc969c6d06f8c2",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "d23fe7385f6446cc97317f32d5606f5b17a3698fddaea2d4273dc24a4694e844"
     },
     {
       "file": "before-product.json",
@@ -75,24 +77,24 @@
     },
     {
       "file": "after-unit.log.txt",
-      "source": "output/goal-b01a-round2/all.log",
-      "sourceSha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
-      "sha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
-      "normalization": "none"
+      "source": "output/goal-b01a-round2/unit-final.log",
+      "sourceSha256": "b2c46417edacbccc9e98ad12daee3d7998bd3c64e0ad913f2701f538d0868232",
+      "sha256": "b2c46417edacbccc9e98ad12daee3d7998bd3c64e0ad913f2701f538d0868232",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     },
     {
       "file": "after-all.log.txt",
       "source": "output/goal-b01a-round2/all.log",
       "sourceSha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
       "sha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
-      "normalization": "none"
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     },
     {
       "file": "after-headed.log.txt",
       "source": "output/goal-b01a-round2/headed.log",
       "sourceSha256": "e148843ccfd41693ce18f278c872918edfb34588e3639a8e0ae63d9325688f69",
       "sha256": "e148843ccfd41693ce18f278c872918edfb34588e3639a8e0ae63d9325688f69",
-      "normalization": "none"
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     },
     {
       "file": "after-product.json",
@@ -105,8 +107,9 @@
       "file": "request-id-before.log.txt",
       "source": "output/goal-b01a-round2/id-before/product.log",
       "sourceSha256": "6cd414f78287a7fd7ddb7089696cbbda44fb285e73f9486b2d15b49e08d467f3",
-      "sha256": "11946a0044fd830e312827d8ba2219f34ca363487622634cf9d9f7f3df6f015a",
-      "normalization": "repository path -> <repo>"
+      "sha256": "57ad5a2462ccef9012b5a3b5dad33563f76a5537b82259c22d6f2801a41cb72b",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "11946a0044fd830e312827d8ba2219f34ca363487622634cf9d9f7f3df6f015a"
     },
     {
       "file": "request-id-before-product.json",
@@ -133,15 +136,16 @@
       "file": "reviewer-first-regression.log.txt",
       "source": "output/review-b01a/all.log",
       "sourceSha256": "e56982231c69e53069822b68d923700caf38e050349cbce94beebf11ad1241cf",
-      "sha256": "38db226cc0c6a27f538115f1ea052e67c4f2d738019679a0d720242c1453c776",
-      "normalization": "repository path -> <repo>"
+      "sha256": "85571d28c0b6855f8c73e96a03bde70baa05dadf87af3d83758a2924647ea903",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "38db226cc0c6a27f538115f1ea052e67c4f2d738019679a0d720242c1453c776"
     },
     {
       "file": "reviewer-serial-regression.log.txt",
       "source": "output/review-b01a/all-serial.log",
       "sourceSha256": "8bc8f6e5171d70d61c76d9039d22cfa8a9d289f0abc0dae8234c82a6f94238d5",
       "sha256": "8bc8f6e5171d70d61c76d9039d22cfa8a9d289f0abc0dae8234c82a6f94238d5",
-      "normalization": "none"
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     },
     {
       "file": "console-nul-found.json",
@@ -151,12 +155,13 @@
     },
     {
       "file": "console-nul-found.log.txt",
-      "sha256": "a8cd5c4bcd6e17fc645bcc545ae591a82b37a1252283e998b8b19f814c1296b5",
+      "sha256": "e8333ab326f90c645aaa952a1044806482fbc5f0330dfe3cab2222f3a14ff7ea",
       "source": "B01A ID test before JSON marker; actual NUL console output found; B01C followup",
-      "normalization": "see report"
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "a8cd5c4bcd6e17fc645bcc545ae591a82b37a1252283e998b8b19f814c1296b5"
     }
   ],
-  "requestIdBeforeRef": "47e59e0aa608b9c2846365d21b872c1743a802e5:bridge/{server,client}.mjs",
+  "requestIdBeforeRef": "47e59e0aa608b9c2846365d21b872c1743a802e5",
   "requestIdBefore": {
     "pass": 3,
     "fail": 1
@@ -166,5 +171,9 @@
     "fail": 3,
     "skip": 1,
     "note": "nested cross-site frame failures; reviewer serial rerun 55 PASS/1 SKIP before ID fix; not hidden"
-  }
+  },
+  "beforeProductFiles": [
+    "bridge/server.mjs",
+    "bridge/client.mjs"
+  ]
 }

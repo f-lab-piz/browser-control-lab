@@ -16,9 +16,9 @@
 test at tests/requirements-runtime.test.mjs:30:1
 ✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (467.180417ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   'job' !== 'job#part'
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/requirements-runtime.test.mjs:47:155)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)

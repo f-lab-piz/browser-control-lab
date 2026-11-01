@@ -18,9 +18,9 @@
 test at tests/transport-requirements.test.mjs:23:1
 ✖ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (43.095917ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   202 !== 409
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:30:60)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -36,9 +36,9 @@ test at tests/transport-requirements.test.mjs:23:1
 test at tests/transport-requirements.test.mjs:39:1
 ✖ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (11.606125ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   503 !== 202
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:45:56)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -54,9 +54,9 @@ test at tests/transport-requirements.test.mjs:39:1
 test at tests/transport-requirements.test.mjs:53:1
 ✖ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (5.710708ms)
   AssertionError [ERR_ASSERTION]: {"timeoutMs":"100","result":{"status":202,"value":{"requestId":"08e148ae-174e-457a-9b93-dd4363acc7a2","generation":1,"status":"running"}}}
-  
+
   202 !== 400
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:57:84)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -72,9 +72,9 @@ test at tests/transport-requirements.test.mjs:53:1
 test at tests/transport-requirements.test.mjs:67:1
 ✖ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (7.639125ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   undefined !== 'job'
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:78:90)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
@@ -106,11 +106,11 @@ test at tests/transport-requirements.test.mjs:104:1
 ✖ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (29.246208ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   + actual - expected
-  
+
   + 'console.log("���🙂")'
   - 'console.log("한🙂")'
                   ^
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/transport-requirements.test.mjs:114:44)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)

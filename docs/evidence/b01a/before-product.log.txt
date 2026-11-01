@@ -31,9 +31,9 @@ test at tests/requirements-runtime.test.mjs:9:1
 test at tests/requirements-runtime.test.mjs:30:1
 ✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (678.62175ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   202 !== 409
-  
+
       at TestContext.<anonymous> (file://<repo>/tests/requirements-runtime.test.mjs:37:63)
       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
       at async Test.run (node:internal/test_runner/test:1113:7)
