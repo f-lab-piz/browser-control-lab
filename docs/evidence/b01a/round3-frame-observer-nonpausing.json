@@ -1,0 +1,1142 @@
+{
+  "grade": "diagnostic-product-extension; observer is the A/B variable",
+  "phases": [
+    {
+      "withObserver": false,
+      "cycles": [
+        {
+          "index": 0,
+          "scenario": "mail",
+          "status": "completed",
+          "text": "http://mail.test:49862/frame?run=c604198e-5533-4d62-a8c8-da3b01e1cfc2&kind=mail"
+        },
+        {
+          "index": 1,
+          "scenario": "booking",
+          "status": "completed",
+          "text": "http://calendar.test:49862/frame?run=3709575d-f706-498d-bc1c-1f9dcb3a0ade&kind=booking"
+        },
+        {
+          "index": 2,
+          "scenario": "mail",
+          "status": "completed",
+          "text": "http://mail.test:49862/frame?run=c20f996c-374a-4894-a953-75a6054bbda9&kind=mail"
+        },
+        {
+          "index": 3,
+          "scenario": "booking",
+          "status": "completed",
+          "text": "http://calendar.test:49862/frame?run=03ad00d7-2b0c-4f99-8658-1931e58e95f3&kind=booking"
+        },
+        {
+          "index": 4,
+          "scenario": "mail",
+          "status": "completed",
+          "text": "http://mail.test:49862/frame?run=24ab2acf-a62b-455a-a6dc-7488dbdc06fc&kind=mail"
+        },
+        {
+          "index": 5,
+          "scenario": "booking",
+          "status": "completed",
+          "text": "http://calendar.test:49862/frame?run=06aade97-c106-44f5-a8b2-cfa39becbf79&kind=booking"
+        }
+      ]
+    },
+    {
+      "withObserver": true,
+      "cycles": [
+        {
+          "index": 0,
+          "scenario": "mail",
+          "status": "completed",
+          "text": "http://mail.test:49862/frame?run=13116127-d0f8-406e-8687-67ae66dca119&kind=mail"
+        },
+        {
+          "index": 1,
+          "scenario": "booking",
+          "status": "completed",
+          "text": "http://calendar.test:49862/frame?run=946cf090-9d90-4561-b813-e0cb74ef84f5&kind=booking"
+        },
+        {
+          "index": 2,
+          "scenario": "mail",
+          "status": "completed",
+          "text": "http://mail.test:49862/frame?run=39b71646-9a29-4e7c-b02d-d5d3f589899b&kind=mail"
+        },
+        {
+          "index": 3,
+          "scenario": "booking",
+          "status": "completed",
+          "text": "http://calendar.test:49862/frame?run=0fec7486-8763-48b8-ae97-258946db0339&kind=booking"
+        },
+        {
+          "index": 4,
+          "scenario": "mail",
+          "status": "completed",
+          "text": "http://mail.test:49862/frame?run=99c06f47-bf52-4fb0-82af-5c4e0c603e5f&kind=mail"
+        },
+        {
+          "index": 5,
+          "scenario": "booking",
+          "status": "completed",
+          "text": "http://calendar.test:49862/frame?run=448c29b9-8cf5-4a6e-98ec-5bb1c1d71033&kind=booking"
+        }
+      ]
+    }
+  ],
+  "traffic": [
+    {
+      "at": 1793545791718,
+      "host": "app.test:49862",
+      "url": "/?scenario=mail&cross=1",
+      "finishedAt": 1793545791719,
+      "status": 200
+    },
+    {
+      "at": 1793545791744,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545791744,
+      "status": 200
+    },
+    {
+      "at": 1793545791744,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545791745,
+      "status": 200
+    },
+    {
+      "at": 1793545791780,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545791780,
+      "status": 201
+    },
+    {
+      "at": 1793545791786,
+      "host": "app.test:49862",
+      "url": "/favicon.ico",
+      "finishedAt": 1793545791786,
+      "status": 404
+    },
+    {
+      "at": 1793545791819,
+      "host": "portal.test:49862",
+      "url": "/frame?run=c604198e-5533-4d62-a8c8-da3b01e1cfc2&kind=shell&cross=1",
+      "finishedAt": 1793545791819,
+      "status": 200
+    },
+    {
+      "at": 1793545791830,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545791831,
+      "status": 200
+    },
+    {
+      "at": 1793545791830,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545791831,
+      "status": 200
+    },
+    {
+      "at": 1793545791835,
+      "host": "portal.test:49862",
+      "url": "/api/runs/c604198e-5533-4d62-a8c8-da3b01e1cfc2",
+      "finishedAt": 1793545791835,
+      "status": 200
+    },
+    {
+      "at": 1793545791841,
+      "host": "mail.test:49862",
+      "url": "/frame?run=c604198e-5533-4d62-a8c8-da3b01e1cfc2&kind=mail",
+      "finishedAt": 1793545791842,
+      "status": 200
+    },
+    {
+      "at": 1793545791884,
+      "host": "mail.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545791888,
+      "status": 200
+    },
+    {
+      "at": 1793545791886,
+      "host": "mail.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545791888,
+      "status": 200
+    },
+    {
+      "at": 1793545791892,
+      "host": "mail.test:49862",
+      "url": "/api/runs/c604198e-5533-4d62-a8c8-da3b01e1cfc2",
+      "finishedAt": 1793545791892,
+      "status": 200
+    },
+    {
+      "at": 1793545791982,
+      "host": "app.test:49862",
+      "url": "/?scenario=booking&cross=1",
+      "finishedAt": 1793545791982,
+      "status": 200
+    },
+    {
+      "at": 1793545791989,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545791990,
+      "status": 200
+    },
+    {
+      "at": 1793545791989,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545791990,
+      "status": 200
+    },
+    {
+      "at": 1793545791992,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545791992,
+      "status": 201
+    },
+    {
+      "at": 1793545792035,
+      "host": "portal.test:49862",
+      "url": "/frame?run=3709575d-f706-498d-bc1c-1f9dcb3a0ade&kind=shell&cross=1",
+      "finishedAt": 1793545792035,
+      "status": 200
+    },
+    {
+      "at": 1793545792039,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792039,
+      "status": 200
+    },
+    {
+      "at": 1793545792039,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792039,
+      "status": 200
+    },
+    {
+      "at": 1793545792041,
+      "host": "portal.test:49862",
+      "url": "/api/runs/3709575d-f706-498d-bc1c-1f9dcb3a0ade",
+      "finishedAt": 1793545792041,
+      "status": 200
+    },
+    {
+      "at": 1793545792047,
+      "host": "calendar.test:49862",
+      "url": "/frame?run=3709575d-f706-498d-bc1c-1f9dcb3a0ade&kind=booking",
+      "finishedAt": 1793545792047,
+      "status": 200
+    },
+    {
+      "at": 1793545792054,
+      "host": "calendar.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792055,
+      "status": 200
+    },
+    {
+      "at": 1793545792054,
+      "host": "calendar.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792054,
+      "status": 200
+    },
+    {
+      "at": 1793545792060,
+      "host": "calendar.test:49862",
+      "url": "/api/runs/3709575d-f706-498d-bc1c-1f9dcb3a0ade",
+      "finishedAt": 1793545792060,
+      "status": 200
+    },
+    {
+      "at": 1793545792119,
+      "host": "app.test:49862",
+      "url": "/?scenario=mail&cross=1",
+      "finishedAt": 1793545792119,
+      "status": 200
+    },
+    {
+      "at": 1793545792124,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792125,
+      "status": 200
+    },
+    {
+      "at": 1793545792124,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792125,
+      "status": 200
+    },
+    {
+      "at": 1793545792126,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545792127,
+      "status": 201
+    },
+    {
+      "at": 1793545792166,
+      "host": "portal.test:49862",
+      "url": "/frame?run=c20f996c-374a-4894-a953-75a6054bbda9&kind=shell&cross=1",
+      "finishedAt": 1793545792166,
+      "status": 200
+    },
+    {
+      "at": 1793545792170,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792171,
+      "status": 200
+    },
+    {
+      "at": 1793545792170,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792171,
+      "status": 200
+    },
+    {
+      "at": 1793545792173,
+      "host": "portal.test:49862",
+      "url": "/api/runs/c20f996c-374a-4894-a953-75a6054bbda9",
+      "finishedAt": 1793545792173,
+      "status": 200
+    },
+    {
+      "at": 1793545792177,
+      "host": "mail.test:49862",
+      "url": "/frame?run=c20f996c-374a-4894-a953-75a6054bbda9&kind=mail",
+      "finishedAt": 1793545792177,
+      "status": 200
+    },
+    {
+      "at": 1793545792181,
+      "host": "mail.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792182,
+      "status": 200
+    },
+    {
+      "at": 1793545792181,
+      "host": "mail.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792182,
+      "status": 200
+    },
+    {
+      "at": 1793545792183,
+      "host": "mail.test:49862",
+      "url": "/api/runs/c20f996c-374a-4894-a953-75a6054bbda9",
+      "finishedAt": 1793545792183,
+      "status": 200
+    },
+    {
+      "at": 1793545792252,
+      "host": "app.test:49862",
+      "url": "/?scenario=booking&cross=1",
+      "finishedAt": 1793545792252,
+      "status": 200
+    },
+    {
+      "at": 1793545792259,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792261,
+      "status": 200
+    },
+    {
+      "at": 1793545792260,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792261,
+      "status": 200
+    },
+    {
+      "at": 1793545792263,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545792263,
+      "status": 201
+    },
+    {
+      "at": 1793545792305,
+      "host": "portal.test:49862",
+      "url": "/frame?run=03ad00d7-2b0c-4f99-8658-1931e58e95f3&kind=shell&cross=1",
+      "finishedAt": 1793545792305,
+      "status": 200
+    },
+    {
+      "at": 1793545792309,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792310,
+      "status": 200
+    },
+    {
+      "at": 1793545792309,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792310,
+      "status": 200
+    },
+    {
+      "at": 1793545792312,
+      "host": "portal.test:49862",
+      "url": "/api/runs/03ad00d7-2b0c-4f99-8658-1931e58e95f3",
+      "finishedAt": 1793545792312,
+      "status": 200
+    },
+    {
+      "at": 1793545792317,
+      "host": "calendar.test:49862",
+      "url": "/frame?run=03ad00d7-2b0c-4f99-8658-1931e58e95f3&kind=booking",
+      "finishedAt": 1793545792317,
+      "status": 200
+    },
+    {
+      "at": 1793545792321,
+      "host": "calendar.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792322,
+      "status": 200
+    },
+    {
+      "at": 1793545792321,
+      "host": "calendar.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792322,
+      "status": 200
+    },
+    {
+      "at": 1793545792323,
+      "host": "calendar.test:49862",
+      "url": "/api/runs/03ad00d7-2b0c-4f99-8658-1931e58e95f3",
+      "finishedAt": 1793545792323,
+      "status": 200
+    },
+    {
+      "at": 1793545792378,
+      "host": "app.test:49862",
+      "url": "/?scenario=mail&cross=1",
+      "finishedAt": 1793545792378,
+      "status": 200
+    },
+    {
+      "at": 1793545792383,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792384,
+      "status": 200
+    },
+    {
+      "at": 1793545792384,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792385,
+      "status": 200
+    },
+    {
+      "at": 1793545792389,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545792389,
+      "status": 201
+    },
+    {
+      "at": 1793545792429,
+      "host": "portal.test:49862",
+      "url": "/frame?run=24ab2acf-a62b-455a-a6dc-7488dbdc06fc&kind=shell&cross=1",
+      "finishedAt": 1793545792429,
+      "status": 200
+    },
+    {
+      "at": 1793545792433,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792434,
+      "status": 200
+    },
+    {
+      "at": 1793545792433,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792434,
+      "status": 200
+    },
+    {
+      "at": 1793545792435,
+      "host": "portal.test:49862",
+      "url": "/api/runs/24ab2acf-a62b-455a-a6dc-7488dbdc06fc",
+      "finishedAt": 1793545792435,
+      "status": 200
+    },
+    {
+      "at": 1793545792439,
+      "host": "mail.test:49862",
+      "url": "/frame?run=24ab2acf-a62b-455a-a6dc-7488dbdc06fc&kind=mail",
+      "finishedAt": 1793545792440,
+      "status": 200
+    },
+    {
+      "at": 1793545792443,
+      "host": "mail.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792444,
+      "status": 200
+    },
+    {
+      "at": 1793545792443,
+      "host": "mail.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792444,
+      "status": 200
+    },
+    {
+      "at": 1793545792445,
+      "host": "mail.test:49862",
+      "url": "/api/runs/24ab2acf-a62b-455a-a6dc-7488dbdc06fc",
+      "finishedAt": 1793545792445,
+      "status": 200
+    },
+    {
+      "at": 1793545792510,
+      "host": "app.test:49862",
+      "url": "/?scenario=booking&cross=1",
+      "finishedAt": 1793545792510,
+      "status": 200
+    },
+    {
+      "at": 1793545792515,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792515,
+      "status": 200
+    },
+    {
+      "at": 1793545792515,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792516,
+      "status": 200
+    },
+    {
+      "at": 1793545792517,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545792518,
+      "status": 201
+    },
+    {
+      "at": 1793545792556,
+      "host": "portal.test:49862",
+      "url": "/frame?run=06aade97-c106-44f5-a8b2-cfa39becbf79&kind=shell&cross=1",
+      "finishedAt": 1793545792557,
+      "status": 200
+    },
+    {
+      "at": 1793545792561,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792561,
+      "status": 200
+    },
+    {
+      "at": 1793545792561,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792561,
+      "status": 200
+    },
+    {
+      "at": 1793545792563,
+      "host": "portal.test:49862",
+      "url": "/api/runs/06aade97-c106-44f5-a8b2-cfa39becbf79",
+      "finishedAt": 1793545792563,
+      "status": 200
+    },
+    {
+      "at": 1793545792566,
+      "host": "calendar.test:49862",
+      "url": "/frame?run=06aade97-c106-44f5-a8b2-cfa39becbf79&kind=booking",
+      "finishedAt": 1793545792566,
+      "status": 200
+    },
+    {
+      "at": 1793545792570,
+      "host": "calendar.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792573,
+      "status": 200
+    },
+    {
+      "at": 1793545792571,
+      "host": "calendar.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792573,
+      "status": 200
+    },
+    {
+      "at": 1793545792574,
+      "host": "calendar.test:49862",
+      "url": "/api/runs/06aade97-c106-44f5-a8b2-cfa39becbf79",
+      "finishedAt": 1793545792574,
+      "status": 200
+    },
+    {
+      "at": 1793545792675,
+      "host": "app.test:49862",
+      "url": "/?scenario=mail&cross=1",
+      "finishedAt": 1793545792675,
+      "status": 200
+    },
+    {
+      "at": 1793545792693,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792693,
+      "status": 200
+    },
+    {
+      "at": 1793545792693,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792693,
+      "status": 200
+    },
+    {
+      "at": 1793545792707,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545792708,
+      "status": 201
+    },
+    {
+      "at": 1793545792746,
+      "host": "portal.test:49862",
+      "url": "/frame?run=13116127-d0f8-406e-8687-67ae66dca119&kind=shell&cross=1",
+      "finishedAt": 1793545792747,
+      "status": 200
+    },
+    {
+      "at": 1793545792750,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792751,
+      "status": 200
+    },
+    {
+      "at": 1793545792750,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792751,
+      "status": 200
+    },
+    {
+      "at": 1793545792753,
+      "host": "portal.test:49862",
+      "url": "/api/runs/13116127-d0f8-406e-8687-67ae66dca119",
+      "finishedAt": 1793545792753,
+      "status": 200
+    },
+    {
+      "at": 1793545792758,
+      "host": "mail.test:49862",
+      "url": "/frame?run=13116127-d0f8-406e-8687-67ae66dca119&kind=mail",
+      "finishedAt": 1793545792758,
+      "status": 200
+    },
+    {
+      "at": 1793545792762,
+      "host": "mail.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792762,
+      "status": 200
+    },
+    {
+      "at": 1793545792762,
+      "host": "mail.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792763,
+      "status": 200
+    },
+    {
+      "at": 1793545792765,
+      "host": "mail.test:49862",
+      "url": "/api/runs/13116127-d0f8-406e-8687-67ae66dca119",
+      "finishedAt": 1793545792765,
+      "status": 200
+    },
+    {
+      "at": 1793545792831,
+      "host": "app.test:49862",
+      "url": "/?scenario=booking&cross=1",
+      "finishedAt": 1793545792831,
+      "status": 200
+    },
+    {
+      "at": 1793545792839,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792841,
+      "status": 200
+    },
+    {
+      "at": 1793545792839,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792840,
+      "status": 200
+    },
+    {
+      "at": 1793545792842,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545792843,
+      "status": 201
+    },
+    {
+      "at": 1793545792890,
+      "host": "portal.test:49862",
+      "url": "/frame?run=946cf090-9d90-4561-b813-e0cb74ef84f5&kind=shell&cross=1",
+      "finishedAt": 1793545792890,
+      "status": 200
+    },
+    {
+      "at": 1793545792897,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792898,
+      "status": 200
+    },
+    {
+      "at": 1793545792897,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792898,
+      "status": 200
+    },
+    {
+      "at": 1793545792900,
+      "host": "portal.test:49862",
+      "url": "/api/runs/946cf090-9d90-4561-b813-e0cb74ef84f5",
+      "finishedAt": 1793545792900,
+      "status": 200
+    },
+    {
+      "at": 1793545792911,
+      "host": "calendar.test:49862",
+      "url": "/frame?run=946cf090-9d90-4561-b813-e0cb74ef84f5&kind=booking",
+      "finishedAt": 1793545792912,
+      "status": 200
+    },
+    {
+      "at": 1793545792922,
+      "host": "calendar.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545792926,
+      "status": 200
+    },
+    {
+      "at": 1793545792922,
+      "host": "calendar.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545792926,
+      "status": 200
+    },
+    {
+      "at": 1793545792929,
+      "host": "calendar.test:49862",
+      "url": "/api/runs/946cf090-9d90-4561-b813-e0cb74ef84f5",
+      "finishedAt": 1793545792929,
+      "status": 200
+    },
+    {
+      "at": 1793545793026,
+      "host": "app.test:49862",
+      "url": "/?scenario=mail&cross=1",
+      "finishedAt": 1793545793027,
+      "status": 200
+    },
+    {
+      "at": 1793545793035,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793036,
+      "status": 200
+    },
+    {
+      "at": 1793545793035,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793036,
+      "status": 200
+    },
+    {
+      "at": 1793545793038,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545793038,
+      "status": 201
+    },
+    {
+      "at": 1793545793084,
+      "host": "portal.test:49862",
+      "url": "/frame?run=39b71646-9a29-4e7c-b02d-d5d3f589899b&kind=shell&cross=1",
+      "finishedAt": 1793545793084,
+      "status": 200
+    },
+    {
+      "at": 1793545793089,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793090,
+      "status": 200
+    },
+    {
+      "at": 1793545793089,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793090,
+      "status": 200
+    },
+    {
+      "at": 1793545793092,
+      "host": "portal.test:49862",
+      "url": "/api/runs/39b71646-9a29-4e7c-b02d-d5d3f589899b",
+      "finishedAt": 1793545793092,
+      "status": 200
+    },
+    {
+      "at": 1793545793097,
+      "host": "mail.test:49862",
+      "url": "/frame?run=39b71646-9a29-4e7c-b02d-d5d3f589899b&kind=mail",
+      "finishedAt": 1793545793098,
+      "status": 200
+    },
+    {
+      "at": 1793545793103,
+      "host": "mail.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793104,
+      "status": 200
+    },
+    {
+      "at": 1793545793104,
+      "host": "mail.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793104,
+      "status": 200
+    },
+    {
+      "at": 1793545793106,
+      "host": "mail.test:49862",
+      "url": "/api/runs/39b71646-9a29-4e7c-b02d-d5d3f589899b",
+      "finishedAt": 1793545793106,
+      "status": 200
+    },
+    {
+      "at": 1793545793154,
+      "host": "app.test:49862",
+      "url": "/?scenario=booking&cross=1",
+      "finishedAt": 1793545793154,
+      "status": 200
+    },
+    {
+      "at": 1793545793163,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793164,
+      "status": 200
+    },
+    {
+      "at": 1793545793164,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793165,
+      "status": 200
+    },
+    {
+      "at": 1793545793166,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545793166,
+      "status": 201
+    },
+    {
+      "at": 1793545793211,
+      "host": "portal.test:49862",
+      "url": "/frame?run=0fec7486-8763-48b8-ae97-258946db0339&kind=shell&cross=1",
+      "finishedAt": 1793545793211,
+      "status": 200
+    },
+    {
+      "at": 1793545793215,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793217,
+      "status": 200
+    },
+    {
+      "at": 1793545793215,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793218,
+      "status": 200
+    },
+    {
+      "at": 1793545793219,
+      "host": "portal.test:49862",
+      "url": "/api/runs/0fec7486-8763-48b8-ae97-258946db0339",
+      "finishedAt": 1793545793219,
+      "status": 200
+    },
+    {
+      "at": 1793545793223,
+      "host": "app.test:49862",
+      "url": "/api/runs/06aade97-c106-44f5-a8b2-cfa39becbf79",
+      "finishedAt": 1793545793223,
+      "status": 200
+    },
+    {
+      "at": 1793545793227,
+      "host": "calendar.test:49862",
+      "url": "/frame?run=0fec7486-8763-48b8-ae97-258946db0339&kind=booking",
+      "finishedAt": 1793545793227,
+      "status": 200
+    },
+    {
+      "at": 1793545793233,
+      "host": "calendar.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793233,
+      "status": 200
+    },
+    {
+      "at": 1793545793233,
+      "host": "calendar.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793233,
+      "status": 200
+    },
+    {
+      "at": 1793545793236,
+      "host": "calendar.test:49862",
+      "url": "/api/runs/0fec7486-8763-48b8-ae97-258946db0339",
+      "finishedAt": 1793545793236,
+      "status": 200
+    },
+    {
+      "at": 1793545793315,
+      "host": "app.test:49862",
+      "url": "/?scenario=mail&cross=1",
+      "finishedAt": 1793545793315,
+      "status": 200
+    },
+    {
+      "at": 1793545793323,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793324,
+      "status": 200
+    },
+    {
+      "at": 1793545793323,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793325,
+      "status": 200
+    },
+    {
+      "at": 1793545793328,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545793328,
+      "status": 201
+    },
+    {
+      "at": 1793545793368,
+      "host": "portal.test:49862",
+      "url": "/frame?run=99c06f47-bf52-4fb0-82af-5c4e0c603e5f&kind=shell&cross=1",
+      "finishedAt": 1793545793369,
+      "status": 200
+    },
+    {
+      "at": 1793545793372,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793372,
+      "status": 200
+    },
+    {
+      "at": 1793545793372,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793373,
+      "status": 200
+    },
+    {
+      "at": 1793545793374,
+      "host": "portal.test:49862",
+      "url": "/api/runs/99c06f47-bf52-4fb0-82af-5c4e0c603e5f",
+      "finishedAt": 1793545793374,
+      "status": 200
+    },
+    {
+      "at": 1793545793380,
+      "host": "mail.test:49862",
+      "url": "/frame?run=99c06f47-bf52-4fb0-82af-5c4e0c603e5f&kind=mail",
+      "finishedAt": 1793545793381,
+      "status": 200
+    },
+    {
+      "at": 1793545793384,
+      "host": "mail.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793384,
+      "status": 200
+    },
+    {
+      "at": 1793545793384,
+      "host": "mail.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793384,
+      "status": 200
+    },
+    {
+      "at": 1793545793387,
+      "host": "mail.test:49862",
+      "url": "/api/runs/99c06f47-bf52-4fb0-82af-5c4e0c603e5f",
+      "finishedAt": 1793545793387,
+      "status": 200
+    },
+    {
+      "at": 1793545793446,
+      "host": "app.test:49862",
+      "url": "/?scenario=booking&cross=1",
+      "finishedAt": 1793545793446,
+      "status": 200
+    },
+    {
+      "at": 1793545793453,
+      "host": "app.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793454,
+      "status": 200
+    },
+    {
+      "at": 1793545793453,
+      "host": "app.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793454,
+      "status": 200
+    },
+    {
+      "at": 1793545793459,
+      "host": "app.test:49862",
+      "url": "/api/runs",
+      "finishedAt": 1793545793459,
+      "status": 201
+    },
+    {
+      "at": 1793545793499,
+      "host": "portal.test:49862",
+      "url": "/frame?run=448c29b9-8cf5-4a6e-98ec-5bb1c1d71033&kind=shell&cross=1",
+      "finishedAt": 1793545793499,
+      "status": 200
+    },
+    {
+      "at": 1793545793503,
+      "host": "portal.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793504,
+      "status": 200
+    },
+    {
+      "at": 1793545793503,
+      "host": "portal.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793504,
+      "status": 200
+    },
+    {
+      "at": 1793545793505,
+      "host": "portal.test:49862",
+      "url": "/api/runs/448c29b9-8cf5-4a6e-98ec-5bb1c1d71033",
+      "finishedAt": 1793545793506,
+      "status": 200
+    },
+    {
+      "at": 1793545793511,
+      "host": "calendar.test:49862",
+      "url": "/frame?run=448c29b9-8cf5-4a6e-98ec-5bb1c1d71033&kind=booking",
+      "finishedAt": 1793545793511,
+      "status": 200
+    },
+    {
+      "at": 1793545793515,
+      "host": "calendar.test:49862",
+      "url": "/style.css",
+      "finishedAt": 1793545793516,
+      "status": 200
+    },
+    {
+      "at": 1793545793515,
+      "host": "calendar.test:49862",
+      "url": "/fixture.js",
+      "finishedAt": 1793545793516,
+      "status": 200
+    },
+    {
+      "at": 1793545793517,
+      "host": "calendar.test:49862",
+      "url": "/api/runs/448c29b9-8cf5-4a6e-98ec-5bb1c1d71033",
+      "finishedAt": 1793545793517,
+      "status": 200
+    }
+  ],
+  "sourceSha256": "116d8cd5c3300368110d7e4a2aac83dba00ff95672686f5824b9a1c7a2b63720",
+  "boot": {
+    "port": 49867,
+    "status": {
+      "connected": true,
+      "sessions": 1,
+      "queued": 0
+    },
+    "exitCode": null,
+    "signal": null,
+    "stderr": "\nDevTools listening on ws://127.0.0.1:49867/devtools/browser/045de1b6-9de3-4271-ab27-1647e3d434fd\n",
+    "files": [
+      "ChromeFeatureState",
+      "Default",
+      "DevToolsActivePort",
+      "GrShaderCache",
+      "GraphiteDawnCache",
+      "Last Version",
+      "Local State",
+      "NativeMessagingHosts",
+      "RunningChromeVersion",
+      "Safe Browsing",
+      "ShaderCache",
+      "SingletonCookie",
+      "SingletonLock",
+      "SingletonSocket",
+      "Variations",
+      "component_crx_cache",
+      "segmentation_platform"
+    ]
+  }
+}

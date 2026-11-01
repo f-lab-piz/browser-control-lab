@@ -1,0 +1,32 @@
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1235.840083ms)
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (467.180417ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (299.066041ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (367.485375ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2869.742042
+
+✖ failing tests:
+
+test at tests/requirements-runtime.test.mjs:30:1
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (467.180417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'job' !== 'job#part'
+
+      at TestContext.<anonymous> (file://<repo>/tests/requirements-runtime.test.mjs:47:155)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'job',
+    expected: 'job#part',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,307 @@
+{
+  "at": "2026-11-01T15:13:14.998104+00:00",
+  "beforeProductRef": "3c87245964a3f15565897320708fc88092975dfd",
+  "productComparison": "same final tests, fixture, nonpausing observer and source hashes except four baseline product files: bridge/server.mjs, bridge/client.mjs, extension/runtime-worker.mjs, extension/browser-engine.mjs",
+  "unitBefore": {
+    "pass": 0,
+    "fail": 6
+  },
+  "unitAfter": {
+    "pass": 6,
+    "fail": 0
+  },
+  "productBefore": {
+    "pass": 2,
+    "fail": 3
+  },
+  "productAfter": {
+    "pass": 5,
+    "fail": 0,
+    "headed": false
+  },
+  "regression": {
+    "command": "npm run test:all",
+    "pass": 64,
+    "fail": 0,
+    "skip": 1,
+    "note": "unit20 fixture7 bootstrap1 runtime24 requirements5 boundaries7; external default skip1"
+  },
+  "conditions": [
+    "REQ-C-RUNTIME-001-C01",
+    "REQ-C-RUNTIME-005-C01",
+    "REQ-C-RUNTIME-006-C01",
+    "REQ-GUIDE-001-C01",
+    "REQ-GUIDE-001-C02",
+    "REQ-GUIDE-002-C01",
+    "REQ-GUIDE-002-C02",
+    "REQ-JS-002-C01",
+    "REQ-JS-002-C02"
+  ],
+  "artifacts": [
+    {
+      "file": "before-transport.json",
+      "source": "output/goal-b01a-before/transport.json",
+      "sourceSha256": "eb7b14ee8ba445ce24eb4ab5f9b6f23b161e9cdce4f1e5239aa3b0d053ef07a6",
+      "sha256": "eb7b14ee8ba445ce24eb4ab5f9b6f23b161e9cdce4f1e5239aa3b0d053ef07a6",
+      "normalization": "none"
+    },
+    {
+      "file": "before-unit.log.txt",
+      "source": "output/goal-b01a-round2/before/unit.log",
+      "sourceSha256": "8462373d6a4799d98c4c3f1910edc2bce64a5b1067ea27385c06d44f2925b208",
+      "sha256": "ea10855b69e502634001faaec37403298b0dc13015bd0fe1b63457d895a1585a",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "4c8692b78f4a9f05da5d5ce731d914154cf51b3e56208f0d12e6dd7fc27a12cf"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/goal-b01a-round2/before/product.log",
+      "sourceSha256": "e45e5f92bde0571b27c81db826a418a9216e81ec5c7c8d23bdebde0956ace29d",
+      "sha256": "b789559bcd012b7bea0e29c8e90240d665fd9cfb2457d35b28dc969c6d06f8c2",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "d23fe7385f6446cc97317f32d5606f5b17a3698fddaea2d4273dc24a4694e844"
+    },
+    {
+      "file": "before-product.json",
+      "source": "output/goal-b01a-round2/before/product/results.json",
+      "sourceSha256": "e19c08cf94d693e30708d643cf0ad0950b7d8b645f24598d9e89b69ddd19c862",
+      "sha256": "e19c08cf94d693e30708d643cf0ad0950b7d8b645f24598d9e89b69ddd19c862",
+      "normalization": "none"
+    },
+    {
+      "file": "after-transport.json",
+      "source": "output/goal-b01a-after/transport.json",
+      "sourceSha256": "fc051d34f25d00dd4d3cccaa4bc7061fc35e9e5edef42412506d1e3c0dc4f8c8",
+      "sha256": "fc051d34f25d00dd4d3cccaa4bc7061fc35e9e5edef42412506d1e3c0dc4f8c8",
+      "normalization": "none"
+    },
+    {
+      "file": "after-unit.log.txt",
+      "source": "output/goal-b01a-round2/unit-final.log",
+      "sourceSha256": "b2c46417edacbccc9e98ad12daee3d7998bd3c64e0ad913f2701f538d0868232",
+      "sha256": "b2c46417edacbccc9e98ad12daee3d7998bd3c64e0ad913f2701f538d0868232",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/goal-b01a-round2/all.log",
+      "sourceSha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
+      "sha256": "d51c622c38094d4ea42763b0ede4cc8a8ea555d55063dd04a0d02bd8a965a23d",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/goal-b01a-round2/headed.log",
+      "sourceSha256": "e148843ccfd41693ce18f278c872918edfb34588e3639a8e0ae63d9325688f69",
+      "sha256": "e148843ccfd41693ce18f278c872918edfb34588e3639a8e0ae63d9325688f69",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/goal-b01a-round2/headed/results.json",
+      "sourceSha256": "6f0ceb906ca3f34d7ae1aa4a96305340263d935a143578be92f828854081ce5b",
+      "sha256": "6f0ceb906ca3f34d7ae1aa4a96305340263d935a143578be92f828854081ce5b",
+      "normalization": "none"
+    },
+    {
+      "file": "request-id-before.log.txt",
+      "source": "output/goal-b01a-round2/id-before/product.log",
+      "sourceSha256": "6cd414f78287a7fd7ddb7089696cbbda44fb285e73f9486b2d15b49e08d467f3",
+      "sha256": "57ad5a2462ccef9012b5a3b5dad33563f76a5537b82259c22d6f2801a41cb72b",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "11946a0044fd830e312827d8ba2219f34ca363487622634cf9d9f7f3df6f015a"
+    },
+    {
+      "file": "request-id-before-product.json",
+      "source": "output/goal-b01a-round2/id-before/product/results.json",
+      "sourceSha256": "c65bc26611f711baa0c805b7ff8a19b4a73d0e58a28f943ffc0aed1db7523a37",
+      "sha256": "c65bc26611f711baa0c805b7ff8a19b4a73d0e58a28f943ffc0aed1db7523a37",
+      "normalization": "none"
+    },
+    {
+      "file": "reviewer-id-collision.json",
+      "source": "output/review-b01a/request-id-collision.json",
+      "sourceSha256": "d9cf126c17bc10a96d99bc50f66e5435bbc5a7b118f6d2cfa69b429a2a3f88ef",
+      "sha256": "d9cf126c17bc10a96d99bc50f66e5435bbc5a7b118f6d2cfa69b429a2a3f88ef",
+      "normalization": "none"
+    },
+    {
+      "file": "reviewer-id.json",
+      "source": "output/review-b01a/request-id.json",
+      "sourceSha256": "d611e514387331fcb9a92901fe841d77408fc65015f4db70b6a4790eabf18d6a",
+      "sha256": "d611e514387331fcb9a92901fe841d77408fc65015f4db70b6a4790eabf18d6a",
+      "normalization": "none"
+    },
+    {
+      "file": "reviewer-first-regression.log.txt",
+      "source": "output/review-b01a/all.log",
+      "sourceSha256": "e56982231c69e53069822b68d923700caf38e050349cbce94beebf11ad1241cf",
+      "sha256": "85571d28c0b6855f8c73e96a03bde70baa05dadf87af3d83758a2924647ea903",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "38db226cc0c6a27f538115f1ea052e67c4f2d738019679a0d720242c1453c776"
+    },
+    {
+      "file": "reviewer-serial-regression.log.txt",
+      "source": "output/review-b01a/all-serial.log",
+      "sourceSha256": "8bc8f6e5171d70d61c76d9039d22cfa8a9d289f0abc0dae8234c82a6f94238d5",
+      "sha256": "8bc8f6e5171d70d61c76d9039d22cfa8a9d289f0abc0dae8234c82a6f94238d5",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "console-nul-found.json",
+      "sha256": "c71f29a396e1525b9ab21034bf2c4ce9eb6d6e62cc272898a3fd4197e5731723",
+      "source": "B01A ID test before JSON marker; actual NUL console output found; B01C followup",
+      "normalization": "see report"
+    },
+    {
+      "file": "console-nul-found.log.txt",
+      "sha256": "e8333ab326f90c645aaa952a1044806482fbc5f0330dfe3cab2222f3a14ff7ea",
+      "source": "B01A ID test before JSON marker; actual NUL console output found; B01C followup",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed",
+      "priorPackagedSha256": "a8cd5c4bcd6e17fc645bcc545ae591a82b37a1252283e998b8b19f814c1296b5"
+    },
+    {
+      "file": "round3-before-unit.log.txt",
+      "source": "output/goal-b01a-round3/before/unit.log",
+      "sourceSha256": "c79aafd00e193a971ad0ce3aeae3edc5fc7bfaa860af00b9b7efd0972ca0cb25",
+      "sha256": "f89f7771aba8e3f748362a39b3e0507ff64d87d4506e1bfd2ec5a78e01e183df",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-before-product.log.txt",
+      "source": "output/goal-b01a-round3/before/product.log",
+      "sourceSha256": "ab39b38d1fd47b24c911eb2383e81ef0225e968d0974c0d529ff0e5b0a64dcc1",
+      "sha256": "a98e2019ce961897e713035c0704c9b69085a010b40632522d53161b054889ba",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-before-product.json",
+      "source": "output/goal-b01a-round3/before/product/results.json",
+      "sourceSha256": "e61c10b2b8b438772f97ccf532513f0893bd1aa4175694ab3dab4a9878ae4a1b",
+      "sha256": "2a88ed56934c149daed5ec0f2df5b4dccbfc7cca5ba481f4b603a9cd3b95122f",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-after-all.log.txt",
+      "source": "output/goal-b01a-round3/final/all.log",
+      "sourceSha256": "a0ca4a17b110536aab5dfced799ad5e58775371a2a0a5328e866adbfa562bb0a",
+      "sha256": "a0ca4a17b110536aab5dfced799ad5e58775371a2a0a5328e866adbfa562bb0a",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-after-product.json",
+      "source": "output/goal-b01a-round3/final/requirements/results.json",
+      "sourceSha256": "52498ed2344664247c409da86970ac07361d3b315e2b8342efc82afca378ba20",
+      "sha256": "327d86a34aeece8cba21ba08541eebb225f2a9ad1fd5c7d4da24e7156aaf423a",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-runtime-product.json",
+      "source": "output/runtime-e2e/results.json",
+      "sourceSha256": "7a82debaddc46c9842b50884cc0b3795c08b70cc6edb041f1f6ec2f385af386c",
+      "sha256": "2b3f1d73de6806e80e7ceba3c189b0405c5e267db3a1ff02c2b9a02d64a31137",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-frame-observer-standard.json",
+      "source": "output/raw-frame-ab/owned-roots-fixed/results.json",
+      "sourceSha256": "27fa5a9c4925eb5ffe1100de0634e7268ac3c5efce2365560127c736ac2905b6",
+      "sha256": "1914e85815b921145877a404709cca89fe95b826b55b1ef23db51a6011b8941c",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-frame-observer-nonpausing.json",
+      "source": "output/raw-frame-ab/nonpausing-observer/results.json",
+      "sourceSha256": "46deed6a1f7ef25a966ab1a65899e2bccc39b7d4b536f708099d3e2ba4701d5c",
+      "sha256": "b43dd9201bde34975e75d7cea4f0b5e49bceb4a5d37dcb913d5c248ce6b176bb",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-frame-owned-roots-failure.json",
+      "source": "output/frame-state-product-fixed/run-1/results.json",
+      "sourceSha256": "a706a4bede44fc8aded55b486f96911034a498b31b6b0f3638a2b9490782fde5",
+      "sha256": "56706a374f190248c772d9fbb4180638b63542b245b8bd5dc2daac4ce2421a9e",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-observer-download-failure.log.txt",
+      "source": "output/goal-b01a-round3/all-final.log",
+      "sourceSha256": "4048d54c49681303d8443c9551cb7851ac28782454da52c1bb216c72b296c75b",
+      "sha256": "135c63bc6eabc27a201ff40b8671494bd1c2f67b8e06497fc0bfe8dcea2d050f",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-headed-product.json",
+      "source": "output/goal-b01a-round3/final/headed/results.json",
+      "sourceSha256": "f0f215bcfea212b1e9d2019d4d053d7d008f33be816ec4ad40162484adfaecad",
+      "sha256": "df2014041432d59b068238caa8075d6af21dbb749fd237f39cce66c0c55ca1b9",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round3-headed.log.txt",
+      "source": "output/goal-b01a-round3/final/headed.log",
+      "sourceSha256": "8954cfd4f54e9dbdb9978d63966f9c5b2f91d14705ad4540d2526f7b0ffd4927",
+      "sha256": "8954cfd4f54e9dbdb9978d63966f9c5b2f91d14705ad4540d2526f7b0ffd4927",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    }
+  ],
+  "requestIdBeforeRef": "47e59e0aa608b9c2846365d21b872c1743a802e5",
+  "requestIdBefore": {
+    "pass": 3,
+    "fail": 1
+  },
+  "reviewerInitialRegression": {
+    "pass": 21,
+    "fail": 3,
+    "skip": 1,
+    "note": "nested cross-site frame failures; reviewer serial rerun 55 PASS/1 SKIP before ID fix; not hidden"
+  },
+  "beforeProductFiles": [
+    "bridge/server.mjs",
+    "bridge/client.mjs"
+  ],
+  "priorPhaseSummary": {
+    "at": "2026-11-01T13:54:32.085959+00:00",
+    "productComparison": "same final test/fixture/source hashes except bridge/server.mjs and bridge/client.mjs",
+    "unitBefore": {
+      "pass": 0,
+      "fail": 6
+    },
+    "unitAfter": {
+      "pass": 6,
+      "fail": 0
+    },
+    "productBefore": {
+      "pass": 2,
+      "fail": 2
+    },
+    "productAfter": {
+      "pass": 4,
+      "fail": 0,
+      "headed": true
+    },
+    "regression": {
+      "command": "npm run test:all",
+      "pass": 56,
+      "fail": 0,
+      "skip": 1,
+      "note": "after ID fix, serial, includes final ID and JSON marker tests"
+    }
+  },
+  "round3": {
+    "baseline": "3c87245964a3f15565897320708fc88092975dfd",
+    "lookup": "POST JSON body; legacy GET query/path retained",
+    "idCases": {
+      "unit": 18,
+      "product": 16
+    },
+    "observer": "public CDP transport disables observer startup pause; no product request rewriting; noDefaults true; download configuration session kept alive",
+    "frameCases": "main/child own-root and parent stub ownership; own OOPIF parent edges; recursive detach; root loader epoch; repeated mail/booking transitions",
+    "gate": "independent exact-head rereview pending",
+    "headed": {
+      "command": "HEADED=1 npm run test:requirements",
+      "pass": 5,
+      "fail": 0
+    }
+  }
+}

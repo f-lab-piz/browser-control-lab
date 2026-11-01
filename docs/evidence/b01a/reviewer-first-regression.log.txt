@@ -1,0 +1,159 @@
+
+> browser-control-lab@0.1.0 test:all
+> npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries
+
+
+> browser-control-lab@0.1.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (36.289084ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (42.680542ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (4.439208ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.514625ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.109667ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.090792ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (26.941625ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (49.434708ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (15.941792ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (29.043458ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (7.262125ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (29.543833ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 267.955
+
+> browser-control-lab@0.1.0 test:fixtures
+> node --test tests/fixture-ui.test.mjs
+
+✔ basic form is judged by site state (1566.775083ms)
+✔ nested cross-site mailbox must scroll internally, lazy-load and read target (2026.059042ms)
+✔ booking grid requires pointer drag, double click, editor and confirmation (651.216125ms)
+✔ virtualized dropdown loads only a window of rows and accepts scrolled target (3817.053666ms)
+✔ large DOM includes offscreen target and long links without scrolling to generate rows (267.8335ms)
+✔ file bytes are verified and browser download contents match (764.641167ms)
+✔ replaced Shadow DOM element is distinct and current generation is judged (344.789625ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9878.851666
+
+> browser-control-lab@0.1.0 test:bootstrap
+> node --test tests/extension-bootstrap.test.mjs
+
+✔ unpacked extension receives an HTTP command and returns browser data through bridge (1455.106417ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1805.968375
+
+> browser-control-lab@0.1.0 test:runtime
+> node --test tests/runtime-e2e.test.mjs
+
+✔ guide and authentication (721.970917ms)
+✔ JavaScript executes inside extension WASM and explicit output is collected (72.443ms)
+✔ bindings persist and top-level await invokes browser APIs asynchronously (70.187625ms)
+✔ sessions do not share JavaScript variables (34.621625ms)
+✔ syntax and execution errors return failures and later requests still work (67.615209ms)
+✔ infinite computation is interrupted by its deadline (162.803292ms)
+✔ reset cancels unresolved execution, clears variables and creates a usable generation (173.389334ms)
+✔ output budget truncation is explicit (35.726083ms)
+✔ product extension opens a tab, observes DOM and completes the basic form using real input (809.103542ms)
+✔ product snapshot finds offscreen DOM and avoids long tracking URLs without scrolling (200.086417ms)
+✖ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (10154.230416ms)
+✖ product extension scrolls nested mailbox, loads mail 137 and marks it read (35.153541ms)
+✖ product extension selects booking cells by drag and double click, then saves reservation (10155.246834ms)
+✔ product extension scrolls a virtualized dropdown and selects the requested option (5343.562667ms)
+✔ product snapshot ref becomes stale after Shadow DOM element replacement (2715.424625ms)
+✔ server-staged bytes upload through product setFiles and actual browser download exports to server (229.227375ms)
+✔ local path upload and intercepted file chooser use the same product upload engine (323.079166ms)
+✔ file data drop uses the product file resolver (95.850625ms)
+✔ remaining query, keyboard, pointer, evaluation and selection primitives are exercised (197.502375ms)
+✔ navigation history, load and URL waits work through product APIs (449.539667ms)
+✔ snapshot scope, output budget, continuation and diff are explicit (7646.589083ms)
+✔ popup and dialog events return controllable objects (580.423125ms)
+✔ viewport and full-page screenshots are actual images returned through display (259.451958ms)
+✔ download cancellation interrupts an actual browser transfer (289.512167ms)
+﹣ read-only Naver search observes actual external DOM through extension (0.075416ms) # SKIP
+ℹ tests 25
+ℹ suites 0
+ℹ pass 21
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 41279.937667
+
+✖ failing tests:
+
+test at tests/runtime-e2e.test.mjs:67:1
+✖ product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling (10154.230416ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"4979729e-4073-48f5-b7a6-4da1d5b69ec2","sessionId":"9cdaf76d-68d7-4d49-a2a3-bf17d44290f5","generation":3,"status":"failed","createdAt":1793540699839,"startedAt":1793540699839,"result":{"execution":"extension-worker/QuickJS-WASM","content":[{"type":"text","text":"[{\"id\":\"851F85C23E7D1AA18381B46B519EBEFD\",\"parent\":null,\"name\":\"\",\"url\":\"http://app.test:63265/?scenario=mail&cross=1\",\"process\":\"root-target\"},{\"id\":\"E2DA8C8AACDF5358C73AF0B27CEC4406\",\"parent\":\"851F85C23E7D1AA18381B46B519EBEFD\",\"name\":\"\",\"url\":\"http://portal.test:63265/frame?run=7e5b253f-1bd4-45f7-af2d-08135e5e9841&kind=shell&cross=1\",\"process\":\"child-target\"},{\"id\":\"D35913036242D22741D0A7FAA98D984A\",\"parent\":\"E2DA8C8AACDF5358C73AF0B27CEC4406\",\"name\":\"\",\"url\":\":\",\"process\":\"child-target\"}]"}],"error":{"code":"JS_ERROR","message":"mail frame missing"},"runtimeReset":false,"metrics":{"durationMs":10120.300000190735}},"finishedAt":1793540709961}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:70:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/runtime-e2e.test.mjs:73:1
+✖ product extension scrolls nested mailbox, loads mail 137 and marks it read (35.153541ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"b278c582-3fd1-42d2-aff0-0bf28da398c6","sessionId":"9cdaf76d-68d7-4d49-a2a3-bf17d44290f5","generation":3,"status":"failed","createdAt":1793540709994,"startedAt":1793540709994,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"cannot read property 'id' of undefined"},"runtimeReset":false,"metrics":{"durationMs":6.800000190734863}},"finishedAt":1793540710003}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:75:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/runtime-e2e.test.mjs:77:1
+✖ product extension selects booking cells by drag and double click, then saves reservation (10155.246834ms)
+  AssertionError [ERR_ASSERTION]: {"requestId":"b3d2fe21-f236-4fc3-9c4c-b1671c993b6d","sessionId":"9cdaf76d-68d7-4d49-a2a3-bf17d44290f5","generation":3,"status":"failed","createdAt":1793540710029,"startedAt":1793540710029,"result":{"execution":"extension-worker/QuickJS-WASM","content":[],"error":{"code":"JS_ERROR","message":"calendar missing"},"runtimeReset":false,"metrics":{"durationMs":10144.800000190735}},"finishedAt":1793540720178}
+  + actual - expected
+
+  + 'failed'
+  - 'completed'
+
+      at TestContext.<anonymous> (file://<repo>/tests/runtime-e2e.test.mjs:80:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'failed',
+    expected: 'completed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

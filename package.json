@@ -8,10 +8,11 @@
   },
   "scripts": {
     "site": "node test-site/server.mjs",
-    "test": "node --test tests/contracts.test.mjs tests/bridge.test.mjs",
+    "test": "node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs tests/frame-state.test.mjs",
     "test:fixtures": "node --test tests/fixture-ui.test.mjs",
     "test:bootstrap": "node --test tests/extension-bootstrap.test.mjs",
-    "test:all": "npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:review-boundaries",
+    "test:all": "npm test && npm run test:fixtures && npm run test:bootstrap && npm run test:runtime && npm run test:requirements && npm run test:review-boundaries",
+    "test:requirements": "node --test tests/requirements-runtime.test.mjs",
     "bridge": "node bridge/cli.mjs",
     "test:runtime": "node --test tests/runtime-e2e.test.mjs",
     "test:audit": "node scripts/audit-tools.mjs",

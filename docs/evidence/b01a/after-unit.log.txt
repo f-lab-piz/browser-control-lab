@@ -1,0 +1,25 @@
+
+> browser-control-lab@0.1.0 test
+> node --test tests/contracts.test.mjs tests/bridge.test.mjs tests/transport-requirements.test.mjs
+
+✔ transport authorization, session file isolation and separate extension credentials (40.694083ms)
+✔ request IDs deduplicate, reset invalidates running work and stale results cannot overwrite it (50.751083ms)
+✔ 64 internal APIs and 3 external tools have distinct entries and honest implementation status (5.332208ms)
+✔ mail requires loading through inner scrolling and reading the correct mail (0.44225ms)
+✔ booking requires correct dragged interval, opened editor and saved details (0.102542ms)
+✔ virtualized dropdown requires the target to be in a scrolled rendered range (0.082125ms)
+✔ HTTP fixture runs are isolated and wrong events cannot set a pass flag (32.0975ms)
+✔ REQ-C-RUNTIME-005: identical retries share one record and changed effective payload conflicts (54.951291ms)
+✔ REQ-C-RUNTIME-005: reset retains tombstones and offline retries never require a new execution (20.162666ms)
+✔ REQ-JS-002: invalid timeout, identifiers, code and body fail before queue or generation changes (35.707041ms)
+✔ REQ-C-RUNTIME-005: Unicode and URL-reserved request IDs round trip without reading a prefix request (28.97ms)
+✔ REQ-GUIDE-001/002: guide identifies the exact API and unsupported names without session effects or secrets (7.060417ms)
+✔ REQ-JS-002: UTF-8 code survives HTTP chunk boundaries and the 64 KiB bound is measured in bytes (30.718167ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 317.403125

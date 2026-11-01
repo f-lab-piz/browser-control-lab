@@ -22,6 +22,7 @@ class DevelopmentPlanTest(unittest.TestCase):
         def missing_case(d): d['conditions'].pop()
         def partial_pass(d):
             d['requirements'][0]['status'] = 'pass'
+            d['requirements'][0]['evidence'] = ['report.md']
             first = d['requirements'][0]['conditions'][0]
             next(c for c in d['conditions'] if c['id'] == first)['status'] = 'unverified'
         def pass_without_evidence(d):
@@ -40,8 +41,13 @@ class DevelopmentPlanTest(unittest.TestCase):
         def early_start(d):
             d['slices'][0]['status'] = 'not-started'
             d['slices'][1]['status'] = 'in-progress'
-        def false_slice_pass(d): d['slices'][0].update(status='pass', evidence=['report.md'])
-        def false_completion(d): d['status'] = 'complete'
+        def false_slice_pass(d):
+            d['slices'][0].update(status='pass', evidence=['report.md'])
+            first = d['slices'][0]['requirements'][0]
+            next(r for r in d['requirements'] if r['requirement'] == first)['status'] = 'unverified'
+        def false_completion(d):
+            d['status'] = 'complete'
+            d['slices'][-1]['status'] = 'not-started'
         for change in [missing_owner, cyclic, missing_case, partial_pass, pass_without_evidence,
                        defer_must, defer_should_without_decision, defer_should_with_unresolved_children,
                        invalid_slice, early_start, false_slice_pass, false_completion]:

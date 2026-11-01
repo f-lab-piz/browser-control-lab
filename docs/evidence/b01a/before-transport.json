@@ -1,0 +1,91 @@
+{
+  "grade": "bridge-only-probe; extension poll simulated; no browser effect claimed",
+  "head": "65de20ab53dd0926f08c1e884807361e2a987c3b",
+  "at": "2026-11-01T13:26:19.371Z",
+  "observations": [
+    {
+      "name": "same-payload",
+      "expected": 202,
+      "status": 202,
+      "body": {
+        "requestId": "b01a-duplicate",
+        "status": "running"
+      },
+      "matches": true
+    },
+    {
+      "name": "changed-code",
+      "expected": 409,
+      "status": 202,
+      "body": {
+        "requestId": "b01a-duplicate",
+        "status": "running"
+      },
+      "matches": false
+    },
+    {
+      "name": "changed-timeout",
+      "expected": 409,
+      "status": 202,
+      "body": {
+        "requestId": "b01a-duplicate",
+        "status": "running"
+      },
+      "matches": false
+    },
+    {
+      "name": "changed-operation",
+      "expected": 409,
+      "status": 202,
+      "body": {
+        "requestId": "b01a-duplicate",
+        "status": "running"
+      },
+      "matches": false
+    },
+    {
+      "name": "string-timeout",
+      "expected": 400,
+      "status": 202,
+      "body": {
+        "requestId": "string-timeout",
+        "generation": 1,
+        "status": "queued"
+      },
+      "matches": false
+    },
+    {
+      "name": "fractional-timeout",
+      "expected": 400,
+      "status": 202,
+      "body": {
+        "requestId": "fractional-timeout",
+        "generation": 1,
+        "status": "queued"
+      },
+      "matches": false
+    },
+    {
+      "name": "object-request-id",
+      "expected": 400,
+      "status": 202,
+      "body": {
+        "requestId": {
+          "x": 1
+        },
+        "generation": 1,
+        "status": "queued"
+      },
+      "matches": false
+    },
+    {
+      "name": "unknown-guide",
+      "expected": 404,
+      "status": 200,
+      "body": {
+        "api": null
+      },
+      "matches": false
+    }
+  ]
+}

@@ -201,3 +201,8 @@
 |데이터 ref|발급 ref 문자열은 같은 세션·Page·document·연결 element이면 reset만으로 대상이 바뀌지 않는다. JS 객체 핸들/구세대 명령과 구분. 실제 문서교체/분리는 stale.|
 
 기존 프로토타입의 top-level 선언 전역 property 변환과 달라지는 목표 계약이다. 기존 재선언 허용 테스트/guide는 구현 단계에서 버전·예제와 함께 이행한다. 이 선택은 현재 코드에 맞춰 요구를 낮추기보다 일반 lexical 예측 가능성을 우선한 결정이다.
+
+
+## 요청 식별자의 전송 정책
+
+requestId는 생략하거나 비어 있지 않은 JavaScript 문자열이다. 한글·예약문자·dot segment·NUL·UTF-16 surrogate도 JSON escape로 ID 원문을 유지한다. 기본 결과 조회는 POST /v1/requests의 {requestId} 본문이며 수용된 접수 본문보다 작은 조회 데이터를 같은 JSON 경로로 전달한다. 짧은 ID의 GET query/경로 조회도 호환한다. ID를 URL/header 길이로 제한하거나 다른 요청 결과로 대체하지 않는다. 런타임 진단 파일명에는 임의 ID를 삽입하지 않고 짧은 순번을 사용한다. 이는 REQ-C-RUNTIME-005/REQ-JS-002의 기존 식별 계약을 구현하며 별도 외부 도구를 추가하지 않는다.

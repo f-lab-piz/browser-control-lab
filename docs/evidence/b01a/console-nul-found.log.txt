@@ -1,0 +1,36 @@
+
+> browser-control-lab@0.1.0 test:requirements
+> node --test tests/requirements-runtime.test.mjs
+
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (2454.934083ms)
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (665.402083ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (281.262875ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (437.32125ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4866.070084
+
+✖ failing tests:
+
+test at tests/requirements-runtime.test.mjs:30:1
+✖ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (665.402083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'x' !== 'x\x00y'
+
+      at TestContext.<anonymous> (file://<repo>/tests/requirements-runtime.test.mjs:46:175)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'x',
+    expected: 'x\x00y',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

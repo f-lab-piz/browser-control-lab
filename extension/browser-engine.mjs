@@ -1,5 +1,6 @@
 import {uploadFiles,saveDownload} from './files.mjs';
 import {installPageAgent} from './page-agent.mjs';
+import {recordTree,recordFrame,removeFrame,detachTarget,pruneFrames} from './frame-state.mjs';
 const tabs=new Map(),owners=new Map(),downloads=new Map();
 function emit(state,type,payload){for(const waiter of [...(state.waiters||[])])if(waiter.type===type){state.waiters.delete(waiter);clearTimeout(waiter.timer);waiter.resolve(payload)}}
 function waitEvent(state,type,timeout=10000){state.waiters??=new Set();return new Promise((resolve,reject)=>{const waiter={type,resolve,reject,timer:setTimeout(()=>{state.waiters.delete(waiter);reject(Error('EVENT_TIMEOUT: '+type))},timeout)};state.waiters.add(waiter)})}
@@ -9,8 +10,7 @@ chrome.tabs.onRemoved.addListener(tabId=>{const state=tabs.get(tabId);if(state)e
 chrome.downloads.onCreated.addListener(async item=>{const candidates=[];for(const state of tabs.values()){if(![...(state.waiters||[])].some(w=>w.type==='download'))continue;const tab=await chrome.tabs.get(state.tabId).catch(()=>null);if(!tab)continue;const origin=new URL(tab.url).origin;if((item.url||'').startsWith(origin)||(item.url||'').startsWith('blob:'+origin)||(item.referrer||'').startsWith(origin))candidates.push(state)}if(candidates.length===1){const state=candidates[0];downloads.set(item.id,{sessionId:owners.get(state.tabId),tabId:state.tabId});emit(state,'download',{id:item.id,url:item.url,name:item.filename?.split(/[\\/]/).at(-1)})}else if(candidates.length>1){for(const state of candidates)for(const w of [...state.waiters])if(w.type==='download'){state.waiters.delete(w);clearTimeout(w.timer);w.reject(Error('AMBIGUOUS_DOWNLOAD'))}}});
 const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const send=(state,method,params={},sessionId)=>chrome.debugger.sendCommand({tabId:state.tabId,...(sessionId?{sessionId}:{})},method,params);
-function recordTree(state,tree,parent=null,sessionId){const old=state.frames.get(tree.frame.id);state.frames.set(tree.frame.id,{...old,id:tree.frame.id,parent:tree.frame.parentId||parent||old?.parent||null,name:tree.frame.name||'',url:tree.frame.url,sessionId:old?.sessionId||sessionId});for(const child of tree.childFrames||[])recordTree(state,child,tree.frame.id,sessionId)}
-async function initializeTarget(state,sessionId){await send(state,'Page.enable',{},sessionId);await send(state,'Runtime.enable',{},sessionId);await send(state,'Target.setAutoAttach',{autoAttach:true,flatten:true,waitForDebuggerOnStart:false},sessionId);const tree=await send(state,'Page.getFrameTree',{},sessionId);recordTree(state,tree.frameTree,null,sessionId);if(!sessionId)state.mainFrame=tree.frameTree.frame.id}
+async function initializeTarget(state,sessionId){const epoch=state.frameEpoch||0;await send(state,'Page.enable',{},sessionId);await send(state,'Runtime.enable',{},sessionId);await send(state,'Target.setAutoAttach',{autoAttach:true,flatten:true,waitForDebuggerOnStart:false},sessionId);const tree=await send(state,'Page.getFrameTree',{},sessionId);if(!sessionId||epoch===(state.frameEpoch||0))recordTree(state,tree.frameTree,null,sessionId)}
 chrome.debugger.onEvent.addListener((source,method,params)=>{
  const state=tabs.get(source.tabId);if(!state)return;
  if(method==='Input.dragIntercepted')emit(state,'dragdata',params.data);
@@ -20,12 +20,13 @@ chrome.debugger.onEvent.addListener((source,method,params)=>{
  if(method==='Page.fileChooserOpened')emit(state,'filechooser',{frameId:params.frameId,backendNodeId:params.backendNodeId,multiple:params.mode==='selectMultiple'});
  if(method==='Page.javascriptDialogOpening'){state.dialog=params;emit(state,'dialog',{type:params.type,message:params.message,defaultPrompt:params.defaultPrompt})}
  if(method==='Target.attachedToTarget'&&params.targetInfo.type==='iframe'){
-  state.childSessions.add(params.sessionId);const old=state.frames.get(params.targetInfo.targetId)||{};state.frames.set(params.targetInfo.targetId,{...old,id:params.targetInfo.targetId,parent:old.parent||params.targetInfo.parentFrameId,sessionId:params.sessionId,url:params.targetInfo.url});initializeTarget(state,params.sessionId).catch(error=>state.errors.push(error.message));
+  state.childSessions.add(params.sessionId);const old=state.frames.get(params.targetInfo.targetId)||{};state.frames.set(params.targetInfo.targetId,{...old,id:params.targetInfo.targetId,parent:old.parent||params.targetInfo.parentFrameId,sessionId:params.sessionId,contextId:undefined,url:params.targetInfo.url});initializeTarget(state,params.sessionId).catch(error=>state.errors.push(error.message));
  }
+ if(method==='Target.detachedFromTarget')detachTarget(state,params.sessionId);
  if(method==='Page.frameNavigated'){
-  const f=params.frame;if(!f.parentId&&!source.sessionId)emit(state,'navigation',{url:f.url});const old=state.frames.get(f.id)||{};state.frames.set(f.id,{...old,id:f.id,parent:f.parentId||old.parent||null,name:f.name||'',url:f.url,sessionId:source.sessionId,contextId:undefined});
+  const f=params.frame;if(!f.parentId&&!source.sessionId)emit(state,'navigation',{url:f.url});const result=recordFrame(state,f,null,source.sessionId);if(result.owned)result.frame.contextId=undefined;
  }
- if(method==='Page.frameDetached'&&params.reason!=='swap')state.frames.delete(params.frameId);
+ if(method==='Page.frameDetached'){if(params.reason!=='swap')removeFrame(state,params.frameId);else{const frame=state.frames.get(params.frameId);if(frame)frame.contextId=undefined}}
  if(method==='Runtime.executionContextsCleared')for(const frame of state.frames.values())if(frame.sessionId===source.sessionId)frame.contextId=undefined;
  if(method==='Runtime.consoleAPICalled')state.logs.push({at:Date.now(),level:params.type,text:params.args.map(a=>a.value??a.description??'').join(' ')});
  if(method==='Runtime.exceptionThrown')state.logs.push({at:Date.now(),level:'error',text:params.exceptionDetails.exception?.description||params.exceptionDetails.text});
@@ -51,6 +52,14 @@ async function context(state,frameId){
   await delay(50);
  }
  throw Error('FRAME_CONTEXT_UNAVAILABLE');
+}
+async function refreshFrames(state){
+ await context(state);const epoch=state.frameEpoch||0;
+ await Promise.all([...state.childSessions].map(async sessionId=>{
+  try{const tree=await send(state,'Page.getFrameTree',{},sessionId);if(epoch===(state.frameEpoch||0)&&state.childSessions.has(sessionId))recordTree(state,tree.frameTree,null,sessionId)}
+  catch(error){if(/session.*(?:not found|closed|detached)|no session/i.test(error.message))detachTarget(state,sessionId);else state.errors.push(error.message)}
+ }));
+ pruneFrames(state);
 }
 async function ready(state,loaderId){
  const deadline=Date.now()+10000;
@@ -150,7 +159,7 @@ export async function browserCall(sessionId,method,args={}){
  if(method==='page.goto'){const nav=await send(state,'Page.navigate',{url:args.url});if(nav.errorText)throw Error('NAVIGATION_FAILED: '+nav.errorText);await ready(state,nav.loaderId);return true}
  if(method==='page.reload'){await send(state,'Page.reload');await delay(50);await ready(state);return true}
  if(method==='page.back'||method==='page.forward'){const history=await send(state,'Page.getNavigationHistory');const target=history.entries[history.currentIndex+(method==='page.back'?-1:1)];if(target)await send(state,'Page.navigateToHistoryEntry',{entryId:target.id});return Boolean(target)}
- if(method==='page.frames'){await context(state);return [...state.frames.values()].map(({id,parent,name,url,sessionId})=>({id,parent,name,url,process:sessionId?'child-target':'root-target'}))}
+ if(method==='page.frames'){await refreshFrames(state);return [...state.frames.values()].map(({id,parent,name,url,sessionId})=>({id,parent,name,url,process:sessionId?'child-target':'root-target'}))}
  if(method==='scope.snapshot')return snapshot(state,args);
  if(method==='scope.evaluate'||method==='locator.evaluateAll')return evaluate(state,args,method==='locator.evaluateAll');
  if(method==='page.waitForURL'||method==='page.waitForFunction'||method==='page.waitForLoadState'){
