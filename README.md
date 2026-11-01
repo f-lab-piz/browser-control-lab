@@ -4,6 +4,8 @@
 
 ## 현재 상태
 
+요구사항 기반21단계 중6단계 B02A까지 완료했고 PR20을 머지했습니다.7단계 이후는 미착수입니다. 새 PC/새 대화는 [개발 재개 안내](docs/development-handoff.md)에서 시작합니다.
+
 개발 확장·HTTP 중계기·확장 내부 QuickJS WASM 실행기와 내부64 API의 기본 호출을 구현했습니다. 복잡한 iframe 업무와 파일 전송을 실제 확장 경로로 검증했습니다. 일부 고급 옵션과 상용 배포 조건은 남아 있습니다. [상태](docs/status.md)를 기준으로 진행합니다.
 
 ## 도구
@@ -66,14 +68,16 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 브리지 실행 후 출력된 `.local/extension`을 Chrome 개발자 모드에서 로드합니다. 설치·세션·HTTP 호출·파일 전달 예제는 [사용 안내](docs/runtime-usage.md)를 참고합니다. 테스트는 임시 프로필에 확장을 자동 설치하므로 수동 설치가 필요 없습니다.
 
 - 계약·판정기·중계기·프레임 상태 단위와 요구사항별 실제 확장 검증.
-- fixture UI 검증 7개, 초기 확장 왕복 probe 1개.
+- 테스트 사이트 자체 검증과 초기 확장 왕복 probe. 최신 고정 개수는 단계별 manifest를 따릅니다.
 - 기존 제품 확장 복합 회귀와 선택적 실제 네이버 검색 관찰. 요구사항 구현의 최신 수·범위는 [실행 현황](implementation/index.md)과 [상태 문서](docs/status.md)에서 확인합니다.
 
 `verified-basic`은 기본 호출의 실제 검증이며 모든 옵션을 지원한다는 뜻은 아닙니다. 카탈로그의 partial 항목과 사용 안내의 제약을 함께 확인합니다. 결과는 `output/`에 생성하며 Git에서 제외합니다.
 
 ## 개발 문서와 스킬
 
-- [순차 구현 계획](docs/implementation-plan.md)
+- [개발 재개 안내·다른 PC 설치·기록 기준](docs/development-handoff.md)
+- [현재21단계 실행 계획](planning/spec-requirements-implementation.md)과 [조건별 ledger](planning/implementation-plan.json)
+- [초기 프로토타입8단계 계획 이력](docs/implementation-plan.md)
 - [의존성·라이선스](docs/third-party.md)
 - [아키텍처·HTTP 계약](docs/architecture.md)
 - [스냅샷 전략](docs/snapshot-strategy.md)

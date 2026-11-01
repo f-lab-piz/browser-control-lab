@@ -1,0 +1,62 @@
+# PR20 최종 문서 변경분 독립 리뷰
+
+## 발견 사항
+
+차단 또는 수정이 필요한 새 발견 사항 없음. **PASS — 최종 문서 변경분 한정**이다. 제품 승인 보고서의 결론만으로 승인하지 않고 실제 delta, 원시 보고서, 보존 해시, 실행 입력 지문과 ledger를 독립 대조했다. 이번 리뷰에서 제품 브라우저 검증을 새로 실행했다고 주장하지 않는다.
+
+- 전체 PR base: `0452cbe2474ed73069167c43d683ae1514c4f29c`.
+- 기존 제품 리뷰 대상: `23aff96a23710c41702eb0079cd99b7e221144f4`.
+- 이번 최종 검토 head: **`d513cfa8b9636fab324d633988a81566d3f72a76`**.
+- 시작 및 종료 실제 HEAD가 위 최종 head와 일치하고 tracked 작업 상태는 clean이었다. tracked 파일, PR 댓글·리뷰·승인·머지는 변경하지 않았다. 이 보고서와 scratch는 ignored `output/stage6-docs-delta/`에만 썼다.
+
+## 직접 실행한 검증 및 대조
+
+AGENTS.md, `.agents/skills/browser-control-development/SKILL.md`, `references/pr-review.md`, `references/autonomous-implementation.md`를 적용했다.
+
+| 직접 실행한 명령/검사 | 결과 |
+|---|---|
+| `git diff --check 0452cbe2474ed73069167c43d683ae1514c4f29c d513cfa8b9636fab324d633988a81566d3f72a76` | exit 0, 전체 PR 공백 오류 없음 |
+| `python3 docs/requirements/tools/validate.py` | exit 0, DOCUMENT_STRUCTURE_ONLY_PASS, 185 REQ/254조건/370참고슬롯; 제품 동결 검사 미요청 |
+| `python3 docs/requirements/tools/validate_development_plan.py` | exit 0, PLAN_STRUCTURE_PASS, 21 slice/185 REQ/254조건 |
+| `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s docs/requirements/tools -p 'test_*.py'` | exit 0, 6 tests PASS |
+| 승인 SHA→최종 SHA 전체 이름/내용 diff 및 36개 sourceSha256 대조 | 실행 입력 변경 0, 각 지문은 승인 SHA와 현재 파일 모두 일치 |
+| 보존 manifest 및 원시 source 해시/정규화 대조 | B02A 보존 69/69 일치, B01E 보존 24/24 일치. 기존 61개의 sourceSha256 변경 0. 새 8개 원시 source 해시와 보존 정규화 바이트 모두 일치 |
+| `gh pr view 20 --repo f-lab-piz/browser-control-lab --json number,state,headRefOid,baseRefOid,mergeCommit,mergedAt,url` | 읽기 전용 조회. PR OPEN, base/head 위 SHA와 일치, mergeCommit/mergedAt null |
+
+기계 대조 결과는 같은 디렉터리의 `audit.json`에 보존했다.
+
+### 문서 변경 경계
+
+승인 SHA 이후 변경은 총17파일이다. 제품·테스트·fixture·사용법·의존성 입력은 변경하지 않았다. `docs/evidence/b02a/reviewer-final-probe.mjs`는 기존 리뷰 실행 스크립트의 보존 사본 추가이며 정식 제품/테스트 실행 입력에 편입하지 않았다.
+
+두 Aside guide 증거 파일은 승인 버전 끝의 LF 한 바이트만 각각 제거했다. 원시 stdout의 sourceSha256은 그대로 유지했고, manifest의 보존 sha256과 정규화 설명만 함께 갱신했다. 과거 제품 리뷰 원문의 diff-check exit2/P3 미수정 판정은 당시 SHA에 대한 기록으로 보존됐다. 현재 전체 PR diff-check는 exit0이다.
+
+### 기존 제품 승인 증거의 일관성
+
+이번에 추가 보존된 전체 실행 로그의 pass 배열은 `[42,13,1,24,45,7]`, fail은 모두0, skip은 기존제품 단계의 외부1건뿐이다. 합계132 PASS/0 FAIL/외부1 SKIP와 일치한다. 단독 headed 로그는45 PASS/0 FAIL/0 SKIP다. native fixture oracle13과 단위42·bootstrap1을 제품 PASS로 바꾸어 해석하지 않았다.
+
+보존된 독립 리뷰의 B02A 제품/단독 headed JSON은 모두 정확 `23aff96a23710c41702eb0079cd99b7e221144f4`, `dirty=false`, 각각13 PASS evidence/21개 정본 조건이며 headed 사본은 `headed=true`다. 두 실행의36개 sourceSha256이 승인 SHA 및 최종 head의 파일 바이트와 모두 일치한다. 별도 probe JSON은3그룹 PASS이며 음성 호출의 거절, 값·이벤트 불변, 정상 trusted input/click 증거를 포함한다. 정식132/45와 별도 집계한다.
+
+구현 당시의 Before/After/headed 기록은 `a59c560...`/`dirty=true`인 과거 실행으로 그대로 남아 있다. 최종 독립 리뷰의 clean 실행과 혼동하지 않았다. Before3 PASS/10 FAIL→After13 PASS를 확인했고,36개 입력 중 차이는 정확 `extension/api-source.mjs`, `extension/page-agent.mjs`뿐이며 Before의 두 소유 파일 지문은 exact base의 `git show` 바이트와 일치한다. 각 기록의 조건 ID 집합은 B02A 정본21조건과 정확히 일치한다.
+
+기존 원시 `output/runtime-e2e/results.json`은 이후 독립 리뷰가 같은 경로에 기록해 과거 manifest의 sourceSha256과 현재 바이트가 다르다. 이 경로 재사용은 최종 delta 이전부터 존재한 검증 하네스 특성이며 기존 manifest 항목/sourceSha256을 이번에 바꾸지 않았다. 과거 보존 `runtime-regression.json`의 hash는 manifest와 일치하고, 새 독립 리뷰의 별도 원시 사본 `output/stage6-label-rereview/runtime-e2e.json`은 현재 원시 결과와 일치하며24개 evidence를 담는다. 따라서 보존69개가 모두 일치한다는 사실과, 역사적 원시 경로69개 중68개만 현재 sourceSha256을 재현한다는 한계를 구분한다.
+
+### 완료 범위와 머지 표현
+
+ledger의 B01A~B02A 여섯 slice는 pass이며37부모/54조건도 모두 pass다. B02A는13부모/21조건이다. 이후15 slice는 모두 not-started다. `executionScope`는 through/completedThrough B02A, afterCompletion stop, executionStatus stopped-after-requested-scope, oldGoalStatus paused다. 기존 전체21단계 Goal이나185 REQ 전체를 완료로 변경하지 않았다.
+
+상태·구현·최종 리뷰·manifest는 정확23aff96의 제품 리뷰 완료와 최종 문서/원격 gate 뒤 정상 머지 예정임을 구분한다. 원격 조회 시점 PR20은 OPEN이고 merge commit은 없으며 문서도 실제 머지 SHA를 만들어 쓰지 않고 원격 기록을 정본으로 안내한다. 이전 재리뷰 대기·12/130/44 수치는 해당 커밋 당시 이력임이 최신 문서에서 명시된다.
+
+## 미실행·차단
+
+- 이번에는 전체 제품 브라우저 suite/단독 headed/경계 probe를 재실행하지 않았다. 입력36개 및 모든 tracked 제품·테스트·fixture·사용법 파일이 승인 SHA 이후 불변이고 새 보존 원시 증거가 일치하므로 문서 delta에 필요한 추가 제품 실행 사유는 발견하지 않았다.
+- 외부 Naver/회사 사이트, 경쟁툴 비교 신규 실행, 전체 과거 base 환경 재생 및185 REQ 전체 수용 검증은 하지 않았다.
+- GitHub 필수 CI·mergeable 여부 판정 및 실제 정상 머지는 메인의 후속 원격 gate 범위다. 이 리뷰는 원격 gate나 머지 완료를 대신하지 않는다.
+
+## 남은 위험
+
+외부1 SKIP, B03A의 과거 headed frame-tree timeout 원인 미확정, B02B 이후15 slice 미구현·미검증 범위를 그대로 유지한다. 역사적 원시 runtime 경로의 덮어쓰기는 위에서 설명한 보존 한계이며 이번 문서 변경이 새로 도입한 오류는 아니다. 132/45/추가3그룹은 승인 SHA의 과거 실측 증거 대조 결과이며 최종 head에서 새 실행한 수치가 아니다.
+
+## 검토 SHA와 최종 판정
+
+**PASS — `d513cfa8b9636fab324d633988a81566d3f72a76` 최종 문서 변경분.** 새 P0/P1/P2/P3 발견 없음. 제품 승인 입력과 검증 증거의 연속성이 확인됐고 EOF P3 두 파일은 정리됐다. 정상 머지 뒤 B02A에서 중단하며 이후 단계는 착수하지 않는 범위와 일치한다.

@@ -37,7 +37,7 @@
   "rawHistory": "Initial Before included a test-code newline escaping error in one case; fixed test quoting before final comparison, no product change then. First full after naming changes failed legacy summary test: composed name correctly matches SUMMARY and nested BUTTON. Test now asserts both identities and explicitly selects native button via CSS+filter, preserving hidden-content exclusions and actual clicked result. Initial125 stage then unit/coverage audit strengthened to final127. No predicates weakened.",
   "competitors": "Same final root fixture: Codex IAB public locators LIVE received-output transcription, Aside CLI1.26.1028.2335 Skill3 LIVE raw CLI.16reads plus proof click/fill; root only, Codex child DNS blocked. Different contracts, no general ranking. Codex field value changes but trusted-input site verdict pending, exact cause unknown. Own comparison tabs closed; no source/bundle/WASM copied.",
   "remainingRisk": "B03A old PR18 headed frame-tree timeout remains root-cause unproven; not reproduced in this final full/headed, not declared resolved. B02B/B03-B06/final audit unverified.",
-  "gate": "Exact23aff96 independent Sol6.1 high product review PASS; no in-scope P0/P1/P2. Nonblocking P3 evidence EOF2files fixed in docs-only closeout with preserved-source SHA and refreshed retained SHA. Final docs-delta exact-head review and remote normal-merge gate follow. Stop after B02A.",
+  "gate": "PR20 merged normally as b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47 after exact23aff96 independent product PASS and exactd513cfa docs-delta PASS plus remote gate. Issue19 CLOSED. Scope stopped after B02A; later15 not-started. Current handoff docs retain previously ignored final delta evidence without claiming new browser tests.",
   "artifacts": [
     {
       "file": "unit-contract.log.txt",
@@ -521,6 +521,20 @@
       "sourceSha256": "df83c0f9d9a42dead547f728befa9ee6ec24bda8983a0d7155d1a902715bf9fa",
       "sha256": "214cc39171586b133773eabfd1c76b7bb4c61714b3dcbe5dbbfd3023c9cd9ac7",
       "normalization": "repository path placeholder; ANSI/trailing whitespace and terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-docs-delta-report.txt",
+      "source": "output/stage6-docs-delta/report.md",
+      "sourceSha256": "9a2fb8240108a731836ee98e1e39bc80003e6a54fcc3542ac2e86722d7e8b0bd",
+      "sha256": "9a2fb8240108a731836ee98e1e39bc80003e6a54fcc3542ac2e86722d7e8b0bd",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace/terminal blank lines removed"
+    },
+    {
+      "file": "reviewer-docs-delta-audit.json",
+      "source": "output/stage6-docs-delta/audit.json",
+      "sourceSha256": "c0baa74e262646d4a8c49a4d45c54874bbf414d1fd28f19271a80fccfcf5f940",
+      "sha256": "c0baa74e262646d4a8c49a4d45c54874bbf414d1fd28f19271a80fccfcf5f940",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace/terminal blank lines removed"
     }
   ],
   "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns. Latest separate label fixture adds one formal product/native case without changing selection/boundary DOM; final13 Before/After132/headed45 use the latest source36 fingerprint. Prior12/130/44 results remain historical in earlier commits/review reports.",
@@ -582,5 +596,14 @@
     "p0p1p2": 0,
     "p3": "Evidence EOF blank lines2files resolved in docs-only closeout; reviewed23aff96 diff-check exit2 preserved in original report",
     "report": "reviewer-final-report.txt"
+  },
+  "finalDocsReview": {
+    "head": "d513cfa8b9636fab324d633988a81566d3f72a76",
+    "verdict": "PASS",
+    "report": "reviewer-docs-delta-report.txt",
+    "audit": "reviewer-docs-delta-audit.json",
+    "scope": "Final docs-only delta; approved36inputs unchanged, then69 retained artifacts matched; these historical counts predate current handoff retention additions",
+    "newBrowserRun": false,
+    "mergeCommit": "b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47"
   }
 }

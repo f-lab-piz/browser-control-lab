@@ -162,11 +162,13 @@
       "evidence": [
         "docs/implementation/b02a.md",
         "docs/evidence/b02a/manifest.json",
-        "docs/reviews/pr20-b02a-final.md"
+        "docs/reviews/pr20-b02a-final.md",
+        "docs/reviews/pr20-b02a-docs-delta.md"
       ],
       "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/19",
       "review": "docs/reviews/pr20-b02a-final.md",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/20"
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/20",
+      "mergeCommit": "b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47"
     },
     {
       "id": "B02B",
