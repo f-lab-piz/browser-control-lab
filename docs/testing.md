@@ -71,4 +71,4 @@ TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계
 
 ## 독립 리뷰 발견 사항의 회귀
 
-`npm run test:review-boundaries`는 긴 텍스트 필터, label, closed details summary의 Shadow DOM, 스크롤 후 clip의 실제 내용까지5개를 검증한다. fixture는 review-boundaries.html이다. 독립 PNG 픽셀 검사로 위치 오류를 검출한다. HEAD/리뷰 범위와 결과는 docs/review-round2.md를 따른다.
+`npm run test:review-boundaries`는 긴 텍스트 필터, label, closed details summary의 Shadow DOM, 스크롤 후 clip의 실제 내용까지7개를 검증한다. 인접/중첩/슬롯 텍스트 및 실제 공백의 구분을 포함하며 fixture는 review-boundaries.html이다. 독립 PNG 픽셀 검사로 위치 오류를 검출한다. HEAD/리뷰 범위와 결과는 docs/review-round2.md를 따른다.

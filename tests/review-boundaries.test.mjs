@@ -33,6 +33,13 @@ test('long hasText and hasNotText search the full text independently of snapshot
  const r=await run(`console.log(await p.locator('#long').filter({hasText:'needle'}).count(),await p.locator('#long').filter({hasNotText:'needle'}).count());console.log(await p.locator('#long').filter({hasText:/NEEDLE$/i}).count());console.log(await p.locator('#slot-long').filter({hasText:'slotneedle'}).count(),await p.locator('#slot-long').filter({hasNotText:'slotneedle'}).count());`);
  assert.equal(text(r),'1 0\n1\n1 0');assert((await page.locator('#long').textContent()).endsWith('needle'));evidence.push({case:'full-text-filter',pass:true});
 });
+test('adjacent inline nodes preserve DOM text in positive negative and regex filters',async()=>{
+ const r=await run(`console.log(await p.locator('#adjacent').filter({hasText:'foobar'}).count(),await p.locator('#adjacent').filter({hasNotText:'foobar'}).count());console.log(await p.locator('#adjacent').filter({hasText:/^foobarSelect row$/}).count());console.log(await p.locator('#nested').filter({hasText:'foobar'}).count());console.log(await p.locator('#slot-adjacent').filter({hasText:'foobar'}).count(),await p.locator('#slot-adjacent').filter({hasNotText:'foobar'}).count());`);
+ assert.equal(text(r),'1 0\n1\n1\n1 0');assert.equal(await page.locator('#adjacent').textContent(),'foobarSelect row');assert.equal(await page.locator('#adjacent').innerText(),'foobarSelect row');evidence.push({case:'adjacent-inline-filter',pass:true});
+});
+test('explicit DOM whitespace keeps separated words distinct from adjacent text',async()=>{
+ const r=await run(`console.log(await p.locator('#spaced').filter({hasText:'foobar'}).count(),await p.locator('#spaced').filter({hasNotText:'foobar'}).count(),await p.locator('#spaced').filter({hasText:'foo bar'}).count());`);assert.equal(text(r),'0 1 1');assert.equal(await page.locator('#spaced').textContent(),'foo bar');evidence.push({case:'explicit-whitespace-filter',pass:true});
+});
 test('snapshot text budget does not alter native labels or aria-labelledby',async()=>{
  const r=await run(`console.log(await p.getByLabel('Only visible label',{exact:true}).count(),await p.getByRole('textbox',{name:'Only aria labelled',exact:true}).count());`);assert.equal(text(r),'1 1');evidence.push({case:'accessible-labels',pass:true});
 });
