@@ -8,6 +8,7 @@
 - 6단계 B02A까지 완료. PR20 정상 squash merge: `b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47`, 이슈19 CLOSED.
 - 1~6단계37부모/54조건 PASS. 다음은 7단계 B02B, 이후15개 slice는 not-started다. 전체185REQ/254조건 완료가 아니다.
 - 과거 macOS arm64 / Node25.2.1 / Playwright1.64.1 / Chrome145.0.7632.6의 전체132 PASS/외부1 SKIP, 단독 headed45 PASS다. 단위42·native fixture13·transport1·실제 제품76으로 구분한다. 다른 PC의 성공 증거가 아니다.
+- 인계/리뷰 규칙과 개인 표기 일반화는 PR #22의 [독립 리뷰](reviews/pr22-portable-privacy.md)를 따른다. 검토한 정확289e7b4는 PASS이며 제품 suite의 신규 실행을 뜻하지 않는다.
 - 정확23aff96 제품 리뷰 PASS와 정확d513cfa 최종 문서 delta PASS를 보존했다. [제품 리뷰](reviews/pr20-b02a-final.md), [문서 delta 리뷰](reviews/pr20-b02a-docs-delta.md), [manifest](evidence/b02a/manifest.json)를 따른다.
 
 새 Codex는 이 순서로 읽는다.
