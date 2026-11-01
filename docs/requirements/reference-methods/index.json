@@ -6774,10 +6774,9 @@
         {
           "provider": "codex",
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
-          "reference": "files-events.md#ref-page-waitforevent",
+          "reference": "files-events.md#ref-current-dialog-recovery",
           "relation": "direct",
           "relatedClaims": [
-            "CL-CODEX-page-waitForEvent-01",
             "CL-CODEX-current-dialog-01"
           ],
           "support": "not-established",
@@ -6786,49 +6785,43 @@
               "conditionId": "REQ-PAGE-WAITFOREVENT-004-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-waitForEvent-01",
                 "CL-CODEX-current-dialog-01"
               ],
-              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+              "reason": "현재getter라는좁은DOC만. 오류/claim/reset복구동등성은미확인."
             },
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-004-C02",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-waitForEvent-01",
                 "CL-CODEX-current-dialog-01"
               ],
-              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+              "reason": "현재getter라는좁은DOC만. 오류/claim/reset복구동등성은미확인."
             }
-          ]
+          ],
+          "reason": "현재getter라는좁은DOC만. 오류/claim/reset복구동등성은미확인."
         },
         {
           "provider": "aside",
           "surface": "Aside original CLI 1.26.1028.2335 / Skill version 3",
-          "reference": "files-events.md#ref-page-waitforevent",
-          "relation": "direct",
-          "relatedClaims": [
-            "CL-ASIDE-page-waitForEvent-01"
-          ],
+          "reference": "files-events.md#ref-current-dialog-recovery",
+          "relation": "unknown",
+          "relatedClaims": [],
           "support": "not-established",
           "conditions": [
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-004-C01",
               "coverage": "not-established",
-              "relatedClaims": [
-                "CL-ASIDE-page-waitForEvent-01"
-              ],
-              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+              "relatedClaims": [],
+              "reason": "현재dialog조회공개방법미확인. download미래wait는이목표의직접대응아님."
             },
             {
               "conditionId": "REQ-PAGE-WAITFOREVENT-004-C02",
               "coverage": "not-established",
-              "relatedClaims": [
-                "CL-ASIDE-page-waitForEvent-01"
-              ],
-              "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
+              "relatedClaims": [],
+              "reason": "현재dialog조회공개방법미확인. download미래wait는이목표의직접대응아님."
             }
-          ]
+          ],
+          "reason": "현재dialog조회공개방법미확인. download미래wait는이목표의직접대응아님."
         }
       ]
     },

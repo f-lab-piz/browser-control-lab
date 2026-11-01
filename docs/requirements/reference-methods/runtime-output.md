@@ -36,9 +36,9 @@ await agent.documentation.get("file-uploads")
 aside guide; aside guide repl
 ```
 
-- `CL-ASIDE-guide-01` **DOC**: CLI main은 exec/repl 표면·프로필 선택·기본 운영을 안내한다. 근거 `A-DOC-MAIN` / .local/reference-loop-execution/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Browser usage / Persistence / Remote control.
+- `CL-ASIDE-guide-01` **DOC**: CLI main은 exec/repl 표면·프로필 선택·기본 운영을 안내한다. 근거 `A-DOC-MAIN` / evidence/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Browser usage / Persistence / Remote control.
 
-- `CL-ASIDE-guide-02` **DOC**: REPL 가이드는 환경·snapshot 옵션·download 사용법을 공개한다. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment / Snapshot / Downloads.
+- `CL-ASIDE-guide-02` **DOC**: REPL 가이드는 환경·snapshot 옵션·download 사용법을 공개한다. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment / Snapshot / Downloads.
 
 추가 확인할 조건:
 
@@ -140,7 +140,7 @@ aside guide; aside guide repl
 aside repl "console.log(1)"
 ```
 
-- `CL-ASIDE-js-01` **DOC**: ES2023+·async/await·120초·const/let 지속·import/require 금지·명시 console 출력은 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment; persistent const/let; Always use console.log.
+- `CL-ASIDE-js-01` **DOC**: ES2023+·async/await·120초·const/let 지속·import/require 금지·명시 console 출력은 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment; persistent const/let; Always use console.log.
 
 추가 확인할 조건:
 
@@ -194,7 +194,7 @@ nodeRepl.write({value:1})
 console.log(await listBrowserTabs())
 ```
 
-- `CL-ASIDE-console-log-01` **DOC**: 자신에게 값을 돌려받으려면 항상 console.log 사용 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment: Always use console.log to return values. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment: Always use console.log to return values.
+- `CL-ASIDE-console-log-01` **DOC**: 자신에게 값을 돌려받으려면 항상 console.log 사용 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment: Always use console.log to return values. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment: Always use console.log to return values.
 
 추가 확인할 조건:
 
@@ -246,7 +246,7 @@ nodeRepl.emitImage(await tab.screenshot({fullPage:false}))
 display // global exists; argument signature not documented
 ```
 
-- `CL-ASIDE-display-01` **DOC**: display 전역 존재 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment available globals: fs,path,Buffer,sleep,display,pwd.
+- `CL-ASIDE-display-01` **DOC**: display 전역 존재 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment available globals: fs,path,Buffer,sleep,display,pwd.
 
 추가 확인할 조건:
 
@@ -294,7 +294,7 @@ display // global exists; argument signature not documented
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-ASIDE-runtime-01` **DOC**: 120초·ES2023+·const/let 지속·import/require 금지·명시console은 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment.
+- `CL-ASIDE-runtime-01` **DOC**: 120초·ES2023+·const/let 지속·import/require 금지·명시console은 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment.
 
 추가 확인할 조건:
 

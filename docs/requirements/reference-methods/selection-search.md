@@ -36,9 +36,9 @@ tab.playwright.locator("button[data-action]")
 page.locator("e31"); page.locator("button.export")
 ```
 
-- `CL-ASIDE-scope-locator-01` **DOC**: virtual ref는 page.locator(ref)로 전달하며 DOM property/CSS와 혼합금지 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31). 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: ref IDs are virtual locators; page.locator(e31).
+- `CL-ASIDE-scope-locator-01` **DOC**: virtual ref는 page.locator(ref)로 전달하며 DOM property/CSS와 혼합금지 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31). 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: ref IDs are virtual locators; page.locator(e31).
 
-- `CL-ASIDE-scope-locator-02` **DOC**: download button CSS locator 예시 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: page.locator(button.export).click example.
+- `CL-ASIDE-scope-locator-02` **DOC**: download button CSS locator 예시 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: page.locator(button.export).click example.
 
 추가 확인할 조건:
 
@@ -514,7 +514,7 @@ await page.locator("body").getAttribute("data-run")
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-ASIDE-selection-01` **DOC**: 새 snapshot은 모든 이전 ref 무효화 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot ref invalidation bullet.
+- `CL-ASIDE-selection-01` **DOC**: 새 snapshot은 모든 이전 ref 무효화 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot ref invalidation bullet.
 
 - `CL-ASIDE-selection-02` **HISTORICAL**: 과거 regex role count1 HISTORICAL. 근거 `A-HIST-REGEX` / docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex count1. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. regex count1.
 
@@ -522,7 +522,7 @@ await page.locator("body").getAttribute("data-run")
 
 - `CL-ASIDE-selection-04` **HISTORICAL**: 과거 nth(-1) 호출 DOMException HISTORICAL. 근거 `A-HIST-NTH` / docs/evidence/diagnostics-before-after.json#/aside/cases[id=negative-nth]; scripts/compare-aside.mjs negative-nth :: nth(-1) DOMException. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. nth(-1) DOMException.
 
-- `CL-ASIDE-selection-05` **INFERENCE**: 조합 대응 판단: 최신 snapshot virtual ref→locator→관찰/조작; 우리 stable ref는 별도 정책 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-selection-05` **INFERENCE**: 조합 대응 판단: 최신 snapshot virtual ref→locator→관찰/조작; 우리 stable ref는 별도 정책 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 

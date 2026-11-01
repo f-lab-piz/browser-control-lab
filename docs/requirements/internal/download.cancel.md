@@ -36,7 +36,7 @@
 - 조건: 취소 성공은 실제 interrupted(USER_CANCELED) 관측 뒤 반환한다.
 - 준비: 느린 전송
 - 실행: cancel
-- 판정: 10초 내 확인 시 cancelled,확인 못 하면 timeout/불확실이며 파일 삭제 없다.
+- 판정: 실제interrupted확인때만cancelled이며완료된사용자파일은API가삭제하지않는다. 브라우저관리부분파일의정리/보존은실제상태·잔여경로로별도기록하며완료파일보호와구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-DOWNLOAD-CANCEL-002

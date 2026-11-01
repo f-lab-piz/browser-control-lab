@@ -84,7 +84,7 @@ const pending=tab.playwright.waitForEvent("download",{timeoutMs:1000})
 const p1 = page.waitForEvent("download"); await page.locator("button.export").click(); const d1 = await p1
 ```
 
-- `CL-ASIDE-page-waitForEvent-01` **DOC**: download waiter를 action 전에 등록하는 공개 예제 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: waitForEvent(download) before click example.
+- `CL-ASIDE-page-waitForEvent-01` **DOC**: download waiter를 action 전에 등록하는 공개 예제 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: waitForEvent(download) before click example.
 
 추가 확인할 조건:
 
@@ -236,13 +236,13 @@ const d=await pendingDownload; nodeRepl.write(await d.path({timeoutMs:1000}))
 const p1 = await d1.path(); console.log((await fs.stat(p1)).size); await d1.saveAs("./artifacts/name.ext")
 ```
 
-- `CL-ASIDE-download-save-01` **DOC**: 브라우저 download.path의 실제 완료파일은 현재 REPL 세션에서 읽기 가능 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: completed download.path readable in same REPL session.
+- `CL-ASIDE-download-save-01` **DOC**: 브라우저 download.path의 실제 완료파일은 현재 REPL 세션에서 읽기 가능 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: completed download.path readable in same REPL session.
 
-- `CL-ASIDE-download-save-02` **DOC**: saveAs는 명시 artifact 복사가 필요할 때만; one-shot은 같은 command 내 검증 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: saveAs artifacts copy only when needed / one-shot same command validation.
+- `CL-ASIDE-download-save-02` **DOC**: saveAs는 명시 artifact 복사가 필요할 때만; one-shot은 같은 command 내 검증 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: saveAs artifacts copy only when needed / one-shot same command validation.
 
-- `CL-ASIDE-download-save-03` **DOC**: POST/blob/redirect는 가능할 경우 브라우저 download handling; 안전한 직접 GET/HEAD fetch와 구분 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed.
+- `CL-ASIDE-download-save-03` **DOC**: POST/blob/redirect는 가능할 경우 브라우저 download handling; 안전한 직접 GET/HEAD fetch와 구분 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed.
 
-- `CL-ASIDE-download-save-04` **INFERENCE**: 조합 대응 판단: Download.path + fs 검증 또는 saveAs 아티팩트 복사 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-download-save-04` **INFERENCE**: 조합 대응 판단: Download.path + fs 검증 또는 saveAs 아티팩트 복사 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 
@@ -440,9 +440,9 @@ const d=await tab.getJsDialog(); if(d) await d.dismiss();
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-ASIDE-files-events-01` **DOC**: download waiter 사전등록→click→path→fs.stat/같은세션 bytes 검증 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads browser event example and same-session path verification.
+- `CL-ASIDE-files-events-01` **DOC**: download waiter 사전등록→click→path→fs.stat/같은세션 bytes 검증 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads browser event example and same-session path verification.
 
-- `CL-ASIDE-files-events-02` **INFERENCE**: 조합 대응 판단: 브라우저 다운로드 vs 검증된 안전 direct GET/HEAD fetch를 구분 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-files-events-02` **INFERENCE**: 조합 대응 판단: 브라우저 다운로드 vs 검증된 안전 direct GET/HEAD fetch를 구분 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 
@@ -463,3 +463,19 @@ const d=await tab.getJsDialog(); if(d) await d.dismiss();
 ## 우리 구현 선택의 확정 규칙
 
 [공통 상세 정책](../common/files-events.md#파일과-이벤트-상세표), [공통 상세 정책](../common/runtime.md#실행과-수명-상세표)를 해당 정본과 함께 읽는다. 정책은 [2차 메인 판단](reviews/cycle-2/research-decisions.md)에서 이유와 대안을 기록했다. DOC/관측으로 확인된 경쟁방법과 우리 선택을 혼동하지 않는다.
+
+## ref-current-dialog-recovery
+
+대상: REQ-PAGE-WAITFOREVENT-004. 미래 이벤트 대기와 현재 dialog 조회는 다른 동작이므로 별도로 연결한다.
+
+- **Codex CUA/IAB DOC:** 공개 `tab.getJsDialog():Promise<Dialog|undefined>`는 현재 dialog조회 개념의 직접 참고다. 없음은undefined, 우리의 CURRENT_EVENT_NOT_FOUND/claim예약/세대복구는별도설계로서입증되지않았다. 근거 CL-CODEX-current-dialog-01, evidence/codex/raw/public-contract-excerpts.md의getJsDialog서명.
+- **Aside:** 현재dialog조회의공개방법/서명은보존guide에서미확인이다. 다운로드발생전wait예제로이요구의direct대응을주장하지않는다. 미지원판정도하지않는다.
+
+문법근거가있는미실행조각(관련tab을먼저얻은경우, 실제조회성공/복구미측정):
+
+```js
+var current = await tab.getJsDialog();
+nodeRepl.write(current === undefined ? "none" : "present");
+```
+
+우리 목표 흐름은 reset→같은session의browser.attach(id)→page.waitForEvent('dialog',{includeCurrent:true})→현세대handle명시처리다. 자동응답/범용download·chooser재획득을추가하지않는다. [정본](../internal/page.waitForEvent.md)의C01/C02와files-events claim예약표를검증하며이번에는실행하지않았다.

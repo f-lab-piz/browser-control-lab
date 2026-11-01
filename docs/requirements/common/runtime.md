@@ -66,9 +66,9 @@
 #### REQ-C-RUNTIME-003-C01
 
 - 조건: 세대 종결은 late 결과를 차단하되 웹 효과를 남긴다.
-- 준비: 값 변경 후 긴 wait
-- 실행: reset/timeout 후 새 실행
-- 판정: 변수 새 세대·페이지 값 보존·구결과 차단이다.
+- 준비: 값변경뒤긴wait가있는세션에서(a)명시reset/실제VM재생성실행제한,(b)VM재생성없는하위wait timeout을독립run으로준비한다.
+- 실행: 각종결후generation/runtimeReset·기존binding·페이지marker/asset·late출력을읽는다.
+- 판정: (a)는새generation·oldbinding없음,(b)는같은generation·기존binding유지다. 둘다종결1회·late결과혼합0·웹값/asset보존이며재생성여부를결과에명시한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-RUNTIME-004

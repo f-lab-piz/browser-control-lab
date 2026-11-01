@@ -65,9 +65,9 @@
 #### REQ-LOCATOR-DROP-002-C01
 
 - 조건: 빈 payload/잘못된 MIME 값/invalid 파일은 drop 전에 거절한다.
-- 준비: files 없고 data 빈값·문자열 아닌 data·잘못된 source
+- 준비: files 없음+data:{}, 문자열 아닌 MIME value, 잘못된 file source를각독립run으로준비한다. {'text/plain':''}은정상빈문자열값사례다.
 - 실행: drop
-- 판정: 입력 오류·dropcounter0·기존 대상 불변이다.
+- 판정: 빈record/불량value/source는입력오류·dragenter/dragover/drop0·기존대상불변이다. 정상빈문자열은types에text/plain존재·getData결과빈문자열·파일목록[]·drop1로구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-DROP-002-C02

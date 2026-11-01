@@ -294,7 +294,7 @@ await locator.click({button:"left",timeoutMs:1000})
 await page.locator("button.export").click()
 ```
 
-- `CL-ASIDE-locator-click-01` **DOC**: click이 interactivity/DOM stability를 기다리고 필요시 scroll한다는 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click interactivity/stability wait and needed scroll.
+- `CL-ASIDE-locator-click-01` **DOC**: click이 interactivity/DOM stability를 기다리고 필요시 scroll한다는 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click interactivity/stability wait and needed scroll.
 
 - `CL-ASIDE-locator-click-02` **HISTORICAL**: 과거 slot 이름 role 검색 오류 HISTORICAL. 근거 `A-HIST-SLOT` / docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: role lookup error before intended slot click. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. role lookup error before intended slot click.
 
@@ -1186,9 +1186,9 @@ await focusedLocator.type("한글🙂\n",{timeoutMs:1000})
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-ASIDE-input-01` **DOC**: click interactivity/DOM stability/필요시scroll·fresh snapshot 사후확인 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state.
+- `CL-ASIDE-input-01` **DOC**: click interactivity/DOM stability/필요시scroll·fresh snapshot 사후확인 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state.
 
-- `CL-ASIDE-input-02` **INFERENCE**: 조합 대응 판단: 관찰→입력→새 snapshot·실제 업무상태; API 반환을 업무성공으로 일반화 금지 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-input-02` **INFERENCE**: 조합 대응 판단: 관찰→입력→새 snapshot·실제 업무상태; API 반환을 업무성공으로 일반화 금지 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 

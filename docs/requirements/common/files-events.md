@@ -178,3 +178,5 @@ includeCurrent 기본false는등록후이벤트만기다리는기존계약이다
 한도/스키마/소유검증은입력전이다. 전송중불가피한오류는적용목록/불확실과임시자원정리를기록하며원자적rollback을위장하지않는다.
 
 정규화한 MIME key가 둘 이상 같으면 값이 같거나 빈 문자열이어도 DUPLICATE_MIME_TYPE으로 전체 사전 거절한다. files와 혼합했어도 파일/dragenter/dragover/drop 전달 전이다. 앞/뒤값선택이나병합을하지않는다.
+
+현재 dialog claim의 선형화: native opening을 기록할 때 해당 event보다 먼저 등록된 eligible 미래 waiter가 있으면 그 identity를 원자적으로 예약한다. 응답 핸들 전달이 지연돼도 예약은 유지하며 current-query는 EVENT_ALREADY_CLAIMED다. event보다 나중 등록한 미래 waiter는 그 event를 예약하지 않으므로, 등록 전 unclaimed D0를 current-query로 얻어 처리할 수 있고 미래 waiter는 D1을 계속 기다린다. query/dispatch/reset/close는 adapter의 기록 순서로 단일 claim/종결을 판정한다. 단순 wall-clock 동시성이나 임의 sleep을 oracle로 쓰지 않는다.

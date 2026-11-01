@@ -38,11 +38,11 @@ await tab.playwright.domSnapshot()
 const s1 = await snapshot(page, { interactive: true }); console.log(s1.tree)
 ```
 
-- `CL-ASIDE-scope-snapshot-01` **DOC**: snapshot(page,{interactive?,showHidden?,ref?,selector?}) => Promise<{tree,diff}> 명시 서명 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot TypeScript function signature. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot TypeScript function signature.
+- `CL-ASIDE-scope-snapshot-01` **DOC**: snapshot(page,{interactive?,showHidden?,ref?,selector?}) => Promise<{tree,diff}> 명시 서명 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Snapshot TypeScript function signature. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot TypeScript function signature.
 
-- `CL-ASIDE-scope-snapshot-02` **DOC**: offscreen/child-iframe/title/url·CSS selector 또는 ref 부분조회 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets.
+- `CL-ASIDE-scope-snapshot-02` **DOC**: offscreen/child-iframe/title/url·CSS selector 또는 ref 부분조회 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets.
 
-- `CL-ASIDE-scope-snapshot-03` **DOC**: 새 snapshot은 이전 모든 ref 무효화; tree 후 action마다 diff 인쇄 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets.
+- `CL-ASIDE-scope-snapshot-03` **DOC**: 새 snapshot은 이전 모든 ref 무효화; tree 후 action마다 diff 인쇄 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets.
 
 - `CL-ASIDE-scope-snapshot-04` **HISTORICAL**: 과거 audit에서 기본13175자/tail 미포함/생략표시, selector tail104자에서 발견 HISTORICAL. 근거 `A-HIST-SNAPSHOT` / docs/evidence/diagnostics-before-after.json#/aside/snapshot,/aside/scoped; scripts/compare-aside.mjs snapshot/scoped :: snapshot/scoped values. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. snapshot/scoped values.
 
@@ -98,7 +98,7 @@ await tab.screenshot({clip:{x:0,y:0,width:320,height:240}})
 await page.screenshot(); await annotatedScreenshot(page)
 ```
 
-- `CL-ASIDE-page-screenshot-01` **DOC**: raw screenshot 및 ref box 포함 annotatedScreenshot 사용은 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment visual verification / Reading Escalation step4.
+- `CL-ASIDE-page-screenshot-01` **DOC**: raw screenshot 및 ref box 포함 annotatedScreenshot 사용은 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment visual verification / Reading Escalation step4.
 
 - `CL-ASIDE-page-screenshot-02` **HISTORICAL**: 과거 clip320x240 CSS 요청이 PNG640x480이었음(HISTORICAL/DPR). 근거 `A-HIST-CLIP` / docs/evidence/diagnostics-before-after.json#/aside/cases[id=screenshot-clip]; scripts/compare-aside.mjs screenshot-clip; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: screenshot-clip result and DPR note. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. screenshot-clip result and DPR note.
 
@@ -308,13 +308,13 @@ await locator.evaluate(el => {const r=el.getBoundingClientRect();return {x:r.x,y
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-ASIDE-dom-frames-01` **DOC**: snapshot은 offscreen/child iframe을 포함한다고 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot offscreen/childiframe bullet.
+- `CL-ASIDE-dom-frames-01` **DOC**: snapshot은 offscreen/child iframe을 포함한다고 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot offscreen/childiframe bullet.
 
 - `CL-ASIDE-dom-frames-02` **HISTORICAL**: 과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL. 근거 `A-HIST-FRAME` / docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: scaled-frame name-change0 and absent server success. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. scaled-frame name-change0 and absent server success.
 
 - `CL-ASIDE-dom-frames-03` **HISTORICAL**: 과거 slot 이름 role 검색 오류 HISTORICAL. 근거 `A-HIST-SLOT` / docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot role error. 범위: 과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. slot role error.
 
-- `CL-ASIDE-dom-frames-04` **INFERENCE**: 조합 대응 판단: snapshot 관찰→frameLocator 또는 ref 대상→action→새 snapshot 사후판정 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-dom-frames-04` **INFERENCE**: 조합 대응 판단: snapshot 관찰→frameLocator 또는 ref 대상→action→새 snapshot 사후판정 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 

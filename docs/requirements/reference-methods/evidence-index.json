@@ -16,23 +16,25 @@
       "claim": "CLI main은 exec/repl 표면·프로필 선택·기본 운영을 안내한다.",
       "kind": "DOC",
       "sourceId": "A-DOC-MAIN",
-      "location": ".local/reference-loop-execution/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
+      "location": "evidence/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Browser usage / Persistence / Remote control",
       "id": "CL-ASIDE-guide-01",
       "provider": "aside",
       "owner": "guide",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control"
     },
     {
       "claim": "REPL 가이드는 환경·snapshot 옵션·download 사용법을 공개한다.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment / Snapshot / Downloads",
       "id": "CL-ASIDE-guide-02",
       "provider": "aside",
       "owner": "guide",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads"
     },
     {
       "kind": "DOC",
@@ -60,12 +62,13 @@
       "claim": "ES2023+·async/await·120초·const/let 지속·import/require 금지·명시 console 출력은 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment; persistent const/let; Always use console.log",
       "id": "CL-ASIDE-js-01",
       "provider": "aside",
       "owner": "js",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log"
     },
     {
       "kind": "DOC",
@@ -82,23 +85,25 @@
       "claim": "remote host별 profile 조회와 --profile 선택이 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-MAIN",
-      "location": ".local/reference-loop-execution/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
+      "location": "evidence/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Remote control: aside host profiles --host / --profile selection",
       "id": "CL-ASIDE-browser-list-01",
       "provider": "aside",
       "owner": "browser.list",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection"
     },
     {
       "claim": "조합 대응 판단: host/profile 목록 후 profile 선택",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-MAIN",
-      "location": ".local/reference-loop-execution/aside/current-main-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-main-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-browser-list-02",
       "provider": "aside",
       "owner": "browser.list",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-main-guide.txt :: underlying public/historical mechanism"
     },
     {
       "kind": "DOC",
@@ -115,12 +120,13 @@
       "claim": "attach 없이 브라우저 열린 탭 목록, targetId/active/title/url 예시는 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment listBrowserTabs / Open browser tabs list example",
       "id": "CL-ASIDE-browser-tabs-01",
       "provider": "aside",
       "owner": "browser.tabs",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example"
     },
     {
       "kind": "DOC",
@@ -148,12 +154,13 @@
       "claim": "openTab(url)는 새 탭을 열고 interactive까지 기다려 page/tabs를 갱신한다고 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment openTab: open, wait interactive, update page/tabs",
       "id": "CL-ASIDE-browser-open-01",
       "provider": "aside",
       "owner": "browser.open",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs"
     },
     {
       "kind": "DOC",
@@ -170,12 +177,13 @@
       "claim": "열린 targetId 탭을 attach하고 page로 설정하는 API는 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment attachBrowserTab / Open browser tabs",
       "id": "CL-ASIDE-browser-attach-01",
       "provider": "aside",
       "owner": "browser.attach",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs"
     },
     {
       "kind": "DOC",
@@ -214,23 +222,25 @@
       "claim": "반드시 closeTab(tab)을 쓰고 page.close()는 메모리누수 때문에 금지한다는 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
+      "location": "evidence/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
       "id": "CL-ASIDE-page-close-01",
       "provider": "aside",
       "owner": "page.close",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close"
     },
     {
       "claim": "조합 대응 판단: Page 메서드 대신 closeTab 전역",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-page-close-02",
       "provider": "aside",
       "owner": "page.close",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
     },
     {
       "kind": "DOC",
@@ -308,34 +318,37 @@
       "claim": "snapshot(page,{interactive?,showHidden?,ref?,selector?}) => Promise<{tree,diff}> 명시 서명 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot TypeScript function signature",
       "id": "CL-ASIDE-scope-snapshot-01",
       "provider": "aside",
       "owner": "scope.snapshot",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot TypeScript function signature"
     },
     {
       "claim": "offscreen/child-iframe/title/url·CSS selector 또는 ref 부분조회 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
       "id": "CL-ASIDE-scope-snapshot-02",
       "provider": "aside",
       "owner": "scope.snapshot",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets"
     },
     {
       "claim": "새 snapshot은 이전 모든 ref 무효화; tree 후 action마다 diff 인쇄 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
       "id": "CL-ASIDE-scope-snapshot-03",
       "provider": "aside",
       "owner": "scope.snapshot",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets"
     },
     {
       "claim": "과거 audit에서 기본13175자/tail 미포함/생략표시, selector tail104자에서 발견 HISTORICAL.",
@@ -381,12 +394,13 @@
       "claim": "raw screenshot 및 ref box 포함 annotatedScreenshot 사용은 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment visual verification / Reading Escalation step4",
       "id": "CL-ASIDE-page-screenshot-01",
       "provider": "aside",
       "owner": "page.screenshot",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4"
     },
     {
       "claim": "과거 clip320x240 CSS 요청이 PNG640x480이었음(HISTORICAL/DPR).",
@@ -469,23 +483,25 @@
       "claim": "virtual ref는 page.locator(ref)로 전달하며 DOM property/CSS와 혼합금지 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: ref IDs are virtual locators; page.locator(e31)",
       "id": "CL-ASIDE-scope-locator-01",
       "provider": "aside",
       "owner": "scope.locator",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)"
     },
     {
       "claim": "download button CSS locator 예시 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: page.locator(button.export).click example",
       "id": "CL-ASIDE-scope-locator-02",
       "provider": "aside",
       "owner": "scope.locator",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example"
     },
     {
       "kind": "DOC",
@@ -868,12 +884,13 @@
       "claim": "click이 interactivity/DOM stability를 기다리고 필요시 scroll한다는 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
+      "location": "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click interactivity/stability wait and needed scroll",
       "id": "CL-ASIDE-locator-click-01",
       "provider": "aside",
       "owner": "locator.click",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll"
     },
     {
       "claim": "과거 slot 이름 role 검색 오류 HISTORICAL.",
@@ -1168,12 +1185,13 @@
       "claim": "download waiter를 action 전에 등록하는 공개 예제 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: waitForEvent(download) before click example",
       "id": "CL-ASIDE-page-waitForEvent-01",
       "provider": "aside",
       "owner": "page.waitForEvent",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example"
     },
     {
       "kind": "DOC",
@@ -1256,45 +1274,49 @@
       "claim": "브라우저 download.path의 실제 완료파일은 현재 REPL 세션에서 읽기 가능 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: completed download.path readable in same REPL session",
       "id": "CL-ASIDE-download-save-01",
       "provider": "aside",
       "owner": "download.save",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session"
     },
     {
       "claim": "saveAs는 명시 artifact 복사가 필요할 때만; one-shot은 같은 command 내 검증 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
       "id": "CL-ASIDE-download-save-02",
       "provider": "aside",
       "owner": "download.save",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation"
     },
     {
       "claim": "POST/blob/redirect는 가능할 경우 브라우저 download handling; 안전한 직접 GET/HEAD fetch와 구분 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
       "id": "CL-ASIDE-download-save-03",
       "provider": "aside",
       "owner": "download.save",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed"
     },
     {
       "claim": "조합 대응 판단: Download.path + fs 검증 또는 saveAs 아티팩트 복사",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-download-save-04",
       "provider": "aside",
       "owner": "download.save",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
     },
     {
       "kind": "DOC",
@@ -1355,12 +1377,13 @@
       "claim": "정확 selector를 알 때 외에는 evaluate/content 피하라는 DOC에 메서드명 등장.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
+      "location": "evidence/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
       "id": "CL-ASIDE-scope-evaluate-01",
       "provider": "aside",
       "owner": "scope.evaluate",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known"
     },
     {
       "kind": "DOC",
@@ -1410,12 +1433,13 @@
       "claim": "자신에게 값을 돌려받으려면 항상 console.log 사용 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment: Always use console.log to return values",
       "id": "CL-ASIDE-console-log-01",
       "provider": "aside",
       "owner": "console.log",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment: Always use console.log to return values"
     },
     {
       "kind": "DOC",
@@ -1432,12 +1456,13 @@
       "claim": "display 전역 존재 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment available globals: fs,path,Buffer,sleep,display,pwd",
       "id": "CL-ASIDE-display-01",
       "provider": "aside",
       "owner": "display",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd"
     },
     {
       "kind": "DOC",
@@ -1454,12 +1479,13 @@
       "claim": "120초·ES2023+·const/let 지속·import/require 금지·명시console은 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment",
+      "location": "evidence/aside/current-repl-guide.txt :: Environment",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment",
       "id": "CL-ASIDE-runtime-01",
       "provider": "aside",
       "owner": "runtime",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment"
     },
     {
       "kind": "DOC",
@@ -1491,12 +1517,13 @@
       "claim": "snapshot은 offscreen/child iframe을 포함한다고 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot offscreen/childiframe bullet",
       "id": "CL-ASIDE-dom-frames-01",
       "provider": "aside",
       "owner": "dom-frames",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet"
     },
     {
       "claim": "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL.",
@@ -1524,12 +1551,13 @@
       "claim": "조합 대응 판단: snapshot 관찰→frameLocator 또는 ref 대상→action→새 snapshot 사후판정",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-dom-frames-04",
       "provider": "aside",
       "owner": "dom-frames",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
     },
     {
       "kind": "DOC",
@@ -1563,12 +1591,13 @@
       "claim": "새 snapshot은 모든 이전 ref 무효화 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
+      "location": "evidence/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot ref invalidation bullet",
       "id": "CL-ASIDE-selection-01",
       "provider": "aside",
       "owner": "selection",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet"
     },
     {
       "claim": "과거 regex role count1 HISTORICAL.",
@@ -1607,12 +1636,13 @@
       "claim": "조합 대응 판단: 최신 snapshot virtual ref→locator→관찰/조작; 우리 stable ref는 별도 정책",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-selection-05",
       "provider": "aside",
       "owner": "selection",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
     },
     {
       "kind": "DOC",
@@ -1645,23 +1675,25 @@
       "claim": "click interactivity/DOM stability/필요시scroll·fresh snapshot 사후확인 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
+      "location": "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
       "id": "CL-ASIDE-input-01",
       "provider": "aside",
       "owner": "input",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state"
     },
     {
       "claim": "조합 대응 판단: 관찰→입력→새 snapshot·실제 업무상태; API 반환을 업무성공으로 일반화 금지",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-input-02",
       "provider": "aside",
       "owner": "input",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
     },
     {
       "kind": "DOC",
@@ -1689,23 +1721,25 @@
       "claim": "download waiter 사전등록→click→path→fs.stat/같은세션 bytes 검증 DOC.",
       "kind": "DOC",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
+      "location": "evidence/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
       "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads browser event example and same-session path verification",
       "id": "CL-ASIDE-files-events-01",
       "provider": "aside",
       "owner": "files-events",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification"
     },
     {
       "claim": "조합 대응 판단: 브라우저 다운로드 vs 검증된 안전 direct GET/HEAD fetch를 구분",
       "kind": "INFERENCE",
       "sourceId": "A-DOC-REPL",
-      "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+      "location": "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism",
       "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음.",
       "id": "CL-ASIDE-files-events-02",
       "provider": "aside",
       "owner": "files-events",
-      "sourceFile": "evidence/aside/sources.md"
+      "sourceFile": "evidence/aside/sources.md",
+      "originalLocation": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
     },
     {
       "id": "CL-CODEX-current-dialog-01",
@@ -1729,9 +1763,9 @@
         "INFERENCE"
       ],
       "locations": [
-        ".local/reference-loop-execution/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
-        ".local/reference-loop-execution/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
-        ".local/reference-loop-execution/aside/current-main-guide.txt :: underlying public/historical mechanism"
+        "evidence/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
+        "evidence/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
+        "evidence/aside/current-main-guide.txt :: underlying public/historical mechanism"
       ],
       "scope": "개별claim의정확절/관측범위만"
     },
@@ -1744,32 +1778,32 @@
         "INFERENCE"
       ],
       "locations": [
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
-        ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism"
+        "evidence/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
+        "evidence/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
+        "evidence/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
+        "evidence/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
+        "evidence/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
+        "evidence/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
+        "evidence/aside/current-repl-guide.txt :: Environment",
+        "evidence/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
+        "evidence/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
+        "evidence/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
+        "evidence/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
+        "evidence/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
+        "evidence/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
+        "evidence/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
+        "evidence/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
+        "evidence/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
+        "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
+        "evidence/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
+        "evidence/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
+        "evidence/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
+        "evidence/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
+        "evidence/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
+        "evidence/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
+        "evidence/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
+        "evidence/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
+        "evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism"
       ],
       "scope": "개별claim의정확절/관측범위만"
     },

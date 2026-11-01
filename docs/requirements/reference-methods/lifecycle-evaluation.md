@@ -36,9 +36,9 @@ await cua.listBrowsers({emit:false})
 aside host list; aside host profiles --host <id-or-name>
 ```
 
-- `CL-ASIDE-browser-list-01` **DOC**: remote host별 profile 조회와 --profile 선택이 DOC. 근거 `A-DOC-MAIN` / .local/reference-loop-execution/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Remote control: aside host profiles --host / --profile selection.
+- `CL-ASIDE-browser-list-01` **DOC**: remote host별 profile 조회와 --profile 선택이 DOC. 근거 `A-DOC-MAIN` / evidence/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Remote control: aside host profiles --host / --profile selection.
 
-- `CL-ASIDE-browser-list-02` **INFERENCE**: 조합 대응 판단: host/profile 목록 후 profile 선택 근거 `A-DOC-MAIN` / .local/reference-loop-execution/aside/current-main-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-browser-list-02` **INFERENCE**: 조합 대응 판단: host/profile 목록 후 profile 선택 근거 `A-DOC-MAIN` / evidence/aside/current-main-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 
@@ -90,7 +90,7 @@ await cua.listTabs({browser:"iab",emit:false})
 console.log(await listBrowserTabs())
 ```
 
-- `CL-ASIDE-browser-tabs-01` **DOC**: attach 없이 브라우저 열린 탭 목록, targetId/active/title/url 예시는 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment listBrowserTabs / Open browser tabs list example.
+- `CL-ASIDE-browser-tabs-01` **DOC**: attach 없이 브라우저 열린 탭 목록, targetId/active/title/url 예시는 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment listBrowserTabs / Open browser tabs list example.
 
 추가 확인할 조건:
 
@@ -144,7 +144,7 @@ await cua.createBrowserTab("iab","about:blank",{visible:false})
 const t1 = await openTab("http://127.0.0.1:8794/audit")
 ```
 
-- `CL-ASIDE-browser-open-01` **DOC**: openTab(url)는 새 탭을 열고 interactive까지 기다려 page/tabs를 갱신한다고 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment openTab: open, wait interactive, update page/tabs.
+- `CL-ASIDE-browser-open-01` **DOC**: openTab(url)는 새 탭을 열고 interactive까지 기다려 page/tabs를 갱신한다고 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment openTab: open, wait interactive, update page/tabs.
 
 추가 확인할 조건:
 
@@ -196,7 +196,7 @@ await cua.getTab(knownTabId,{browser:"iab"})
 await attachBrowserTab(targetId)
 ```
 
-- `CL-ASIDE-browser-attach-01` **DOC**: 열린 targetId 탭을 attach하고 page로 설정하는 API는 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment attachBrowserTab / Open browser tabs.
+- `CL-ASIDE-browser-attach-01` **DOC**: 열린 targetId 탭을 attach하고 page로 설정하는 API는 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment attachBrowserTab / Open browser tabs.
 
 추가 확인할 조건:
 
@@ -298,9 +298,9 @@ await tab.close()
 await closeTab(t1)
 ```
 
-- `CL-ASIDE-page-close-01` **DOC**: 반드시 closeTab(tab)을 쓰고 page.close()는 메모리누수 때문에 금지한다는 DOC. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close.
+- `CL-ASIDE-page-close-01` **DOC**: 반드시 closeTab(tab)을 쓰고 page.close()는 메모리누수 때문에 금지한다는 DOC. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close.
 
-- `CL-ASIDE-page-close-02` **INFERENCE**: 조합 대응 판단: Page 메서드 대신 closeTab 전역 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
+- `CL-ASIDE-page-close-02` **INFERENCE**: 조합 대응 판단: Page 메서드 대신 closeTab 전역 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: underlying public/historical mechanism. 범위: 조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음..
 
 추가 확인할 조건:
 
@@ -758,7 +758,7 @@ await tab.playwright.evaluate(() => ({title:document.title}))
 page.evaluate(fn) // signature incomplete: only method name documented
 ```
 
-- `CL-ASIDE-scope-evaluate-01` **DOC**: 정확 selector를 알 때 외에는 evaluate/content 피하라는 DOC에 메서드명 등장. 근거 `A-DOC-REPL` / .local/reference-loop-execution/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Reading Escalation: avoid page.evaluate/page.content unless exact selector known.
+- `CL-ASIDE-scope-evaluate-01` **DOC**: 정확 selector를 알 때 외에는 evaluate/content 피하라는 DOC에 메서드명 등장. 근거 `A-DOC-REPL` / evidence/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known. 범위: 현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Reading Escalation: avoid page.evaluate/page.content unless exact selector known.
 
 추가 확인할 조건:
 

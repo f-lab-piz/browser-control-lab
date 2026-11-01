@@ -98,7 +98,7 @@
 
 ### REQ-PAGE-WAITFOREVENT-004
 
-- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-page-waitforevent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-current-dialog-recovery). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
 - 규범: 기록된 현재dialog는 includeCurrent:true로 자동응답없이 조회할 수 있어야 한다. reset후새세대핸들로재획득하고없음/중복claim/닫힌event를구분한다. 다른event의includeCurrent는명시미지원이다.
 - 근거: DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
@@ -119,7 +119,7 @@
 #### REQ-PAGE-WAITFOREVENT-004-C02
 
 - 조건: 없음/이미claim/다른event current-query는즉시오류다.
-- 준비: dialog없음·동일세대이미발급핸들·download종류를준비한다.
-- 실행: includeCurrent:true를각호출한다.
-- 판정: CURRENT_EVENT_NOT_FOUND/EVENT_ALREADY_CLAIMED/UNSUPPORTED_EVENT_OPTION이며기존dialog/미래waiter상태는변하지않는다.
+- 준비: (a)D0기록→미래W ready→query D0,(b)W ready→D1기록/claim예약→응답gate→query D1,(c)없음/이미claim/다른event와reset/close를준비한다.
+- 실행: 제어된adapter기록순서로query와handle처리를호출한다.
+- 판정: (a)query는D0처리1회·W는D1만,(b)query는EVENT_ALREADY_CLAIMED·W예약/deadline유지·W만D1획득. 없음/타event는즉시오류·reset/close종결1회·새dialog잘못된입력0이다.
 - 근거/상태: DESIGN · 수용 목표 · 제품 미검증.
