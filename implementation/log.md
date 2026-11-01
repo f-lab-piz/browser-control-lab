@@ -171,3 +171,10 @@ guest 예외 이름과 메시지는 원인 증명이 아니므로 자동 VM 재�
 정확64f2de4의 세 번째 독립 리뷰는 stored DEFLATE LEN/NLEN 불일치73bytes PNG를 실제 이미지로 수용하는 P2 한 건으로 CHANGES_REQUESTED였다. Node zlib·Chromium은 거절하지만 기존 fflate 스트림이 허용했다. 범용 pako3.0.3(MIT AND Zlib)의 zlib-only Inflate로 교체하고 고정64KiB 출력 조각/256bytes 입력·예산 callback·종결/입력 전체 소비 검사를 적용했다. 자체 행 검사·원본 bytes·64MiB 한도는 유지한다.
 
 추가8개 압축 사례 중 정상 stored/fixed/dynamic과 손상 LEN/NLEN·truncated/header/Adler/metadata를 실제 확장에서 구분했다. 동일 최종9개 테스트 base1/9→9/9, 직전64 output만 복원8/9→9/9다. 정상 native 지원과 일부 손상 checksum/ancillary 관대함을 분리하고 첫 native 기대값 오류를 성공으로 숨기지 않는다. 최종 전체/창 모드 검증과 새 head 독립 리뷰 결과는 round4 manifest를 따른다. B01C 이후 단계의 완료를 선언하지 않는다.
+
+
+## 2026-11-02 · PR14 독립 PASS·머지와 B01D 착수
+
+정확41ff8e3의 Sol6.1 high 독립 4차 리뷰가 PASS였다. 전체85 PASS/외부1 SKIP·headed18 PASS·문서/계획 및 검사기6개 회귀, 별도 실제 PNG11개/console1개와 증거 hash/Before 차이를 독립 확인했다. P0~P3 없음·정확 원격base/head·CLEAN/MERGEABLE 확인 후 PR14를05b0e6a로 squash merge하고 이슈13을 닫았다. 보고서·독립 probe를 보존한다. B01C6부모/7조건만 완료다.
+
+B01D 이슈15·feat/15-reset-lifecycle에서4부모/6조건을 시작한다. 기존 session.reset은 내부 keys/buttons만 지우며 실제 release하지 않고, worker 종료 뒤 background hostcall continuation도 남는다. 먼저 페이지/input event 추적·늦은 대상 fixture와 최종 동일 Before를 준비한다. 실제 해제 실패 경고와 이미 전송된 효과의 불확실성을 숨기지 않고 탭/페이지/asset/완료 파일은 유지한다. 다중 사용자 계정 서비스는 범위 밖이다. B01D 조건은 아직 미검증이다.

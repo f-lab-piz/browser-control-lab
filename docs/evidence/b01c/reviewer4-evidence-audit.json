@@ -1,0 +1,384 @@
+{
+  "artifactCount": 51,
+  "deliveredErrors": [],
+  "raw": [
+    {
+      "source": "output/goal-b01c/final/before-current/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/before-current.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/before-current-transport.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/current/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/current.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/all-serial.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/headed/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/headed.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/after/transport.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/native-png.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/all.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/compare-before/b01c-output-comparison/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/final/compare-after/b01c-output-comparison/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/codex-live.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/aside-live.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/before-base/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/before-base/product.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/before-review/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/before-review/product.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/full/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/all.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/headed/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round2/headed.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": ".local/goal-development/b01c-review/probe-png.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": ".local/goal-development/b01c-review/probe-product.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final3-before-base/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final3-before-base.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final/before-review/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final/before-review/product.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final4/product/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final4-all.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final4/headed/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final4-headed.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round3/final2-all.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/runtime-e2e/results.json",
+      "exists": true,
+      "hashMatches": false
+    },
+    {
+      "source": ".local/goal-development/b01c-rereview/probe-structure.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": ".local/goal-development/b01c-rereview/probe-palette.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": ".local/goal-development/b01c-rereview/probe-palette-product.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/before-base/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/before-base.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/before-review/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/before-review.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/all/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/all.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/headed/b01c/results.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/headed.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/all-runtime-regression.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4/commands.json",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4-buffer-fixture.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": "output/goal-b01c/round4-buffer-fixture2.log",
+      "exists": true,
+      "hashMatches": true
+    },
+    {
+      "source": ".local/goal-development/b01c-round3-review/probes.json",
+      "exists": true,
+      "hashMatches": true
+    }
+  ],
+  "sourceChecks": {
+    "round4-before-base.json": {
+      "head": "64f2de4e7bf62413ed93a0382c6c565798430dcf",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 2,
+      "diffFromCurrent": [
+        "bridge/server.mjs",
+        "extension/runtime-worker.mjs"
+      ]
+    },
+    "round4-before-review.json": {
+      "head": "64f2de4e7bf62413ed93a0382c6c565798430dcf",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 9,
+      "diffFromCurrent": [
+        "extension/output.mjs"
+      ]
+    },
+    "round4-after-product.json": {
+      "head": "64f2de4e7bf62413ed93a0382c6c565798430dcf",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 9,
+      "diffFromCurrent": []
+    },
+    "round4-after-headed.json": {
+      "head": "64f2de4e7bf62413ed93a0382c6c565798430dcf",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": true,
+      "evidenceCount": 9,
+      "diffFromCurrent": []
+    },
+    "round3-after-product.json": {
+      "head": "5747487ac72c613e650fc1977b28159b48ec7824",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 8,
+      "diffFromCurrent": [
+        "extension/output.mjs",
+        "docs/runtime-usage.md",
+        "package.json",
+        "package-lock.json",
+        "tests/output-runtime.test.mjs",
+        "test-site/output-png.mjs",
+        "tests/output-fixture.test.mjs"
+      ]
+    },
+    "round2-after-product.json": {
+      "head": "99aa57470c16e646d658180e2eca0f022381f1e4",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 7,
+      "diffFromCurrent": [
+        "extension/output.mjs",
+        "test-site/server.mjs",
+        "docs/runtime-usage.md",
+        "package.json",
+        "package-lock.json",
+        "tests/output-runtime.test.mjs",
+        "test-site/output-png.mjs",
+        "tests/output-fixture.test.mjs"
+      ]
+    },
+    "after-product.json": {
+      "head": "0446e5b3ae683bb7801184648078f99de96ea55d",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 6,
+      "diffFromCurrent": [
+        "extension/runtime-worker.mjs",
+        "extension/output.mjs",
+        "tests/helpers/product-runtime.mjs",
+        "test-site/server.mjs",
+        "docs/runtime-usage.md",
+        "package.json",
+        "package-lock.json",
+        "tests/output-runtime.test.mjs",
+        "test-site/output-png.mjs"
+      ]
+    },
+    "compare-before.json": {
+      "head": "0446e5b3ae683bb7801184648078f99de96ea55d",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 1,
+      "diffFromCurrent": [
+        "bridge/server.mjs",
+        "extension/runtime-worker.mjs",
+        "extension/output.mjs",
+        "tests/helpers/product-runtime.mjs",
+        "test-site/server.mjs",
+        "docs/runtime-usage.md",
+        "package.json",
+        "package-lock.json"
+      ]
+    },
+    "compare-after.json": {
+      "head": "0446e5b3ae683bb7801184648078f99de96ea55d",
+      "dirty": true,
+      "grade": "HTTP-extension-QuickJS-product",
+      "headed": false,
+      "evidenceCount": 1,
+      "diffFromCurrent": [
+        "extension/runtime-worker.mjs",
+        "extension/output.mjs",
+        "tests/helpers/product-runtime.mjs",
+        "test-site/server.mjs",
+        "docs/runtime-usage.md",
+        "package.json",
+        "package-lock.json"
+      ]
+    }
+  }
+}

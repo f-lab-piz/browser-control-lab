@@ -55,7 +55,7 @@
         "B01B"
       ],
       "goal": "UTF-8·이미지 bytes·블록·전체 JSON 한도와 명시 생략",
-      "status": "in-progress",
+      "status": "pass",
       "requirements": [
         "REQ-C-RUNTIME-004",
         "REQ-CONSOLE-LOG-001",
@@ -68,7 +68,8 @@
         "docs/implementation/b01c.md",
         "docs/reviews/pr14-b01c.md",
         "docs/reviews/pr14-b01c-round2.md",
-        "docs/reviews/pr14-b01c-round3.md"
+        "docs/reviews/pr14-b01c-round3.md",
+        "docs/reviews/pr14-b01c-round4.md"
       ],
       "knownSubcases": [
         {
@@ -83,8 +84,9 @@
         }
       ],
       "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/13",
-      "review": "docs/reviews/pr14-b01c-round3.md",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/14"
+      "review": "docs/reviews/pr14-b01c-round4.md",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/14",
+      "mergeCommit": "05b0e6a71e2b112b5dbb75e1b0ac3c951887fbd2"
     },
     {
       "id": "B01D",
@@ -93,14 +95,15 @@
         "B01B"
       ],
       "goal": "late hostcall 차단·실제 key/button release·탭/asset 보존",
-      "status": "not-started",
+      "status": "in-progress",
       "requirements": [
         "REQ-C-RUNTIME-003",
         "REQ-RESET-001",
         "REQ-RESET-002",
         "REQ-RESET-003"
       ],
-      "evidence": []
+      "evidence": [],
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/15"
     },
     {
       "id": "B01E",
