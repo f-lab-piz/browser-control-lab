@@ -1,0 +1,44 @@
+✖ B02A explicit label provenance excludes unlabelled controls even for empty-matching regexes (1945.906125ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2450.356875
+
+✖ failing tests:
+
+test at tests/selection-runtime.test.mjs:85:1
+✖ B02A explicit label provenance excludes unlabelled controls even for empty-matching regexes (1945.906125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   [
+  +     'unlabelled'
+  +   ],
+  +   [
+  +     'unlabelled'
+  +   ],
+  +   [
+  +     'unlabelled'
+  +   ]
+  -   [],
+  -   [],
+  -   []
+    ]
+
+      at file://<repository>/tests/selection-runtime.test.mjs:94:131
+      at record (file://<repository>/tests/selection-runtime.test.mjs:9:47)
+      at TestContext.<anonymous> (file://<repository>/tests/selection-runtime.test.mjs:94:2)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ [ 'unlabelled' ], [ 'unlabelled' ], [ 'unlabelled' ] ],
+    expected: [ [], [], [] ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

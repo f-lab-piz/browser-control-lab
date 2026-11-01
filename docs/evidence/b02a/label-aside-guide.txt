@@ -1,0 +1,88 @@
+Aside CLI 1.26.1028.2335 · Skill version 3
+
+# Aside
+
+Aside is an AI browser. Inside Aside, there is an intelligent agent designed to handle complex tasks across user's credentials, cookies, browsing history, and various websites the user uses.
+
+There are two ways of controlling Aside browser:
+- `aside exec` delegates the task to Aside agent. Recommended for most tasks- think of it like spawning subagent.
+- `aside repl` starts JS REPL session that provides Playwright-compatible. ONLY USE IT when you need to inspect screenshot and DOM directly.
+
+`aside --help` and `aside <command> --help` print current flags and examples.
+
+## Browser usage
+
+### A. Using `aside exec` (Recommended)
+
+It starts a task in a separate session by Aside agent. Use this for most tasks- it's more context efficient and has a lot of skills and memories about user's context.
+After spawning the task, watch the run and give the user a status update around every 60 seconds.
+
+```bash
+aside "Send reply to Jack in Slack #develop channel: <text>"
+aside -m openai/gpt-5.6-sol -s fast --effort high "Create a project in Vercel and return the project URL"
+aside --account u1 "Check unread Slack notifications"
+aside --permission full-access "Install the CLI from the project README"
+aside "https://example.com" # a link starts with http(s) opens website in user's browser screen
+```
+
+#### Resuming the task
+
+When you ask follow-up requests or steer / stop the task during the run, use the following commands:
+
+```bash
+aside session resume <id>
+aside session resume <id> "Continue the search"
+aside session steer <id> "Switch to Google Flights"
+aside session queue <id> "Export the final list to CSV"
+aside session stop <id>
+aside session archive <id>
+aside session delete <id>
+```
+
+`steer` redirects a running turn. `queue` schedules instructions after the current step. Both commands print `ok` and exit.
+`aside session list` includes sessions that were not saved to the chat list.
+
+#### Persistence
+
+Sessions stay off the chat list by default. `aside settings save-sessions true` keeps them there.
+`aside settings set-default-profile u1` uses that account's first browser profile. Use `u1:<profile-id>` to save a specific local profile, or `default` to follow the current account. One-shot override: `--account u1:<profile-id>` or `--profile <profile-id>`.
+
+### B. Use `aside repl`
+
+Use this when you need to directly control tabs, inspect screenshot and DOM, and run JavaScript code on the browser.
+
+**Before using `aside repl`, run `aside guide repl` and read its output.**
+
+## Memory
+
+Aside has an accurate memory system for user, which distills user's context into plain-Markdown files who they are, people, projects, sites, preferences).
+When you need a user's personal context, always query it before asking the user about prior context, with `aside memory` command:
+
+```bash
+aside memory search "<query>" --json
+aside memory list --json
+aside memory show MEMORY.md
+aside memory path
+```
+
+Never edit memory files yourself. If the user wants Aside to remember something, run it through `aside exec`.
+On `aside mcp`, prefer the `memory_search` tool instead of CLI command.
+
+## Remote control
+
+If user's Aside runs on a remote machine (e.g., this host is Linux but user runs Aside on their macOS laptop), you can control it with following commands:
+
+```bash
+aside host list
+aside host profiles --host <id-or-name>
+aside exec --host <id-or-name> "..."
+aside repl --host <id-or-name>
+aside host use <host>
+```
+
+You need to run `aside login` on the current host if Aside is not running locally.
+On the remote host, remote control needs to be enabled on Settings > Developers and device needs to be online to show up in the list.
+With multiple browser profiles, the account's first profile (by profile index, then ID) is used by default. To select another, choose an ID from `aside host profiles` and pass `--profile <id>` to `exec`, `repl`, or `mcp`. `--account u1:<profile-id>` combines account and explicit profile selection; saved local profile IDs do not apply to remote hosts. Existing sessions keep their original profile.
+In MCP, call `browser_profiles`, then pass its `profileId` as `profile_id` to `repl` or a new `exec` session. REPL remembers the selected profile; changing it resets variables and attached tabs. Omit `profile_id` when continuing an `exec` session with `session_id`.
+> Use `aside host use` to remember the host as the default for future commands.
+

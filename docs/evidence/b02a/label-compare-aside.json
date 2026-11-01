@@ -1,0 +1,19 @@
+{
+  "grade": "Aside-CLI-LIVE-raw-output-summary",
+  "version": "CLI1.26.1028.2335 Skill3",
+  "fixture": "test-site/selection-labels.html",
+  "fixtureSha256": "bd5284dddbe5fab14a8259466f1d59964ede1db384eea49d2a4ab1c7af057f03",
+  "raw": "aside-label-live.txt",
+  "observations": {
+    "absentEmpty": 0,
+    "absentAny": 0,
+    "connectedEmpty": [
+      "native-empty"
+    ],
+    "connectedAny": [
+      "native-empty"
+    ],
+    "named": []
+  },
+  "limits": "Exact public getByLabel/evaluateAll results on owned root tab; do not infer other methods unsupported or entire product ranking. Snapshot displays Named; locator results differ. Tab closed."
+}

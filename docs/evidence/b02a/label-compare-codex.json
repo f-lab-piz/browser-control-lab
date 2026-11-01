@@ -1,0 +1,23 @@
+{
+  "grade": "Codex-CUA-IAB-LIVE-received-output-transcription",
+  "fixture": "test-site/selection-labels.html",
+  "fixtureSha256": "bd5284dddbe5fab14a8259466f1d59964ede1db384eea49d2a4ab1c7af057f03",
+  "url": "http://127.0.0.1:53180/selection-labels.html",
+  "observations": {
+    "absentEmpty": 0,
+    "absentAny": 0,
+    "connectedEmpty": [
+      "native-empty",
+      "reference-empty"
+    ],
+    "connectedAny": [
+      "native-empty",
+      "reference-empty",
+      "named"
+    ],
+    "named": [
+      "named"
+    ]
+  },
+  "limits": "Pure public locator reads on owned root tab13. Received tool output transcribed, not raw exported payload. No mutation or child-frame claim. Tab closed."
+}

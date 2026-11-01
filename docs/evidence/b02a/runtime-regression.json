@@ -13,17 +13,17 @@
       "case": "wasm-execution",
       "passed": true,
       "result": {
-        "requestId": "a321338f-80f5-4cf4-a5f1-be6babf23468",
+        "requestId": "8738593c-e447-4e6f-b9ca-9ab7d360ca3c",
         "operation": "js",
-        "sessionId": "3b6d50af-cb90-4cf3-bf85-9ded6fddcea5",
+        "sessionId": "eac1a404-d991-40b2-9e23-ff5b53f05cf0",
         "generation": 1,
         "status": "completed",
-        "createdAt": 1793567058414,
-        "startedAt": 1793567058414,
+        "createdAt": 1793567996251,
+        "startedAt": 1793567996251,
         "result": {
           "execution": "extension-worker/QuickJS-WASM",
           "metrics": {
-            "durationMs": 11.59999942779541,
+            "durationMs": 11.300000190734863,
             "outputChars": 2,
             "outputBytes": 2,
             "imageBytes": 0,
@@ -38,7 +38,7 @@
           "truncated": false,
           "truncationReasons": []
         },
-        "finishedAt": 1793567058463
+        "finishedAt": 1793567996303
       }
     },
     {
@@ -69,7 +69,7 @@
     {
       "case": "product-basic-form",
       "passed": true,
-      "tabId": 1251859205
+      "tabId": 675241550
     },
     {
       "case": "product-offscreen-snapshot",

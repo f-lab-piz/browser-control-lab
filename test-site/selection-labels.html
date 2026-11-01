@@ -1,0 +1,7 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Explicit label provenance</title></head><body>
+<h1>Explicit label provenance</h1><input id="unlabelled" placeholder="Only Hint" value="initial">
+<div id="connected"></div><output id="events">[]</output><output id="verdict">준비</output>
+<script>
+if(new URLSearchParams(location.search).has('connected'))document.querySelector('#connected').innerHTML='<label for="native-empty"></label><input id="native-empty" value="initial"><span id="empty-ref"></span><input id="reference-empty" aria-labelledby="empty-ref" value="initial"><input id="named" aria-label="Named" value="initial"><input id="aria-empty" aria-label="" placeholder="ARIA Hint" value="initial"><input id="broken-reference" aria-labelledby="missing" placeholder="Broken Hint" value="initial">';
+const events=[];document.addEventListener('input',event=>{events.push({id:event.target.id,value:event.target.value,trusted:event.isTrusted});document.querySelector('#events').textContent=JSON.stringify(events);document.querySelector('#verdict').textContent=events.length===1&&event.target.id==='native-empty'&&event.target.value==='empty-label-proof'&&event.isTrusted?'PASS: explicit empty label filled':'FAIL: unexpected input'});
+</script></body></html>

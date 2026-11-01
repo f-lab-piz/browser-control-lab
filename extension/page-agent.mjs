@@ -35,7 +35,9 @@ export function installPageAgent(){
   const labelled=normalize(references.map(node=>name(node,{fromReference:true,seen})).join(' '));if(labelled)return labelled;
   const aria=normalize(el.getAttribute('aria-label'));if(aria)return aria;
   const label=normalize([...(el.labels||[])].map(node=>readableText(node,Infinity,false,true)).join(' '));if(label)return label;
-  if(explicitOnly)return '';
+  // A missing label is not an empty connected label. Regexes may match the
+  // latter, but must never manufacture a connection for an unlabelled control.
+  if(explicitOnly)return references.length||(el.labels||[]).length?'':null;
   if(el.tagName==='IMG'||el.tagName==='INPUT'&&el.type==='image'){const alt=normalize(el.getAttribute('alt'));if(alt)return alt}
   const title=normalize(el.getAttribute('title'));if(title)return title;
   if(['INPUT','TEXTAREA'].includes(el.tagName)){const placeholder=normalize(el.getAttribute('placeholder'));if(placeholder)return placeholder}
@@ -56,7 +58,7 @@ export function installPageAgent(){
     elements=elements.filter(el=>matched.has(el));
    }
    else if(query.kind==='role')elements=elements.filter(el=>role(el)===query.value&&(query.options?.name===undefined||matches(name(el),query.options.name,query.options.exact))&&(query.options?.includeHidden||visible(el)&&!ariaHidden(el)));
-   else if(query.kind==='label')elements=elements.filter(el=>el.matches('input,textarea,select,button')&&matches(name(el,{explicitOnly:true}),query.value,query.options?.exact));
+   else if(query.kind==='label')elements=elements.filter(el=>{if(!el.matches('input,textarea,select,button'))return false;const label=name(el,{explicitOnly:true});return label!==null&&matches(label,query.value,query.options?.exact)});
    else if(query.kind==='text'){elements=elements.filter(el=>el.tagName!=='SLOT'&&projected(el)&&!ariaHidden(el)&&matches(readableText(el),query.value,query.options?.exact));const matched=new Set(elements),ancestors=new Set();for(const el of elements)for(let node=parentOf(el);node;node=parentOf(node))if(matched.has(node))ancestors.add(node);elements=elements.filter(el=>!ancestors.has(el))}
    else throw Error('Unknown selector type');
   }

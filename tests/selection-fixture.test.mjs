@@ -35,3 +35,14 @@ test('selection boundary fixture distinguishes projected text from hidden physic
   assert.deepEqual(JSON.parse(await page.locator('#events').textContent()),[{id:'pruning',trusted:true},{id:'raw-slot',trusted:true},{id:'active-fallback',trusted:true}]);
  }finally{await browser?.close();await fixture.close()}
 });
+
+
+test('explicit label fixture distinguishes absent sources from connected empty names and judges trusted input',async()=>{
+ const fixture=await startFixture();let browser;
+ try{
+  const executablePath=path.join(os.homedir(),'Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing');
+  browser=await chromium.launch({executablePath:process.env.TEST_CHROME||(existsSync(executablePath)?executablePath:undefined)});
+  const page=await browser.newPage();await page.goto(fixture.url+'/selection-labels.html');assert.equal(await page.getByLabel(/^$/).count(),0);assert.equal(await page.locator('#unlabelled').inputValue(),'initial');assert.equal(await page.locator('#events').textContent(),'[]');
+  await page.goto(fixture.url+'/selection-labels.html?connected=1');assert.deepEqual(await page.getByLabel(/^$/).evaluateAll(els=>els.map(el=>el.id)),['native-empty','reference-empty']);assert.deepEqual(await page.getByLabel(/.*/).evaluateAll(els=>els.map(el=>el.id)),['native-empty','reference-empty','named']);await page.getByLabel(/^$/).nth(0).fill('empty-label-proof');assert.equal(await page.locator('#verdict').textContent(),'PASS: explicit empty label filled');assert.deepEqual(JSON.parse(await page.locator('#events').textContent()),[{id:'native-empty',value:'empty-label-proof',trusted:true}]);assert.equal(await page.locator('#unlabelled').inputValue(),'initial');
+ }finally{await browser?.close();await fixture.close()}
+});

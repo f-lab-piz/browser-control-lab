@@ -1,0 +1,21 @@
+✔︎ Opened a new tab and set it active: tabs[0], page → Explicit label provenance (http://127.0.0.1:53180/selection-labels.html)
+# note: interactive (clickable / focusable) elements only.
+- title: "Explicit label provenance" [url=http://127.0.0.1:53180/selection-labels.html]
+- heading "Explicit label provenance" [level=1]
+- textbox "Only Hint" [ref=e1] [placeholder="Only Hint"]: "initial"
+- text: "[]준비"
+{"absentEmpty":{"value":0},"absentAny":{"value":0}}
+# note: interactive (clickable / focusable) elements only.
+- title: "Explicit label provenance" [url=http://127.0.0.1:53180/selection-labels.html?connected=1]
+- heading "Explicit label provenance" [level=1]
+- textbox "Only Hint" [ref=e1] [placeholder="Only Hint"]: "initial"
+- textbox "initial" [ref=e2]
+- textbox "initial" [ref=e3]
+- textbox "Named" [ref=e4]: "initial"
+- textbox "ARIA Hint" [ref=e5] [placeholder="ARIA Hint"]: "initial"
+- textbox "Broken Hint" [ref=e6] [placeholder="Broken Hint"]: "initial"
+- text: "[]준비"
+{"empty":{"value":["native-empty"]},"all":{"value":["native-empty"]},"named":{"value":[]}}
+[system] last tab closed. `page` is now null. call openTab(url) to open a new one.
+[system] no current open tabs in this session.
+[ok | 903ms]

@@ -1,0 +1,61 @@
+# PR20 B02A independent final review
+
+## Findings
+
+### [P2] Reject absent explicit labels before matching empty-capable regular expressions
+
+- Location: `extension/page-agent.mjs:59` (with `name(...,{explicitOnly:true})` returning `''` at line38).
+- Requirement: `docs/requirements/common/selection.md:153` limits getByLabel to controls connected to an explicit ARIA/native label source; `REQ-SCOPE-GETBYLABEL-002-C02` requires an absent label to produce zero matches and reject mutation.
+- Reproduction: serve `label-fixture.html`, which contains one `<input id="unlabelled" placeholder="Only Hint" value="initial">` and no label/ARIA naming source. Through HTTP → extension → QuickJS, call `p.getByLabel(/^$/).evaluateAll(els=>els.map(el=>el.id))`, then `p.getByLabel(/^$/).fill('changed-without-label')`.
+- Expected: no identity, count0, rejected fill, value `initial`, zero input events.
+- Actual at reviewed head: identity `["unlabelled"]`, count1, accepted fill, value `changed-without-label`, one independently observed trusted input event. The ordinary literal placeholder query returns0, so existing string-only negative coverage misses this boundary.
+- Cause: the absence of an explicit label is encoded as an empty string and tested as though it were an actual label. A RegExp matching the empty string therefore creates a label connection that does not exist. Strict selection does not protect the single-candidate case.
+- Impact: an absent label can resolve to an unrelated editable control and cause real input instead of the required safe failure.
+- Introduced/worsened in this PR: the same fixture/probe/harness/dependencies with only api-source/page-agent restored to exact base selects no control for `/^$/`, rejects fill (`ELEMENT_NOT_FOUND_TIMEOUT`), and preserves `initial` with zero events. Both restored owner-file hashes match `git show 0452cbe...`. This is a controlled two-file comparison, not a full historical environment replay. The enclosing Git metadata in the baseline JSON still says current HEAD; source hashes, baseline cwd and `label-baseline-audit.json` establish provenance.
+- Evidence: `label-probe.json`, `label-base.json`, `label-head.log`, `label-base.log`, `label-base-runtime.json`, `label-baseline-audit.json`, `label-native.json`.
+- Recommended correction: distinguish absent explicit label provenance from a valid name before regex matching; add public product negative coverage that verifies both zero selection and no actual input. The scope remains B02A.
+
+No other confirmed P0/P1/P2/P3 findings were identified in the reviewed scope.
+
+## Direct verification
+
+Reviewed local source matched exact requested head and was tracked-clean at start and end. Chrome was `145.0.7632.6`, using isolated temporary profiles. No tracked file, remote comment, approval or merge was changed.
+
+| Command | Exit | Measured result |
+| --- | --- | --- |
+| `BCL_RUN_DIR=output/stage6-final-review/all npm run test:all` | 0 | 130 PASS, 0 FAIL, external1 SKIP: unit42, native fixture12, bootstrap1, legacy product24, requirements product44, review boundaries7 |
+| `HEADED=1 BCL_RUN_DIR=output/stage6-final-review/headed npm run test:requirements` | 0 | 44 PASS, 0 FAIL; ran separately after test:all completed |
+| `python3 docs/requirements/tools/validate.py` | 0 | DOCUMENT_STRUCTURE_ONLY_PASS:185 requirements,254 cases,508 condition units; not product proof |
+| `python3 docs/requirements/tools/validate_development_plan.py` | 0 | PLAN_STRUCTURE_PASS:21 slices,185 requirements,254 conditions |
+| `python3 -m unittest discover -s docs/requirements/tools -p 'test_*.py'` | 0 | 6 PASS |
+| `git diff --check 0452cbe2474ed73069167c43d683ae1514c4f29c a59c560245e40e6842b580c9e9b8864aef9bb8f1` | 0 | no whitespace errors |
+| `BCL_RUN_DIR=output/stage6-final-review/probe-runtime node output/stage6-final-review/probe.mjs` | 0 | 4 independent probe groups PASS: nested shadow/composed order/root CSS/hidden IDREF; invalid CSS and duplicate strict rejection; stale-document count/click; zero unintended events and one valid trusted click |
+| `BCL_RUN_DIR=output/stage6-final-review/label-head node output/stage6-final-review/label-probe.mjs` | 0 | Observation completed; requirement FAIL, with real trusted input to the unlabelled control |
+| Controlled baseline: same probe under `.local/stage6-final-review-baseline`, BCL_RUN_DIR=`output/stage6-final-review/label-base` | 0 | requirement PASS for the reproduced boundary: count0, rejected fill, value/events unchanged |
+| `node output/stage6-final-review/label-native.mjs` | 0 | Native fixture oracle only: label regex count0, CSS-targeted native fill emits trusted input and changes the intended value |
+
+`all/b02a/results.json` and `headed/b02a/results.json` each contain12 PASS evidence records and all21 distinct B02A condition IDs, head `a59c560...`, dirty=false. This confirms the covered samples; the newly reproduced normative boundary remains uncovered and failing.
+
+The canonical ledger contains13 B02A parents/21 conditions. Every condition ID is linked from the selection product suite. All later slices remain not-started and executionScope is through B02A then stop. The actual diff and connected implementation, fixtures, constructor tests, product tests, usage, requirements and planning records were read. The revised legacy details regression asserts SUMMARY/BUTTON identity and explicitly selects the intended native button while preserving hidden-content exclusion and actual click outcome; it does not simply weaken strict matching.
+
+All45 B02A manifest artifact hashes match. Recorded Before owner2 hashes match exact base, After/headed owner2 hashes match reviewed source, and remaining recorded source fingerprints match current fixed comparison files. The Before3/12 → After12/12 claim is consistent with those artifacts. Legacy tests write to fixed ignored `output/runtime-e2e` and `output/review-fixes`; their results were copied into this review directory as `runtime-e2e.json` and `review-boundaries.json`. Fresh requirement outputs use the requested review subdirectories.
+
+## Unexecuted / blocked
+
+- Naver remains the default external-site SKIP; no external/company-site completion is asserted.
+- Codex/Aside were not rerun for this review. Stored same-fixture comparisons, raw Aside logs, Codex received-output transcriptions, source fingerprints and explicit limits were inspected. Codex transcription is not an independently exported original payload. Root-only/child DNS limits and different contracts remain disclosed; no general performance or support ranking is inferred.
+- Full185 requirements, B02B and all later slices were not implemented or accepted here. The full historical base environment was not replayed.
+
+## Remaining risks
+
+- The prior PR18 headed frame-tree timeout is preserved as root-cause-unproven B03A risk. It did not reproduce in this full run or separate headed run; those passes do not establish that the historical issue is resolved.
+- Scope is the documented v1 supported naming/search behavior, not full AX-standard or all-browser/site equivalence.
+- The new P2 is an actual product failure despite the existing regression and ledger samples passing. The affected parent/condition should not be treated as fully accepted until it is corrected and retested on a new exact head.
+
+## Reviewed version and verdict
+
+- PR: https://github.com/f-lab-piz/browser-control-lab/pull/20
+- Base: `0452cbe2474ed73069167c43d683ae1514c4f29c`
+- Head: `a59c560245e40e6842b580c9e9b8864aef9bb8f1`
+- Final HEAD unchanged, tracked working tree clean.
+- **CHANGES_REQUESTED** — one reproducible in-scope P2 introduced/worsened by the explicit-label change. No remote review/approval/merge action performed. Stop after B02A; B02B remains unstarted.

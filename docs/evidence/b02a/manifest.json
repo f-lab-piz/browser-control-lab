@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01T18:25:28.134834+00:00",
+  "at": "2026-11-01T21:22:57.943316+00:00",
   "baseline": "0452cbe2474ed73069167c43d683ae1514c4f29c",
   "scope": "B02A13parents21conditions; personal single-user local transport, external3/internal64 unchanged",
   "comparison": "Final fixture/tests/helper/docs/deps fixed. Controlled baseline executed with its own cwd, only owning api-source/page-agent restored. Both baseline file hashes match git show. Not full historical environment replay.",
@@ -9,78 +9,36 @@
   ],
   "beforeProduct": {
     "pass": 3,
-    "fail": 9
+    "fail": 10
   },
   "afterProduct": {
-    "pass": 12,
+    "pass": 13,
     "fail": 0
   },
   "regression": {
-    "command": "BCL_RUN_DIR=output/finish-stage6/final-all npm run test:all",
-    "pass": 130,
+    "command": "BCL_RUN_DIR=output/finish-stage6/label-final-all npm run test:all",
+    "pass": 132,
     "fail": 0,
     "skip": 1,
     "grades": {
       "unit": 42,
-      "fixture": 12,
+      "fixture": 13,
       "bootstrap": 1,
       "legacyProduct": 24,
-      "requirementsProduct": 44,
+      "requirementsProduct": 45,
       "reviewBoundaries": 7
     }
   },
   "headed": {
-    "command": "HEADED=1 BCL_RUN_DIR=output/finish-stage6/final-headed npm run test:requirements",
-    "pass": 44,
+    "command": "HEADED=1 BCL_RUN_DIR=output/finish-stage6/label-final-headed npm run test:requirements",
+    "pass": 45,
     "fail": 0
   },
   "rawHistory": "Initial Before included a test-code newline escaping error in one case; fixed test quoting before final comparison, no product change then. First full after naming changes failed legacy summary test: composed name correctly matches SUMMARY and nested BUTTON. Test now asserts both identities and explicitly selects native button via CSS+filter, preserving hidden-content exclusions and actual clicked result. Initial125 stage then unit/coverage audit strengthened to final127. No predicates weakened.",
   "competitors": "Same final root fixture: Codex IAB public locators LIVE received-output transcription, Aside CLI1.26.1028.2335 Skill3 LIVE raw CLI.16reads plus proof click/fill; root only, Codex child DNS blocked. Different contracts, no general ranking. Codex field value changes but trusted-input site verdict pending, exact cause unknown. Own comparison tabs closed; no source/bundle/WASM copied.",
   "remainingRisk": "B03A old PR18 headed frame-tree timeout remains root-cause unproven; not reproduced in this final full/headed, not declared resolved. B02B/B03-B06/final audit unverified.",
-  "gate": "First2P2 and later :scope P2 accepted/fixed; final full130PASS1SKIP/headed44PASS; fresh exact-head independent review pending before normal merge. Stop after B02A.",
+  "gate": "Accepted/fixed all current in-scope findings; final full132PASS1externalSKIP/headed45PASS, fresh exact-head independent review pending. Stop after B02A.",
   "artifacts": [
-    {
-      "file": "before-product.json",
-      "source": "output/finish-stage6/final-before/b02a/results.json",
-      "sourceSha256": "29966bda1b4d481c6158711cd3aa6cdde1bce4d04c8ebf83b60197e94c9928bc",
-      "sha256": "444dc504c35b2cb2a2bc59cc81de4e08932f7e0b73b21a2e6c1806be32dad4ec",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "before-product.log.txt",
-      "source": "output/finish-stage6-before.log",
-      "sourceSha256": "408ac6eb7e7f9fc4e93bfb0ddac697aafc441f43e9b353e5ed33349baf158a3d",
-      "sha256": "9991767e7acaeb043df7e82e01bcc1f86390bb0975226b7e0539d2538d40431e",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "after-product.json",
-      "source": "output/finish-stage6/final-all/b02a/results.json",
-      "sourceSha256": "88a6280625661cce739cdfc926952f371f2447d41787f85248f11f5ea034f7f0",
-      "sha256": "ea626d4bb4b4a09c50912e25b19a64de66f9e3a32686d2cb57034d838be31777",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "after-all.log.txt",
-      "source": "output/finish-stage6-all.log",
-      "sourceSha256": "3a884c696f34e30094842605ba8eef8c2f45fe97a87c7044eaa3e14106d33e44",
-      "sha256": "3a884c696f34e30094842605ba8eef8c2f45fe97a87c7044eaa3e14106d33e44",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "after-headed.json",
-      "source": "output/finish-stage6/final-headed/b02a/results.json",
-      "sourceSha256": "9fecc735b96fafb4a96a509ed194753ccacc6a5a0dae67405383dcd351c43b9b",
-      "sha256": "f00777a4ce02ed374297147ac2c95041ddfb0dda8da5c05e57cb1af3de7ac745",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "after-headed.log.txt",
-      "source": "output/finish-stage6-headed.log",
-      "sourceSha256": "0d3b71c2f6aee12a7b8f260388eb4aece2dc4a2617124d6c08ab4c134f618e45",
-      "sha256": "0d3b71c2f6aee12a7b8f260388eb4aece2dc4a2617124d6c08ab4c134f618e45",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
     {
       "file": "unit-contract.log.txt",
       "source": "output/goal-b02a-unit.log",
@@ -142,20 +100,6 @@
       "source": "output/goal-b02a/compare/aside-repl-guide.txt",
       "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
       "sha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "runtime-regression.json",
-      "source": "output/runtime-e2e/results.json",
-      "sourceSha256": "9ad79ab186966c394c7097f0ff1035a1a9b2d279629e2faf2908a780cd2f494e",
-      "sha256": "979ffd4bdd1cf1b9edfd0dfb2908433b436bf3d5243741168dbddf8fe4da9df0",
-      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
-    },
-    {
-      "file": "review-boundaries.json",
-      "source": "output/review-fixes/boundaries.json",
-      "sourceSha256": "4ad51dcae6ee6c81a4debdfb29626fea4eb66f8fcd9ed2194b83dd847ffdd2f3",
-      "sha256": "4d7047e6c3d19a8ab9a7eae307b9bc643b5627f9c83a8bb8ff40732f194cc3c5",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     },
     {
@@ -353,9 +297,177 @@
       "sourceSha256": "7a05b340b9c7a320fd9e56d443357a9b45730d2ef3c2e40a3019a0c27f6c9f91",
       "sha256": "7a05b340b9c7a320fd9e56d443357a9b45730d2ef3c2e40a3019a0c27f6c9f91",
       "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-label-report.txt",
+      "source": "output/stage6-final-review/report.md",
+      "sourceSha256": "934bd3d9ff52887198cce375a9ca52ef5b3518d114ba68a534b4c710e0df9aa8",
+      "sha256": "934bd3d9ff52887198cce375a9ca52ef5b3518d114ba68a534b4c710e0df9aa8",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-label-probe.json",
+      "source": "output/stage6-final-review/label-probe.json",
+      "sourceSha256": "b6dccf3516eb7b8d610466bdca2230ff19e94f8b11c1d8e08641cc7d341c531f",
+      "sha256": "6466b0bf2b996c27a9f7e254bb7bf185df0c2d77245377bf65e179820795a228",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-label-base.json",
+      "source": "output/stage6-final-review/label-base.json",
+      "sourceSha256": "9d0162e97f27e55c8701c0723d41d3a57602c0d5589df5099ed95d47ad2a9688",
+      "sha256": "1b31498ad491b395e73f601afec87dd956d7365bb0209f7c680aab2358564809",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-label-base-audit.json",
+      "source": "output/stage6-final-review/label-baseline-audit.json",
+      "sourceSha256": "3ef7e56e94079c33b241bc3873ab94c51321816ff40ff94803e6a6b298f3d7bb",
+      "sha256": "222e33ba6255aeb9b5a6ecf1caac330e3162e8e7169aa7001acd514ba2b934d1",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-label-native.json",
+      "source": "output/stage6-final-review/label-native.json",
+      "sourceSha256": "e2c0d5f91b6b9c61d36e7b68eb61bb81cb209aa5208dd68dd64f1325ef167e8b",
+      "sha256": "1b9318300cf24f7a0f31768c342a3640afa34d45a1436233d30a2ee0d31137e6",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-label-probe.mjs",
+      "source": "output/stage6-final-review/label-probe.mjs",
+      "sourceSha256": "8d64110f948f993bc7bdc9bef4d8eee77836933bd612447c394861825554ec86",
+      "sha256": "8d64110f948f993bc7bdc9bef4d8eee77836933bd612447c394861825554ec86",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-third-probes.json",
+      "source": "output/stage6-final-review/probes.json",
+      "sourceSha256": "2e1106cb024a366c97f34b36024474b85bf23816642e5a35067f28b3fa70159c",
+      "sha256": "3b20d6667a114e66f4b37921b55b24df4efc67b6f1dfd3b85e0f64411b23c567",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-third-probe.mjs",
+      "source": "output/stage6-final-review/probe.mjs",
+      "sourceSha256": "7965409da5074a969e48a6d8d4fa4633fb62c5382c4b3985cb3a0eae75734935",
+      "sha256": "7965409da5074a969e48a6d8d4fa4633fb62c5382c4b3985cb3a0eae75734935",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-candidate-before.log.txt",
+      "source": "output/finish-stage6-label-before.log",
+      "sourceSha256": "58e678f89c6ad19939dbc51a52b6be915e7f877178d8851e29aae43bb1261456",
+      "sha256": "a6340211bbb97c6398da1c5eb52576fe14b29766e1befa8e1467033a4b85592c",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-candidate-before.json",
+      "source": "output/finish-stage6/label-before/b02a/results.json",
+      "sourceSha256": "1d14d08d1b1f4c55bdeb92c11fb3b1c43ac4c360fa238e7e6eb317affac072ac",
+      "sha256": "0e9dadc6edf93a18f8c6497ffca390c17d3456fef5d1b8eb75a07499ba047017",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-native.log.txt",
+      "source": "output/finish-stage6-label-native.log",
+      "sourceSha256": "775f9621d60cb854340471055ffd9f8d61a20eb0db67f7eae3a6395d85d97ca2",
+      "sha256": "775f9621d60cb854340471055ffd9f8d61a20eb0db67f7eae3a6395d85d97ca2",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-aside-guide.txt",
+      "source": "output/finish-stage6/aside-label-guide.txt",
+      "sourceSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "sha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-aside-repl-guide.txt",
+      "source": "output/finish-stage6/aside-label-repl-guide.txt",
+      "sourceSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "sha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-compare-aside.txt",
+      "source": "output/finish-stage6/aside-label-live.txt",
+      "sourceSha256": "dd9b75ad537dddd58202b2901f186f30738dc3728126ce33c2d0e1bab08ff33a",
+      "sha256": "ca3d840efd984c76a1c43aab88b49056f166fae33471b2d98aeaefdd96f96de4",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-compare-aside.json",
+      "source": "output/finish-stage6/aside-label-live.json",
+      "sourceSha256": "656ae08854f831e4e7236572b16b4bf6b1a05721e68aafb34797a66775abffd5",
+      "sha256": "656ae08854f831e4e7236572b16b4bf6b1a05721e68aafb34797a66775abffd5",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "label-compare-codex.json",
+      "source": "output/finish-stage6/codex-label-live.json",
+      "sourceSha256": "60fdc52d89764f11a4b641ab0df8cc6639d7bbf989044ceda000ec421b9f22a6",
+      "sha256": "60fdc52d89764f11a4b641ab0df8cc6639d7bbf989044ceda000ec421b9f22a6",
+      "normalization": "repository path placeholder; ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "before-product.json",
+      "source": "output/finish-stage6/label-final-before/b02a/results.json",
+      "sourceSha256": "ea9a56bc7ea86ad666770f2256651916f8abdeee4aa8da661497b0a99e4adfb9",
+      "sha256": "ab974b53af0e65565e9093bebcf9f729169d231755f4a60b4d6a9cf4e2c7a948",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "before-product.log.txt",
+      "source": "output/finish-stage6-label-baseline.log",
+      "sourceSha256": "4c67a25f608b5ef8a9a16eca4781913d9f1f918ef4a41068f5fe00923be03de0",
+      "sha256": "a55f4b04f6512d9d8aeb7b72fc72231c973f3e05bd8ac36599ca382bc8da2554",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-product.json",
+      "source": "output/finish-stage6/label-final-all/b02a/results.json",
+      "sourceSha256": "5f8f3ef50d71130cc39afc68bffab1eae5c4f8f865f1d12bab7408b117960911",
+      "sha256": "e7db1c1500a8798b3752a6b6d2d6087ff539c26279d352a44ccd4c9407eb21d1",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-all.log.txt",
+      "source": "output/finish-stage6-label-all.log",
+      "sourceSha256": "ecf62ab8655df7204882afe7e5fc656be86030444b65647b5015964b04be9675",
+      "sha256": "ecf62ab8655df7204882afe7e5fc656be86030444b65647b5015964b04be9675",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.json",
+      "source": "output/finish-stage6/label-final-headed/b02a/results.json",
+      "sourceSha256": "37310ec43f8ae09aa5d1407b48016c67cb162ae87a8d0b855152f51caec570ef",
+      "sha256": "321799f1d3afd4d298d9b42f7eaed41d6f0c01474240b8e9dd2b191302920101",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "after-headed.log.txt",
+      "source": "output/finish-stage6-label-headed.log",
+      "sourceSha256": "00a2e1057cd9ae5cf10dda48b249ad4de87f149a48f81a37d13d18136929fe77",
+      "sha256": "00a2e1057cd9ae5cf10dda48b249ad4de87f149a48f81a37d13d18136929fe77",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "runtime-regression.json",
+      "source": "output/runtime-e2e/results.json",
+      "sourceSha256": "9ddca9931e1d9b3efcf6792e3e7faf01df70a877ca4680a030c01b4a81904a90",
+      "sha256": "fcc544573ec0ac25eca066ef273a312f3713713ad7d4573f8b0c16dc1648c662",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "review-boundaries.json",
+      "source": "output/review-fixes/boundaries.json",
+      "sourceSha256": "4ad51dcae6ee6c81a4debdfb29626fea4eb66f8fcd9ed2194b83dd847ffdd2f3",
+      "sha256": "4d7047e6c3d19a8ab9a7eae307b9bc643b5627f9c83a8bb8ff40732f194cc3c5",
+      "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
     }
   ],
-  "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns.",
+  "fixtureEncoding": "After competitor captures, two intentional trailing test-data spaces were encoded as &#32; to pass normal diff-check without whitespace exceptions. html.unescape(current source) exactly equals previous source by SHA, and independent native Chromium root/openShadow node/attribute/text topology is exactly identical. Native audit is not product PASS. Original final10 Before/After/full127/headed42 ran with encoded selection source; current boundary extension keeps selection source unchanged and reruns12 Before/After/full130/headed44. Competitor measurements remain actual earlier captures of that exact DOM, not fabricated reruns. Latest separate label fixture adds one formal product/native case without changing selection/boundary DOM; final13 Before/After132/headed45 use the latest source36 fingerprint. Prior12/130/44 results remain historical in earlier commits/review reports.",
   "reviewHistory": {
     "firstHead": "f664dd19c3affcfe48262550366bab43b84a1135",
     "verdict": "CHANGES_REQUESTED",
@@ -388,5 +500,13 @@
     ],
     "counting": "Supplemental public-operation probes, not added to formal130/headed44 totals",
     "artifact": "selector-errors.json"
+  },
+  "labelReview": {
+    "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+    "verdict": "CHANGES_REQUESTED",
+    "finding": "Introduced/worsened P2: absent explicit label encoded as empty string can match regex and permit actual trusted fill",
+    "decision": "Accepted; absent explicit source now null sentinel, connected native/valid IDREF empty name remains empty string; no placeholder or empty aria-label connection fabricated",
+    "candidateBefore": "Same final label regression fails on a59c560 with actual unintended trusted input; native fixture oracle passes. Final exact-base controlled comparison3PASS10FAIL→After13PASS; source36 fingerprints differ only owner2, base owner hashes match git show.",
+    "comparison": "Fresh same selection-labels root public locators: Codex absent0/connected empty native+IDREF; Aside absent0/connected queries return only native-empty and Named empty result. Surface-specific raw observations, no whole-tool ranking. No source extraction, owned tabs/server closed."
   }
 }

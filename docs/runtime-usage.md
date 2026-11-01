@@ -113,3 +113,5 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 CSS 후보는 선택 document의 html/head와 inert 태그도 포함하며 각 open ShadowRoot를 탐색한다. template의 별도 content처럼 document에 연결되지 않은 노드는 자동으로 연결 DOM으로 간주하지 않는다. 텍스트 검색은 활성 composed 투영을 사용하므로 미할당 light child와 배정된 slot의 비활성 fallback을 후보로 삼지 않는다. 투명한 slot 자체가 raw 텍스트의 실제 host를 대신하지 않는다. CSS로는 해당 물리 DOM을 명시 조회할 수 있고, 일반 CSS 숨김 본문을 포함하는 기존 검색 정책은 유지한다. script/style 등의 본문 제외는 HTML/SVG 모두 적용하며 raw textContent와 구분한다.
 
 CSS는 각 document/open ShadowRoot의 native querySelectorAll로 평가하고 결과를 기존 순서로 합친다. `:scope`를 후보마다 다시 묶지 않는다. Page/Frame의 document에서 `locator(':scope')`는 HTML 루트, `locator(':scope > body')`는 body를 선택한다. Shadow DOM을 가로지르는 별도 Playwright CSS 확장 문법은 제공하지 않는다.
+
+getByLabel은 명시 이름 소스의 존재와 빈 이름을 구분한다. 소스가 없는 제어는 `/^$/`, `/.*/` 같은 정규식에도 후보가 아니다. 연결된 빈 native label/유효한 빈 IDREF는 빈 이름으로 조회할 수 있다. 비어 있는 aria-label만 있거나 깨진 IDREF만 있는 제어는 연결을 만들지 않는다. 문자열 빈 label 입력은 기존처럼 오류다.
