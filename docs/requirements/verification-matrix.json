@@ -1,0 +1,4910 @@
+{
+  "schemaVersion": 1,
+  "baseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "evidencePolicy": "이번 작업은 문서 검증만. 기존 test는 후보 연결이며 새 요구 충족을 입증하지 않음.",
+  "requirements": [
+    {
+      "id": "REQ-C-RUNTIME-001",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-001",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "세션 생성·파일 전달 관리경로가 있는 환경",
+        "when": "guide의 공개도구목록을 조회",
+        "then": "3개와 관리경로 역할이 구분된다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "SCOPE"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-002",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-002",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "두 세션에 같은 변수명을 선언",
+        "when": "한 세션에서 변경후 다른세션조회",
+        "then": "변수·출력·핸들소유가 독립이다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-003",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-003",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "입력 후 long wait가 남은 요청",
+        "when": "reset후 새요청실행",
+        "then": "이전값·결과가 섞이지 않으며 이미변경된 웹값은 그대로다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-004",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-004",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "기본30초/64KiB코드/64MiB메모리/64KiB출력·256블록 환경",
+        "when": "경계와초과입력실행",
+        "then": "예산정책과 오류가 일치하고 새세션/세대 복구가능하다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-005",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-005",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-005",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "한번만 증가해야하는 클릭요청",
+        "when": "동일id·동일payload재조회및다른payload재전송",
+        "then": "업무효과1회,다른payload오류,불확실완료는불확실로표시한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-RUNTIME-006",
+      "spec": "common/runtime.md",
+      "anchor": "req-c-runtime-006",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-RUNTIME-006",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "서로다른session과잘못된token",
+        "when": "교차핸들/asset접근",
+        "then": "오류와무부작용을확인한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-001",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-001",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-DOMFRAMES-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "offscreen과가상화미로드row가함께있는메일iframe",
+        "when": "snapshot/조회",
+        "then": "현재offscreen은발견하고미로드는미관찰로남기며scroll·서버요청수불변이다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "SKILL"
+      ]
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-002",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-002",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-DOMFRAMES-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "중첩/OOPIF마다같은이름버튼",
+        "when": "frame지정검색과ref조작",
+        "then": "정해진frame에만영향,frame오류는명시된다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-003",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-003",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-DOMFRAMES-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "slot의summary안span과닫힌details",
+        "when": "snapshot/검색/입력",
+        "then": "닫힌본문은숨김,summary는제어가능,불가영역은명시한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "HIST-INLINE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-004",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-004",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-DOMFRAMES-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "ref발급후iframe src교체",
+        "when": "oldref클릭",
+        "then": "stale오류와두문서무입력을확인한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "SKILL",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-005",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-005",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-DOMFRAMES-005",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "양의scale프레임과회전프레임",
+        "when": "boundingBox및입력",
+        "then": "지원frame은대상명중,미지원frame은무입력오류다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "HIST-COMP",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-C-DOMFRAMES-006",
+      "spec": "common/dom-frames.md",
+      "anchor": "req-c-domframes-006",
+      "api": null,
+      "level": "SHOULD",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-DOMFRAMES-006",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "sandbox또는로드중frame",
+        "when": "전체snapshot",
+        "then": "일부오류가다른frame관찰을막지않고완전성은부분으로표시한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-SELECTION-001",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-001",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-SELECTION-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "동일이름두개와0개대상",
+        "when": "읽기/조작",
+        "then": "오류구분과무입력;count는2/0이다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "SKILL",
+        "HIST-COMP"
+      ]
+    },
+    {
+      "id": "REQ-C-SELECTION-002",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-002",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-SELECTION-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "A/B/C중B만flag텍스트",
+        "when": "filter→nth와nth→filter비교",
+        "then": "각순서결과가정의대로다르며원locatorcount3이다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-SELECTION-003",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-003",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-SELECTION-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "한글/이모지/줄바꿈/두번동일패턴",
+        "when": "문자열및정규식반복검색",
+        "then": "같은입력은같은결과;잘못된정규식은오류다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-SELECTION-004",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-004",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-SELECTION-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "foo+bar인접span,실제foo bar,aria-hidden토큰,CSS숨김토큰",
+        "when": "getByText와hasText/hasNotText검색",
+        "then": "foobar와foo bar구분,ARIA숨김제외,CSS숨김포함,양음필터보완이다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "HIST-INLINE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-SELECTION-005",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-005",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-SELECTION-005",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "aria-label별도인긴본문버튼",
+        "when": "세방식조회",
+        "then": "각정의대로매칭되고본문끝검색가능하다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "HIST-R2",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-SELECTION-006",
+      "spec": "common/selection.md",
+      "anchor": "req-c-selection-006",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-SELECTION-006",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "snapshot2회후요소교체",
+        "when": "각ref조회",
+        "then": "동일요소ref는작동,교체전ref는실패한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-INPUT-001",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-001",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-INPUT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "overlay/readonly/disabled/rerender조건",
+        "when": "해당입력",
+        "then": "성공을꾸미지않고trace와실제값으로전후효과를확인한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "SKILL",
+        "HIST-COMP"
+      ]
+    },
+    {
+      "id": "REQ-C-INPUT-002",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-002",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-INPUT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "화면밖visible와overlay대상",
+        "when": "isVisible후click",
+        "then": "조회불변,click은스크롤가능하나overlay오류다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "HIST-INLINE"
+      ]
+    },
+    {
+      "id": "REQ-C-INPUT-003",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-003",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-INPUT-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "down후오류또는reset",
+        "when": "새요청에서move/type",
+        "then": "눌린버튼/수정키가잔류하지않으며정리실패는명시한다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-INPUT-004",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-004",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-INPUT-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "서버판정예약격자와값되돌림제어",
+        "when": "입력후독립관찰",
+        "then": "업무판정은별도,되돌린값은API실패다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "SKILL"
+      ]
+    },
+    {
+      "id": "REQ-C-INPUT-005",
+      "spec": "common/input.md",
+      "anchor": "req-c-input-005",
+      "api": null,
+      "level": "SHOULD",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-INPUT-005",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "입력응답이유실된상황",
+        "when": "요청결과확인",
+        "then": "재관찰경로를제시하고효과중복없다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-001",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-001",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "동명이지만다른바이트인local/asset",
+        "when": "각setFiles",
+        "then": "업로드바이트hash·이름·MIME이선택소스와같다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-002",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-002",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "여러파일중마지막만invalid",
+        "when": "setFiles/drop",
+        "then": "사전오류면기존선택보존·임시요소0;중도오류면적용목록명시다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-003",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-003",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "인증POST및blob다운로드",
+        "when": "waitForEvent후save",
+        "then": "브라우저원본과저장hash가같다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-004",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-004",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "두dialog/chooser가순서대로발생",
+        "when": "첫핸들재사용",
+        "then": "두번째event에영향없고stale오류다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-C-FILESEVENTS-005",
+      "spec": "common/files-events.md",
+      "anchor": "req-c-filesevents-005",
+      "api": null,
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-C-FILESEVENTS-005",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "wait→click→event와waittimeout→event",
+        "when": "동시/지연대기",
+        "then": "인과순서와소비정책을검증하며누수0이다.",
+        "negativeOrBoundary": "위 Then의 정상·반례를 독립 run으로 검증한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-GUIDE-001",
+      "spec": "external/guide.md",
+      "anchor": "req-guide-001",
+      "api": "guide",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-GUIDE-001",
+        "grade": "contract+product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: api?: catalog의 정확한 API 이름. 생략하면 전체 안내.",
+        "when": "`guide`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "guide/reset/js와 내부64개, 실행 위치·출력 방법·현재 제약을 함께 안내한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "guide and authentication"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-GUIDE-002",
+      "spec": "external/guide.md",
+      "anchor": "req-guide-002",
+      "api": "guide",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-GUIDE-002",
+        "grade": "contract+product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: api?: catalog의 정확한 API 이름. 생략하면 전체 안내. 반례 조건: 알 수 없는 api를 요청하면 다른 항목으로 대체하지 않고 구분 가능한 미지원 결과를 준다.",
+        "when": "`guide`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "알 수 없는 api를 요청하면 다른 항목으로 대체하지 않고 구분 가능한 미지원 결과를 준다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "guide and authentication"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-RESET-001",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-001",
+      "api": "reset",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-RESET-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: sessionId: 유효한 자기 세션. 별도 code 없음.",
+        "when": "`reset`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "reset 성공 이후 이전 변수는 없고 새 JS 호출은 실행 가능해야 한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "reset cancels unresolved execution, clears variables and creates a usable generation"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-RESET-002",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-002",
+      "api": "reset",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-RESET-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: sessionId: 유효한 자기 세션. 별도 code 없음. 반례 조건: 진행 중 무한 루프와 event wait를 reset하면 종료 결과를 구분하고 이전 세대 결과가 새 요청에 섞이지 않는다.",
+        "when": "`reset`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "진행 중 무한 루프와 event wait를 reset하면 종료 결과를 구분하고 이전 세대 결과가 새 요청에 섞이지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "reset cancels unresolved execution, clears variables and creates a usable generation"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-JS-001",
+      "spec": "external/js.md",
+      "anchor": "req-js-001",
+      "api": "js",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-JS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: code:string, timeoutMs?:50..120000(기본30000), requestId?:string.",
+        "when": "`js`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "top-level await와 세션 변수 유지, console.log/display 출력이 확장 QuickJS 안에서 실행된다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "JavaScript executes inside extension WASM and explicit output is collected"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-JS-002",
+      "spec": "external/js.md",
+      "anchor": "req-js-002",
+      "api": "js",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-JS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: code:string, timeoutMs?:50..120000(기본30000), requestId?:string. 반례 조건: 구문 오류·제한 초과는 실행 오류로 구분하며 중계기 Node나 다른 세션에서 실행하지 않는다.",
+        "when": "`js`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "구문 오류·제한 초과는 실행 오류로 구분하며 중계기 Node나 다른 세션에서 실행하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "JavaScript executes inside extension WASM and explicit output is collected"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-LIST-001",
+      "spec": "internal/browser.list.md",
+      "anchor": "req-browser-list-001",
+      "api": "browser.list",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-LIST-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`browser.list`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "연결 프로필을 식별할 수 있고 존재하지 않는 브라우저 지원을 만들지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "bindings persist and top-level await invokes browser APIs asynchronously",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-LIST-002",
+      "spec": "internal/browser.list.md",
+      "anchor": "req-browser-list-002",
+      "api": "browser.list",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-LIST-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: 확장 연결이 없으면 연결 실패를 표시하며 정상 연결 목록으로 꾸미지 않는다.",
+        "when": "`browser.list`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "확장 연결이 없으면 연결 실패를 표시하며 정상 연결 목록으로 꾸미지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "bindings persist and top-level await invokes browser APIs asynchronously",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-TABS-001",
+      "spec": "internal/browser.tabs.md",
+      "anchor": "req-browser-tabs-001",
+      "api": "browser.tabs",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-TABS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`browser.tabs`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "제어 후보 HTTP(S) 탭의 현재 메타데이터를 반환하며 목록 조회만으로 attach하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-TABS-002",
+      "spec": "internal/browser.tabs.md",
+      "anchor": "req-browser-tabs-002",
+      "api": "browser.tabs",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-TABS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: 나열 직후 닫힌 tabId를 attach하면 실패하며 비슷한 제목 탭으로 바꾸지 않는다.",
+        "when": "`browser.tabs`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "나열 직후 닫힌 tabId를 attach하면 실패하며 비슷한 제목 탭으로 바꾸지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-001",
+      "spec": "internal/browser.open.md",
+      "anchor": "req-browser-open-001",
+      "api": "browser.open",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-OPEN-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 HTTP(S) URL, options.active?:boolean(기본true).",
+        "when": "`browser.open`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "요청 URL을 한 번 열고 준비된 Page를 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-OPEN-002",
+      "spec": "internal/browser.open.md",
+      "anchor": "req-browser-open-002",
+      "api": "browser.open",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-OPEN-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 HTTP(S) URL, options.active?:boolean(기본true). 반례 조건: 금지 scheme·잘못된 URL·권한 실패는 성공 Page를 주지 않으며 새로 만든 실패 탭의 잔여 여부를 설명한다.",
+        "when": "`browser.open`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "금지 scheme·잘못된 URL·권한 실패는 성공 Page를 주지 않으며 새로 만든 실패 탭의 잔여 여부를 설명한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-ATTACH-001",
+      "spec": "internal/browser.attach.md",
+      "anchor": "req-browser-attach-001",
+      "api": "browser.attach",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-ATTACH-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: tabId:현재 후보 탭의 정수 ID.",
+        "when": "`browser.attach`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 HTTP(S) 탭에 연결하고 원래 URL과 내용을 보존한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-BROWSER-ATTACH-002",
+      "spec": "internal/browser.attach.md",
+      "anchor": "req-browser-attach-002",
+      "api": "browser.attach",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-BROWSER-ATTACH-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: tabId:현재 후보 탭의 정수 ID. 반례 조건: 다른 세션 소유·닫힌 탭·권한 거부는 구분해 실패하고 소유를 빼앗지 않는다.",
+        "when": "`browser.attach`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "다른 세션 소유·닫힌 탭·권한 거부는 구분해 실패하고 소유를 빼앗지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-ACTIVATE-001",
+      "spec": "internal/page.activate.md",
+      "anchor": "req-page-activate-001",
+      "api": "page.activate",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-ACTIVATE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기 Page; 인자 없음.",
+        "when": "`page.activate`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "자기 탭을 활성화하고 탐색이나 탭 복제를 하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-ACTIVATE-002",
+      "spec": "internal/page.activate.md",
+      "anchor": "req-page-activate-002",
+      "api": "page.activate",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-ACTIVATE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기 Page; 인자 없음. 반례 조건: 닫힌 핸들이나 다른 세션 탭은 실패하며 임의 탭을 활성화하지 않는다.",
+        "when": "`page.activate`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "닫힌 핸들이나 다른 세션 탭은 실패하며 임의 탭을 활성화하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-CLOSE-001",
+      "spec": "internal/page.close.md",
+      "anchor": "req-page-close-001",
+      "api": "page.close",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-CLOSE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기 Page; 인자 없음.",
+        "when": "`page.close`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "지정한 탭만 닫고 기존 핸들은 사용할 수 없게 한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-CLOSE-002",
+      "spec": "internal/page.close.md",
+      "anchor": "req-page-close-002",
+      "api": "page.close",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-CLOSE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기 Page; 인자 없음. 반례 조건: 이미 닫힌 핸들은 구분 가능한 실패/이미 닫힘 결과를 주고 다른 탭을 닫지 않는다.",
+        "when": "`page.close`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "이미 닫힌 핸들은 구분 가능한 실패/이미 닫힘 결과를 주고 다른 탭을 닫지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-GOTO-001",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-001",
+      "api": "page.goto",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-GOTO-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 HTTP(S) URL.",
+        "when": "`page.goto`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "새 문서에 연결 가능한 상태까지 기다리고 탐색 실패를 구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-GOTO-002",
+      "spec": "internal/page.goto.md",
+      "anchor": "req-page-goto-002",
+      "api": "page.goto",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-GOTO-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 HTTP(S) URL. 반례 조건: 잘못된 URL·네트워크 실패에서 이전 DOM 관찰을 새 문서 성공으로 반환하지 않는다.",
+        "when": "`page.goto`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "잘못된 URL·네트워크 실패에서 이전 DOM 관찰을 새 문서 성공으로 반환하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-BACK-001",
+      "spec": "internal/page.back.md",
+      "anchor": "req-page-back-001",
+      "api": "page.back",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-BACK-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`page.back`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "뒤 이력으로 이동하며 경계에서는false와 URL 불변을 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-BACK-002",
+      "spec": "internal/page.back.md",
+      "anchor": "req-page-back-002",
+      "api": "page.back",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-BACK-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: 빠른 연속 뒤로 이동에서 다른 탭이나 이전 문서 ref에 입력하지 않는다.",
+        "when": "`page.back`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "빠른 연속 뒤로 이동에서 다른 탭이나 이전 문서 ref에 입력하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-001",
+      "spec": "internal/page.forward.md",
+      "anchor": "req-page-forward-001",
+      "api": "page.forward",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-FORWARD-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`page.forward`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "앞 이력으로 이동하며 경계에서는false와 URL 불변을 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-FORWARD-002",
+      "spec": "internal/page.forward.md",
+      "anchor": "req-page-forward-002",
+      "api": "page.forward",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-FORWARD-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: 뒤로 후 새 탐색으로 앞 이력이 사라졌으면false이며 사라진 URL을 새 탭으로 열지 않는다.",
+        "when": "`page.forward`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "뒤로 후 새 탐색으로 앞 이력이 사라졌으면false이며 사라진 URL을 새 탭으로 열지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-001",
+      "spec": "internal/page.reload.md",
+      "anchor": "req-page-reload-001",
+      "api": "page.reload",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-RELOAD-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`page.reload`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 URL을 다시 로드하고 새 문서 준비 이후 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-RELOAD-002",
+      "spec": "internal/page.reload.md",
+      "anchor": "req-page-reload-002",
+      "api": "page.reload",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-RELOAD-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: reload 전 ref를 다음 조작에 쓰면 stale 오류이며 새 문서의 유사 요소로 연결하지 않는다.",
+        "when": "`page.reload`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "reload 전 ref를 다음 조작에 쓰면 stale 오류이며 새 문서의 유사 요소로 연결하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-001",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-001",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options:{root?:CSS/ref,interactive?:boolean,showHidden?:boolean,query?:string,maxDepth?:nonnegative integer,maxChars?:integer,maxNodes?:integer,maxOutputBytes?:integer,cursor?:token,since?:snapshotId}.",
+        "when": "`scope.snapshot`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 연결 DOM 전체를 읽되 화면 밖 요소를 찾을 수 있고 가상화로 미존재한 데이터와 예산 생략을 구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-002",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-002",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options:{root?:CSS/ref,interactive?:boolean,showHidden?:boolean,query?:string,maxDepth?:nonnegative integer,maxChars?:integer,maxNodes?:integer,maxOutputBytes?:integer,cursor?:token,since?:snapshotId}. 반례 조건: 긴 URL·대형 DOM에서 예산 생략을 표시하고 후속 root/cursor/frames 조회 경로를 남긴다. 키워드 없는 탐색은 별도 요구를 따른다.",
+        "when": "`scope.snapshot`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "긴 URL·대형 DOM에서 예산 생략을 표시하고 후속 root/cursor/frames 조회 경로를 남긴다. 키워드 없는 탐색은 별도 요구를 따른다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-001",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-001",
+      "api": "page.screenshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-SCREENSHOT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.fullPage?:boolean(기본false), clip?:{x,y,width,height}; 둘은 배타적.",
+        "when": "`page.screenshot`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "viewport/fullPage/clip의 범위를 구분하고 clip은 현재 viewport CSS 좌표로 캡처한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "viewport and full-page screenshots are actual images returned through display",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-002",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-002",
+      "api": "page.screenshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-SCREENSHOT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.fullPage?:boolean(기본false), clip?:{x,y,width,height}; 둘은 배타적. 반례 조건: 가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.",
+        "when": "`page.screenshot`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "viewport and full-page screenshots are actual images returned through display",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-FRAMES-001",
+      "spec": "internal/page.frames.md",
+      "anchor": "req-page-frames-001",
+      "api": "page.frames",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-FRAMES-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`page.frames`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "main·중첩·교차 출처/OOPIF 프레임을 부모 관계와 함께 찾을 수 있다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-FRAMES-002",
+      "spec": "internal/page.frames.md",
+      "anchor": "req-page-frames-002",
+      "api": "page.frames",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-FRAMES-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: 분리·교체 중 접근 불가 프레임은 누락 이유 또는 재조회 필요를 표시하고 완전 관찰로 주장하지 않는다.",
+        "when": "`page.frames`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "분리·교체 중 접근 불가 프레임은 누락 이유 또는 재조회 필요를 표시하고 완전 관찰로 주장하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension discovers cross-site nested frames and snapshots mailbox without outer scrolling",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-FRAME-001",
+      "spec": "internal/page.frame.md",
+      "anchor": "req-page-frame-001",
+      "api": "page.frame",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-FRAME-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: frameId:page.frames가 반환한 ID.",
+        "when": "`page.frame`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "프레임 핸들은 그 프레임의 문서만 선택·평가하고 형제 프레임에 누출되지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls nested mailbox, loads mail 137 and marks it read",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-FRAME-002",
+      "spec": "internal/page.frame.md",
+      "anchor": "req-page-frame-002",
+      "api": "page.frame",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-FRAME-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: frameId:page.frames가 반환한 ID. 반례 조건: 분리된 frameId의 조작은 stale frame 오류이며 main frame으로 자동 대체하지 않는다.",
+        "when": "`page.frame`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "분리된 frameId의 조작은 stale frame 오류이며 main frame으로 자동 대체하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls nested mailbox, loads mail 137 and marks it read",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-001",
+      "spec": "internal/scope.locator.md",
+      "anchor": "req-scope-locator-001",
+      "api": "scope.locator",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-LOCATOR-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:string; CSS 또는 발급된 qualified ref.",
+        "when": "`scope.locator`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "CSS는 현재 Scope 안에서 평가하고 ref는 발급 문서·프레임·요소에 고정한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-LOCATOR-002",
+      "spec": "internal/scope.locator.md",
+      "anchor": "req-scope-locator-002",
+      "api": "scope.locator",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-LOCATOR-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:string; CSS 또는 발급된 qualified ref. 반례 조건: 잘못된 CSS·낡은 ref는 실패하며 이름 유사도나 DOM 순서로 보정하지 않는다.",
+        "when": "`scope.locator`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "잘못된 CSS·낡은 ref는 실패하며 이름 유사도나 DOM 순서로 보정하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-001",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-001",
+      "api": "scope.getByRole",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYROLE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: role:string, options.name?:string/RegExp, exact?:boolean(기본false),includeHidden?:boolean(기본false).",
+        "when": "`scope.getByRole`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "네이티브·명시 role과 접근 이름으로 검색하고 기본 숨김 제외/화면 밖 포함을 구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYROLE-002",
+      "spec": "internal/scope.getByRole.md",
+      "anchor": "req-scope-getbyrole-002",
+      "api": "scope.getByRole",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYROLE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: role:string, options.name?:string/RegExp, exact?:boolean(기본false),includeHidden?:boolean(기본false). 반례 조건: 정규식 source/flags와 exact 문자열을 보존하고 slot/aria-labelledby 이름의 동작을 검증한다.",
+        "when": "`scope.getByRole`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "정규식 source/flags와 exact 문자열을 보존하고 slot/aria-labelledby 이름의 동작을 검증한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-001",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-001",
+      "api": "scope.getByText",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYTEXT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false).",
+        "when": "`scope.getByText`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "검색용 본문 텍스트를 사용하며 화면 출력용 이름 길이 제한 때문에 뒤쪽 목표를 잃지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYTEXT-002",
+      "spec": "internal/scope.getByText.md",
+      "anchor": "req-scope-getbytext-002",
+      "api": "scope.getByText",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYTEXT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false). 반례 조건: 접근 이름과 다른 본문·인접 span·실제 공백·긴 텍스트에서 검색 의미를 공통 selection 계약대로 유지한다.",
+        "when": "`scope.getByText`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "접근 이름과 다른 본문·인접 span·실제 공백·긴 텍스트에서 검색 의미를 공통 selection 계약대로 유지한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-001",
+      "spec": "internal/scope.getByLabel.md",
+      "anchor": "req-scope-getbylabel-001",
+      "api": "scope.getByLabel",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYLABEL-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false).",
+        "when": "`scope.getByLabel`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "label for/감싼 label/aria-label/aria-labelledby로 연결된 제어를 검색한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-GETBYLABEL-002",
+      "spec": "internal/scope.getByLabel.md",
+      "anchor": "req-scope-getbylabel-002",
+      "api": "scope.getByLabel",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-GETBYLABEL-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false). 반례 조건: 같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다.",
+        "when": "`scope.getByLabel`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-001",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-001",
+      "api": "locator.filter",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FILTER-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: {hasText?:string/RegExp,hasNotText?:string/RegExp,visible?:boolean}; 그 외 키 미지원.",
+        "when": "`locator.filter`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "양·음 텍스트와 visible 조건을 AND로 조합하고 전체 composed 텍스트를 검색한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-002",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-002",
+      "api": "locator.filter",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FILTER-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: {hasText?:string/RegExp,hasNotText?:string/RegExp,visible?:boolean}; 그 외 키 미지원. 반례 조건: 없는 공백을 span 사이에 만들지 않고 실제 공백은 구분한다. has/hasNot 같은 미지원 키는 조용히 무시하지 않는다.",
+        "when": "`locator.filter`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "없는 공백을 span 사이에 만들지 않고 실제 공백은 구분한다. has/hasNot 같은 미지원 키는 조용히 무시하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-NTH-001",
+      "spec": "internal/locator.nth.md",
+      "anchor": "req-locator-nth-001",
+      "api": "locator.nth",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-NTH-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: index:integer; 0기준, 음수는 끝에서(-1 마지막).",
+        "when": "`locator.nth`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 필터 결과의 문서 순서에 인덱스를 적용하고 음수 끝 인덱스를 지원한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-NTH-002",
+      "spec": "internal/locator.nth.md",
+      "anchor": "req-locator-nth-002",
+      "api": "locator.nth",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-NTH-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: index:integer; 0기준, 음수는 끝에서(-1 마지막). 반례 조건: 소수·NaN은 INVALID_INDEX, 범위 밖은 count0이며 조작 시 대상 없음; 원 Locator는 불변이다.",
+        "when": "`locator.nth`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "소수·NaN은 INVALID_INDEX, 범위 밖은 count0이며 조작 시 대상 없음; 원 Locator는 불변이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-001",
+      "spec": "internal/locator.count.md",
+      "anchor": "req-locator-count-001",
+      "api": "locator.count",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-COUNT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음.",
+        "when": "`locator.count`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 Scope와 필터를 모두 적용한 개수를 반환하며0개도 정상이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-COUNT-002",
+      "spec": "internal/locator.count.md",
+      "anchor": "req-locator-count-002",
+      "api": "locator.count",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-COUNT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자 없음. 반례 조건: 중복 결과를1개로 축약하지 않으며 stale ref를 새 DOM0개와 혼동하지 않는다.",
+        "when": "`locator.count`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "중복 결과를1개로 축약하지 않으며 stale ref를 새 DOM0개와 혼동하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-TEXTCONTENT-001",
+      "spec": "internal/locator.textContent.md",
+      "anchor": "req-locator-textcontent-001",
+      "api": "locator.textContent",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-TEXTCONTENT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.textContent`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "숨김 자식·실제 공백을 포함한 대상 textContent를 읽고 접근 이름으로 대체하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-TEXTCONTENT-002",
+      "spec": "internal/locator.textContent.md",
+      "anchor": "req-locator-textcontent-002",
+      "api": "locator.textContent",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-TEXTCONTENT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: 0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다.",
+        "when": "`locator.textContent`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-GETATTRIBUTE-001",
+      "spec": "internal/locator.getAttribute.md",
+      "anchor": "req-locator-getattribute-001",
+      "api": "locator.getAttribute",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-GETATTRIBUTE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: name:비어 있지 않은 attribute 이름.",
+        "when": "`locator.getAttribute`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "요청 속성 원문을 반환하고 긴 href를 snapshot 축약과 무관하게 읽을 수 있다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-GETATTRIBUTE-002",
+      "spec": "internal/locator.getAttribute.md",
+      "anchor": "req-locator-getattribute-002",
+      "api": "locator.getAttribute",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-GETATTRIBUTE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: name:비어 있지 않은 attribute 이름. 반례 조건: 빈 속성과 없는 속성, property와 attribute를 구분하고0/다중 매칭은 실패한다.",
+        "when": "`locator.getAttribute`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "빈 속성과 없는 속성, property와 attribute를 구분하고0/다중 매칭은 실패한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-INPUTVALUE-001",
+      "spec": "internal/locator.inputValue.md",
+      "anchor": "req-locator-inputvalue-001",
+      "api": "locator.inputValue",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-INPUTVALUE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 입력/textarea/select/contenteditable Locator.",
+        "when": "`locator.inputValue`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 편집 값을 읽고 HTML value 속성의 초기 값과 구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-INPUTVALUE-002",
+      "spec": "internal/locator.inputValue.md",
+      "anchor": "req-locator-inputvalue-002",
+      "api": "locator.inputValue",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-INPUTVALUE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 입력/textarea/select/contenteditable Locator. 반례 조건: 비입력 요소에는 타입 오류를 내며 빈 입력을 실패나 일반 텍스트 값과 혼동하지 않는다.",
+        "when": "`locator.inputValue`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "비입력 요소에는 타입 오류를 내며 빈 입력을 실패나 일반 텍스트 값과 혼동하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISVISIBLE-001",
+      "spec": "internal/locator.isVisible.md",
+      "anchor": "req-locator-isvisible-001",
+      "api": "locator.isVisible",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISVISIBLE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.isVisible`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "layout상 숨김/닫힌 details/조상 숨김을 판정하며 offscreen은 visible일 수 있다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISVISIBLE-002",
+      "spec": "internal/locator.isVisible.md",
+      "anchor": "req-locator-isvisible-002",
+      "api": "locator.isVisible",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISVISIBLE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: 가려진 요소와 화면 밖 요소를 hidden으로 오인하지 않고0/다중 매칭은 공통 단일 조회 오류다.",
+        "when": "`locator.isVisible`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "가려진 요소와 화면 밖 요소를 hidden으로 오인하지 않고0/다중 매칭은 공통 단일 조회 오류다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISENABLED-001",
+      "spec": "internal/locator.isEnabled.md",
+      "anchor": "req-locator-isenabled-001",
+      "api": "locator.isEnabled",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISENABLED-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.isEnabled`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "native disabled/disabled fieldset 및 aria-disabled 정책에 따라 상태를 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISENABLED-002",
+      "spec": "internal/locator.isEnabled.md",
+      "anchor": "req-locator-isenabled-002",
+      "api": "locator.isEnabled",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISENABLED-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: readonly는 disabled와 구분하고 disabled 조상·예외 legend 조건을 검증한다.",
+        "when": "`locator.isEnabled`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "readonly는 disabled와 구분하고 disabled 조상·예외 legend 조건을 검증한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISEDITABLE-001",
+      "spec": "internal/locator.isEditable.md",
+      "anchor": "req-locator-iseditable-001",
+      "api": "locator.isEditable",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISEDITABLE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.isEditable`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "지원 텍스트 입력/textarea/contenteditable 중 enabled이며 readonly가 아닌 대상만true다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISEDITABLE-002",
+      "spec": "internal/locator.isEditable.md",
+      "anchor": "req-locator-iseditable-002",
+      "api": "locator.isEditable",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISEDITABLE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: button·checkbox·disabled input·aria-readonly 대상은false며 fill 가능성과 모순되지 않는다.",
+        "when": "`locator.isEditable`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "button·checkbox·disabled input·aria-readonly 대상은false며 fill 가능성과 모순되지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISCHECKED-001",
+      "spec": "internal/locator.isChecked.md",
+      "anchor": "req-locator-ischecked-001",
+      "api": "locator.isChecked",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISCHECKED-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 checkbox/radio 또는 지원 role checkbox/switch/radio.",
+        "when": "`locator.isChecked`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "checked 상태를 native property 또는 명시 ARIA 상태로 읽는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-ISCHECKED-002",
+      "spec": "internal/locator.isChecked.md",
+      "anchor": "req-locator-ischecked-002",
+      "api": "locator.isChecked",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-ISCHECKED-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 checkbox/radio 또는 지원 role checkbox/switch/radio. 반례 조건: 비체크형 요소는 타입 오류로 거절하고 mixed를true로 오인하지 않는다. mixed 원문은 getAttribute로 조회한다.",
+        "when": "`locator.isChecked`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "비체크형 요소는 타입 오류로 거절하고 mixed를true로 오인하지 않는다. mixed 원문은 getAttribute로 조회한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-BOUNDINGBOX-001",
+      "spec": "internal/locator.boundingBox.md",
+      "anchor": "req-locator-boundingbox-001",
+      "api": "locator.boundingBox",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-BOUNDINGBOX-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.boundingBox`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "입력 좌표와 같은 main viewport 기준으로 box를 반환하며 숨김은null이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-BOUNDINGBOX-002",
+      "spec": "internal/locator.boundingBox.md",
+      "anchor": "req-locator-boundingbox-002",
+      "api": "locator.boundingBox",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-BOUNDINGBOX-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: 중첩 scale/translate iframe과 scroll에서 좌표 일치, unsupported transform은명시 오류며 로컬 좌표를전역값으로 주지 않는다.",
+        "when": "`locator.boundingBox`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "중첩 scale/translate iframe과 scroll에서 좌표 일치, unsupported transform은명시 오류며 로컬 좌표를전역값으로 주지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-001",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-001",
+      "api": "locator.click",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-CLICK-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.button?:left/right/middle, clickCount?:positive integer; 기본left/1.",
+        "when": "`locator.click`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "visible/enabled/안정·가림 검사 후 정확히 대상에 클릭하며 clickCount2로 더블클릭 조합 가능하다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-CLICK-002",
+      "spec": "internal/locator.click.md",
+      "anchor": "req-locator-click-002",
+      "api": "locator.click",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-CLICK-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.button?:left/right/middle, clickCount?:positive integer; 기본left/1. 반례 조건: 중복·stale·overlay는 입력 전에 거절하고 닫힌 details·slot·scaled iframe에서 잘못된 다른 요소를 클릭하지 않는다.",
+        "when": "`locator.click`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "중복·stale·overlay는 입력 전에 거절하고 닫힌 details·slot·scaled iframe에서 잘못된 다른 요소를 클릭하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-001",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-001",
+      "api": "locator.fill",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FILL-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:string; 지원 텍스트 제어/contenteditable.",
+        "when": "`locator.fill`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "readonly/disabled/비편집 대상을 사전 거절하고 빈 문자열도 채울 수 있다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FILL-002",
+      "spec": "internal/locator.fill.md",
+      "anchor": "req-locator-fill-002",
+      "api": "locator.fill",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FILL-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:string; 지원 텍스트 제어/contenteditable. 반례 조건: 입력 masking이나 rerender로 실제 값이 요청과 다르면 INPUT_VALUE_NOT_CHANGED며 거짓 성공을 주지 않는다.",
+        "when": "`locator.fill`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "입력 masking이나 rerender로 실제 값이 요청과 다르면 INPUT_VALUE_NOT_CHANGED며 거짓 성공을 주지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-001",
+      "spec": "internal/locator.press.md",
+      "anchor": "req-locator-press-001",
+      "api": "locator.press",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-PRESS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; 예:Enter,Control+A.",
+        "when": "`locator.press`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "정확한 대상에 focus를 확인하고 키를 입력해 현재 다른 focus에 보내지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-PRESS-002",
+      "spec": "internal/locator.press.md",
+      "anchor": "req-locator-press-002",
+      "api": "locator.press",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-PRESS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; 예:Enter,Control+A. 반례 조건: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.",
+        "when": "`locator.press`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-HOVER-001",
+      "spec": "internal/locator.hover.md",
+      "anchor": "req-locator-hover-001",
+      "api": "locator.hover",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-HOVER-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.hover`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "대상의 실제 hit 영역에 포인터를 이동한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls a virtualized dropdown and selects the requested option",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-HOVER-002",
+      "spec": "internal/locator.hover.md",
+      "anchor": "req-locator-hover-002",
+      "api": "locator.hover",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-HOVER-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: 가림/숨김/unsupported frame이면 명시 실패하고 hover 성공으로 표시하지 않는다.",
+        "when": "`locator.hover`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "가림/숨김/unsupported frame이면 명시 실패하고 hover 성공으로 표시하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls a virtualized dropdown and selects the requested option",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FOCUS-001",
+      "spec": "internal/locator.focus.md",
+      "anchor": "req-locator-focus-001",
+      "api": "locator.focus",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FOCUS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.focus`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "대상의 focus 또는 composed activeElement를 확인하고 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FOCUS-002",
+      "spec": "internal/locator.focus.md",
+      "anchor": "req-locator-focus-002",
+      "api": "locator.focus",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FOCUS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: 비focusable/disabled/분리 대상은 실패하며 el.focus 호출만으로 성공 처리하지 않는다.",
+        "when": "`locator.focus`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "비focusable/disabled/분리 대상은 실패하며 el.focus 호출만으로 성공 처리하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SCROLLINTOVIEW-001",
+      "spec": "internal/locator.scrollIntoView.md",
+      "anchor": "req-locator-scrollintoview-001",
+      "api": "locator.scrollIntoView",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SCROLLINTOVIEW-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.",
+        "when": "`locator.scrollIntoView`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "연결된 offscreen 요소를 필요한 조상 scrollport에서 가로·세로로 노출한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SCROLLINTOVIEW-002",
+      "spec": "internal/locator.scrollIntoView.md",
+      "anchor": "req-locator-scrollintoview-002",
+      "api": "locator.scrollIntoView",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SCROLLINTOVIEW-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: DOM에 없는 virtual row는 자동 생성하지 않으며 sticky overlay 등으로 클릭 가능까지 보장하지 않는다.",
+        "when": "`locator.scrollIntoView`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "DOM에 없는 virtual row는 자동 생성하지 않으며 sticky overlay 등으로 클릭 가능까지 보장하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-001",
+      "spec": "internal/locator.setChecked.md",
+      "anchor": "req-locator-setchecked-001",
+      "api": "locator.setChecked",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SETCHECKED-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:boolean.",
+        "when": "`locator.setChecked`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "이미 요청 상태면 클릭하지 않고 checkbox/radio/switch 지원대상 상태를 확인한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SETCHECKED-002",
+      "spec": "internal/locator.setChecked.md",
+      "anchor": "req-locator-setchecked-002",
+      "api": "locator.setChecked",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SETCHECKED-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:boolean. 반례 조건: disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다.",
+        "when": "`locator.setChecked`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension opens a tab, observes DOM and completes the basic form using real input",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-001",
+      "spec": "internal/locator.selectOption.md",
+      "anchor": "req-locator-selectoption-001",
+      "api": "locator.selectOption",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SELECTOPTION-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:string 또는 string[]; native select의 value 우선, 유일 label fallback.",
+        "when": "`locator.selectOption`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "native select만 지원하고 요청된 모든 옵션이 존재·enabled인 경우 선택 결과를 확인한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SELECTOPTION-002",
+      "spec": "internal/locator.selectOption.md",
+      "anchor": "req-locator-selectoption-002",
+      "api": "locator.selectOption",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SELECTOPTION-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:string 또는 string[]; native select의 value 우선, 유일 label fallback. 반례 조건: 없는/중복 label·disabled option·single select 복수 요청은 사전 거절해 기존 선택을 지우지 않는다.",
+        "when": "`locator.selectOption`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "없는/중복 label·disabled option·single select 복수 요청은 사전 거절해 기존 선택을 지우지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-001",
+      "spec": "internal/locator.dragTo.md",
+      "anchor": "req-locator-dragto-001",
+      "api": "locator.dragTo",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-DRAGTO-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: target:같은 세션·지원 target의 단일 Locator.",
+        "when": "`locator.dragTo`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "draggable은 실제 dragstart/native DragData, 격자는 연속 pointer 경로로 조작한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension selects booking cells by drag and double click, then saves reservation",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-DRAGTO-002",
+      "spec": "internal/locator.dragTo.md",
+      "anchor": "req-locator-dragto-002",
+      "api": "locator.dragTo",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-DRAGTO-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: target:같은 세션·지원 target의 단일 Locator. 반례 조건: cross-target drag·모호한 대상은 사전 거절하고 중도 오류에도 버튼·drag 상태를 정리하며 drop을 자동 재전송하지 않는다.",
+        "when": "`locator.dragTo`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "cross-target drag·모호한 대상은 사전 거절하고 중도 오류에도 버튼·drag 상태를 정리하며 drop을 자동 재전송하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension selects booking cells by drag and double click, then saves reservation",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-001",
+      "spec": "internal/locator.drop.md",
+      "anchor": "req-locator-drop-001",
+      "api": "locator.drop",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-DROP-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options:{files?:FileInput 또는 FileInput[],data?:Record<MIME,string>}; 적어도 하나의 비어 있지 않은 files/data. []로 비우기는 setFiles 전용이다.",
+        "when": "`locator.drop`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "로컬/서버/bytes 파일과 텍스트 MIME을 공통 엔진으로 전달하고 임시 file input을 정리한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "file data drop uses the product file resolver",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-DROP-002",
+      "spec": "internal/locator.drop.md",
+      "anchor": "req-locator-drop-002",
+      "api": "locator.drop",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-DROP-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options:{files?:FileInput 또는 FileInput[],data?:Record<MIME,string>}; 적어도 하나의 비어 있지 않은 files/data. []로 비우기는 setFiles 전용이다. 반례 조건: trusted 필수 사이트 지원을 주장하지 않고 파일 검증 실패는 drop 이전에 거절한다. MIME/옵션은 guide와 일치해야 한다.",
+        "when": "`locator.drop`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "trusted 필수 사이트 지원을 주장하지 않고 파일 검증 실패는 drop 이전에 거절한다. MIME/옵션은 guide와 일치해야 한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "file data drop uses the product file resolver",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-MOVE-001",
+      "spec": "internal/mouse.move.md",
+      "anchor": "req-mouse-move-001",
+      "api": "mouse.move",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-MOVE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: x,y:finite main viewport CSS 좌표.",
+        "when": "`mouse.move`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "정확한 좌표로 이동하며 iframe 좌표를 사용자가중복 변환하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-MOVE-002",
+      "spec": "internal/mouse.move.md",
+      "anchor": "req-mouse-move-002",
+      "api": "mouse.move",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-MOVE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: x,y:finite main viewport CSS 좌표. 반례 조건: NaN/Infinity 등 잘못된 좌표는 이벤트 없이 거절하며 이 API에는 locator 엄격 매칭을 요구하지 않는다.",
+        "when": "`mouse.move`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "NaN/Infinity 등 잘못된 좌표는 이벤트 없이 거절하며 이 API에는 locator 엄격 매칭을 요구하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-DOWN-001",
+      "spec": "internal/mouse.down.md",
+      "anchor": "req-mouse-down-001",
+      "api": "mouse.down",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-DOWN-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.button?:left/right/middle,clickCount?:integer; 기본left/1.",
+        "when": "`mouse.down`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "누른 버튼상태가 다음 move/up에 이어져 격자 범위 선택을 구성할 수 있다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-DOWN-002",
+      "spec": "internal/mouse.down.md",
+      "anchor": "req-mouse-down-002",
+      "api": "mouse.down",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-DOWN-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.button?:left/right/middle,clickCount?:integer; 기본left/1. 반례 조건: 지원 안하는 버튼·상태 충돌은 오류이며 다른 세션의 버튼 상태를 바꾸지 않는다.",
+        "when": "`mouse.down`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "지원 안하는 버튼·상태 충돌은 오류이며 다른 세션의 버튼 상태를 바꾸지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-UP-001",
+      "spec": "internal/mouse.up.md",
+      "anchor": "req-mouse-up-001",
+      "api": "mouse.up",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-UP-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.button?:left/right/middle; 기본left.",
+        "when": "`mouse.up`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "대응 down을 해제해 드래그를 끝내고 반복 up은 새 클릭을 만들지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-UP-002",
+      "spec": "internal/mouse.up.md",
+      "anchor": "req-mouse-up-002",
+      "api": "mouse.up",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-UP-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.button?:left/right/middle; 기본left. 반례 조건: 탭 close/reset 뒤 정리된 상태와 충돌하면 명시 처리하고 버튼이 눌린 채 잔류하지 않는다.",
+        "when": "`mouse.up`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "탭 close/reset 뒤 정리된 상태와 충돌하면 명시 처리하고 버튼이 눌린 채 잔류하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-001",
+      "spec": "internal/mouse.click.md",
+      "anchor": "req-mouse-click-001",
+      "api": "mouse.click",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-CLICK-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: x,y:finite CSS 좌표, options.button?,clickCount?.",
+        "when": "`mouse.click`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "좌표에서 down/up을 수행하며 해당 위치 UI를 바꾸는 낮은수준 도구임을 명시한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-CLICK-002",
+      "spec": "internal/mouse.click.md",
+      "anchor": "req-mouse-click-002",
+      "api": "mouse.click",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-CLICK-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: x,y:finite CSS 좌표, options.button?,clickCount?. 반례 조건: 오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다.",
+        "when": "`mouse.click`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-001",
+      "spec": "internal/mouse.wheel.md",
+      "anchor": "req-mouse-wheel-001",
+      "api": "mouse.wheel",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-WHEEL-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: deltaX,deltaY:finite CSS scroll delta.",
+        "when": "`mouse.wheel`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "pointer를 iframe/내부목록에 move한 뒤 해당 위치에 가로·세로 wheel을 전달한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls a virtualized dropdown and selects the requested option",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-MOUSE-WHEEL-002",
+      "spec": "internal/mouse.wheel.md",
+      "anchor": "req-mouse-wheel-002",
+      "api": "mouse.wheel",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-MOUSE-WHEEL-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: deltaX,deltaY:finite CSS scroll delta. 반례 조건: scroll 끝·preventDefault에서는 이동이0일 수 있고 이를 더 많은 데이터 로딩 성공으로 주장하지 않는다.",
+        "when": "`mouse.wheel`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "scroll 끝·preventDefault에서는 이동이0일 수 있고 이를 더 많은 데이터 로딩 성공으로 주장하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls a virtualized dropdown and selects the requested option",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-DOWN-001",
+      "spec": "internal/keyboard.down.md",
+      "anchor": "req-keyboard-down-001",
+      "api": "keyboard.down",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-DOWN-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; modifier와 단일키 지원목록은 guide참조.",
+        "when": "`keyboard.down`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "키·modifier 상태가 후속 press/type/up에 일관되게 이어진다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-DOWN-002",
+      "spec": "internal/keyboard.down.md",
+      "anchor": "req-keyboard-down-002",
+      "api": "keyboard.down",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-DOWN-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; modifier와 단일키 지원목록은 guide참조. 반례 조건: 알 수없는 key는 입력 전 실패하며 세션간 modifier가 공유되지 않는다.",
+        "when": "`keyboard.down`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "알 수없는 key는 입력 전 실패하며 세션간 modifier가 공유되지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-UP-001",
+      "spec": "internal/keyboard.up.md",
+      "anchor": "req-keyboard-up-001",
+      "api": "keyboard.up",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-UP-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string.",
+        "when": "`keyboard.up`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "해당 키를 해제하며 다른 modifier를 임의로 해제하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-UP-002",
+      "spec": "internal/keyboard.up.md",
+      "anchor": "req-keyboard-up-002",
+      "api": "keyboard.up",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-UP-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string. 반례 조건: close/reset/실패 뒤 release 실패를 숨기지 않고 다음 요청에 눌림 상태를 유출하지 않는다.",
+        "when": "`keyboard.up`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "close/reset/실패 뒤 release 실패를 숨기지 않고 다음 요청에 눌림 상태를 유출하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-001",
+      "spec": "internal/keyboard.press.md",
+      "anchor": "req-keyboard-press-001",
+      "api": "keyboard.press",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-PRESS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; Enter/Control+A 등의 조합.",
+        "when": "`keyboard.press`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "정의된 순서로 조합키 down/주키/up을 보내고 마지막에 release한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-PRESS-002",
+      "spec": "internal/keyboard.press.md",
+      "anchor": "req-keyboard-press-002",
+      "api": "keyboard.press",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-PRESS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; Enter/Control+A 등의 조합. 반례 조건: 알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다.",
+        "when": "`keyboard.press`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-001",
+      "spec": "internal/keyboard.type.md",
+      "anchor": "req-keyboard-type-001",
+      "api": "keyboard.type",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-TYPE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string; Unicode 포함.",
+        "when": "`keyboard.type`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "기존 선택 위치에 Unicode·여러 줄을 제어 타입 규칙대로 삽입하며 fill과 구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-KEYBOARD-TYPE-002",
+      "spec": "internal/keyboard.type.md",
+      "anchor": "req-keyboard-type-002",
+      "api": "keyboard.type",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-KEYBOARD-TYPE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string; Unicode 포함. 반례 조건: 이모지·한글을 손상하지 않고 입력불가 focus에서 값 변경을 보장했다고 반환하지 않는다. keydown별발생은보장하지않는다.",
+        "when": "`keyboard.type`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "이모지·한글을 손상하지 않고 입력불가 focus에서 값 변경을 보장했다고 반환하지 않는다. keydown별발생은보장하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-001",
+      "spec": "internal/locator.waitFor.md",
+      "anchor": "req-locator-waitfor-001",
+      "api": "locator.waitFor",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-WAITFOR-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.state?:visible/hidden/attached/detached(기본visible),timeout?:positive ms(기본5000).",
+        "when": "`locator.waitFor`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "attached는매칭존재, detached는0개, hidden은0개또는숨김, visible은단일visible로정의한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls nested mailbox, loads mail 137 and marks it read",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-WAITFOR-002",
+      "spec": "internal/locator.waitFor.md",
+      "anchor": "req-locator-waitfor-002",
+      "api": "locator.waitFor",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-WAITFOR-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.state?:visible/hidden/attached/detached(기본visible),timeout?:positive ms(기본5000). 반례 조건: 알수없는state·잘못된timeout은즉시오류며 stale ref를 단순 detached로 무조건 흡수하지 않는다.",
+        "when": "`locator.waitFor`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "알수없는state·잘못된timeout은즉시오류며 stale ref를 단순 detached로 무조건 흡수하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "product extension scrolls nested mailbox, loads mail 137 and marks it read",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-001",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-001",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFOREVENT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000).",
+        "when": "`page.waitForEvent`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-002",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-002",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFOREVENT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000). 반례 조건: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.",
+        "when": "`page.waitForEvent`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-001",
+      "spec": "internal/page.waitForURL.md",
+      "anchor": "req-page-waitforurl-001",
+      "api": "page.waitForURL",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFORURL-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 URL 정확문자열, options.timeout?:positive ms(기본10000).",
+        "when": "`page.waitForURL`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재 URL이 요청문자열과 같으면 즉시, 이동후 같으면그때 반환한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFORURL-002",
+      "spec": "internal/page.waitForURL.md",
+      "anchor": "req-page-waitforurl-002",
+      "api": "page.waitForURL",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFORURL-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 URL 정확문자열, options.timeout?:positive ms(기본10000). 반례 조건: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.",
+        "when": "`page.waitForURL`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-001",
+      "spec": "internal/page.waitForFunction.md",
+      "anchor": "req-page-waitforfunction-001",
+      "api": "page.waitForFunction",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFORFUNCTION-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:직렬화가능함수,arg?:JSON, options.timeout?:positive ms(기본10000).",
+        "when": "`page.waitForFunction`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "Page main frame에서 arg를 받아 truthy를 제한시간까지 기다리고 closure는지원하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFORFUNCTION-002",
+      "spec": "internal/page.waitForFunction.md",
+      "anchor": "req-page-waitforfunction-002",
+      "api": "page.waitForFunction",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFORFUNCTION-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:직렬화가능함수,arg?:JSON, options.timeout?:positive ms(기본10000). 반례 조건: 함수오류·navigation재시도·직렬화불가를구분하며 sideeffect있는함수는반복실행됨을안내한다.",
+        "when": "`page.waitForFunction`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "함수오류·navigation재시도·직렬화불가를구분하며 sideeffect있는함수는반복실행됨을안내한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFORLOADSTATE-001",
+      "spec": "internal/page.waitForLoadState.md",
+      "anchor": "req-page-waitforloadstate-001",
+      "api": "page.waitForLoadState",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFORLOADSTATE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: state:interactive/domcontentloaded/load(기본interactive),options.timeout?:positive ms(기본10000).",
+        "when": "`page.waitForLoadState`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "interactive/domcontentloaded는readyState가loading이아닌상태,load는complete로정의한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFORLOADSTATE-002",
+      "spec": "internal/page.waitForLoadState.md",
+      "anchor": "req-page-waitforloadstate-002",
+      "api": "page.waitForLoadState",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFORLOADSTATE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: state:interactive/domcontentloaded/load(기본interactive),options.timeout?:positive ms(기본10000). 반례 조건: networkidle은지원하지않아즉시거절하며SPA업무완료와load를동일시하지않는다.",
+        "when": "`page.waitForLoadState`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "networkidle은지원하지않아즉시거절하며SPA업무완료와load를동일시하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "navigation history, load and URL waits work through product APIs",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-001",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-001",
+      "api": "locator.setFiles",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SETFILES-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: files:FileInput 또는 FileInput[]; []는비우기. FileInput=로컬경로/{fileId}/{name,mimeType,bytes}/{name,mimeType,base64}.",
+        "when": "`locator.setFiles`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "Chrome호스트 로컬경로와 서버asset을 구분하며 실제 업로드된 바이트·이름·MIME을 검증한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-002",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-002",
+      "api": "locator.setFiles",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SETFILES-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: files:FileInput 또는 FileInput[]; []는비우기. FileInput=로컬경로/{fileId}/{name,mimeType,bytes}/{name,mimeType,base64}. 반례 조건: single/multiple·파일수·32MiB제한·권한·없는경로·다른세션asset을 전체사전검증하고 실패시기존선택보존여부를알린다.",
+        "when": "`locator.setFiles`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "single/multiple·파일수·32MiB제한·권한·없는경로·다른세션asset을 전체사전검증하고 실패시기존선택보존여부를알린다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-001",
+      "spec": "internal/chooser.setFiles.md",
+      "anchor": "req-chooser-setfiles-001",
+      "api": "chooser.setFiles",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-CHOOSER-SETFILES-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 같은 FileInput형식; 현재 page.waitForEvent가 발급한 chooser.",
+        "when": "`chooser.setFiles`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "같은파일엔진으로 기본/중첩/OOPIF의 실제 chooser input에 파일을 넣는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "local path upload and intercepted file chooser use the same product upload engine",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-CHOOSER-SETFILES-002",
+      "spec": "internal/chooser.setFiles.md",
+      "anchor": "req-chooser-setfiles-002",
+      "api": "chooser.setFiles",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-CHOOSER-SETFILES-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 같은 FileInput형식; 현재 page.waitForEvent가 발급한 chooser. 반례 조건: 소비한/닫힌/다른세션 chooser는 실패하며 다른 input에 재지정하지 않는다.",
+        "when": "`chooser.setFiles`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "소비한/닫힌/다른세션 chooser는 실패하며 다른 input에 재지정하지 않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "local path upload and intercepted file chooser use the same product upload engine",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-001",
+      "spec": "internal/download.save.md",
+      "anchor": "req-download-save-001",
+      "api": "download.save",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DOWNLOAD-SAVE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: destination.target?:server/local(기본server); 임의Pod경로없음.",
+        "when": "`download.save`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "쿠키·POST·blob 다운로드를 브라우저가 받은 바이트대로 저장하고 실제 크기/hash를 확인한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DOWNLOAD-SAVE-002",
+      "spec": "internal/download.save.md",
+      "anchor": "req-download-save-002",
+      "api": "download.save",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DOWNLOAD-SAVE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: destination.target?:server/local(기본server); 임의Pod경로없음. 반례 조건: 미완료·취소·디스크오류·다른세션id는성공저장으로표시하지않고 중복save/이름충돌정책을명시한다.",
+        "when": "`download.save`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "미완료·취소·디스크오류·다른세션id는성공저장으로표시하지않고 중복save/이름충돌정책을명시한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DOWNLOAD-CANCEL-001",
+      "spec": "internal/download.cancel.md",
+      "anchor": "req-download-cancel-001",
+      "api": "download.cancel",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DOWNLOAD-CANCEL-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기Download핸들;인자없음.",
+        "when": "`download.cancel`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "실제진행중다운로드를중단하고최종interrupted상태를확인할수있다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "download cancellation interrupts an actual browser transfer",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DOWNLOAD-CANCEL-002",
+      "spec": "internal/download.cancel.md",
+      "anchor": "req-download-cancel-002",
+      "api": "download.cancel",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DOWNLOAD-CANCEL-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 자기Download핸들;인자없음. 반례 조건: 이미완료/취소된download는상태를구분하고다른세션다운로드를취소하지않는다.",
+        "when": "`download.cancel`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "이미완료/취소된download는상태를구분하고다른세션다운로드를취소하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "download cancellation interrupts an actual browser transfer",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DIALOG-ACCEPT-001",
+      "spec": "internal/dialog.accept.md",
+      "anchor": "req-dialog-accept-001",
+      "api": "dialog.accept",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DIALOG-ACCEPT-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value?:string; prompt입력은기본빈문자열.",
+        "when": "`dialog.accept`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "발급된현재dialog를정확히한번accept하며prompt내용을보낸다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DIALOG-ACCEPT-002",
+      "spec": "internal/dialog.accept.md",
+      "anchor": "req-dialog-accept-002",
+      "api": "dialog.accept",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DIALOG-ACCEPT-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value?:string; prompt입력은기본빈문자열. 반례 조건: 이미처리/교체/다른페이지dialog핸들은거절하며새dialog에수락을보내지않는다.",
+        "when": "`dialog.accept`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "이미처리/교체/다른페이지dialog핸들은거절하며새dialog에수락을보내지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DIALOG-DISMISS-001",
+      "spec": "internal/dialog.dismiss.md",
+      "anchor": "req-dialog-dismiss-001",
+      "api": "dialog.dismiss",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DIALOG-DISMISS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자없음;발급된Dialog.",
+        "when": "`dialog.dismiss`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재dialog를정확히한번dismiss하며prompt/confirm취소결과를확인한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DIALOG-DISMISS-002",
+      "spec": "internal/dialog.dismiss.md",
+      "anchor": "req-dialog-dismiss-002",
+      "api": "dialog.dismiss",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DIALOG-DISMISS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 인자없음;발급된Dialog. 반례 조건: 오래된핸들이후새dialog가열려도새dialog를닫지않는다.",
+        "when": "`dialog.dismiss`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "오래된핸들이후새dialog가열려도새dialog를닫지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-001",
+      "spec": "internal/scope.evaluate.md",
+      "anchor": "req-scope-evaluate-001",
+      "api": "scope.evaluate",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-EVALUATE-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:function,arg?:JSON; Scope이면document, Locator.evaluate별칭이면단일element인자.",
+        "when": "`scope.evaluate`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "확장QuickJS closure와페이지context를분리하고명시arg로만데이터전달한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-EVALUATE-002",
+      "spec": "internal/scope.evaluate.md",
+      "anchor": "req-scope-evaluate-002",
+      "api": "scope.evaluate",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-EVALUATE-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:function,arg?:JSON; Scope이면document, Locator.evaluate별칭이면단일element인자. 반례 조건: navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다.",
+        "when": "`scope.evaluate`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-EVALUATEALL-001",
+      "spec": "internal/locator.evaluateAll.md",
+      "anchor": "req-locator-evaluateall-001",
+      "api": "locator.evaluateAll",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-EVALUATEALL-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:(elements,arg)=>value,arg?:JSON.",
+        "when": "`locator.evaluateAll`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "현재선택결과전체를문서순서배열로전달하며0개도정상이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-EVALUATEALL-002",
+      "spec": "internal/locator.evaluateAll.md",
+      "anchor": "req-locator-evaluateall-002",
+      "api": "locator.evaluateAll",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-EVALUATEALL-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: fn:(elements,arg)=>value,arg?:JSON. 반례 조건: 중복매칭은허용하지만세션·프레임경계는유지하고직렬화오류를구분한다.",
+        "when": "`locator.evaluateAll`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "중복매칭은허용하지만세션·프레임경계는유지하고직렬화오류를구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-LOGS-001",
+      "spec": "internal/page.logs.md",
+      "anchor": "req-page-logs-001",
+      "api": "page.logs",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-LOGS-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.since?:epoch ms, level?:지원level.",
+        "when": "`page.logs`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "페이지콘솔/오류로그를시간·level로조회하고REPLconsole.log출력과구분한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-LOGS-002",
+      "spec": "internal/page.logs.md",
+      "anchor": "req-page-logs-002",
+      "api": "page.logs",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-LOGS-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.since?:epoch ms, level?:지원level. 반례 조건: 버퍼범위·유실·미수집기간을표시하며다른페이지/세션의민감로그를섞지않는다.",
+        "when": "`page.logs`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "버퍼범위·유실·미수집기간을표시하며다른페이지/세션의민감로그를섞지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-001",
+      "spec": "internal/console.log.md",
+      "anchor": "req-console-log-001",
+      "api": "console.log",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-CONSOLE-LOG-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: ...values:JS값들.",
+        "when": "`console.log`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "명시호출출력만반환하며마지막표현식이나페이지console과혼동하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "JavaScript executes inside extension WASM and explicit output is collected",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-CONSOLE-LOG-002",
+      "spec": "internal/console.log.md",
+      "anchor": "req-console-log-002",
+      "api": "console.log",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-CONSOLE-LOG-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: ...values:JS값들. 반례 조건: 큰출력·순환값·여러블록은실행출력예산내에서절단표시하며메모리/세션을넘어유출하지않는다.",
+        "when": "`console.log`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "큰출력·순환값·여러블록은실행출력예산내에서절단표시하며메모리/세션을넘어유출하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "JavaScript executes inside extension WASM and explicit output is collected",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DISPLAY-001",
+      "spec": "internal/display.md",
+      "anchor": "req-display-001",
+      "api": "display",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DISPLAY-001",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: image:{type:'image',mimeType:'image/png',data:base64};지원타입은guide안내.",
+        "when": "`display`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
+        "then": "screenshot을실제이미지로모델에전달하며base64를일반로그로쏟지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "viewport and full-page screenshots are actual images returned through display",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-DISPLAY-002",
+      "spec": "internal/display.md",
+      "anchor": "req-display-002",
+      "api": "display",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-DISPLAY-002",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: image:{type:'image',mimeType:'image/png',data:base64};지원타입은guide안내. 반례 조건: 잘못된MIME/base64·초과이미지는명시오류/생략이며다른요청이미지를재사용하지않는다.",
+        "when": "`display`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
+        "then": "잘못된MIME/base64·초과이미지는명시오류/생략이며다른요청이미지를재사용하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "viewport and full-page screenshots are actual images returned through display",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-003",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-003",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "긴URL만1만개와checked/selected/expanded/readonly/busy가있는페이지",
+        "when": "기본snapshot후필요href조회",
+        "then": "출력예산이내·상태보존·원문href복구이며passwordvalue는없다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "HIST-COMP"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-004",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-004",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "목표명은평가자만알고있는랜덤메일/예약프레임·긴본문fixture",
+        "when": "첫snapshot만본에이전트가frame/영역을선택해다음조회",
+        "then": "사전CSS/목표키워드없이범위발견→목표발견→실제제어하며관찰scroll0이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-005",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-005",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-005",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "작은예산으로끊긴정적/변동DOM",
+        "when": "cursor순회및중간navigation/root변경",
+        "then": "정적은전체고유ref를합칠수있고변동은정합성오류/재시작이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-006",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-006",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-006",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "예산이다른두snapshot와문서교체",
+        "when": "since요청",
+        "then": "비교가능조건명시또는resetRequired이며가짜삭제없다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-007",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-007",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-007",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "root가main에만있는중첩fixture",
+        "when": "root/interactive/showHidden조합",
+        "then": "관련없는frame오류없음·숨김과생략구분·다음조회경로존재다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "snapshot scope, output budget, continuation and diff are explicit",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "HIST-R2",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-003",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-003",
+      "api": "locator.filter",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FILTER-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "A와B조건이서로다른5행",
+        "when": "filter(A).filter(B),nth(0).filter(B)를각조회",
+        "then": "전자는교집합,후자는먼저고른행에B를검사한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-FILTER-004",
+      "spec": "internal/locator.filter.md",
+      "anchor": "req-locator-filter-004",
+      "api": "locator.filter",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-FILTER-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "aria-hidden토큰·CSS숨김토큰·긴slot본문",
+        "when": "양음정규식filter및visible조건",
+        "then": "본문정책에맞고뒤쪽텍스트도누락없으며g/y정규식반복결과가안정적이다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "remaining query, keyboard, pointer, evaluation and selection primitives are exercised",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "HIST-INLINE",
+        "HIST-R2",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-003",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-003",
+      "api": "page.screenshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-SCREENSHOT-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "잘못된clip·fullPage충돌",
+        "when": "캡처호출",
+        "then": "입력오류로구분하고이미지를성공반환하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "viewport and full-page screenshots are actual images returned through display",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-SCREENSHOT-004",
+      "spec": "internal/page.screenshot.md",
+      "anchor": "req-page-screenshot-004",
+      "api": "page.screenshot",
+      "level": "SHOULD",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-SCREENSHOT-004",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "거대한페이지와내부스크롤iframe",
+        "when": "fullPage캡처",
+        "then": "범위·제한이명시되고메모리실패를성공으로포장하지않는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "viewport and full-page screenshots are actual images returned through display",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-JS-003",
+      "spec": "external/js.md",
+      "anchor": "req-js-003",
+      "api": "js",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-JS-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "var/let선언된persistent세션",
+        "when": "표현식·console.log·throw순차호출",
+        "then": "명시출력만모델에전달되며오류종류와generation을확인한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "JavaScript executes inside extension WASM and explicit output is collected"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "CODE"
+      ]
+    },
+    {
+      "id": "REQ-RESET-003",
+      "spec": "external/reset.md",
+      "anchor": "req-reset-003",
+      "api": "reset",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-RESET-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "mouse.down/keyboard.down후미완료hostcall",
+        "when": "reset과late응답",
+        "then": "구세대출력없고실제눌림정리확인;이미입력된값은남는다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "reset cancels unresolved execution, clears variables and creates a usable generation"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-LOCATOR-SETFILES-003",
+      "spec": "internal/locator.setFiles.md",
+      "anchor": "req-locator-setfiles-003",
+      "api": "locator.setFiles",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-LOCATOR-SETFILES-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "0byte·Unicode명·중복명·pathseparator·32MiB경계",
+        "when": "setFiles후실제submit",
+        "then": "이름정책·바이트·MIME·파일수와삭제가일치하고잘못된파일은전달전거절된다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "server-staged bytes upload through product setFiles and actual browser download exports to server",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-PAGE-WAITFOREVENT-003",
+      "spec": "internal/page.waitForEvent.md",
+      "anchor": "req-page-waitforevent-003",
+      "api": "page.waitForEvent",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-PAGE-WAITFOREVENT-003",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "즉시popup/chooser/dialog를만드는버튼",
+        "when": "waitpromise선언직후click",
+        "then": "반복실행에서도timeout누락없이정확한event를받으며발생전등록을trace로검증한다.",
+        "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
+        "existingCandidate": {
+          "file": "tests/runtime-e2e.test.mjs",
+          "test": "popup and dialog events return controllable objects",
+          "grade": "basic-call regression; 일부는 복합 assertion"
+        },
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
+        "DESIGN"
+      ]
+    }
+  ]
+}
