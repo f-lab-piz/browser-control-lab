@@ -295,4 +295,3 @@
 - 실행: snapshot후명시wheel
 - 판정: axes/offset/방향boolean이실제와같고wheel소비/새데이터를보장하지않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
-

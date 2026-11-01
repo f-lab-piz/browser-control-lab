@@ -95,4 +95,3 @@
 - 실행: wait선언→click→await
 - 판정: register-ready→action→event순서·sleep없음·timeout/reset뒤late등록0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
-

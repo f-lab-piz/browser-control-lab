@@ -119,4 +119,3 @@
 - 실행: setFiles와실제submit
 - 판정: basename정책·MIME·0byte와선택해제가정확하고invalid는전달전거절이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
-
