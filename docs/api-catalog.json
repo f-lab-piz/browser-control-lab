@@ -2,656 +2,732 @@
   "external": [
     {
       "name": "guide",
-      "status": "planned"
+      "status": "verified",
+      "test": "tests/runtime-e2e.test.mjs",
+      "transport": "HTTP; MCP 등록 어댑터는 미포함"
     },
     {
       "name": "reset",
-      "status": "planned"
+      "status": "verified",
+      "test": "tests/runtime-e2e.test.mjs",
+      "transport": "HTTP; MCP 등록 어댑터는 미포함"
     },
     {
       "name": "js",
-      "status": "planned"
+      "status": "verified",
+      "test": "tests/runtime-e2e.test.mjs",
+      "transport": "HTTP; MCP 등록 어댑터는 미포함"
     }
   ],
   "internal": [
     {
       "name": "browser.list",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "browser.tabs",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "browser.open",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "browser.attach",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.activate",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.close",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.goto",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.back",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.forward",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.reload",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "scope.snapshot",
-      "status": "planned",
-      "test": null,
+      "status": "partial",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json",
+      "limitations": "기본 DOM 의미화만 지원. 전체 접근성 표준·닫힌 Shadow DOM·캔버스 의미 분석 미지원."
     },
     {
       "name": "page.screenshot",
-      "status": "planned",
-      "test": null,
+      "status": "partial",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json",
+      "limitations": "viewport/fullPage PNG 검증. clip/ref/주석은 미구현."
     },
     {
       "name": "page.frames",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.frame",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "scope.locator",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "scope.getByRole",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "scope.getByText",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "scope.getByLabel",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.filter",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.nth",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.count",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.textContent",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.getAttribute",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.inputValue",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.isVisible",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.isEnabled",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.isEditable",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.isChecked",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.boundingBox",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.click",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.fill",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.press",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.hover",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.focus",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.scrollIntoView",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.setChecked",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.selectOption",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.dragTo",
-      "status": "planned",
-      "test": null,
+      "status": "partial",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json",
+      "limitations": "같은 CDP target의 포인터 드래그 검증. HTML DnD 전용 DataTransfer 및 서로 다른 target 간 드래그 미지원."
     },
     {
       "name": "locator.drop",
-      "status": "planned",
-      "test": null,
+      "status": "partial",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json",
+      "limitations": "서버 참조·bytes/base64 및 MIME 데이터 지원. 로컬 경로 직접 드롭은 미지원."
     },
     {
       "name": "mouse.move",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "mouse.down",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "mouse.up",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "mouse.click",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "mouse.wheel",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "booking",
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "keyboard.down",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "keyboard.up",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "keyboard.press",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "keyboard.type",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "dropdown",
         "booking"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.waitFor",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.waitForEvent",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.waitForURL",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.waitForFunction",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.waitForLoadState",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.setFiles",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "chooser.setFiles",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "download.save",
-      "status": "planned",
-      "test": null,
+      "status": "partial",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json",
+      "limitations": "Chrome 기본 다운로드 경로 또는 로컬 중계기 asset 반환. 임의 원격 Pod 목적지는 미구현."
     },
     {
       "name": "download.cancel",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "files"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "dialog.accept",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "dialog.dismiss",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "scope.evaluate",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "locator.evaluateAll",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic",
         "mail",
         "booking",
         "large",
         "dynamic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "page.logs",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "console.log",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     },
     {
       "name": "display",
-      "status": "planned",
-      "test": null,
+      "status": "verified-basic",
+      "test": "tests/runtime-e2e.test.mjs",
       "plannedScenarios": [
         "basic"
-      ]
+      ],
+      "evidence": "output/runtime-e2e/results.json"
     }
-  ]
+  ],
+  "verificationScope": "Chrome for Testing 145.0.7632.6, 실제 HTTP→확장→QuickJS→브라우저. 기본 호출과 7개 업무 fixture 검증이며 모든 옵션·브라우저·사이트의 완전 지원을 뜻하지 않는다."
 }

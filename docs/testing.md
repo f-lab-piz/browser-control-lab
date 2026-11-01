@@ -45,10 +45,20 @@ run마다 id, task, events, accepted, 서버 상태와 PASS가 분리된다. UI�
 - viewport/full-page/내부 컨테이너 캡처 차이, 긴URL 축약·원문속성 접근, snapshot 부분검색·diff·예산초과 후속조회.
 
 ## API matrix
-64 API 각각을 docs/api-catalog.json에 유지한다. API 단위 smoke와 복잡 시나리오 연결, 실제 HTTP→확장 증거 파일을 각각 기록한다. 현재 모든 제품 API는 planned이며 test-site PASS로 implemented 상태로 바꾸지 않는다.
+64 API 각각을 docs/api-catalog.json에 유지한다. API 단위 smoke와 복잡 시나리오 연결, 실제 HTTP→확장 증거 파일을 각각 기록한다. catalog의 verified-basic은 실제 확장 경로에서 기본 호출을 검증했다는 뜻이다. partial은 기본 검증 외에 명시한 미지원 조건이 남아 있다. fixture 단독 PASS를 제품 API 증거로 쓰지 않는다.
 
 ## External-site validation
 네이버에서 삼성전자 검색 결과를 대상으로 주요 영역 파악·결과 선택·뒤로가기와 스냅샷 크기를 측정한다. 결과 순위나 특정 문구를 고정하지 않고 작업 목표와 관찰 범위를 기록한다. 원문 전체를 불필요하게 로그로 저장하지 않는다. 사이트별 helper 없이 공통 API로 수행한다.
 
 ## Reports
 각 run의 브라우저/OS/엔진버전, seed, 요청/이벤트 trace, 상태·실패 이유, snapshot 글자/UTF8바이트/ref/프레임 수·제한/생략, 지연시간, 스크린샷을 output/에 남긴다. 허용된 관찰 예산 안에서 목표 작업 성공률과 실패 복구를 같이 평가한다. 실패 케이스를 빼고 성공률을 계산하지 않는다.
+
+## 제품 실행 명령
+
+```sh
+npm run test:runtime
+HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
+```
+
+TEST_CHROME으로 실행 파일을 지정한다. 별도 임시 프로필·중계기·확장을 만들고 시험 종료 시 지운다. 실제 입력은 HTTP 경로로만 수행한다. Playwright 대화상자 자동 닫기가 제품 검증을 방해하지 않도록 수동 처리 리스너를 설치하며 실제 accept/dismiss는 제품 API가 수행한다. DOM 준비와 비동기 업무 화면 준비는 구별해 대상 요소를 기다린다.
+결과는 output/runtime-e2e/results.json, 실제 네이버 관찰은 external.json, 캡처는 viewport.png다. 네이버 시험은 EXTERNAL_SITE=1일 때만 실행하며 환경 차단은 SKIP/blocked로 기록한다.

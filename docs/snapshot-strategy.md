@@ -28,3 +28,11 @@
 
 ## Screenshot
 viewport 캡처와 full-page 캡처를 모두 제공한다. 영역/요소 및 주석은 같은 API 옵션이다. full-page 캡처도 미로딩 콘텐츠나 모든 내부 스크롤 컨테이너의 숨은 영역까지 자동 수집했다는 뜻은 아니다. 내부 스크롤 영역의 캡처는 범위를 별도로 명시한다.
+
+## 현재 구현
+
+현재 DOM 전체를 순회하고 offscreen 여부를 표시한다. SCRIPT/STYLE/NOSCRIPT/TEMPLATE와 제어 요소 내부의 중복 leaf 텍스트를 기본 스냅샷에서 제외한다. 역할·접근 이름·프레임별 ref를 반환하고 href 원문은 getAttribute로 별도 조회한다. 구조 영역의 이름에 자식 스크립트/본문 전체를 붙이지 않는다.
+
+maxChars는 text 예산, maxNodes는 반환 노드 수, maxOutputBytes는 반환 구조의 예산이다(기본48KB). ref 목록에는 선택에 필요한 식별자·역할·이름·프레임만 넣고 box/속성은 요소 조사 API로 받는다. 프레임 URL은240자로 제한하고 urlTruncated를 표시한다. 전체 URL이 필요하면 page.frames()로 요청한다. 잘린 행은 nextCursor 또는 query/root 범위 조회로 이어 받는다. diff가 예산을 넘으면 resetRequired/DIFF_OUTPUT_BUDGET을 표시한다.
+
+이름은 기본 DOM 규칙의 구현이며 전체 접근성 트리와 동일하다고 보장하지 않는다. 가상화 목록의 아직 생성되지 않은 요소는 별도 입력으로 로드한 뒤 재관찰한다.

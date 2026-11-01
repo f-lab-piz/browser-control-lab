@@ -56,7 +56,7 @@ export async function startFixture({port=0}={}){
    if(url.pathname==='/download'){
     const run=runs.get(url.searchParams.get('run'));if(!run||!run.state.upload)return send({error:'Upload first'},409);
     applyEvent(run,{type:'file-download-issued'});
-    res.writeHead(200,{'Content-Type':'text/plain','Content-Disposition':'attachment; filename="proof-download.txt"'});res.end(run.task.fileText);return;
+    res.writeHead(200,{'Content-Type':'text/plain','Content-Disposition':'attachment; filename="proof-download.txt"'});if(url.searchParams.get('slow')==='1'){const bytes=Buffer.from(run.task.fileText.repeat(100000));let offset=0;const timer=setInterval(()=>{if(offset>=bytes.length){clearInterval(timer);res.end();return}res.write(bytes.subarray(offset,offset+32768));offset+=32768},60);res.on('close',()=>clearInterval(timer))}else res.end(run.task.fileText);return;
    }
    if(url.pathname==='/popup')return send('<h1>팝업 연결 확인</h1><button onclick="window.close()">닫기</button>',200,'text/html; charset=utf-8');
    if(url.pathname==='/noop')return send('잘못된 목적 링크입니다. 업무 대상은 작업 카드에 표시됩니다.',200,'text/plain; charset=utf-8');
