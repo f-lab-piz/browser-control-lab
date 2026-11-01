@@ -2,9 +2,13 @@
 
 사용자가 요청한 **6단계 B02A까지 구현·검증·독립 제품 리뷰를 완료**했다. 정확23aff96의 Sol6.1/high 독립 리뷰는 PASS이며 범위 내 미해결 P0/P1/P2는 없다. 전체132 PASS/외부1 SKIP, 전체 종료 후 단독 창 모드45 PASS, 별도 독립 경계3그룹 PASS다. [B02A 보고서](implementation/b02a.md), [최종 리뷰](reviews/pr20-b02a-final.md), [증거](evidence/b02a/manifest.json)를 따른다.
 
-1~6단계 합계는37부모/54조건이다. 최종 증거 형식 P3를 문서 전용으로 정리하고 최종 문서차이/원격 gate를 거쳐 정상 머지한다. 실제 머지 여부·commit은 [PR20 원격 기록](https://github.com/f-lab-piz/browser-control-lab/pull/20)이 정본이다.
+1~6단계 합계는37부모/54조건이다. 최종 증거 형식 P3 정리 후 정확d513cfa의 [문서 delta 독립 PASS](reviews/pr20-b02a-docs-delta.md)와 원격 gate를 거쳐 PR #20을b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47로 정상 머지했다. 새 PC 재개 절차와 남은 이식성 개선은 [개발 재개 안내](development-handoff.md)를 따른다.
 
 기존 전체21단계 Goal은 중단 상태를 유지한다. **7단계 B02B부터 이후15단계는 모두 미착수이며 자동으로 이어서 진행하지 않는다.** 전체185REQ의 완료를 주장하지 않는다. 과거 headed 프레임조회 원인 미확정 위험과 외부/회사 사이트의 미검증 범위는 남긴다. 아래 수치와 대기 문구는 각 단계 당시 이력이다.
+
+## 2026-11-02 개발 재개 문서 보완
+
+리뷰어 생성/재사용·문서 delta 검증·개발 기록 규칙과 다른 PC 재개 안내를 보완했다. 추적 파일만 내보낸 환경의 문서/계획 검사·Python6·연결/증거 hash를 검증했다. 개인 저장소/계정 표기와 사용자 절대 경로도 일반화했고 정확289e7b4의 [PR22 독립 문서/스킬 리뷰](reviews/pr22-portable-privacy.md)는 PASS다. 제품 코드와 다음15단계 상태는 바꾸지 않았으며 다른 PC 브라우저 호환성은 아직 실측하지 않았다. [인계](development-handoff.md)의 남은 이식성 개선 후보를 따른다.
 
 ## 초기 구현과 단계별 이력
 

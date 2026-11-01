@@ -1,0 +1,245 @@
+{
+  "head": "d513cfa8b9636fab324d633988a81566d3f72a76",
+  "status": "",
+  "deltaFiles": [
+    "docs/evidence/b02a/label-aside-guide.txt",
+    "docs/evidence/b02a/label-aside-repl-guide.txt",
+    "docs/evidence/b02a/manifest.json",
+    "docs/evidence/b02a/reviewer-final-all.log.txt",
+    "docs/evidence/b02a/reviewer-final-audit.json",
+    "docs/evidence/b02a/reviewer-final-headed.json",
+    "docs/evidence/b02a/reviewer-final-headed.log.txt",
+    "docs/evidence/b02a/reviewer-final-probe.mjs",
+    "docs/evidence/b02a/reviewer-final-probes.json",
+    "docs/evidence/b02a/reviewer-final-product.json",
+    "docs/evidence/b02a/reviewer-final-report.txt",
+    "docs/implementation/b02a.md",
+    "docs/reviews/pr20-b02a-final.md",
+    "docs/status.md",
+    "implementation/index.md",
+    "implementation/log.md",
+    "planning/implementation-plan.json"
+  ],
+  "artifactCount": 69,
+  "artifactFailures": [
+    {
+      "file": "runtime-regression.json",
+      "retainedMatches": true,
+      "sourceExists": true,
+      "sourceMatches": false
+    }
+  ],
+  "existingArtifactChanges": [
+    {
+      "file": "label-aside-guide.txt",
+      "fields": [
+        "sha256",
+        "normalization"
+      ]
+    },
+    {
+      "file": "label-aside-repl-guide.txt",
+      "fields": [
+        "sha256",
+        "normalization"
+      ]
+    }
+  ],
+  "newArtifactNormalization": [
+    {
+      "file": "reviewer-final-report.txt",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-probes.json",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-probe.mjs",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-audit.json",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-all.log.txt",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-headed.log.txt",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-product.json",
+      "normalizedBytesEqual": true
+    },
+    {
+      "file": "reviewer-final-headed.json",
+      "normalizedBytesEqual": true
+    }
+  ],
+  "reports": {
+    "before-product": {
+      "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+      "dirty": true,
+      "headed": false,
+      "sourceCount": 36,
+      "mismatches": [],
+      "evidenceCount": 13,
+      "pass": 3,
+      "conditions": 21
+    },
+    "after-product": {
+      "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+      "dirty": true,
+      "headed": false,
+      "sourceCount": 36,
+      "mismatches": [],
+      "evidenceCount": 13,
+      "pass": 13,
+      "conditions": 21
+    },
+    "after-headed": {
+      "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+      "dirty": true,
+      "headed": true,
+      "sourceCount": 36,
+      "mismatches": [],
+      "evidenceCount": 13,
+      "pass": 13,
+      "conditions": 21
+    },
+    "reviewer-final-product": {
+      "head": "23aff96a23710c41702eb0079cd99b7e221144f4",
+      "dirty": false,
+      "headed": false,
+      "sourceCount": 36,
+      "mismatches": [],
+      "evidenceCount": 13,
+      "pass": 13,
+      "conditions": 21
+    },
+    "reviewer-final-headed": {
+      "head": "23aff96a23710c41702eb0079cd99b7e221144f4",
+      "dirty": false,
+      "headed": true,
+      "sourceCount": 36,
+      "mismatches": [],
+      "evidenceCount": 13,
+      "pass": 13,
+      "conditions": 21
+    }
+  },
+  "approvedFingerprintMismatches": [],
+  "beforeAfterDifferentInputs": [
+    "extension/api-source.mjs",
+    "extension/page-agent.mjs"
+  ],
+  "logs": {
+    "reviewer-final-all.log.txt": {
+      "pass": [
+        42,
+        13,
+        1,
+        24,
+        45,
+        7
+      ],
+      "fail": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "skip": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    "reviewer-final-headed.log.txt": {
+      "pass": [
+        45
+      ],
+      "fail": [
+        0
+      ],
+      "skip": [
+        0
+      ]
+    }
+  },
+  "scope": {
+    "throughSlice": "B02A",
+    "afterCompletion": "stop",
+    "reason": "사용자가 기존 전체21단계 Goal을 중단하고 6단계까지만 마무리하도록 범위를 변경했다. B02B 이후는 착수하지 않는다.",
+    "completedThrough": "B02A",
+    "executionStatus": "stopped-after-requested-scope",
+    "oldGoalStatus": "paused"
+  },
+  "completedSlices": [
+    {
+      "id": "B01A",
+      "status": "pass"
+    },
+    {
+      "id": "B01B",
+      "status": "pass"
+    },
+    {
+      "id": "B01C",
+      "status": "pass"
+    },
+    {
+      "id": "B01D",
+      "status": "pass"
+    },
+    {
+      "id": "B01E",
+      "status": "pass"
+    },
+    {
+      "id": "B02A",
+      "status": "pass"
+    }
+  ],
+  "parents": 37,
+  "conditions": 54,
+  "incompleteParents": [],
+  "incompleteConditions": [],
+  "futureCount": 15,
+  "futureStarted": [],
+  "eofOnly": {
+    "docs/evidence/b02a/label-aside-guide.txt": true,
+    "docs/evidence/b02a/label-aside-repl-guide.txt": true
+  },
+  "allRawSourceHashesPreserved": true,
+  "b01eRetained": {
+    "count": 24,
+    "mismatches": []
+  },
+  "finalRawRegressionCopyMatchesCurrent": true,
+  "finalRawRegressionEvidenceCount": 24,
+  "remote": {
+    "baseRefOid": "0452cbe2474ed73069167c43d683ae1514c4f29c",
+    "headRefOid": "d513cfa8b9636fab324d633988a81566d3f72a76",
+    "mergeCommit": null,
+    "mergedAt": null,
+    "number": 20,
+    "state": "OPEN",
+    "url": "<REPOSITORY_URL>/pull/20"
+  },
+  "exactB02AConditions": {
+    "before-product": true,
+    "after-product": true,
+    "after-headed": true,
+    "reviewer-final-product": true,
+    "reviewer-final-headed": true
+  }
+}

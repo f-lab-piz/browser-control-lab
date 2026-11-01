@@ -64,7 +64,7 @@ manifest의 27개 모두 원시 경로가 존재한다. `sourceSha256`은 원시
 
 ## 정확 SHA와 결합 gate 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/16
+- PR: #16
 - PR base: `05b0e6a71e2b112b5dbb75e1b0ac3c951887fbd2`
 - 이전 전체 검토 head: `3d4246f2821a67a9417585d8547782872eefbefa`
 - 이번 새 검토 head: `0e0580250f115b2a170127a0eb9117cb382cf0b3`

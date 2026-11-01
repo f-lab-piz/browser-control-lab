@@ -74,7 +74,7 @@ PNG 전체 구조의 형식별 제약과 decoder가 실제 처리하는 보존 c
 
 ## 정확 SHA와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/14
+- PR: #14
 - base: `0446e5b3ae683bb7801184648078f99de96ea55d`
 - head: `5747487ac72c613e650fc1977b28159b48ec7824`
 - 범위: 전체 base→head diff·연결 코드·B01C6 REQ/7조건·증거 계약.

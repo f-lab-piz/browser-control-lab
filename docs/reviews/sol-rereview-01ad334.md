@@ -5,7 +5,7 @@
 이 문서는 공간 부족으로 파일 저장이 실패했던 리뷰어의 최종 응답과 보존된 결과·로그를 바탕으로 복원했다. 복원 작업은 새 리뷰나 새 테스트 실행이 아니다. 검토 대상은 아래 고정 SHA이며 문서 복원 후 커밋을 재검토한 것으로 표시하지 않는다.
 
 - 모델: `gpt-6.1-sol`, 추론 `high`, 새 독립 컨텍스트
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/4
+- PR: #4
 - Base: `06887edc8eb3740e5ee7d8159cc0e455d5936955`
 - 이전 리뷰 head: `d50339baf50b449d17e3a4474ee8dfab0e540310`
 - 이번 리뷰 head: `01ad334d1aa367041692b063722c2fcd106ef7d1`

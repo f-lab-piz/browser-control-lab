@@ -21,10 +21,10 @@
         "docs/implementation/b01a.md",
         "docs/reviews/pr10-b01a-round3.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/9",
+      "issue": "#9",
       "review": "docs/reviews/pr10-b01a-round3.md",
       "mergeCommit": "367a5d2d7f8b3015828354e709a404a9cf456f3c",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/10"
+      "pullRequest": "#10"
     },
     {
       "id": "B01B",
@@ -43,10 +43,10 @@
         "docs/implementation/b01b.md",
         "docs/reviews/pr12-b01b.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/11",
+      "issue": "#11",
       "review": "docs/reviews/pr12-b01b.md",
       "mergeCommit": "0446e5b3ae683bb7801184648078f99de96ea55d",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/12"
+      "pullRequest": "#12"
     },
     {
       "id": "B01C",
@@ -83,9 +83,9 @@
           "status": "pass"
         }
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/13",
+      "issue": "#13",
       "review": "docs/reviews/pr14-b01c-round4.md",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/14",
+      "pullRequest": "#14",
       "mergeCommit": "05b0e6a71e2b112b5dbb75e1b0ac3c951887fbd2"
     },
     {
@@ -107,8 +107,8 @@
         "docs/reviews/pr16-b01d.md",
         "docs/reviews/pr16-b01d-format.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/15",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/16",
+      "issue": "#15",
+      "pullRequest": "#16",
       "review": "docs/reviews/pr16-b01d-format.md",
       "mergeCommit": "8d7c7d89ca48a8f75c5ac5a33e2b08c2e6254261"
     },
@@ -131,8 +131,8 @@
         "docs/implementation/b01e.md",
         "docs/evidence/b01e/manifest.json"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/17",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/18",
+      "issue": "#17",
+      "pullRequest": "#18",
       "review": "docs/reviews/pr18-b01e-rereview.md",
       "mergeCommit": "0452cbe2474ed73069167c43d683ae1514c4f29c"
     },
@@ -162,11 +162,13 @@
       "evidence": [
         "docs/implementation/b02a.md",
         "docs/evidence/b02a/manifest.json",
-        "docs/reviews/pr20-b02a-final.md"
+        "docs/reviews/pr20-b02a-final.md",
+        "docs/reviews/pr20-b02a-docs-delta.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/19",
+      "issue": "#19",
       "review": "docs/reviews/pr20-b02a-final.md",
-      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/20"
+      "pullRequest": "#20",
+      "mergeCommit": "b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47"
     },
     {
       "id": "B02B",

@@ -60,7 +60,7 @@
 
 ## 검토 SHA와 판정
 
-- PR: https://github.com/f-lab-piz/browser-control-lab/pull/10
+- PR: #10
 - base: `3c87245964a3f15565897320708fc88092975dfd`
 - 이전 검토 head: `47e59e0aa608b9c2846365d21b872c1743a802e5`
 - 재리뷰 head: `565602b02a3fd478073fe80947ce6ef24ae823b0`

@@ -210,3 +210,25 @@ B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준�
 - PR20 정확a59c560 독립 CHANGES_REQUESTED: label부재를빈문자열로처리해 /^$/가단일무라벨입력에trustedfill한 P2를수용. 부재null/연결빈label문자열로분리, 별도fixture·음성3regex/무입력·정상빈labeltrusted입력검증. 정확base같은13case Before3/13→After13/13, 전체132 PASS/외부1 SKIP·단독headed45 PASS. 신규root Codex/Aside5조회LIVE비교보존, 새head재리뷰전. B02B미착수.
 
 - 정확23aff96 Sol6.1 high 독립 제품 리뷰 PASS: 전체132 PASS/외부1 SKIP·단독headed45 PASS·추가3그룹 PASS, 범위 내P0/P1/P2 없음. 비차단P3 증거EOF2개를문서전용으로수정하고보존hash갱신, 승인제품입력36개불변. B02A slice PASS/1~6합계37부모54조건으로완료기록, 최종문서delta/원격gate후PR20정상머지.7단계이후15slice미착수, 전체Goal중단유지.
+
+
+## 2026-11-02 · 이슈21 다른 PC 재개와 리뷰 스킬 보완
+
+- 기준 main:b14fccb2ad7e94f183daf6c7d1714f4e9b1acd47, branch:docs/21-portable-handoff. 사용자 범위는 스킬/개발 기록·다른 PC 인계 보완이다. 기존 전체Goal과7단계 이후 제품 구현은 재개하지 않았다.
+- 정식 최초/재리뷰마다 Sol6.1/high/fork:none 새 agent를 생성하고, 기존 리뷰어는 진행 중 질문/재현 보충에 재사용하는 규칙을 명시했다. 문서 delta의 실행 입력·환경 동일성 검증과 새 PC baseline 필수, 리뷰 설정/결과/지적 처리의 추적 보존 기준을 추가했다.
+- docs/development-handoff.md에 완료37부모54조건·PR20 merge/리뷰, clone/npm ci/TEST_CHROME/실제 확장 baseline, 읽는 순서, B02B7부모9조건의 정본/반례,8~21단계/후속 요구 흐름과 로그 체크리스트를 연결했다. 초기8단계 계획은 이력으로 표시하고 오래된 Next Actions를 현재 재개 후보로 정리했다.
+- 로컬 output에만 있던 정확d513cfa 최종 문서 delta 보고서/감사를 docs/reviews·docs/evidence에 추가 보존했다. 역사적69개를 새로71개라고 바꾸지 않고 현재 manifest71개로 구분했다. B02A 실제 merge SHA를 ledger에 추가했고 이후15slice not-started와 executionScope/조건별 상태는 그대로다.
+- 실제 검증: skill-creator quick_validate PASS(시스템 Python은 PyYAML이 없어 첫 실행 실패, 기존 .local/skill-validation-deps를 PYTHONPATH로 지정해 해결), 문서/계획 validator PASS, Python 검사기6 PASS, 변경 Markdown 로컬 링크 PASS, B02A71/B01E24 보존hash PASS, staged diff-check PASS. 제품/테스트/fixture/빌드/의존성 변경0.
+- git checkout-index로 추적 파일만 .local/portable-handoff-checkout에 내보낸 뒤 .git/node_modules/output/.local이 없는 상태에서 두 validator·Python6·재개 링크·보존71hash PASS. 새 OS/PC의 npm 설치·브라우저/확장 전체 실행을 한 증거는 아니며 기존132/45를 신규 실행으로 집계하지 않는다.
+- 남은 코드/환경 후보: Chrome 경로 공통탐색/환경진단, 모든 legacy 출력의 run별 격리, 새 PC/OS에서 실제 확장 bootstrap·전체/단독headed 검증. 현재 문서는 TEST_CHROME 명시/고정출력 즉시보존 방법을 안내한다. 문서 PR로 원격에 보존하고 머지는 이번 요청에서 자동 수행하지 않는다. 다음 제품 후보는 B02B이나 실행은 사용자 재개 범위를 따른다.
+
+
+## 2026-11-02 · 이슈21 추가: 추적 기록의 계정/PC 표기 일반화
+
+사용자는 기존 PR22에 추가 커밋·독립 검토 후 정상 머지를 승인했다. 현재 추적 파일의 개인 저장소 URL/SSH별칭/사용자 절대 경로를 제거하고 저장소 기준 경로·환경변수·PR/Issue 번호·REPOSITORY_URL로 일반화했다. 새 스킬 규칙은 실행에 필요한 실제 경로와 추적 기록의 표기를 구분한다. 공식 외부 소스·라이선스 링크, 검토 SHA·테스트 판정과 원시 sourceSha256은 유지했다. 수정한 보존 증거3개의 sha256/정규화 설명만 갱신했다.
+
+제품·테스트·fixture·빌드·의존성 변경은 없으며 이번 작업은 문서/계정중립 인계 범위다. 기존 ignored 로컬 출력/설정 및 Git 과거 이력은 정리 대상이 아니다.7단계 이후15slice와 기존 중단 범위도 유지한다. 구조/검사기·증거 hash·개인표기 잔존·전체 diff·추적파일 전용 내보내기를 확인하고 정확한 추가 커밋에서 새 컨텍스트 Sol6.1/high 독립 리뷰 후 머지한다. 이후 실행 결과/판정과 실제 merge는 아래 후속 기록 또는 해당 PR 원격 기록을 따른다.
+
+추가 커밋 전 확인: tracked516개에서 개인 계정/사용자/절대홈경로 패턴0개,6개 manifest의 보존215개 hash 일치와 기존 sourceSha256 불변, 승인 제품 입력36개 불변, 스킬검사·문서/계획 validator·Python6 PASS, 변경 Markdown 링크와 staged diff-check PASS. 과거 raw 문서 사본1개의 원문 위치 기준 상대링크2개는 기존부터 있었고 이번에 새로 깨진 링크는0개다. 추적 파일만 별도 폴더로 내보낸 문서/계획/Python6도 PASS다. 제품 브라우저/새 PC 검증은 신규 실행하지 않았다.
+
+정확289e7b4731567f529b84ea3e6c546b0da2b3abd5의 새컨텍스트 독립 리뷰는 PASS, 신규P0~P3 없음이다. 생성 요청 agent=pr22_portable_privacy_review/model=gpt-6.1-sol/reasoning=high/fork=none; 리뷰어가 직접 노출받은 런타임 모델 메타데이터와는 구분한다. 원문 보고서를 docs/reviews/pr22-portable-privacy.md에 보존했다(raw SHA-256:f06b0d22399581c3d6bd2d4c6c4594b64635a7c4ac26b57a5cc88bb38533a7ec). 검토당시 tracked516개 개인표기0, 보존215hash/기존sourceSha 불변, 제품 지문36·전체 실행입력73파일 불변, 현재작업공간과 tracked-only export의 문서/계획/Python6 및 스킬·전체diff검사 PASS다. 브라우저 제품은 신규실행하지 않았다. 기존raw사본2개 상대링크 한계는 보고서에 보존했다. root는 보고서/인계/상태 기록만 추가하고 최종 문서delta·원격gate를 확인한 뒤 PR22를 정상 머지한다.7단계이후는 미착수로 유지한다.
