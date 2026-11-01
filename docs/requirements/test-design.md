@@ -19,6 +19,8 @@
 |S13 이벤트/대기|등록즉시popup/chooser/dialog, close/reset/timeout경합, 두dialog연속·oldhandle사용, URL/load/function 상태|동일eventidentity·순서·소비정책, waiter누수0, 새dialog불변, 함수throw와재시도가능navigation오류구분|
 |S14 평가/로그/출력|Scope/Locator evaluate alias/evaluateAll 빈배열, JSON·undefined·throw·순환·DOMnode, pageconsole vs REPL출력|직렬화계약·범위·closure오류, page 로그필터/수집기간, 모델출력예산·이미지형식. evaluate로업무PASS주입금지|
 
+S04는 이름 없는 scrollport 두 개의 ref·축·현재 위치/진행 단서도 포함한다. S07은 RTL/끝/preventDefault에서 wheel 전달과 실제 이동을 구분한다. S12는 save의 30초 완료대기·동시/순차 동일목적지 identity·server/local 전환·동명 다른 hash 파일 보존을 검증한다. S13은 close waiter의 정상 metadata와 다른 waiter의 PAGE_CLOSED를 구분한다.
+
 S04는 에이전트 방식 평가다. 성공률만 측정하지 않고 첫 관찰에 없는 목표를 어떻게 발견했는지 출력·호출 trace를 보존한다. 시드·브라우저/확장버전·viewport/DPR·HTTP/프레임오류·수집/반환노드·바이트·제어성공을 기록한다. 실행자의 사전 selector/키워드 하드코딩은 허용하지 않는다. 목표가 실제 DOM에 있는 사례와 아직 로드되지 않은 사례를 분리한다.
 
 기존 fixture에 없는 조건은 신규 fixture 설계 backlog다. Playwright는 fixture oracle/실행 기동/독립 읽기용이며 제품 동작을 대신하지 않는다. 실사이트는 Naver 읽기 탐색처럼 별도 표본으로 기록하며 회사환경은 접근 가능 전까지 미검증이다.

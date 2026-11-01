@@ -10,7 +10,7 @@
 - 입력/기본값: key:string; 예:Enter,Control+A.
 - 출력/성공 의미: Promise<boolean>; 대상 focus후 키 시퀀스.
 - 허용 부작용: 포커스·키 입력.
-- 오류/경계: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.
+- 오류/경계: focus 불가·stale·비활성 대상은 다른 요소 입력 없이 실패한다. 사전 실패는 명시 down을 보존하며 키 입력 단계는 keyboard.press의 소유 정책을 따른다.
 - 재시도: 읽기는 최신 문서 상태로 다시 관찰할 수 있다. 입력은 완료 여부를 먼저 확인하며 응답 유실만으로 재전송하지 않는다.
 - 지원: Chrome debugger/CDP, 허용된 HTTP(S), 현재 연결 DOM. Firefox/Safari·closed Shadow·모든 사이트 완전 지원은 이번 약속이 아니다.
 
@@ -33,9 +33,9 @@
 - 규범: focus 불가·stale·비활성 대상은 다른 요소 입력 없이 실패한다. 키 입력 단계는 keyboard.press와 같은 modifier 소유 정책을 따르며, focus 이전 실패는 기존 명시 down 상태를 임의 해제하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; 예:Enter,Control+A. 반례 조건: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.
-- When: `locator.press`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.
+- Given: 명시 Control down이 있는/없는 상태와 focus 성공/disabled·stale 실패 대상을 준비한다.
+- When: locator.press('Control+A') 후 keyboard.press('C')를 실행하고 키 시퀀스 중 오류 조건도 대조한다.
+- Then: focus 이전 실패에는 키 이벤트가 없고 기존 Control 상태는 보존된다. 키 시퀀스 중 실패에는 해당 press가 새로 누른 키만 정리하며 실제 후속 입력으로 잔류 여부를 확인한다.
 - 검증 계획: `PLAN-LOCATOR-PRESS-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ## 현재 사실과 근거 한계

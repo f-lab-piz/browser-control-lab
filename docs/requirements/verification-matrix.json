@@ -2675,9 +2675,9 @@
         "id": "PLAN-LOCATOR-PRESS-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; 예:Enter,Control+A. 반례 조건: focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.",
-        "when": "`locator.press`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "focus 불가·stale·비활성 대상은 잘못된 다른 요소 입력 없이 실패하며 조합키는 끝에 release한다.",
+        "given": "명시 Control down이 있는/없는 상태와 focus 성공/disabled·stale 실패 대상을 준비한다.",
+        "when": "locator.press('Control+A') 후 keyboard.press('C')를 실행하고 키 시퀀스 중 오류 조건도 대조한다.",
+        "then": "focus 이전 실패에는 키 이벤트가 없고 기존 Control 상태는 보존된다. 키 시퀀스 중 실패에는 해당 press가 새로 누른 키만 정리하며 실제 후속 입력으로 잔류 여부를 확인한다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -3719,9 +3719,9 @@
         "id": "PLAN-PAGE-WAITFOREVENT-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000). 반례 조건: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.",
-        "when": "`page.waitForEvent`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.",
+        "given": "같은 Page의 close waiter와 download waiter, 다른 탭의 close waiter를 등록하고 이미 닫힌 핸들도 준비한다.",
+        "when": "자기 close/페이지가 닫은 popup/다른 탭 close, timeout/reset 경합을 수행한다.",
+        "then": "자기 close만 해당 metadata로 정상 완료, 나머지 자기 Page waiter는 PAGE_CLOSED, 다른 탭 waiter는 유지된다. 이미 닫힌 핸들은 즉시 오류이며 terminal 결과 중복/누수는 없다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4038,9 +4038,9 @@
         "id": "PLAN-DOWNLOAD-SAVE-001",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: destination.target?:server/local(기본server); 임의Pod경로없음.",
-        "when": "`download.save`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.",
-        "then": "쿠키·POST·blob 다운로드를 브라우저가 받은 바이트대로 저장하고 실제 크기/hash를 확인한다.",
+        "given": "느린 쿠키/POST/blob 다운로드를 시작하고 이벤트 직후 핸들을 받는다. 충분한 js deadline과 짧은 deadline을 각각 쓴다.",
+        "when": "save({target:'server'}) 또는 save({target:'local'})를 진행 중 호출한다.",
+        "then": "완료 시 원본과 바이트 hash가 같고 올바른 목적지 결과를 반환한다. 30초 초과는 DOWNLOAD_TIMEOUT, interrupted는 원인 오류, 바깥 deadline은 실행 취소/불확실이며 성공 저장이 아니다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4067,9 +4067,9 @@
         "id": "PLAN-DOWNLOAD-SAVE-002",
         "grade": "product-e2e",
         "planned": true,
-        "given": "독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: destination.target?:server/local(기본server); 임의Pod경로없음. 반례 조건: 미완료·취소·디스크오류·다른세션id는성공저장으로표시하지않고 중복save/이름충돌정책을명시한다.",
-        "when": "`download.save`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.",
-        "then": "미완료·취소·디스크오류·다른세션id는성공저장으로표시하지않고 중복save/이름충돌정책을명시한다.",
+        "given": "같은 핸들의 동시/순차 저장, 목적지 전환, 같은 이름·다른 hash의 두 다운로드, 취소/디스크 실패·타세션을 준비한다.",
+        "when": "각 save를 실행하고 반환 identity·실제 파일 hash·asset 수를 확인한다.",
+        "then": "동일 목적지 재호출은 같은 결과, 목적지 전환은 바이트 동일, 다른 파일은 기존 파일 보존·자산 분리다. 실패를 저장 성공으로 표시하지 않고 타세션 접근을 거절한다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -4588,9 +4588,9 @@
         "id": "PLAN-SCOPE-SNAPSHOT-004",
         "grade": "product-e2e",
         "planned": true,
-        "given": "목표명은평가자만알고있는랜덤메일/예약프레임·긴본문fixture",
-        "when": "첫snapshot만본에이전트가frame/영역을선택해다음조회",
-        "then": "사전CSS/목표키워드없이범위발견→목표발견→실제제어하며관찰scroll0이다.",
+        "given": "동일 iframe에 이름 없는 가로/세로 overflow 컨테이너 두 개와 가상화된 미로드 목표를 둔다. 실행자에게 CSS/목표명은 숨기고 업무 유형만 준다.",
+        "when": "첫 snapshot 단서→scrollport ref/box→mouse.move/wheel→새 snapshot→목표 제어를 수행한다.",
+        "then": "첫 관찰의 scroll/request count는 불변이고, 명시 wheel 이후에만 선택한 컨테이너의 DOM/scroll이 바뀐다. 실제 서버 업무 판정과 발견 trace를 남기며 미로드 목표를 관찰했다고 주장하지 않는다.",
         "negativeOrBoundary": "API 오류/경계 요구와 연결하고 전후 DOM·서버 event 수·파일hash/세션상태로 부작용을 판독한다.",
         "existingCandidate": {
           "file": "tests/runtime-e2e.test.mjs",
@@ -5064,6 +5064,30 @@
         "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
       },
       "sources": [
+        "DESIGN"
+      ]
+    },
+    {
+      "id": "REQ-SCOPE-SNAPSHOT-011",
+      "spec": "internal/scope.snapshot.md",
+      "anchor": "req-scope-snapshot-011",
+      "api": "scope.snapshot",
+      "level": "MUST",
+      "decision": "accepted",
+      "status": "unverified",
+      "verification": {
+        "id": "PLAN-SCOPE-SNAPSHOT-011",
+        "grade": "product-e2e",
+        "planned": true,
+        "given": "이름 없는 중첩/OOPIF scroller와 RTL·끝·preventDefault 조건을 준비한다.",
+        "when": "snapshot의 구조 단서를 따라 범위 조회하고 wheel 전후 위치를 판독한다.",
+        "then": "ref로 해당 영역을 찾고 축/현재상태를 해석할 수 있다. preventDefault/끝에서는 이동0이 허용되며 관찰만으로 scroll하지 않는다.",
+        "negativeOrBoundary": "위 Then의 오류·전후효과를 독립 판독한다.",
+        "existingCandidate": null,
+        "result": "NOT_RUN_FOR_THIS_REQUIREMENT"
+      },
+      "sources": [
+        "USR",
         "DESIGN"
       ]
     }

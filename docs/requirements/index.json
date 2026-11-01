@@ -163,7 +163,8 @@
         "REQ-SCOPE-SNAPSHOT-007",
         "REQ-SCOPE-SNAPSHOT-008",
         "REQ-SCOPE-SNAPSHOT-009",
-        "REQ-SCOPE-SNAPSHOT-010"
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
       ],
       "common": [
         "runtime",

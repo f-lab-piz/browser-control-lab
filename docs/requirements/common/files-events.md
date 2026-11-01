@@ -37,8 +37,8 @@
 
 ### REQ-C-FILESEVENTS-004
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: event waiter는 등록 이후 같은 페이지/세션의 이벤트만 소비한다. timeout/close/reset은 해제하며 발급핸들은 실제event identity와수명을 가진다.
+- 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
+- 규범: event waiter는 등록 이후 같은 페이지/세션의 이벤트만 소비한다. timeout/reset은 단일 종결 후 제거한다. 자기 close event waiter는 정상 close metadata로 resolve하고 다른 waiter만 PAGE_CLOSED로 reject한다. 발급핸들은 실제 event identity와 수명을 가진다.
 - 근거: DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: 두dialog/chooser가순서대로발생

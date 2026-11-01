@@ -55,13 +55,13 @@
 
 ### REQ-SCOPE-SNAPSHOT-004
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: 키워드를 모르는 상태에서 프레임/landmark/heading/영역 요약과 부분 조회 경로로 목표 영역을 좁힐 수 있어야 한다. 요약도 예산 제한·미수집 영역을 표시한다.
+- 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
+- 규범: 키워드를 모르는 상태에서 프레임/landmark/heading/영역 요약과 현재 DOM의 탐색 가능한 scrollport 단서로 목표 영역을 좁힐 수 있어야 한다. 이름 없는 scrollport도 ref·frameId·scrollAxes(x/y/xy)·현재 축 위치 및 해당 축 진행 가능 여부를 제공한다. 스냅샷은 직접 스크롤/로딩하지 않으며 미로드 데이터 수를 추정해 사실로 표시하지 않는다. 요약의 생략은 후속 root/cursor 경로로 연결한다.
 - 근거: USR, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 목표명은평가자만알고있는랜덤메일/예약프레임·긴본문fixture
-- When: 첫snapshot만본에이전트가frame/영역을선택해다음조회
-- Then: 사전CSS/목표키워드없이범위발견→목표발견→실제제어하며관찰scroll0이다.
+- Given: 동일 iframe에 이름 없는 가로/세로 overflow 컨테이너 두 개와 가상화된 미로드 목표를 둔다. 실행자에게 CSS/목표명은 숨기고 업무 유형만 준다.
+- When: 첫 snapshot 단서→scrollport ref/box→mouse.move/wheel→새 snapshot→목표 제어를 수행한다.
+- Then: 첫 관찰의 scroll/request count는 불변이고, 명시 wheel 이후에만 선택한 컨테이너의 DOM/scroll이 바뀐다. 실제 서버 업무 판정과 발견 trace를 남기며 미로드 목표를 관찰했다고 주장하지 않는다.
 - 검증 계획: `PLAN-SCOPE-SNAPSHOT-004`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ### REQ-SCOPE-SNAPSHOT-005
@@ -129,3 +129,14 @@
 - When: 같은 cursor 순회, 다른 옵션/세션·since 병용 및 불완전 since를 요청한다.
 - Then: 정적 합집합과 순서가 유지된다. 잘못된 조합은 입력/정합성 오류, 비교 불가능 since는 resetRequired이며 가짜 삭제가 없다.
 - 검증 계획: `PLAN-SCOPE-SNAPSHOT-010`; [매핑](../verification-matrix.json).
+
+### REQ-SCOPE-SNAPSHOT-011
+
+- 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
+- 규범: scrollport 단서는 snapshot의 refs/구조 요약에서 대상 ref와 함께 scroll:{axes:"x"/"y"/"xy",x:number,y:number,canLeft:boolean,canRight:boolean,canUp:boolean,canDown:boolean}로 표현한다. 수치는 CSS scroll offset이고 RTL의 음수도 허용하며 방향 boolean은 물리적 진행 방향이다. 현재 overflow/extent만 관찰하고 wheel이 소비되거나 새 데이터가 반드시 생긴다는 보장은 하지 않는다. 해당 노드/메타데이터도 출력 예산에 포함한다.
+- 근거: USR, DESIGN. 설계 판단이며 현재 충족 증명이 아니다.
+- 충족 상태: **미검증**. 구현/테스트는 다음 개발 범위다.
+- Given: 이름 없는 중첩/OOPIF scroller와 RTL·끝·preventDefault 조건을 준비한다.
+- When: snapshot의 구조 단서를 따라 범위 조회하고 wheel 전후 위치를 판독한다.
+- Then: ref로 해당 영역을 찾고 축/현재상태를 해석할 수 있다. preventDefault/끝에서는 이동0이 허용되며 관찰만으로 scroll하지 않는다.
+- 검증 계획: `PLAN-SCOPE-SNAPSHOT-011`; [매핑](../verification-matrix.json).

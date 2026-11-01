@@ -8,7 +8,7 @@
 
 - 목적: 조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.
 - 입력/기본값: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000).
-- 출력/성공 의미: Promise<Page/FileChooser/Download/Dialog/close metadata>.
+- 출력/성공 의미: Promise<Page/FileChooser/Download/Dialog/{tabId:number,closedAt:number}>. close는 관측한 탭 종료 시각의 epoch ms를 반환한다.
 - 허용 부작용: wait등록; chooser interception가능.
 - 오류/경계: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.
 - 재시도: 읽기는 최신 문서 상태로 다시 관찰할 수 있다. 입력은 완료 여부를 먼저 확인하며 응답 유실만으로 재전송하지 않는다.
@@ -29,13 +29,13 @@
 
 ### REQ-PAGE-WAITFOREVENT-002
 
-- 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.
+- 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
+- 규범: 다른 탭·등록 전 이벤트는 재사용하지 않는다. 자기 Page close가 관측되면 등록된 close waiter는 {tabId:number,closedAt:epochMs}로 정확히 한 번 resolve하고 제거한다. 다른 event waiter는 PAGE_CLOSED로 reject/정리한다. 이미 닫힌 핸들에 새 wait 등록은 즉시 PAGE_CLOSED다. timeout/reset/close 경합은 실제 먼저 확정된 terminal 결과 하나만 유지하고 late 결과는 무시한다. chooser/dialog는 동일 event를 이중 소비하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000). 반례 조건: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.
-- When: `page.waitForEvent`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: 다른 탭·이전 이벤트를 재사용하지 않고 timeout/close/reset시 waiter를 정리하며 하나의 chooser/dialog를 이중 소비하지 않는다.
+- Given: 같은 Page의 close waiter와 download waiter, 다른 탭의 close waiter를 등록하고 이미 닫힌 핸들도 준비한다.
+- When: 자기 close/페이지가 닫은 popup/다른 탭 close, timeout/reset 경합을 수행한다.
+- Then: 자기 close만 해당 metadata로 정상 완료, 나머지 자기 Page waiter는 PAGE_CLOSED, 다른 탭 waiter는 유지된다. 이미 닫힌 핸들은 즉시 오류이며 terminal 결과 중복/누수는 없다.
 - 검증 계획: `PLAN-PAGE-WAITFOREVENT-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
 
 ## 현재 사실과 근거 한계
