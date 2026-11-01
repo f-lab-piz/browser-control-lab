@@ -49,3 +49,7 @@ Chrome for Testing **145.0.7632.6**, macOS, 별도 임시 프로필.
 ## 2026-11-01 진단 수정 구현
 
 후속 사용자 요청으로12건을 수정했다. 원래 진단31/31·추가 경계 포함36/36·기존 회귀24/24·단위7/7을 통과했다. Codex와 Aside 모두 동일 fixture에서 실측했으며 Before/After와 남은 제약은 fixes-before-after.md 및 evidence/diagnostics-before-after.json을 따른다. 평가 당시 보고서는 변경하지 않고 이력으로 남긴다. 기존 PR #2 위의 별도 수정 PR로 검토한다.
+
+## 재리뷰 보고서 저장 완료
+
+디스크 공간 부족으로 저장하지 못했던01ad334 대상 재리뷰를 docs/reviews/sol-rereview-01ad334.md에 복원했다. 이전3건은 해결 확인, 신규 P2 인접 인라인 텍스트 필터 회귀1건은 미해결이다. 판정 CHANGES_REQUESTED를 유지하며 이 문서 추가를 제품 수정이나 재승인으로 해석하지 않는다.
