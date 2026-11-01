@@ -18,25 +18,49 @@
 
 ### REQ-DOWNLOAD-CANCEL-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-download-cancel). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
 - 규범: 진행 다운로드에 취소를 요청하고 최대10초 내 브라우저 interrupted(USER_CANCELED) 상태를 확인한 뒤 cancelled를 반환한다. 확인이 안되면 timeout/불확실 오류이며 중단 성공을 주장하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 충분히 느린 전송을 시작해 download 핸들을 받는다.
-- When: cancel 후 반환값과 독립 브라우저 전송 상태를 판독한다.
-- Then: 실제 중단일 때만 status=cancelled/state=interrupted이고 저장 완료 파일 삭제는 하지 않는다.
+- Given: 아래 REQ-DOWNLOAD-CANCEL-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-DOWNLOAD-CANCEL-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-download.cancel` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-DOWNLOAD-CANCEL-001-C01
+
+- 조건: 취소성공은실제interrupted(USER_CANCELED)관측뒤반환한다.
+- 준비: 느린전송
+- 실행: cancel
+- 판정: 10초내확인시cancelled,확인못하면timeout/불확실이며파일삭제없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-DOWNLOAD-CANCEL-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-download-cancel). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
 - 규범: 이미 complete는 already-complete, 이미 사용자 취소는 already-cancelled, 다른 이유 interrupted는 interrupted와 원인으로 반환한다. 완료/cancel 경합도 관측한 최종 상태로 구분하고 타세션 id는 권한 오류다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 완료 직전·이미 완료·이미 취소·네트워크 interrupted·타세션 다운로드를 준비한다.
-- When: cancel을 반복 호출한다.
-- Then: 반환 상태는 실제 최종 상태와 같고 다른 세션과 완료 파일에는 부작용이 없다.
+- Given: 아래 REQ-DOWNLOAD-CANCEL-002-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-DOWNLOAD-CANCEL-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-download.cancel` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-DOWNLOAD-CANCEL-002-C01
+
+- 조건: 완료/기취소/다른interrupted/타세션을구분한다.
+- 준비: 각최종상태download와경합
+- 실행: cancel반복
+- 판정: already-complete/already-cancelled/interrupted원인/권한오류가맞고다른파일무변경이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

@@ -1,0 +1,3259 @@
+{
+  "schemaVersion": 1,
+  "cycle": 1,
+  "date": "2026-11-01",
+  "baseline": "850326772bb826b37fa182b98007b1313c925a2c",
+  "productBaseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "productSurface": "Codex CUA / ChatGPT in-app browser (iab)",
+  "version": "not exposed in public contract",
+  "interpretation": "67 API maps + 5 common maps; partial DOC/HISTORICAL claims, not 184 requirement support confirmation",
+  "apis": [
+    {
+      "api": "guide",
+      "requirements": [
+        "REQ-GUIDE-001",
+        "REQ-GUIDE-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "composition",
+      "method": "browser.documentation + agent.documentation.get",
+      "syntax": "await agent.documentation.get(\"file-uploads\")",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "최초 호출 시 안내 자동 출력, 이름 기반 문서 읽기"
+      ],
+      "unknownConditions": [
+        "guide api=unknown을 호출해 전체 안내로 조용히 fallback하는 반례",
+        "REQ-GUIDE-001: 전체 규범 충족은 미확인: guide/reset/js와 내부64개, 실행 위치·출력 방법·현재 제약을 함께 안내한다.",
+        "REQ-GUIDE-002: 전체 규범 충족은 미확인: 알 수 없는 api를 요청하면 다른 항목으로 대체하지 않고 구분 가능한 미지원 결과를 준다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "guide api=unknown을 호출해 전체 안내로 조용히 fallback하는 반례",
+      "counterexample": "guide({api:\"typo.api\"})가 전체목록을 주면서 성공으로 보이면 명시 미지원 검증이 빠진다.",
+      "normativeProposal": "전체/개별 API 요청·알수없는 이름을 분리하고 반환 schema의 catalog 개수·runtime 위치·현행 제약을 assertion으로 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "Tool entry documentation / Output; CUA first response",
+          "claim": "최초 호출 시 안내 자동 출력, 이름 기반 문서 읽기",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "reset",
+      "requirements": [
+        "REQ-RESET-001",
+        "REQ-RESET-002",
+        "REQ-RESET-003"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "mcp__cua_repl.js_reset",
+      "syntax": "{}",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "JS bindings 제거, browser tabs/apps/state는 닫거나 지우지 않음"
+      ],
+      "unknownConditions": [
+        "진행중 입력 뒤 reset의 실제 키 release, late hostcall·generation 정책 미확인",
+        "REQ-RESET-001: 전체 규범 충족은 미확인: reset 성공 이후 이전 변수는 없고 새 JS 호출은 실행 가능해야 한다.",
+        "REQ-RESET-002: 전체 규범 충족은 미확인: 진행 중 무한 루프와 event wait를 reset하면 종료 결과를 구분하고 이전 세대 결과가 새 요청에 섞이지 않는다.",
+        "REQ-RESET-003: 전체 규범 충족은 미확인: reset 완료는 미전송 hostcall을 차단하고 진행중입력의 완료/불확실 여부를 분리한다. 실제 key/button release 실패를 내부 상태초기화로 숨기지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "진행중 입력 뒤 reset의 실제 키 release, late hostcall·generation 정책 미확인",
+      "counterexample": "입력 X 직후 waiter가 남은 상태를 reset한 뒤 old Promise가 resolve되면 새 요청에 old 결과가 섞일 수 있다.",
+      "normativeProposal": "변수 삭제만으로 통과하지 않게 reset 뒤 typeof 변수와 새 실행을 확인하고 wait 취소·late 결과·실제 키 trace를 별도 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "Tool entry documentation / Output; CUA first response",
+          "claim": "JS bindings 제거, browser tabs/apps/state는 닫거나 지우지 않음",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "js",
+      "requirements": [
+        "REQ-JS-001",
+        "REQ-JS-002",
+        "REQ-JS-003"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "mcp__cua_repl.js",
+      "syntax": "{\"code\":\"var a = 1; nodeRepl.write(a)\",\"timeout_ms\":30000}",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "persistent JS REPL과 명시 nodeRepl.write 출력; 기본30초"
+      ],
+      "unknownConditions": [
+        "실행 위치가 QuickJS라는 근거 없음; 마지막식/오류분류/120초상한 미확인",
+        "REQ-JS-001: 전체 규범 충족은 미확인: top-level await와 세션 변수 유지, console.log/display 출력이 확장 QuickJS 안에서 실행된다.",
+        "REQ-JS-002: 전체 규범 충족은 미확인: 구문 오류·제한 초과는 실행 오류로 구분하며 중계기 Node나 다른 세션에서 실행하지 않는다.",
+        "REQ-JS-003: 전체 규범 충족은 미확인: 변수 재선언·직렬화·hostcall 오류와 제한취소를 구분한다. 마지막 표현식은 자동 출력하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "실행 위치가 QuickJS라는 근거 없음; 마지막식/오류분류/120초상한 미확인",
+      "counterexample": "a=7 선언후 다음 호출의 a 읽기, 마지막표현식 7 단독, console.log(7), throw를 모두 동일 출력성공으로 세면 잘못이다.",
+      "normativeProposal": "top-level await·동일 변수 후속읽기·다른세션 격리·마지막식/명시출력·syntax/timeout를 독립 조건으로 분해한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "Tool entry documentation / Output; CUA first response",
+          "claim": "persistent JS REPL과 명시 nodeRepl.write 출력; 기본30초",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "browser.list",
+      "requirements": [
+        "REQ-BROWSER-LIST-001",
+        "REQ-BROWSER-LIST-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "cua.listBrowsers",
+      "syntax": "await cua.listBrowsers({emit:false})",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "BrowserInfo의 id/name/family/type/profileName/metadata 공개"
+      ],
+      "unknownConditions": [
+        "연결 안 된 browser를 빈 정상 목록으로 반환하는지 미확인",
+        "REQ-BROWSER-LIST-001: 전체 규범 충족은 미확인: 연결 프로필을 식별할 수 있고 존재하지 않는 브라우저 지원을 만들지 않는다.",
+        "REQ-BROWSER-LIST-002: 전체 규범 충족은 미확인: 확장 연결이 없으면 연결 실패를 표시하며 정상 연결 목록으로 꾸미지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "연결 안 된 browser를 빈 정상 목록으로 반환하는지 미확인",
+      "counterexample": "프로필 A는 연결되고 B는 연결실패했는데 B도 정상 id로 반환하거나 모든실패를 []로 숨기는 경우.",
+      "normativeProposal": "연결 프로필2개와 끊긴 어댑터1개를 준비해 id 유일성/오류/새 브라우저 생성0을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "First CUA response: Computer Use > API > cua list/create/get methods",
+          "claim": "BrowserInfo의 id/name/family/type/profileName/metadata 공개",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "browser.tabs",
+      "requirements": [
+        "REQ-BROWSER-TABS-001",
+        "REQ-BROWSER-TABS-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "cua.listTabs",
+      "syntax": "await cua.listTabs({browser:\"iab\",emit:false})",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "TabInfo id/browserId/providerTabId/title/url; listing does not claim"
+      ],
+      "unknownConditions": [
+        "active/windowId 부재; 방금 닫은 탭의 ID로 getTab시 유사 제목 fallback 미확인",
+        "REQ-BROWSER-TABS-001: 전체 규범 충족은 미확인: 제어 후보 HTTP(S) 탭의 현재 메타데이터를 반환하며 목록 조회만으로 attach하지 않는다.",
+        "REQ-BROWSER-TABS-002: 전체 규범 충족은 미확인: 나열 직후 닫힌 tabId를 attach하면 실패하며 비슷한 제목 탭으로 바꾸지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "active/windowId 부재; 방금 닫은 탭의 ID로 getTab시 유사 제목 fallback 미확인",
+      "counterexample": "동명 A/B를 목록조회후 A만 닫았는데 attach(A)가 B에 붙는 경우.",
+      "normativeProposal": "A/B 동명탭을 목록 후 A만 닫고 attach A를 실패로, B URL/소유/포커스 불변으로 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "First CUA response: Computer Use > API > cua list/create/get methods",
+          "claim": "TabInfo id/browserId/providerTabId/title/url; listing does not claim",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "browser.open",
+      "requirements": [
+        "REQ-BROWSER-OPEN-001",
+        "REQ-BROWSER-OPEN-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "cua.createBrowserTab",
+      "syntax": "await cua.createBrowserTab(\"iab\",\"about:blank\",{visible:false})",
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-LIVE-BLANK"
+      ],
+      "confirmedConditions": [
+        "새 background about:blank 탭 생성 실제 성공"
+      ],
+      "unknownConditions": [
+        "visible와 active는 다름; HTTP(S) 금지scheme·실패 잔여탭 미실측",
+        "REQ-BROWSER-OPEN-001: 전체 규범 충족은 미확인: 요청 URL을 한 번 열고 준비된 Page를 반환한다.",
+        "REQ-BROWSER-OPEN-002: 전체 규범 충족은 미확인: 금지 scheme·잘못된 URL·권한 실패는 성공 Page를 주지 않으며 새로 만든 실패 탭의 잔여 여부를 설명한다."
+      ],
+      "exampleStatus": "executed-limited-about-blank; mapping syntax may differ: see E-LIVE-01",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "visible와 active는 다름; HTTP(S) 금지scheme·실패 잔여탭 미실측",
+      "counterexample": "권한실패 URL을 한 번 요청했는데 탭2개가 생기거나 빈 Page를 성공반환하는 경우.",
+      "normativeProposal": "active true/false 각각 대상 ID/탭 수 delta1·기존탭 URL불변을 확인하고 실패시 잔여탭 정책을 정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "First CUA response: Computer Use > API > cua list/create/get methods",
+          "claim": "새 background about:blank 탭 생성 실제 성공",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "LIVE",
+          "sourceId": "CUA-LIVE-BLANK",
+          "location": "raw/blank-probe.json",
+          "claim": "about:blank metadata/count/read-only evaluate/output/close only as relevant",
+          "scope": "no fixture input or boundary support claim"
+        }
+      ]
+    },
+    {
+      "api": "browser.attach",
+      "requirements": [
+        "REQ-BROWSER-ATTACH-001",
+        "REQ-BROWSER-ATTACH-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "cua.getTab",
+      "syntax": "await cua.getTab(knownTabId,{browser:\"iab\"})",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "ID/mention/URL로 기존 탭 binding; create와 별도"
+      ],
+      "unknownConditions": [
+        "독점 소유·타세션·닫힌탭·debugger attach 미확인",
+        "REQ-BROWSER-ATTACH-001: 전체 규범 충족은 미확인: 현재 HTTP(S) 탭에 연결하고 원래 URL과 내용을 보존한다.",
+        "REQ-BROWSER-ATTACH-002: 전체 규범 충족은 미확인: 다른 세션 소유·닫힌 탭·권한 거부는 구분해 실패하고 소유를 빼앗지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "독점 소유·타세션·닫힌탭·debugger attach 미확인",
+      "counterexample": "현재문서 nonce=A인 기존탭 attach가 탭을 reload해 nonce=B로 바꾸는 경우.",
+      "normativeProposal": "기존 문서의 nonce와 ID가 유지되는지, 다른 세션/닫힌 ID 오류에서 원탭의 내용/소유불변을 검사한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "First CUA response: Computer Use > API > cua list/create/get methods",
+          "claim": "ID/mention/URL로 기존 탭 binding; create와 별도",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.activate",
+      "requirements": [
+        "REQ-PAGE-ACTIVATE-001",
+        "REQ-PAGE-ACTIVATE-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "IAB visible 생성/브라우저 visibility capability는 별도 존재"
+      ],
+      "unknownConditions": [
+        "특정 tab.activate 공개 메서드 없음; browser visible를 탭활성으로 오인",
+        "REQ-PAGE-ACTIVATE-001: 전체 규범 충족은 미확인: 자기 탭을 활성화하고 탐색이나 탭 복제를 하지 않는다.",
+        "REQ-PAGE-ACTIVATE-002: 전체 규범 충족은 미확인: 닫힌 핸들이나 다른 세션 탭은 실패하며 임의 탭을 활성화하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "특정 tab.activate 공개 메서드 없음; browser visible를 탭활성으로 오인",
+      "counterexample": "지정한 A 대신 같은제목 B를 활성화하거나 포커스전환 중 A URL을 reload하는 경우.",
+      "normativeProposal": "두 탭을 두고 지정 ID의 active 전환·기존 URL/탭수불변·닫힌핸들 무효를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "IAB visible 생성/브라우저 visibility capability는 별도 존재",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.close",
+      "requirements": [
+        "REQ-PAGE-CLOSE-001",
+        "REQ-PAGE-CLOSE-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "tab.close",
+      "syntax": "await tab.close()",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "CUA-LIVE-BLANK"
+      ],
+      "confirmedConditions": [
+        "close():Promise<void>; 연구탭 close 예외 없음"
+      ],
+      "unknownConditions": [
+        "다른 waiter 종결·키 cleanup·재close 반환 미확인",
+        "REQ-PAGE-CLOSE-001: 전체 규범 충족은 미확인: 지정한 탭만 닫고 기존 핸들은 사용할 수 없게 한다.",
+        "REQ-PAGE-CLOSE-002: 전체 규범 충족은 미확인: 이미 닫힌 핸들은 구분 가능한 실패/이미 닫힘 결과를 주고 다른 탭을 닫지 않는다."
+      ],
+      "exampleStatus": "executed-limited-about-blank; mapping syntax may differ: see E-LIVE-01",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "다른 waiter 종결·키 cleanup·재close 반환 미확인",
+      "counterexample": "A close후 같은제목 B까지 닫거나, A close waiter를 정상metadata대신 PAGE_CLOSED로 거절하는 경우.",
+      "normativeProposal": "A/B 동일 제목에서 A close 후 A handle 오류·B 생존·close waiter와 다른 waiter의 서로 다른 terminal을 확인한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.close and relevant option types",
+          "claim": "close():Promise<void>; 연구탭 close 예외 없음",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "LIVE",
+          "sourceId": "CUA-LIVE-BLANK",
+          "location": "raw/blank-probe.json",
+          "claim": "about:blank metadata/count/read-only evaluate/output/close only as relevant",
+          "scope": "no fixture input or boundary support claim"
+        }
+      ]
+    },
+    {
+      "api": "page.goto",
+      "requirements": [
+        "REQ-PAGE-GOTO-001",
+        "REQ-PAGE-GOTO-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "tab.goto",
+      "syntax": "await tab.goto(fixtureUrl)",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "goto(url):Promise<void>; boolean 반환 아님"
+      ],
+      "unknownConditions": [
+        "새 DOM 준비/네트워크 실패/old ref 정리 미확인",
+        "REQ-PAGE-GOTO-001: 전체 규범 충족은 미확인: 새 문서에 연결 가능한 상태까지 기다리고 탐색 실패를 구분한다.",
+        "REQ-PAGE-GOTO-002: 전체 규범 충족은 미확인: 잘못된 URL·네트워크 실패에서 이전 DOM 관찰을 새 문서 성공으로 반환하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "새 DOM 준비/네트워크 실패/old ref 정리 미확인",
+      "counterexample": "네트워크실패 후 이전문서 nonce A를 관찰했으나 B 탐색성공 true로 반환하는 경우.",
+      "normativeProposal": "서로 다른 nonce 문서 A→B 전환 시 URL·새 nonce·old ref stale 확인; 실패URL은 새문서 성공과 구분한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.goto and relevant option types",
+          "claim": "goto(url):Promise<void>; boolean 반환 아님",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.back",
+      "requirements": [
+        "REQ-PAGE-BACK-001",
+        "REQ-PAGE-BACK-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "tab.back",
+      "syntax": "await tab.back()",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "back():Promise<void>"
+      ],
+      "unknownConditions": [
+        "이력없음 false 규약은 문서에 없음",
+        "REQ-PAGE-BACK-001: 전체 규범 충족은 미확인: 뒤 이력으로 이동하며 경계에서는false와 URL 불변을 반환한다.",
+        "REQ-PAGE-BACK-002: 전체 규범 충족은 미확인: 빠른 연속 뒤로 이동에서 다른 탭이나 이전 문서 ref에 입력하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "이력없음 false 규약은 문서에 없음",
+      "counterexample": "이력끝에서 URL불변인데 true를주거나 A→B→C에서 연속back이 이전문서 ref를 새문서 버튼에 연결하는 경우.",
+      "normativeProposal": "A→B→C에서 뒤로1회 B nonce, 2회 A nonce, 이력끝 false·불변; 동시에 보낸 두호출의 순서정책을 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.back and relevant option types",
+          "claim": "back():Promise<void>",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.forward",
+      "requirements": [
+        "REQ-PAGE-FORWARD-001",
+        "REQ-PAGE-FORWARD-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "tab.forward",
+      "syntax": "await tab.forward()",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "forward():Promise<void>"
+      ],
+      "unknownConditions": [
+        "앞이력 삭제/false 규약 미확인",
+        "REQ-PAGE-FORWARD-001: 전체 규범 충족은 미확인: 앞 이력으로 이동하며 경계에서는false와 URL 불변을 반환한다.",
+        "REQ-PAGE-FORWARD-002: 전체 규범 충족은 미확인: 뒤로 후 새 탐색으로 앞 이력이 사라졌으면false이며 사라진 URL을 새 탭으로 열지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "앞이력 삭제/false 규약 미확인",
+      "counterexample": "A→B→back→C 후 지워진 B URL을 새탭으로 열어 forward 성공처럼 처리하는 경우.",
+      "normativeProposal": "A→B→back→C에서 forward 결과 false와 C URL·새탭0을 고정 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.forward and relevant option types",
+          "claim": "forward():Promise<void>",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.reload",
+      "requirements": [
+        "REQ-PAGE-RELOAD-001",
+        "REQ-PAGE-RELOAD-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "tab.reload",
+      "syntax": "await tab.reload()",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "reload():Promise<void>"
+      ],
+      "unknownConditions": [
+        "문서 generation 새값·stale ref 미확인",
+        "REQ-PAGE-RELOAD-001: 전체 규범 충족은 미확인: 현재 URL을 다시 로드하고 새 문서 준비 이후 반환한다.",
+        "REQ-PAGE-RELOAD-002: 전체 규범 충족은 미확인: reload 전 ref를 다음 조작에 쓰면 stale 오류이며 새 문서의 유사 요소로 연결하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "문서 generation 새값·stale ref 미확인",
+      "counterexample": "reload후 새문서 동일이름 요소를 reload전 ref로 눌러버리는 경우.",
+      "normativeProposal": "URL은 유지하되 서버 nonce는 바뀌고 이전 document ref를 유사 새요소로 연결하지 않는지 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.reload and relevant option types",
+          "claim": "reload():Promise<void>",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "scope.snapshot",
+      "requirements": [
+        "REQ-SCOPE-SNAPSHOT-001",
+        "REQ-SCOPE-SNAPSHOT-002",
+        "REQ-SCOPE-SNAPSHOT-003",
+        "REQ-SCOPE-SNAPSHOT-004",
+        "REQ-SCOPE-SNAPSHOT-005",
+        "REQ-SCOPE-SNAPSHOT-006",
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "tab.playwright.domSnapshot",
+      "syntax": "await tab.playwright.domSnapshot()",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "string DOM snapshot, iframe body when available; 과거 tail/selected 관찰"
+      ],
+      "unknownConditions": [
+        "root/query/cursor/since/budgets/scrollport/완전성 옵션 미확인",
+        "REQ-SCOPE-SNAPSHOT-001: 전체 규범 충족은 미확인: 현재 연결 DOM 전체를 읽되 화면 밖 요소를 찾을 수 있고 가상화로 미존재한 데이터와 예산 생략을 구분한다.",
+        "REQ-SCOPE-SNAPSHOT-002: 전체 규범 충족은 미확인: 긴 URL·대형 DOM에서 예산 생략을 표시하고 후속 root/cursor/frames 조회 경로를 남긴다. 키워드 없는 탐색은 별도 요구를 따른다.",
+        "REQ-SCOPE-SNAPSHOT-003: 전체 규범 충족은 미확인: 기본 응답은 길어진 href를 나열하지 않고 역할·이름·상태·ref·프레임·생략 이유를 남긴다. 속성 원문은 getAttribute로 조회 가능해야 한다.",
+        "REQ-SCOPE-SNAPSHOT-004: 전체 규범 충족은 미확인: 키워드를 모르는 상태에서도 공개된 업무 조건으로 식별 가능한 목표를 프레임/landmark/heading/영역 요약과 현재 DOM의 scrollport 단서를 따라 찾을 수 있어야 한다. 정확한 제목/CSS/ref/프레임 ID를 사전 제공하지 않아도 관찰 가능한 업무 predicate가 있어야 한다. 이름 없는 scrollport의 ref·frameId·축·현재 위치/진행 단서를 제공하며 관찰이 직접 스크롤/로딩하지 않는다. 예산 생략과 미로드를 구분하고 후속 root/cursor로 연결한다.",
+        "REQ-SCOPE-SNAPSHOT-005: 전체 규범 충족은 미확인: continuation은 snapshot/문서세대·옵션과 결합한다. DOM 변화·다른 root·다른 session cursor는 재시작 필요를 반환하고 누락/중복 없는 정적 페이지 순회를 보장한다.",
+        "REQ-SCOPE-SNAPSHOT-006: 전체 규범 충족은 미확인: since diff는 같은 비교범위/모든 옵션/문서·보관중 snapshot이고 이전·현재 출력 모두 완전할 때만 비교한다. 하나라도 다르면 resetRequired다. 부분 출력 차이를 전체 DOM 삭제로 표시하지 않는다.",
+        "REQ-SCOPE-SNAPSHOT-007: 전체 규범 충족은 미확인: root는 선택 프레임의 유일 CSS/ref 대상에 한정하며 다른 프레임에 같은 selector를 강제하지 않는다. showHidden은 hidden을 표기하고 interactive는 본문없는것이완전본문수집이아님을알린다.",
+        "REQ-SCOPE-SNAPSHOT-008: 전체 규범 충족은 미확인: 기본값은 root=선택 Scope의 body, interactive=false, showHidden=false, query 없음, maxDepth=무제한, maxChars=16000 UTF-16 code unit, maxNodes=500, maxOutputBytes=48000 UTF-8 bytes, cursor/since 없음이다. maxChars는1000..100000 정수, maxNodes는1..10000 정수, maxOutputBytes는4096..60000 정수, maxDepth는0이상 정수(0=root만)다. 명시한 잘못된 값은 clamp/무시하지 않고 사전 입력 오류다.",
+        "REQ-SCOPE-SNAPSHOT-009: 전체 규범 충족은 미확인: text는 maxChars, refs/행은 maxNodes, 전체 JSON envelope는 maxOutputBytes를 동시에 만족한다. UTF-16 surrogate pair를 잘라 잘못된 문자열을 만들지 않는다. 메타데이터/생략 표지만으로 bytes 상한을 넘으면 SNAPSHOT_METADATA_BUDGET 오류다. query는 정규화된 이름의 대소문자 무시 부분 문자열이며 RegExp는 미지원이다.",
+        "REQ-SCOPE-SNAPSHOT-010: 전체 규범 충족은 미확인: cursor는 불투명 문자열 토큰으로 발급된 session/snapshot/document·query·root·interactive/showHidden/maxDepth와 예산 옵션에 결합한다. 후속 요청은 cursor만 또는 동일 옵션만 허용한다. cursor와 since는 배타적이다. since는 동일 문서/범위/옵션이고 두 출력이 완전할 때만 diff를 제공하고 그 외에는 resetRequired다. root는 유일 CSS/ref이며 접근 불가 body는 명시 오류다.",
+        "REQ-SCOPE-SNAPSHOT-011: 전체 규범 충족은 미확인: scrollport 단서는 snapshot의 refs/구조 요약에서 대상 ref와 함께 scroll:{axes:\"x\"/\"y\"/\"xy\",x:number,y:number,canLeft:boolean,canRight:boolean,canUp:boolean,canDown:boolean}로 표현한다. 수치는 CSS scroll offset이고 RTL의 음수도 허용하며 방향 boolean은 물리적 진행 방향이다. 현재 overflow/extent만 관찰하고 wheel이 소비되거나 새 데이터가 반드시 생긴다는 보장은 하지 않는다. 해당 노드/메타데이터도 출력 예산에 포함한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "root/query/cursor/since/budgets/scrollport/완전성 옵션 미확인",
+      "counterexample": "본문끝 목표가 현재 DOM에 있고 출력예산 밖인데 미로드로 표시하거나, 부분diff에서 보이지않은 노드를 삭제로 보고하는 경우.",
+      "normativeProposal": "11 REQ별 수집DOM/반환출력/미로드를 분리; static cursor 무중복/무누락, diff 완전성, metadata budget, 키워드 미지 탐색을 각각 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.playwright.domSnapshot and relevant option types",
+          "claim": "string DOM snapshot, iframe body when available; 과거 tail/selected 관찰",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "page.screenshot",
+      "requirements": [
+        "REQ-PAGE-SCREENSHOT-001",
+        "REQ-PAGE-SCREENSHOT-002",
+        "REQ-PAGE-SCREENSHOT-003",
+        "REQ-PAGE-SCREENSHOT-004"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ],
+      "relation": "direct",
+      "method": "tab.screenshot",
+      "syntax": "await tab.screenshot({clip:{x:0,y:0,width:320,height:240}})",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "clip/fullPage 옵션, Uint8Array; 과거 JPEG320x240 관찰"
+      ],
+      "unknownConditions": [
+        "DPR·scroll origin·fractional·두옵션 배타성 미확인",
+        "REQ-PAGE-SCREENSHOT-001: 전체 규범 충족은 미확인: viewport/fullPage/clip의 범위를 구분하고 clip은 현재 viewport CSS 좌표로 캡처한다.",
+        "REQ-PAGE-SCREENSHOT-002: 전체 규범 충족은 미확인: 가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.",
+        "REQ-PAGE-SCREENSHOT-003: 전체 규범 충족은 미확인: clip 좌표/크기는 유한 양수/비음수이고 fullPage와배타적이다. clip은정수 CSS pixel 크기만지원하며fractional은사전오류다.",
+        "REQ-PAGE-SCREENSHOT-004: 전체 규범 충족은 미확인: 전체문서 캡처는 픽셀/바이트 상한을 안내하고 초과는 명시 실패 또는 부분 이미지 표시를 한다. fullPage는 iframe내부 미노출content전체를의미하지않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "DPR·scroll origin·fractional·두옵션 배타성 미확인",
+      "counterexample": "scrollX700/scrollY800에서 clip(10,20,320,240)이 크기는맞지만 document원점의 다른픽셀을 담는 경우.",
+      "normativeProposal": "크기 검사와 픽셀위치 검사를 분리하고 x/y scroll×DPR1/2 색상표식·viewport변경 경계를 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.screenshot and relevant option types",
+          "claim": "clip/fullPage 옵션, Uint8Array; 과거 JPEG320x240 관찰",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "page.frames",
+      "requirements": [
+        "REQ-PAGE-FRAMES-001",
+        "REQ-PAGE-FRAMES-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ],
+      "relation": "composition",
+      "method": "domSnapshot + read-only DOM iframe inspection",
+      "syntax": "await tab.playwright.evaluate(() => Array.from(document.querySelectorAll(\"iframe\"),e=>({src:e.getAttribute(\"src\"),name:e.name})))",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "snapshot에 iframe body when available; evaluate는 main DOM 읽기"
+      ],
+      "unknownConditions": [
+        "DOM iframe 요소 목록은 main/nested/OOPIF process tree와 동등하지 않음",
+        "REQ-PAGE-FRAMES-001: 전체 규범 충족은 미확인: main·중첩·교차 출처/OOPIF 프레임을 부모 관계와 함께 찾을 수 있다.",
+        "REQ-PAGE-FRAMES-002: 전체 규범 충족은 미확인: 분리·교체 중 접근 불가 프레임은 누락 이유 또는 재조회 필요를 표시하고 완전 관찰로 주장하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "DOM iframe 요소 목록은 main/nested/OOPIF process tree와 동등하지 않음",
+      "counterexample": "sandbox 접근불가 child를 아예목록에서 빼고 모든프레임완전수집이라고 표시하는 경우.",
+      "normativeProposal": "main/child/sibling/cross-origin·이름중복·로드중·detach를 분리해 parent/id와 접근불가 이유를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: domSnapshot + read-only DOM iframe inspection and relevant option types",
+          "claim": "snapshot에 iframe body when available; evaluate는 main DOM 읽기",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.frame",
+      "requirements": [
+        "REQ-PAGE-FRAME-001",
+        "REQ-PAGE-FRAME-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ],
+      "relation": "composition",
+      "method": "tab.playwright.frameLocator",
+      "syntax": "tab.playwright.frameLocator(\"iframe[data-workspace]\")",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "CSS frame selector로 frame builder, 중첩 frameLocator 지원"
+      ],
+      "unknownConditions": [
+        "frameId binding·document lifetime·Scope.snapshot/evaluate 없음",
+        "REQ-PAGE-FRAME-001: 전체 규범 충족은 미확인: 프레임 핸들은 그 프레임의 문서만 선택·평가하고 형제 프레임에 누출되지 않는다.",
+        "REQ-PAGE-FRAME-002: 전체 규범 충족은 미확인: 분리된 frameId의 조작은 stale frame 오류이며 main frame으로 자동 대체하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "frameId binding·document lifetime·Scope.snapshot/evaluate 없음",
+      "counterexample": "detach된 frameId를 참조했는데 같은CSS가있는 main frame으로 조용히 대체하는 경우.",
+      "normativeProposal": "frame ID와 document generation을 구분하고 동명형제 두개 중 지정frame만 입력되는지·detach후 main fallback0을 확인한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.playwright.frameLocator and relevant option types",
+          "claim": "CSS frame selector로 frame builder, 중첩 frameLocator 지원",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "scope.locator",
+      "requirements": [
+        "REQ-SCOPE-LOCATOR-001",
+        "REQ-SCOPE-LOCATOR-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "scope.locator",
+      "syntax": "tab.playwright.locator(\"button[data-action]\")",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "페이지/frame의 CSS locator builder"
+      ],
+      "unknownConditions": [
+        "qualified ref 입력/invalidCSS 시점/stale·Shadow piercing 범위 미확인",
+        "REQ-SCOPE-LOCATOR-001: 전체 규범 충족은 미확인: CSS는 현재 Scope 안에서 평가하고 ref는 발급 문서·프레임·요소에 고정한다.",
+        "REQ-SCOPE-LOCATOR-002: 전체 규범 충족은 미확인: 잘못된 CSS·낡은 ref는 실패하며 이름 유사도나 DOM 순서로 보정하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "qualified ref 입력/invalidCSS 시점/stale·Shadow piercing 범위 미확인",
+      "counterexample": "삭제된 ref의 요소와 새 요소가 같은이름인데 ref조작이 새요소에 적용되는 경우.",
+      "normativeProposal": "CSS와 ref를 다른 테스트로 나누고 교체 전ref→동일name 새요소 무입력을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: scope.locator and relevant option types",
+          "claim": "페이지/frame의 CSS locator builder",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "scope.getByRole",
+      "requirements": [
+        "REQ-SCOPE-GETBYROLE-001",
+        "REQ-SCOPE-GETBYROLE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "scope.getByRole",
+      "syntax": "tab.playwright.getByRole(\"button\",{name:/확인/,exact:false})",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "role/name/exact, TextMatcher RegExp; 과거 regex/slot 성공"
+      ],
+      "unknownConditions": [
+        "includeHidden 옵션 없음; name 계산 전체·g/y/aria-labelledby 미확인",
+        "REQ-SCOPE-GETBYROLE-001: 전체 규범 충족은 미확인: 네이티브·명시 role과 접근 이름으로 검색하고 기본 숨김 제외/화면 밖 포함을 구분한다.",
+        "REQ-SCOPE-GETBYROLE-002: 전체 규범 충족은 미확인: 정규식 source/flags와 exact 문자열을 보존하고 slot/aria-labelledby 이름의 동작을 검증한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "includeHidden 옵션 없음; name 계산 전체·g/y/aria-labelledby 미확인",
+      "counterexample": "slot으로 이름을얻은 offscreen버튼을 누락하거나 regex /예약/g의 두번째조회 count가0이되는 경우.",
+      "normativeProposal": "native/explicit role, 이름우선순위·hidden/offscreen·slot·중복 labelledby·반복 regex를 별도 수용조건으로 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: scope.getByRole and relevant option types",
+          "claim": "role/name/exact, TextMatcher RegExp; 과거 regex/slot 성공",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "scope.getByText",
+      "requirements": [
+        "REQ-SCOPE-GETBYTEXT-001",
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "scope.getByText",
+      "syntax": "tab.playwright.getByText(\"foobar\",{exact:true})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "TextMatcher와 exact 공개"
+      ],
+      "unknownConditions": [
+        "composed 최소요소·인접span·ARIA숨김·CSS숨김·빈문자열/regex+exact 미확인",
+        "REQ-SCOPE-GETBYTEXT-001: 전체 규범 충족은 미확인: 공통 selection의 정규화된 composed 본문을 검색하며 출력용 이름 축약과 무관하게 전체 본문을 사용한다. 같은 검색조건에 맞는 composed 후손 요소가 있으면 조상은 제외하는 최소 일치 요소 정책을 적용한다. 남은 연결 요소는 중복 없이 composed 문서 순서로 반환한다.",
+        "REQ-SCOPE-GETBYTEXT-002: 전체 규범 충족은 미확인: 접근 이름과 다른 본문·인접 span·실제 공백·긴 텍스트에서 검색 의미를 공통 selection 계약대로 유지한다.",
+        "REQ-SCOPE-GETBYTEXT-003: 전체 규범 충족은 미확인: text는 비어 있지 않은 문자열 또는 RegExp다. 문자열 빈 값은 입력 오류, exact는 문자열 전체 일치에만 적용한다. 정규식에 exact를 함께 주면 exact는 무시하지 않고 미지원 옵션 조합으로 거절한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "composed 최소요소·인접span·ARIA숨김·CSS숨김·빈문자열/regex+exact 미확인",
+      "counterexample": "<span>foo</span><span>bar</span>를 foo bar로 붙이거나 aria-label이있는 버튼의 본문말미검색을 막는 경우.",
+      "normativeProposal": "foobar와 foo bar를 같은문서에서 구분하고 조상/자식 중 최소요소·결과순서/중복없음·1500자말미 매칭을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: scope.getByText and relevant option types",
+          "claim": "TextMatcher와 exact 공개",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "scope.getByLabel",
+      "requirements": [
+        "REQ-SCOPE-GETBYLABEL-001",
+        "REQ-SCOPE-GETBYLABEL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "scope.getByLabel",
+      "syntax": "tab.playwright.getByLabel(\"이메일\",{exact:true})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "TextMatcher+exact로 label text 검색"
+      ],
+      "unknownConditions": [
+        "for/wrapped/ARIA 모든 경로·다중 strict 미확인",
+        "REQ-SCOPE-GETBYLABEL-001: 전체 규범 충족은 미확인: label for/감싼 label/aria-label/aria-labelledby로 연결된 제어를 검색한다.",
+        "REQ-SCOPE-GETBYLABEL-002: 전체 규범 충족은 미확인: 같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "for/wrapped/ARIA 모든 경로·다중 strict 미확인",
+      "counterexample": "일반 p의 이메일 본문을 label로 간주해 무관한 input을 채우거나 동명label2개중 첫input에 입력하는 경우.",
+      "normativeProposal": "for/wrap/aria-label/labelledby와 비연결 동일본문을 개별 fixture 조건으로, 중복label 입력0을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: scope.getByLabel and relevant option types",
+          "claim": "TextMatcher+exact로 label text 검색",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.filter",
+      "requirements": [
+        "REQ-LOCATOR-FILTER-001",
+        "REQ-LOCATOR-FILTER-002",
+        "REQ-LOCATOR-FILTER-003",
+        "REQ-LOCATOR-FILTER-004"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.filter",
+      "syntax": "tab.playwright.getByRole(\"row\",{}).filter({hasText:/예약/,hasNotText:\"취소\",visible:true})",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "has/hasNot/text/negativeText/visible 옵션; 과거 visible 결과2"
+      ],
+      "unknownConditions": [
+        "AND·연속호출·인접span·g/y·ARIA/CSS hidden 본문 미확인",
+        "REQ-LOCATOR-FILTER-001: 전체 규범 충족은 미확인: 양·음 텍스트와 visible 조건을 AND로 조합하고 전체 composed 텍스트를 검색한다.",
+        "REQ-LOCATOR-FILTER-002: 전체 규범 충족은 미확인: 없는 공백을 span 사이에 만들지 않고 실제 공백은 구분한다. has/hasNot 같은 미지원 키는 조용히 무시하지 않는다.",
+        "REQ-LOCATOR-FILTER-003: 전체 규범 충족은 미확인: filter 연속 호출과 nth 전후 조합은 선언 순서를 보존한다. 필터 조건이 새 호출로 덮어써지지 않는다.",
+        "REQ-LOCATOR-FILTER-004: 전체 규범 충족은 미확인: aria-hidden 제외와 CSS hidden 포함 본문 정책은 getByText와 동일하며 visible 필터가 시각 상태를 따로 결정한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "AND·연속호출·인접span·g/y·ARIA/CSS hidden 본문 미확인",
+      "counterexample": "A(no flag)/B(flag)에서 filter(flag).nth(0)와 nth(0).filter(flag) 순서를 재배열하거나 후속filter가 첫filter를지우는 경우.",
+      "normativeProposal": "단일 목적반복 대신 3행A/B/C의 양음AND 결과집합·순서별 차이·원locator불변·미지원키 무입력을 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.filter and relevant option types",
+          "claim": "has/hasNot/text/negativeText/visible 옵션; 과거 visible 결과2",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "locator.nth",
+      "requirements": [
+        "REQ-LOCATOR-NTH-001",
+        "REQ-LOCATOR-NTH-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.nth",
+      "syntax": "tab.playwright.locator(\"button\").nth(-1)",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "number index; 과거 nth(-1) count1"
+      ],
+      "unknownConditions": [
+        "소수/NaN/범위밖/원불변의 오류·정책 미확인",
+        "REQ-LOCATOR-NTH-001: 전체 규범 충족은 미확인: 현재 필터 결과의 문서 순서에 인덱스를 적용하고 음수 끝 인덱스를 지원한다.",
+        "REQ-LOCATOR-NTH-002: 전체 규범 충족은 미확인: 소수·NaN은 INVALID_INDEX, 범위 밖은 count0이며 조작 시 대상 없음; 원 Locator는 불변이다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "소수/NaN/범위밖/원불변의 오류·정책 미확인",
+      "counterexample": "3매칭에서 nth(-1)이0개, nth(0.5)가첫요소로 강제변환되거나 nth(9)조작이마지막요소를누르는 경우.",
+      "normativeProposal": "3대상에서 0/2/-1/-3/3/-4/0.5/NaN의 count·오류·원count3을 표로 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.nth and relevant option types",
+          "claim": "number index; 과거 nth(-1) count1",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "locator.count",
+      "requirements": [
+        "REQ-LOCATOR-COUNT-001",
+        "REQ-LOCATOR-COUNT-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.count",
+      "syntax": "await tab.playwright.locator(\"button\").count()",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "CUA-LIVE-BLANK"
+      ],
+      "confirmedConditions": [
+        "Promise<number>; about:blank button count0 실측"
+      ],
+      "unknownConditions": [
+        "stale ref와 0개 구분·중복collapse·순서조합 미확인",
+        "REQ-LOCATOR-COUNT-001: 전체 규범 충족은 미확인: 현재 Scope와 필터를 모두 적용한 개수를 반환하며0개도 정상이다.",
+        "REQ-LOCATOR-COUNT-002: 전체 규범 충족은 미확인: 중복 결과를1개로 축약하지 않으며 stale ref를 새 DOM0개와 혼동하지 않는다."
+      ],
+      "exampleStatus": "executed-limited-about-blank; mapping syntax may differ: see E-LIVE-01",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "stale ref와 0개 구분·중복collapse·순서조합 미확인",
+      "counterexample": "동일이름2요소를1개로축약하거나 교체된 ref의 stale을 정상0으로 반환하는 경우.",
+      "normativeProposal": "0/1/2 matched 결과 0/1/2와 no input, DOM교체 old ref는 0이 아니라 stale로 별도 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.count and relevant option types",
+          "claim": "Promise<number>; about:blank button count0 실측",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "LIVE",
+          "sourceId": "CUA-LIVE-BLANK",
+          "location": "raw/blank-probe.json",
+          "claim": "about:blank metadata/count/read-only evaluate/output/close only as relevant",
+          "scope": "no fixture input or boundary support claim"
+        }
+      ]
+    },
+    {
+      "api": "locator.textContent",
+      "requirements": [
+        "REQ-LOCATOR-TEXTCONTENT-001",
+        "REQ-LOCATOR-TEXTCONTENT-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.textContent",
+      "syntax": "await locator.textContent({timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "raw textContent first matched, string|null"
+      ],
+      "unknownConditions": [
+        "우리 0/다중strict와 문서 first/null 충돌; 긴값 출력 완전성 미확인",
+        "REQ-LOCATOR-TEXTCONTENT-001: 전체 규범 충족은 미확인: 숨김 자식·실제 공백을 포함한 대상 textContent를 읽고 접근 이름으로 대체하지 않는다.",
+        "REQ-LOCATOR-TEXTCONTENT-002: 전체 규범 충족은 미확인: 0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 0/다중strict와 문서 first/null 충돌; 긴값 출력 완전성 미확인",
+      "counterexample": "2대상 조회에서 첫텍스트를반환하거나 긴값출력이잘렸는데 원래완전값이라고 표시하는 경우.",
+      "normativeProposal": "API 값과 모델 출력잘림을 구분하고 숨김/공백 원문·0/2매칭 오류를 명시; Codex 차이는 유지한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.textContent and relevant option types",
+          "claim": "raw textContent first matched, string|null",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.getAttribute",
+      "requirements": [
+        "REQ-LOCATOR-GETATTRIBUTE-001",
+        "REQ-LOCATOR-GETATTRIBUTE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.getAttribute",
+      "syntax": "await locator.getAttribute(\"href\",{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "first matched attribute value, string|null"
+      ],
+      "unknownConditions": [
+        "우리 다중strict와 first 설명 충돌; property와 attr·빈값/없음 미실측",
+        "REQ-LOCATOR-GETATTRIBUTE-001: 전체 규범 충족은 미확인: 요청 속성 원문을 반환하고 긴 href를 snapshot 축약과 무관하게 읽을 수 있다.",
+        "REQ-LOCATOR-GETATTRIBUTE-002: 전체 규범 충족은 미확인: 빈 속성과 없는 속성, property와 attribute를 구분하고0/다중 매칭은 실패한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 다중strict와 first 설명 충돌; property와 attr·빈값/없음 미실측",
+      "counterexample": "href=\"\"와 href없음을 모두 null로주거나 초기value attr와 현재value property를같게반환하는 경우.",
+      "normativeProposal": "href 원문/빈문자열/null의 세결과, input.value property와 attr 차이·2매칭 오류를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.getAttribute and relevant option types",
+          "claim": "first matched attribute value, string|null",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.inputValue",
+      "requirements": [
+        "REQ-LOCATOR-INPUTVALUE-001",
+        "REQ-LOCATOR-INPUTVALUE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "composition",
+      "method": "locator.evaluate read-only property",
+      "syntax": "await locator.evaluate(el => el.value)",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "read-only element evaluate는 공개; value 읽기 조합은 추론"
+      ],
+      "unknownConditions": [
+        "input/textarea/select/CE 통일값·타입오류 의미 미확인",
+        "REQ-LOCATOR-INPUTVALUE-001: 전체 규범 충족은 미확인: 현재 편집 값을 읽고 HTML value 속성의 초기 값과 구분한다.",
+        "REQ-LOCATOR-INPUTVALUE-002: 전체 규범 충족은 미확인: 비입력 요소에는 타입 오류를 내며 빈 입력을 실패나 일반 텍스트 값과 혼동하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "input/textarea/select/CE 통일값·타입오류 의미 미확인",
+      "counterexample": "HTML value=A지만 사용자가 B로바꾼 input에서 A를반환하거나 button본문을입력값처럼반환하는 경우.",
+      "normativeProposal": "초기attr=A 후 실제값=B를 만들어 B 판정, CE·빈값·button 타입오류를 구분한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.evaluate read-only property and relevant option types",
+          "claim": "read-only element evaluate는 공개; value 읽기 조합은 추론",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.isVisible",
+      "requirements": [
+        "REQ-LOCATOR-ISVISIBLE-001",
+        "REQ-LOCATOR-ISVISIBLE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.isVisible",
+      "syntax": "await locator.isVisible()",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "first matched visible boolean"
+      ],
+      "unknownConditions": [
+        "우리 strict와 first 설명 차이; offscreen/details/overlay 세부 미확인",
+        "REQ-LOCATOR-ISVISIBLE-001: 전체 규범 충족은 미확인: layout상 숨김/닫힌 details/조상 숨김을 판정하며 offscreen은 visible일 수 있다.",
+        "REQ-LOCATOR-ISVISIBLE-002: 전체 규범 충족은 미확인: 가려진 요소와 화면 밖 요소를 hidden으로 오인하지 않고0/다중 매칭은 공통 단일 조회 오류다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 strict와 first 설명 차이; offscreen/details/overlay 세부 미확인",
+      "counterexample": "화면밖/overlay버튼을hidden으로반환하거나 닫힌details 내부를visible로반환하는 경우.",
+      "normativeProposal": "화면밖true·overlaytrue·displaynonefalse·닫힌details 자식false·0/2오류 표를 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.isVisible and relevant option types",
+          "claim": "first matched visible boolean",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.isEnabled",
+      "requirements": [
+        "REQ-LOCATOR-ISENABLED-001",
+        "REQ-LOCATOR-ISENABLED-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.isEnabled",
+      "syntax": "await locator.isEnabled()",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "first matched enabled boolean"
+      ],
+      "unknownConditions": [
+        "fieldset legend/ARIA 상속·readonly 차이 미확인",
+        "REQ-LOCATOR-ISENABLED-001: 전체 규범 충족은 미확인: native disabled/disabled fieldset 및 aria-disabled 정책에 따라 상태를 반환한다.",
+        "REQ-LOCATOR-ISENABLED-002: 전체 규범 충족은 미확인: readonly는 disabled와 구분하고 disabled 조상·예외 legend 조건을 검증한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "fieldset legend/ARIA 상속·readonly 차이 미확인",
+      "counterexample": "disabled fieldset의 첫legend 제어와 다른자식제어를 모두false로두거나 readonly를disabled로오인하는 경우.",
+      "normativeProposal": "disabled fieldset내 첫legend 예외와 다른자식, readonly enabled true·disabled/aria-disabled 각각을 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.isEnabled and relevant option types",
+          "claim": "first matched enabled boolean",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.isEditable",
+      "requirements": [
+        "REQ-LOCATOR-ISEDITABLE-001",
+        "REQ-LOCATOR-ISEDITABLE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "composition",
+      "method": "locator.evaluate read-only state",
+      "syntax": "await locator.evaluate(el => ({tag:el.tagName,disabled:el.disabled,readOnly:el.readOnly,isContentEditable:el.isContentEditable}))",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "read-only state 수집 가능 서명; editable 판정은 우리 조합"
+      ],
+      "unknownConditions": [
+        "aria-readonly·상속·허용type·fill 일관성 미확인",
+        "REQ-LOCATOR-ISEDITABLE-001: 전체 규범 충족은 미확인: 지원 텍스트 입력/textarea/contenteditable 중 enabled이며 readonly가 아닌 대상만true다.",
+        "REQ-LOCATOR-ISEDITABLE-002: 전체 규범 충족은 미확인: button·checkbox·disabled input·aria-readonly 대상은false며 fill 가능성과 모순되지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "aria-readonly·상속·허용type·fill 일관성 미확인",
+      "counterexample": "checkbox나 aria-readonly contenteditable을true라하면서 fill은항상실패하는 경우.",
+      "normativeProposal": "text/textarea/CE true와 button/checkbox/disabled/readonly/aria-readonly false 표를 결정하고 fill과 같은 공통함수 근거를 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.evaluate read-only state and relevant option types",
+          "claim": "read-only state 수집 가능 서명; editable 판정은 우리 조합",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.isChecked",
+      "requirements": [
+        "REQ-LOCATOR-ISCHECKED-001",
+        "REQ-LOCATOR-ISCHECKED-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "composition",
+      "method": "locator.evaluate + getAttribute",
+      "syntax": "await locator.evaluate(el => ({checked:el.checked,aria:el.getAttribute(\"aria-checked\")}))",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native/ARIA 원상태 read-only 수집 조합 가능"
+      ],
+      "unknownConditions": [
+        "mixed boolean 정책·지원role·타입오류 미확인",
+        "REQ-LOCATOR-ISCHECKED-001: 전체 규범 충족은 미확인: checked 상태를 native property 또는 명시 ARIA 상태로 읽는다.",
+        "REQ-LOCATOR-ISCHECKED-002: 전체 규범 충족은 미확인: 비체크형 요소는 타입 오류로 거절하고 mixed를true로 오인하지 않는다. mixed 원문은 getAttribute로 조회한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "mixed boolean 정책·지원role·타입오류 미확인",
+      "counterexample": "aria-checked=\"mixed\"를 true로반환하거나 일반button의 checked없음을false성공으로숨기는 경우.",
+      "normativeProposal": "checkbox/radio/switch/mixed/비체크type별 값을 적고 mixed 원문 getAttribute 경로와 Boolean 반환을 구분한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.evaluate + getAttribute and relevant option types",
+          "claim": "native/ARIA 원상태 read-only 수집 조합 가능",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.boundingBox",
+      "requirements": [
+        "REQ-LOCATOR-BOUNDINGBOX-001",
+        "REQ-LOCATOR-BOUNDINGBOX-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "composition",
+      "method": "locator.evaluate read-only rect",
+      "syntax": "await locator.evaluate(el => {const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "DOM rect 읽기는 공개 evaluate 조합; frame내 rect는 local"
+      ],
+      "unknownConditions": [
+        "메인viewport 변환·hidden null·OOPIF·unsupported transform 미확인",
+        "REQ-LOCATOR-BOUNDINGBOX-001: 전체 규범 충족은 미확인: 입력 좌표와 같은 main viewport 기준으로 box를 반환하며 숨김은null이다.",
+        "REQ-LOCATOR-BOUNDINGBOX-002: 전체 규범 충족은 미확인: 중첩 scale/translate iframe과 scroll에서 좌표 일치, unsupported transform은명시 오류며 로컬 좌표를전역값으로 주지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "메인viewport 변환·hidden null·OOPIF·unsupported transform 미확인",
+      "counterexample": "scale iframe내local rect를그대로mainviewport좌표로반환해 클릭이형제영역을맞히는 경우.",
+      "normativeProposal": "local rect를 main 값으로 오인하지 않게 frame border/scale/scroll을 표시한 marker와 입력 hit를 비교한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.evaluate read-only rect and relevant option types",
+          "claim": "DOM rect 읽기는 공개 evaluate 조합; frame내 rect는 local",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.click",
+      "requirements": [
+        "REQ-LOCATOR-CLICK-001",
+        "REQ-LOCATOR-CLICK-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "direct",
+      "method": "locator.click / dblclick",
+      "syntax": "await locator.click({button:\"left\",timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "button/force/modifiers/timeoutMs, dblclick 별도; 과거 slot/scale 클릭"
+      ],
+      "unknownConditions": [
+        "clickCount옵션 없음; overlay/actionability/partial cleanup 모두 미확인",
+        "REQ-LOCATOR-CLICK-001: 전체 규범 충족은 미확인: visible/enabled/안정·가림 검사 후 정확히 대상에 클릭하며 clickCount2로 더블클릭 조합 가능하다.",
+        "REQ-LOCATOR-CLICK-002: 전체 규범 충족은 미확인: 중복·stale·overlay는 입력 전에 거절하고 닫힌 details·slot·scaled iframe에서 잘못된 다른 요소를 클릭하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "clickCount옵션 없음; overlay/actionability/partial cleanup 모두 미확인",
+      "counterexample": "overlay가덮인버튼 클릭이 overlay업무를실행하거나 clickCount2인데 click1개만전송하고성공하는 경우.",
+      "normativeProposal": "1/2 clickCount별 실제 click/dblclick trace, overlay/stale/다중0입력·scale frame 올바른대상만을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.click / dblclick and relevant option types",
+          "claim": "button/force/modifiers/timeoutMs, dblclick 별도; 과거 slot/scale 클릭",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "locator.fill",
+      "requirements": [
+        "REQ-LOCATOR-FILL-001",
+        "REQ-LOCATOR-FILL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "direct",
+      "method": "locator.fill",
+      "syntax": "await locator.fill(\"\",{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "fill(value:string,{timeoutMs?}):void; 과거 readonly 거절"
+      ],
+      "unknownConditions": [
+        "mask/rerender 결과 재검증·CE·empty·disabled 전체 미확인",
+        "REQ-LOCATOR-FILL-001: 전체 규범 충족은 미확인: readonly/disabled/비편집 대상을 사전 거절하고 빈 문자열도 채울 수 있다.",
+        "REQ-LOCATOR-FILL-002: 전체 규범 충족은 미확인: 입력 masking이나 rerender로 실제 값이 요청과 다르면 INPUT_VALUE_NOT_CHANGED며 거짓 성공을 주지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "mask/rerender 결과 재검증·CE·empty·disabled 전체 미확인",
+      "counterexample": "mask handler가 요청값123을12로되돌렸는데 completed를반환하는 경우.",
+      "normativeProposal": "LOCKED 불변 거절, empty 성공, mask가 값되돌린 후 실패·실제최종값·부분focus효과를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.fill and relevant option types",
+          "claim": "fill(value:string,{timeoutMs?}):void; 과거 readonly 거절",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "HISTORICAL",
+          "sourceId": "HIST-CODEX-AUDIT",
+          "location": "docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴",
+          "claim": "only applicable audit result named in sources.md",
+          "scope": "prior audit fixture; build/call trace not recorded"
+        }
+      ]
+    },
+    {
+      "api": "locator.press",
+      "requirements": [
+        "REQ-LOCATOR-PRESS-001",
+        "REQ-LOCATOR-PRESS-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "direct",
+      "method": "locator.press",
+      "syntax": "await locator.press(\"Enter\",{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "locator focus후 key press 공개"
+      ],
+      "unknownConditions": [
+        "focus 검증·실패전무입력·기존modifier 보존 미확인",
+        "REQ-LOCATOR-PRESS-001: 전체 규범 충족은 미확인: 정확한 대상에 focus를 확인하고 키를 입력해 현재 다른 focus에 보내지 않는다.",
+        "REQ-LOCATOR-PRESS-002: 전체 규범 충족은 미확인: focus 불가·stale·비활성 대상은 다른 요소 입력 없이 실패한다. 키 입력 단계는 keyboard.press와 같은 modifier 소유 정책을 따르며, focus 이전 실패는 기존 명시 down 상태를 임의 해제하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "focus 검증·실패전무입력·기존modifier 보존 미확인",
+      "counterexample": "B가focus불가능한데 이전focus A에Enter를보내거나 기존Control down을사전실패후풀어버리는 경우.",
+      "normativeProposal": "A포커스 상태에서 B press는 B trace만; B focus실패면 A키0·기존Control down보존을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.press and relevant option types",
+          "claim": "locator focus후 key press 공개",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.hover",
+      "requirements": [
+        "REQ-LOCATOR-HOVER-001",
+        "REQ-LOCATOR-HOVER-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native Target에는 coordinate actions가 있으나 DOM-only 입력은 throw"
+      ],
+      "unknownConditions": [
+        "IAB locator hover 없음; DOM event dispatch 우회는 read-only 평가로 금지",
+        "REQ-LOCATOR-HOVER-001: 전체 규범 충족은 미확인: 대상의 실제 hit 영역에 포인터를 이동한다.",
+        "REQ-LOCATOR-HOVER-002: 전체 규범 충족은 미확인: 가림/숨김/unsupported frame이면 명시 실패하고 hover 성공으로 표시하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "IAB locator hover 없음; DOM event dispatch 우회는 read-only 평가로 금지",
+      "counterexample": "overlay로가려진A의중앙으로이동해B에mouseover가났는데A hover성공으로표시하는 경우.",
+      "normativeProposal": "hit영역 marker에서 mouseover 발생과 overlay/unsupported frame에서 무입력오류를 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "native Target에는 coordinate actions가 있으나 DOM-only 입력은 throw",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.focus",
+      "requirements": [
+        "REQ-LOCATOR-FOCUS-001",
+        "REQ-LOCATOR-FOCUS-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "locator.press는 focus를 수반하지만 focus-only 계약은 없음"
+      ],
+      "unknownConditions": [
+        "press로 focus만 대체하면 키 부작용; evaluate focus는 read-only 위반",
+        "REQ-LOCATOR-FOCUS-001: 전체 규범 충족은 미확인: 대상의 focus 또는 composed activeElement를 확인하고 반환한다.",
+        "REQ-LOCATOR-FOCUS-002: 전체 규범 충족은 미확인: 비focusable/disabled/분리 대상은 실패하며 el.focus 호출만으로 성공 처리하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "press로 focus만 대체하면 키 부작용; evaluate focus는 read-only 위반",
+      "counterexample": "focus()가예외없이끝났으나 activeElement는body인데성공으로표시하는 경우.",
+      "normativeProposal": "비focusable div와 실제input을 분리해 composed activeElement가 목표인지, focus호출만 성공으로 세지 않게 한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "locator.press는 focus를 수반하지만 focus-only 계약은 없음",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.scrollIntoView",
+      "requirements": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native Target.scroll은 DOM-only throw, IAB locator scrollIntoView 없음"
+      ],
+      "unknownConditions": [
+        "click의 자동스크롤을 단독노출 API와 동등 취급 불가",
+        "REQ-LOCATOR-SCROLLINTOVIEW-001: 전체 규범 충족은 미확인: 연결된 offscreen 요소를 필요한 조상 scrollport에서 가로·세로로 노출한다.",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002: 전체 규범 충족은 미확인: DOM에 없는 virtual row는 자동 생성하지 않으며 sticky overlay 등으로 클릭 가능까지 보장하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "click의 자동스크롤을 단독노출 API와 동등 취급 불가",
+      "counterexample": "가로스크롤은그대로라목표가숨겨져있거나 DOM에없는virtual row를관찰로생성해성공하는 경우.",
+      "normativeProposal": "중첩 가로/세로 scrollport에 목표 rect가 노출되는지, virtual 미존재·sticky 가림과 분리해 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "native Target.scroll은 DOM-only throw, IAB locator scrollIntoView 없음",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.setChecked",
+      "requirements": [
+        "REQ-LOCATOR-SETCHECKED-001",
+        "REQ-LOCATOR-SETCHECKED-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "direct",
+      "method": "locator.setChecked",
+      "syntax": "await locator.setChecked(true,{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "boolean, force/timeoutMs, check/uncheck도 공개"
+      ],
+      "unknownConditions": [
+        "이미상태일때 클릭0·되돌림실패·ARIA role범위 미확인",
+        "REQ-LOCATOR-SETCHECKED-001: 전체 규범 충족은 미확인: 이미 요청 상태면 클릭하지 않고 checkbox/radio/switch 지원대상 상태를 확인한다.",
+        "REQ-LOCATOR-SETCHECKED-002: 전체 규범 충족은 미확인: disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "이미상태일때 클릭0·되돌림실패·ARIA role범위 미확인",
+      "counterexample": "이미true인checkbox에클릭해false로바꾸거나 handler되돌림후성공하는 경우.",
+      "normativeProposal": "이미true event0, false→true 실제상태, 핸들러되돌림 실패, disabled/타입오류와 기존상태불변을 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.setChecked and relevant option types",
+          "claim": "boolean, force/timeoutMs, check/uncheck도 공개",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.selectOption",
+      "requirements": [
+        "REQ-LOCATOR-SELECTOPTION-001",
+        "REQ-LOCATOR-SELECTOPTION-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "direct",
+      "method": "locator.selectOption",
+      "syntax": "await locator.selectOption([{value:\"A\"}],{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "string/descriptor/array, descriptor index/label/value; 반환void"
+      ],
+      "unknownConditions": [
+        "우리 string[] 결과/value우선label fallback/사전전체검증 미확인",
+        "REQ-LOCATOR-SELECTOPTION-001: 전체 규범 충족은 미확인: native select만 지원하고 요청된 모든 옵션이 존재·enabled인 경우 선택 결과를 확인한다.",
+        "REQ-LOCATOR-SELECTOPTION-002: 전체 규범 충족은 미확인: 없는/중복 label·disabled option·single select 복수 요청은 사전 거절해 기존 선택을 지우지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 string[] 결과/value우선label fallback/사전전체검증 미확인",
+      "counterexample": "현재선택A에서 요청[B,없는C]를순차적용해B만남기고사전오류라고주장하는 경우.",
+      "normativeProposal": "여러요청 마지막invalid시 기존선택보존·label중복·disabled·single복수 정책과 실제 selectedValues를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.selectOption and relevant option types",
+          "claim": "string/descriptor/array, descriptor index/label/value; 반환void",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.dragTo",
+      "requirements": [
+        "REQ-LOCATOR-DRAGTO-001",
+        "REQ-LOCATOR-DRAGTO-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native Target.drag(from,to)는 있으나 DOM-only wrapper throw"
+      ],
+      "unknownConditions": [
+        "IAB locator dragTo/native DragData 미확인; 과거 Codex DnD 미측정",
+        "REQ-LOCATOR-DRAGTO-001: 전체 규범 충족은 미확인: draggable은 실제 dragstart/native DragData, 격자는 연속 pointer 경로로 조작한다.",
+        "REQ-LOCATOR-DRAGTO-002: 전체 규범 충족은 미확인: Locator.dragTo v1은 같은 Page·같은 frame document·같은 CDP 입력 target 안에서만 지원한다. 다른 Page/다른 frame document는 전송 전 거절하며 다른 CDP target은 CROSS_TARGET_DRAG_UNSUPPORTED다. 동일 process의 다른 frame도 이번에는 CROSS_DOCUMENT_DRAG_UNSUPPORTED다. 모호/stale 대상은 사전 거절하며 중도 오류는 해당 연산이 획득한 버튼/drag 상태만 정리하고 drop을 자동 재전송하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "IAB locator dragTo/native DragData 미확인; 과거 Codex DnD 미측정",
+      "counterexample": "같은process의다른frame document로drag를허용하거나 partial실패뒤drop을재전송해업무2회가되는 경우.",
+      "normativeProposal": "HTML dragstart trusted/DataTransfer/업무1회와 pointer grid 선택을 분리; samePage/frame/target 경계와 버튼cleanup을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "native Target.drag(from,to)는 있으나 DOM-only wrapper throw",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.drop",
+      "requirements": [
+        "REQ-LOCATOR-DROP-001",
+        "REQ-LOCATOR-DROP-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "input",
+        "files-events"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "chooser 업로드는 공개지만 drop/files+MIME 대체 근거 아님"
+      ],
+      "unknownConditions": [
+        "IAB locator.drop 없음; read-only evaluate로 synthetic drop 우회 불가",
+        "REQ-LOCATOR-DROP-001: 전체 규범 충족은 미확인: 로컬/서버/bytes 파일과 텍스트 MIME을 공통 엔진으로 전달하고 임시 file input을 정리한다.",
+        "REQ-LOCATOR-DROP-002: 전체 규범 충족은 미확인: trusted 필수 사이트 지원을 주장하지 않고 파일 검증 실패는 drop 이전에 거절한다. MIME/옵션은 guide와 일치해야 한다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "IAB locator.drop 없음; read-only evaluate로 synthetic drop 우회 불가",
+      "counterexample": "파일2개중마지막invalid인데첫파일drop을먼저발생시키거나 임시file input이남는 경우.",
+      "normativeProposal": "파일바이트hash+텍스트MIME을 검증하고 invalid last file은 drop0·임시input0, trusted필수 사이트 보장제외를 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "chooser 업로드는 공개지만 drop/files+MIME 대체 근거 아님",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "mouse.move",
+      "requirements": [
+        "REQ-MOUSE-MOVE-001",
+        "REQ-MOUSE-MOVE-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native Target.drag/scroll은 존재, move primitive는 열거안됨"
+      ],
+      "unknownConditions": [
+        "IAB page.mouse 없음; native좌표입력/DOM-only 경계를 넘기지 않음",
+        "REQ-MOUSE-MOVE-001: 전체 규범 충족은 미확인: 정확한 좌표로 이동하며 iframe 좌표를 사용자가중복 변환하지 않는다.",
+        "REQ-MOUSE-MOVE-002: 전체 규범 충족은 미확인: NaN/Infinity 등 잘못된 좌표는 이벤트 없이 거절하며 이 API에는 locator 엄격 매칭을 요구하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "IAB page.mouse 없음; native좌표입력/DOM-only 경계를 넘기지 않음",
+      "counterexample": "NaN을0으로강제변환해좌상단에pointermove를발생시키는 경우.",
+      "normativeProposal": "finite 좌표에서 pointermove marker, NaN/Infinity event0·main viewport 좌표를 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "native Target.drag/scroll은 존재, move primitive는 열거안됨",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "mouse.down",
+      "requirements": [
+        "REQ-MOUSE-DOWN-001",
+        "REQ-MOUSE-DOWN-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "click/drag는 atomic native 메서드; 개별down 공개안됨"
+      ],
+      "unknownConditions": [
+        "down→move→up 지속상태 조합 미확인",
+        "REQ-MOUSE-DOWN-001: 전체 규범 충족은 미확인: 누른 버튼상태가 다음 move/up에 이어져 격자 범위 선택을 구성할 수 있다.",
+        "REQ-MOUSE-DOWN-002: 전체 규범 충족은 미확인: 지원 안하는 버튼·상태 충돌은 오류이며 다른 세션의 버튼 상태를 바꾸지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "down→move→up 지속상태 조합 미확인",
+      "counterexample": "left down이후 move의buttons=0이라격자선택이끊기거나 다른세션down을덮는 경우.",
+      "normativeProposal": "leftdown→move→up의 buttons trace와 충돌/invalid 사전0·타세션 상태불변을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "click/drag는 atomic native 메서드; 개별down 공개안됨",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "mouse.up",
+      "requirements": [
+        "REQ-MOUSE-UP-001",
+        "REQ-MOUSE-UP-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "개별up 공개안됨"
+      ],
+      "unknownConditions": [
+        "release/reset/close 실제상태 확인 불가",
+        "REQ-MOUSE-UP-001: 전체 규범 충족은 미확인: 대응 down을 해제해 드래그를 끝내고 반복 up은 새 클릭을 만들지 않는다.",
+        "REQ-MOUSE-UP-002: 전체 규범 충족은 미확인: 탭 close/reset 뒤 정리된 상태와 충돌하면 명시 처리하고 버튼이 눌린 채 잔류하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "release/reset/close 실제상태 확인 불가",
+      "counterexample": "left up을두번보내새click이추가되거나 reset뒤실제버튼이여전히눌려있는 경우.",
+      "normativeProposal": "반복up이 click을 새로 만들지 않는지, reset release실패를 잔류/불확실로 드러내는지 검사한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "개별up 공개안됨",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "mouse.click",
+      "requirements": [
+        "REQ-MOUSE-CLICK-001",
+        "REQ-MOUSE-CLICK-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": "Target.click (native only)",
+      "syntax": "await nativeTab.click([100,100],{mouseButton:\"left\",clickCount:1})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native click(Vec2/options) 계약; DOM-only tabs에서는 입력전 throw"
+      ],
+      "unknownConditions": [
+        "IAB native 사용가능성을 미실측; down/up/실패release 경계 미확인",
+        "REQ-MOUSE-CLICK-001: 전체 규범 충족은 미확인: 좌표에서 down/up을 수행하며 해당 위치 UI를 바꾸는 낮은수준 도구임을 명시한다.",
+        "REQ-MOUSE-CLICK-002: 전체 규범 충족은 미확인: 오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "IAB native 사용가능성을 미실측; down/up/실패release 경계 미확인",
+      "counterexample": "down후up오류에서release시도없이끝나후속이동이드래그가되는 경우.",
+      "normativeProposal": "고정좌표 marker A/B중 A만 hit·중도실패 release시도와 좌표자동보정0을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: Target.click (native only) and relevant option types",
+          "claim": "native click(Vec2/options) 계약; DOM-only tabs에서는 입력전 throw",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "mouse.wheel",
+      "requirements": [
+        "REQ-MOUSE-WHEEL-001",
+        "REQ-MOUSE-WHEEL-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": "Target.scroll (native only)",
+      "syntax": "await nativeTab.scroll([100,100],\"down\",1)",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native scroll target/direction/pages 계약, raw deltaX/Y 아님"
+      ],
+      "unknownConditions": [
+        "DOM-only throw; axis deltas·pointer별 routing 미확인",
+        "REQ-MOUSE-WHEEL-001: 전체 규범 충족은 미확인: pointer를 iframe/내부목록에 move한 뒤 해당 위치에 가로·세로 wheel을 전달한다.",
+        "REQ-MOUSE-WHEEL-002: 전체 규범 충족은 미확인: scroll 끝·preventDefault에서는 이동이0일 수 있고 이를 더 많은 데이터 로딩 성공으로 주장하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "DOM-only throw; axis deltas·pointer별 routing 미확인",
+      "counterexample": "내부iframe위pointer인데바깥문서만스크롤하거나 preventDefault의0이동을새데이터로딩성공이라하는 경우.",
+      "normativeProposal": "내부iframe와 외부scroll container를 나눠 실제 wheel target/offset, preventDefault 이동0을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: Target.scroll (native only) and relevant option types",
+          "claim": "native scroll target/direction/pages 계약, raw deltaX/Y 아님",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "keyboard.down",
+      "requirements": [
+        "REQ-KEYBOARD-DOWN-001",
+        "REQ-KEYBOARD-DOWN-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "native pressKey/locator press는 atomic; 개별down 열거안됨"
+      ],
+      "unknownConditions": [
+        "지속modifier/세션소유를 조합할 근거 없음",
+        "REQ-KEYBOARD-DOWN-001: 전체 규범 충족은 미확인: 키·modifier 상태가 후속 press/type/up에 일관되게 이어진다.",
+        "REQ-KEYBOARD-DOWN-002: 전체 규범 충족은 미확인: 알 수없는 key는 입력 전 실패하며 세션간 modifier가 공유되지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "지속modifier/세션소유를 조합할 근거 없음",
+      "counterexample": "Control down후 type이modifier를잊거나 unknown key가부분keydown을전송하는 경우.",
+      "normativeProposal": "Control down→type/press→up 실제 trace와 invalid키 사전0·타세션 modifier불변을 적는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "native pressKey/locator press는 atomic; 개별down 열거안됨",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "keyboard.up",
+      "requirements": [
+        "REQ-KEYBOARD-UP-001",
+        "REQ-KEYBOARD-UP-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "개별key up 열거안됨"
+      ],
+      "unknownConditions": [
+        "원하는키만 release·실패 후 실제잔류 미확인",
+        "REQ-KEYBOARD-UP-001: 전체 규범 충족은 미확인: 해당 키를 해제하며 다른 modifier를 임의로 해제하지 않는다.",
+        "REQ-KEYBOARD-UP-002: 전체 규범 충족은 미확인: close/reset/실패 뒤 release 실패를 숨기지 않고 다음 요청에 눌림 상태를 유출하지 않는다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "원하는키만 release·실패 후 실제잔류 미확인",
+      "counterexample": "Control+Shift중Control만up요청했는데Shift까지풀거나 release실패를정상초기화로숨기는 경우.",
+      "normativeProposal": "Control+Shift 유지중 Control up시 Shift보존, close/reset release실패의 불확실 상태를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "개별key up 열거안됨",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "keyboard.press",
+      "requirements": [
+        "REQ-KEYBOARD-PRESS-001",
+        "REQ-KEYBOARD-PRESS-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "composition",
+      "method": "locator.press / Target.pressKey",
+      "syntax": "await focusedLocator.press(\"Control+A\",{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "locator.press는 focus대상 지정; native tab.pressKey는 DOM-only throw"
+      ],
+      "unknownConditions": [
+        "현재 focus 유지키와 독립modifier 소유는 미확인",
+        "REQ-KEYBOARD-PRESS-001: 전체 규범 충족은 미확인: press는 호출 전 이미 유지되던 modifier를 보존한다. 자신이 새로 누른 modifier/주키만 정해진 순서로 해제하며 중도 오류에도 같은 정리를 시도한다. 명시 down의 소유 상태는 대응 up 또는 reset/close가 끝낸다.",
+        "REQ-KEYBOARD-PRESS-002: 전체 규범 충족은 미확인: 알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "현재 focus 유지키와 독립modifier 소유는 미확인",
+      "counterexample": "기존Control down중Shift+A를보낸뒤Control까지해제해후속조합이달라지는 경우.",
+      "normativeProposal": "기존Control down와 새Shift 조합을 분리해 호출이획득한키만 release하고 invalid조합은 입력0을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.press / Target.pressKey and relevant option types",
+          "claim": "locator.press는 focus대상 지정; native tab.pressKey는 DOM-only throw",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "keyboard.type",
+      "requirements": [
+        "REQ-KEYBOARD-TYPE-001",
+        "REQ-KEYBOARD-TYPE-002"
+      ],
+      "common": [
+        "runtime",
+        "input"
+      ],
+      "relation": "composition",
+      "method": "locator.type / pressSequentially",
+      "syntax": "await focusedLocator.type(\"한글🙂\n\",{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "기존내용을 지우지않는 type, pressSequentially 문자별 입력 공개"
+      ],
+      "unknownConditions": [
+        "현재focus primitive와 차이, CE/newline/Unicode/failedfocus 미확인",
+        "REQ-KEYBOARD-TYPE-001: 전체 규범 충족은 미확인: 기존 선택 위치에 Unicode·여러 줄을 제어 타입 규칙대로 삽입하며 fill과 구분한다.",
+        "REQ-KEYBOARD-TYPE-002: 전체 규범 충족은 미확인: 이모지·한글을 손상하지 않고 입력불가 focus에서 값 변경을 보장했다고 반환하지 않는다. keydown별발생은보장하지않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "현재focus primitive와 차이, CE/newline/Unicode/failedfocus 미확인",
+      "counterexample": "한글🙂선택영역입력에서surrogate가깨지거나 readonly포커스에값변경성공을반환하는 경우.",
+      "normativeProposal": "선택영역 한글/이모지·여러줄 후 value/caret·keydown보장범위를 명시하고 비편집focus에서 거짓성공을 거절한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.type / pressSequentially and relevant option types",
+          "claim": "기존내용을 지우지않는 type, pressSequentially 문자별 입력 공개",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.waitFor",
+      "requirements": [
+        "REQ-LOCATOR-WAITFOR-001",
+        "REQ-LOCATOR-WAITFOR-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.waitFor",
+      "syntax": "await locator.waitFor({state:\"visible\",timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "attached/detached/visible/hidden과 timeoutMs; Promise<void>"
+      ],
+      "unknownConditions": [
+        "우리 0/1/N 표·stale ref 예외·기본visible 미확인",
+        "REQ-LOCATOR-WAITFOR-001: 전체 규범 충족은 미확인: CSS 기반 대기는 attached=1개 이상이면 true, detached=0개면 true, hidden=0개 또는 단일 hidden이면 true, visible=단일 visible이면 true다. attached/detached 외 hidden/visible에서 N>1은 즉시 다중 오류다. 아직 만족하지 않는 유효 상태는 timeout까지 기다린다. ref는 어떤 state에서도 detach/document 교체 시 stale 오류다.",
+        "REQ-LOCATOR-WAITFOR-002: 전체 규범 충족은 미확인: 알수없는state·잘못된timeout은즉시오류며 stale ref를 단순 detached로 무조건 흡수하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 0/1/N 표·stale ref 예외·기본visible 미확인",
+      "counterexample": "hidden에서2매칭을성공으로흡수하거나 stale ref를detached상태충족으로처리하는 경우.",
+      "normativeProposal": "4상태×0/1/N 조합과 hidden/visible N즉시다중·stale 별도·invalidstate/timeout 사전오류를 표로 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.waitFor and relevant option types",
+          "claim": "attached/detached/visible/hidden과 timeoutMs; Promise<void>",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.waitForEvent",
+      "requirements": [
+        "REQ-PAGE-WAITFOREVENT-001",
+        "REQ-PAGE-WAITFOREVENT-002",
+        "REQ-PAGE-WAITFOREVENT-003"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "files-events"
+      ],
+      "relation": "direct",
+      "method": "tab.playwright.waitForEvent",
+      "syntax": "const pending=tab.playwright.waitForEvent(\"download\",{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "download/filechooser overload, 호출을 조작전에 등록하라고 문서안내"
+      ],
+      "unknownConditions": [
+        "popup/dialog/close 없음; arming barrier·동시소비·timeout/close/reset 경합 미확인",
+        "REQ-PAGE-WAITFOREVENT-001: 전체 규범 충족은 미확인: 조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.",
+        "REQ-PAGE-WAITFOREVENT-002: 전체 규범 충족은 미확인: 다른 탭·등록 전 이벤트는 재사용하지 않는다. 자기 Page close가 관측되면 등록된 close waiter는 {tabId:number,closedAt:epochMs}로 정확히 한 번 resolve하고 제거한다. 다른 event waiter는 PAGE_CLOSED로 reject/정리한다. 이미 닫힌 핸들에 새 wait 등록은 즉시 PAGE_CLOSED다. timeout/reset/close 경합은 실제 먼저 확정된 terminal 결과 하나만 유지하고 late 결과는 무시한다. chooser/dialog는 동일 event를 이중 소비하지 않는다.",
+        "REQ-PAGE-WAITFOREVENT-003: 전체 규범 충족은 미확인: 같은 세션 JS에서 waitForEvent 호출 다음에 발행한 host action은 해당 waiter의 브라우저 등록/chooser arming 완료 뒤에만 실행한다. event Promise 자체는 이벤트 때 resolve하며 별도 공개 ready API는 추가하지 않는다. timeout/reset 시 미완료 등록도 취소해 늦은 waiter를 남기지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "popup/dialog/close 없음; arming barrier·동시소비·timeout/close/reset 경합 미확인",
+      "counterexample": "browser등록지연중click이먼저실행되어동기chooser를놓치거나 timeout뒤latechooser가다음wait에전달되는 경우.",
+      "normativeProposal": "서버 지연0 이벤트·wait등록지연·timeout동시발생·같은이벤트두wait·다른page를 분리해 단일terminal/late누수0을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.playwright.waitForEvent and relevant option types",
+          "claim": "download/filechooser overload, 호출을 조작전에 등록하라고 문서안내",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.waitForURL",
+      "requirements": [
+        "REQ-PAGE-WAITFORURL-001",
+        "REQ-PAGE-WAITFORURL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ],
+      "relation": "direct",
+      "method": "tab.playwright.waitForURL",
+      "syntax": "await tab.playwright.waitForURL(expectedUrl,{timeoutMs:1000,waitUntil:\"commit\"})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "string URL와 timeoutMs/waitUntil; 반환void"
+      ],
+      "unknownConditions": [
+        "문자열 exact/glob 해석·현재즉시·RegExp거절 미확인",
+        "REQ-PAGE-WAITFORURL-001: 전체 규범 충족은 미확인: 현재 URL이 요청문자열과 같으면 즉시, 이동후 같으면그때 반환한다.",
+        "REQ-PAGE-WAITFORURL-002: 전체 규범 충족은 미확인: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "문자열 exact/glob 해석·현재즉시·RegExp거절 미확인",
+      "counterexample": "요청문자열의 *를glob으로해석해다른URL에서성공하거나현재일치임에도deadline까지기다리는 경우.",
+      "normativeProposal": "현재일치즉시·변경후일치·비슷한URL/fragment/encoding 구분·glob/regex 명시오류를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.playwright.waitForURL and relevant option types",
+          "claim": "string URL와 timeoutMs/waitUntil; 반환void",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.waitForFunction",
+      "requirements": [
+        "REQ-PAGE-WAITFORFUNCTION-001",
+        "REQ-PAGE-WAITFORFUNCTION-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ],
+      "relation": "composition",
+      "method": "read-only evaluate + host polling",
+      "syntax": "// 의사코드: deadline 내 read-only evaluate를 순차 await; truthy면 종료",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "evaluate Promise 타입은 공개; built-in waitForFunction 없음"
+      ],
+      "unknownConditions": [
+        "thenable settled truthiness·poll간격·context교체·부작용 함수 미확인",
+        "REQ-PAGE-WAITFORFUNCTION-001: 전체 규범 충족은 미확인: Page main frame에서 fn(arg)를 반복 호출하고 각 Promise/thenable의 settled JSON 값이 truthy일 때 그 값을 반환한다. false/0/빈문자열/null은 미충족으로 다음 polling을 한다. 기본 총10초 대기이며 바깥 js deadline보다 연장하지 않는다. 이전 호출이 settle하기 전에 다음 함수를 겹쳐 실행하지 않는다.",
+        "REQ-PAGE-WAITFORFUNCTION-002: 전체 규범 충족은 미확인: 인자/결과 직렬화 오류와 사용자 throw/async reject는 즉시 실패한다. navigation으로 실행 context가 사라진 경우만 남은 총 deadline 내 새 main document에서 다시 평가할 수 있다. 사용자 함수는 polling으로 반복될 수 있으므로 부작용을 명시하며 이미 발생한 변경은 되돌리거나 숨기지 않는다. timeout/reset 뒤 late settle은 종료한 요청/새 세대에 결과를 주지 않는다."
+      ],
+      "exampleStatus": "pseudocode",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "thenable settled truthiness·poll간격·context교체·부작용 함수 미확인",
+      "counterexample": "async()=>false의Promise객체를truthy로즉시성공하거나 never-settle함수를중복polling하는 경우.",
+      "normativeProposal": "resolve(false) 반복·resolve(7) 종료·reject 즉시·never-settle deadline, 중복호출0과 late결과 차단을 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: read-only evaluate + host polling and relevant option types",
+          "claim": "evaluate Promise 타입은 공개; built-in waitForFunction 없음",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.waitForLoadState",
+      "requirements": [
+        "REQ-PAGE-WAITFORLOADSTATE-001",
+        "REQ-PAGE-WAITFORLOADSTATE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames"
+      ],
+      "relation": "direct",
+      "method": "tab.playwright.waitForLoadState",
+      "syntax": "await tab.playwright.waitForLoadState({state:\"domcontentloaded\",timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "load/domcontentloaded/networkidle 공개, 반환void"
+      ],
+      "unknownConditions": [
+        "interactive 지원없음; 우리 readyState반환/networkidle거절과 다름",
+        "REQ-PAGE-WAITFORLOADSTATE-001: 전체 규범 충족은 미확인: interactive/domcontentloaded는readyState가loading이아닌상태,load는complete로정의한다.",
+        "REQ-PAGE-WAITFORLOADSTATE-002: 전체 규범 충족은 미확인: networkidle은지원하지않아즉시거절하며SPA업무완료와load를동일시하지않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "interactive 지원없음; 우리 readyState반환/networkidle거절과 다름",
+      "counterexample": "document complete를SPA예약저장완료와같게판정하거나 미지원networkidle을무한대기하는 경우.",
+      "normativeProposal": "loading/interactive/complete 표를정의하고 SPA업무완료 신호는 별도로, networkidle은 우리 정책대로 거절한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.playwright.waitForLoadState and relevant option types",
+          "claim": "load/domcontentloaded/networkidle 공개, 반환void",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "locator.setFiles",
+      "requirements": [
+        "REQ-LOCATOR-SETFILES-001",
+        "REQ-LOCATOR-SETFILES-002",
+        "REQ-LOCATOR-SETFILES-003"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection",
+        "files-events"
+      ],
+      "relation": "composition",
+      "method": "waitForEvent(filechooser) + click + chooser.setFiles",
+      "syntax": "const p=tab.playwright.waitForEvent(\"filechooser\",{timeoutMs:1000}); await fileLocator.click(); const c=await p; await c.setFiles([absoluteTestPath]);",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "CUA-DOC-UPLOAD"
+      ],
+      "confirmedConditions": [
+        "공개 업로드는 chooser흐름; locator.setInputFiles 찾지말라고 안내"
+      ],
+      "unknownConditions": [
+        "fileId/bytes/base64·32MiB·empty[]·existing input보존 미확인",
+        "REQ-LOCATOR-SETFILES-001: 전체 규범 충족은 미확인: Chrome호스트 로컬경로와 서버asset을 구분하며 실제 업로드된 바이트·이름·MIME을 검증한다.",
+        "REQ-LOCATOR-SETFILES-002: 전체 규범 충족은 미확인: single/multiple·파일수·32MiB제한·권한·없는경로·다른세션asset을 전체사전검증하고 실패시기존선택보존여부를알린다.",
+        "REQ-LOCATOR-SETFILES-003: 전체 규범 충족은 미확인: 동일파일명은 경로 분리자를 제거한안전이름으로 다루고 bytes/base64/MIME 형식오류·크기초과를 명시한다. 업로드 제거 []와 input multiple정책을 문서화한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "fileId/bytes/base64·32MiB·empty[]·existing input보존 미확인",
+      "counterexample": "같은이름local/asset의서로다른bytes를섞거나[valid,invalid]중valid만먼저선택하는 경우.",
+      "normativeProposal": "동명이명바이트 local/asset/inline hash와 이름/MIME, []제거, single/multiple·잘못된마지막파일 사전보존을 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: waitForEvent(filechooser) + click + chooser.setFiles and relevant option types",
+          "claim": "공개 업로드는 chooser흐름; locator.setInputFiles 찾지말라고 안내",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "chooser.setFiles",
+      "requirements": [
+        "REQ-CHOOSER-SETFILES-001",
+        "REQ-CHOOSER-SETFILES-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ],
+      "relation": "direct",
+      "method": "chooser.setFiles",
+      "syntax": "await chooser.setFiles([absoluteTestPath],{timeoutMs:1000})",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "CUA-DOC-UPLOAD"
+      ],
+      "confirmedConditions": [
+        "browser-visible absolute path string|string[], chooser.isMultiple"
+      ],
+      "unknownConditions": [
+        "OOPIF·stale/consumed·타세션·inline/server source 미확인",
+        "REQ-CHOOSER-SETFILES-001: 전체 규범 충족은 미확인: 같은파일엔진으로 기본/중첩/OOPIF의 실제 chooser input에 파일을 넣는다.",
+        "REQ-CHOOSER-SETFILES-002: 전체 규범 충족은 미확인: 소비한/닫힌/다른세션 chooser는 실패하며 다른 input에 재지정하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "OOPIF·stale/consumed·타세션·inline/server source 미확인",
+      "counterexample": "이미소비한chooser핸들이나중새input에파일을넣거나OOPIFchooser대신maininput에넣는 경우.",
+      "normativeProposal": "기본/중첩/OOPIF 실제input별 bytes 검사, 소비핸들재사용은 새chooser 무영향·오류를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: chooser.setFiles and relevant option types",
+          "claim": "browser-visible absolute path string|string[], chooser.isMultiple",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "download.save",
+      "requirements": [
+        "REQ-DOWNLOAD-SAVE-001",
+        "REQ-DOWNLOAD-SAVE-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ],
+      "relation": "composition",
+      "method": "waitForEvent(download) + download.path",
+      "syntax": "const d=await pendingDownload; nodeRepl.write(await d.path({timeoutMs:1000}))",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "download event 완료 후 local path string|null"
+      ],
+      "unknownConditions": [
+        "save destination/server/local·POST/blob hash·동시idempotency·30초 미확인",
+        "REQ-DOWNLOAD-SAVE-001: 전체 규범 충족은 미확인: save는 같은 핸들의 실제 브라우저 다운로드 완료를 최대30초 기다리고 완료 바이트를 요청 목적지로 반환한다. 쿠키/POST/blob을 URL 재요청으로 대체하지 않는다. 바깥 js deadline은 연장하지 않으며 더 짧은 실행 제한에 걸리면 실행 취소/불확실로 구분한다.",
+        "REQ-DOWNLOAD-SAVE-002: 전체 규범 충족은 미확인: 같은 세션·download id·목적지의 순차/동시 save는 하나의 결과를 공유한다. server는 같은 fileId, local은 같은 완료 path를 반환하고 재다운로드/중복 자산을 만들지 않는다. server↔local 전환은 허용하며 같은 원본 바이트를 반환한다. 다른 download의 동명 파일은 기존 파일을 덮어쓰지 않고 브라우저의 유일 이름/path와 서로 다른 asset id를 사용한다. 목적지 미지원·권한·저장/취소 실패와 부분효과는 구분한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "save destination/server/local·POST/blob hash·동시idempotency·30초 미확인",
+      "counterexample": "인증POST결과대신GET재요청을저장하거나 같은download동시save2개가asset2개를만드는 경우.",
+      "normativeProposal": "POST/blob/쿠키 원다운로드 hash와 local/server동일바이트·동명다른id·반복동시save 하나자산을 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: waitForEvent(download) + download.path and relevant option types",
+          "claim": "download event 완료 후 local path string|null",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "download.cancel",
+      "requirements": [
+        "REQ-DOWNLOAD-CANCEL-001",
+        "REQ-DOWNLOAD-CANCEL-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ],
+      "relation": "unknown",
+      "method": null,
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "Download 공개서명은 path만"
+      ],
+      "unknownConditions": [
+        "cancel/최종중단상태 조회 없음; null path를 cancelled로 해석 불가",
+        "REQ-DOWNLOAD-CANCEL-001: 전체 규범 충족은 미확인: 진행 다운로드에 취소를 요청하고 최대10초 내 브라우저 interrupted(USER_CANCELED) 상태를 확인한 뒤 cancelled를 반환한다. 확인이 안되면 timeout/불확실 오류이며 중단 성공을 주장하지 않는다.",
+        "REQ-DOWNLOAD-CANCEL-002: 전체 규범 충족은 미확인: 이미 complete는 already-complete, 이미 사용자 취소는 already-cancelled, 다른 이유 interrupted는 interrupted와 원인으로 반환한다. 완료/cancel 경합도 관측한 최종 상태로 구분하고 타세션 id는 권한 오류다."
+      ],
+      "exampleStatus": "not-available",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "cancel/최종중단상태 조회 없음; null path를 cancelled로 해석 불가",
+      "counterexample": "cancel요청전송만으로cancelled를반환하거나 이미complete인데USER_CANCELED로꾸미는 경우.",
+      "normativeProposal": "진행/완료/USER_CANCELED/다른interrupted/경합별 최종상태와 10초 deadline·권한오류를 명시한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: None and relevant option types",
+          "claim": "Download 공개서명은 path만",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "dialog.accept",
+      "requirements": [
+        "REQ-DIALOG-ACCEPT-001",
+        "REQ-DIALOG-ACCEPT-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ],
+      "relation": "composition",
+      "method": "tab.getJsDialog + typed dialog.accept",
+      "syntax": "const d=await tab.getJsDialog(); if(d?.type===\"prompt\") await d.accept(\"값\"); else if(d?.type===\"confirm\") await d.accept();",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "prompt accept(text), confirm accept(); alert/beforeunload accept 없음"
+      ],
+      "unknownConditions": [
+        "event handle identity/stale/once·기본prompt빈문자열 미확인",
+        "REQ-DIALOG-ACCEPT-001: 전체 규범 충족은 미확인: 발급된현재dialog를정확히한번accept하며prompt내용을보낸다.",
+        "REQ-DIALOG-ACCEPT-002: 전체 규범 충족은 미확인: 이미처리/교체/다른페이지dialog핸들은거절하며새dialog에수락을보내지않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "event handle identity/stale/once·기본prompt빈문자열 미확인",
+      "counterexample": "prompt1처리뒤prompt2가열렸을때oldhandle.accept가prompt2를처리하는 경우.",
+      "normativeProposal": "prompt/confirm 각각 최종값/횟수1과 oldhandle→newdialog 무영향을 검사; 지원 dialog별 accept방법을 확정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.getJsDialog + typed dialog.accept and relevant option types",
+          "claim": "prompt accept(text), confirm accept(); alert/beforeunload accept 없음",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "dialog.dismiss",
+      "requirements": [
+        "REQ-DIALOG-DISMISS-001",
+        "REQ-DIALOG-DISMISS-002"
+      ],
+      "common": [
+        "runtime",
+        "files-events"
+      ],
+      "relation": "composition",
+      "method": "tab.getJsDialog + dialog.dismiss",
+      "syntax": "const d=await tab.getJsDialog(); if(d) await d.dismiss();",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "alert/beforeunload/confirm/prompt 모두 dismiss 공개"
+      ],
+      "unknownConditions": [
+        "현재dialog 교체·다른page·stale/once 미확인",
+        "REQ-DIALOG-DISMISS-001: 전체 규범 충족은 미확인: 현재dialog를정확히한번dismiss하며prompt/confirm취소결과를확인한다.",
+        "REQ-DIALOG-DISMISS-002: 전체 규범 충족은 미확인: 오래된핸들이후새dialog가열려도새dialog를닫지않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "현재dialog 교체·다른page·stale/once 미확인",
+      "counterexample": "dismiss완료된confirm핸들을다시써나중새prompt를닫아버리는 경우.",
+      "normativeProposal": "oldprompt처리 후 newconfirm이열린 상태에서 oldhandle 재dismiss 오류·newdialog존재/취소결과를 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.getJsDialog + dialog.dismiss and relevant option types",
+          "claim": "alert/beforeunload/confirm/prompt 모두 dismiss 공개",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "scope.evaluate",
+      "requirements": [
+        "REQ-SCOPE-EVALUATE-001",
+        "REQ-SCOPE-EVALUATE-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "tab.playwright.evaluate / locator.evaluate",
+      "syntax": "await tab.playwright.evaluate(() => ({title:document.title}))",
+      "sourceIds": [
+        "CUA-DOC-API",
+        "CUA-LIVE-BLANK"
+      ],
+      "confirmedConditions": [
+        "read-only page/element evaluate, function|string, optional arg/options, Promise 반환타입"
+      ],
+      "unknownConditions": [
+        "우리 mutation가능Scope/framecontext·thenable/JSON/undefined 정책과 다름",
+        "REQ-SCOPE-EVALUATE-001: 전체 규범 충족은 미확인: Scope.evaluate(fn,arg)는 선택 프레임의 document를 전역 context로 두고 fn(arg)를 호출한다. Locator.evaluate 호환 별칭은 단일 element를 첫 인자, arg를 둘째 인자로 전달한다. QuickJS closure는 전달하지 않는다. Promise/JSON/오류/deadline은 REQ-C-RUNTIME-008을 따르며 반환값을 자동 모델 출력하지 않는다.",
+        "REQ-SCOPE-EVALUATE-002: 전체 규범 충족은 미확인: navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다."
+      ],
+      "exampleStatus": "executed-limited-about-blank; mapping syntax may differ: see E-LIVE-01",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 mutation가능Scope/framecontext·thenable/JSON/undefined 정책과 다름",
+      "counterexample": "Promise.resolve(undefined)를null성공으로바꾸거나 선택frame대신main document에서평가하는 경우.",
+      "normativeProposal": "page fn(arg)와 locator fn(el,arg) 구분·async truth/false/reject·nonJSON·부분효과를 독립조건으로, Codex read-only 예제로 mutation을 제안하지 않는다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.playwright.evaluate / locator.evaluate and relevant option types",
+          "claim": "read-only page/element evaluate, function|string, optional arg/options, Promise 반환타입",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "LIVE",
+          "sourceId": "CUA-LIVE-BLANK",
+          "location": "raw/blank-probe.json",
+          "claim": "about:blank metadata/count/read-only evaluate/output/close only as relevant",
+          "scope": "no fixture input or boundary support claim"
+        }
+      ]
+    },
+    {
+      "api": "locator.evaluateAll",
+      "requirements": [
+        "REQ-LOCATOR-EVALUATEALL-001",
+        "REQ-LOCATOR-EVALUATEALL-002"
+      ],
+      "common": [
+        "runtime",
+        "dom-frames",
+        "selection"
+      ],
+      "relation": "direct",
+      "method": "locator.evaluateAll",
+      "syntax": "await locator.evaluateAll(elements => elements.map(el=>el.textContent))",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "read-only matched element array, optional arg/options Promise 타입"
+      ],
+      "unknownConditions": [
+        "0배열1회·composed순서·crossframe·직렬화/thenable 정책 미확인",
+        "REQ-LOCATOR-EVALUATEALL-001: 전체 규범 충족은 미확인: evaluateAll은 현재 선택 결과 전체를 composed 문서 순서 배열로 첫 인자, arg를 둘째 인자로 전달하며 0개는 빈 배열로 한 번 호출한다. Promise settle과 JSON 결과·실패는 REQ-C-RUNTIME-008을 따른다. 단일 대상 strict는 적용하지 않는다.",
+        "REQ-LOCATOR-EVALUATEALL-002: 전체 규범 충족은 미확인: 중복매칭은허용하지만세션·프레임경계는유지하고직렬화오류를구분한다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "0배열1회·composed순서·crossframe·직렬화/thenable 정책 미확인",
+      "counterexample": "0매칭일때fn을호출하지않거나 async배열결과를settle하지않고Promise객체로반환하는 경우.",
+      "normativeProposal": "0/1/2개 배열의 호출횟수1·순서·arg 전달 및 Promise/JSON 경계를 공통008과 연결한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: locator.evaluateAll and relevant option types",
+          "claim": "read-only matched element array, optional arg/options Promise 타입",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "page.logs",
+      "requirements": [
+        "REQ-PAGE-LOGS-001",
+        "REQ-PAGE-LOGS-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "direct",
+      "method": "tab.dev.logs",
+      "syntax": "await tab.dev.logs({levels:[\"error\"],limit:20})",
+      "sourceIds": [
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "levels/filter substring/limit; ISO timestamp,message,url 배열"
+      ],
+      "unknownConditions": [
+        "since·1000개·collection range/dropped/partial 없음",
+        "REQ-PAGE-LOGS-001: 전체 규범 충족은 미확인: 페이지콘솔/오류로그를시간·level로조회하고REPLconsole.log출력과구분한다.",
+        "REQ-PAGE-LOGS-002: 전체 규범 충족은 미확인: 페이지별 최근1000개를 보관하며 수집 시작시각·보관범위·누적 dropped·partial을 collection에 제공한다. attach 전 기간과 overflow가 since 범위에 걸리면 partial=true다. 실제 로그 entries에 합성 warning을 섞지 않고 다른 페이지/세션 로그를 포함하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "since·1000개·collection range/dropped/partial 없음",
+      "counterexample": "attach전기간이포함된since조회에서[]를완전한무로그로표시하거나1002로그중2개유실을숨기는 경우.",
+      "normativeProposal": "attach이전+1002개+동시각에서 at>since/level정확일치·필터전보관범위·무수집partial을 따로 판정한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-API",
+          "location": "CUA API Reference: tab.dev.logs and relevant option types",
+          "claim": "levels/filter substring/limit; ISO timestamp,message,url 배열",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    },
+    {
+      "api": "console.log",
+      "requirements": [
+        "REQ-CONSOLE-LOG-001",
+        "REQ-CONSOLE-LOG-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "composition",
+      "method": "nodeRepl.write",
+      "syntax": "nodeRepl.write({value:1})",
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-LIVE-BLANK"
+      ],
+      "confirmedConditions": [
+        "명시텍스트출력 API는 nodeRepl.write; 빈탭 probe 출력실측"
+      ],
+      "unknownConditions": [
+        "console.log 별칭/순환/예산/truncated·세션격리 미확인",
+        "REQ-CONSOLE-LOG-001: 전체 규범 충족은 미확인: 명시호출출력만반환하며마지막표현식이나페이지console과혼동하지않는다.",
+        "REQ-CONSOLE-LOG-002: 전체 규범 충족은 미확인: 큰출력·순환값·여러블록은실행출력예산내에서절단표시하며메모리/세션을넘어유출하지않는다."
+      ],
+      "exampleStatus": "executed-limited-about-blank; mapping syntax may differ: see E-LIVE-01",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "console.log 별칭/순환/예산/truncated·세션격리 미확인",
+      "counterexample": "마지막식만있는호출을명시출력처럼보내거나 순환로그가다음세션출력을손상시키는 경우.",
+      "normativeProposal": "마지막식단독/명시2개출력/페이지console을구분하고 UTF8경계·순환/블록넘침의 진단·다음요청깨끗함을 확인한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "First CUA response: Output / API Use",
+          "claim": "명시텍스트출력 API는 nodeRepl.write; 빈탭 probe 출력실측",
+          "scope": "public declaration only; limits in unknownConditions"
+        },
+        {
+          "kind": "LIVE",
+          "sourceId": "CUA-LIVE-BLANK",
+          "location": "raw/blank-probe.json",
+          "claim": "about:blank metadata/count/read-only evaluate/output/close only as relevant",
+          "scope": "no fixture input or boundary support claim"
+        }
+      ]
+    },
+    {
+      "api": "display",
+      "requirements": [
+        "REQ-DISPLAY-001",
+        "REQ-DISPLAY-002"
+      ],
+      "common": [
+        "runtime"
+      ],
+      "relation": "composition",
+      "method": "nodeRepl.emitImage",
+      "syntax": "nodeRepl.emitImage(await tab.screenshot({fullPage:false}))",
+      "sourceIds": [
+        "CUA-DOC-ENTRY"
+      ],
+      "confirmedConditions": [
+        "data/file URL, PNG/JPEG/WebP bytes, {bytes,mimeType} 허용"
+      ],
+      "unknownConditions": [
+        "우리 PNG envelope·4/8MiB·최대4장·256블록·invalid/overflow계속실행 미확인",
+        "REQ-DISPLAY-001: 전체 규범 충족은 미확인: screenshot을실제이미지로모델에전달하며base64를일반로그로쏟지않는다.",
+        "REQ-DISPLAY-002: 전체 규범 충족은 미확인: 잘못된 MIME/base64는 display 입력 오류다. 유효 이미지가 출력 한도를 넘으면 이미지 전체를 생략하고 truncated/이유를 결과 envelope에 표시하며 실행은 계속한다. 부분 base64 이미지를 반환하거나 다른 요청 이미지를 재사용하지 않는다."
+      ],
+      "exampleStatus": "syntax-confirmed-not-executed",
+      "limits": [
+        "direct는 공개 메서드의 직접 대응이며 전체 REQ 충족 판정 아님. composition은 부분 목표 흐름, 의도적 차이/누락 조건 포함.",
+        "IAB 빌드 버전 미확인; 현재 문서와 과거 fixture 관측은 구분.",
+        "일반 Playwright/자체 Codex-style bridge의 지원·오류·옵션을 전용하지 않음."
+      ],
+      "normativeGap": "우리 PNG envelope·4/8MiB·최대4장·256블록·invalid/overflow계속실행 미확인",
+      "counterexample": "초과이미지base64일부만전송하거나 before/display/after에서한도초과후after로그까지이유없이잃는 경우.",
+      "normativeProposal": "valid/invalid/초과 이미지를 before→image→after 로그와함께 검사해 format오류/전체생략/계속실행을 구분한다",
+      "evidenceClaims": [
+        {
+          "kind": "DOC",
+          "sourceId": "CUA-DOC-ENTRY",
+          "location": "First CUA response: Output / API Use",
+          "claim": "data/file URL, PNG/JPEG/WebP bytes, {bytes,mimeType} 허용",
+          "scope": "public declaration only; limits in unknownConditions"
+        }
+      ]
+    }
+  ],
+  "common": [
+    {
+      "api": "common.runtime",
+      "requirements": [
+        "REQ-C-RUNTIME-001",
+        "REQ-C-RUNTIME-002",
+        "REQ-C-RUNTIME-003",
+        "REQ-C-RUNTIME-004",
+        "REQ-C-RUNTIME-005",
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007",
+        "REQ-C-RUNTIME-008"
+      ],
+      "relation": "composition",
+      "method": "js/reset + nodeRepl output",
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-DOC-API"
+      ],
+      "confirmedConditions": [
+        "persistent CUA REPL·reset bindings와 명시출력 계약"
+      ],
+      "unknownConditions": [
+        "QuickJS 확장내 실행·requestId dedupe·예산·session소유·late hostcall·release 전부 별도 미확인",
+        "外部 도구는 guide/reset/js 세 개를 유지한다. 관리 HTTP endpoint와 내부64개는 외부 도구 수에 포함하지 않는다.",
+        "JS는 확장 내 세션별 QuickJS에서 실행하고 외부 중계기는 제품코드 평가를 대신하지 않는다.",
+        "reset/timeout은 이전세대 대기·late결과를 구분하고 브라우저에 이미 발생한 효과는 rollback했다고 주장하지 않는다.",
+        "시간·메모리·코드·텍스트·이미지 예산을 guide에 안내하고 초과는 잘림/취소/실행실패로 구분한다. 기본30초(허용50..120000ms), 코드64KiB UTF-8, VM64MiB·stack512KiB, 텍스트64KiB UTF-8를 적용한다. 이미지 한도와 결합 블록 수는 아래 출력 계약을 따른다.",
+        "비멱등 입력은 응답 유실만으로 자동 재실행하지 않는다. 같은 requestId는 같은 요청에만 재사용하고 payload 충돌을 거절한다.",
+        "연결·인증·session 소유 실패를 정상 빈 결과와 구분하고 타세션 핸들·asset·출력을 읽거나 변경하지 않는다.",
+        "이미지 출력은 디코딩한 파일 bytes 기준 한 이미지4MiB/요청 합8MiB/최대4장, 텍스트+이미지+진단 합256블록이다. 텍스트64KiB는 이미지 base64를 포함하지 않는다. 요청별 전체 결과 JSON 전송 한도는16MiB UTF-8다. 정상 한도 이내 이미지도 VM/캡처 환경 실패를 숨기지 않는다.",
+        "페이지 evaluate/evaluateAll/waitForFunction은 Promise/thenable 반환을 최종 settle까지 기다린 뒤 값을 판정한다. arg 생략/undefined는 null로 전달한다. 인자/최종 결과는 null/boolean/string/유한 number/이들로만 구성된 조밀한 Array·일반 Object의 JSON 값이어야 한다. 결과 undefined, NaN/Infinity, BigInt/Symbol/function/DOM node/순환/undefined 필드·희소배열은 직렬화 오류로 거절하며 성공 null로 바꾸지 않는다. async reject/throw는 함수 오류, timeout/reset은 실행/대기 취소로 구분한다. 이미 일어난 사용자 함수 효과는 남으며 단일 evaluate를 자동 재실행하지 않는다."
+      ],
+      "exampleStatus": "common mechanism; use specific API examples, not independently executed",
+      "limits": [
+        "공통 조건을 개별API별 새실측으로 중복집계하지 않음",
+        "우리 정책과 Codex의 문서 차이를 그대로 명시"
+      ],
+      "counterexample": "같은 requestId 다른 payload가 두번입력되거나 reset뒤 late결과가 새요청에 섞이는 경우",
+      "normativeProposal": "우리 3도구/QuickJS/예산은 독립 사용자설계로 유지; Promise settle/undefined 직렬화·부분효과·원자rollback없음을 PLAN에서 구분"
+    },
+    {
+      "api": "common.dom-frames",
+      "requirements": [
+        "REQ-C-DOMFRAMES-001",
+        "REQ-C-DOMFRAMES-002",
+        "REQ-C-DOMFRAMES-003",
+        "REQ-C-DOMFRAMES-004",
+        "REQ-C-DOMFRAMES-005",
+        "REQ-C-DOMFRAMES-006"
+      ],
+      "relation": "composition",
+      "method": "domSnapshot + frameLocator + read-only evaluate",
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "iframe body when available, frameLocator 중첩; 과거 scale/slot 일부"
+      ],
+      "unknownConditions": [
+        "모든 offscreen DOM·무스크롤·request0·nested/OOPIF·stale·openShadow·unsupported transform 거절 미확인",
+        "snapshot/selector/상태 조회 등 관찰 API의 기본 범위는 현재 연결 DOM의 화면 밖 영역까지다. 이들 관찰은 scroll·click·추가 데이터 로딩을 발생시키지 않는다. evaluate/evaluateAll/waitForFunction의 사용자 함수는 명시적으로 효과를 낼 수 있으며 무조작 관찰 보장의 예외다.",
+        "Frame Scope는 선택 프레임과 연결된 자식 관찰 범위를 명시한다. CSS/role/text 선택은 해당 document에 한정하고 ref는 발급frame로 라우팅한다.",
+        "open Shadow와 slot의 composed 텍스트·hit ancestry를 지원한다. closed Shadow·canvas·PDF 의미 분석은 이번 범위 밖이다.",
+        "프레임 detach/navigation 및 문서 교체를 식별하고 같은 frameId라도 오래된 document ref를 재사용하지 않는다.",
+        "양의 scale/translate 중첩 프레임과 OOPIF 좌표를 main viewport CSS 좌표에 맞춘다. rotate/skew/음수scale/3D는 사전 미지원 오류다.",
+        "접근할 수 없는 프레임과 깊이 제한은 프레임 목록·snapshot에 이유와 재조회 경로를 남긴다."
+      ],
+      "exampleStatus": "common mechanism; use specific API examples, not independently executed",
+      "limits": [
+        "공통 조건을 개별API별 새실측으로 중복집계하지 않음",
+        "우리 정책과 Codex의 문서 차이를 그대로 명시"
+      ],
+      "counterexample": "main/child/형제에 같은이름 버튼, iframe navigation 뒤 oldref 또는 scaled rect local좌표를 main에 쓰는 경우",
+      "normativeProposal": "관찰 무부작용과 명시입력 스크롤을 구분; DOM 미존재/출력생략/접근불가frame 이유와 독립scope를 판정"
+    },
+    {
+      "api": "common.selection",
+      "requirements": [
+        "REQ-C-SELECTION-001",
+        "REQ-C-SELECTION-002",
+        "REQ-C-SELECTION-003",
+        "REQ-C-SELECTION-004",
+        "REQ-C-SELECTION-005",
+        "REQ-C-SELECTION-006"
+      ],
+      "relation": "composition",
+      "method": "locator/getBy*/filter/nth + count",
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "문서상 선택/필터/RegExp/exact 조합; 과거 regex/visible/nth(-1)/slot 일부"
+      ],
+      "unknownConditions": [
+        "우리 refidentity·composed본문·mintext·case·g/y·불변·조합순서·0/N strict 미확인",
+        "count/evaluateAll 및 아래 상태 대기의 명시 예외 외에 단일 대상 조회·조작은 0/다중 매칭을 구분해 거절한다. 자동 첫번째 선택은 없다. CSS 상태 대기는 waitFor의 0/1/N 표를 따른다. 발급 ref의 stale 오류는 부재 성공으로 흡수하지 않는다.",
+        "Locator는 지연평가 불변 조합이다. filter와 nth의 호출 순서를 보존하며 이전 Locator를 바꾸지 않는다.",
+        "문자열 검색은 공백정규화 후 기본부분일치·exact전체일치, 대소문자 구분이다. RegExp source/flags를 보존하고 g/y도 후보마다 독립 평가한다.",
+        "검색 본문은 composed text node의 실제 순서로 연결해 whitespace run을 한칸으로 정규화한다. 인접 span 사이에 없는 공백은 추가하지 않는다. script/style/noscript/template 및 aria-hidden=true subtree는 제외한다. CSS hidden 본문은 포함하되 visible 필터로 분리한다.",
+        "접근 이름(role/label)과 검색 본문(getByText/filter), 원문textContent를 구분한다. 출력 이름 축약이 검색범위를 줄이지 않는다.",
+        "ref는 page/frame/document/element에 결합한다. 같은 문서에서 연결된 동일요소의 ref는 후속snapshot에도 유지가능하지만 detach/교체시 stale다."
+      ],
+      "exampleStatus": "common mechanism; use specific API examples, not independently executed",
+      "limits": [
+        "공통 조건을 개별API별 새실측으로 중복집계하지 않음",
+        "우리 정책과 Codex의 문서 차이를 그대로 명시"
+      ],
+      "counterexample": "getAttribute/textContent 등 first matched 설명을 모든단일strict라고 쓰는 경우",
+      "normativeProposal": "Codex first/null 설명과 우리의 strict 정책을 의도된차이로 보존하고 각 query의 결과집합·순서·오류·무입력을 명시"
+    },
+    {
+      "api": "common.input",
+      "requirements": [
+        "REQ-C-INPUT-001",
+        "REQ-C-INPUT-002",
+        "REQ-C-INPUT-003",
+        "REQ-C-INPUT-004",
+        "REQ-C-INPUT-005"
+      ],
+      "relation": "composition",
+      "method": "locator click/fill/press/setChecked/selectOption",
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-DOC-API",
+        "HIST-CODEX-AUDIT"
+      ],
+      "confirmedConditions": [
+        "공개 semantic input와 과거 readonly거절·slot/scale클릭"
+      ],
+      "unknownConditions": [
+        "down/up ownership·actualrelease·hit/actionability·post-state재확인·no-blind-retry 미확인",
+        "locator 입력은 단일 대상·visible/enabled·안정·실제hit/편집가능 등 적용 전제조건을 검증한다. 실패 전 입력이 없으면 무입력, 중도 실패면 부분효과를 구분한다.",
+        "visible는 layout 존재와 조상숨김/닫힌details 기준이다. offscreen·overlay는visible와별개며 자동스크롤은 입력/명시scroll에만 허용한다.",
+        "좌표 primitive는 main viewport CSS 좌표와 유효한 버튼/키를 사용한다. 사전 검증/focus 실패는 기존 명시 down 상태를 보존한다. 입력 중 실패는 그 연산이 새로 획득한 키/버튼만 정리하고 이전 명시 down은 보존한다. reset/close는 해당 세션이 소유한 전체 실제 눌림 정리를 시도한다. 실제 release 실패를 내부 상태 초기화로 숨기지 않고 잔류/불확실을 보고한다. click/drag가 사용할 버튼이 이미 명시 down이면 사전 상태충돌로 거절하며 다른 down을 해제하지 않는다.",
+        "입력전달 성공과 업무완료를 구분한다. fill/checked/selection/focus처럼 API가 사후상태를 약속한 경우 실제상태를 확인한다.",
+        "timeout/재시도 기본값은 guide에 안내하고 stale ref나 비멱등 drop/click을 다른대상에 자동재시도하지 않는다."
+      ],
+      "exampleStatus": "common mechanism; use specific API examples, not independently executed",
+      "limits": [
+        "공통 조건을 개별API별 새실측으로 중복집계하지 않음",
+        "우리 정책과 Codex의 문서 차이를 그대로 명시"
+      ],
+      "counterexample": "기존Control down 상태에서 focus실패 후 Control이 풀리거나 mask가 value되돌렸는데 성공하는 경우",
+      "normativeProposal": "사전거절0입력/중도부분효과/새로획득한키만cleanup/reset전체release를 구분; 업무성공은 별도증거"
+    },
+    {
+      "api": "common.files-events",
+      "requirements": [
+        "REQ-C-FILESEVENTS-001",
+        "REQ-C-FILESEVENTS-002",
+        "REQ-C-FILESEVENTS-003",
+        "REQ-C-FILESEVENTS-004",
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
+      ],
+      "relation": "composition",
+      "method": "waitForEvent + chooser.setFiles/download.path + getJsDialog",
+      "syntax": null,
+      "sourceIds": [
+        "CUA-DOC-ENTRY",
+        "CUA-DOC-API",
+        "CUA-DOC-UPLOAD"
+      ],
+      "confirmedConditions": [
+        "wait before action 권장; chooser 절대경로·download완료/path"
+      ],
+      "unknownConditions": [
+        "inline/asset/32MiB·source형식·cleanup·POST/blob byte보존·cancel·eventarming/terminal경합 미확인",
+        "FileInput은 Chrome호스트 로컬경로·세션서버asset·명시bytes/base64를 한 엔진으로 처리한다. 서버경로를 로컬경로로 해석하지 않는다.",
+        "각 파일과 한 호출의 전체 파일 바이트 합은 각각32MiB 이하로 제한한다. single/multiple 개수·형식·asset 소유·로컬 권한을 전달 전 검증한다. 사전 오류는 기존 선택을 보존하고, 불가피한 중도 실패는 적용된 목록/불확실 여부를 밝힌다. 임시 DOM/file 자원은 정리한다.",
+        "다운로드는 실제 브라우저 이벤트/전송을 사용한다. 쿠키/POST/blob을 단순URL 재요청으로 대체하지 않는다.",
+        "event waiter는 등록 이후 같은 페이지/세션의 이벤트만 소비한다. timeout/reset은 단일 종결 후 제거한다. 자기 close event waiter는 정상 close metadata로 resolve하고 다른 waiter만 PAGE_CLOSED로 reject한다. 발급핸들은 실제 event identity와 수명을 가진다.",
+        "wait는 조작 전에 등록한다. 동시 waiter 중 같은 가변 event의 소비 충돌은명시거절하고 늦은 event를 이미끝난wait에전달하지않는다.",
+        "FileInput source는 로컬 절대경로 문자열 또는 fileId/bytes/base64 중 정확히 하나를 가진 객체다. bytes는 일반 number[]만 지원하고 각 원소는0..255 정수다. Uint8Array·문자열·겹친 source는 사전 거절한다. base64는 RFC4648 표준 alphabet와 올바른 padding의 문자열로서 공백/URL-safe를 거절하고 빈문자열은0-byte다. bytes:[]도0-byte다.",
+        "inline name은 생략 시 file.bin, mimeType은 application/octet-stream이다. name은 NUL을 거절하고 /와 역슬래시로 경로를 분리한 마지막 비어 있지 않은 basename을 사용하며 빈 basename은 거절한다. fileId의 이름/MIME은 서버 자산 메타데이터, 로컬은 실제 파일 메타데이터를 사용한다. 파일 수는 single input 최대1개, multiple/drop은32MiB 전송예산 안의 임의 개수며 별도 고정 개수 상한은 두지 않는다."
+      ],
+      "exampleStatus": "common mechanism; use specific API examples, not independently executed",
+      "limits": [
+        "공통 조건을 개별API별 새실측으로 중복집계하지 않음",
+        "우리 정책과 Codex의 문서 차이를 그대로 명시"
+      ],
+      "counterexample": "wait 호출 반환이 빨라도 browser등록전 click이 먼저가거나 두 dialog중 oldhandle이 두번째를 처리하는 경우",
+      "normativeProposal": "source별 파일hash/메타데이터와 invalid마지막항목 보존을명시; event 등록barrier·소비정책·late누수0을 독립 판정"
+    }
+  ],
+  "coverage": {
+    "readDocuments": 72,
+    "readRequirements": 184,
+    "apiMappings": 67,
+    "commonMappings": 5,
+    "newLiveRuns": 1,
+    "newLiveFixtureRuns": 0,
+    "fullRequirementSupportConfirmed": 0,
+    "conditionDenominator": "not fixed in this research; main must split normative predicates per revision before computing support/review percentages"
+  }
+}

@@ -18,25 +18,65 @@
 
 ### REQ-SCOPE-GETBYLABEL-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/selection-search.md#ref-scope-getbylabel). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: label for/감싼 label/aria-label/aria-labelledby로 연결된 제어를 검색한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false).
-- When: `scope.getByLabel`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: label for/감싼 label/aria-label/aria-labelledby로 연결된 제어를 검색한다.
+- Given: 아래 REQ-SCOPE-GETBYLABEL-001-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-SCOPE-GETBYLABEL-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-scope.getByLabel` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-SCOPE-GETBYLABEL-001-C01
+
+- 조건: label for/감싼label/ARIA 이름이 연결된 제어를 찾는다.
+- 준비: 각label방식의제어와같은일반문자열
+- 실행: exact/regex조회
+- 판정: 연결된제어identity가맞고일반본문으로대체하지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-SCOPE-GETBYLABEL-001-C02
+
+- 조건: 긴 label과 slot/aria-labelledby 이름은 출력 축약과 별개다.
+- 준비: 1000자label끝needle
+- 실행: 전체이름검색
+- 판정: 실제연결이름으로대상조회가능하다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-SCOPE-GETBYLABEL-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/selection-search.md#ref-scope-getbylabel). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: text:string/RegExp, options.exact?:boolean(기본false). 반례 조건: 같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다.
-- When: `scope.getByLabel`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: 같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다.
+- Given: 아래 REQ-SCOPE-GETBYLABEL-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-SCOPE-GETBYLABEL-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-scope.getByLabel` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-SCOPE-GETBYLABEL-002-C01
+
+- 조건: 같은 label의 복수 제어는 임의 선택하지 않는다.
+- 준비: label같은input2개
+- 실행: fill
+- 판정: strict오류·두값불변이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-SCOPE-GETBYLABEL-002-C02
+
+- 조건: 없는 label/잘못된 문자열·정규식 옵션은 명시 처리한다.
+- 준비: 비연결label·빈문자열·잘못된exact형식
+- 실행: 조회/조작
+- 판정: 빈문자열은입력오류,비연결은0개,조작은대상없음이며자동본문대체없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

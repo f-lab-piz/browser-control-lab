@@ -18,25 +18,57 @@
 
 ### REQ-MOUSE-CLICK-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-mouse-click). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 좌표에서 down/up을 수행하며 해당 위치 UI를 바꾸는 낮은수준 도구임을 명시한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: x,y:finite CSS 좌표, options.button?,clickCount?.
-- When: `mouse.click`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 좌표에서 down/up을 수행하며 해당 위치 UI를 바꾸는 낮은수준 도구임을 명시한다.
+- Given: 아래 REQ-MOUSE-CLICK-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-MOUSE-CLICK-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-mouse.click` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-MOUSE-CLICK-001-C01
+
+- 조건: 좌표click은요청button/count의down/up조합이다.
+- 준비: 각종pointer이벤트기록
+- 실행: left/right/clickCount2
+- 판정: 좌표·순서·count일치,업무완료는별도판정이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-MOUSE-CLICK-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-mouse-click). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: x,y:finite CSS 좌표, options.button?,clickCount?. 반례 조건: 오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다.
-- When: `mouse.click`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: 오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다.
+- Given: 아래 REQ-MOUSE-CLICK-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-MOUSE-CLICK-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-mouse.click` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-MOUSE-CLICK-002-C01
+
+- 조건: 이미필요버튼down/invalid옵션은사전거절한다.
+- 준비: 명시left down·NaN좌표·clickCount0
+- 실행: click
+- 판정: 새입력0·기존down보존이며임의좌표보정없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-MOUSE-CLICK-002-C02
+
+- 조건: down후실패는자기가누른버튼release를시도한다.
+- 준비: 중간adapterfault
+- 실행: click
+- 판정: 부분trace·불확실결과·release시도이며자동재클릭없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

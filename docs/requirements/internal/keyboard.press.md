@@ -18,25 +18,57 @@
 
 ### REQ-KEYBOARD-PRESS-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-keyboard-press). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
 - 규범: press는 호출 전 이미 유지되던 modifier를 보존한다. 자신이 새로 누른 modifier/주키만 정해진 순서로 해제하며 중도 오류에도 같은 정리를 시도한다. 명시 down의 소유 상태는 대응 up 또는 reset/close가 끝낸다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: Control을 명시 down한 상태와 아무 modifier가 없는 상태를 각각 준비한다.
-- When: press('Control+A')→press('C')→up('Control')를 실행하고 중간 오류도 주입한다.
-- Then: 첫 경우 Control이 C까지 유지되고 마지막 up에만 풀린다. 새로 누른 modifier만 정리되며 오류 후 잔류 상태/정리 실패를 확인할 수 있다.
+- Given: 아래 REQ-KEYBOARD-PRESS-001-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-KEYBOARD-PRESS-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-keyboard.press` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-KEYBOARD-PRESS-001-C01
+
+- 조건: 조합키가새로소유한키만해제한다.
+- 준비: 기존Control down과아무down없는경우
+- 실행: press Control+A→press C
+- 판정: 기존Control은유지·임시Control은해제되어두후속C의flags가다르다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-KEYBOARD-PRESS-001-C02
+
+- 조건: 더하기문자자체와조합구분문자를구분한다.
+- 준비: focus된텍스트입력
+- 실행: press '+'와Control+key
+- 판정: 문자+입력과조합키해석이명시규칙대로이며빈토큰조합은거절한다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-KEYBOARD-PRESS-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-keyboard-press). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; Enter/Control+A 등의 조합. 반례 조건: 알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다.
-- When: `keyboard.press`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: 알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다.
+- Given: 아래 REQ-KEYBOARD-PRESS-002-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-KEYBOARD-PRESS-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-keyboard.press` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-KEYBOARD-PRESS-002-C01
+
+- 조건: 검증실패/중도실패에서기존키와새소유키정리를구분한다.
+- 준비: 기존Control·새Alt중fault
+- 실행: press와후속C
+- 판정: 사전키0·중도새키해제·기존Control보존이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

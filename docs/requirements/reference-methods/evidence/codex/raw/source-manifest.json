@@ -1,0 +1,22 @@
+[
+  {
+    "source": "docs/fixes-before-after.md",
+    "copy": "raw/historical-fixes-before-after.md",
+    "sha256": "96716112b5ce1992128e562bb6f82cef9cb63b9592e498cef40a300dafab4127"
+  },
+  {
+    "source": "docs/evidence/diagnostics-before-after.json",
+    "copy": "raw/historical-diagnostics-before-after.json",
+    "sha256": "996f8b7f7a22a6f046b8856587618449a35ac3fb7574f71b7c858df8730beb94"
+  },
+  {
+    "source": "docs/evidence/review-round2.json",
+    "copy": "raw/historical-review-round2.json",
+    "sha256": "d69ff959825717693206d961e6e79c11070d2c78c8ed1adaf5c0523e59496a42"
+  },
+  {
+    "source": "docs/evidence/inline-filter-fix.json",
+    "copy": "raw/historical-inline-filter-fix.json",
+    "sha256": "d2dba7991b5d3153ae471c4e378a4dc4c774fa1d5bf128bcefc444151936b865"
+  }
+]

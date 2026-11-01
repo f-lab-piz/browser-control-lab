@@ -18,25 +18,49 @@
 
 ### REQ-PAGE-LOGS-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/lifecycle-evaluation.md#ref-page-logs). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 페이지콘솔/오류로그를시간·level로조회하고REPLconsole.log출력과구분한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.since?:epoch ms, level?:지원level.
-- When: `page.logs`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 페이지콘솔/오류로그를시간·level로조회하고REPLconsole.log출력과구분한다.
+- Given: 아래 REQ-PAGE-LOGS-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-LOGS-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.logs` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-LOGS-001-C01
+
+- 조건: entries는since초과/level정확일치로필터한다.
+- 준비: 같은ms의log/debug/error와빈버퍼
+- 실행: logs since/level
+- 판정: at>since인정확level만반환·REPL로그와구분한다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-LOGS-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/lifecycle-evaluation.md#ref-page-logs). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
 - 규범: 페이지별 최근1000개를 보관하며 수집 시작시각·보관범위·누적 dropped·partial을 collection에 제공한다. attach 전 기간과 overflow가 since 범위에 걸리면 partial=true다. 실제 로그 entries에 합성 warning을 섞지 않고 다른 페이지/세션 로그를 포함하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: attach 이전 로그, 1002개 이후 로그, 빈 로그와 같은시각의 로그를 준비한다.
-- When: since 경계와 level 필터로 page.logs를 조회한다.
-- Then: entries는 at>since와 level 정확 일치, collection은 필터 전 수집 보관 범위와 dropped를 표시하며 미수집을 무로그로 오인하지 않는다.
+- Given: 아래 REQ-PAGE-LOGS-002-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-LOGS-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.logs` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-LOGS-002-C01
+
+- 조건: collection은수집전/유실/보관범위를실제로그와분리한다.
+- 준비: attach전로그와1002개발생
+- 실행: logs
+- 판정: 최근1000·dropped/partial·시작/보관시각이맞고합성warning/타페이지로그없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

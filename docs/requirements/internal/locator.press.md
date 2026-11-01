@@ -18,25 +18,65 @@
 
 ### REQ-LOCATOR-PRESS-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-locator-press). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 정확한 대상에 focus를 확인하고 키를 입력해 현재 다른 focus에 보내지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: key:string; 예:Enter,Control+A.
-- When: `locator.press`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 정확한 대상에 focus를 확인하고 키를 입력해 현재 다른 focus에 보내지 않는다.
+- Given: 아래 REQ-LOCATOR-PRESS-001-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-PRESS-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.press` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-PRESS-001-C01
+
+- 조건: 대상focus를확인한후그대상에키를전달한다.
+- 준비: inputA/B와focus불가div
+- 실행: A.press Enter
+- 판정: A가active이고A의event만발생하며div는focus오류다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-LOCATOR-PRESS-001-C02
+
+- 조건: 복합키는keyboard.press의소유정책을공유한다.
+- 준비: 기존Control down
+- 실행: 대상press Control+A
+- 판정: 기존Control유지·새키만해제되며직접keyboard경로와일관된다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-PRESS-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-locator-press). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
 - 규범: focus 불가·stale·비활성 대상은 다른 요소 입력 없이 실패한다. 키 입력 단계는 keyboard.press와 같은 modifier 소유 정책을 따르며, focus 이전 실패는 기존 명시 down 상태를 임의 해제하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 명시 Control down이 있는/없는 상태와 focus 성공/disabled·stale 실패 대상을 준비한다.
-- When: locator.press('Control+A') 후 keyboard.press('C')를 실행하고 키 시퀀스 중 오류 조건도 대조한다.
-- Then: focus 이전 실패에는 키 이벤트가 없고 기존 Control 상태는 보존된다. 키 시퀀스 중 실패에는 해당 press가 새로 누른 키만 정리하며 실제 후속 입력으로 잔류 여부를 확인한다.
+- Given: 아래 REQ-LOCATOR-PRESS-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-PRESS-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.press` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-PRESS-002-C01
+
+- 조건: 잘못된키/조합은focus준비전검증한다.
+- 준비: 빈키·알수없는조합·disabled대상
+- 실행: press
+- 판정: 키입력0이고가능한한기존focus/down을보존한다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-LOCATOR-PRESS-002-C02
+
+- 조건: focus이전실패와키전송중실패를구분한다.
+- 준비: 기존Control와새Alt·중간전송fault
+- 실행: press 및후속C
+- 판정: 기존Control보존·새Alt정리·부분이벤트기록이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

@@ -18,25 +18,57 @@
 
 ### REQ-PAGE-SCREENSHOT-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/snapshot-frames.md#ref-page-screenshot). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: viewport/fullPage/clip의 범위를 구분하고 clip은 현재 viewport CSS 좌표로 캡처한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.fullPage?:boolean(기본false), clip?:{x,y,width,height}; 둘은 배타적.
-- When: `page.screenshot`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: viewport/fullPage/clip의 범위를 구분하고 clip은 현재 viewport CSS 좌표로 캡처한다.
+- Given: 아래 REQ-PAGE-SCREENSHOT-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-SCREENSHOT-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.screenshot` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-SCREENSHOT-001-C01
+
+- 조건: viewport/fullPage/clip은서로다른범위다.
+- 준비: 큰문서와내부iframe·스크롤된viewport
+- 실행: 각모드캡처
+- 판정: viewport는현재영역·fullPage는문서범위·iframe내부전체를자동펼치지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-SCREENSHOT-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/snapshot-frames.md#ref-page-screenshot). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: options.fullPage?:boolean(기본false), clip?:{x,y,width,height}; 둘은 배타적. 반례 조건: 가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.
-- When: `page.screenshot`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: 가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.
+- Given: 아래 REQ-PAGE-SCREENSHOT-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-SCREENSHOT-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.screenshot` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-SCREENSHOT-002-C01
+
+- 조건: clip은현재viewport CSS좌표와요청정수크기로정규화한다.
+- 준비: 가로세로scroll·DPR2·clip 320x240
+- 실행: clip캡처와독립PNG판독
+- 판정: 정확한대상색/320x240이며문서원점이나DPR640x480로바꾸지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-PAGE-SCREENSHOT-002-C02
+
+- 조건: 캡처중viewport가바뀌면정합성재시도후명시실패한다.
+- 준비: 스크롤/resize변화조건
+- 실행: clip
+- 판정: 최대3회정합성시도후VIEWPORT_CHANGED오류이며stale픽셀성공없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 
@@ -44,22 +76,46 @@
 
 ### REQ-PAGE-SCREENSHOT-003
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/snapshot-frames.md#ref-page-screenshot). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: clip 좌표/크기는 유한 양수/비음수이고 fullPage와배타적이다. clip은정수 CSS pixel 크기만지원하며fractional은사전오류다.
 - 근거: DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 잘못된clip·fullPage충돌
-- When: 캡처호출
-- Then: 입력오류로구분하고이미지를성공반환하지않는다.
+- Given: 아래 REQ-PAGE-SCREENSHOT-003-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-SCREENSHOT-003`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.screenshot` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-SCREENSHOT-003-C01
+
+- 조건: clip음수위치/0크기/소수크기/비유한값/fullPage병용은거절한다.
+- 준비: 각불량clip
+- 실행: screenshot
+- 판정: INVALID_SCREENSHOT_CLIP/조합오류·성공이미지없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-SCREENSHOT-004
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/snapshot-frames.md#ref-page-screenshot). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **SHOULD / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 전체문서 캡처는 픽셀/바이트 상한을 안내하고 초과는 명시 실패 또는 부분 이미지 표시를 한다. fullPage는 iframe내부 미노출content전체를의미하지않는다.
 - 근거: USR, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 거대한페이지와내부스크롤iframe
-- When: fullPage캡처
-- Then: 범위·제한이명시되고메모리실패를성공으로포장하지않는다.
+- Given: 아래 REQ-PAGE-SCREENSHOT-004-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-SCREENSHOT-004`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+- 상세화 판단: `DETAIL-page.screenshot` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-SCREENSHOT-004-C01
+
+- 조건: 거대문서캡처는메모리/전송예산실패를명시한다.
+- 준비: 큰PNG·매우긴문서
+- 실행: fullPage/이후display
+- 판정: 한도초과/부분수집을숨기지않고현재viewport나iframe내부전체로오인하지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+

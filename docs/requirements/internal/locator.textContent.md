@@ -18,25 +18,49 @@
 
 ### REQ-LOCATOR-TEXTCONTENT-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/selection-search.md#ref-locator-textcontent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 숨김 자식·실제 공백을 포함한 대상 textContent를 읽고 접근 이름으로 대체하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator.
-- When: `locator.textContent`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 숨김 자식·실제 공백을 포함한 대상 textContent를 읽고 접근 이름으로 대체하지 않는다.
+- Given: 아래 REQ-LOCATOR-TEXTCONTENT-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-TEXTCONTENT-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.textContent` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-TEXTCONTENT-001-C01
+
+- 조건: 원문 textContent는공백/숨김자식을포함하고이름과구분한다.
+- 준비: aria-label A·본문foo+bar·숨김X·개행
+- 실행: textContent
+- 판정: 원문문자열과독립DOMtextContent가같다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-TEXTCONTENT-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/selection-search.md#ref-locator-textcontent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: 단일 Locator. 반례 조건: 0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다.
-- When: `locator.textContent`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: 0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다.
+- Given: 아래 REQ-LOCATOR-TEXTCONTENT-002-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-TEXTCONTENT-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.textContent` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-TEXTCONTENT-002-C01
+
+- 조건: 0/N개는strict오류이며큰값을완전한작은값으로위장하지않는다.
+- 준비: 0/2개·큰본문
+- 실행: 조회
+- 판정: strict오류또는출력예산상명시적전송/출력절단이며검색대상값이조용히잘리지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

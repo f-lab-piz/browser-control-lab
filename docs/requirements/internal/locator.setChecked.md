@@ -18,25 +18,57 @@
 
 ### REQ-LOCATOR-SETCHECKED-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-locator-setchecked). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 이미 요청 상태면 클릭하지 않고 checkbox/radio/switch 지원대상 상태를 확인한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:boolean.
-- When: `locator.setChecked`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 이미 요청 상태면 클릭하지 않고 checkbox/radio/switch 지원대상 상태를 확인한다.
+- Given: 아래 REQ-LOCATOR-SETCHECKED-001-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-SETCHECKED-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.setChecked` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-SETCHECKED-001-C01
+
+- 조건: 이미요청상태면click하지않는다.
+- 준비: checked true인checkbox
+- 실행: setChecked true
+- 판정: true유지·clickcounter0이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-LOCATOR-SETCHECKED-001-C02
+
+- 조건: 상태변경후요청checked와실제상태를비교한다.
+- 준비: 체크를되돌리는핸들러
+- 실행: setChecked true
+- 판정: CHECK_STATE_NOT_CHANGED이며true성공없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SETCHECKED-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-locator-setchecked). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: value:boolean. 반례 조건: disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다.
-- When: `locator.setChecked`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다.
+- Given: 아래 REQ-LOCATOR-SETCHECKED-002-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-SETCHECKED-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.setChecked` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-SETCHECKED-002-C01
+
+- 조건: 비체크형/disabled와radio false 요청은변경전에거절한다.
+- 준비: button/disabledcheckbox/checkedradio
+- 실행: setChecked false/true
+- 판정: 타입/불가조작오류·기존checked/이벤트불변이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

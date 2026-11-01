@@ -18,25 +18,57 @@
 
 ### REQ-PAGE-WAITFORURL-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/lifecycle-evaluation.md#ref-page-waitforurl). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 현재 URL이 요청문자열과 같으면 즉시, 이동후 같으면그때 반환한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 URL 정확문자열, options.timeout?:positive ms(기본10000).
-- When: `page.waitForURL`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 현재 URL이 요청문자열과 같으면 즉시, 이동후 같으면그때 반환한다.
+- Given: 아래 REQ-PAGE-WAITFORURL-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-WAITFORURL-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.waitForURL` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-WAITFORURL-001-C01
+
+- 조건: 정확한URL문자열과일치할때현재URL을반환한다.
+- 준비: 현재A와지연B·hash/query차이
+- 실행: wait B
+- 판정: B와정확히같을때반환하며이미B면즉시다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-WAITFORURL-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/lifecycle-evaluation.md#ref-page-waitforurl). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: url:절대 URL 정확문자열, options.timeout?:positive ms(기본10000). 반례 조건: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.
-- When: `page.waitForURL`를 해당 경계에서 호출하고 오류·반환 및 전후 효과를 판독한다.
-- Then: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.
+- Given: 아래 REQ-PAGE-WAITFORURL-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-WAITFORURL-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.waitForURL` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-WAITFORURL-002-C01
+
+- 조건: glob/RegExp는현재지원인정확문자열과섞지않는다.
+- 준비: URL패턴/RegExp·불량timeout
+- 실행: waitForURL
+- 판정: 명시미지원/입력오류·자동부분일치없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-PAGE-WAITFORURL-002-C02
+
+- 조건: 미일치/close/reset은서로다른종결이다.
+- 준비: 계속A·페이지닫힘·reset
+- 실행: wait B
+- 판정: timeout/closed/reset구분·late결과없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

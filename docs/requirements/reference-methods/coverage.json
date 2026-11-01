@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "requirements": 184,
+  "conditionCount": 252,
+  "requirementSlots": 368,
+  "linkedSlots": 368,
+  "conditionUnits": 504,
+  "fullConditionEvidence": {
+    "not-established": 504
+  },
+  "relatedClaimRecords": 136,
+  "distinctSourceIds": 16,
+  "uniqueRuns": 2,
+  "runsByKind": {
+    "LIVE": 1,
+    "HISTORICAL": 1
+  },
+  "note": "관련성/호출서명과 조건 전체의 입증을 분리. 0개의 full confirmation도 미지원 판정은 아님. LIVE run 수는API별중복집계하지않음.",
+  "cycles": [],
+  "productStatus": "unverified; no product development"
+}

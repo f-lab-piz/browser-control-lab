@@ -18,25 +18,57 @@
 
 ### REQ-PAGE-WAITFOREVENT-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-page-waitforevent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: 조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: event:popup/filechooser/download/dialog/close, options.timeout?:positive ms(기본10000).
-- When: `page.waitForEvent`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: 조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.
+- Given: 아래 REQ-PAGE-WAITFOREVENT-001-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-WAITFOREVENT-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.waitForEvent` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-WAITFOREVENT-001-C01
+
+- 조건: 발생전등록한페이지이벤트는조작가능한핸들을준다.
+- 준비: popup/chooser/dialog/download버튼
+- 실행: wait선언→click→await
+- 판정: 해당페이지발급핸들·identity·event순서가맞다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-WAITFOREVENT-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-page-waitforevent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 2차 반영, 2026-11-01).
 - 규범: 다른 탭·등록 전 이벤트는 재사용하지 않는다. 자기 Page close가 관측되면 등록된 close waiter는 {tabId:number,closedAt:epochMs}로 정확히 한 번 resolve하고 제거한다. 다른 event waiter는 PAGE_CLOSED로 reject/정리한다. 이미 닫힌 핸들에 새 wait 등록은 즉시 PAGE_CLOSED다. timeout/reset/close 경합은 실제 먼저 확정된 terminal 결과 하나만 유지하고 late 결과는 무시한다. chooser/dialog는 동일 event를 이중 소비하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 같은 Page의 close waiter와 download waiter, 다른 탭의 close waiter를 등록하고 이미 닫힌 핸들도 준비한다.
-- When: 자기 close/페이지가 닫은 popup/다른 탭 close, timeout/reset 경합을 수행한다.
-- Then: 자기 close만 해당 metadata로 정상 완료, 나머지 자기 Page waiter는 PAGE_CLOSED, 다른 탭 waiter는 유지된다. 이미 닫힌 핸들은 즉시 오류이며 terminal 결과 중복/누수는 없다.
+- Given: 아래 REQ-PAGE-WAITFOREVENT-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-WAITFOREVENT-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-page.waitForEvent` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-WAITFOREVENT-002-C01
+
+- 조건: 같은가변event의중복소비와timeout누수를방지한다.
+- 준비: dialog/chooser waiter두개·timeout후event
+- 실행: wait등록/소비
+- 판정: 같은event에두가변핸들발급없고늦은event가종료wait에전달되지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-PAGE-WAITFOREVENT-002-C02
+
+- 조건: close는정상close waiter와다른wait의오류를분리한다.
+- 준비: close와download wait동시등록
+- 실행: 자기Page.close
+- 판정: close metadata정상·다른wait PAGE_CLOSED·다른페이지wait유지다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 
@@ -44,11 +76,23 @@
 
 ### REQ-PAGE-WAITFOREVENT-003
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/files-events.md#ref-page-waitforevent). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 1차 반영, 2026-11-01).
 - 규범: 같은 세션 JS에서 waitForEvent 호출 다음에 발행한 host action은 해당 waiter의 브라우저 등록/chooser arming 완료 뒤에만 실행한다. event Promise 자체는 이벤트 때 resolve하며 별도 공개 ready API는 추가하지 않는다. timeout/reset 시 미완료 등록도 취소해 늦은 waiter를 남기지 않는다.
 - 근거: USR, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 등록 ack를 지연시키고 즉시 popup/chooser/dialog를 발생시키는 fixture를 준비한다.
-- When: var pending=page.waitForEvent('dialog'); await button.click(); var d=await pending;를 임의 sleep 없이 반복한다.
-- Then: trace가 register-ready→action→event 순서이며 이벤트 누락/늦은 waiter 누수/중복 소비가 없다.
+- Given: 아래 REQ-PAGE-WAITFOREVENT-003-C01부터 C01까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-PAGE-WAITFOREVENT-003`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+- 상세화 판단: `DETAIL-page.waitForEvent` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-PAGE-WAITFOREVENT-003-C01
+
+- 조건: wait선언다음hostaction은등록/arming완료뒤실행한다.
+- 준비: 등록ack지연·즉시dialog/chooser/popup
+- 실행: wait선언→click→await
+- 판정: register-ready→action→event순서·sleep없음·timeout/reset뒤late등록0이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+

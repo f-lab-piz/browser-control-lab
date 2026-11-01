@@ -18,25 +18,65 @@
 
 ### REQ-LOCATOR-DRAGTO-001
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-locator-dragto). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
 - 규범: draggable은 실제 dragstart/native DragData, 격자는 연속 pointer 경로로 조작한다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 독립 세션·해당 Page/Scope/핸들을 준비한다. 입력 계약: target:같은 세션·Page·frame document·CDP 입력 target의 단일 Locator. cross-target은 frame 이름이 아니라 debugger 입력 target 경계다.
-- When: `locator.dragTo`를 정상 입력으로 호출하고 반환/실제 효과를 독립 판독한다.
-- Then: draggable은 실제 dragstart/native DragData, 격자는 연속 pointer 경로로 조작한다.
+- Given: 아래 REQ-LOCATOR-DRAGTO-001-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-DRAGTO-001`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.dragTo` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-DRAGTO-001-C01
+
+- 조건: native draggable은실제dragstart의데이터로한번drop한다.
+- 준비: 같은document의HTML DnD
+- 실행: dragTo
+- 판정: trusted dragstart·서버drop1회·목적업무완료이며중복전송없다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-LOCATOR-DRAGTO-001-C02
+
+- 조건: 비draggable격자는연속pointer경로로범위를선택한다.
+- 준비: 회의실격자3칸
+- 실행: source.dragTo(target)후doubleclick
+- 판정: 선택구간이정확하고HTML DataTransfer로대체하지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-DRAGTO-002
 
+- 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/input-state.md#ref-locator-dragto). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (검토 3차 반영, 2026-11-01).
 - 규범: Locator.dragTo v1은 같은 Page·같은 frame document·같은 CDP 입력 target 안에서만 지원한다. 다른 Page/다른 frame document는 전송 전 거절하며 다른 CDP target은 CROSS_TARGET_DRAG_UNSUPPORTED다. 동일 process의 다른 frame도 이번에는 CROSS_DOCUMENT_DRAG_UNSUPPORTED다. 모호/stale 대상은 사전 거절하며 중도 오류는 해당 연산이 획득한 버튼/drag 상태만 정리하고 drop을 자동 재전송하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
-- Given: 같은 document, 동일 process 다른 frame, OOPIF 다른 CDP target, 다른 Page의 source/destination과 중도 detach를 준비한다.
-- When: dragTo를 호출하고 trace·drop 서버 카운터·잔류 버튼을 판독한다.
-- Then: 지원 범위는 drop1회 업무 판정, 사전 거절 범위는 dragstart/drop0이다. 중도 실패는 이미발생이벤트와정리결과를표시하고다른대상으로재지정하지않는다.
+- Given: 아래 REQ-LOCATOR-DRAGTO-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
+- When: 조건별 실행 절차를 실제 브라우저 경로로 수행하고 독립 관찰/이벤트/파일 바이트로 판독한다. 이번 문서 작업에서는 실행하지 않았다.
+- Then: 아래 각 조건의 판정식을 모두 만족해야 이 요구의 적용 범위를 충족한다. 하나의 정상 호출로 다른 조건의 통과를 대신하지 않는다.
 - 검증 계획: `PLAN-LOCATOR-DRAGTO-002`; [매핑](../verification-matrix.json). 정상과 적용되는 거절·무부작용/부분효과를 실제 확장 경로로 확인한다.
+
+
+- 상세화 판단: `DETAIL-locator.dragTo` — 구현 전 설계 수용, 실제 충족 미검증. 공통 조건은 중복 정의하지 않고 이 API에 필요한 관찰 가능한 경계를 구체화한다.
+
+#### REQ-LOCATOR-DRAGTO-002-C01
+
+- 조건: 사전경계거절은dragstart/down전에실행한다.
+- 준비: 다른Page/다른document/OOPIF target·모호target
+- 실행: dragTo
+- 판정: 명시경계/strict오류·dragstart/drop0이다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
+
+#### REQ-LOCATOR-DRAGTO-002-C02
+
+- 조건: dragstart후detach/실패는상태정리하고재drop하지않는다.
+- 준비: 이동중frame교체·adapterfault
+- 실행: dragTo
+- 판정: 부분trace·자기버튼release·drop중복0이며정리실패를숨기지않는다.
+- 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
 

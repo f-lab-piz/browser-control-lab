@@ -1,0 +1,3090 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-01",
+  "baseline": "850326772bb826b37fa182b98007b1313c925a2c",
+  "productBaseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "surface": "Aside original CLI 1.26.1028.2335 / Skill version 3",
+  "scope": "cycle-1 research; public CLI guide and historical evidence only; no browser/repl code execution",
+  "apis": [
+    {
+      "api": "guide",
+      "requirements": [
+        "REQ-GUIDE-001",
+        "REQ-GUIDE-002"
+      ],
+      "relation": "direct",
+      "method": "aside guide / aside guide repl",
+      "syntax": "aside guide; aside guide repl",
+      "sourceIds": [
+        "A-DOC-MAIN",
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "CLI main은 exec/repl 표면·프로필 선택·기본 운영을 안내한다.",
+        "REPL 가이드는 환경·snapshot 옵션·download 사용법을 공개한다."
+      ],
+      "unknownConditions": [
+        "api 이름별 부분조회/알 수 없는 api 결과는 확인 안 됨.",
+        "우리규범 추가 확인: guide/reset/js와 내부64개, 실행 위치·출력 방법·현재 제약을 함께 안내한다.",
+        "우리규범 추가 확인: 알 수 없는 api를 요청하면 다른 항목으로 대체하지 않고 구분 가능한 미지원 결과를 준다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "전체/정확 API/없는 API/빈문자열·잘못된 타입을 구분하고 guide 전후 탭·변수·출력버퍼 불변을 판독한다. 개별 조회도 상속 공통 계약과 실제 미구현/목표 계약을 구분해 안내할지 결정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "CLI main은 exec/repl 표면·프로필 선택·기본 운영을 안내한다.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-MAIN",
+          "location": ".local/reference-loop-execution/aside/current-main-guide.txt :: Browser usage / Persistence / Remote control",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Browser usage / Persistence / Remote control"
+        },
+        {
+          "claim": "REPL 가이드는 환경·snapshot 옵션·download 사용법을 공개한다.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment / Snapshot / Downloads",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment / Snapshot / Downloads"
+        }
+      ]
+    },
+    {
+      "api": "reset",
+      "requirements": [
+        "REQ-RESET-001",
+        "REQ-RESET-002",
+        "REQ-RESET-003"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: reset 성공 이후 이전 변수는 없고 새 JS 호출은 실행 가능해야 한다.",
+        "우리규범 추가 확인: 진행 중 무한 루프와 event wait를 reset하면 종료 결과를 구분하고 이전 세대 결과가 새 요청에 섞이지 않는다.",
+        "우리규범 추가 확인: reset 완료는 미전송 hostcall을 차단하고 진행중입력의 완료/불확실 여부를 분리한다. 실제 key/button release 실패를 내부 상태초기화로 숨기지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "진행 hostcall 직전/입력 down 직후/late event 직전의 세 시점을 고정하고 세대번호·종결 결과 1회·이전 변수 ReferenceError·새 1+1 실행으로 재사용 가능을 판정한다. release 실패는 실패/불확실 결과의 필드와 잔류 버튼을 함께 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "js",
+      "requirements": [
+        "REQ-JS-001",
+        "REQ-JS-002",
+        "REQ-JS-003"
+      ],
+      "relation": "direct",
+      "method": "Aside 원본 CLI repl",
+      "syntax": "aside repl \"console.log(1)\"",
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-DOC-HELP"
+      ],
+      "confirmedConditions": [
+        "ES2023+·async/await·120초·const/let 지속·import/require 금지·명시 console 출력은 DOC."
+      ],
+      "unknownConditions": [
+        "확장 QuickJS·세션격리·requestId·코드/출력 크기·구체 취소/오류 계약은 DOC 없음.",
+        "우리규범 추가 확인: top-level await와 세션 변수 유지, console.log/display 출력이 확장 QuickJS 안에서 실행된다.",
+        "우리규범 추가 확인: 구문 오류·제한 초과는 실행 오류로 구분하며 중계기 Node나 다른 세션에서 실행하지 않는다.",
+        "우리규범 추가 확인: 변수 재선언·직렬화·hostcall 오류와 제한취소를 구분한다. 마지막 표현식은 자동 출력하지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "같은 세션 let 선언→후속 참조→동명 재선언 SyntaxError 후 기존값 보존을 고정한다. 로그 전후 사용자 throw와 timeout의 보존 출력/실행 상태를 분리하고 requestId 동시 중복·동일 payload·상이 payload에서 입력 횟수를 세어 판정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "ES2023+·async/await·120초·const/let 지속·import/require 금지·명시 console 출력은 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment; persistent const/let; Always use console.log",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment; persistent const/let; Always use console.log"
+        }
+      ]
+    },
+    {
+      "api": "browser.list",
+      "requirements": [
+        "REQ-BROWSER-LIST-001",
+        "REQ-BROWSER-LIST-002"
+      ],
+      "relation": "composition",
+      "method": "host/profile 목록 후 profile 선택",
+      "syntax": "aside host list; aside host profiles --host <id-or-name>",
+      "sourceIds": [
+        "A-DOC-MAIN"
+      ],
+      "confirmedConditions": [
+        "remote host별 profile 조회와 --profile 선택이 DOC."
+      ],
+      "unknownConditions": [
+        "현재 연결 프로필만 반환하는 우리 browser.list와 같은 목록/필드/오류 계약은 미확인.",
+        "우리규범 추가 확인: 연결 프로필을 식별할 수 있고 존재하지 않는 브라우저 지원을 만들지 않는다.",
+        "우리규범 추가 확인: 확장 연결이 없으면 연결 실패를 표시하며 정상 연결 목록으로 꾸미지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "연결 0/1/2와 연결 해제 중 목록을 각각 정의한다. 연결 없음의 오류와 정상 빈목록 중 선택을 확정하고 id의 안정 범위(현재 연결/세션)를 명시한다. 호출 전후 attach 수와 active tab 불변으로 읽기를 검증한다.",
+      "evidenceClaims": [
+        {
+          "claim": "remote host별 profile 조회와 --profile 선택이 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-MAIN",
+          "location": ".local/reference-loop-execution/aside/current-main-guide.txt :: Remote control: aside host profiles --host / --profile selection",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Remote control: aside host profiles --host / --profile selection"
+        },
+        {
+          "claim": "조합 대응 판단: host/profile 목록 후 profile 선택",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-MAIN",
+          "location": ".local/reference-loop-execution/aside/current-main-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "browser.tabs",
+      "requirements": [
+        "REQ-BROWSER-TABS-001",
+        "REQ-BROWSER-TABS-002"
+      ],
+      "relation": "direct",
+      "method": "REPL 전역 listBrowserTabs",
+      "syntax": "console.log(await listBrowserTabs())",
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-DOC-HELP"
+      ],
+      "confirmedConditions": [
+        "attach 없이 브라우저 열린 탭 목록, targetId/active/title/url 예시는 DOC."
+      ],
+      "unknownConditions": [
+        "windowId·HTTP(S)필터·정확 필드 타입은 미확인.",
+        "--help의 getTabs와 guide의 listBrowserTabs 관계는 미확인.",
+        "우리규범 추가 확인: 제어 후보 HTTP(S) 탭의 현재 메타데이터를 반환하며 목록 조회만으로 attach하지 않는다.",
+        "우리규범 추가 확인: 나열 직후 닫힌 tabId를 attach하면 실패하며 비슷한 제목 탭으로 바꾸지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동명·동일URL 탭 2개와 서로 다른 window를 사용해 id/url/title/active/windowId 필드 타입과 identity를 검증한다. 목록 시점 뒤 닫힌 ID attach 실패와 활성 탭 불변을 확인하고 제어불가 scheme 포함 여부/필터 정책을 명시한다.",
+      "evidenceClaims": [
+        {
+          "claim": "attach 없이 브라우저 열린 탭 목록, targetId/active/title/url 예시는 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment listBrowserTabs / Open browser tabs list example",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment listBrowserTabs / Open browser tabs list example"
+        }
+      ]
+    },
+    {
+      "api": "browser.open",
+      "requirements": [
+        "REQ-BROWSER-OPEN-001",
+        "REQ-BROWSER-OPEN-002"
+      ],
+      "relation": "direct",
+      "method": "REPL 전역 openTab",
+      "syntax": "const t1 = await openTab(\"http://127.0.0.1:8794/audit\")",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "openTab(url)는 새 탭을 열고 interactive까지 기다려 page/tabs를 갱신한다고 DOC."
+      ],
+      "unknownConditions": [
+        "active:false·실패탭 정리·리다이렉트·소유 identity는 미확인.",
+        "우리규범 추가 확인: 요청 URL을 한 번 열고 준비된 Page를 반환한다.",
+        "우리규범 추가 확인: 금지 scheme·잘못된 URL·권한 실패는 성공 Page를 주지 않으며 새로 만든 실패 탭의 잔여 여부를 설명한다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "HTTP 리다이렉트→최종 문서, 빈 body 초기화, 네트워크 실패를 분리한다. active:false가 기존 활성 탭을 보존하는지, 성공이 DOM interactive인지 제품 정의를 고정한다. 입력오류는 탭 생성0, 생성 후 실패는 생성 ID·잔여 탭을 보고하도록 설계한다.",
+      "evidenceClaims": [
+        {
+          "claim": "openTab(url)는 새 탭을 열고 interactive까지 기다려 page/tabs를 갱신한다고 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment openTab: open, wait interactive, update page/tabs",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment openTab: open, wait interactive, update page/tabs"
+        }
+      ]
+    },
+    {
+      "api": "browser.attach",
+      "requirements": [
+        "REQ-BROWSER-ATTACH-001",
+        "REQ-BROWSER-ATTACH-002"
+      ],
+      "relation": "direct",
+      "method": "REPL 전역 attachBrowserTab",
+      "syntax": "await attachBrowserTab(targetId)",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "열린 targetId 탭을 attach하고 page로 설정하는 API는 DOC."
+      ],
+      "unknownConditions": [
+        "타세션 충돌·동일 핸들 멱등성·권한실패 결과는 미확인.",
+        "우리규범 추가 확인: 현재 HTTP(S) 탭에 연결하고 원래 URL과 내용을 보존한다.",
+        "우리규범 추가 확인: 다른 세션 소유·닫힌 탭·권한 거부는 구분해 실패하고 소유를 빼앗지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동일 URL/title인 두 탭 중 요청 ID만 연결되고 탐색/새탭0인지 관찰한다. 같은 세션 반복 attach의 반환 identity·멱등성을 선택하고 다른 세션 소유/닫힘/권한 오류를 각각 판정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "열린 targetId 탭을 attach하고 page로 설정하는 API는 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment attachBrowserTab / Open browser tabs",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment attachBrowserTab / Open browser tabs"
+        }
+      ]
+    },
+    {
+      "api": "page.activate",
+      "requirements": [
+        "REQ-PAGE-ACTIVATE-001",
+        "REQ-PAGE-ACTIVATE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 자기 탭을 활성화하고 탐색이나 탭 복제를 하지 않는다.",
+        "우리규범 추가 확인: 닫힌 핸들이나 다른 세션 탭은 실패하며 임의 탭을 활성화하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "두 window에 같은 제목 탭을 두고 요청 tabId만 active가 되는지 판정한다. 활성화 성공이 window focus까지 뜻하는지 고정하고 URL/history/탭수 불변, 닫힌 ID의 다른 탭 활성0을 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.close",
+      "requirements": [
+        "REQ-PAGE-CLOSE-001",
+        "REQ-PAGE-CLOSE-002"
+      ],
+      "relation": "composition",
+      "method": "Page 메서드 대신 closeTab 전역",
+      "syntax": "await closeTab(t1)",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "반드시 closeTab(tab)을 쓰고 page.close()는 메모리누수 때문에 금지한다는 DOC."
+      ],
+      "unknownConditions": [
+        "close 반환형·중복 close·waiter/input 해제 계약은 미확인.",
+        "우리규범 추가 확인: 지정한 탭만 닫고 기존 핸들은 사용할 수 없게 한다.",
+        "우리규범 추가 확인: 이미 닫힌 핸들은 구분 가능한 실패/이미 닫힘 결과를 주고 다른 탭을 닫지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "탭 A/B 및 A의 이벤트 waiter·입력 down을 준비한다. close 뒤 A 핸들 stale/closed와 close waiter 종결, B 생존·대기 유지·입력 상태 보존을 판정한다. 반복 close는 false/오류/메타데이터 중 하나로 확정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "반드시 closeTab(tab)을 쓰고 page.close()는 메모리누수 때문에 금지한다는 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: ALWAYS openTab/closeTab; NEVER page.close"
+        },
+        {
+          "claim": "조합 대응 판단: Page 메서드 대신 closeTab 전역",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "page.goto",
+      "requirements": [
+        "REQ-PAGE-GOTO-001",
+        "REQ-PAGE-GOTO-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 새 문서에 연결 가능한 상태까지 기다리고 탐색 실패를 구분한다.",
+        "우리규범 추가 확인: 잘못된 URL·네트워크 실패에서 이전 DOM 관찰을 새 문서 성공으로 반환하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "HTTP redirect, same-document hash, 실패한 탐색 후 기존문서 보존을 분리하고 성공 반환이 최종 URL/준비상태 무엇을 보장하는지 고정한다. redirect 이후 old ref 무효·현재 새 document identity를 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.back",
+      "requirements": [
+        "REQ-PAGE-BACK-001",
+        "REQ-PAGE-BACK-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 뒤 이력으로 이동하며 경계에서는false와 URL 불변을 반환한다.",
+        "우리규범 추가 확인: 빠른 연속 뒤로 이동에서 다른 탭이나 이전 문서 ref에 입력하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "서로 다른 문서 A→B와 hash history 변형에서 back의 준비 기준과 document ref 세대를 나눠 판정한다. 최하단 false에서 URL·history·입력 횟수 불변을 확인하며 연속 호출의 직렬화/동시 오류 정책을 명시한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.forward",
+      "requirements": [
+        "REQ-PAGE-FORWARD-001",
+        "REQ-PAGE-FORWARD-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 앞 이력으로 이동하며 경계에서는false와 URL 불변을 반환한다.",
+        "우리규범 추가 확인: 뒤로 후 새 탐색으로 앞 이력이 사라졌으면false이며 사라진 URL을 새 탭으로 열지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "A→B→back→C 이후 forward false를 판정하고 새 탭·B 재탐색0을 확인한다. same-document history와 document 교체에서 ref 유지/폐기를 나눠 정의한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.reload",
+      "requirements": [
+        "REQ-PAGE-RELOAD-001",
+        "REQ-PAGE-RELOAD-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 현재 URL을 다시 로드하고 새 문서 준비 이후 반환한다.",
+        "우리규범 추가 확인: reload 전 ref를 다음 조작에 쓰면 stale 오류이며 새 문서의 유사 요소로 연결하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동일 URL의 서버 문서 generation 증가를 관측해 새 document 준비를 판정한다. reload 후 old ref 실패와 새 동일모양 버튼 무입력, reload 도중 실패의 URL/문서 상태를 기록한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "scope.snapshot",
+      "requirements": [
+        "REQ-SCOPE-SNAPSHOT-001",
+        "REQ-SCOPE-SNAPSHOT-002",
+        "REQ-SCOPE-SNAPSHOT-003",
+        "REQ-SCOPE-SNAPSHOT-004",
+        "REQ-SCOPE-SNAPSHOT-005",
+        "REQ-SCOPE-SNAPSHOT-006",
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
+      ],
+      "relation": "direct",
+      "method": "REPL 전역 snapshot",
+      "syntax": "const s1 = await snapshot(page, { interactive: true }); console.log(s1.tree)",
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-HIST-SNAPSHOT"
+      ],
+      "confirmedConditions": [
+        "snapshot(page,{interactive?,showHidden?,ref?,selector?}) => Promise<{tree,diff}> 명시 서명 DOC.",
+        "offscreen/child-iframe/title/url·CSS selector 또는 ref 부분조회 DOC.",
+        "새 snapshot은 이전 모든 ref 무효화; tree 후 action마다 diff 인쇄 DOC.",
+        "과거 audit에서 기본13175자/tail 미포함/생략표시, selector tail104자에서 발견 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "budget/cursor/since/query/maxDepth 공개계약·모든 frame 포함·OOPIF·무스크롤·diff 정합성·키워드미지 탐색은 미확인.",
+        "우리규범 추가 확인: 현재 연결 DOM 전체를 읽되 화면 밖 요소를 찾을 수 있고 가상화로 미존재한 데이터와 예산 생략을 구분한다.",
+        "우리규범 추가 확인: 긴 URL·대형 DOM에서 예산 생략을 표시하고 후속 root/cursor/frames 조회 경로를 남긴다. 키워드 없는 탐색은 별도 요구를 따른다.",
+        "우리규범 추가 확인: 기본 응답은 길어진 href를 나열하지 않고 역할·이름·상태·ref·프레임·생략 이유를 남긴다. 속성 원문은 getAttribute로 조회 가능해야 한다.",
+        "우리규범 추가 확인: 키워드를 모르는 상태에서도 공개된 업무 조건으로 식별 가능한 목표를 프레임/landmark/heading/영역 요약과 현재 DOM의 scrollport 단서를 따라 찾을 수 있어야 한다. 정확한 제목/CSS/ref/프레임 ID를 사전 제공하지 않아도 관찰 가능한 업무 predicate가 있어야 한다. 이름 없는 scrollport의 ref·frameId·축·현재 위치/진행 단서를 제공하며 관찰이 직접 스크롤/로딩하지 않는다. 예산 생략과 미로드를 구분하고 후속 root/cursor로 연결한다.",
+        "우리규범 추가 확인: continuation은 snapshot/문서세대·옵션과 결합한다. DOM 변화·다른 root·다른 session cursor는 재시작 필요를 반환하고 누락/중복 없는 정적 페이지 순회를 보장한다.",
+        "우리규범 추가 확인: since diff는 같은 비교범위/모든 옵션/문서·보관중 snapshot이고 이전·현재 출력 모두 완전할 때만 비교한다. 하나라도 다르면 resetRequired다. 부분 출력 차이를 전체 DOM 삭제로 표시하지 않는다.",
+        "우리규범 추가 확인: root는 선택 프레임의 유일 CSS/ref 대상에 한정하며 다른 프레임에 같은 selector를 강제하지 않는다. showHidden은 hidden을 표기하고 interactive는 본문없는것이완전본문수집이아님을알린다.",
+        "우리규범 추가 확인: 기본값은 root=선택 Scope의 body, interactive=false, showHidden=false, query 없음, maxDepth=무제한, maxChars=16000 UTF-16 code unit, maxNodes=500, maxOutputBytes=48000 UTF-8 bytes, cursor/since 없음이다. maxChars는1000..100000 정수, maxNodes는1..10000 정수, maxOutputBytes는4096..60000 정수, maxDepth는0이상 정수(0=root만)다. 명시한 잘못된 값은 clamp/무시하지 않고 사전 입력 오류다.",
+        "우리규범 추가 확인: text는 maxChars, refs/행은 maxNodes, 전체 JSON envelope는 maxOutputBytes를 동시에 만족한다. UTF-16 surrogate pair를 잘라 잘못된 문자열을 만들지 않는다. 메타데이터/생략 표지만으로 bytes 상한을 넘으면 SNAPSHOT_METADATA_BUDGET 오류다. query는 정규화된 이름의 대소문자 무시 부분 문자열이며 RegExp는 미지원이다.",
+        "우리규범 추가 확인: cursor는 불투명 문자열 토큰으로 발급된 session/snapshot/document·query·root·interactive/showHidden/maxDepth와 예산 옵션에 결합한다. 후속 요청은 cursor만 또는 동일 옵션만 허용한다. cursor와 since는 배타적이다. since는 동일 문서/범위/옵션이고 두 출력이 완전할 때만 diff를 제공하고 그 외에는 resetRequired다. root는 유일 CSS/ref이며 접근 불가 body는 명시 오류다.",
+        "우리규범 추가 확인: scrollport 단서는 snapshot의 refs/구조 요약에서 대상 ref와 함께 scroll:{axes:\"x\"/\"y\"/\"xy\",x:number,y:number,canLeft:boolean,canRight:boolean,canUp:boolean,canDown:boolean}로 표현한다. 수치는 CSS scroll offset이고 RTL의 음수도 허용하며 방향 boolean은 물리적 진행 방향이다. 현재 overflow/extent만 관찰하고 wheel이 소비되거나 새 데이터가 반드시 생긴다는 보장은 하지 않는다. 해당 노드/메타데이터도 출력 예산에 포함한다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "기존 상세11REQ를 유지한다. showHidden/interactive 조합별 출력 상태를 구체 예시로 고정하고 같은 DOM의 root 변경·부분 출력 diff에서 거짓 삭제0을 판정한다. 키워드 미지 탐색의 predicate·정답 유일성·예산을 각각 고정하고 출력 행 수와 refs 수가 다른 경우 maxNodes의 계수 단위를 확정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "snapshot(page,{interactive?,showHidden?,ref?,selector?}) => Promise<{tree,diff}> 명시 서명 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot TypeScript function signature",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot TypeScript function signature"
+        },
+        {
+          "claim": "offscreen/child-iframe/title/url·CSS selector 또는 ref 부분조회 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot options ref/selector; compact tree/title/URL/childiframe/offscreen bullets"
+        },
+        {
+          "claim": "새 snapshot은 이전 모든 ref 무효화; tree 후 action마다 diff 인쇄 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: each new snapshot invalidates earlier refs; tree/diff output bullets"
+        },
+        {
+          "claim": "과거 audit에서 기본13175자/tail 미포함/생략표시, selector tail104자에서 발견 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-SNAPSHOT",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/snapshot,/aside/scoped; scripts/compare-aside.mjs snapshot/scoped :: snapshot/scoped values",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. snapshot/scoped values"
+        }
+      ]
+    },
+    {
+      "api": "page.screenshot",
+      "requirements": [
+        "REQ-PAGE-SCREENSHOT-001",
+        "REQ-PAGE-SCREENSHOT-002",
+        "REQ-PAGE-SCREENSHOT-003",
+        "REQ-PAGE-SCREENSHOT-004"
+      ],
+      "relation": "direct",
+      "method": "Page screenshot 및 annotatedScreenshot",
+      "syntax": "await page.screenshot(); await annotatedScreenshot(page)",
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-HIST-CLIP"
+      ],
+      "confirmedConditions": [
+        "raw screenshot 및 ref box 포함 annotatedScreenshot 사용은 DOC.",
+        "과거 clip320x240 CSS 요청이 PNG640x480이었음(HISTORICAL/DPR)."
+      ],
+      "unknownConditions": [
+        "fullPage·clip 옵션 일반서명·viewport 경계·자동scroll·최대 크기는 미확인.",
+        "우리규범 추가 확인: viewport/fullPage/clip의 범위를 구분하고 clip은 현재 viewport CSS 좌표로 캡처한다.",
+        "우리규범 추가 확인: 가로·세로 스크롤과 DPR2에서 clip의 대상 픽셀과 크기를 확인하며 viewport가 변하면 재시도 후 명시 실패한다.",
+        "우리규범 추가 확인: clip 좌표/크기는 유한 양수/비음수이고 fullPage와배타적이다. clip은정수 CSS pixel 크기만지원하며fractional은사전오류다.",
+        "우리규범 추가 확인: 전체문서 캡처는 픽셀/바이트 상한을 안내하고 초과는 명시 실패 또는 부분 이미지 표시를 한다. fullPage는 iframe내부 미노출content전체를의미하지않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "체커보드·원점 표식의 main viewport를 DPR1/2·가로세로 scroll에서 캡처해 원본 픽셀과 CSS 정규화 크기를 판독한다. clip이 viewport를 벗어났을 때 오류/교집합 정책과 이미지 픽셀·바이트 상한 숫자를 확정하고 fullPage 캡처의 scroll 복원 여부를 명시한다.",
+      "evidenceClaims": [
+        {
+          "claim": "raw screenshot 및 ref box 포함 annotatedScreenshot 사용은 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment visual verification / Reading Escalation step4",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment visual verification / Reading Escalation step4"
+        },
+        {
+          "claim": "과거 clip320x240 CSS 요청이 PNG640x480이었음(HISTORICAL/DPR).",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-CLIP",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=screenshot-clip]; scripts/compare-aside.mjs screenshot-clip; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: screenshot-clip result and DPR note",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. screenshot-clip result and DPR note"
+        }
+      ]
+    },
+    {
+      "api": "page.frames",
+      "requirements": [
+        "REQ-PAGE-FRAMES-001",
+        "REQ-PAGE-FRAMES-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: main·중첩·교차 출처/OOPIF 프레임을 부모 관계와 함께 찾을 수 있다.",
+        "우리규범 추가 확인: 분리·교체 중 접근 불가 프레임은 누락 이유 또는 재조회 필요를 표시하고 완전 관찰로 주장하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "main→same-origin→cross-origin→OOPIF 부모 트리에서 id,parent,name,url,process 필드의 타입과 미수집 상태를 명시한다. detach/reparent 직후 snapshot과 목록이 어느 시점의 일관성을 보장하는지, 부분 스캔 결과를 완전으로 표시하지 않는지 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.frame",
+      "requirements": [
+        "REQ-PAGE-FRAME-001",
+        "REQ-PAGE-FRAME-002"
+      ],
+      "relation": "composition",
+      "method": "iframe selector 기반 frameLocator(과거 호출)",
+      "syntax": "page.frameLocator(\"iframe\").getByRole(\"button\", {name:\"좌표 내부 실행\",exact:true})",
+      "sourceIds": [
+        "A-HIST-FRAME"
+      ],
+      "confirmedConditions": [
+        "과거 frameLocator→getByRole→click 문법 실행됨; 업무 이름변경0·서버PASS없음 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "frameId 핸들·트리발견·OOPIF·detach·같은이름 frame의 확정 경로는 미확인.",
+        "우리규범 추가 확인: 프레임 핸들은 그 프레임의 문서만 선택·평가하고 형제 프레임에 누출되지 않는다.",
+        "우리규범 추가 확인: 분리된 frameId의 조작은 stale frame 오류이며 main frame으로 자동 대체하지 않는다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동명 frame 2개에서 ID로 얻은 Scope가 유일 문서만 검색/평가함을 marker로 판정한다. 존재하지 않는 ID가 즉시오류인지 지연 사용오류인지 확정하고 detach 뒤 재사용 ID가 새 문서에 붙지 않는지 확인한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 frameLocator→getByRole→click 문법 실행됨; 업무 이름변경0·서버PASS없음 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-FRAME",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: frameLocator call and observed business result",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. frameLocator call and observed business result"
+        },
+        {
+          "claim": "조합 대응 판단: iframe selector 기반 frameLocator(과거 호출)",
+          "kind": "INFERENCE",
+          "sourceId": "A-HIST-FRAME",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "scope.locator",
+      "requirements": [
+        "REQ-SCOPE-LOCATOR-001",
+        "REQ-SCOPE-LOCATOR-002"
+      ],
+      "relation": "direct",
+      "method": "Page locator에 CSS 또는 virtual ref 전달",
+      "syntax": "page.locator(\"e31\"); page.locator(\"button.export\")",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "virtual ref는 page.locator(ref)로 전달하며 DOM property/CSS와 혼합금지 DOC.",
+        "download button CSS locator 예시 DOC."
+      ],
+      "unknownConditions": [
+        "Scope/Frame 범위 일반화·지연평가·strict·잘못된 CSS 오류시점은 미확인.",
+        "우리규범 추가 확인: CSS는 현재 Scope 안에서 평가하고 ref는 발급 문서·프레임·요소에 고정한다.",
+        "우리규범 추가 확인: 잘못된 CSS·낡은 ref는 실패하며 이름 유사도나 DOM 순서로 보정하지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "CSS 구문오류의 발생 시점(생성/해석)을 확정한다. 동일 CSS가 main/child에 있는 상황과 발급 ref가 다른 Scope에 전달되는 상황을 나누어 교차 frame ref 라우팅/거절 정책을 명시하고 잘못된 qualified ref를 CSS로 재해석하지 않는다.",
+      "evidenceClaims": [
+        {
+          "claim": "virtual ref는 page.locator(ref)로 전달하며 DOM property/CSS와 혼합금지 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot: ref IDs are virtual locators; page.locator(e31)",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot: ref IDs are virtual locators; page.locator(e31)"
+        },
+        {
+          "claim": "download button CSS locator 예시 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: page.locator(button.export).click example",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: page.locator(button.export).click example"
+        }
+      ]
+    },
+    {
+      "api": "scope.getByRole",
+      "requirements": [
+        "REQ-SCOPE-GETBYROLE-001",
+        "REQ-SCOPE-GETBYROLE-002"
+      ],
+      "relation": "direct",
+      "method": "Page getByRole(과거 호출)",
+      "syntax": "page.getByRole(\"button\", {name:/레이블 저장/}).count()",
+      "sourceIds": [
+        "A-HIST-REGEX",
+        "A-HIST-SLOT"
+      ],
+      "confirmedConditions": [
+        "과거 regex role count1 HISTORICAL.",
+        "slot 이름 role 탐색은 Role selector not found HISTORICAL."
+      ],
+      "unknownConditions": [
+        "모든 role/exact/includeHidden·aria 이름·g/y 정규식·오류 안전성은 미확인.",
+        "우리규범 추가 확인: 네이티브·명시 role과 접근 이름으로 검색하고 기본 숨김 제외/화면 밖 포함을 구분한다.",
+        "우리규범 추가 확인: 정규식 source/flags와 exact 문자열을 보존하고 slot/aria-labelledby 이름의 동작을 검증한다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "native/명시 role, aria-labelledby 다중 ID 순서·누락·순환, aria-label과 visible text 불일치를 case table로 고정한다. includeHidden true는 CSS hidden/aria-hidden/closed details 각각의 대상 포함 정책을 명시한다. RegExp g/y 반복과 slot 이름은 별도 판정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 regex role count1 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-REGEX",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex-role result value1",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. regex-role result value1"
+        },
+        {
+          "claim": "slot 이름 role 탐색은 Role selector not found HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-SLOT",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot-name Role selector not found error",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. slot-name Role selector not found error"
+        }
+      ]
+    },
+    {
+      "api": "scope.getByText",
+      "requirements": [
+        "REQ-SCOPE-GETBYTEXT-001",
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
+      ],
+      "relation": "direct",
+      "method": "Page getByText(과거 호출)",
+      "syntax": "page.getByText(\"PASS · drag\", {exact:true}).waitFor({timeout:2000})",
+      "sourceIds": [
+        "A-HIST-DRAG"
+      ],
+      "confirmedConditions": [
+        "과거 drag 후 exact text waitFor가 완료되어 workflow 판단에 사용 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "본문/aria 이름·공백·최소요소·대소문자·long text·hidden 정책은 미확인.",
+        "우리규범 추가 확인: 공통 selection의 정규화된 composed 본문을 검색하며 출력용 이름 축약과 무관하게 전체 본문을 사용한다. 같은 검색조건에 맞는 composed 후손 요소가 있으면 조상은 제외하는 최소 일치 요소 정책을 적용한다. 남은 연결 요소는 중복 없이 composed 문서 순서로 반환한다.",
+        "우리규범 추가 확인: 접근 이름과 다른 본문·인접 span·실제 공백·긴 텍스트에서 검색 의미를 공통 selection 계약대로 유지한다.",
+        "우리규범 추가 확인: text는 비어 있지 않은 문자열 또는 RegExp다. 문자열 빈 값은 입력 오류, exact는 문자열 전체 일치에만 적용한다. 정규식에 exact를 함께 주면 exact는 무시하지 않고 미지원 옵션 조합으로 거절한다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "CSS hidden 포함·aria-hidden 제외, adjacent spans AB와 A B, nested 동일 텍스트의 최소 일치 요소 순서를 fixture로 고정한다. composed order에서 assigned slot과 fallback slot의 선택을 정하고 빈 RegExp·exact와 RegExp 조합의 오류를 구분한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 drag 후 exact text waitFor가 완료되어 workflow 판단에 사용 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-DRAG",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: getByText exact waitFor followed by true; server drag PASS",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. getByText exact waitFor followed by true; server drag PASS"
+        }
+      ]
+    },
+    {
+      "api": "scope.getByLabel",
+      "requirements": [
+        "REQ-SCOPE-GETBYLABEL-001",
+        "REQ-SCOPE-GETBYLABEL-002"
+      ],
+      "relation": "direct",
+      "method": "Page getByLabel(과거 호출)",
+      "syntax": "page.getByLabel(\"고정 문서번호\", {exact:true}).fill(\"BROKEN\", {timeout:500})",
+      "sourceIds": [
+        "A-HIST-READONLY"
+      ],
+      "confirmedConditions": [
+        "과거 getByLabel→fill 호출에서 오류로 rejected를 기록 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "오류 원인이 label resolve인지 fill readonly인지 원시 상세없는 집계만으로 확정 불가; 모든 label 연결형식은 미확인.",
+        "우리규범 추가 확인: label for/감싼 label/aria-label/aria-labelledby로 연결된 제어를 검색한다.",
+        "우리규범 추가 확인: 같은 label의 여러 제어는 엄격 조작을 거절하고 비연결 일반 텍스트를 label로 오인하지 않는다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "label for/래핑/aria-label/aria-labelledby 각각의 소스와 우선순위를 고정하고 숨김 label 텍스트·여러 label·같은 label 2개 제어를 판독한다. label 자체와 연결 control 중 반환대상을 명시하며 비연결 일반 텍스트 count0을 확인한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 getByLabel→fill 호출에서 오류로 rejected를 기록 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-READONLY",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=readonly-fill]; scripts/compare-aside.mjs readonly-fill :: whole getByLabel→fill call rejected; exact cause unavailable",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. whole getByLabel→fill call rejected; exact cause unavailable"
+        }
+      ]
+    },
+    {
+      "api": "locator.filter",
+      "requirements": [
+        "REQ-LOCATOR-FILTER-001",
+        "REQ-LOCATOR-FILTER-002",
+        "REQ-LOCATOR-FILTER-003",
+        "REQ-LOCATOR-FILTER-004"
+      ],
+      "relation": "direct",
+      "method": "Locator filter(과거 호출)",
+      "syntax": "page.locator(\"#duplicates button\").filter({visible:true}).count()",
+      "sourceIds": [
+        "A-HIST-FILTER"
+      ],
+      "confirmedConditions": [
+        "과거 visible:true 요청 결과3(숨김 포함) HISTORICAL; 우리 기대2와 다름."
+      ],
+      "unknownConditions": [
+        "hasText/hasNotText·정규식·AND·순서·미지원키 처리 미확인; visible 지원이라고 단정 금지.",
+        "우리규범 추가 확인: 양·음 텍스트와 visible 조건을 AND로 조합하고 전체 composed 텍스트를 검색한다.",
+        "우리규범 추가 확인: 없는 공백을 span 사이에 만들지 않고 실제 공백은 구분한다. has/hasNot 같은 미지원 키는 조용히 무시하지 않는다.",
+        "우리규범 추가 확인: filter 연속 호출과 nth 전후 조합은 선언 순서를 보존한다. 필터 조건이 새 호출로 덮어써지지 않는다.",
+        "우리규범 추가 확인: aria-hidden 제외와 CSS hidden 포함 본문 정책은 getByText와 동일하며 visible 필터가 시각 상태를 따로 결정한다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "filter(A).nth(0).filter(B)와 filter(A).filter(B).nth(0)의 결과가 다르게 되는 반례를 고정한다. visible:true/false, 빈 hasText 문자열/정규식, 미지원키+지원키 혼합을 명시해 invalid 전체호출의 원 Locator 불변을 판정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 visible:true 요청 결과3(숨김 포함) HISTORICAL; 우리 기대2와 다름.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-FILTER",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible:true count3; hidden-included report note",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. visible:true count3; hidden-included report note"
+        }
+      ]
+    },
+    {
+      "api": "locator.nth",
+      "requirements": [
+        "REQ-LOCATOR-NTH-001",
+        "REQ-LOCATOR-NTH-002"
+      ],
+      "relation": "direct",
+      "method": "Locator nth(과거 호출)",
+      "syntax": "page.locator(\"#duplicates [data-unit]\").nth(-1).count()",
+      "sourceIds": [
+        "A-HIST-NTH"
+      ],
+      "confirmedConditions": [
+        "과거 nth(-1) 호출이 DOMException HISTORICAL."
+      ],
+      "unknownConditions": [
+        "음수전체/정상양수/범위밖/원본불변은 미확인; 한 실패를 전버전 미지원으로 일반화 금지.",
+        "우리규범 추가 확인: 현재 필터 결과의 문서 순서에 인덱스를 적용하고 음수 끝 인덱스를 지원한다.",
+        "우리규범 추가 확인: 소수·NaN은 INVALID_INDEX, 범위 밖은 count0이며 조작 시 대상 없음; 원 Locator는 불변이다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "3개 후보에서 0/2/-1/-3 및 3/-4의 순서/count를 표로 고정한다. Infinity/문자열/소수/NaN의 사전 오류, filter와 nth 순서 및 DOM 재정렬 뒤 지연평가 결과를 확인한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 nth(-1) 호출이 DOMException HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-NTH",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=negative-nth]; scripts/compare-aside.mjs negative-nth :: nth(-1) DOMException",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. nth(-1) DOMException"
+        }
+      ]
+    },
+    {
+      "api": "locator.count",
+      "requirements": [
+        "REQ-LOCATOR-COUNT-001",
+        "REQ-LOCATOR-COUNT-002"
+      ],
+      "relation": "direct",
+      "method": "Locator count(과거 호출)",
+      "syntax": "console.log(await page.getByRole(\"button\", {name:/레이블 저장/}).count())",
+      "sourceIds": [
+        "A-HIST-REGEX",
+        "A-HIST-FILTER"
+      ],
+      "confirmedConditions": [
+        "과거 regex role count1 HISTORICAL.",
+        "과거 visible filter count3 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "0·다중·stale·중복제거·다른 Scope와 무조작은 미확인.",
+        "우리규범 추가 확인: 현재 Scope와 필터를 모두 적용한 개수를 반환하며0개도 정상이다.",
+        "우리규범 추가 확인: 중복 결과를1개로 축약하지 않으며 stale ref를 새 DOM0개와 혼동하지 않는다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동일 요소가 여러 선택 경로로 잡힐 때 DOM 요소 identity 중복 제거와 서로 다른 동일 텍스트 요소 2개 보존을 구분한다. 0/1/N·DOM 변경·stale ref·잘못된 CSS를 별도 결과로 판정하고 조회 전후 scroll/event0을 확인한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 regex role count1 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-REGEX",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: role count1",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. role count1"
+        },
+        {
+          "claim": "과거 visible filter count3 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-FILTER",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible filter count3",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. visible filter count3"
+        }
+      ]
+    },
+    {
+      "api": "locator.textContent",
+      "requirements": [
+        "REQ-LOCATOR-TEXTCONTENT-001",
+        "REQ-LOCATOR-TEXTCONTENT-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 숨김 자식·실제 공백을 포함한 대상 textContent를 읽고 접근 이름으로 대체하지 않는다.",
+        "우리규범 추가 확인: 0/다중 매칭은 오류이며 긴 텍스트를 출력 예산으로 자를 때 원래 완전한 값인 것처럼 반환하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "숨김 자식·aria-hidden·script 텍스트와 실제 공백을 포함한 DOM textContent 원문을 검색용 composed text와 비교한다. slot host의 light DOM 원문과 composed 이름 차이를 명시하고 null인 DOM textContent의 string 변환 정책을 확정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.getAttribute",
+      "requirements": [
+        "REQ-LOCATOR-GETATTRIBUTE-001",
+        "REQ-LOCATOR-GETATTRIBUTE-002"
+      ],
+      "relation": "direct",
+      "method": "Locator getAttribute(과거 하니스 호출)",
+      "syntax": "await page.locator(\"body\").getAttribute(\"data-run\")",
+      "sourceIds": [
+        "A-HIST-HARNESS"
+      ],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "getAttribute(data-run)는 과거 하니스 소스에 나타나며 전체 서버판독 완료에서 성공을 추론할 수 있으나 개별 반환/실패조건 원시 assertion은 없음. confirmed에서 제거함.",
+        "없음/빈값/relative href/property 차이·strict는 개별 원시 결과 미확인.",
+        "우리규범 추가 확인: 요청 속성 원문을 반환하고 긴 href를 snapshot 축약과 무관하게 읽을 수 있다.",
+        "우리규범 추가 확인: 빈 속성과 없는 속성, property와 attribute를 구분하고0/다중 매칭은 실패한다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "없음 null/빈문자열/초기 value 속성 vs 바뀐 value property/상대 href vs resolved href를 구분한다. HTML 속성 이름 대소문자와 빈·공백 name 입력 정책을 고정하고 긴 값은 JS 값 보존과 console 출력 잘림을 구분한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 하니스 getAttribute(data-run) 문법과 서버판독 완료에서 호출 성공을 추론한다.",
+          "kind": "INFERENCE",
+          "sourceId": "A-HIST-HARNESS",
+          "location": "scripts/compare-aside.mjs body data-run getAttribute call; docs/evidence/diagnostics-before-after.json#/aside/serverPassed,/aside/events",
+          "scope": "자체 비교 하니스 코드와 요약결과의 연결 추론. 원본 API의 개별 반환/strict/null 동작을 확인한 DOC/HISTORICAL 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "locator.inputValue",
+      "requirements": [
+        "REQ-LOCATOR-INPUTVALUE-001",
+        "REQ-LOCATOR-INPUTVALUE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 현재 편집 값을 읽고 HTML value 속성의 초기 값과 구분한다.",
+        "우리규범 추가 확인: 비입력 요소에는 타입 오류를 내며 빈 입력을 실패나 일반 텍스트 값과 혼동하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "사용자 편집 후 value attr 초기값과 현재 property를 비교한다. textarea 줄바꿈·single/multiple select·contenteditable 텍스트의 반환정의를 고정한다. checkbox file input 등 지원 타입 포함 여부를 명시하고 비지원 요소를 빈값으로 숨기지 않는다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.isVisible",
+      "requirements": [
+        "REQ-LOCATOR-ISVISIBLE-001",
+        "REQ-LOCATOR-ISVISIBLE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: layout상 숨김/닫힌 details/조상 숨김을 판정하며 offscreen은 visible일 수 있다.",
+        "우리규범 추가 확인: 가려진 요소와 화면 밖 요소를 hidden으로 오인하지 않고0/다중 매칭은 공통 단일 조회 오류다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "display:none/visibility:hidden·collapse/opacity:0/zero box/closed details/hidden ancestor/화면밖/overlay의 true·false 표를 확정한다. slot의 composed 조상을 포함하고 count0과 stale ref가 false가 아닌 오류인지 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.isEnabled",
+      "requirements": [
+        "REQ-LOCATOR-ISENABLED-001",
+        "REQ-LOCATOR-ISENABLED-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: native disabled/disabled fieldset 및 aria-disabled 정책에 따라 상태를 반환한다.",
+        "우리규범 추가 확인: readonly는 disabled와 구분하고 disabled 조상·예외 legend 조건을 검증한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "disabled fieldset의 첫 legend 내부/두번째 legend/외부, optgroup/option disabled와 aria-disabled 조상 전파를 표로 확정한다. readonly는 enabled true일 수 있음을 확인하고 지원 안 되는 role은 기본 상태/오류 중 선택한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.isEditable",
+      "requirements": [
+        "REQ-LOCATOR-ISEDITABLE-001",
+        "REQ-LOCATOR-ISEDITABLE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 지원 텍스트 입력/textarea/contenteditable 중 enabled이며 readonly가 아닌 대상만true다.",
+        "우리규범 추가 확인: button·checkbox·disabled input·aria-readonly 대상은false며 fill 가능성과 모순되지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "input type별(text/number/date/password/checkbox/file)·textarea·contenteditable true/plaintext-only/false와 aria-readonly의 행렬을 확정한다. fill의 지원 타입과 같은 판정표를 공유하고 input[type=number] invalid 문자열의 효과를 별도로 검증한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.isChecked",
+      "requirements": [
+        "REQ-LOCATOR-ISCHECKED-001",
+        "REQ-LOCATOR-ISCHECKED-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: checked 상태를 native property 또는 명시 ARIA 상태로 읽는다.",
+        "우리규범 추가 확인: 비체크형 요소는 타입 오류로 거절하고 mixed를true로 오인하지 않는다. mixed 원문은 getAttribute로 조회한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "native checkbox/radio의 property와 aria-checked 충돌 시 우선순위, mixed/true/false/속성없음의 boolean을 표로 확정한다. mixed→false의 손실을 원문 속성 조회로 복구하고 role switch/지원 안 되는 role 결과를 명시한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.boundingBox",
+      "requirements": [
+        "REQ-LOCATOR-BOUNDINGBOX-001",
+        "REQ-LOCATOR-BOUNDINGBOX-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 입력 좌표와 같은 main viewport 기준으로 box를 반환하며 숨김은null이다.",
+        "우리규범 추가 확인: 중첩 scale/translate iframe과 scroll에서 좌표 일치, unsupported transform은명시 오류며 로컬 좌표를전역값으로 주지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "main/중첩frame의 border·positive scale/translate 및 양축scroll을 넣어 box의 CSS 좌표와 실제 hit를 독립 비교한다. 숨김 null과 count0 오류·zero-area box 정책을 나누고 unsupported transform은 좌표 반환 전 거절함을 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.click",
+      "requirements": [
+        "REQ-LOCATOR-CLICK-001",
+        "REQ-LOCATOR-CLICK-002"
+      ],
+      "relation": "direct",
+      "method": "Locator click",
+      "syntax": "await page.locator(\"button.export\").click()",
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-HIST-FRAME",
+        "A-HIST-SLOT"
+      ],
+      "confirmedConditions": [
+        "click이 interactivity/DOM stability를 기다리고 필요시 scroll한다는 DOC.",
+        "과거 slot 이름 role 검색 오류 HISTORICAL.",
+        "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "button/clickCount 옵션·overlay·엄격매칭·소유키·중복효과·실제 입력trace는 미확인.",
+        "우리규범 추가 확인: visible/enabled/안정·가림 검사 후 정확히 대상에 클릭하며 clickCount2로 더블클릭 조합 가능하다.",
+        "우리규범 추가 확인: 중복·stale·overlay는 입력 전에 거절하고 닫힌 details·slot·scaled iframe에서 잘못된 다른 요소를 클릭하지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "중앙점만 overlay인 대상의 다른 클릭점 탐색 여부와 안정 판정 기준을 확정한다. clickCount2의 실제 click/dblclick 순서·button별 컨텍스트 메뉴 효과를 판정하고 사전 대상오류는0회, 입력중 오류는 trace·부분효과를 기록한다.",
+      "evidenceClaims": [
+        {
+          "claim": "click이 interactivity/DOM stability를 기다리고 필요시 scroll한다는 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click interactivity/stability wait and needed scroll",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click interactivity/stability wait and needed scroll"
+        },
+        {
+          "claim": "과거 slot 이름 role 검색 오류 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-SLOT",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: role lookup error before intended slot click",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. role lookup error before intended slot click"
+        },
+        {
+          "claim": "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-FRAME",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: name-change count0/server success absent",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. name-change count0/server success absent"
+        }
+      ]
+    },
+    {
+      "api": "locator.fill",
+      "requirements": [
+        "REQ-LOCATOR-FILL-001",
+        "REQ-LOCATOR-FILL-002"
+      ],
+      "relation": "direct",
+      "method": "Locator fill(과거 호출)",
+      "syntax": "await page.getByLabel(\"고정 문서번호\", {exact:true}).fill(\"BROKEN\", {timeout:500})",
+      "sourceIds": [
+        "A-HIST-READONLY"
+      ],
+      "confirmedConditions": [
+        "과거 readonly 사례 rejected HISTORICAL; 집계는 상세 오류 원인을 생략."
+      ],
+      "unknownConditions": [
+        "정상·빈값·contenteditable·타입·사후값검증/입력이벤트0 보장은 미확인.",
+        "우리규범 추가 확인: readonly/disabled/비편집 대상을 사전 거절하고 빈 문자열도 채울 수 있다.",
+        "우리규범 추가 확인: 입력 masking이나 rerender로 실제 값이 요청과 다르면 INPUT_VALUE_NOT_CHANGED며 거짓 성공을 주지 않는다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "input/textarea/contenteditable의 빈값·한글·emoji·줄바꿈과 mask/동기 revert/비동기 revert의 사후판정 시점을 고정한다. select/file/readonly/disabled는 입력0으로 거절하고 fill의 input/change 이벤트 의미를 press/type과 구분한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 readonly 사례 rejected HISTORICAL; 집계는 상세 오류 원인을 생략.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-READONLY",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=readonly-fill]; scripts/compare-aside.mjs readonly-fill :: getByLabel→fill catch returns rejected; error cause not preserved",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. getByLabel→fill catch returns rejected; error cause not preserved"
+        }
+      ]
+    },
+    {
+      "api": "locator.press",
+      "requirements": [
+        "REQ-LOCATOR-PRESS-001",
+        "REQ-LOCATOR-PRESS-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 정확한 대상에 focus를 확인하고 키를 입력해 현재 다른 focus에 보내지 않는다.",
+        "우리규범 추가 확인: focus 불가·stale·비활성 대상은 다른 요소 입력 없이 실패한다. 키 입력 단계는 keyboard.press와 같은 modifier 소유 정책을 따르며, focus 이전 실패는 기존 명시 down 상태를 임의 해제하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "focus A→B로 이동한 직후 key를 보내는 경우와 focus handler가 C로 빼앗는 경우를 구분한다. composed activeElement를 확인할 시점·실패 결과를 고정하고 사전 key 문법오류는 focus 이동도0인지 결정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.hover",
+      "requirements": [
+        "REQ-LOCATOR-HOVER-001",
+        "REQ-LOCATOR-HOVER-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 대상의 실제 hit 영역에 포인터를 이동한다.",
+        "우리규범 추가 확인: 가림/숨김/unsupported frame이면 명시 실패하고 hover 성공으로 표시하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "hover CSS/enter·leave 이벤트의 대상과 실제 위치를 확인한다. 목표 중앙이 overlay·목표가 offscreen·움직이는 경우에서 scroll 허용/안정 timeout을 고정하고 실패 시 임의 대체점에 pointer를 보내지 않는다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.focus",
+      "requirements": [
+        "REQ-LOCATOR-FOCUS-001",
+        "REQ-LOCATOR-FOCUS-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 대상의 focus 또는 composed activeElement를 확인하고 반환한다.",
+        "우리규범 추가 확인: 비focusable/disabled/분리 대상은 실패하며 el.focus 호출만으로 성공 처리하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "tabindex=-1/disabled/input/Shadow 내부에 focus를 주고 composed activeElement로 확인한다. focus handler가 즉시 blur/다른 요소 focus하면 실패와 발생한 부분효과를 기록하고 스크롤은 브라우저 focus 효과로 허용하는지 명시한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.scrollIntoView",
+      "requirements": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 연결된 offscreen 요소를 필요한 조상 scrollport에서 가로·세로로 노출한다.",
+        "우리규범 추가 확인: DOM에 없는 virtual row는 자동 생성하지 않으며 sticky overlay 등으로 클릭 가능까지 보장하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "가로+세로 중첩 scrollport 및 frame에서 대상 box와 각 scroller 전후 좌표로 노출을 판정한다. 노출의 최소 교차/완전 포함 기준과 scroll-behavior smooth 완료 기준을 정하고 sticky 가림은 click 보장과 분리한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.setChecked",
+      "requirements": [
+        "REQ-LOCATOR-SETCHECKED-001",
+        "REQ-LOCATOR-SETCHECKED-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 이미 요청 상태면 클릭하지 않고 checkbox/radio/switch 지원대상 상태를 확인한다.",
+        "우리규범 추가 확인: disabled·비체크형은 거절하고 핸들러가 상태를 되돌리면 CHECK_STATE_NOT_CHANGED로 실패한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "이미 true→true/false→false는 입력 event0을 확인한다. checked radio에 false 요청과 ARIA mixed에 true/false 요청의 지원/거절정책을 확정한다. handler revert·disabled·비체크형은 성공 상태를 꾸미지 않고 값·event 횟수를 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.selectOption",
+      "requirements": [
+        "REQ-LOCATOR-SELECTOPTION-001",
+        "REQ-LOCATOR-SELECTOPTION-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: native select만 지원하고 요청된 모든 옵션이 존재·enabled인 경우 선택 결과를 확인한다.",
+        "우리규범 추가 확인: 없는/중복 label·disabled option·single select 복수 요청은 사전 거절해 기존 선택을 지우지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동일 value 복수 option, value와 다른 option label의 충돌, 중복 요청 value 및 []의 비우기 의미를 확정한다. 모든 요청 사전 검증 후 변경하고 single select에 복수·disabled optgroup은 기존 selection·event0을 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.dragTo",
+      "requirements": [
+        "REQ-LOCATOR-DRAGTO-001",
+        "REQ-LOCATOR-DRAGTO-002"
+      ],
+      "relation": "direct",
+      "method": "Locator dragTo(과거 호출)",
+      "syntax": "await page.locator(\"#drag-source\").dragTo(page.locator(\"#drag-target\"))",
+      "sourceIds": [
+        "A-HIST-DRAG"
+      ],
+      "confirmedConditions": [
+        "과거 audit에서 drag 서버PASS; 단일 호출에서 accepted 이벤트2개 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "trusted/native DragData·pointer 격자·cross document/target·중도cleanup·정확1회 보장은 미확인.",
+        "우리규범 추가 확인: draggable은 실제 dragstart/native DragData, 격자는 연속 pointer 경로로 조작한다.",
+        "우리규범 추가 확인: Locator.dragTo v1은 같은 Page·같은 frame document·같은 CDP 입력 target 안에서만 지원한다. 다른 Page/다른 frame document는 전송 전 거절하며 다른 CDP target은 CROSS_TARGET_DRAG_UNSUPPORTED다. 동일 process의 다른 frame도 이번에는 CROSS_DOCUMENT_DRAG_UNSUPPORTED다. 모호/stale 대상은 사전 거절하며 중도 오류는 해당 연산이 획득한 버튼/drag 상태만 정리하고 drop을 자동 재전송하지 않는다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "native draggable와 pointer 격자 각각 dragstart/drop·서버 업무카운트로 판정한다. 동일 Page 다른 frame(동일process 포함)과 다른 CDP target을 사전 구별하고 source=target 정책·중간실패 후 button 상태 및 drop 중복0을 명시한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 audit에서 drag 서버PASS; 단일 호출에서 accepted 이벤트2개 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-DRAG",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: drag PASS and two accepted events in one invocation",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. drag PASS and two accepted events in one invocation"
+        }
+      ]
+    },
+    {
+      "api": "locator.drop",
+      "requirements": [
+        "REQ-LOCATOR-DROP-001",
+        "REQ-LOCATOR-DROP-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 로컬/서버/bytes 파일과 텍스트 MIME을 공통 엔진으로 전달하고 임시 file input을 정리한다.",
+        "우리규범 추가 확인: trusted 필수 사이트 지원을 주장하지 않고 파일 검증 실패는 drop 이전에 거절한다. MIME/옵션은 guide와 일치해야 한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "files/data 함께 전달 시 MIME 충돌과 파일항목 순서를 정한다. text/plain·text/html·빈 문자열 값/빈 MIME·잘못된 record를 입력표로 고정하며 isTrusted=false를 한계로 안내하고 실제 File bytes·임시노드0·drop1을 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "mouse.move",
+      "requirements": [
+        "REQ-MOUSE-MOVE-001",
+        "REQ-MOUSE-MOVE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 정확한 좌표로 이동하며 iframe 좌표를 사용자가중복 변환하지 않는다.",
+        "우리규범 추가 확인: NaN/Infinity 등 잘못된 좌표는 이벤트 없이 거절하며 이 API에는 locator 엄격 매칭을 요구하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "현재 viewport의 음수/바깥 유한 좌표를 허용/거절 중 확정한다. iframe 위 위치에서 clientX/Y·composed target과 down 지속 buttons를 trace로 판정하며 NaN/Infinity에서 pointer 이동0을 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "mouse.down",
+      "requirements": [
+        "REQ-MOUSE-DOWN-001",
+        "REQ-MOUSE-DOWN-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 누른 버튼상태가 다음 move/up에 이어져 격자 범위 선택을 구성할 수 있다.",
+        "우리규범 추가 확인: 지원 안하는 버튼·상태 충돌은 오류이며 다른 세션의 버튼 상태를 바꾸지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "left/right/middle 각각의 buttons 비트와 후속 move의 지속을 확인한다. 동일 button 중복 down을 충돌로 거절할지 명시하고 clickCount 0/소수/음수와 기존 다른 down 보존을 검증한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "mouse.up",
+      "requirements": [
+        "REQ-MOUSE-UP-001",
+        "REQ-MOUSE-UP-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 대응 down을 해제해 드래그를 끝내고 반복 up은 새 클릭을 만들지 않는다.",
+        "우리규범 추가 확인: 탭 close/reset 뒤 정리된 상태와 충돌하면 명시 처리하고 버튼이 눌린 채 잔류하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "누르지 않은 button up의 멱등 결과(무전송 true/구분 오류)를 고정한다. left/right 동시 down 후 left up이 right를 보존하고 click 새 발생0인지 trace로 판정한다. release 전송 실패의 잔류 표기를 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "mouse.click",
+      "requirements": [
+        "REQ-MOUSE-CLICK-001",
+        "REQ-MOUSE-CLICK-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 좌표에서 down/up을 수행하며 해당 위치 UI를 바꾸는 낮은수준 도구임을 명시한다.",
+        "우리규범 추가 확인: 오류 중간에도 버튼 release를 시도하고 임의 다른 좌표로 보정하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "down/up/click 순서를 버튼·clickCount별로 확인하고 단일 API 내 down 후 실패를 주입해 자신이 획득한 button만 release하는지 판정한다. 기존 명시 down 충돌은 전송0이며 좌표 사전오류 때 focus/활성화도 변경하지 않는다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "mouse.wheel",
+      "requirements": [
+        "REQ-MOUSE-WHEEL-001",
+        "REQ-MOUSE-WHEEL-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: pointer를 iframe/내부목록에 move한 뒤 해당 위치에 가로·세로 wheel을 전달한다.",
+        "우리규범 추가 확인: scroll 끝·preventDefault에서는 이동이0일 수 있고 이를 더 많은 데이터 로딩 성공으로 주장하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "pointer가 main/중첩 scroller/OOPIF 위인 세 경우의 실제 wheel target·delta를 확인한다. 양축·RTL·끝·preventDefault·scroll chaining에서 전달 성공과 실제 이동량/로드량을 분리한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "keyboard.down",
+      "requirements": [
+        "REQ-KEYBOARD-DOWN-001",
+        "REQ-KEYBOARD-DOWN-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 키·modifier 상태가 후속 press/type/up에 일관되게 이어진다.",
+        "우리규범 추가 확인: 알 수없는 key는 입력 전 실패하며 세션간 modifier가 공유되지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "modifier 별 event.key/code/location과 repeat down의 repeat 처리정책을 고정한다. 명시 down 뒤 다른 key와 type에 전달되는 modifier 및 다른 세션 소유 접근 실패를 trace로 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "keyboard.up",
+      "requirements": [
+        "REQ-KEYBOARD-UP-001",
+        "REQ-KEYBOARD-UP-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 해당 키를 해제하며 다른 modifier를 임의로 해제하지 않는다.",
+        "우리규범 추가 확인: close/reset/실패 뒤 release 실패를 숨기지 않고 다음 요청에 눌림 상태를 유출하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "두 modifier 중 하나만 해제해 나머지 상태가 다음 입력에 남음을 검증한다. 미보유 key up의 반환·전송정책을 정하고 reset/close 시 실패주입의 실제 release 잔류/불확실을 표시한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "keyboard.press",
+      "requirements": [
+        "REQ-KEYBOARD-PRESS-001",
+        "REQ-KEYBOARD-PRESS-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: press는 호출 전 이미 유지되던 modifier를 보존한다. 자신이 새로 누른 modifier/주키만 정해진 순서로 해제하며 중도 오류에도 같은 정리를 시도한다. 명시 down의 소유 상태는 대응 up 또는 reset/close가 끝낸다.",
+        "우리규범 추가 확인: 알 수없는 조합은 사전 오류며 중간 실패 시 modifier 정리 결과를 표시한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "Control+A 문법·별칭·OS별 Meta/Control 의미·알 수 없는 조합을 guide의 유한 목록으로 확정한다. 기존 modifier down vs 새로 획득한 modifier를 구분하여 주키 실패 후 cleanup trace를 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "keyboard.type",
+      "requirements": [
+        "REQ-KEYBOARD-TYPE-001",
+        "REQ-KEYBOARD-TYPE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 기존 선택 위치에 Unicode·여러 줄을 제어 타입 규칙대로 삽입하며 fill과 구분한다.",
+        "우리규범 추가 확인: 이모지·한글을 손상하지 않고 입력불가 focus에서 값 변경을 보장했다고 반환하지 않는다. keydown별발생은보장하지않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "선택 범위가 있는 input·textarea·contenteditable에서 한글/emoji/CRLF/빈문자열을 전달하고 최종값을 판독한다. input의 newline 처리와 readonly/non-editable focus에서 API 성공이 insertText 전달만 뜻하는지 명확히 한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.waitFor",
+      "requirements": [
+        "REQ-LOCATOR-WAITFOR-001",
+        "REQ-LOCATOR-WAITFOR-002"
+      ],
+      "relation": "direct",
+      "method": "Locator waitFor(과거 호출)",
+      "syntax": "await page.getByText(\"PASS · drag\", {exact:true}).waitFor({timeout:2000})",
+      "sourceIds": [
+        "A-HIST-DRAG"
+      ],
+      "confirmedConditions": [
+        "과거 drag 후 텍스트 완료대기 문법이 실행됨 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "state4종·0/1/N·ref stale·default timeout·무scroll은 미확인.",
+        "우리규범 추가 확인: CSS 기반 대기는 attached=1개 이상이면 true, detached=0개면 true, hidden=0개 또는 단일 hidden이면 true, visible=단일 visible이면 true다. attached/detached 외 hidden/visible에서 N>1은 즉시 다중 오류다. 아직 만족하지 않는 유효 상태는 timeout까지 기다린다. ref는 어떤 state에서도 detach/document 교체 시 stale 오류다.",
+        "우리규범 추가 확인: 알수없는state·잘못된timeout은즉시오류며 stale ref를 단순 detached로 무조건 흡수하지 않는다."
+      ],
+      "exampleStatus": "과거실측문법 재사용·이번 미실행",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "현재0/1/N 표를 유지하고 state가 대기 중 바뀌는 순서(0→2→1, visible→detach)를 판정한다. timeout 총예산·ref detach 즉시stale·navigation CSS 재평가·관찰 scroll0을 검증한다.",
+      "evidenceClaims": [
+        {
+          "claim": "과거 drag 후 텍스트 완료대기 문법이 실행됨 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-DRAG",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=html-drag],/aside/serverPassed/drag,/aside/events; scripts/compare-aside.mjs html-drag :: exact text waitFor(timeout2000) completed before true",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. exact text waitFor(timeout2000) completed before true"
+        }
+      ]
+    },
+    {
+      "api": "page.waitForEvent",
+      "requirements": [
+        "REQ-PAGE-WAITFOREVENT-001",
+        "REQ-PAGE-WAITFOREVENT-002",
+        "REQ-PAGE-WAITFOREVENT-003"
+      ],
+      "relation": "direct",
+      "method": "Page download 이벤트 wait",
+      "syntax": "const p1 = page.waitForEvent(\"download\"); await page.locator(\"button.export\").click(); const d1 = await p1",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "download waiter를 action 전에 등록하는 공개 예제 DOC."
+      ],
+      "unknownConditions": [
+        "popup/filechooser/dialog/close·등록ack·충돌·timeout/reset·1회 terminal은 미확인.",
+        "우리규범 추가 확인: 조작 전에 등록한 waiter가 해당 Page의 다음 일치 이벤트를 받아 조작가능 핸들을 준다.",
+        "우리규범 추가 확인: 다른 탭·등록 전 이벤트는 재사용하지 않는다. 자기 Page close가 관측되면 등록된 close waiter는 {tabId:number,closedAt:epochMs}로 정확히 한 번 resolve하고 제거한다. 다른 event waiter는 PAGE_CLOSED로 reject/정리한다. 이미 닫힌 핸들에 새 wait 등록은 즉시 PAGE_CLOSED다. timeout/reset/close 경합은 실제 먼저 확정된 terminal 결과 하나만 유지하고 late 결과는 무시한다. chooser/dialog는 동일 event를 이중 소비하지 않는다.",
+        "우리규범 추가 확인: 같은 세션 JS에서 waitForEvent 호출 다음에 발행한 host action은 해당 waiter의 브라우저 등록/chooser arming 완료 뒤에만 실행한다. event Promise 자체는 이벤트 때 resolve하며 별도 공개 ready API는 추가하지 않는다. timeout/reset 시 미완료 등록도 취소해 늦은 waiter를 남기지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "download 예제만으로 popup/chooser/dialog/close를 일반화하지 않는다. 5종 각각 등록지연→action ordering·두 waiter 충돌·timeout/reset/close 경합의 terminal1·다른탭 소비0을 판정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "download waiter를 action 전에 등록하는 공개 예제 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: waitForEvent(download) before click example",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: waitForEvent(download) before click example"
+        }
+      ]
+    },
+    {
+      "api": "page.waitForURL",
+      "requirements": [
+        "REQ-PAGE-WAITFORURL-001",
+        "REQ-PAGE-WAITFORURL-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 현재 URL이 요청문자열과 같으면 즉시, 이동후 같으면그때 반환한다.",
+        "우리규범 추가 확인: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "문자열의 URL 정규화/percent encoding/trailing slash·hash·redirect 경유URL vs 최종URL 처리정책을 고정한다. 현재일치는 즉시, SPA pushState도 관찰 가능함을 판정하며 glob처럼 보이는 문자열을 정확 URL과 구분한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.waitForFunction",
+      "requirements": [
+        "REQ-PAGE-WAITFORFUNCTION-001",
+        "REQ-PAGE-WAITFORFUNCTION-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: Page main frame에서 fn(arg)를 반복 호출하고 각 Promise/thenable의 settled JSON 값이 truthy일 때 그 값을 반환한다. false/0/빈문자열/null은 미충족으로 다음 polling을 한다. 기본 총10초 대기이며 바깥 js deadline보다 연장하지 않는다. 이전 호출이 settle하기 전에 다음 함수를 겹쳐 실행하지 않는다.",
+        "우리규범 추가 확인: 인자/결과 직렬화 오류와 사용자 throw/async reject는 즉시 실패한다. navigation으로 실행 context가 사라진 경우만 남은 총 deadline 내 새 main document에서 다시 평가할 수 있다. 사용자 함수는 polling으로 반복될 수 있으므로 부작용을 명시하며 이미 발생한 변경은 되돌리거나 숨기지 않는다. timeout/reset 뒤 late settle은 종료한 요청/새 세대에 결과를 주지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "settled truthiness/비중첩 polling 기존 상세규범을 유지한다. 첫 poll 시점과 polling 간격·전체deadline 우선순위를 정하고 arg는 한 번 복사되는지 navigation 재평가 시 동일값인지 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.waitForLoadState",
+      "requirements": [
+        "REQ-PAGE-WAITFORLOADSTATE-001",
+        "REQ-PAGE-WAITFORLOADSTATE-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: interactive/domcontentloaded는readyState가loading이아닌상태,load는complete로정의한다.",
+        "우리규범 추가 확인: networkidle은지원하지않아즉시거절하며SPA업무완료와load를동일시하지않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "loading→interactive→complete를 조절하는 fixture로 현재상태 즉시반환/이후상태 대기를 판정한다. domcontentloaded 별칭과 새 navigation 도중 어느 document를 따르는지 명시하며 networkidle은 즉시 입력오류로 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "locator.setFiles",
+      "requirements": [
+        "REQ-LOCATOR-SETFILES-001",
+        "REQ-LOCATOR-SETFILES-002",
+        "REQ-LOCATOR-SETFILES-003"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: Chrome호스트 로컬경로와 서버asset을 구분하며 실제 업로드된 바이트·이름·MIME을 검증한다.",
+        "우리규범 추가 확인: single/multiple·파일수·32MiB제한·권한·없는경로·다른세션asset을 전체사전검증하고 실패시기존선택보존여부를알린다.",
+        "우리규범 추가 확인: 동일파일명은 경로 분리자를 제거한안전이름으로 다루고 bytes/base64/MIME 형식오류·크기초과를 명시한다. 업로드 제거 []와 input multiple정책을 문서화한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "기존 공통 파일 문법·32MiB를 유지한다. input 아닌 요소/disabled file input/동일파일 재선택/[] 비우기에서 change 발생정책·메타데이터 순서를 확정하고 업로드 서버 hash를 독립 판독한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "chooser.setFiles",
+      "requirements": [
+        "REQ-CHOOSER-SETFILES-001",
+        "REQ-CHOOSER-SETFILES-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 같은파일엔진으로 기본/중첩/OOPIF의 실제 chooser input에 파일을 넣는다.",
+        "우리규범 추가 확인: 소비한/닫힌/다른세션 chooser는 실패하며 다른 input에 재지정하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "실제 input identity가 다른 연속 chooser A/B를 만들고 A 소비 후 재사용이 B 파일을 바꾸지 않는지 판정한다. multiple/file engine은 공유하되 chooser 취소/페이지탐색/이벤트경합의 stale 시점을 명시한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "download.save",
+      "requirements": [
+        "REQ-DOWNLOAD-SAVE-001",
+        "REQ-DOWNLOAD-SAVE-002"
+      ],
+      "relation": "composition",
+      "method": "Download.path + fs 검증 또는 saveAs 아티팩트 복사",
+      "syntax": "const p1 = await d1.path(); console.log((await fs.stat(p1)).size); await d1.saveAs(\"./artifacts/name.ext\")",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "브라우저 download.path의 실제 완료파일은 현재 REPL 세션에서 읽기 가능 DOC.",
+        "saveAs는 명시 artifact 복사가 필요할 때만; one-shot은 같은 command 내 검증 DOC.",
+        "POST/blob/redirect는 가능할 경우 브라우저 download handling; 안전한 직접 GET/HEAD fetch와 구분 DOC."
+      ],
+      "unknownConditions": [
+        "우리server asset/fileId·hash·서버/로컬 멱등·timeout·권한·취소경합은 미확인.",
+        "우리규범 추가 확인: save는 같은 핸들의 실제 브라우저 다운로드 완료를 최대30초 기다리고 완료 바이트를 요청 목적지로 반환한다. 쿠키/POST/blob을 URL 재요청으로 대체하지 않는다. 바깥 js deadline은 연장하지 않으며 더 짧은 실행 제한에 걸리면 실행 취소/불확실로 구분한다.",
+        "우리규범 추가 확인: 같은 세션·download id·목적지의 순차/동시 save는 하나의 결과를 공유한다. server는 같은 fileId, local은 같은 완료 path를 반환하고 재다운로드/중복 자산을 만들지 않는다. server↔local 전환은 허용하며 같은 원본 바이트를 반환한다. 다른 download의 동명 파일은 기존 파일을 덮어쓰지 않고 브라우저의 유일 이름/path와 서로 다른 asset id를 사용한다. 목적지 미지원·권한·저장/취소 실패와 부분효과는 구분한다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "기존 상세대기/멱등 요구는 충분히 유지한다. 서버자산 hash·브라우저완료파일 hash와 filename MIME을 함께 판독하고 local 경로를 server 자산 경로로 혼동하지 않는다. 완료 후 reset 시 서버자산 생존/정리정책을 명시한다.",
+      "evidenceClaims": [
+        {
+          "claim": "브라우저 download.path의 실제 완료파일은 현재 REPL 세션에서 읽기 가능 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: completed download.path readable in same REPL session",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: completed download.path readable in same REPL session"
+        },
+        {
+          "claim": "saveAs는 명시 artifact 복사가 필요할 때만; one-shot은 같은 command 내 검증 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: saveAs artifacts copy only when needed / one-shot same command validation",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: saveAs artifacts copy only when needed / one-shot same command validation"
+        },
+        {
+          "claim": "POST/blob/redirect는 가능할 경우 브라우저 download handling; 안전한 직접 GET/HEAD fetch와 구분 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads: safe direct GET/HEAD vs browser handling for blob/redirect/POST-backed"
+        },
+        {
+          "claim": "조합 대응 판단: Download.path + fs 검증 또는 saveAs 아티팩트 복사",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "download.cancel",
+      "requirements": [
+        "REQ-DOWNLOAD-CANCEL-001",
+        "REQ-DOWNLOAD-CANCEL-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 진행 다운로드에 취소를 요청하고 최대10초 내 브라우저 interrupted(USER_CANCELED) 상태를 확인한 뒤 cancelled를 반환한다. 확인이 안되면 timeout/불확실 오류이며 중단 성공을 주장하지 않는다.",
+        "우리규범 추가 확인: 이미 complete는 already-complete, 이미 사용자 취소는 already-cancelled, 다른 이유 interrupted는 interrupted와 원인으로 반환한다. 완료/cancel 경합도 관측한 최종 상태로 구분하고 타세션 id는 권한 오류다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "이미완료·사용자취소·다른 interrupted 원인의 상태표를 유지한다. 취소→진행 save Promise의 종결관계와 마지막 chunk 경합에서 terminal을 무엇으로 관측하는지 명시하고 완료 파일 삭제0을 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "dialog.accept",
+      "requirements": [
+        "REQ-DIALOG-ACCEPT-001",
+        "REQ-DIALOG-ACCEPT-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 발급된현재dialog를정확히한번accept하며prompt내용을보낸다.",
+        "우리규범 추가 확인: 이미처리/교체/다른페이지dialog핸들은거절하며새dialog에수락을보내지않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "alert/confirm/prompt 3종에서 accept(undefined)·빈문자열·Unicode prompt를 판정한다. nonprompt value 전달의 오류/무시 정책과 두번째 dialog가 떠 있을 때 첫핸들 재사용의 새 dialog 무변경을 확정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "dialog.dismiss",
+      "requirements": [
+        "REQ-DIALOG-DISMISS-001",
+        "REQ-DIALOG-DISMISS-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 현재dialog를정확히한번dismiss하며prompt/confirm취소결과를확인한다.",
+        "우리규범 추가 확인: 오래된핸들이후새dialog가열려도새dialog를닫지않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "confirm은 false, prompt는 null, alert dismiss의 브라우저 처리결과를 UI marker로 판정한다. A dismiss→B dialog 발생 후 A 반복 dismiss가 B를 닫지 않고 명시 stale인지 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "scope.evaluate",
+      "requirements": [
+        "REQ-SCOPE-EVALUATE-001",
+        "REQ-SCOPE-EVALUATE-002"
+      ],
+      "relation": "direct",
+      "method": "Page evaluate 공개 언급",
+      "syntax": "page.evaluate(fn) // signature incomplete: only method name documented",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "정확 selector를 알 때 외에는 evaluate/content 피하라는 DOC에 메서드명 등장."
+      ],
+      "unknownConditions": [
+        "arg/closure/Frame scope/Promise/JSON/undefined·실패정책은 서명 미공개로 전부 미확인.",
+        "우리규범 추가 확인: Scope.evaluate(fn,arg)는 선택 프레임의 document를 전역 context로 두고 fn(arg)를 호출한다. Locator.evaluate 호환 별칭은 단일 element를 첫 인자, arg를 둘째 인자로 전달한다. QuickJS closure는 전달하지 않는다. Promise/JSON/오류/deadline은 REQ-C-RUNTIME-008을 따르며 반환값을 자동 모델 출력하지 않는다.",
+        "우리규범 추가 확인: navigation/분리frame/순환값/DOMnode/throw는직렬화또는실행오류로구분하며성공null로숨기지않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "동기/async·명시null·undefined·sparse array·DOM node·getter throw의 실패유형을 표로 고정한다. main/child marker와 arg 생략 null·closure 미전달을 판정하고 navigation 후 자동 재실행0·사용자 부분효과 보존을 확인한다.",
+      "evidenceClaims": [
+        {
+          "claim": "정확 selector를 알 때 외에는 evaluate/content 피하라는 DOC에 메서드명 등장.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Reading Escalation: avoid page.evaluate/page.content unless exact selector known",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Reading Escalation: avoid page.evaluate/page.content unless exact selector known"
+        }
+      ]
+    },
+    {
+      "api": "locator.evaluateAll",
+      "requirements": [
+        "REQ-LOCATOR-EVALUATEALL-001",
+        "REQ-LOCATOR-EVALUATEALL-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: evaluateAll은 현재 선택 결과 전체를 composed 문서 순서 배열로 첫 인자, arg를 둘째 인자로 전달하며 0개는 빈 배열로 한 번 호출한다. Promise settle과 JSON 결과·실패는 REQ-C-RUNTIME-008을 따른다. 단일 대상 strict는 적용하지 않는다.",
+        "우리규범 추가 확인: 중복매칭은허용하지만세션·프레임경계는유지하고직렬화오류를구분한다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "0/1/N에서 callback 호출횟수1과 composed 순서를 검사한다. DOM이 callback 중 바뀌어도 전달한 배열의 고정 시점/연결상태 보장 범위를 정하고 shared JSON 규칙과 async settle·부분효과를 판정한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "page.logs",
+      "requirements": [
+        "REQ-PAGE-LOGS-001",
+        "REQ-PAGE-LOGS-002"
+      ],
+      "relation": "unknown",
+      "method": "현재 공개 Aside guide와 기존 증거에서 정확 대응 미확인",
+      "syntax": null,
+      "sourceIds": [],
+      "confirmedConditions": [],
+      "unknownConditions": [
+        "Playwright-compatible/Playwright API available라는 총괄 문구는 개별 API·옵션·반환형의 증거가 아님.",
+        "우리규범 추가 확인: 페이지콘솔/오류로그를시간·level로조회하고REPLconsole.log출력과구분한다.",
+        "우리규범 추가 확인: 페이지별 최근1000개를 보관하며 수집 시작시각·보관범위·누적 dropped·partial을 collection에 제공한다. attach 전 기간과 overflow가 since 범위에 걸리면 partial=true다. 실제 로그 entries에 합성 warning을 섞지 않고 다른 페이지/세션 로그를 포함하지 않는다."
+      ],
+      "exampleStatus": "예제 없음·API 발명 금지",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "보관1000·since >·정확level 기존규범을 유지한다. page.navigate 후 같은 Page의 이전문서 로그 유지/구분정책과 at 동일밀리초 순서를 정하며 필터결과 빈배열에도 collection partial이 보존되는지 확인한다.",
+      "evidenceClaims": []
+    },
+    {
+      "api": "console.log",
+      "requirements": [
+        "REQ-CONSOLE-LOG-001",
+        "REQ-CONSOLE-LOG-002"
+      ],
+      "relation": "direct",
+      "method": "명시 REPL 출력",
+      "syntax": "console.log(await listBrowserTabs())",
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-DOC-HELP"
+      ],
+      "confirmedConditions": [
+        "자신에게 값을 돌려받으려면 항상 console.log 사용 DOC."
+      ],
+      "unknownConditions": [
+        "마지막표현식 자동출력 부재의 엄격 보장·순환값·예산/블록·이후실행은 미확인.",
+        "우리규범 추가 확인: 명시호출출력만반환하며마지막표현식이나페이지console과혼동하지않는다.",
+        "우리규범 추가 확인: 큰출력·순환값·여러블록은실행출력예산내에서절단표시하며메모리/세션을넘어유출하지않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "여러 인자 문자열/객체/undefined/Error/순환값의 표시정책과 블록 순서를 고정한다. 호출 전후 JS 상태 및 page console 분리를 판정하고 텍스트 예산초과 뒤 다음 작은 로그가 남는지 정책을 정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "자신에게 값을 돌려받으려면 항상 console.log 사용 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment: Always use console.log to return values",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment: Always use console.log to return values"
+        }
+      ]
+    },
+    {
+      "api": "display",
+      "requirements": [
+        "REQ-DISPLAY-001",
+        "REQ-DISPLAY-002"
+      ],
+      "relation": "direct",
+      "method": "REPL 전역 display",
+      "syntax": "display // global exists; argument signature not documented",
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "display 전역 존재 DOC."
+      ],
+      "unknownConditions": [
+        "이미지 인자형식·출력블록·MIME/base64·예산/생략·반환은 미확인.",
+        "우리규범 추가 확인: screenshot을실제이미지로모델에전달하며base64를일반로그로쏟지않는다.",
+        "우리규범 추가 확인: 잘못된 MIME/base64는 display 입력 오류다. 유효 이미지가 출력 한도를 넘으면 이미지 전체를 생략하고 truncated/이유를 결과 envelope에 표시하며 실행은 계속한다. 부분 base64 이미지를 반환하거나 다른 요청 이미지를 재사용하지 않는다."
+      ],
+      "exampleStatus": "미실행예제(공개문법)",
+      "limits": [
+        "Aside 원본 CLI 1.26.1028.2335/skill3 공개표면; 자체 wrapper·일반 Playwright 동등성 주장 없음.",
+        "DOC는 사용 계약, HISTORICAL은 해당 audit fixture/당시환경에 한정.",
+        "confirmedConditions는 전 REQ 충족을 뜻하지 않음."
+      ],
+      "reviewProposal": "지원 PNG의 서명·MIME 불일치·잘못된 padding·0-byte·한이미지/합계/블록수 경계의 우선 오류를 정한다. before→display→after 순서와 전체 이미지 생략 뒤 실행 지속·다른요청 이미지 혼입0을 판정한다.",
+      "evidenceClaims": [
+        {
+          "claim": "display 전역 존재 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment available globals: fs,path,Buffer,sleep,display,pwd",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment available globals: fs,path,Buffer,sleep,display,pwd"
+        }
+      ]
+    }
+  ],
+  "common": [
+    {
+      "api": "common.runtime",
+      "requirements": [
+        "REQ-C-RUNTIME-001",
+        "REQ-C-RUNTIME-002",
+        "REQ-C-RUNTIME-003",
+        "REQ-C-RUNTIME-004",
+        "REQ-C-RUNTIME-005",
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007",
+        "REQ-C-RUNTIME-008"
+      ],
+      "relation": "direct",
+      "method": "공개 CLI 환경 계약을 참고하고 확장 QuickJS·요청멱등·reset/예산은 우리 독립 설계로 유지",
+      "syntax": null,
+      "sourceIds": [
+        "A-DOC-MAIN",
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "120초·ES2023+·const/let 지속·import/require 금지·명시console은 DOC."
+      ],
+      "unknownConditions": [
+        "우리규범 추가 확인: 外部 도구는 guide/reset/js 세 개를 유지한다. 관리 HTTP endpoint와 내부64개는 외부 도구 수에 포함하지 않는다.",
+        "우리규범 추가 확인: JS는 확장 내 세션별 QuickJS에서 실행하고 외부 중계기는 제품코드 평가를 대신하지 않는다.",
+        "우리규범 추가 확인: reset/timeout은 이전세대 대기·late결과를 구분하고 브라우저에 이미 발생한 효과는 rollback했다고 주장하지 않는다.",
+        "우리규범 추가 확인: 시간·메모리·코드·텍스트·이미지 예산을 guide에 안내하고 초과는 잘림/취소/실행실패로 구분한다. 기본30초(허용50..120000ms), 코드64KiB UTF-8, VM64MiB·stack512KiB, 텍스트64KiB UTF-8를 적용한다. 이미지 한도와 결합 블록 수는 아래 출력 계약을 따른다.",
+        "우리규범 추가 확인: 비멱등 입력은 응답 유실만으로 자동 재실행하지 않는다. 같은 requestId는 같은 요청에만 재사용하고 payload 충돌을 거절한다.",
+        "우리규범 추가 확인: 연결·인증·session 소유 실패를 정상 빈 결과와 구분하고 타세션 핸들·asset·출력을 읽거나 변경하지 않는다.",
+        "우리규범 추가 확인: 이미지 출력은 디코딩한 파일 bytes 기준 한 이미지4MiB/요청 합8MiB/최대4장, 텍스트+이미지+진단 합256블록이다. 텍스트64KiB는 이미지 base64를 포함하지 않는다. 요청별 전체 결과 JSON 전송 한도는16MiB UTF-8다. 정상 한도 이내 이미지도 VM/캡처 환경 실패를 숨기지 않는다.",
+        "우리규범 추가 확인: 페이지 evaluate/evaluateAll/waitForFunction은 Promise/thenable 반환을 최종 settle까지 기다린 뒤 값을 판정한다. arg 생략/undefined는 null로 전달한다. 인자/최종 결과는 null/boolean/string/유한 number/이들로만 구성된 조밀한 Array·일반 Object의 JSON 값이어야 한다. 결과 undefined, NaN/Infinity, BigInt/Symbol/function/DOM node/순환/undefined 필드·희소배열은 직렬화 오류로 거절하며 성공 null로 바꾸지 않는다. async reject/throw는 함수 오류, timeout/reset은 실행/대기 취소로 구분한다. 이미 일어난 사용자 함수 효과는 남으며 단일 evaluate를 자동 재실행하지 않는다."
+      ],
+      "exampleStatus": "조합설계·이번 미실행",
+      "limits": [
+        "공통 문서의 조건은 각 API에 중복 분모로 재복제하지 않는다.",
+        "공개된 일부 조건만 확인; unknown은 미지원 판정 아님."
+      ],
+      "evidenceClaims": [
+        {
+          "claim": "120초·ES2023+·const/let 지속·import/require 금지·명시console은 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Environment",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Environment"
+        }
+      ]
+    },
+    {
+      "api": "common.dom-frames",
+      "requirements": [
+        "REQ-C-DOMFRAMES-001",
+        "REQ-C-DOMFRAMES-002",
+        "REQ-C-DOMFRAMES-003",
+        "REQ-C-DOMFRAMES-004",
+        "REQ-C-DOMFRAMES-005",
+        "REQ-C-DOMFRAMES-006"
+      ],
+      "relation": "composition",
+      "method": "snapshot 관찰→frameLocator 또는 ref 대상→action→새 snapshot 사후판정",
+      "syntax": null,
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-HIST-FRAME",
+        "A-HIST-SLOT"
+      ],
+      "confirmedConditions": [
+        "snapshot은 offscreen/child iframe을 포함한다고 DOC.",
+        "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL.",
+        "과거 slot 이름 role 검색 오류 HISTORICAL."
+      ],
+      "unknownConditions": [
+        "우리규범 추가 확인: snapshot/selector/상태 조회 등 관찰 API의 기본 범위는 현재 연결 DOM의 화면 밖 영역까지다. 이들 관찰은 scroll·click·추가 데이터 로딩을 발생시키지 않는다. evaluate/evaluateAll/waitForFunction의 사용자 함수는 명시적으로 효과를 낼 수 있으며 무조작 관찰 보장의 예외다.",
+        "우리규범 추가 확인: Frame Scope는 선택 프레임과 연결된 자식 관찰 범위를 명시한다. CSS/role/text 선택은 해당 document에 한정하고 ref는 발급frame로 라우팅한다.",
+        "우리규범 추가 확인: open Shadow와 slot의 composed 텍스트·hit ancestry를 지원한다. closed Shadow·canvas·PDF 의미 분석은 이번 범위 밖이다.",
+        "우리규범 추가 확인: 프레임 detach/navigation 및 문서 교체를 식별하고 같은 frameId라도 오래된 document ref를 재사용하지 않는다.",
+        "우리규범 추가 확인: 양의 scale/translate 중첩 프레임과 OOPIF 좌표를 main viewport CSS 좌표에 맞춘다. rotate/skew/음수scale/3D는 사전 미지원 오류다.",
+        "우리규범 추가 확인: 접근할 수 없는 프레임과 깊이 제한은 프레임 목록·snapshot에 이유와 재조회 경로를 남긴다."
+      ],
+      "exampleStatus": "조합설계·이번 미실행",
+      "limits": [
+        "공통 문서의 조건은 각 API에 중복 분모로 재복제하지 않는다.",
+        "공개된 일부 조건만 확인; unknown은 미지원 판정 아님."
+      ],
+      "evidenceClaims": [
+        {
+          "claim": "snapshot은 offscreen/child iframe을 포함한다고 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot offscreen/childiframe bullet",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot offscreen/childiframe bullet"
+        },
+        {
+          "claim": "과거 scale frame 호출 뒤 업무 이름변경0·서버PASS없음 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-FRAME",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=scaled-frame-click]; scripts/compare-aside.mjs scaled-frame-click; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: scaled-frame name-change0 and absent server success",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. scaled-frame name-change0 and absent server success"
+        },
+        {
+          "claim": "과거 slot 이름 role 검색 오류 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-SLOT",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=slot-name]; scripts/compare-aside.mjs slot-name :: slot role error",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. slot role error"
+        },
+        {
+          "claim": "조합 대응 판단: snapshot 관찰→frameLocator 또는 ref 대상→action→새 snapshot 사후판정",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "common.selection",
+      "requirements": [
+        "REQ-C-SELECTION-001",
+        "REQ-C-SELECTION-002",
+        "REQ-C-SELECTION-003",
+        "REQ-C-SELECTION-004",
+        "REQ-C-SELECTION-005",
+        "REQ-C-SELECTION-006"
+      ],
+      "relation": "composition",
+      "method": "최신 snapshot virtual ref→locator→관찰/조작; 우리 stable ref는 별도 정책",
+      "syntax": null,
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-HIST-REGEX",
+        "A-HIST-FILTER",
+        "A-HIST-NTH"
+      ],
+      "confirmedConditions": [
+        "새 snapshot은 모든 이전 ref 무효화 DOC.",
+        "과거 regex role count1 HISTORICAL.",
+        "과거 visible filter count3 HISTORICAL.",
+        "과거 nth(-1) 호출 DOMException HISTORICAL."
+      ],
+      "unknownConditions": [
+        "우리규범 추가 확인: count/evaluateAll 및 아래 상태 대기의 명시 예외 외에 단일 대상 조회·조작은 0/다중 매칭을 구분해 거절한다. 자동 첫번째 선택은 없다. CSS 상태 대기는 waitFor의 0/1/N 표를 따른다. 발급 ref의 stale 오류는 부재 성공으로 흡수하지 않는다.",
+        "우리규범 추가 확인: Locator는 지연평가 불변 조합이다. filter와 nth의 호출 순서를 보존하며 이전 Locator를 바꾸지 않는다.",
+        "우리규범 추가 확인: 문자열 검색은 공백정규화 후 기본부분일치·exact전체일치, 대소문자 구분이다. RegExp source/flags를 보존하고 g/y도 후보마다 독립 평가한다.",
+        "우리규범 추가 확인: 검색 본문은 composed text node의 실제 순서로 연결해 whitespace run을 한칸으로 정규화한다. 인접 span 사이에 없는 공백은 추가하지 않는다. script/style/noscript/template 및 aria-hidden=true subtree는 제외한다. CSS hidden 본문은 포함하되 visible 필터로 분리한다.",
+        "우리규범 추가 확인: 접근 이름(role/label)과 검색 본문(getByText/filter), 원문textContent를 구분한다. 출력 이름 축약이 검색범위를 줄이지 않는다.",
+        "우리규범 추가 확인: ref는 page/frame/document/element에 결합한다. 같은 문서에서 연결된 동일요소의 ref는 후속snapshot에도 유지가능하지만 detach/교체시 stale다."
+      ],
+      "exampleStatus": "조합설계·이번 미실행",
+      "limits": [
+        "공통 문서의 조건은 각 API에 중복 분모로 재복제하지 않는다.",
+        "공개된 일부 조건만 확인; unknown은 미지원 판정 아님."
+      ],
+      "evidenceClaims": [
+        {
+          "claim": "새 snapshot은 모든 이전 ref 무효화 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Snapshot ref invalidation bullet",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Snapshot ref invalidation bullet"
+        },
+        {
+          "claim": "과거 regex role count1 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-REGEX",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=regex-role]; scripts/compare-aside.mjs regex-role :: regex count1",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. regex count1"
+        },
+        {
+          "claim": "과거 visible filter count3 HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-FILTER",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=filter-visible]; scripts/compare-aside.mjs filter-visible; docs/fixes-before-after.md Codex / Aside / 우리 툴 :: visible filter count3",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. visible filter count3"
+        },
+        {
+          "claim": "과거 nth(-1) 호출 DOMException HISTORICAL.",
+          "kind": "HISTORICAL",
+          "sourceId": "A-HIST-NTH",
+          "location": "docs/evidence/diagnostics-before-after.json#/aside/cases[id=negative-nth]; scripts/compare-aside.mjs negative-nth :: nth(-1) DOMException",
+          "scope": "과거 원본 Aside CLI1.26.1028.2335 동일 /audit 단일 비교run의 기재조건만. 브라우저버전 미기재. 이번 새실측 아님. nth(-1) DOMException"
+        },
+        {
+          "claim": "조합 대응 판단: 최신 snapshot virtual ref→locator→관찰/조작; 우리 stable ref는 별도 정책",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "common.input",
+      "requirements": [
+        "REQ-C-INPUT-001",
+        "REQ-C-INPUT-002",
+        "REQ-C-INPUT-003",
+        "REQ-C-INPUT-004",
+        "REQ-C-INPUT-005"
+      ],
+      "relation": "composition",
+      "method": "관찰→입력→새 snapshot·실제 업무상태; API 반환을 업무성공으로 일반화 금지",
+      "syntax": null,
+      "sourceIds": [
+        "A-DOC-REPL",
+        "A-HIST-READONLY",
+        "A-HIST-DRAG"
+      ],
+      "confirmedConditions": [
+        "click interactivity/DOM stability/필요시scroll·fresh snapshot 사후확인 DOC."
+      ],
+      "unknownConditions": [
+        "우리규범 추가 확인: locator 입력은 단일 대상·visible/enabled·안정·실제hit/편집가능 등 적용 전제조건을 검증한다. 실패 전 입력이 없으면 무입력, 중도 실패면 부분효과를 구분한다.",
+        "우리규범 추가 확인: visible는 layout 존재와 조상숨김/닫힌details 기준이다. offscreen·overlay는visible와별개며 자동스크롤은 입력/명시scroll에만 허용한다.",
+        "우리규범 추가 확인: 좌표 primitive는 main viewport CSS 좌표와 유효한 버튼/키를 사용한다. 사전 검증/focus 실패는 기존 명시 down 상태를 보존한다. 입력 중 실패는 그 연산이 새로 획득한 키/버튼만 정리하고 이전 명시 down은 보존한다. reset/close는 해당 세션이 소유한 전체 실제 눌림 정리를 시도한다. 실제 release 실패를 내부 상태 초기화로 숨기지 않고 잔류/불확실을 보고한다. click/drag가 사용할 버튼이 이미 명시 down이면 사전 상태충돌로 거절하며 다른 down을 해제하지 않는다.",
+        "우리규범 추가 확인: 입력전달 성공과 업무완료를 구분한다. fill/checked/selection/focus처럼 API가 사후상태를 약속한 경우 실제상태를 확인한다.",
+        "우리규범 추가 확인: timeout/재시도 기본값은 guide에 안내하고 stale ref나 비멱등 drop/click을 다른대상에 자동재시도하지 않는다."
+      ],
+      "exampleStatus": "조합설계·이번 미실행",
+      "limits": [
+        "공통 문서의 조건은 각 API에 중복 분모로 재복제하지 않는다.",
+        "공개된 일부 조건만 확인; unknown은 미지원 판정 아님."
+      ],
+      "evidenceClaims": [
+        {
+          "claim": "click interactivity/DOM stability/필요시scroll·fresh snapshot 사후확인 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Navigation and Actions: click wait/scroll; action unconfirmed until fresh snapshot expected state"
+        },
+        {
+          "claim": "조합 대응 판단: 관찰→입력→새 snapshot·실제 업무상태; API 반환을 업무성공으로 일반화 금지",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    },
+    {
+      "api": "common.files-events",
+      "requirements": [
+        "REQ-C-FILESEVENTS-001",
+        "REQ-C-FILESEVENTS-002",
+        "REQ-C-FILESEVENTS-003",
+        "REQ-C-FILESEVENTS-004",
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
+      ],
+      "relation": "composition",
+      "method": "브라우저 다운로드 vs 검증된 안전 direct GET/HEAD fetch를 구분",
+      "syntax": null,
+      "sourceIds": [
+        "A-DOC-REPL"
+      ],
+      "confirmedConditions": [
+        "download waiter 사전등록→click→path→fs.stat/같은세션 bytes 검증 DOC."
+      ],
+      "unknownConditions": [
+        "우리규범 추가 확인: FileInput은 Chrome호스트 로컬경로·세션서버asset·명시bytes/base64를 한 엔진으로 처리한다. 서버경로를 로컬경로로 해석하지 않는다.",
+        "우리규범 추가 확인: 각 파일과 한 호출의 전체 파일 바이트 합은 각각32MiB 이하로 제한한다. single/multiple 개수·형식·asset 소유·로컬 권한을 전달 전 검증한다. 사전 오류는 기존 선택을 보존하고, 불가피한 중도 실패는 적용된 목록/불확실 여부를 밝힌다. 임시 DOM/file 자원은 정리한다.",
+        "우리규범 추가 확인: 다운로드는 실제 브라우저 이벤트/전송을 사용한다. 쿠키/POST/blob을 단순URL 재요청으로 대체하지 않는다.",
+        "우리규범 추가 확인: event waiter는 등록 이후 같은 페이지/세션의 이벤트만 소비한다. timeout/reset은 단일 종결 후 제거한다. 자기 close event waiter는 정상 close metadata로 resolve하고 다른 waiter만 PAGE_CLOSED로 reject한다. 발급핸들은 실제 event identity와 수명을 가진다.",
+        "우리규범 추가 확인: wait는 조작 전에 등록한다. 동시 waiter 중 같은 가변 event의 소비 충돌은명시거절하고 늦은 event를 이미끝난wait에전달하지않는다.",
+        "우리규범 추가 확인: FileInput source는 로컬 절대경로 문자열 또는 fileId/bytes/base64 중 정확히 하나를 가진 객체다. bytes는 일반 number[]만 지원하고 각 원소는0..255 정수다. Uint8Array·문자열·겹친 source는 사전 거절한다. base64는 RFC4648 표준 alphabet와 올바른 padding의 문자열로서 공백/URL-safe를 거절하고 빈문자열은0-byte다. bytes:[]도0-byte다.",
+        "우리규범 추가 확인: inline name은 생략 시 file.bin, mimeType은 application/octet-stream이다. name은 NUL을 거절하고 /와 역슬래시로 경로를 분리한 마지막 비어 있지 않은 basename을 사용하며 빈 basename은 거절한다. fileId의 이름/MIME은 서버 자산 메타데이터, 로컬은 실제 파일 메타데이터를 사용한다. 파일 수는 single input 최대1개, multiple/drop은32MiB 전송예산 안의 임의 개수며 별도 고정 개수 상한은 두지 않는다."
+      ],
+      "exampleStatus": "조합설계·이번 미실행",
+      "limits": [
+        "공통 문서의 조건은 각 API에 중복 분모로 재복제하지 않는다.",
+        "공개된 일부 조건만 확인; unknown은 미지원 판정 아님."
+      ],
+      "evidenceClaims": [
+        {
+          "claim": "download waiter 사전등록→click→path→fs.stat/같은세션 bytes 검증 DOC.",
+          "kind": "DOC",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: Downloads browser event example and same-session path verification",
+          "scope": "현재 공개 가이드 계약만; 실행검증 아님. 2026-11-01 Aside CLI1.26.1028.2335/skill3. Downloads browser event example and same-session path verification"
+        },
+        {
+          "claim": "조합 대응 판단: 브라우저 다운로드 vs 검증된 안전 direct GET/HEAD fetch를 구분",
+          "kind": "INFERENCE",
+          "sourceId": "A-DOC-REPL",
+          "location": ".local/reference-loop-execution/aside/current-repl-guide.txt :: underlying public/historical mechanism",
+          "scope": "조사자의 목적 대응 판단. 우리 API의 전체 조건 충족이나 경쟁 API의 동등성 확인이 아님. confirmedConditions 분자에 넣지 않음."
+        }
+      ]
+    }
+  ],
+  "readManifest": [
+    {
+      "path": "docs/requirements/external/guide.md",
+      "requirements": [
+        "REQ-GUIDE-001",
+        "REQ-GUIDE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/external/reset.md",
+      "requirements": [
+        "REQ-RESET-001",
+        "REQ-RESET-002",
+        "REQ-RESET-003"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/external/js.md",
+      "requirements": [
+        "REQ-JS-001",
+        "REQ-JS-002",
+        "REQ-JS-003"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/browser.list.md",
+      "requirements": [
+        "REQ-BROWSER-LIST-001",
+        "REQ-BROWSER-LIST-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/browser.tabs.md",
+      "requirements": [
+        "REQ-BROWSER-TABS-001",
+        "REQ-BROWSER-TABS-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/browser.open.md",
+      "requirements": [
+        "REQ-BROWSER-OPEN-001",
+        "REQ-BROWSER-OPEN-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/browser.attach.md",
+      "requirements": [
+        "REQ-BROWSER-ATTACH-001",
+        "REQ-BROWSER-ATTACH-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.activate.md",
+      "requirements": [
+        "REQ-PAGE-ACTIVATE-001",
+        "REQ-PAGE-ACTIVATE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.close.md",
+      "requirements": [
+        "REQ-PAGE-CLOSE-001",
+        "REQ-PAGE-CLOSE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.goto.md",
+      "requirements": [
+        "REQ-PAGE-GOTO-001",
+        "REQ-PAGE-GOTO-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.back.md",
+      "requirements": [
+        "REQ-PAGE-BACK-001",
+        "REQ-PAGE-BACK-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.forward.md",
+      "requirements": [
+        "REQ-PAGE-FORWARD-001",
+        "REQ-PAGE-FORWARD-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.reload.md",
+      "requirements": [
+        "REQ-PAGE-RELOAD-001",
+        "REQ-PAGE-RELOAD-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/scope.snapshot.md",
+      "requirements": [
+        "REQ-SCOPE-SNAPSHOT-001",
+        "REQ-SCOPE-SNAPSHOT-002",
+        "REQ-SCOPE-SNAPSHOT-003",
+        "REQ-SCOPE-SNAPSHOT-004",
+        "REQ-SCOPE-SNAPSHOT-005",
+        "REQ-SCOPE-SNAPSHOT-006",
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.screenshot.md",
+      "requirements": [
+        "REQ-PAGE-SCREENSHOT-001",
+        "REQ-PAGE-SCREENSHOT-002",
+        "REQ-PAGE-SCREENSHOT-003",
+        "REQ-PAGE-SCREENSHOT-004"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.frames.md",
+      "requirements": [
+        "REQ-PAGE-FRAMES-001",
+        "REQ-PAGE-FRAMES-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.frame.md",
+      "requirements": [
+        "REQ-PAGE-FRAME-001",
+        "REQ-PAGE-FRAME-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/scope.locator.md",
+      "requirements": [
+        "REQ-SCOPE-LOCATOR-001",
+        "REQ-SCOPE-LOCATOR-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByRole.md",
+      "requirements": [
+        "REQ-SCOPE-GETBYROLE-001",
+        "REQ-SCOPE-GETBYROLE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByText.md",
+      "requirements": [
+        "REQ-SCOPE-GETBYTEXT-001",
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByLabel.md",
+      "requirements": [
+        "REQ-SCOPE-GETBYLABEL-001",
+        "REQ-SCOPE-GETBYLABEL-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.filter.md",
+      "requirements": [
+        "REQ-LOCATOR-FILTER-001",
+        "REQ-LOCATOR-FILTER-002",
+        "REQ-LOCATOR-FILTER-003",
+        "REQ-LOCATOR-FILTER-004"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.nth.md",
+      "requirements": [
+        "REQ-LOCATOR-NTH-001",
+        "REQ-LOCATOR-NTH-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.count.md",
+      "requirements": [
+        "REQ-LOCATOR-COUNT-001",
+        "REQ-LOCATOR-COUNT-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.textContent.md",
+      "requirements": [
+        "REQ-LOCATOR-TEXTCONTENT-001",
+        "REQ-LOCATOR-TEXTCONTENT-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.getAttribute.md",
+      "requirements": [
+        "REQ-LOCATOR-GETATTRIBUTE-001",
+        "REQ-LOCATOR-GETATTRIBUTE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.inputValue.md",
+      "requirements": [
+        "REQ-LOCATOR-INPUTVALUE-001",
+        "REQ-LOCATOR-INPUTVALUE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isVisible.md",
+      "requirements": [
+        "REQ-LOCATOR-ISVISIBLE-001",
+        "REQ-LOCATOR-ISVISIBLE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isEnabled.md",
+      "requirements": [
+        "REQ-LOCATOR-ISENABLED-001",
+        "REQ-LOCATOR-ISENABLED-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isEditable.md",
+      "requirements": [
+        "REQ-LOCATOR-ISEDITABLE-001",
+        "REQ-LOCATOR-ISEDITABLE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.isChecked.md",
+      "requirements": [
+        "REQ-LOCATOR-ISCHECKED-001",
+        "REQ-LOCATOR-ISCHECKED-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.boundingBox.md",
+      "requirements": [
+        "REQ-LOCATOR-BOUNDINGBOX-001",
+        "REQ-LOCATOR-BOUNDINGBOX-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.click.md",
+      "requirements": [
+        "REQ-LOCATOR-CLICK-001",
+        "REQ-LOCATOR-CLICK-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.fill.md",
+      "requirements": [
+        "REQ-LOCATOR-FILL-001",
+        "REQ-LOCATOR-FILL-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.press.md",
+      "requirements": [
+        "REQ-LOCATOR-PRESS-001",
+        "REQ-LOCATOR-PRESS-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.hover.md",
+      "requirements": [
+        "REQ-LOCATOR-HOVER-001",
+        "REQ-LOCATOR-HOVER-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.focus.md",
+      "requirements": [
+        "REQ-LOCATOR-FOCUS-001",
+        "REQ-LOCATOR-FOCUS-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.scrollIntoView.md",
+      "requirements": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.setChecked.md",
+      "requirements": [
+        "REQ-LOCATOR-SETCHECKED-001",
+        "REQ-LOCATOR-SETCHECKED-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.selectOption.md",
+      "requirements": [
+        "REQ-LOCATOR-SELECTOPTION-001",
+        "REQ-LOCATOR-SELECTOPTION-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.dragTo.md",
+      "requirements": [
+        "REQ-LOCATOR-DRAGTO-001",
+        "REQ-LOCATOR-DRAGTO-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.drop.md",
+      "requirements": [
+        "REQ-LOCATOR-DROP-001",
+        "REQ-LOCATOR-DROP-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.move.md",
+      "requirements": [
+        "REQ-MOUSE-MOVE-001",
+        "REQ-MOUSE-MOVE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.down.md",
+      "requirements": [
+        "REQ-MOUSE-DOWN-001",
+        "REQ-MOUSE-DOWN-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.up.md",
+      "requirements": [
+        "REQ-MOUSE-UP-001",
+        "REQ-MOUSE-UP-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.click.md",
+      "requirements": [
+        "REQ-MOUSE-CLICK-001",
+        "REQ-MOUSE-CLICK-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/mouse.wheel.md",
+      "requirements": [
+        "REQ-MOUSE-WHEEL-001",
+        "REQ-MOUSE-WHEEL-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.down.md",
+      "requirements": [
+        "REQ-KEYBOARD-DOWN-001",
+        "REQ-KEYBOARD-DOWN-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.up.md",
+      "requirements": [
+        "REQ-KEYBOARD-UP-001",
+        "REQ-KEYBOARD-UP-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.press.md",
+      "requirements": [
+        "REQ-KEYBOARD-PRESS-001",
+        "REQ-KEYBOARD-PRESS-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.type.md",
+      "requirements": [
+        "REQ-KEYBOARD-TYPE-001",
+        "REQ-KEYBOARD-TYPE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.waitFor.md",
+      "requirements": [
+        "REQ-LOCATOR-WAITFOR-001",
+        "REQ-LOCATOR-WAITFOR-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForEvent.md",
+      "requirements": [
+        "REQ-PAGE-WAITFOREVENT-001",
+        "REQ-PAGE-WAITFOREVENT-002",
+        "REQ-PAGE-WAITFOREVENT-003"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForURL.md",
+      "requirements": [
+        "REQ-PAGE-WAITFORURL-001",
+        "REQ-PAGE-WAITFORURL-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForFunction.md",
+      "requirements": [
+        "REQ-PAGE-WAITFORFUNCTION-001",
+        "REQ-PAGE-WAITFORFUNCTION-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForLoadState.md",
+      "requirements": [
+        "REQ-PAGE-WAITFORLOADSTATE-001",
+        "REQ-PAGE-WAITFORLOADSTATE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.setFiles.md",
+      "requirements": [
+        "REQ-LOCATOR-SETFILES-001",
+        "REQ-LOCATOR-SETFILES-002",
+        "REQ-LOCATOR-SETFILES-003"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/chooser.setFiles.md",
+      "requirements": [
+        "REQ-CHOOSER-SETFILES-001",
+        "REQ-CHOOSER-SETFILES-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/download.save.md",
+      "requirements": [
+        "REQ-DOWNLOAD-SAVE-001",
+        "REQ-DOWNLOAD-SAVE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/download.cancel.md",
+      "requirements": [
+        "REQ-DOWNLOAD-CANCEL-001",
+        "REQ-DOWNLOAD-CANCEL-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/dialog.accept.md",
+      "requirements": [
+        "REQ-DIALOG-ACCEPT-001",
+        "REQ-DIALOG-ACCEPT-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/dialog.dismiss.md",
+      "requirements": [
+        "REQ-DIALOG-DISMISS-001",
+        "REQ-DIALOG-DISMISS-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/scope.evaluate.md",
+      "requirements": [
+        "REQ-SCOPE-EVALUATE-001",
+        "REQ-SCOPE-EVALUATE-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/locator.evaluateAll.md",
+      "requirements": [
+        "REQ-LOCATOR-EVALUATEALL-001",
+        "REQ-LOCATOR-EVALUATEALL-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/page.logs.md",
+      "requirements": [
+        "REQ-PAGE-LOGS-001",
+        "REQ-PAGE-LOGS-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/console.log.md",
+      "requirements": [
+        "REQ-CONSOLE-LOG-001",
+        "REQ-CONSOLE-LOG-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/internal/display.md",
+      "requirements": [
+        "REQ-DISPLAY-001",
+        "REQ-DISPLAY-002"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/common/runtime.md",
+      "requirements": [
+        "REQ-C-RUNTIME-001",
+        "REQ-C-RUNTIME-002",
+        "REQ-C-RUNTIME-003",
+        "REQ-C-RUNTIME-004",
+        "REQ-C-RUNTIME-005",
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007",
+        "REQ-C-RUNTIME-008"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/common/dom-frames.md",
+      "requirements": [
+        "REQ-C-DOMFRAMES-001",
+        "REQ-C-DOMFRAMES-002",
+        "REQ-C-DOMFRAMES-003",
+        "REQ-C-DOMFRAMES-004",
+        "REQ-C-DOMFRAMES-005",
+        "REQ-C-DOMFRAMES-006"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/common/selection.md",
+      "requirements": [
+        "REQ-C-SELECTION-001",
+        "REQ-C-SELECTION-002",
+        "REQ-C-SELECTION-003",
+        "REQ-C-SELECTION-004",
+        "REQ-C-SELECTION-005",
+        "REQ-C-SELECTION-006"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/common/input.md",
+      "requirements": [
+        "REQ-C-INPUT-001",
+        "REQ-C-INPUT-002",
+        "REQ-C-INPUT-003",
+        "REQ-C-INPUT-004",
+        "REQ-C-INPUT-005"
+      ],
+      "read": "규범/계약/GWT 검토"
+    },
+    {
+      "path": "docs/requirements/common/files-events.md",
+      "requirements": [
+        "REQ-C-FILESEVENTS-001",
+        "REQ-C-FILESEVENTS-002",
+        "REQ-C-FILESEVENTS-003",
+        "REQ-C-FILESEVENTS-004",
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
+      ],
+      "read": "규범/계약/GWT 검토"
+    }
+  ],
+  "claimEvidencePolicy": "Each confirmedConditions text equals one DOC/HISTORICAL evidenceClaims.claim. INFERENCE claims remain outside confirmedConditions. Grades are claim-level, never inherited from sourceIds or the API group."
+}
