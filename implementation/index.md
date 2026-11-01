@@ -12,3 +12,6 @@
 - B01D: 이슈#15에서4부모/6조건의 초기화·세대·실제 입력 해제를 국소 제품 검증. Before1/7→After7/7, 전체100 PASS/외부1 SKIP·창 모드25 PASS. 전체/정확head delta 독립 PASS 후 PR16 머지(8d7c7d8). [보고서](../docs/implementation/b01d.md)
 
 - B01E: 이슈#17,5부모/7조건의 비동기 평가·JSON 직렬화 국소 제품 PASS. Before0/7→After7/7, 전체114 PASS/외부1 SKIP·단독 창 모드32 PASS. 정확head 독립 리뷰 전. [보고서](../docs/implementation/b01e.md)
+
+- B01E: 정확70ba037 새 컨텍스트 Sol6.1 high 재리뷰 PASS, PR18 머지0452cbe·이슈17 CLOSED. [재리뷰](../docs/reviews/pr18-b01e-rereview.md).
+- B02A: 이슈19,13부모/21조건의 공통 검색/이름 정책 준비. 제품 미검증.

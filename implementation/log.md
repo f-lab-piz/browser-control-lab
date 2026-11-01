@@ -198,3 +198,5 @@ B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준�
 - B01E 이슈17: 엄격한 JSON/Promise settle/오류·문서 경계와 wait deadline을 구현. 실제 제품7 PASS·전체113 PASS/외부1 SKIP·headed32 PASS. Before0/7, 원시 준비 predicate 실패를 보존. Codex/Aside root LIVE 계약 비교 기록. 독립 리뷰 전이며 slice in-progress.
 
 - PR18 정확7bae78a Sol6.1 high 독립 CHANGES_REQUESTED(P2 큰 timeout 타이머 overflow). bounded interval 재설정으로 수정하고 제품4경계/단위1 추가. 전체114 PASS/외부1 SKIP·단독 headed32 PASS, 병렬 headed의 프레임조회1건 실패도 원시 보존·B03A 추적. 새head 재리뷰 대기.
+
+- PR18 정확70ba037 독립 재리뷰 PASS(114/외부1 SKIP·headed32·추가15행), 원격 exact gate 확인 후0452cbe 정상 머지·이슈17 닫힘. B02A 이슈19와 feat/19-selection-naming 시작.
