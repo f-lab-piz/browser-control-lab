@@ -33,18 +33,18 @@
 
 #### REQ-LOCATOR-FILL-001-C01
 
-- 조건: fill은기존전체값을교체하며빈문자열은삭제다.
-- 준비: text/textarea/editor의기존ABC
-- 실행: fill 한글🙂 및빈문자열
-- 판정: 각요청값이독립inputValue와같고선택위치삽입과구분된다.
+- 조건: fill은 기존 전체 값을 교체하며 빈 문자열은 삭제다.
+- 준비: text/textarea/editor의 기존 ABC
+- 실행: fill 한글🙂 및 빈 문자열
+- 판정: 각 요청 값이 독립 inputValue와 같고 선택 위치 삽입과 구분된다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-FILL-001-C02
 
-- 조건: 성공은전달성공이아니라실제값일치를확인한다.
-- 준비: 입력을되돌리는masking/rerender제어
+- 조건: 성공은 전달 성공이 아니라 실제 값 일치를 확인한다.
+- 준비: 입력을 되돌리는 masking/rerender 제어
 - 실행: fill 123
-- 판정: 값이123아니면INPUT_VALUE_NOT_CHANGED이고거짓true없다.
+- 판정: 값이 123 아니면 INPUT_VALUE_NOT_CHANGED이고 거짓 true 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-FILL-002
@@ -64,26 +64,26 @@
 
 #### REQ-LOCATOR-FILL-002-C01
 
-- 조건: readonly/disabled/비텍스트입력은값변경전에거절한다.
+- 조건: readonly/disabled/비텍스트 입력은 값 변경 전에 거절한다.
 - 준비: readonly/aria-readonly/disabled/checkbox
 - 실행: fill
-- 판정: 제어타입/편집불가오류·기존값과inputcounter불변이다.
+- 판정: 제어 타입/편집 불가 오류·기존 값과 inputcounter 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-FILL-002-C02
 
-- 조건: focus/선택후오류는준비효과와변경효과를분리한다.
-- 준비: focus시rerender·입력후detach
+- 조건: focus/선택 후 오류는 준비 효과와 변경 효과를 분리한다.
+- 준비: focus 시 rerender·입력 후 detach
 - 실행: fill
-- 판정: 현재값/포커스·발생event를기록하며전체무부작용이나rollback을주장하지않는다.
+- 판정: 현재 값/포커스·발생 event를 기록하며 전체 무부작용이나 rollback을 주장하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-FILL-002-C03
 
-- 조건: 동일값재호출도새업무성공으로합산하지않는다.
-- 준비: 값이이미A인제어
-- 실행: fill A 후서버상태확인
-- 판정: 값일치와이벤트전달을구분하며업무저장완료를추정하지않는다.
+- 조건: 동일 값 재호출도 새 업무 성공으로 합산하지 않는다.
+- 준비: 값이 이미 A인 제어
+- 실행: fill A 후 서버 상태 확인
+- 판정: 값 일치와 이벤트 전달을 구분하며 업무 저장 완료를 추정하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

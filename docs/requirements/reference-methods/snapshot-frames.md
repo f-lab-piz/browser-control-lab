@@ -16,9 +16,9 @@
 await tab.playwright.domSnapshot()
 ```
 
-- `CL-CODEX-scope-snapshot-01` **DOC**: string DOM snapshot, iframe body when available; 과거 tail/selected 관찰 근거 `CUA-DOC-API` / CUA API Reference: tab.playwright.domSnapshot and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-scope-snapshot-01` **DOC**: domSnapshot():Promise<string>; 현재 DOM과 가능한 iframe 본문을 포함한다는 공개 설명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:42-42; raw/public-contract-excerpts.md:150-150. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-scope-snapshot-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-scope-snapshot-02` **HISTORICAL**: {"snapshotChars": 2682070, "tail": true, "selected": true, "secret": false} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/snapshotChars; raw/historical-diagnostics-before-after.json#/codex/tail; raw/historical-diagnostics-before-after.json#/codex/selected; raw/historical-diagnostics-before-after.json#/codex/secret. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -76,9 +76,9 @@ const s1 = await snapshot(page, { interactive: true }); console.log(s1.tree)
 await tab.screenshot({clip:{x:0,y:0,width:320,height:240}})
 ```
 
-- `CL-CODEX-page-screenshot-01` **DOC**: clip/fullPage 옵션, Uint8Array; 과거 JPEG320x240 관찰 근거 `CUA-DOC-API` / CUA API Reference: tab.screenshot and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-screenshot-01` **DOC**: Tab.screenshot(options):Promise<Uint8Array>; ScreenshotOptions는 clip/fullPage를 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:37-37; raw/public-contract-excerpts.md:119-119; raw/public-contract-excerpts.md:140-140. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-page-screenshot-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-page-screenshot-02` **HISTORICAL**: {"clip": {"format": "JPEG", "width": 320, "height": 240}} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/clip. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -132,7 +132,9 @@ await page.screenshot(); await annotatedScreenshot(page)
 await tab.playwright.evaluate(() => Array.from(document.querySelectorAll("iframe"),e=>({src:e.getAttribute("src"),name:e.name})))
 ```
 
-- `CL-CODEX-page-frames-01` **DOC**: snapshot에 iframe body when available; evaluate는 main DOM 읽기 근거 `CUA-DOC-API` / CUA API Reference: domSnapshot + read-only DOM iframe inspection and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-frames-01` **DOC**: domSnapshot은 가능한 iframe 본문을 포함한다는 설명이며 page evaluate는 read-only 공개 서명이다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:151-151. 범위: public declaration only; limits in unknownConditions.
+
+- `CL-CODEX-page-frames-02` **INFERENCE**: read-only evaluate로 iframe DOM element 메타데이터를 조회하는 조합을 제안한다. nested/OOPIF process tree 동등성은 미확인이다. 근거 `CODEX-RESEARCH-INFERENCE` / sources.md#ref1-정리-조합-추론의-범위. 범위: 조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외.
 
 추가 확인할 조건:
 
@@ -182,7 +184,7 @@ await tab.playwright.evaluate(() => Array.from(document.querySelectorAll("iframe
 tab.playwright.frameLocator("iframe[data-workspace]")
 ```
 
-- `CL-CODEX-page-frame-01` **DOC**: CSS frame selector로 frame builder, 중첩 frameLocator 지원 근거 `CUA-DOC-API` / CUA API Reference: tab.playwright.frameLocator and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-frame-01` **DOC**: CSS frame selector로 frame builder, 중첩 frameLocator 지원 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:58-66; raw/public-contract-excerpts.md:45-45. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -236,7 +238,9 @@ page.frameLocator("iframe").getByRole("button", {name:"좌표 내부 실행",exa
 await locator.evaluate(el => {const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}})
 ```
 
-- `CL-CODEX-locator-boundingBox-01` **DOC**: DOM rect 읽기는 공개 evaluate 조합; frame내 rect는 local 근거 `CUA-DOC-API` / CUA API Reference: locator.evaluate read-only rect and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-boundingBox-01` **DOC**: read-only 단일 element evaluate(fn,arg?,options?) 공개 서명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:152-152. 범위: public declaration only; limits in unknownConditions.
+
+- `CL-CODEX-locator-boundingBox-02` **INFERENCE**: getBoundingClientRect를 evaluate에서 읽는 조합을 제안한다. frame-local→main 변환 및 hidden null은 미확인이다. 근거 `CODEX-RESEARCH-INFERENCE` / sources.md#ref1-정리-조합-추론의-범위. 범위: 조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외.
 
 추가 확인할 조건:
 
@@ -284,7 +288,9 @@ await locator.evaluate(el => {const r=el.getBoundingClientRect();return {x:r.x,y
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- 확인된 개별 동작 근거 없음. API 미지원이라는 의미가 아니다.
+- `CL-CODEX-dom-frames-01` **DOC**: domSnapshot은 가능한 iframe 본문 포함 설명; frameLocator의 중첩 builder 선언. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:150-150; raw/public-contract-excerpts.md:58-66. 범위: 공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님.
+
+- `CL-CODEX-dom-frames-02` **HISTORICAL**: {"slotClick": true, "scaledFrameClick": true} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick. 범위: 과거 audit의 해당 필드만; 현재/모든 옵션/일반 환경으로 확대하지 않음.
 
 추가 확인할 조건:
 

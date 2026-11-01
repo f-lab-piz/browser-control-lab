@@ -33,10 +33,10 @@
 
 #### REQ-MOUSE-MOVE-001-C01
 
-- 조건: main viewport CSS좌표로이동하고현재buttons/modifiers를보존한다.
-- 준비: left down·중첩frame좌표
+- 조건: main viewport CSS 좌표로 이동하고 현재 buttons/modifiers를 보존한다.
+- 준비: left down·중첩 frame 좌표
 - 실행: move x/y
-- 판정: 실제event좌표와눌림이맞고새down/up없다.
+- 판정: 실제 event 좌표와 눌림이 맞고 새 down/up 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-MOUSE-MOVE-002
@@ -56,10 +56,10 @@
 
 #### REQ-MOUSE-MOVE-002-C01
 
-- 조건: 비유한좌표는전송전에거절한다.
-- 준비: NaN/Infinity/문자열좌표
+- 조건: 비유한 좌표는 전송 전에 거절한다.
+- 준비: NaN/Infinity/문자열 좌표
 - 실행: move
-- 판정: 입력오류·pointertrace0·기존down보존이다.
+- 판정: 입력 오류·pointertrace0·기존 down 보존이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-FRAMES-001-C01
 
-- 조건: main/중첩/교차출처OOPIF를부모와id로구분한다.
-- 준비: 각frame에같은이름버튼
+- 조건: main/중첩/교차 출처 OOPIF를 부모와 id로 구분한다.
+- 준비: 각 frame에 같은 이름 버튼
 - 실행: frames
-- 판정: 부모트리·id/url/name/process가맞고같은이름으로합치지않는다.
+- 판정: 부모 트리·id/url/name/process가 맞고 같은 이름으로 합치지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-FRAMES-002
@@ -56,10 +56,10 @@
 
 #### REQ-PAGE-FRAMES-002-C01
 
-- 조건: 분리/준비중frame은관찰완전성의한계를명시한다.
-- 준비: 조회중iframe교체/접근실패
-- 실행: frames후scope조회
-- 판정: stale/접근실패와재조회경로가있고main으로대체하지않는다.
+- 조건: 분리/준비 중 frame은 관찰 완전성의 한계를 명시한다.
+- 준비: 조회 중 iframe 교체/접근 실패
+- 실행: frames 후 scope 조회
+- 판정: stale/접근 실패와 재조회 경로가 있고 main으로 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

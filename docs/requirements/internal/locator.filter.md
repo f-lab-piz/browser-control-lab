@@ -34,17 +34,17 @@
 #### REQ-LOCATOR-FILTER-001-C01
 
 - 조건: hasText/hasNotText/visible를 AND로 적용한다.
-- 준비: A본문visible,A본문hidden,B본문visible의3행
-- 실행: hasText A와hasNotText B와visible true
-- 판정: A visible행1개만남는다.
+- 준비: A 본문 visible,A 본문 hidden,B 본문 visible의 3 행
+- 실행: hasText A와 hasNotText B와 visible true
+- 판정: A visible 행 1 개만 남는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-FILTER-001-C02
 
 - 조건: 필터링은 원본 Locator를 변경하지 않는다.
-- 준비: 원본행3개
-- 실행: 새filter후원본count
-- 판정: 원본3·필터1이며원본query는불변이다.
+- 준비: 원본 행 3개
+- 실행: 새 filter 후 원본 count
+- 판정: 원본 3·필터 1이며 원본 query는 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-FILTER-002
@@ -65,17 +65,17 @@
 #### REQ-LOCATOR-FILTER-002-C01
 
 - 조건: 미지원 키/잘못된 타입은 어떤 조건도 무시하지 않고 거절한다.
-- 준비: has/hasNot/visible문자열
-- 실행: filter후count
-- 판정: UNSUPPORTED_FILTER/타입오류이며잘못넓어진후보를주지않는다.
+- 준비: has/hasNot/visible 문자열
+- 실행: filter 후 count
+- 판정: UNSUPPORTED_FILTER/타입 오류이며 잘못 넓어진 후보를 주지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-FILTER-002-C02
 
-- 조건: 실제 whitespace를 보존하고 전체slot본문을 검색한다.
-- 준비: 인접foobar/실제foo bar와긴slot뒤needle
-- 실행: 양음문자열/regexfilter
-- 판정: 양음은서로보완하며출력예산과검색결과무관이다.
+- 조건: 실제 whitespace를 보존하고 전체 slot 본문을 검색한다.
+- 준비: 인접 foobar/실제 foo bar와 긴 slot 뒤 needle
+- 실행: 양/음 문자열과 정규식 filter를 각각 독립 조회한다.
+- 판정: 양음은 서로 보완하며 출력 예산과 검색 결과 무관이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
@@ -99,10 +99,10 @@
 
 #### REQ-LOCATOR-FILTER-003-C01
 
-- 조건: 연속filter와nth는선언순서의연산체인이다.
-- 준비: A/B조건이다른5행
+- 조건: 연속 filter와 nth는 선언 순서의 연산 체인이다.
+- 준비: A/B 조건이 다른 5 행
 - 실행: filterA.filterB/nth0.filterB/filterB.nth0
-- 판정: 각결과가순서대로일치하며이전조건덮어쓰기없다.
+- 판정: 각 결과가 순서대로 일치하며 이전 조건 덮어쓰기 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-FILTER-004
@@ -121,8 +121,8 @@
 
 #### REQ-LOCATOR-FILTER-004-C01
 
-- 조건: 본문정책은ARIA숨김제외/CSS숨김포함과출력예산독립이다.
-- 준비: 긴slot뒤needle·aria-hidden·CSS hidden
-- 실행: 양/음/regex g,y/visible반복조회
-- 판정: 정책집합과반복결과일치·600자뒤누락없다.
+- 조건: 본문 정책은 ARIA 숨김 제외/CSS 숨김 포함과 출력 예산 독립이다.
+- 준비: 긴 slot 뒤 needle·aria-hidden·CSS hidden
+- 실행: 양/음/regex g,y/visible 반복 조회
+- 판정: 정책 집합과 반복 결과 일치·600자 뒤 누락 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

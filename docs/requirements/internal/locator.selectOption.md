@@ -33,18 +33,18 @@
 
 #### REQ-LOCATOR-SELECTOPTION-001-C01
 
-- 조건: value를우선하고없을때만유일label을찾는다.
-- 준비: value A label B·다른option value B
+- 조건: value를 우선하고 없을 때만 유일 label을 찾는다.
+- 준비: value A label B·다른 option value B
 - 실행: selectOption B
-- 판정: value B를선택하며label B로임의대체하지않는다.
+- 판정: value B를 선택하며 label B로 임의 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SELECTOPTION-001-C02
 
-- 조건: multiple선택과[]해제는실제selectedValues로확인한다.
+- 조건: multiple 선택과[] 해제는 실제 selectedValues로 확인한다.
 - 준비: multiple select A/B/C
-- 실행: 선택A/C후[]
-- 판정: 첫결과[A,C],다음[]이며input/change실제효과확인한다.
+- 실행: 선택 A/C 후[]
+- 판정: 첫 결과[A,C],다음[]이며 input/change 실제 효과 확인한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SELECTOPTION-002
@@ -64,18 +64,18 @@
 
 #### REQ-LOCATOR-SELECTOPTION-002-C01
 
-- 조건: 없는옵션/모호label/disabled는전체사전검증한다.
-- 준비: 기존A·요청[B,없는Z]·중복label
+- 조건: 없는 옵션/모호 label/disabled는 전체 사전 검증한다.
+- 준비: 기존 A·요청[B,없는 Z]·중복 label
 - 실행: selectOption
-- 판정: 실패전기존A유지·이벤트0이며부분선택없다.
+- 판정: 실패 전 기존 A 유지·이벤트 0이며 부분 선택 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SELECTOPTION-002-C02
 
-- 조건: single select 복수요청과비native대상은거절한다.
-- 준비: single SELECT와custom listbox
-- 실행: 배열2개선택
-- 판정: 타입/개수오류·기존선택유지다.
+- 조건: single select 복수 요청과 비 native 대상은 거절한다.
+- 준비: single SELECT와 custom listbox
+- 실행: 배열 2개 선택
+- 판정: 타입/개수 오류·기존 선택 유지다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

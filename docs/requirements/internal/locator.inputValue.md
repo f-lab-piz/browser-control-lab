@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-INPUTVALUE-001-C01
 
-- 조건: 현재값은초기attribute와다르고contenteditable은정의한본문값을쓴다.
-- 준비: value속성A·현재B와editor
+- 조건: 현재 값은 초기 attribute와 다르고 contenteditable은 정의한 본문 값을 쓴다.
+- 준비: value 속성 A·현재 B와 editor
 - 실행: inputValue
-- 판정: 현재B/editor현재문자열이며값불변이다.
+- 판정: 현재 B/editor 현재 문자열이며 값 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-INPUTVALUE-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-INPUTVALUE-002-C01
 
-- 조건: 비입력요소와0/N개는빈입력과혼동하지않는다.
-- 준비: div/빈input/중복input
+- 조건: 비입력 요소와 0/N 개는 빈 입력과 혼동하지 않는다.
+- 준비: div/빈 input/중복 input
 - 실행: 조회
-- 판정: div는타입오류,빈input은빈문자열,N은strict다.
+- 판정: div는 타입 오류,빈 input은 빈 문자열,N은 strict다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

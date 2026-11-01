@@ -33,10 +33,10 @@
 
 #### REQ-MOUSE-UP-001-C01
 
-- 조건: 지정버튼만해제하며반복up은새click을만들지않는다.
-- 준비: left down후up
-- 실행: up두번
-- 판정: 해제결과유지·추가click없고다른modifier보존이다.
+- 조건: 지정 버튼만 해제하며 반복 up은 새 click을 만들지 않는다.
+- 준비: left down 후 up
+- 실행: up 두 번
+- 판정: 해제 결과 유지·추가 click 없고 다른 modifier 보존이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-MOUSE-UP-002
@@ -56,10 +56,10 @@
 
 #### REQ-MOUSE-UP-002-C01
 
-- 조건: release실패는실제눌림불확실을알린다.
-- 준비: up전송fault
+- 조건: release 실패는 실제 눌림 불확실을 알린다.
+- 준비: up 전송 fault
 - 실행: up
-- 판정: 오류/불확실과cleanup계획이남으며내부clear만으로성공표시없다.
+- 판정: 오류/불확실과 cleanup 계획이 남으며 내부 clear만으로 성공 표시 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

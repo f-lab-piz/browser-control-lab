@@ -33,10 +33,10 @@
 
 #### REQ-DIALOG-ACCEPT-001-C01
 
-- 조건: 현재발급dialog를정확히한번accept한다.
-- 준비: confirm/prompt/alert와dialog waiter
-- 실행: accept 및페이지결과판독
-- 판정: 요청dialog identity와결과일치,accept prompt는입력문자열,dismiss는취소결과다.
+- 조건: 현재 발급 dialog를 정확히 한 번 accept 한다.
+- 준비: confirm/prompt/alert와 dialog waiter
+- 실행: accept 및 페이지 결과 판독
+- 판정: 요청 dialog identity와 수락 결과가 맞는다. prompt는 지정한 문자열, confirm은 true이며 alert는 닫힘을 확인한다. 한 번만 처리한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-DIALOG-ACCEPT-002
@@ -56,10 +56,10 @@
 
 #### REQ-DIALOG-ACCEPT-002-C01
 
-- 조건: 오래된핸들로새dialog를처리하지않는다.
-- 준비: 첫dialog처리후둘째dialog
+- 조건: 오래된 핸들로 새 dialog를 처리하지 않는다.
+- 준비: 첫 dialog 처리 후 둘째 dialog
 - 실행: old.accept
-- 판정: stale/consumed오류·둘째dialog열림유지이며타페이지침범없다.
+- 판정: stale/consumed 오류·둘째 dialog 열림 유지이며 타페이지 침범 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

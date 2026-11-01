@@ -33,10 +33,10 @@
 
 #### REQ-MOUSE-WHEEL-001-C01
 
-- 조건: 최근pointer의hit scrollport로축별delta를전달한다.
-- 준비: 메일iframe내부와가로scroller
-- 실행: move후wheel x/y
-- 판정: 해당scrollport만움직이고outer/형제scroll은불변이다.
+- 조건: 최근 pointer의 hit scrollport로 축별 delta를 전달한다.
+- 준비: 메일 iframe 내부와 가로 scroller를 준비한다. 이 정상 사례는 내부가 요청 delta 전체를 소비할 수 있는 위치다.
+- 실행: move 후 wheel x/y
+- 판정: 요청 축의 내부 scroller가 움직이고 형제와 outer는 이 준비 조건에서 불변이다. 경계의 scroll chaining은 별도 사례다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-MOUSE-WHEEL-002
@@ -56,18 +56,18 @@
 
 #### REQ-MOUSE-WHEEL-002-C01
 
-- 조건: 끝/preventDefault는이동0일수있다.
-- 준비: 끝에도달한scroller·wheel취소영역
+- 조건: 끝/preventDefault는 이동 0 일 수 있다.
+- 준비: 끝에 도달한 scroller·wheel 취소 영역
 - 실행: wheel
-- 판정: 전달과이동/로딩성공을구분하고무한추가로딩을주장하지않는다.
+- 판정: 전달과 실제 이동/로딩 성공을 구분한다. 끝에서는 이동0일 수 있고, ancestor scroll chaining은 페이지/브라우저 기본 정책에 따른 허용 효과로 기록한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-MOUSE-WHEEL-002-C02
 
-- 조건: 비유한delta는전송전에거절한다.
+- 조건: 비유한 delta는 전송 전에 거절한다.
 - 준비: NaN/Infinity
 - 실행: wheel
-- 판정: 입력오류·event0·pointer/down불변이다.
+- 판정: 입력 오류·event0·pointer/down 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

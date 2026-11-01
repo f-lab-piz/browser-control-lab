@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-ISCHECKED-001-C01
 
-- 조건: native/지원ARIA의체크상태를읽는다.
+- 조건: native/지원 ARIA의 체크 상태를 읽는다.
 - 준비: checkbox/radio/switch true/false/mixed
 - 실행: 조회
-- 판정: getAttribute원문과boolean계약이일치하고mixed를true로오인하지않는다.
+- 판정: getAttribute 원문과 boolean 계약이 일치하고 mixed를 true로 오인하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-ISCHECKED-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-ISCHECKED-002-C01
 
-- 조건: 비체크형과0/N은false로위장하지않는다.
+- 조건: 비체크형과 0/N은 false로 위장하지 않는다.
 - 준비: button/div/없음/중복
 - 실행: 조회
-- 판정: 타입/strict오류이며체크해제false와구분한다.
+- 판정: 타입/strict 오류이며 체크 해제 false와 구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

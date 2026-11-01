@@ -14,7 +14,7 @@
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-locator-drop-01` **DOC**: chooser 업로드는 공개지만 drop/files+MIME 대체 근거 아님 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-drop-01` **DOC**: chooser 업로드는 공개지만 drop/files+MIME 대체 근거 아님 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:106-109. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -64,7 +64,7 @@
 const pending=tab.playwright.waitForEvent("download",{timeoutMs:1000})
 ```
 
-- `CL-CODEX-page-waitForEvent-01` **DOC**: download/filechooser overload, 호출을 조작전에 등록하라고 문서안내 근거 `CUA-DOC-API` / CUA API Reference: tab.playwright.waitForEvent and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-waitForEvent-01` **DOC**: download/filechooser overload, 호출을 조작전에 등록하라고 문서안내 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:52-53; raw/public-contract-excerpts.md:158-158. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -116,7 +116,7 @@ const p1 = page.waitForEvent("download"); await page.locator("button.export").cl
 const p=tab.playwright.waitForEvent("filechooser",{timeoutMs:1000}); await fileLocator.click(); const c=await p; await c.setFiles([absoluteTestPath]);
 ```
 
-- `CL-CODEX-locator-setFiles-01` **DOC**: 공개 업로드는 chooser흐름; locator.setInputFiles 찾지말라고 안내 근거 `CUA-DOC-API` / CUA API Reference: waitForEvent(filechooser) + click + chooser.setFiles and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-setFiles-01` **DOC**: file-uploads 문서는 waitForEvent(filechooser)→click→chooser.setFiles 순서를 안내하며 locator.setInputFiles를 찾지 말라고 한다. 근거 `CUA-DOC-UPLOAD` / raw/file-uploads.md:5-10; raw/file-uploads.md:15-15. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -166,7 +166,7 @@ const p=tab.playwright.waitForEvent("filechooser",{timeoutMs:1000}); await fileL
 await chooser.setFiles([absoluteTestPath],{timeoutMs:1000})
 ```
 
-- `CL-CODEX-chooser-setFiles-01` **DOC**: browser-visible absolute path string|string[], chooser.isMultiple 근거 `CUA-DOC-API` / CUA API Reference: chooser.setFiles and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-chooser-setFiles-01` **DOC**: browser-visible absolute path string|string[], chooser.isMultiple 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:106-109; raw/public-contract-excerpts.md:137-137; raw/public-contract-excerpts.md:159-159. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -216,7 +216,7 @@ await chooser.setFiles([absoluteTestPath],{timeoutMs:1000})
 const d=await pendingDownload; nodeRepl.write(await d.path({timeoutMs:1000}))
 ```
 
-- `CL-CODEX-download-save-01` **DOC**: download event 완료 후 local path string|null 근거 `CUA-DOC-API` / CUA API Reference: waitForEvent(download) + download.path and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-download-save-01` **DOC**: download event 완료 후 local path string|null 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -272,7 +272,7 @@ const p1 = await d1.path(); console.log((await fs.stat(p1)).size); await d1.save
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-download-cancel-01` **DOC**: Download 공개서명은 path만 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-download-cancel-01` **DOC**: Download 공개서명은 path만 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:103-105. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -322,7 +322,7 @@ const p1 = await d1.path(); console.log((await fs.stat(p1)).size); await d1.save
 const d=await tab.getJsDialog(); if(d?.type==="prompt") await d.accept("값"); else if(d?.type==="confirm") await d.accept();
 ```
 
-- `CL-CODEX-dialog-accept-01` **DOC**: prompt accept(text), confirm accept(); alert/beforeunload accept 없음 근거 `CUA-DOC-API` / CUA API Reference: tab.getJsDialog + typed dialog.accept and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-dialog-accept-01` **DOC**: prompt accept(text), confirm accept(); alert/beforeunload accept 없음 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -372,7 +372,7 @@ const d=await tab.getJsDialog(); if(d?.type==="prompt") await d.accept("값"); e
 const d=await tab.getJsDialog(); if(d) await d.dismiss();
 ```
 
-- `CL-CODEX-dialog-dismiss-01` **DOC**: alert/beforeunload/confirm/prompt 모두 dismiss 공개 근거 `CUA-DOC-API` / CUA API Reference: tab.getJsDialog + dialog.dismiss and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-dialog-dismiss-01` **DOC**: alert/beforeunload/confirm/prompt 모두 dismiss 공개 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:32-32; raw/public-contract-excerpts.md:113-116. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -420,7 +420,9 @@ const d=await tab.getJsDialog(); if(d) await d.dismiss();
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- 확인된 개별 동작 근거 없음. API 미지원이라는 의미가 아니다.
+- `CL-CODEX-files-events-01` **DOC**: download 완료 이벤트와 Download.path, browser-visible 절대경로 chooser.setFiles 선언. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:158-158; raw/public-contract-excerpts.md:103-105; raw/public-contract-excerpts.md:159-159. 범위: 공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님.
+
+- `CL-CODEX-files-events-02` **DOC**: filechooser waiter를 click전에 시작하도록 안내. 근거 `CUA-DOC-UPLOAD` / raw/file-uploads.md:11-11. 범위: 공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님.
 
 추가 확인할 조건:
 

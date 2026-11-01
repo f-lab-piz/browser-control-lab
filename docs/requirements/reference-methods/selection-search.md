@@ -16,7 +16,7 @@
 tab.playwright.locator("button[data-action]")
 ```
 
-- `CL-CODEX-scope-locator-01` **DOC**: 페이지/frame의 CSS locator builder 근거 `CUA-DOC-API` / CUA API Reference: scope.locator and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-scope-locator-01` **DOC**: 페이지/frame의 CSS locator builder 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:51-51; raw/public-contract-excerpts.md:58-66. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -70,9 +70,9 @@ page.locator("e31"); page.locator("button.export")
 tab.playwright.getByRole("button",{name:/확인/,exact:false})
 ```
 
-- `CL-CODEX-scope-getByRole-01` **DOC**: role/name/exact, TextMatcher RegExp; 과거 regex/slot 성공 근거 `CUA-DOC-API` / CUA API Reference: scope.getByRole and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-scope-getByRole-01` **DOC**: getByRole(role,{exact?,name?})와 TextMatcher=string|RegExp를 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:123-123. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-scope-getByRole-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-scope-getByRole-02` **HISTORICAL**: {"regex": 1, "slotClick": true} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/slotClick. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -126,7 +126,7 @@ page.getByRole("button", {name:/레이블 저장/}).count()
 tab.playwright.getByText("foobar",{exact:true})
 ```
 
-- `CL-CODEX-scope-getByText-01` **DOC**: TextMatcher와 exact 공개 근거 `CUA-DOC-API` / CUA API Reference: scope.getByText and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-scope-getByText-01` **DOC**: TextMatcher와 exact 공개 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:50-50; raw/public-contract-excerpts.md:123-123. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -178,7 +178,7 @@ page.getByText("PASS · drag", {exact:true}).waitFor({timeout:2000})
 tab.playwright.getByLabel("이메일",{exact:true})
 ```
 
-- `CL-CODEX-scope-getByLabel-01` **DOC**: TextMatcher+exact로 label text 검색 근거 `CUA-DOC-API` / CUA API Reference: scope.getByLabel and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-scope-getByLabel-01` **DOC**: TextMatcher+exact로 label text 검색 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:46-46; raw/public-contract-excerpts.md:123-123. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -230,9 +230,9 @@ page.getByLabel("고정 문서번호", {exact:true}).fill("BROKEN", {timeout:500
 tab.playwright.getByRole("row",{}).filter({hasText:/예약/,hasNotText:"취소",visible:true})
 ```
 
-- `CL-CODEX-locator-filter-01` **DOC**: has/hasNot/text/negativeText/visible 옵션; 과거 visible 결과2 근거 `CUA-DOC-API` / CUA API Reference: locator.filter and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-filter-01` **DOC**: filter(options)와 has/hasNot/hasText/hasNotText/visible 공개 옵션을 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:79-79; raw/public-contract-excerpts.md:132-132. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-locator-filter-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-locator-filter-02` **HISTORICAL**: {"visibleFilter": 2} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/visibleFilter. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -284,9 +284,9 @@ page.locator("#duplicates button").filter({visible:true}).count()
 tab.playwright.locator("button").nth(-1)
 ```
 
-- `CL-CODEX-locator-nth-01` **DOC**: number index; 과거 nth(-1) count1 근거 `CUA-DOC-API` / CUA API Reference: locator.nth and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-nth-01` **DOC**: nth(index:number):PlaywrightLocator를 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:92-92. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-locator-nth-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-locator-nth-02` **HISTORICAL**: {"nthMinusOne": 1} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/nthMinusOne. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -338,9 +338,9 @@ page.locator("#duplicates [data-unit]").nth(-1).count()
 await tab.playwright.locator("button").count()
 ```
 
-- `CL-CODEX-locator-count-01` **DOC**: Promise<number>; about:blank button count0 실측 근거 `CUA-DOC-API` / CUA API Reference: locator.count and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-count-01` **DOC**: count():Promise<number>를 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:73-73. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-locator-count-02` **LIVE**: about:blank metadata/count/read-only evaluate/output/close only as relevant 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json. 범위: no fixture input or boundary support claim.
+- `CL-CODEX-locator-count-02` **LIVE**: about:blank button locator count=0. 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json#/output/count. 범위: about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님.
 
 추가 확인할 조건:
 
@@ -394,7 +394,7 @@ console.log(await page.getByRole("button", {name:/레이블 저장/}).count())
 await locator.textContent({timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-textContent-01` **DOC**: raw textContent first matched, string|null 근거 `CUA-DOC-API` / CUA API Reference: locator.textContent and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-textContent-01` **DOC**: raw textContent first matched, string|null 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:98-98; raw/public-contract-excerpts.md:154-154. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -444,7 +444,7 @@ await locator.textContent({timeoutMs:1000})
 await locator.getAttribute("href",{timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-getAttribute-01` **DOC**: first matched attribute value, string|null 근거 `CUA-DOC-API` / CUA API Reference: locator.getAttribute and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-getAttribute-01` **DOC**: first matched attribute value, string|null 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:81-81; raw/public-contract-excerpts.md:155-155. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -494,7 +494,9 @@ await page.locator("body").getAttribute("data-run")
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- 확인된 개별 동작 근거 없음. API 미지원이라는 의미가 아니다.
+- `CL-CODEX-selection-01` **DOC**: TextMatcher=string|RegExp, exact 옵션과 filter/nth/count 서명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:123-123; raw/public-contract-excerpts.md:48-48; raw/public-contract-excerpts.md:132-132; raw/public-contract-excerpts.md:92-92; raw/public-contract-excerpts.md:73-73. 범위: 공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님.
+
+- `CL-CODEX-selection-02` **HISTORICAL**: {"regex": 1, "visibleFilter": 2, "nthMinusOne": 1, "slotClick": true} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/regex; raw/historical-diagnostics-before-after.json#/codex/visibleFilter; raw/historical-diagnostics-before-after.json#/codex/nthMinusOne; raw/historical-diagnostics-before-after.json#/codex/slotClick. 범위: 과거 audit의 해당 필드만; 현재/모든 옵션/일반 환경으로 확대하지 않음.
 
 추가 확인할 조건:
 
@@ -537,3 +539,7 @@ await page.locator("body").getAttribute("data-run")
 구현 흐름(설계, 미실행): 입력/범위 확인 → 공개 방법으로 대상 관찰/선택 → 필요한 입력·대기 → 실제 상태/바이트/이벤트 판독 → 부분효과/정리 확인. 단일 정상 호출을 전체 요구 충족으로 취급하지 않는다.
 
 연결 PLAN: PLAN-C-SELECTION-001, PLAN-C-SELECTION-002, PLAN-C-SELECTION-003, PLAN-C-SELECTION-004, PLAN-C-SELECTION-005, PLAN-C-SELECTION-006. 세부 조건은 [condition index](../condition-index.json)에 있으며 정상·거절·부분효과 fixture가 없으면 다음 개발에서 먼저 작성한다.
+
+## 별도 보충 표면 관측
+
+IAB fixture 연결은 차단되었으며 CUA/Chrome-extension에서 기존 fixture의9개부분사례를 관찰했다. [보충 원자료](evidence/codex/raw/boundary1.json)와 [IAB 차단](evidence/codex/raw/boundary1-iab-blocked.json)을 구분한다. 인접/실제공백·긴본문 filter, label 조회, 0/N 조회 오류·readonly 거절 관측은 해당 어댑터/fixture 범위뿐이다. 부분확인으로서 주 IAB의 전체조건 근거 확인률은 올리지 않는다. 문서상 first-matched/null과 이Chrome실측의일부strict/timeout차이는 미해결표면차이로 보존한다.

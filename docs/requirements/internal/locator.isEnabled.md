@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-ISENABLED-001-C01
 
-- 조건: native disabled와aria-disabled 정책을일치시킨다.
+- 조건: native disabled와 aria-disabled 정책을 일치시킨다.
 - 준비: disabled/fieldset/aria-disabled/readonly
 - 실행: isEnabled
-- 판정: disabled류false,readonly만있는대상은enabled이며fieldet legend예외를구분한다.
+- 판정: disabled 계열은 false, readonly만 있는 대상은 enabled다. disabled fieldset의 첫 legend 안 제어 예외를 구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-ISENABLED-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-ISENABLED-002-C01
 
-- 조건: 0/N 및stale는false 상태와구분한다.
+- 조건: 0/N 및 stale는 false 상태와 구분한다.
 - 준비: 없음/중복/stale
 - 실행: 조회
-- 판정: 각오류이며disabled false로대체하지않는다.
+- 판정: 각 오류이며 disabled false로 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-FRAME-001-C01
 
-- 조건: 지정frame의Scope는다른document의선택결과를포함하지않는다.
-- 준비: main/형제에동일CSS
-- 실행: frame(id).locator조회
-- 판정: 해당document만이며snapshot하위범위와선택document범위를구분한다.
+- 조건: 지정 frame의 Scope는 다른 document의 선택 결과를 포함하지 않는다.
+- 준비: main/형제에 동일 CSS
+- 실행: frame(id).locator 조회
+- 판정: 해당 document 만이며 snapshot 하위 범위와 선택 document 범위를 구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-FRAME-002
@@ -56,10 +56,10 @@
 
 #### REQ-PAGE-FRAME-002-C01
 
-- 조건: 닫힌/다른Page frameId는사용시명시거절한다.
-- 준비: oldframeid·다른Page의id
+- 조건: 닫힌/다른 Page frameId는 사용 시 명시 거절한다.
+- 준비: oldframeid·다른 Page의 id
 - 실행: snapshot/click
-- 판정: stale/소유경계오류·다른document입력0이다.
+- 판정: stale/소유 경계 오류·다른 document 입력 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -1,1 +1,35 @@
-{"sourceId":"CUA-LIVE-BLANK","date":"2026-11-01","surface":"Codex CUA / IAB","buildVersion":"unknown","createdTab":"about:blank","tabClosedAfterProbe":true,"output":{"url":"about:blank","count":0,"readOnlyValue":{"bodyText":"","title":""}},"measuredConditions":["new background about:blank tab","button locator count zero","read-only document title/bodyText JSON read","close temporary tab returned without error"],"notMeasured":["184 requirements overall","fixture input","error semantics","file transfer","all options"]}
+{
+  "sourceId": "CUA-LIVE-BLANK",
+  "date": "2026-11-01",
+  "surface": "Codex CUA / IAB",
+  "buildVersion": "unknown",
+  "createdTab": "about:blank",
+  "tabClosedAfterProbe": true,
+  "output": {
+    "url": "about:blank",
+    "count": 0,
+    "readOnlyValue": {
+      "bodyText": "",
+      "title": ""
+    }
+  },
+  "measuredConditions": [
+    "new background about:blank tab",
+    "button locator count zero",
+    "read-only document title/bodyText JSON read",
+    "close temporary tab returned without error"
+  ],
+  "notMeasured": [
+    "184 requirements overall",
+    "fixture input",
+    "error semantics",
+    "file transfer",
+    "all options"
+  ],
+  "actualCalls": [
+    "var researchTab = await cua.createBrowserTab(\"iab\", \"about:blank\", { visible: false });",
+    "var blankProbe = { url: await researchTab.url(), count: await researchTab.playwright.locator(\"button\").count(), readOnlyValue: await researchTab.playwright.evaluate(() => ({title:document.title, bodyText:document.body.textContent})) }; nodeRepl.write(blankProbe);",
+    "await researchTab.close();"
+  ],
+  "callLogProvenance": "동일 initial run tool transcript에서 보존. 새 실행/새 측정 아님."
+}

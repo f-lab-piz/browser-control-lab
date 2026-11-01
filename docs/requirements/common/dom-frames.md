@@ -19,10 +19,10 @@
 
 #### REQ-C-DOMFRAMES-001-C01
 
-- 조건: 관찰은연결DOM범위만읽고scroll/추가로딩을발생시키지않는다.
-- 준비: offscreen과미로드virtual행
-- 실행: snapshot/selector/상태조회
-- 판정: offscreen발견·미로드미관찰·scroll/request불변이며effectful evaluate는별도다.
+- 조건: 관찰은 연결 DOM 범위만 읽고 scroll/추가 로딩을 발생시키지 않는다.
+- 준비: offscreen과 미로드 virtual 행
+- 실행: snapshot/selector/상태 조회
+- 판정: offscreen 발견·미로드 미관찰·scroll/request 불변이며 effectful evaluate는 별도다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-DOMFRAMES-002
@@ -42,10 +42,10 @@
 
 #### REQ-C-DOMFRAMES-002-C01
 
-- 조건: Scope선택과snapshot자식프레임관찰범위를구분한다.
-- 준비: main/중첩/형제에동일CSS
-- 실행: frame별locator와snapshot
-- 판정: locator는지정document·기본snapshot은명시한하위범위이며ref는발급frame이다.
+- 조건: Scope 선택과 snapshot 자식 프레임 관찰 범위를 구분한다.
+- 준비: main/중첩/형제에 동일 CSS
+- 실행: frame별 locator와 snapshot
+- 판정: locator는 지정 document·기본 snapshot은 명시한 하위 범위이며 ref는 발급 frame이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-DOMFRAMES-003
@@ -65,10 +65,10 @@
 
 #### REQ-C-DOMFRAMES-003-C01
 
-- 조건: open shadow/slot와닫힌details의composed경계를따른다.
-- 준비: summary안slotbutton과닫힌본문shadow
+- 조건: open shadow/slot와 닫힌 details의 composed 경계를 따른다.
+- 준비: summary 안 slotbutton과 닫힌 본문 shadow
 - 실행: 관찰/검색/click
-- 판정: summary제어가능·본문숨김·closedShadow의의미지원주장없다.
+- 판정: summary 제어 가능·본문 숨김·closedShadow의 의미 지원 주장 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-DOMFRAMES-004
@@ -88,10 +88,10 @@
 
 #### REQ-C-DOMFRAMES-004-C01
 
-- 조건: 같은frameId라도document교체는ref를무효화한다.
-- 준비: iframe src교체전ref
-- 실행: oldref읽기/click
-- 판정: stale document·두문서입력0이다.
+- 조건: 같은 frameId라도 document 교체는 ref를 무효화한다.
+- 준비: iframe src 교체 전 ref
+- 실행: oldref 읽기/click
+- 판정: stale document·두 문서 입력 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-DOMFRAMES-005
@@ -111,10 +111,10 @@
 
 #### REQ-C-DOMFRAMES-005-C01
 
-- 조건: 양의scale/translate만지원하고입력은모든조상hit를확인한다.
-- 준비: 중첩OOPIF/부모overlay/rotate/skew/음수/3D
+- 조건: 양의 scale/translate만 지원하고 입력은 모든 조상 hit를 확인한다.
+- 준비: 중첩 OOPIF/부모 overlay/rotate/skew/음수/3D
 - 실행: box/point/click
-- 판정: 지원좌표일치·가림/미지원은사전오류·다른대상입력0이다.
+- 판정: 지원 좌표 일치·가림/미지원은 사전 오류·다른 대상 입력 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-DOMFRAMES-006
@@ -133,8 +133,8 @@
 
 #### REQ-C-DOMFRAMES-006-C01
 
-- 조건: 일부frame접근실패/깊이제한은부분관찰이다.
-- 준비: 접근불가frame·maxDepth0
+- 조건: 접근 불가 frame과 DOM 노드 깊이 제한은 서로 다른 부분 관찰 이유로 표시한다.
+- 준비: 접근 불가 iframe과 별도로 문서 내부 snapshot maxDepth:0 사례를 준비한다.
 - 실행: snapshot
-- 판정: 다른영역관찰유지·이유/재조회단서·완전성거짓표시없다.
+- 판정: 정상 frame 관찰은 유지한다. frame 접근 오류와 노드 depthLimited를 구분하며 maxDepth를 frame 재귀 깊이로 해석하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

@@ -33,18 +33,18 @@
 
 #### REQ-LOCATOR-DROP-001-C01
 
-- 조건: 파일과MIME문자열은같은DataTransfer로전달한다.
-- 준비: 파일1개와text/plain,application/x-test
+- 조건: 파일과 MIME 문자열은 같은 DataTransfer로 전달한다.
+- 준비: 파일 1 개와 text/plain,application/x-test
 - 실행: drop files/data
-- 판정: 대상파일hash·각MIME값일치·dragenter/dragover/drop순서다.
+- 판정: 대상 파일 hash·각 MIME 값 일치·dragenter/dragover/drop 순서다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-DROP-001-C02
 
-- 조건: local파일도임시요소를통해공통파일엔진을쓴다.
-- 준비: local절대경로·서버fileId·inlinebytes
-- 실행: 소스별drop
-- 판정: 바이트/이름/MIME일치·임시fileinput잔류0이다.
+- 조건: local 파일도 임시 요소를 통해 공통 파일 엔진을 쓴다.
+- 준비: local 절대경로·서버 fileId·inlinebytes
+- 실행: 소스별 drop
+- 판정: 바이트/이름/MIME 일치·임시 fileinput 잔류 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-DROP-002
@@ -64,18 +64,18 @@
 
 #### REQ-LOCATOR-DROP-002-C01
 
-- 조건: 빈payload/잘못된MIME값/invalid파일은drop전에거절한다.
-- 준비: files없고data빈값·문자열아닌data·잘못된source
+- 조건: 빈 payload/잘못된 MIME 값/invalid 파일은 drop 전에 거절한다.
+- 준비: files 없고 data 빈값·문자열 아닌 data·잘못된 source
 - 실행: drop
-- 판정: 입력오류·dropcounter0·기존대상불변이다.
+- 판정: 입력 오류·dropcounter0·기존 대상 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-DROP-002-C02
 
-- 조건: DOM합성drop은trusted가아님을명시한다.
-- 준비: isTrusted필수drop영역
+- 조건: DOM 합성 drop은 trusted가 아님을 명시한다.
+- 준비: isTrusted 필수 drop 영역
 - 실행: drop
-- 판정: 전달방식은untrusted로기록하며예외없음을업무완료로주장하지않는다.
+- 판정: 전달 방식은 untrusted로 기록하며 예외 없음을 업무 완료로 주장하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

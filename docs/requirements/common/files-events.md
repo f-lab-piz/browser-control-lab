@@ -19,10 +19,10 @@
 
 #### REQ-C-FILESEVENTS-001-C01
 
-- 조건: 같은이름의local/asset은선택한소스의바이트를쓴다.
-- 준비: 이름같고hash다른local/asset
-- 실행: 소스별setFiles/drop
-- 판정: 원소스hash·이름·MIME이며서버경로를local로오인하지않는다.
+- 조건: 같은 이름의 local/asset은 선택한 소스의 바이트를 쓴다.
+- 준비: 이름 같고 hash 다른 local/asset
+- 실행: 소스별 setFiles/drop
+- 판정: 원소스 hash·이름·MIME이며 서버 경로를 local로 오인하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-FILESEVENTS-002
@@ -42,10 +42,10 @@
 
 #### REQ-C-FILESEVENTS-002-C01
 
-- 조건: 파일전체사전검증과불가피한부분효과를구분한다.
-- 준비: 여러파일중마지막invalid·전송중fault
+- 조건: 파일 전체 사전 검증과 불가피한 부분 효과를 구분한다.
+- 준비: 여러 파일 중 마지막 invalid·전송 중 fault
 - 실행: 전달
-- 판정: 사전선택보존·중도적용목록/불확실·임시DOM0이다.
+- 판정: 사전 선택 보존·중도 적용 목록/불확실·임시 DOM0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-FILESEVENTS-003
@@ -65,10 +65,10 @@
 
 #### REQ-C-FILESEVENTS-003-C01
 
-- 조건: 다운로드는브라우저의인증POST/blob결과를쓴다.
+- 조건: 다운로드는 브라우저의 인증 POST/blob 결과를 쓴다.
 - 준비: 쿠키/POST/redirect/blob
 - 실행: event→save
-- 판정: URL재요청없이원응답hash·목적지hash일치다.
+- 판정: URL 재요청 없이 원응답 hash·목적지 hash 일치다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-FILESEVENTS-004
@@ -88,10 +88,10 @@
 
 #### REQ-C-FILESEVENTS-004-C01
 
-- 조건: 발급event identity와수명은페이지/세션에묶인다.
-- 준비: dialog2개/oldchooser·close와다른wait
-- 실행: old핸들조작/close
-- 판정: 새event무변경·close만metadata·나머지PAGE_CLOSED·종결1회다.
+- 조건: 발급 event identity와 수명은 페이지/세션에 묶인다.
+- 준비: dialog2개/oldchooser·close와 다른 wait
+- 실행: old 핸들 조작/close
+- 판정: 새 event 무변경·close만 metadata·나머지 PAGE_CLOSED·종결 1 회다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-FILESEVENTS-005
@@ -111,10 +111,10 @@
 
 #### REQ-C-FILESEVENTS-005-C01
 
-- 조건: wait는발생전등록하고가변event를이중소비하지않는다.
-- 준비: 등록지연·동시waiter·timeout직후event
+- 조건: wait는 발생 전 등록하고 가변 event를 이중 소비하지 않는다.
+- 준비: 등록 지연·동시 waiter·timeout 직후 event
 - 실행: wait→click
-- 판정: arming후action·중복핸들없음·늦은waiter0이다.
+- 판정: arming 후 action·중복 핸들 없음·늦은 waiter0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-FILESEVENTS-006
@@ -134,10 +134,10 @@
 
 #### REQ-C-FILESEVENTS-006-C01
 
-- 조건: source는하나,bytes는0..255정수배열,base64는표준형식이다.
-- 준비: 빈파일·Uint8Array·[256,-1]·URL-safe·복수source
-- 실행: 세파일API
-- 판정: 정상0byte포함·불량전달전오류·강제변환없다.
+- 조건: source는 하나,bytes는 0..255 정수 배열,base64는 표준 형식이다.
+- 준비: 빈 파일·Uint8Array·[256,-1]·URL-safe·복수 source
+- 실행: 세 파일 API
+- 판정: 정상 0byte 포함·불량 전달 전 오류·강제 변환 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-FILESEVENTS-007
@@ -156,8 +156,8 @@
 
 #### REQ-C-FILESEVENTS-007-C01
 
-- 조건: 이름/MIME/개수는공통정책을쓴다.
-- 준비: NUL/경로구분자/Unicode·single/multiple·중복명
+- 조건: 이름/MIME/개수는 공통 정책을 쓴다.
+- 준비: NUL/경로 구분자/Unicode·single/multiple·중복명
 - 실행: 전달
-- 판정: basename·기본명/MIME·단일개수·총32MiB·순서/중복명바이트분리가맞다.
+- 판정: basename·기본명/MIME·단일 개수·총 32MiB·순서/중복명 바이트 분리가 맞다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

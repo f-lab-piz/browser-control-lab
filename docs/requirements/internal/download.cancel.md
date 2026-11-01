@@ -33,10 +33,10 @@
 
 #### REQ-DOWNLOAD-CANCEL-001-C01
 
-- 조건: 취소성공은실제interrupted(USER_CANCELED)관측뒤반환한다.
-- 준비: 느린전송
+- 조건: 취소 성공은 실제 interrupted(USER_CANCELED) 관측 뒤 반환한다.
+- 준비: 느린 전송
 - 실행: cancel
-- 판정: 10초내확인시cancelled,확인못하면timeout/불확실이며파일삭제없다.
+- 판정: 10초 내 확인 시 cancelled,확인 못 하면 timeout/불확실이며 파일 삭제 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-DOWNLOAD-CANCEL-002
@@ -56,10 +56,10 @@
 
 #### REQ-DOWNLOAD-CANCEL-002-C01
 
-- 조건: 완료/기취소/다른interrupted/타세션을구분한다.
-- 준비: 각최종상태download와경합
-- 실행: cancel반복
-- 판정: already-complete/already-cancelled/interrupted원인/권한오류가맞고다른파일무변경이다.
+- 조건: 완료/기취소/다른 interrupted/타세션을 구분한다.
+- 준비: 각 최종 상태 download와 경합
+- 실행: cancel 반복
+- 판정: already-complete/already-cancelled/interrupted 원인/권한 오류가 맞고 다른 파일 무변경이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

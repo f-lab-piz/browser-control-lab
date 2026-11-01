@@ -34,9 +34,9 @@
 #### REQ-PAGE-CLOSE-001-C01
 
 - 조건: 자기 Page의 close waiter는 종료 metadata로 완료되고 다른 wait는 종료 오류다.
-- 준비: close/download waiter가있는Page
+- 준비: close/download waiter가 있는 Page
 - 실행: close
-- 판정: close는id/시각,download는PAGE_CLOSED,owner해제와탭삭제1회다.
+- 판정: close는 id/시각,download는 PAGE_CLOSED,owner 해제와 탭 삭제 1 회다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-CLOSE-002
@@ -57,9 +57,9 @@
 #### REQ-PAGE-CLOSE-002-C01
 
 - 조건: 반복 close와 이미 닫힌 핸들은 다른 탭을 닫지 않는다.
-- 준비: B닫기후A만존재
-- 실행: B.close재호출 및snapshot
-- 판정: already-closed구분, A유지, B의제어는실패다.
+- 준비: B 닫기 후 A만 존재
+- 실행: B.close 재호출 및 snapshot
+- 판정: already-closed 구분, A 유지, B의 제어는 실패다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

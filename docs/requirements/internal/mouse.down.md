@@ -33,10 +33,10 @@
 
 #### REQ-MOUSE-DOWN-001-C01
 
-- 조건: 명시down은최근pointer위치에지속상태를만든다.
-- 준비: move후버튼누름
+- 조건: 명시 down은 최근 pointer 위치에 지속 상태를 만든다.
+- 준비: move 후 버튼 누름
 - 실행: down→move→up
-- 판정: 하나의down과buttons유지된move·대응up이다.
+- 판정: 하나의 down과 buttons 유지된 move·대응 up이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-MOUSE-DOWN-002
@@ -56,10 +56,10 @@
 
 #### REQ-MOUSE-DOWN-002-C01
 
-- 조건: 잘못된버튼/중복down은다른눌림을바꾸지않는다.
-- 준비: 이미left down·invalid버튼
+- 조건: 잘못된 버튼/중복 down은 다른 눌림을 바꾸지 않는다.
+- 준비: 이미 left down·invalid 버튼
 - 실행: down
-- 판정: 입력/상태충돌오류·기존left유지·새이벤트0이다.
+- 판정: 입력/상태 충돌 오류·기존 left 유지·새 이벤트 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

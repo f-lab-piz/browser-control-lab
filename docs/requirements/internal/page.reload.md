@@ -34,9 +34,9 @@
 #### REQ-PAGE-RELOAD-001-C01
 
 - 조건: 같은 URL을 새로 로드하고 새 문서 준비 후 반환한다.
-- 준비: 고유document marker가있는페이지
-- 실행: reload후snapshot
-- 판정: URL/탭id같고document marker는갱신됐다.
+- 준비: 고유 document marker가 있는 페이지
+- 실행: reload 후 snapshot
+- 판정: URL/탭 id 같고 document marker는 갱신됐다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-RELOAD-002
@@ -57,17 +57,17 @@
 #### REQ-PAGE-RELOAD-002-C01
 
 - 조건: 기존 ref는 문서 교체 후 재매핑하지 않는다.
-- 준비: reload전ref발급
-- 실행: reload후oldref클릭
-- 판정: STALE_DOCUMENT_REF와새문서입력0이다.
+- 준비: reload 전 ref 발급
+- 실행: reload 후 oldref 클릭
+- 판정: STALE_DOCUMENT_REF와 새 문서 입력 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-RELOAD-002-C02
 
-- 조건: 로드 실패/연속reload의 결과를 최신문서 성공으로 합치지 않는다.
-- 준비: 느린load와reload경합
-- 실행: 두요청/timeout
-- 판정: 각종결상태·현재문서를구별하며false성공없다.
+- 조건: 로드 실패/연속 reload의 결과를 최신 문서 성공으로 합치지 않는다.
+- 준비: 느린 load와 reload 경합
+- 실행: 두 요청/timeout
+- 판정: 각 요청의 종결 상태와 현재 문서를 구별하며, 실패한 요청을 성공했다고 반환하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -33,10 +33,10 @@
 
 #### REQ-CHOOSER-SETFILES-001-C01
 
-- 조건: 발급chooser의document/input에파일을설정한다.
-- 준비: main/중첩/OOPIF의filechooser
-- 실행: 사전wait→버튼→chooser.setFiles
-- 판정: 해당input파일hash/metadata만일치·다른input불변이다.
+- 조건: 발급 chooser의 document/input에 파일을 설정한다.
+- 준비: main/중첩/OOPIF의 filechooser
+- 실행: 사전 wait→버튼→chooser.setFiles
+- 판정: 해당 input 파일 hash/metadata만 일치·다른 input 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-CHOOSER-SETFILES-002
@@ -56,18 +56,18 @@
 
 #### REQ-CHOOSER-SETFILES-002-C01
 
-- 조건: 소비/닫힘/문서교체/타세션chooser는재지정하지않는다.
-- 준비: oldchooser후새chooser·frame교체
+- 조건: 소비/닫힘/문서 교체/타세션 chooser는 재지정하지 않는다.
+- 준비: oldchooser 후 새 chooser·frame 교체
 - 실행: old.setFiles
-- 판정: stale/consumed/owner오류·새input불변이다.
+- 판정: stale/consumed/owner 오류·새 input 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-CHOOSER-SETFILES-002-C02
 
-- 조건: FileInput오류는setFiles와같은정책이다.
-- 준비: 불량source/초과/multiple불일치
+- 조건: FileInput 오류는 setFiles와 같은 정책이다.
+- 준비: 불량 source/초과/multiple 불일치
 - 실행: chooser.setFiles
-- 판정: 같은오류분류·기존선택보존/부분효과표시다.
+- 판정: 같은 오류 분류·기존 선택 보존/부분 효과 표시다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

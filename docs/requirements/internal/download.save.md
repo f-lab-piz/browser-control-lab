@@ -33,18 +33,18 @@
 
 #### REQ-DOWNLOAD-SAVE-001-C01
 
-- 조건: 실제진행중다운로드완료를최대30초기다린다.
-- 준비: 쿠키GET/POST/blob/느린전송
+- 조건: 실제 진행 중 다운로드 완료를 최대 30초 기다린다.
+- 준비: 쿠키 GET/POST/blob/느린 전송
 - 실행: save server/local
-- 판정: 원본브라우저바이트hash와목적지결과가같고URL재요청없다.
+- 판정: 원본 브라우저 바이트 hash와 목적지 결과가 같고 URL 재요청 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-DOWNLOAD-SAVE-001-C02
 
-- 조건: 동일id/목적지의동시·순차저장은같은결과다.
-- 준비: 완료download하나
-- 실행: save server동시2회/반복
-- 판정: fileId하나·원본바이트하나이며자산중복없다.
+- 조건: 동일 id/목적지의 동시·순차 저장은 같은 결과다.
+- 준비: 완료 download 하나
+- 실행: save server 동시 2회/반복
+- 판정: fileId 하나·원본 바이트 하나이며 자산 중복 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-DOWNLOAD-SAVE-002
@@ -64,18 +64,18 @@
 
 #### REQ-DOWNLOAD-SAVE-002-C01
 
-- 조건: 목적지전환/동명다른파일은기존바이트를보존한다.
-- 준비: 이름같고hash다른download2개
-- 실행: server→local및각save
-- 판정: 목적지별같은원본hash·다른download유일path/id·기존파일비덮어쓰기다.
+- 조건: 목적지 전환/동명 다른 파일은 기존 바이트를 보존한다.
+- 준비: 이름 같고 hash 다른 download2개
+- 실행: server→local 및 각 save
+- 판정: 목적지별 같은 원본 hash·다른 download 유일 path/id·기존 파일 비덮어쓰기다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-DOWNLOAD-SAVE-002-C02
 
-- 조건: 취소/디스크/권한/timeout은성공파일결과를주지않는다.
-- 준비: 각실패와짧은jsdeadline
+- 조건: 취소/디스크/권한/timeout은 성공 파일 결과를 주지 않는다.
+- 준비: 각 실패와 짧은 jsdeadline
 - 실행: save
-- 판정: interrupted/저장실패/deadline을구분하고부분파일존재를숨기지않는다.
+- 판정: interrupted/저장 실패/deadline을 구분하고 부분 파일 존재를 숨기지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -16,7 +16,7 @@
 await agent.documentation.get("file-uploads")
 ```
 
-- `CL-CODEX-guide-01` **DOC**: 최초 호출 시 안내 자동 출력, 이름 기반 문서 읽기 근거 `CUA-DOC-ENTRY` / Tool entry documentation / Output; CUA first response. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-guide-01` **DOC**: 최초 호출 시 안내 자동 출력, 이름 기반 문서 읽기 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:100-100; raw/public-contract-excerpts.md:117-117; raw/public-contract-excerpts.md:117-117. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -70,7 +70,7 @@ aside guide; aside guide repl
 {}
 ```
 
-- `CL-CODEX-reset-01` **DOC**: JS bindings 제거, browser tabs/apps/state는 닫거나 지우지 않음 근거 `CUA-DOC-ENTRY` / Tool entry documentation / Output; CUA first response. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-reset-01` **DOC**: JS bindings 제거, browser tabs/apps/state는 닫거나 지우지 않음 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:108-110. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -120,7 +120,7 @@ aside guide; aside guide repl
 {"code":"var a = 1; nodeRepl.write(a)","timeout_ms":30000}
 ```
 
-- `CL-CODEX-js-01` **DOC**: persistent JS REPL과 명시 nodeRepl.write 출력; 기본30초 근거 `CUA-DOC-ENTRY` / Tool entry documentation / Output; CUA first response. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-js-01` **DOC**: persistent JS REPL과 명시 nodeRepl.write 출력; 기본30초 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:96-96; raw/cua-entry-excerpts.md:106-106. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -172,9 +172,9 @@ aside repl "console.log(1)"
 nodeRepl.write({value:1})
 ```
 
-- `CL-CODEX-console-log-01` **DOC**: 명시텍스트출력 API는 nodeRepl.write; 빈탭 probe 출력실측 근거 `CUA-DOC-ENTRY` / First CUA response: Output / API Use. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-console-log-01` **DOC**: 명시 텍스트 출력용 nodeRepl.write(value)를 안내한다. console.log 별칭의 동등성은 미확인이다. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:96-96. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-console-log-02` **LIVE**: about:blank metadata/count/read-only evaluate/output/close only as relevant 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json. 범위: no fixture input or boundary support claim.
+- `CL-CODEX-console-log-02` **LIVE**: nodeRepl.write로 URL/count/readOnlyValue 객체가 출력됨; 실제 console.log 호출은 아님. 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json#/output. 범위: about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님.
 
 추가 확인할 조건:
 
@@ -226,7 +226,7 @@ console.log(await listBrowserTabs())
 nodeRepl.emitImage(await tab.screenshot({fullPage:false}))
 ```
 
-- `CL-CODEX-display-01` **DOC**: data/file URL, PNG/JPEG/WebP bytes, {bytes,mimeType} 허용 근거 `CUA-DOC-ENTRY` / First CUA response: Output / API Use. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-display-01` **DOC**: data/file URL, PNG/JPEG/WebP bytes, {bytes,mimeType} 허용 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:94-94. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -276,7 +276,7 @@ display // global exists; argument signature not documented
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- 확인된 개별 동작 근거 없음. API 미지원이라는 의미가 아니다.
+- `CL-CODEX-runtime-01` **DOC**: persistent CUA REPL, reset binding 제거, 명시 nodeRepl.write 출력 안내. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:98-98; raw/cua-entry-excerpts.md:108-110; raw/cua-entry-excerpts.md:96-96. 범위: 공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님.
 
 추가 확인할 조건:
 

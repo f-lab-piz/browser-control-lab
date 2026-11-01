@@ -33,18 +33,18 @@
 
 #### REQ-SCOPE-GETBYLABEL-001-C01
 
-- 조건: label for/감싼label/ARIA 이름이 연결된 제어를 찾는다.
-- 준비: 각label방식의제어와같은일반문자열
-- 실행: exact/regex조회
-- 판정: 연결된제어identity가맞고일반본문으로대체하지않는다.
+- 조건: label for/감싼 label/ARIA 이름이 연결된 제어를 찾는다.
+- 준비: 각 label 방식의 제어와 같은 일반 문자열
+- 실행: exact/regex 조회
+- 판정: 연결된 제어 identity가 맞고 일반 본문으로 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYLABEL-001-C02
 
 - 조건: 긴 label과 slot/aria-labelledby 이름은 출력 축약과 별개다.
-- 준비: 1000자label끝needle
-- 실행: 전체이름검색
-- 판정: 실제연결이름으로대상조회가능하다.
+- 준비: 1000자 label 끝 needle
+- 실행: 전체 이름 검색
+- 판정: 실제 연결 이름으로 대상 조회 가능하다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-SCOPE-GETBYLABEL-002
@@ -65,17 +65,17 @@
 #### REQ-SCOPE-GETBYLABEL-002-C01
 
 - 조건: 같은 label의 복수 제어는 임의 선택하지 않는다.
-- 준비: label같은input2개
+- 준비: label 같은 input2개
 - 실행: fill
-- 판정: strict오류·두값불변이다.
+- 판정: strict 오류·두 값 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYLABEL-002-C02
 
 - 조건: 없는 label/잘못된 문자열·정규식 옵션은 명시 처리한다.
-- 준비: 비연결label·빈문자열·잘못된exact형식
+- 준비: 비연결 label·빈 문자열·잘못된 exact 형식
 - 실행: 조회/조작
-- 판정: 빈문자열은입력오류,비연결은0개,조작은대상없음이며자동본문대체없다.
+- 판정: 빈 문자열은 입력 오류,비연결은 0개,조작은 대상 없음이며 자동 본문 대체 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

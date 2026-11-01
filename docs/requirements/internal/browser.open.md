@@ -34,17 +34,17 @@
 #### REQ-BROWSER-OPEN-001-C01
 
 - 조건: active 옵션을 생략하면 새 탭을 활성화하고 false면 기존 탭을 유지한다.
-- 준비: 활성탭A와 유효fixtureURL
-- 실행: open active생략/false를별도run
-- 판정: 새탭정확히1개와 Page id 일치, 활성정책도 일치한다.
+- 준비: 활성 탭 A와 유효 fixtureURL
+- 실행: open active 생략/false를 별도 run
+- 판정: 새 탭 정확히 1 개와 Page id 일치, 활성 정책도 일치한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-BROWSER-OPEN-001-C02
 
 - 조건: 반환된 Page는 지정 URL 문서의 제어 가능한 준비 상태다.
-- 준비: 느린 HTTP문서
+- 준비: 느린 HTTP 문서
 - 실행: open 후 즉시 snapshot
-- 판정: 이전/빈 초기문서를 요청문서로 성공 반환하지 않는다.
+- 판정: 이전/빈 초기 문서를 요청 문서로 성공 반환하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-BROWSER-OPEN-002
@@ -64,18 +64,18 @@
 
 #### REQ-BROWSER-OPEN-002-C01
 
-- 조건: 금지 scheme/잘못된URL은 생성 전에 거절한다.
-- 준비: javascript:/file:/잘못된URL
+- 조건: 금지 scheme/잘못된 URL은 생성 전에 거절한다.
+- 준비: javascript:/file:/잘못된 URL
 - 실행: open
-- 판정: 탭수불변,허용스킴 오류다.
+- 판정: 탭 수 불변,허용 스킴 오류다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-BROWSER-OPEN-002-C02
 
 - 조건: 생성 후 attach/준비 실패는 생성된 tabId와 잔여 여부를 알린다.
-- 준비: 탭생성은성공·debugger실패
+- 준비: 탭 생성은 성공·debugger 실패
 - 실행: open
-- 판정: 성공Page없고 사용자가 새탭의존재/정리결과를 알 수 있다.
+- 판정: 성공 Page 없고 사용자가 새 탭의 존재/정리 결과를 알 수 있다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

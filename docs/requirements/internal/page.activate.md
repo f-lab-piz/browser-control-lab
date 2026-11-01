@@ -34,9 +34,9 @@
 #### REQ-PAGE-ACTIVATE-001-C01
 
 - 조건: 지정된 Page 탭만 활성화한다.
-- 준비: 같은제목A/B
+- 준비: 같은 제목 A/B
 - 실행: B.activate
-- 판정: B.active=true이며URL/DOM/탭수불변이다.
+- 판정: B.active=true이며 URL/DOM/탭 수 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-ACTIVATE-002
@@ -57,9 +57,9 @@
 #### REQ-PAGE-ACTIVATE-002-C01
 
 - 조건: 닫힌/타세션 핸들에는 다른 탭을 활성화하지 않는다.
-- 준비: 닫힌B/타세션C
+- 준비: 닫힌 B/타세션 C
 - 실행: activate
-- 판정: 오류와A/C활성상태보존이다.
+- 판정: 오류와 A/C 활성 상태 보존이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

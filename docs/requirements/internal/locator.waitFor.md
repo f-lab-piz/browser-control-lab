@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-WAITFOR-001-C01
 
-- 조건: CSS상태대기의0/1/N 정책은명시표대로다.
+- 조건: CSS 상태 대기의 0/1/N 정책은 명시 표대로다.
 - 준비: 0개/hidden1/visible1/N2
-- 실행: 네state각호출
-- 판정: attached≥1·detached0·hidden0또는1hidden·visible1visible이며hidden/visibleN은오류다.
+- 실행: 네 state 각 호출
+- 판정: attached≥1·detached0·hidden0 또는 1hidden·visible1visible이며 hidden/visibleN은 오류다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-WAITFOR-002
@@ -56,18 +56,18 @@
 
 #### REQ-LOCATOR-WAITFOR-002-C01
 
-- 조건: 알수없는state/잘못된timeout은즉시입력오류다.
+- 조건: 알 수 없는 state/잘못된 timeout은 즉시 입력 오류다.
 - 준비: state=x,timeout0/음수/NaN
 - 실행: waitFor
-- 판정: polling없이오류이며임의기본값대체없다.
+- 판정: polling 없이 오류이며 임의 기본값 대체 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-WAITFOR-002-C02
 
-- 조건: ref detach/document교체는상태성공으로흡수하지않는다.
-- 준비: oldref와CSS의대상제거
-- 실행: 각waitFor detached
-- 판정: ref는stale,CSS는true이며조회scroll0이다.
+- 조건: ref detach/document 교체는 상태 성공으로 흡수하지 않는다.
+- 준비: oldref와 CSS의 대상 제거
+- 실행: 각 waitFor detached
+- 판정: ref는 stale,CSS는 true이며 조회 scroll0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

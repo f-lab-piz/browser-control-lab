@@ -1,0 +1,5399 @@
+{
+  "review": "cycle-1 independent source/mapping review",
+  "head": "ad821711153ffd8296b2557289214abaa9212774",
+  "documentBase": "850326772bb826b37fa182b98007b1313c925a2c",
+  "productBaseline": "700a6a06af3f97729327afaf9becb4ee29bb475b",
+  "readingMethod": "Whole normative and condition fields, API contract fields, deduplicated repeated status/boilerplate; all reference methods semantic fields; REQ/provider slots grouped by identical API mapping. No claim of browser execution or full original transcript access.",
+  "documents": [
+    {
+      "path": "docs/requirements/external/guide.md",
+      "sha256": "bc57cb8159ad25e35b1ac986252ea0b1e08f5e95ec1db3351d63f1fc39520b37",
+      "requirements": [
+        "REQ-GUIDE-001",
+        "REQ-GUIDE-002"
+      ],
+      "conditionIds": [
+        "REQ-GUIDE-001-C01",
+        "REQ-GUIDE-001-C02",
+        "REQ-GUIDE-002-C01",
+        "REQ-GUIDE-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/external/reset.md",
+      "sha256": "b4847e29fd19980b64372ef0cceb521cba919db88dbfb7427937fa8b0ae3331f",
+      "requirements": [
+        "REQ-RESET-001",
+        "REQ-RESET-002",
+        "REQ-RESET-003"
+      ],
+      "conditionIds": [
+        "REQ-RESET-001-C01",
+        "REQ-RESET-001-C02",
+        "REQ-RESET-002-C01",
+        "REQ-RESET-002-C02",
+        "REQ-RESET-003-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/external/js.md",
+      "sha256": "2d63ad3fd51c00abc89e4640a86a1858a363ac944a3f00a85bfcb48f7bae55de",
+      "requirements": [
+        "REQ-JS-001",
+        "REQ-JS-002",
+        "REQ-JS-003"
+      ],
+      "conditionIds": [
+        "REQ-JS-001-C01",
+        "REQ-JS-001-C02",
+        "REQ-JS-002-C01",
+        "REQ-JS-002-C02",
+        "REQ-JS-003-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/browser.list.md",
+      "sha256": "e7f46f8d0c908e67c178f1de25b1a01d4a337179066e0c4c3462344bc7bbd6bf",
+      "requirements": [
+        "REQ-BROWSER-LIST-001",
+        "REQ-BROWSER-LIST-002"
+      ],
+      "conditionIds": [
+        "REQ-BROWSER-LIST-001-C01",
+        "REQ-BROWSER-LIST-001-C02",
+        "REQ-BROWSER-LIST-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/browser.tabs.md",
+      "sha256": "424674e0894e488c3bf9bc79be05de2928827715082e33e05919dbdb8b37f9fc",
+      "requirements": [
+        "REQ-BROWSER-TABS-001",
+        "REQ-BROWSER-TABS-002"
+      ],
+      "conditionIds": [
+        "REQ-BROWSER-TABS-001-C01",
+        "REQ-BROWSER-TABS-001-C02",
+        "REQ-BROWSER-TABS-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/browser.open.md",
+      "sha256": "12b6054c634fabdbecfa8012112480e99527a3f514266dd6bf937b1a9188c011",
+      "requirements": [
+        "REQ-BROWSER-OPEN-001",
+        "REQ-BROWSER-OPEN-002"
+      ],
+      "conditionIds": [
+        "REQ-BROWSER-OPEN-001-C01",
+        "REQ-BROWSER-OPEN-001-C02",
+        "REQ-BROWSER-OPEN-002-C01",
+        "REQ-BROWSER-OPEN-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/browser.attach.md",
+      "sha256": "2e3e8c8336150f8eb3371f57c7edc1f92907ed5d8334cb1f0566207d8734111c",
+      "requirements": [
+        "REQ-BROWSER-ATTACH-001",
+        "REQ-BROWSER-ATTACH-002"
+      ],
+      "conditionIds": [
+        "REQ-BROWSER-ATTACH-001-C01",
+        "REQ-BROWSER-ATTACH-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.activate.md",
+      "sha256": "3494f9eb5307edc1ce8bcf7601a5b26aee601006bd9f8df7c8135e90787059bb",
+      "requirements": [
+        "REQ-PAGE-ACTIVATE-001",
+        "REQ-PAGE-ACTIVATE-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-ACTIVATE-001-C01",
+        "REQ-PAGE-ACTIVATE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.close.md",
+      "sha256": "ea127a7bd3421a088ad60e5fe5a648c0e5f1a21be8abf8225d81d63822969bb3",
+      "requirements": [
+        "REQ-PAGE-CLOSE-001",
+        "REQ-PAGE-CLOSE-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-CLOSE-001-C01",
+        "REQ-PAGE-CLOSE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.goto.md",
+      "sha256": "05eabc8fed15441c2797056806916205141020c0289ef6e747fd0bfef566bf7a",
+      "requirements": [
+        "REQ-PAGE-GOTO-001",
+        "REQ-PAGE-GOTO-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-GOTO-001-C01",
+        "REQ-PAGE-GOTO-001-C02",
+        "REQ-PAGE-GOTO-002-C01",
+        "REQ-PAGE-GOTO-002-C02",
+        "REQ-PAGE-GOTO-002-C03"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.back.md",
+      "sha256": "b5700604d2f74364cddbd4065f735bd63ae460daa2470af84c41823dfe3b41d4",
+      "requirements": [
+        "REQ-PAGE-BACK-001",
+        "REQ-PAGE-BACK-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-BACK-001-C01",
+        "REQ-PAGE-BACK-002-C01",
+        "REQ-PAGE-BACK-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.forward.md",
+      "sha256": "83804dc408a74bba2ac5efd541bc65ce29ae9204ae268202aecaa5f678f27b70",
+      "requirements": [
+        "REQ-PAGE-FORWARD-001",
+        "REQ-PAGE-FORWARD-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-FORWARD-001-C01",
+        "REQ-PAGE-FORWARD-002-C01",
+        "REQ-PAGE-FORWARD-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.reload.md",
+      "sha256": "5efc8fb056f2f2f11fe8e93122c0c6ef9d3c63a818dca472a37e9a777693808d",
+      "requirements": [
+        "REQ-PAGE-RELOAD-001",
+        "REQ-PAGE-RELOAD-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-RELOAD-001-C01",
+        "REQ-PAGE-RELOAD-002-C01",
+        "REQ-PAGE-RELOAD-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/scope.snapshot.md",
+      "sha256": "a11d48cbf5b725f8feee904ef285211864735c148bf8dcea680daa3e1520f9b0",
+      "requirements": [
+        "REQ-SCOPE-SNAPSHOT-001",
+        "REQ-SCOPE-SNAPSHOT-002",
+        "REQ-SCOPE-SNAPSHOT-003",
+        "REQ-SCOPE-SNAPSHOT-004",
+        "REQ-SCOPE-SNAPSHOT-005",
+        "REQ-SCOPE-SNAPSHOT-006",
+        "REQ-SCOPE-SNAPSHOT-007",
+        "REQ-SCOPE-SNAPSHOT-008",
+        "REQ-SCOPE-SNAPSHOT-009",
+        "REQ-SCOPE-SNAPSHOT-010",
+        "REQ-SCOPE-SNAPSHOT-011"
+      ],
+      "conditionIds": [
+        "REQ-SCOPE-SNAPSHOT-001-C01",
+        "REQ-SCOPE-SNAPSHOT-002-C01",
+        "REQ-SCOPE-SNAPSHOT-003-C01",
+        "REQ-SCOPE-SNAPSHOT-003-C02",
+        "REQ-SCOPE-SNAPSHOT-004-C01",
+        "REQ-SCOPE-SNAPSHOT-004-C02",
+        "REQ-SCOPE-SNAPSHOT-005-C01",
+        "REQ-SCOPE-SNAPSHOT-005-C02",
+        "REQ-SCOPE-SNAPSHOT-006-C01",
+        "REQ-SCOPE-SNAPSHOT-007-C01",
+        "REQ-SCOPE-SNAPSHOT-008-C01",
+        "REQ-SCOPE-SNAPSHOT-009-C01",
+        "REQ-SCOPE-SNAPSHOT-010-C01",
+        "REQ-SCOPE-SNAPSHOT-011-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.screenshot.md",
+      "sha256": "1e5048304aa35f162855d8ea85fdd99d5bf27a38f8cee05c91041b12cd83ea80",
+      "requirements": [
+        "REQ-PAGE-SCREENSHOT-001",
+        "REQ-PAGE-SCREENSHOT-002",
+        "REQ-PAGE-SCREENSHOT-003",
+        "REQ-PAGE-SCREENSHOT-004"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-SCREENSHOT-001-C01",
+        "REQ-PAGE-SCREENSHOT-002-C01",
+        "REQ-PAGE-SCREENSHOT-002-C02",
+        "REQ-PAGE-SCREENSHOT-003-C01",
+        "REQ-PAGE-SCREENSHOT-004-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.frames.md",
+      "sha256": "24ad39d1a187a36c0fb6ca378e752d8c3efaf17d0ccbc49c8bd7577245ba68a7",
+      "requirements": [
+        "REQ-PAGE-FRAMES-001",
+        "REQ-PAGE-FRAMES-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-FRAMES-001-C01",
+        "REQ-PAGE-FRAMES-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.frame.md",
+      "sha256": "3ed86996827acc41c840540218ad05bf8a8001d50fa206c1b5aa6b187273ae52",
+      "requirements": [
+        "REQ-PAGE-FRAME-001",
+        "REQ-PAGE-FRAME-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-FRAME-001-C01",
+        "REQ-PAGE-FRAME-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/scope.locator.md",
+      "sha256": "cd49d84904231b41a882fc7f857b9c8542b45f84b4b0b9c56f2d23922bae87da",
+      "requirements": [
+        "REQ-SCOPE-LOCATOR-001",
+        "REQ-SCOPE-LOCATOR-002"
+      ],
+      "conditionIds": [
+        "REQ-SCOPE-LOCATOR-001-C01",
+        "REQ-SCOPE-LOCATOR-001-C02",
+        "REQ-SCOPE-LOCATOR-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByRole.md",
+      "sha256": "ef90c91f6d83df53b5cbacad9f076515d4d89125d38553f9550e62a94397856b",
+      "requirements": [
+        "REQ-SCOPE-GETBYROLE-001",
+        "REQ-SCOPE-GETBYROLE-002"
+      ],
+      "conditionIds": [
+        "REQ-SCOPE-GETBYROLE-001-C01",
+        "REQ-SCOPE-GETBYROLE-001-C02",
+        "REQ-SCOPE-GETBYROLE-001-C03",
+        "REQ-SCOPE-GETBYROLE-002-C01",
+        "REQ-SCOPE-GETBYROLE-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByText.md",
+      "sha256": "9315697abcf188a3c4928d6f8b6c9b62b3508c36fa5bb41e21b47223d7281294",
+      "requirements": [
+        "REQ-SCOPE-GETBYTEXT-001",
+        "REQ-SCOPE-GETBYTEXT-002",
+        "REQ-SCOPE-GETBYTEXT-003"
+      ],
+      "conditionIds": [
+        "REQ-SCOPE-GETBYTEXT-001-C01",
+        "REQ-SCOPE-GETBYTEXT-001-C02",
+        "REQ-SCOPE-GETBYTEXT-002-C01",
+        "REQ-SCOPE-GETBYTEXT-002-C02",
+        "REQ-SCOPE-GETBYTEXT-003-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/scope.getByLabel.md",
+      "sha256": "e8979e6ca683ead6118412901a70db48bb7f542f4613b47adcfac3af092bc80e",
+      "requirements": [
+        "REQ-SCOPE-GETBYLABEL-001",
+        "REQ-SCOPE-GETBYLABEL-002"
+      ],
+      "conditionIds": [
+        "REQ-SCOPE-GETBYLABEL-001-C01",
+        "REQ-SCOPE-GETBYLABEL-001-C02",
+        "REQ-SCOPE-GETBYLABEL-002-C01",
+        "REQ-SCOPE-GETBYLABEL-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.filter.md",
+      "sha256": "7b1c02279222711caafefb7a6bb6c266dcc41e52a9638ef25673ed0897005773",
+      "requirements": [
+        "REQ-LOCATOR-FILTER-001",
+        "REQ-LOCATOR-FILTER-002",
+        "REQ-LOCATOR-FILTER-003",
+        "REQ-LOCATOR-FILTER-004"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-FILTER-001-C01",
+        "REQ-LOCATOR-FILTER-001-C02",
+        "REQ-LOCATOR-FILTER-002-C01",
+        "REQ-LOCATOR-FILTER-002-C02",
+        "REQ-LOCATOR-FILTER-003-C01",
+        "REQ-LOCATOR-FILTER-004-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.nth.md",
+      "sha256": "6282f7f92b0abd294317e75de3fe4f5e19a7fd0fafb398aa62303c42f078d044",
+      "requirements": [
+        "REQ-LOCATOR-NTH-001",
+        "REQ-LOCATOR-NTH-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-NTH-001-C01",
+        "REQ-LOCATOR-NTH-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.count.md",
+      "sha256": "003e8a845585a66ce798fbb7cb48294ccd04b6c36528851ad21eaef6b1defcbe",
+      "requirements": [
+        "REQ-LOCATOR-COUNT-001",
+        "REQ-LOCATOR-COUNT-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-COUNT-001-C01",
+        "REQ-LOCATOR-COUNT-001-C02",
+        "REQ-LOCATOR-COUNT-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.textContent.md",
+      "sha256": "5bb7aeb133f4559bc3336e502e72c96bccfe0d177d08841bc213df169ba5ba26",
+      "requirements": [
+        "REQ-LOCATOR-TEXTCONTENT-001",
+        "REQ-LOCATOR-TEXTCONTENT-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-TEXTCONTENT-001-C01",
+        "REQ-LOCATOR-TEXTCONTENT-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.getAttribute.md",
+      "sha256": "1bdf5420630412cee2a427f43335828c6b692513c5a1d3fbf0930e31c6f59044",
+      "requirements": [
+        "REQ-LOCATOR-GETATTRIBUTE-001",
+        "REQ-LOCATOR-GETATTRIBUTE-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-GETATTRIBUTE-001-C01",
+        "REQ-LOCATOR-GETATTRIBUTE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.inputValue.md",
+      "sha256": "2f0af130df34c50d802488a149a5939284761258ae4e6e2bf48cd456d11e49da",
+      "requirements": [
+        "REQ-LOCATOR-INPUTVALUE-001",
+        "REQ-LOCATOR-INPUTVALUE-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-INPUTVALUE-001-C01",
+        "REQ-LOCATOR-INPUTVALUE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.isVisible.md",
+      "sha256": "592346e71c289b57461072b68f6c0a8dc8577688baa75ad5141ed0767b877b28",
+      "requirements": [
+        "REQ-LOCATOR-ISVISIBLE-001",
+        "REQ-LOCATOR-ISVISIBLE-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-ISVISIBLE-001-C01",
+        "REQ-LOCATOR-ISVISIBLE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.isEnabled.md",
+      "sha256": "a377320ae0eeca68b986e5117933df5ec04a598c7739b49829191a1cee71fb7c",
+      "requirements": [
+        "REQ-LOCATOR-ISENABLED-001",
+        "REQ-LOCATOR-ISENABLED-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-ISENABLED-001-C01",
+        "REQ-LOCATOR-ISENABLED-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.isEditable.md",
+      "sha256": "6ce0902324233bf7e08d6949dd8ddcb33363dc274e083f16a51ac47e72b3e7b4",
+      "requirements": [
+        "REQ-LOCATOR-ISEDITABLE-001",
+        "REQ-LOCATOR-ISEDITABLE-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-ISEDITABLE-001-C01",
+        "REQ-LOCATOR-ISEDITABLE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.isChecked.md",
+      "sha256": "c195e8b851a8a95553cd31a98ee8a7ffa9da5b727d49708b146463a4ca5941ca",
+      "requirements": [
+        "REQ-LOCATOR-ISCHECKED-001",
+        "REQ-LOCATOR-ISCHECKED-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-ISCHECKED-001-C01",
+        "REQ-LOCATOR-ISCHECKED-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.boundingBox.md",
+      "sha256": "6c16cccf95c4cedfe0a8866d3c6b1832b0b1004c4e6bf36d937c713e7ed5a2f8",
+      "requirements": [
+        "REQ-LOCATOR-BOUNDINGBOX-001",
+        "REQ-LOCATOR-BOUNDINGBOX-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-BOUNDINGBOX-001-C01",
+        "REQ-LOCATOR-BOUNDINGBOX-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.click.md",
+      "sha256": "4bb40dd514ccfe55d2c83b82ffe20d4685f0c70093af5b85479697ddba5be1aa",
+      "requirements": [
+        "REQ-LOCATOR-CLICK-001",
+        "REQ-LOCATOR-CLICK-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-CLICK-001-C01",
+        "REQ-LOCATOR-CLICK-001-C02",
+        "REQ-LOCATOR-CLICK-001-C03",
+        "REQ-LOCATOR-CLICK-001-C04",
+        "REQ-LOCATOR-CLICK-002-C01",
+        "REQ-LOCATOR-CLICK-002-C02",
+        "REQ-LOCATOR-CLICK-002-C03",
+        "REQ-LOCATOR-CLICK-002-C04"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.fill.md",
+      "sha256": "198645b0887862705cb71b69f1dcc52b72d9ce5188af6840c4e55ef775af50b0",
+      "requirements": [
+        "REQ-LOCATOR-FILL-001",
+        "REQ-LOCATOR-FILL-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-FILL-001-C01",
+        "REQ-LOCATOR-FILL-001-C02",
+        "REQ-LOCATOR-FILL-002-C01",
+        "REQ-LOCATOR-FILL-002-C02",
+        "REQ-LOCATOR-FILL-002-C03"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.press.md",
+      "sha256": "b3901fdb3e2936555c924fa0fb7ac793485f618005b42116c709c6867f35121a",
+      "requirements": [
+        "REQ-LOCATOR-PRESS-001",
+        "REQ-LOCATOR-PRESS-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-PRESS-001-C01",
+        "REQ-LOCATOR-PRESS-001-C02",
+        "REQ-LOCATOR-PRESS-002-C01",
+        "REQ-LOCATOR-PRESS-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.hover.md",
+      "sha256": "33bf607d720de98786156639db9c25dcdf2d3664c8959f147a1cc4106ceae211",
+      "requirements": [
+        "REQ-LOCATOR-HOVER-001",
+        "REQ-LOCATOR-HOVER-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-HOVER-001-C01",
+        "REQ-LOCATOR-HOVER-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.focus.md",
+      "sha256": "86875b65c5ba6d2cce3f9cc991703b2872d5e6d65dba8a0c40b8969cbd276422",
+      "requirements": [
+        "REQ-LOCATOR-FOCUS-001",
+        "REQ-LOCATOR-FOCUS-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-FOCUS-001-C01",
+        "REQ-LOCATOR-FOCUS-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.scrollIntoView.md",
+      "sha256": "190a9d9b29fe27178e269c288349e9ac9412d1363de5151030a5e95063a7c5f8",
+      "requirements": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
+        "REQ-LOCATOR-SCROLLINTOVIEW-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.setChecked.md",
+      "sha256": "468a39d28a141277b8150015aafe7175919b79885d3e5509695532c830999247",
+      "requirements": [
+        "REQ-LOCATOR-SETCHECKED-001",
+        "REQ-LOCATOR-SETCHECKED-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-SETCHECKED-001-C01",
+        "REQ-LOCATOR-SETCHECKED-001-C02",
+        "REQ-LOCATOR-SETCHECKED-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.selectOption.md",
+      "sha256": "e755b5c28826f82a8368fdae6e41b6f587a42bb187f17ab896c6d1af1f61b761",
+      "requirements": [
+        "REQ-LOCATOR-SELECTOPTION-001",
+        "REQ-LOCATOR-SELECTOPTION-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-SELECTOPTION-001-C01",
+        "REQ-LOCATOR-SELECTOPTION-001-C02",
+        "REQ-LOCATOR-SELECTOPTION-002-C01",
+        "REQ-LOCATOR-SELECTOPTION-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.dragTo.md",
+      "sha256": "30813936195fde53a23b1de3cf3d557fcb3e114b69a75a7902564ed844ec3b9f",
+      "requirements": [
+        "REQ-LOCATOR-DRAGTO-001",
+        "REQ-LOCATOR-DRAGTO-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-DRAGTO-001-C01",
+        "REQ-LOCATOR-DRAGTO-001-C02",
+        "REQ-LOCATOR-DRAGTO-002-C01",
+        "REQ-LOCATOR-DRAGTO-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.drop.md",
+      "sha256": "1779c4c893a716ca6958224b2cf6fdc92dfb23efed91de642c09630f3ccc7219",
+      "requirements": [
+        "REQ-LOCATOR-DROP-001",
+        "REQ-LOCATOR-DROP-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-DROP-001-C01",
+        "REQ-LOCATOR-DROP-001-C02",
+        "REQ-LOCATOR-DROP-002-C01",
+        "REQ-LOCATOR-DROP-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/mouse.move.md",
+      "sha256": "80d5c4167c8e3ba52c9157ebc3ea324e7c2fa70434b297a9473e7c904d3a3ab7",
+      "requirements": [
+        "REQ-MOUSE-MOVE-001",
+        "REQ-MOUSE-MOVE-002"
+      ],
+      "conditionIds": [
+        "REQ-MOUSE-MOVE-001-C01",
+        "REQ-MOUSE-MOVE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/mouse.down.md",
+      "sha256": "2e3726bc489c9508880631262592fc99a009509db946c700968379b99c4e1493",
+      "requirements": [
+        "REQ-MOUSE-DOWN-001",
+        "REQ-MOUSE-DOWN-002"
+      ],
+      "conditionIds": [
+        "REQ-MOUSE-DOWN-001-C01",
+        "REQ-MOUSE-DOWN-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/mouse.up.md",
+      "sha256": "2f94495877318da4795c9afaab26e12a465ca642f3febc13ae0ce13fb8929ac2",
+      "requirements": [
+        "REQ-MOUSE-UP-001",
+        "REQ-MOUSE-UP-002"
+      ],
+      "conditionIds": [
+        "REQ-MOUSE-UP-001-C01",
+        "REQ-MOUSE-UP-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/mouse.click.md",
+      "sha256": "2991dd962705a34a4bae2bdc617e589b07d601d061a2400bcadfce5befbabd25",
+      "requirements": [
+        "REQ-MOUSE-CLICK-001",
+        "REQ-MOUSE-CLICK-002"
+      ],
+      "conditionIds": [
+        "REQ-MOUSE-CLICK-001-C01",
+        "REQ-MOUSE-CLICK-002-C01",
+        "REQ-MOUSE-CLICK-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/mouse.wheel.md",
+      "sha256": "3f644f893ca37abeb94021b9965fdb399a286668db3a27b2753642359f246aa2",
+      "requirements": [
+        "REQ-MOUSE-WHEEL-001",
+        "REQ-MOUSE-WHEEL-002"
+      ],
+      "conditionIds": [
+        "REQ-MOUSE-WHEEL-001-C01",
+        "REQ-MOUSE-WHEEL-002-C01",
+        "REQ-MOUSE-WHEEL-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.down.md",
+      "sha256": "7b6474a72f68de5f1630eddf9dd78ae66f37ff512785af0c7c2aff07e5324cd6",
+      "requirements": [
+        "REQ-KEYBOARD-DOWN-001",
+        "REQ-KEYBOARD-DOWN-002"
+      ],
+      "conditionIds": [
+        "REQ-KEYBOARD-DOWN-001-C01",
+        "REQ-KEYBOARD-DOWN-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.up.md",
+      "sha256": "a77eaa1eae8d434f60a0ba52aec20282ce25e45102b1bbd85e7a77d8c2ffd2f7",
+      "requirements": [
+        "REQ-KEYBOARD-UP-001",
+        "REQ-KEYBOARD-UP-002"
+      ],
+      "conditionIds": [
+        "REQ-KEYBOARD-UP-001-C01",
+        "REQ-KEYBOARD-UP-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.press.md",
+      "sha256": "0f7dd8bee06bedb8edc74a00b9852a16e82145753a8779d0717e863a75c77bba",
+      "requirements": [
+        "REQ-KEYBOARD-PRESS-001",
+        "REQ-KEYBOARD-PRESS-002"
+      ],
+      "conditionIds": [
+        "REQ-KEYBOARD-PRESS-001-C01",
+        "REQ-KEYBOARD-PRESS-001-C02",
+        "REQ-KEYBOARD-PRESS-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/keyboard.type.md",
+      "sha256": "3ae53ec57ac9a9fc8b8758219ec3565b4946d8b37cd03f9725ff16e511229cc3",
+      "requirements": [
+        "REQ-KEYBOARD-TYPE-001",
+        "REQ-KEYBOARD-TYPE-002"
+      ],
+      "conditionIds": [
+        "REQ-KEYBOARD-TYPE-001-C01",
+        "REQ-KEYBOARD-TYPE-001-C02",
+        "REQ-KEYBOARD-TYPE-002-C01",
+        "REQ-KEYBOARD-TYPE-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.waitFor.md",
+      "sha256": "772c8563d5692250140b7d23ed93186914d1bc043cc941eb7de58645c74c1ed5",
+      "requirements": [
+        "REQ-LOCATOR-WAITFOR-001",
+        "REQ-LOCATOR-WAITFOR-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-WAITFOR-001-C01",
+        "REQ-LOCATOR-WAITFOR-002-C01",
+        "REQ-LOCATOR-WAITFOR-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForEvent.md",
+      "sha256": "805763d652d184424dc6ea0b209d71f6337cd61508c76cbfc137397dc2a6507f",
+      "requirements": [
+        "REQ-PAGE-WAITFOREVENT-001",
+        "REQ-PAGE-WAITFOREVENT-002",
+        "REQ-PAGE-WAITFOREVENT-003"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-WAITFOREVENT-001-C01",
+        "REQ-PAGE-WAITFOREVENT-002-C01",
+        "REQ-PAGE-WAITFOREVENT-002-C02",
+        "REQ-PAGE-WAITFOREVENT-003-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForURL.md",
+      "sha256": "6b2d40935a4ff9c6e23055d4c99d6ccf56b135648adeed60cf96e63b0e692af1",
+      "requirements": [
+        "REQ-PAGE-WAITFORURL-001",
+        "REQ-PAGE-WAITFORURL-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-WAITFORURL-001-C01",
+        "REQ-PAGE-WAITFORURL-002-C01",
+        "REQ-PAGE-WAITFORURL-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForFunction.md",
+      "sha256": "7c2e22f92660c3adb113789ac405a1aa3a286b4d9d7a3e91f9e04970f85c4b9e",
+      "requirements": [
+        "REQ-PAGE-WAITFORFUNCTION-001",
+        "REQ-PAGE-WAITFORFUNCTION-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-WAITFORFUNCTION-001-C01",
+        "REQ-PAGE-WAITFORFUNCTION-002-C01",
+        "REQ-PAGE-WAITFORFUNCTION-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.waitForLoadState.md",
+      "sha256": "11961fabe70791646708cd82263c9e6d0f140aa51f49b7a6625170e5f3d248da",
+      "requirements": [
+        "REQ-PAGE-WAITFORLOADSTATE-001",
+        "REQ-PAGE-WAITFORLOADSTATE-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-WAITFORLOADSTATE-001-C01",
+        "REQ-PAGE-WAITFORLOADSTATE-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.setFiles.md",
+      "sha256": "da4c04a99ad2fccf315c191d922d8000dfd726ba81f8b421ba6ad9b49932e336",
+      "requirements": [
+        "REQ-LOCATOR-SETFILES-001",
+        "REQ-LOCATOR-SETFILES-002",
+        "REQ-LOCATOR-SETFILES-003"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-SETFILES-001-C01",
+        "REQ-LOCATOR-SETFILES-001-C02",
+        "REQ-LOCATOR-SETFILES-001-C03",
+        "REQ-LOCATOR-SETFILES-002-C01",
+        "REQ-LOCATOR-SETFILES-002-C02",
+        "REQ-LOCATOR-SETFILES-002-C03",
+        "REQ-LOCATOR-SETFILES-003-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/chooser.setFiles.md",
+      "sha256": "8fd56b1f347aae5ada7ab7879116b09b391d58c55e6350c82c05d53a96195414",
+      "requirements": [
+        "REQ-CHOOSER-SETFILES-001",
+        "REQ-CHOOSER-SETFILES-002"
+      ],
+      "conditionIds": [
+        "REQ-CHOOSER-SETFILES-001-C01",
+        "REQ-CHOOSER-SETFILES-002-C01",
+        "REQ-CHOOSER-SETFILES-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/download.save.md",
+      "sha256": "ce13f896fe3a0698710c2273e32861018a3d9e4067efa4955435a01f7beaee8f",
+      "requirements": [
+        "REQ-DOWNLOAD-SAVE-001",
+        "REQ-DOWNLOAD-SAVE-002"
+      ],
+      "conditionIds": [
+        "REQ-DOWNLOAD-SAVE-001-C01",
+        "REQ-DOWNLOAD-SAVE-001-C02",
+        "REQ-DOWNLOAD-SAVE-002-C01",
+        "REQ-DOWNLOAD-SAVE-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/download.cancel.md",
+      "sha256": "57102bab7808c966f58bc1ec47bc2f6243762f7bd91c9ed22a7e029893cf3dfc",
+      "requirements": [
+        "REQ-DOWNLOAD-CANCEL-001",
+        "REQ-DOWNLOAD-CANCEL-002"
+      ],
+      "conditionIds": [
+        "REQ-DOWNLOAD-CANCEL-001-C01",
+        "REQ-DOWNLOAD-CANCEL-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/dialog.accept.md",
+      "sha256": "ddc179fbafc4baaee8b819e0345f263724a5c972bead19271470de87e8f529bc",
+      "requirements": [
+        "REQ-DIALOG-ACCEPT-001",
+        "REQ-DIALOG-ACCEPT-002"
+      ],
+      "conditionIds": [
+        "REQ-DIALOG-ACCEPT-001-C01",
+        "REQ-DIALOG-ACCEPT-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/dialog.dismiss.md",
+      "sha256": "2bf87aab78d5c4517e5000ac2f98751f0e05463a1f77e9cc75873650addd4098",
+      "requirements": [
+        "REQ-DIALOG-DISMISS-001",
+        "REQ-DIALOG-DISMISS-002"
+      ],
+      "conditionIds": [
+        "REQ-DIALOG-DISMISS-001-C01",
+        "REQ-DIALOG-DISMISS-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/scope.evaluate.md",
+      "sha256": "75d2e9e3f769047f3c719c148a0c4ec9b9edab78e3ca2784d0623c5ce94b75dc",
+      "requirements": [
+        "REQ-SCOPE-EVALUATE-001",
+        "REQ-SCOPE-EVALUATE-002"
+      ],
+      "conditionIds": [
+        "REQ-SCOPE-EVALUATE-001-C01",
+        "REQ-SCOPE-EVALUATE-001-C02",
+        "REQ-SCOPE-EVALUATE-002-C01",
+        "REQ-SCOPE-EVALUATE-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/locator.evaluateAll.md",
+      "sha256": "47d7ab61ad863381606fd7ea03a88fb7c179884ddc7c12a2415c2782d4f63748",
+      "requirements": [
+        "REQ-LOCATOR-EVALUATEALL-001",
+        "REQ-LOCATOR-EVALUATEALL-002"
+      ],
+      "conditionIds": [
+        "REQ-LOCATOR-EVALUATEALL-001-C01",
+        "REQ-LOCATOR-EVALUATEALL-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/page.logs.md",
+      "sha256": "75681bd419410ea8a8bd6911d8d04b71eab9d5a1295aedea53eb0500c1a929a9",
+      "requirements": [
+        "REQ-PAGE-LOGS-001",
+        "REQ-PAGE-LOGS-002"
+      ],
+      "conditionIds": [
+        "REQ-PAGE-LOGS-001-C01",
+        "REQ-PAGE-LOGS-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/console.log.md",
+      "sha256": "cad7dd0102784595fb679e4da094eef58a88c08a1a44b66435fa17deba171310",
+      "requirements": [
+        "REQ-CONSOLE-LOG-001",
+        "REQ-CONSOLE-LOG-002"
+      ],
+      "conditionIds": [
+        "REQ-CONSOLE-LOG-001-C01",
+        "REQ-CONSOLE-LOG-002-C01",
+        "REQ-CONSOLE-LOG-002-C02"
+      ]
+    },
+    {
+      "path": "docs/requirements/internal/display.md",
+      "sha256": "a88a1259842c1749b246c4c64dffd3f5191973317aed5135ac834c191f72dc46",
+      "requirements": [
+        "REQ-DISPLAY-001",
+        "REQ-DISPLAY-002"
+      ],
+      "conditionIds": [
+        "REQ-DISPLAY-001-C01",
+        "REQ-DISPLAY-002-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/common/runtime.md",
+      "sha256": "b5ddcad4ff9617e73b05bb9ee282270355caf347c4cb31d37c7315e9f97b3537",
+      "requirements": [
+        "REQ-C-RUNTIME-001",
+        "REQ-C-RUNTIME-002",
+        "REQ-C-RUNTIME-003",
+        "REQ-C-RUNTIME-004",
+        "REQ-C-RUNTIME-005",
+        "REQ-C-RUNTIME-006",
+        "REQ-C-RUNTIME-007",
+        "REQ-C-RUNTIME-008"
+      ],
+      "conditionIds": [
+        "REQ-C-RUNTIME-001-C01",
+        "REQ-C-RUNTIME-002-C01",
+        "REQ-C-RUNTIME-003-C01",
+        "REQ-C-RUNTIME-004-C01",
+        "REQ-C-RUNTIME-005-C01",
+        "REQ-C-RUNTIME-006-C01",
+        "REQ-C-RUNTIME-007-C01",
+        "REQ-C-RUNTIME-008-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/common/dom-frames.md",
+      "sha256": "f4f0c97fe056e0625c71f749f660a26cf4f508693775b15d6209f89957138102",
+      "requirements": [
+        "REQ-C-DOMFRAMES-001",
+        "REQ-C-DOMFRAMES-002",
+        "REQ-C-DOMFRAMES-003",
+        "REQ-C-DOMFRAMES-004",
+        "REQ-C-DOMFRAMES-005",
+        "REQ-C-DOMFRAMES-006"
+      ],
+      "conditionIds": [
+        "REQ-C-DOMFRAMES-001-C01",
+        "REQ-C-DOMFRAMES-002-C01",
+        "REQ-C-DOMFRAMES-003-C01",
+        "REQ-C-DOMFRAMES-004-C01",
+        "REQ-C-DOMFRAMES-005-C01",
+        "REQ-C-DOMFRAMES-006-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/common/selection.md",
+      "sha256": "a3da63448009214bd8456c6d3065d492c62dcd2d38ef5dd3379bffde632d628a",
+      "requirements": [
+        "REQ-C-SELECTION-001",
+        "REQ-C-SELECTION-002",
+        "REQ-C-SELECTION-003",
+        "REQ-C-SELECTION-004",
+        "REQ-C-SELECTION-005",
+        "REQ-C-SELECTION-006"
+      ],
+      "conditionIds": [
+        "REQ-C-SELECTION-001-C01",
+        "REQ-C-SELECTION-002-C01",
+        "REQ-C-SELECTION-003-C01",
+        "REQ-C-SELECTION-004-C01",
+        "REQ-C-SELECTION-005-C01",
+        "REQ-C-SELECTION-006-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/common/input.md",
+      "sha256": "a9329d58afdc29cbac87cbc4c8bed3291bbbdc05d8d1d43a4799c53c45c19435",
+      "requirements": [
+        "REQ-C-INPUT-001",
+        "REQ-C-INPUT-002",
+        "REQ-C-INPUT-003",
+        "REQ-C-INPUT-004",
+        "REQ-C-INPUT-005"
+      ],
+      "conditionIds": [
+        "REQ-C-INPUT-001-C01",
+        "REQ-C-INPUT-002-C01",
+        "REQ-C-INPUT-003-C01",
+        "REQ-C-INPUT-004-C01",
+        "REQ-C-INPUT-005-C01"
+      ]
+    },
+    {
+      "path": "docs/requirements/common/files-events.md",
+      "sha256": "b216138f6e211469743416f14288d4d4649bd02f71c7c75336aaf94731cefb3d",
+      "requirements": [
+        "REQ-C-FILESEVENTS-001",
+        "REQ-C-FILESEVENTS-002",
+        "REQ-C-FILESEVENTS-003",
+        "REQ-C-FILESEVENTS-004",
+        "REQ-C-FILESEVENTS-005",
+        "REQ-C-FILESEVENTS-006",
+        "REQ-C-FILESEVENTS-007"
+      ],
+      "conditionIds": [
+        "REQ-C-FILESEVENTS-001-C01",
+        "REQ-C-FILESEVENTS-002-C01",
+        "REQ-C-FILESEVENTS-003-C01",
+        "REQ-C-FILESEVENTS-004-C01",
+        "REQ-C-FILESEVENTS-005-C01",
+        "REQ-C-FILESEVENTS-006-C01",
+        "REQ-C-FILESEVENTS-007-C01"
+      ]
+    }
+  ],
+  "conditionUnits": [
+    {
+      "conditionId": "REQ-GUIDE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-GUIDE-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-RESET-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-JS-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-LIST-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-LIST-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-LIST-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-LIST-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-LIST-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-LIST-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-TABS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-TABS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-TABS-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-TABS-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-TABS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-TABS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-OPEN-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-ATTACH-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-ATTACH-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-ATTACH-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-BROWSER-ATTACH-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-ACTIVATE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-ACTIVATE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-ACTIVATE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-ACTIVATE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-CLOSE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-CLOSE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-CLOSE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-CLOSE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-002-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-GOTO-002-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-BACK-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-BACK-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-BACK-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-BACK-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-BACK-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-BACK-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FORWARD-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FORWARD-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FORWARD-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FORWARD-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FORWARD-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FORWARD-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-RELOAD-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-RELOAD-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-RELOAD-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-RELOAD-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-RELOAD-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-RELOAD-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-003-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-003-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-004-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-004-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-005-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-005-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-005-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-005-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-006-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-006-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-007-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-007-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-008-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-008-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-009-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-009-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-010-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-010-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-011-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-SNAPSHOT-011-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-SCREENSHOT-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAMES-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAMES-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAMES-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAMES-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAME-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAME-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAME-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-FRAME-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-LOCATOR-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-LOCATOR-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-LOCATOR-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-LOCATOR-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-LOCATOR-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-LOCATOR-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-001-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-001-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYROLE-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYTEXT-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-GETBYLABEL-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILTER-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-NTH-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-NTH-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-NTH-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-NTH-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-COUNT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-COUNT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-COUNT-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-COUNT-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-COUNT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-COUNT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-TEXTCONTENT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-TEXTCONTENT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-TEXTCONTENT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-TEXTCONTENT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-GETATTRIBUTE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-GETATTRIBUTE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-GETATTRIBUTE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-INPUTVALUE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-INPUTVALUE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-INPUTVALUE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-INPUTVALUE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISVISIBLE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISVISIBLE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISVISIBLE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISVISIBLE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISENABLED-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISENABLED-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISENABLED-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISENABLED-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISEDITABLE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISEDITABLE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISEDITABLE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISEDITABLE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISCHECKED-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISCHECKED-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISCHECKED-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-ISCHECKED-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-BOUNDINGBOX-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-BOUNDINGBOX-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-BOUNDINGBOX-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-BOUNDINGBOX-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C04",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-001-C04",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C04",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-CLICK-002-C04",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-002-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FILL-002-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-PRESS-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-HOVER-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-HOVER-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-HOVER-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-HOVER-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FOCUS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FOCUS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FOCUS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-FOCUS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SCROLLINTOVIEW-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETCHECKED-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETCHECKED-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETCHECKED-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETCHECKED-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETCHECKED-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETCHECKED-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SELECTOPTION-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DRAGTO-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-DROP-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-MOVE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-MOVE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-MOVE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-MOVE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-DOWN-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-DOWN-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-DOWN-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-DOWN-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-UP-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-UP-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-UP-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-UP-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-CLICK-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-CLICK-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-CLICK-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-CLICK-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-CLICK-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-CLICK-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-WHEEL-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-WHEEL-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-WHEEL-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-WHEEL-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-WHEEL-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-MOUSE-WHEEL-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-DOWN-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-DOWN-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-DOWN-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-DOWN-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-UP-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-UP-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-UP-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-UP-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-PRESS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-PRESS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-PRESS-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-PRESS-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-PRESS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-PRESS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-KEYBOARD-TYPE-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-WAITFOR-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-WAITFOR-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-WAITFOR-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-WAITFOR-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-WAITFOR-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-WAITFOR-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFOREVENT-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORURL-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORURL-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORURL-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORURL-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORURL-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORURL-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORFUNCTION-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORFUNCTION-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORLOADSTATE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORLOADSTATE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORLOADSTATE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-WAITFORLOADSTATE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-001-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-001-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-002-C03",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-002-C03",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-SETFILES-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CHOOSER-SETFILES-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CHOOSER-SETFILES-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CHOOSER-SETFILES-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CHOOSER-SETFILES-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CHOOSER-SETFILES-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CHOOSER-SETFILES-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-SAVE-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-CANCEL-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-CANCEL-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-CANCEL-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DOWNLOAD-CANCEL-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-ACCEPT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-ACCEPT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-ACCEPT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-ACCEPT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-DISMISS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-DISMISS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-DISMISS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DIALOG-DISMISS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-001-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-001-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-SCOPE-EVALUATE-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-EVALUATEALL-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-EVALUATEALL-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-EVALUATEALL-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-LOCATOR-EVALUATEALL-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-LOGS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-LOGS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-LOGS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-PAGE-LOGS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CONSOLE-LOG-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CONSOLE-LOG-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CONSOLE-LOG-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CONSOLE-LOG-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CONSOLE-LOG-002-C02",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-CONSOLE-LOG-002-C02",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DISPLAY-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DISPLAY-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DISPLAY-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-DISPLAY-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-005-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-005-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-006-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-006-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-007-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-007-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-008-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-RUNTIME-008-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-005-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-005-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-006-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-DOMFRAMES-006-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-005-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-005-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-006-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-SELECTION-006-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-005-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-INPUT-005-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-001-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-001-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-002-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-002-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-003-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-003-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-004-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-004-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-005-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-005-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-006-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-006-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-007-C01",
+      "provider": "codex",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    },
+    {
+      "conditionId": "REQ-C-FILESEVENTS-007-C01",
+      "provider": "aside",
+      "reviewScope": "normative meaning plus reference relation/evidence/unknown boundary; not product support confirmation"
+    }
+  ],
+  "slots": [
+    {
+      "requirement": "REQ-GUIDE-001",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-guide"
+    },
+    {
+      "requirement": "REQ-GUIDE-001",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-guide"
+    },
+    {
+      "requirement": "REQ-GUIDE-002",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-guide"
+    },
+    {
+      "requirement": "REQ-GUIDE-002",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-guide"
+    },
+    {
+      "requirement": "REQ-RESET-001",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-reset"
+    },
+    {
+      "requirement": "REQ-RESET-001",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-reset"
+    },
+    {
+      "requirement": "REQ-RESET-002",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-reset"
+    },
+    {
+      "requirement": "REQ-RESET-002",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-reset"
+    },
+    {
+      "requirement": "REQ-RESET-003",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-reset"
+    },
+    {
+      "requirement": "REQ-RESET-003",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-reset"
+    },
+    {
+      "requirement": "REQ-JS-001",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-js"
+    },
+    {
+      "requirement": "REQ-JS-001",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-js"
+    },
+    {
+      "requirement": "REQ-JS-002",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-js"
+    },
+    {
+      "requirement": "REQ-JS-002",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-js"
+    },
+    {
+      "requirement": "REQ-JS-003",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-js"
+    },
+    {
+      "requirement": "REQ-JS-003",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-js"
+    },
+    {
+      "requirement": "REQ-BROWSER-LIST-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-list"
+    },
+    {
+      "requirement": "REQ-BROWSER-LIST-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-list"
+    },
+    {
+      "requirement": "REQ-BROWSER-LIST-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-list"
+    },
+    {
+      "requirement": "REQ-BROWSER-LIST-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-list"
+    },
+    {
+      "requirement": "REQ-BROWSER-TABS-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-tabs"
+    },
+    {
+      "requirement": "REQ-BROWSER-TABS-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-tabs"
+    },
+    {
+      "requirement": "REQ-BROWSER-TABS-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-tabs"
+    },
+    {
+      "requirement": "REQ-BROWSER-TABS-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-tabs"
+    },
+    {
+      "requirement": "REQ-BROWSER-OPEN-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-open"
+    },
+    {
+      "requirement": "REQ-BROWSER-OPEN-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-open"
+    },
+    {
+      "requirement": "REQ-BROWSER-OPEN-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-open"
+    },
+    {
+      "requirement": "REQ-BROWSER-OPEN-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-open"
+    },
+    {
+      "requirement": "REQ-BROWSER-ATTACH-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-attach"
+    },
+    {
+      "requirement": "REQ-BROWSER-ATTACH-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-attach"
+    },
+    {
+      "requirement": "REQ-BROWSER-ATTACH-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-browser-attach"
+    },
+    {
+      "requirement": "REQ-BROWSER-ATTACH-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-browser-attach"
+    },
+    {
+      "requirement": "REQ-PAGE-ACTIVATE-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-activate"
+    },
+    {
+      "requirement": "REQ-PAGE-ACTIVATE-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-activate"
+    },
+    {
+      "requirement": "REQ-PAGE-ACTIVATE-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-activate"
+    },
+    {
+      "requirement": "REQ-PAGE-ACTIVATE-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-activate"
+    },
+    {
+      "requirement": "REQ-PAGE-CLOSE-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-close"
+    },
+    {
+      "requirement": "REQ-PAGE-CLOSE-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-close"
+    },
+    {
+      "requirement": "REQ-PAGE-CLOSE-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-close"
+    },
+    {
+      "requirement": "REQ-PAGE-CLOSE-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-close"
+    },
+    {
+      "requirement": "REQ-PAGE-GOTO-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-goto"
+    },
+    {
+      "requirement": "REQ-PAGE-GOTO-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-goto"
+    },
+    {
+      "requirement": "REQ-PAGE-GOTO-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-goto"
+    },
+    {
+      "requirement": "REQ-PAGE-GOTO-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-goto"
+    },
+    {
+      "requirement": "REQ-PAGE-BACK-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-back"
+    },
+    {
+      "requirement": "REQ-PAGE-BACK-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-back"
+    },
+    {
+      "requirement": "REQ-PAGE-BACK-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-back"
+    },
+    {
+      "requirement": "REQ-PAGE-BACK-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-back"
+    },
+    {
+      "requirement": "REQ-PAGE-FORWARD-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-forward"
+    },
+    {
+      "requirement": "REQ-PAGE-FORWARD-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-forward"
+    },
+    {
+      "requirement": "REQ-PAGE-FORWARD-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-forward"
+    },
+    {
+      "requirement": "REQ-PAGE-FORWARD-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-forward"
+    },
+    {
+      "requirement": "REQ-PAGE-RELOAD-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-reload"
+    },
+    {
+      "requirement": "REQ-PAGE-RELOAD-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-reload"
+    },
+    {
+      "requirement": "REQ-PAGE-RELOAD-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-reload"
+    },
+    {
+      "requirement": "REQ-PAGE-RELOAD-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-reload"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-001",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-001",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-002",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-002",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-003",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-003",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-004",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-004",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-005",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-005",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-006",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-006",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-007",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-007",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-008",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-008",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-009",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-009",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-010",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-010",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-011",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-SCOPE-SNAPSHOT-011",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-scope-snapshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-001",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-001",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-002",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-002",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-003",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-003",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-004",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-SCREENSHOT-004",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-screenshot"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAMES-001",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-frames"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAMES-001",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-frames"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAMES-002",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-frames"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAMES-002",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-frames"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAME-001",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-frame"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAME-001",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-frame"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAME-002",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-page-frame"
+    },
+    {
+      "requirement": "REQ-PAGE-FRAME-002",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-page-frame"
+    },
+    {
+      "requirement": "REQ-SCOPE-LOCATOR-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-locator"
+    },
+    {
+      "requirement": "REQ-SCOPE-LOCATOR-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-locator"
+    },
+    {
+      "requirement": "REQ-SCOPE-LOCATOR-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-locator"
+    },
+    {
+      "requirement": "REQ-SCOPE-LOCATOR-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-locator"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYROLE-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbyrole"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYROLE-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbyrole"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYROLE-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbyrole"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYROLE-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbyrole"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYTEXT-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbytext"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYTEXT-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbytext"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYTEXT-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbytext"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYTEXT-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbytext"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYTEXT-003",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbytext"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYTEXT-003",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbytext"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYLABEL-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbylabel"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYLABEL-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbylabel"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYLABEL-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-scope-getbylabel"
+    },
+    {
+      "requirement": "REQ-SCOPE-GETBYLABEL-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-scope-getbylabel"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-003",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-003",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-004",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILTER-004",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-filter"
+    },
+    {
+      "requirement": "REQ-LOCATOR-NTH-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-nth"
+    },
+    {
+      "requirement": "REQ-LOCATOR-NTH-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-nth"
+    },
+    {
+      "requirement": "REQ-LOCATOR-NTH-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-nth"
+    },
+    {
+      "requirement": "REQ-LOCATOR-NTH-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-nth"
+    },
+    {
+      "requirement": "REQ-LOCATOR-COUNT-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-count"
+    },
+    {
+      "requirement": "REQ-LOCATOR-COUNT-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-count"
+    },
+    {
+      "requirement": "REQ-LOCATOR-COUNT-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-count"
+    },
+    {
+      "requirement": "REQ-LOCATOR-COUNT-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-count"
+    },
+    {
+      "requirement": "REQ-LOCATOR-TEXTCONTENT-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-textcontent"
+    },
+    {
+      "requirement": "REQ-LOCATOR-TEXTCONTENT-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-textcontent"
+    },
+    {
+      "requirement": "REQ-LOCATOR-TEXTCONTENT-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-textcontent"
+    },
+    {
+      "requirement": "REQ-LOCATOR-TEXTCONTENT-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-textcontent"
+    },
+    {
+      "requirement": "REQ-LOCATOR-GETATTRIBUTE-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-getattribute"
+    },
+    {
+      "requirement": "REQ-LOCATOR-GETATTRIBUTE-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-getattribute"
+    },
+    {
+      "requirement": "REQ-LOCATOR-GETATTRIBUTE-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-locator-getattribute"
+    },
+    {
+      "requirement": "REQ-LOCATOR-GETATTRIBUTE-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-locator-getattribute"
+    },
+    {
+      "requirement": "REQ-LOCATOR-INPUTVALUE-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-inputvalue"
+    },
+    {
+      "requirement": "REQ-LOCATOR-INPUTVALUE-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-inputvalue"
+    },
+    {
+      "requirement": "REQ-LOCATOR-INPUTVALUE-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-inputvalue"
+    },
+    {
+      "requirement": "REQ-LOCATOR-INPUTVALUE-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-inputvalue"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISVISIBLE-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-isvisible"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISVISIBLE-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-isvisible"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISVISIBLE-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-isvisible"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISVISIBLE-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-isvisible"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISENABLED-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-isenabled"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISENABLED-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-isenabled"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISENABLED-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-isenabled"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISENABLED-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-isenabled"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISEDITABLE-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-iseditable"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISEDITABLE-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-iseditable"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISEDITABLE-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-iseditable"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISEDITABLE-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-iseditable"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISCHECKED-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-ischecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISCHECKED-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-ischecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISCHECKED-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-ischecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-ISCHECKED-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-ischecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-BOUNDINGBOX-001",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-locator-boundingbox"
+    },
+    {
+      "requirement": "REQ-LOCATOR-BOUNDINGBOX-001",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-locator-boundingbox"
+    },
+    {
+      "requirement": "REQ-LOCATOR-BOUNDINGBOX-002",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-locator-boundingbox"
+    },
+    {
+      "requirement": "REQ-LOCATOR-BOUNDINGBOX-002",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-locator-boundingbox"
+    },
+    {
+      "requirement": "REQ-LOCATOR-CLICK-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-click"
+    },
+    {
+      "requirement": "REQ-LOCATOR-CLICK-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-click"
+    },
+    {
+      "requirement": "REQ-LOCATOR-CLICK-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-click"
+    },
+    {
+      "requirement": "REQ-LOCATOR-CLICK-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-click"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILL-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-fill"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILL-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-fill"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILL-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-fill"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FILL-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-fill"
+    },
+    {
+      "requirement": "REQ-LOCATOR-PRESS-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-press"
+    },
+    {
+      "requirement": "REQ-LOCATOR-PRESS-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-press"
+    },
+    {
+      "requirement": "REQ-LOCATOR-PRESS-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-press"
+    },
+    {
+      "requirement": "REQ-LOCATOR-PRESS-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-press"
+    },
+    {
+      "requirement": "REQ-LOCATOR-HOVER-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-hover"
+    },
+    {
+      "requirement": "REQ-LOCATOR-HOVER-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-hover"
+    },
+    {
+      "requirement": "REQ-LOCATOR-HOVER-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-hover"
+    },
+    {
+      "requirement": "REQ-LOCATOR-HOVER-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-hover"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FOCUS-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-focus"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FOCUS-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-focus"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FOCUS-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-focus"
+    },
+    {
+      "requirement": "REQ-LOCATOR-FOCUS-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-focus"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SCROLLINTOVIEW-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-scrollintoview"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SCROLLINTOVIEW-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-scrollintoview"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SCROLLINTOVIEW-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-scrollintoview"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SCROLLINTOVIEW-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-scrollintoview"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETCHECKED-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-setchecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETCHECKED-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-setchecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETCHECKED-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-setchecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETCHECKED-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-setchecked"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SELECTOPTION-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-selectoption"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SELECTOPTION-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-selectoption"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SELECTOPTION-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-selectoption"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SELECTOPTION-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-selectoption"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DRAGTO-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-dragto"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DRAGTO-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-dragto"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DRAGTO-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-locator-dragto"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DRAGTO-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-locator-dragto"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DROP-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-locator-drop"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DROP-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-locator-drop"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DROP-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-locator-drop"
+    },
+    {
+      "requirement": "REQ-LOCATOR-DROP-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-locator-drop"
+    },
+    {
+      "requirement": "REQ-MOUSE-MOVE-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-move"
+    },
+    {
+      "requirement": "REQ-MOUSE-MOVE-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-move"
+    },
+    {
+      "requirement": "REQ-MOUSE-MOVE-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-move"
+    },
+    {
+      "requirement": "REQ-MOUSE-MOVE-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-move"
+    },
+    {
+      "requirement": "REQ-MOUSE-DOWN-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-down"
+    },
+    {
+      "requirement": "REQ-MOUSE-DOWN-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-down"
+    },
+    {
+      "requirement": "REQ-MOUSE-DOWN-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-down"
+    },
+    {
+      "requirement": "REQ-MOUSE-DOWN-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-down"
+    },
+    {
+      "requirement": "REQ-MOUSE-UP-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-up"
+    },
+    {
+      "requirement": "REQ-MOUSE-UP-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-up"
+    },
+    {
+      "requirement": "REQ-MOUSE-UP-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-up"
+    },
+    {
+      "requirement": "REQ-MOUSE-UP-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-up"
+    },
+    {
+      "requirement": "REQ-MOUSE-CLICK-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-click"
+    },
+    {
+      "requirement": "REQ-MOUSE-CLICK-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-click"
+    },
+    {
+      "requirement": "REQ-MOUSE-CLICK-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-click"
+    },
+    {
+      "requirement": "REQ-MOUSE-CLICK-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-click"
+    },
+    {
+      "requirement": "REQ-MOUSE-WHEEL-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-wheel"
+    },
+    {
+      "requirement": "REQ-MOUSE-WHEEL-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-wheel"
+    },
+    {
+      "requirement": "REQ-MOUSE-WHEEL-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-mouse-wheel"
+    },
+    {
+      "requirement": "REQ-MOUSE-WHEEL-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-mouse-wheel"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-DOWN-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-down"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-DOWN-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-down"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-DOWN-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-down"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-DOWN-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-down"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-UP-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-up"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-UP-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-up"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-UP-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-up"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-UP-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-up"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-PRESS-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-press"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-PRESS-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-press"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-PRESS-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-press"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-PRESS-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-press"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-TYPE-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-type"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-TYPE-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-type"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-TYPE-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-keyboard-type"
+    },
+    {
+      "requirement": "REQ-KEYBOARD-TYPE-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-keyboard-type"
+    },
+    {
+      "requirement": "REQ-LOCATOR-WAITFOR-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-locator-waitfor"
+    },
+    {
+      "requirement": "REQ-LOCATOR-WAITFOR-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-locator-waitfor"
+    },
+    {
+      "requirement": "REQ-LOCATOR-WAITFOR-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-locator-waitfor"
+    },
+    {
+      "requirement": "REQ-LOCATOR-WAITFOR-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-locator-waitfor"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFOREVENT-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-page-waitforevent"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFOREVENT-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-page-waitforevent"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFOREVENT-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-page-waitforevent"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFOREVENT-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-page-waitforevent"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFOREVENT-003",
+      "provider": "codex",
+      "reference": "files-events.md#ref-page-waitforevent"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFOREVENT-003",
+      "provider": "aside",
+      "reference": "files-events.md#ref-page-waitforevent"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORURL-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforurl"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORURL-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforurl"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORURL-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforurl"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORURL-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforurl"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforfunction"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforfunction"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforfunction"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORFUNCTION-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforfunction"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORLOADSTATE-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforloadstate"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORLOADSTATE-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforloadstate"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORLOADSTATE-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforloadstate"
+    },
+    {
+      "requirement": "REQ-PAGE-WAITFORLOADSTATE-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-waitforloadstate"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETFILES-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-locator-setfiles"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETFILES-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-locator-setfiles"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETFILES-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-locator-setfiles"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETFILES-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-locator-setfiles"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETFILES-003",
+      "provider": "codex",
+      "reference": "files-events.md#ref-locator-setfiles"
+    },
+    {
+      "requirement": "REQ-LOCATOR-SETFILES-003",
+      "provider": "aside",
+      "reference": "files-events.md#ref-locator-setfiles"
+    },
+    {
+      "requirement": "REQ-CHOOSER-SETFILES-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-chooser-setfiles"
+    },
+    {
+      "requirement": "REQ-CHOOSER-SETFILES-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-chooser-setfiles"
+    },
+    {
+      "requirement": "REQ-CHOOSER-SETFILES-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-chooser-setfiles"
+    },
+    {
+      "requirement": "REQ-CHOOSER-SETFILES-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-chooser-setfiles"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-SAVE-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-download-save"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-SAVE-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-download-save"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-SAVE-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-download-save"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-SAVE-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-download-save"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-CANCEL-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-download-cancel"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-CANCEL-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-download-cancel"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-CANCEL-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-download-cancel"
+    },
+    {
+      "requirement": "REQ-DOWNLOAD-CANCEL-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-download-cancel"
+    },
+    {
+      "requirement": "REQ-DIALOG-ACCEPT-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-dialog-accept"
+    },
+    {
+      "requirement": "REQ-DIALOG-ACCEPT-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-dialog-accept"
+    },
+    {
+      "requirement": "REQ-DIALOG-ACCEPT-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-dialog-accept"
+    },
+    {
+      "requirement": "REQ-DIALOG-ACCEPT-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-dialog-accept"
+    },
+    {
+      "requirement": "REQ-DIALOG-DISMISS-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-dialog-dismiss"
+    },
+    {
+      "requirement": "REQ-DIALOG-DISMISS-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-dialog-dismiss"
+    },
+    {
+      "requirement": "REQ-DIALOG-DISMISS-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-dialog-dismiss"
+    },
+    {
+      "requirement": "REQ-DIALOG-DISMISS-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-dialog-dismiss"
+    },
+    {
+      "requirement": "REQ-SCOPE-EVALUATE-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-scope-evaluate"
+    },
+    {
+      "requirement": "REQ-SCOPE-EVALUATE-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-scope-evaluate"
+    },
+    {
+      "requirement": "REQ-SCOPE-EVALUATE-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-scope-evaluate"
+    },
+    {
+      "requirement": "REQ-SCOPE-EVALUATE-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-scope-evaluate"
+    },
+    {
+      "requirement": "REQ-LOCATOR-EVALUATEALL-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-locator-evaluateall"
+    },
+    {
+      "requirement": "REQ-LOCATOR-EVALUATEALL-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-locator-evaluateall"
+    },
+    {
+      "requirement": "REQ-LOCATOR-EVALUATEALL-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-locator-evaluateall"
+    },
+    {
+      "requirement": "REQ-LOCATOR-EVALUATEALL-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-locator-evaluateall"
+    },
+    {
+      "requirement": "REQ-PAGE-LOGS-001",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-logs"
+    },
+    {
+      "requirement": "REQ-PAGE-LOGS-001",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-logs"
+    },
+    {
+      "requirement": "REQ-PAGE-LOGS-002",
+      "provider": "codex",
+      "reference": "lifecycle-evaluation.md#ref-page-logs"
+    },
+    {
+      "requirement": "REQ-PAGE-LOGS-002",
+      "provider": "aside",
+      "reference": "lifecycle-evaluation.md#ref-page-logs"
+    },
+    {
+      "requirement": "REQ-CONSOLE-LOG-001",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-console-log"
+    },
+    {
+      "requirement": "REQ-CONSOLE-LOG-001",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-console-log"
+    },
+    {
+      "requirement": "REQ-CONSOLE-LOG-002",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-console-log"
+    },
+    {
+      "requirement": "REQ-CONSOLE-LOG-002",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-console-log"
+    },
+    {
+      "requirement": "REQ-DISPLAY-001",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-display"
+    },
+    {
+      "requirement": "REQ-DISPLAY-001",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-display"
+    },
+    {
+      "requirement": "REQ-DISPLAY-002",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-display"
+    },
+    {
+      "requirement": "REQ-DISPLAY-002",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-display"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-001",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-001",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-002",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-002",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-003",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-003",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-004",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-004",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-005",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-005",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-006",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-006",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-007",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-007",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-008",
+      "provider": "codex",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-RUNTIME-008",
+      "provider": "aside",
+      "reference": "runtime-output.md#ref-runtime"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-001",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-001",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-002",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-002",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-003",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-003",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-004",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-004",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-005",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-005",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-006",
+      "provider": "codex",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-DOMFRAMES-006",
+      "provider": "aside",
+      "reference": "snapshot-frames.md#ref-dom-frames"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-001",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-001",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-002",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-002",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-003",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-003",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-004",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-004",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-005",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-005",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-006",
+      "provider": "codex",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-SELECTION-006",
+      "provider": "aside",
+      "reference": "selection-search.md#ref-selection"
+    },
+    {
+      "requirement": "REQ-C-INPUT-001",
+      "provider": "codex",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-001",
+      "provider": "aside",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-002",
+      "provider": "codex",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-002",
+      "provider": "aside",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-003",
+      "provider": "codex",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-003",
+      "provider": "aside",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-004",
+      "provider": "codex",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-004",
+      "provider": "aside",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-005",
+      "provider": "codex",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-INPUT-005",
+      "provider": "aside",
+      "reference": "input-state.md#ref-input"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-001",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-001",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-002",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-002",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-003",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-003",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-004",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-004",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-005",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-005",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-006",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-006",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-007",
+      "provider": "codex",
+      "reference": "files-events.md#ref-files-events"
+    },
+    {
+      "requirement": "REQ-C-FILESEVENTS-007",
+      "provider": "aside",
+      "reference": "files-events.md#ref-files-events"
+    }
+  ],
+  "counts": {
+    "documents": 72,
+    "requirements": 184,
+    "conditions": 252,
+    "slots": 368,
+    "conditionUnits": 504
+  },
+  "unreviewed": [
+    "Original complete first CUA tool transcript absent from fixed-head artifacts",
+    "raw/requirements-read.json old duplicate full snapshot",
+    "A/B later ignored research",
+    "Complete A/B findings proposals and historic own-product raw executions",
+    "Browser behavior/current live reruns"
+  ]
+}

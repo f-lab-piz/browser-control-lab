@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-GETATTRIBUTE-001-C01
 
-- 조건: 없는 속성 null과빈속성 문자열을구분한다.
-- 준비: title없음/title빈값/href긴원문
-- 실행: 속성조회
-- 판정: 각각null/빈문자열/전체href이며propertyURL정규화로대체하지않는다.
+- 조건: 없는 속성 null과 빈 속성 문자열을 구분한다.
+- 준비: title 없음/title 빈값/href 긴 원문
+- 실행: 속성 조회
+- 판정: 각각 null/빈 문자열/전체 href이며 propertyURL 정규화로 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-GETATTRIBUTE-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-GETATTRIBUTE-002-C01
 
-- 조건: 빈속성이름/0/N개는사전입력·strict오류다.
-- 준비: 빈name과중복대상
+- 조건: 빈 속성 이름/0/N 개는 사전 입력·strict 오류다.
+- 준비: 빈 name과 중복 대상
 - 실행: 조회
-- 판정: 오류구분·무부작용이다.
+- 판정: 오류 구분·무부작용이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

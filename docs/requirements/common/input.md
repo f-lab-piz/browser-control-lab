@@ -19,10 +19,10 @@
 
 #### REQ-C-INPUT-001-C01
 
-- 조건: 입력전조건실패와입력중부분효과를구분한다.
-- 준비: disabled/readonly/overlay와down후fault
-- 실행: 해당입력
-- 판정: 사전입력0·중간trace/변화값기록·거짓성공없다.
+- 조건: 입력 전 조건 실패와 입력 중 부분 효과를 구분한다.
+- 준비: disabled/readonly/overlay와 down 후 fault
+- 실행: 해당 입력
+- 판정: 사전 입력 0·중간 trace/변화값 기록·거짓 성공 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-INPUT-002
@@ -42,10 +42,10 @@
 
 #### REQ-C-INPUT-002-C01
 
-- 조건: visible와offscreen/overlay및자동scroll은분리한다.
-- 준비: 화면밖버튼/overlay/닫힌details
-- 실행: 상태조회후명시입력
-- 판정: 조회scroll0·입력준비scroll가능·가림은입력전거절이다.
+- 조건: visible와 offscreen/overlay 및 자동 scroll은 분리한다.
+- 준비: 화면 밖 버튼/overlay/닫힌 details
+- 실행: 상태 조회 후 명시 입력
+- 판정: 조회 scroll0·입력 준비 scroll 가능·가림은 입력 전 거절이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-INPUT-003
@@ -65,10 +65,10 @@
 
 #### REQ-C-INPUT-003-C01
 
-- 조건: cleanup은연산소유와세션전체종료를구분한다.
-- 준비: 기존Control/left down·새Alt·fault·reset
-- 실행: press/click/drag및reset
-- 판정: 사전기존상태보존·중도새소유만release·reset전체시도·실패불확실명시다.
+- 조건: cleanup은 연산 소유와 세션 전체 종료를 구분한다.
+- 준비: 기존 Control/left down·새 Alt·fault·reset
+- 실행: press/click/drag 및 reset
+- 판정: 사전 기존 상태 보존·중도 새 소유만 release·reset 전체 시도·실패 불확실 명시다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-INPUT-004
@@ -88,10 +88,10 @@
 
 #### REQ-C-INPUT-004-C01
 
-- 조건: 입력전달과사후상태/업무성공을구분한다.
-- 준비: 값되돌림/예약격자·focus거부
-- 실행: fill/check/select/focus및업무저장
-- 판정: 약속상태는실제확인·업무서버PASS는별도이며예외없음만으로성공없다.
+- 조건: 입력 전달과 사후 상태/업무 성공을 구분한다.
+- 준비: 값 되돌림/예약 격자·focus 거부
+- 실행: fill/check/select/focus 및 업무 저장
+- 판정: 약속 상태는 실제 확인·업무 서버 PASS는 별도이며 예외 없음만으로 성공 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-INPUT-005
@@ -110,8 +110,8 @@
 
 #### REQ-C-INPUT-005-C01
 
-- 조건: 불확실응답에서비멱등입력을자동재전송하지않는다.
-- 준비: 입력성공후응답유실
-- 실행: 상태관찰/요청조회
-- 판정: 효과중복0·현재상태와재시도가능여부를안내한다.
+- 조건: 불확실 응답에서 비멱등 입력을 자동 재전송하지 않는다.
+- 준비: 입력 성공 후 응답 유실
+- 실행: 상태 관찰/요청 조회
+- 판정: 효과 중복 0·현재 상태와 재시도 가능 여부를 안내한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

@@ -33,10 +33,10 @@
 
 #### REQ-MOUSE-CLICK-001-C01
 
-- 조건: 좌표click은요청button/count의down/up조합이다.
-- 준비: 각종pointer이벤트기록
+- 조건: 좌표 click은 요청 button/count의 down/up 조합이다.
+- 준비: 각종 pointer 이벤트 기록
 - 실행: left/right/clickCount2
-- 판정: 좌표·순서·count일치,업무완료는별도판정이다.
+- 판정: 좌표·순서·count 일치,업무 완료는 별도 판정이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-MOUSE-CLICK-002
@@ -56,18 +56,18 @@
 
 #### REQ-MOUSE-CLICK-002-C01
 
-- 조건: 이미필요버튼down/invalid옵션은사전거절한다.
-- 준비: 명시left down·NaN좌표·clickCount0
+- 조건: 이미 필요 버튼 down/invalid 옵션은 사전 거절한다.
+- 준비: 명시 left down·NaN 좌표·clickCount0
 - 실행: click
-- 판정: 새입력0·기존down보존이며임의좌표보정없다.
+- 판정: 새 입력 0·기존 down 보존이며 임의 좌표 보정 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-MOUSE-CLICK-002-C02
 
-- 조건: down후실패는자기가누른버튼release를시도한다.
-- 준비: 중간adapterfault
+- 조건: down 후 실패는 자기가 누른 버튼 release를 시도한다.
+- 준비: 중간 adapterfault
 - 실행: click
-- 판정: 부분trace·불확실결과·release시도이며자동재클릭없다.
+- 판정: 부분 trace·불확실 결과·release 시도이며 자동 재클릭 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

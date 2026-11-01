@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-WAITFORFUNCTION-001-C01
 
-- 조건: settled JSON값의truthiness로만성공판정한다.
+- 조건: settled JSON 값의 truthiness 로만 성공 판정한다.
 - 준비: async false→7·never-settle
 - 실행: waitForFunction
-- 판정: Promise자체로성공하지않고7만정상반환·겹친poll없다.
+- 판정: Promise 자체로 성공하지 않고 7만 정상 반환·겹친 poll 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-WAITFORFUNCTION-002
@@ -56,18 +56,18 @@
 
 #### REQ-PAGE-WAITFORFUNCTION-002-C01
 
-- 조건: 사용자throw/reject/직렬화오류를timeout으로삼키지않는다.
+- 조건: 사용자 throw/reject/직렬화 오류를 timeout으로 삼키지 않는다.
 - 준비: ReferenceError·undefined·DOMnode
 - 실행: wait
-- 판정: 즉시구분가능오류·사용자함수효과는별도기록이다.
+- 판정: 즉시 구분 가능 오류·사용자 함수 효과는 별도 기록이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-WAITFORFUNCTION-002-C02
 
-- 조건: navigation context소멸만deadline내재평가한다.
-- 준비: navigation/close/reset경합
+- 조건: navigation context 소멸만 deadline 내 재평가한다.
+- 준비: navigation/close/reset 경합
 - 실행: wait
-- 판정: 새main context재평가가능·사용자오류재실행없고종결1회다.
+- 판정: 새 main context 재평가 가능·사용자 오류 재실행 없고 종결 1 회다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

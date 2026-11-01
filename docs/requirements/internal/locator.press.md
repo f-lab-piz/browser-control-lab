@@ -33,18 +33,18 @@
 
 #### REQ-LOCATOR-PRESS-001-C01
 
-- 조건: 대상focus를확인한후그대상에키를전달한다.
-- 준비: inputA/B와focus불가div
+- 조건: 대상 focus를 확인한 후 그 대상에 키를 전달한다.
+- 준비: inputA/B와 focus 불가 div
 - 실행: A.press Enter
-- 판정: A가active이고A의event만발생하며div는focus오류다.
+- 판정: A가 active이고 A의 event만 발생하며 div는 focus 오류다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-PRESS-001-C02
 
-- 조건: 복합키는keyboard.press의소유정책을공유한다.
-- 준비: 기존Control down
-- 실행: 대상press Control+A
-- 판정: 기존Control유지·새키만해제되며직접keyboard경로와일관된다.
+- 조건: 복합키는 keyboard.press의 소유 정책을 공유한다.
+- 준비: 기존 Control down
+- 실행: 대상 press Control+A
+- 판정: 기존 Control 유지·새 키만 해제되며 직접 keyboard 경로와 일관된다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-PRESS-002
@@ -64,18 +64,18 @@
 
 #### REQ-LOCATOR-PRESS-002-C01
 
-- 조건: 잘못된키/조합은focus준비전검증한다.
-- 준비: 빈키·알수없는조합·disabled대상
+- 조건: 잘못된 키/조합은 focus 준비 전 검증한다.
+- 준비: 빈 키·알 수 없는 조합·disabled 대상
 - 실행: press
-- 판정: 키입력0이고가능한한기존focus/down을보존한다.
+- 판정: 키 입력 0이고 가능한 한 기존 focus/down을 보존한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-PRESS-002-C02
 
-- 조건: focus이전실패와키전송중실패를구분한다.
-- 준비: 기존Control와새Alt·중간전송fault
-- 실행: press 및후속C
-- 판정: 기존Control보존·새Alt정리·부분이벤트기록이다.
+- 조건: focus 이전 실패와 키 전송 중 실패를 구분한다.
+- 준비: 기존 Control와 새 Alt·중간 전송 fault
+- 실행: press 및 후속 C
+- 판정: 기존 Control 보존·새 Alt 정리·부분 이벤트 기록이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

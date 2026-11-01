@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-HOVER-001-C01
 
-- 조건: hover는대상hit좌표에이동하고pointerdown을발생시키지않는다.
-- 준비: hover메뉴와clickcounter
+- 조건: hover는 대상 hit 좌표에 이동하고 pointerdown을 발생시키지 않는다.
+- 준비: hover 메뉴와 clickcounter
 - 실행: hover
-- 판정: 메뉴노출·counter0·button상태유지다.
+- 판정: 메뉴 노출·counter0·button 상태 유지다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-HOVER-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-HOVER-002-C01
 
-- 조건: 숨김/가림/unsupported transform은다른요소hover성공으로위장하지않는다.
-- 준비: parentoverlay와rotateframe
+- 조건: 숨김/가림/unsupported transform은 다른 요소 hover 성공으로 위장하지 않는다.
+- 준비: parentoverlay와 rotateframe
 - 실행: hover
-- 판정: 명시실패·원치않은click없고준비scroll은따로기록한다.
+- 판정: 명시 실패·원치 않은 click 없고 준비 scroll은 따로 기록한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

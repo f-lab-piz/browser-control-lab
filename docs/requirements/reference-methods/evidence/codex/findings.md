@@ -681,3 +681,23 @@
 ## 다음 사이클
 
 메인이 이 결과와 Aside 결과를 통합한 고정 SHA를 지정한 후, 조합·실패/복구·중복 API 대안과 서로 다른 정책의 근거를 교차검토한다. 이 보고서를 전체3회 완료로 세지 않는다.
+
+## 추가 관측 BOUNDARY1 · 별도 Chrome 표면, IAB 합산 제외
+
+IAB 새탭 생성은 BLOCKED였다(`raw/boundary1-iab-blocked.json`). 메인의 주 표면 고정 지시에 따라 기존 IAB 매핑의 확정 상태는 유지했다. 가능한 Chrome CUA extension을 별도 보충 표면으로 기록했다. 개인탭을 열지 않았고, 새 fixture 탭 하나만 관찰·종료했다. 파일·fixture·제품·서버 판정 수정은 없다.
+
+|사례|관측|범위|
+|---|---|---|
+|B01 인접span filter|foobar 1 / 음0, foo bar 0 / 음1, /foobar/ 1|해당 adjacent 행만|
+|B02 실제공백 filter|foobar 0 / 음1, foo bar 1 / 음0, /foo bar/ 1|해당 spaced 행만|
+|B03 긴본문 filter|706자말미 needle 문자열/regex1, 음0|long slot/hidden/g,y/출력예산 미실측|
+|B04 getByText|exact foobar→nested,slot-adjacent / exact foo bar→spaced|문자열 exact 일부, regex 미실측|
+|B05 native/ARIA label|각각 해당 INPUT1개, labelled 및 aria-labelledby=aria-name|wrapped/aria-label/regex 미실측|
+|B06 2매칭 조사|textContent/getAttribute 모두 strict mode violation|공개 first 설명과 해당 Chrome 관측이 다름|
+|B07 0매칭 조사|두 조사 모두200ms selector deadline 오류|null 성공이 아니지만 즉시 타입별없음 오류도 아님|
+|B08 상태조사0/N|isVisible/isEnabled는2개true·0개false|우리strict 정책과의 차이, stale 미실측|
+|B09 readonly fill|300ms deadline진단오류·LOCKED유지·focus false유지·readonly 판정 대기|readonly1개만, inputcounter/disabled/aria-readonly 미실측|
+
+9사례는 관측에 관한8개 PASS_SUBCASE와1개 OUR_STRICT_POLICY_DIFFERENCE이며, 우리 제품 테스트 결과가 아니다. 조건ID별로 `fullConditionSatisfied:false`, `primaryIabCoverageEligible:false`를 남겼다. 전체조건9개가검증됐다는 뜻이 아니다. 기존 IAB의 DOC first/null 설명과 Chrome LIVE strict 결과는 표면을 구분해 함께 보존하며 IAB 실제동작을 추정하지 않는다.
+
+보완 후보: 문서의 first/null 한줄을 근거로 모든조회가비엄격하다고 단정하지 말고 method별 실제0/1/N을 관측한다. readonly는 값불변과 오류범주를 나누며 deadline오류를 전용 편집불가코드로 바꾸어 쓰지 않는다. 이 차이 때문에 우리 MUST를 경쟁사와같게 낮추거나 확대할 이유는 없다.

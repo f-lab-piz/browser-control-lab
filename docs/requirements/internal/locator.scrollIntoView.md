@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-SCROLLINTOVIEW-001-C01
 
-- 조건: 연결된대상을관련조상scrollport에서노출한다.
-- 준비: 가로/세로내부scroll밖요소
+- 조건: 연결된 대상을 관련 조상 scrollport에서 노출한다.
+- 준비: 가로/세로 내부 scroll 밖 요소
 - 실행: scrollIntoView
-- 판정: 각관련scrollport에서대상box가노출되며click/input0이다.
+- 판정: 각 관련 scrollport에서 대상 box가 노출되며 click/input0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SCROLLINTOVIEW-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-SCROLLINTOVIEW-002-C01
 
-- 조건: 노출과실제click가능은별개며미로드대상을생성하지않는다.
-- 준비: stickyoverlay·DOM없는virtual행
+- 조건: 노출과 실제 click 가능은 별개며 미로드 대상을 생성하지 않는다.
+- 준비: stickyoverlay·DOM 없는 virtual 행
 - 실행: scrollIntoView
-- 판정: overlay제거안함·없는행은대상없음·로딩/관찰의효과를구분한다.
+- 판정: overlay 제거 안 함·없는 행은 대상 없음·로딩/관찰의 효과를 구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

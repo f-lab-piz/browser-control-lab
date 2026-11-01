@@ -33,18 +33,18 @@
 
 #### REQ-SCOPE-EVALUATE-001-C01
 
-- 조건: Scope와Locator별칭의수신인자를구분한다.
-- 준비: main/childdocument·element·명시arg
-- 실행: 각fn평가
-- 판정: Scope fn(arg),별칭 fn(el,arg),선택document전역이며closure전달없다.
+- 조건: Scope와 Locator 별칭의 수신 인자를 구분한다.
+- 준비: main/childdocument·element·명시 arg
+- 실행: 각 fn 평가
+- 판정: Scope fn(arg),별칭 fn(el,arg),선택 document 전역이며 closure 전달 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-EVALUATE-001-C02
 
-- 조건: 평가는Promise를settle하고JSON결과만반환한다.
-- 준비: syncnull·async7·명시JSON
+- 조건: 평가는 Promise를 settle 하고 JSON 결과만 반환한다.
+- 준비: syncnull·async7·명시 JSON
 - 실행: evaluate
-- 판정: 정확한JSON값이며모델출력은별도console/display다.
+- 판정: 정확한 JSON 값이며 모델 출력은 별도 console/display다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-SCOPE-EVALUATE-002
@@ -64,18 +64,18 @@
 
 #### REQ-SCOPE-EVALUATE-002-C01
 
-- 조건: undefined/순환/DOMnode/비유한값/closure오류는성공null이아니다.
-- 준비: 각결과와arg·미정의closure
+- 조건: undefined/순환/DOMnode/비유한 값/closure 오류는 성공 null이 아니다.
+- 준비: 각 결과와 arg·미정의 closure
 - 실행: evaluate
-- 판정: 직렬화/함수오류구분·실행전arg실패는효과0이다.
+- 판정: 직렬화/함수 오류 구분·실행 전 arg 실패는 효과 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-EVALUATE-002-C02
 
-- 조건: 효과뒤throw/timeout은부분효과를보존하고재실행하지않는다.
-- 준비: marker증가후reject/never-settle
-- 실행: 평가→reset/후속판독
-- 판정: marker1·late출력없음·rollback/자동재실행주장없다.
+- 조건: 효과 뒤 throw/timeout은 부분 효과를 보존하고 재실행하지 않는다.
+- 준비: marker 증가 후 reject/never-settle
+- 실행: 평가→reset/후속 판독
+- 판정: marker1·late 출력 없음·rollback/자동 재실행 주장 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

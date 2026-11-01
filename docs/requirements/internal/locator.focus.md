@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-FOCUS-001-C01
 
-- 조건: 성공은composed activeElement가대상임을확인한결과다.
+- 조건: 성공은 composed activeElement가 대상임을 확인한 결과다.
 - 준비: input/open shadow input/editor
 - 실행: focus
-- 판정: 독립activeElement경로가대상이고값변경없다.
+- 판정: 독립 activeElement 경로가 대상이고 값 변경 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-FOCUS-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-FOCUS-002-C01
 
-- 조건: 비focusable/disabled/detach는focus함수호출만으로true를주지않는다.
-- 준비: div/disabledinput/focus시교체
+- 조건: 비 focusable/disabled/detach는 focus 함수 호출만으로 true를 주지 않는다.
+- 준비: div/disabledinput/focus 시 교체
 - 실행: focus
-- 판정: focus불가/stale이며기존focus또는변화된부분상태를명시한다.
+- 판정: focus 불가/stale이며 기존 focus 또는 변화된 부분 상태를 명시한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-SCREENSHOT-001-C01
 
-- 조건: viewport/fullPage/clip은서로다른범위다.
-- 준비: 큰문서와내부iframe·스크롤된viewport
-- 실행: 각모드캡처
-- 판정: viewport는현재영역·fullPage는문서범위·iframe내부전체를자동펼치지않는다.
+- 조건: viewport/fullPage/clip은 서로 다른 범위다.
+- 준비: 큰 문서와 내부 iframe·스크롤된 viewport
+- 실행: 각 모드 캡처
+- 판정: viewport는 현재 영역·fullPage는 문서 범위·iframe 내부 전체를 자동 펼치지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-SCREENSHOT-002
@@ -56,18 +56,18 @@
 
 #### REQ-PAGE-SCREENSHOT-002-C01
 
-- 조건: clip은현재viewport CSS좌표와요청정수크기로정규화한다.
-- 준비: 가로세로scroll·DPR2·clip 320x240
-- 실행: clip캡처와독립PNG판독
-- 판정: 정확한대상색/320x240이며문서원점이나DPR640x480로바꾸지않는다.
+- 조건: clip은 현재 viewport CSS 좌표와 요청 정수 크기로 정규화한다.
+- 준비: 가로 세로 scroll·DPR2·clip 320x240
+- 실행: clip 캡처와 독립 PNG 판독
+- 판정: 정확한 대상 색/320x240이며 문서 원점이나 DPR640x480로 바꾸지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-SCREENSHOT-002-C02
 
-- 조건: 캡처중viewport가바뀌면정합성재시도후명시실패한다.
-- 준비: 스크롤/resize변화조건
+- 조건: 캡처 중 viewport가 바뀌면 정합성 재시도 후 명시 실패한다.
+- 준비: 스크롤/resize 변화 조건
 - 실행: clip
-- 판정: 최대3회정합성시도후VIEWPORT_CHANGED오류이며stale픽셀성공없다.
+- 판정: 최대 3회 정합성 시도 후 VIEWPORT_CHANGED 오류이며 stale 픽셀 성공 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
@@ -91,10 +91,10 @@
 
 #### REQ-PAGE-SCREENSHOT-003-C01
 
-- 조건: clip음수위치/0크기/소수크기/비유한값/fullPage병용은거절한다.
-- 준비: 각불량clip
+- 조건: clip 음수 위치/0 크기/소수 크기/비유한 값/fullPage 병용은 거절한다.
+- 준비: 각 불량 clip
 - 실행: screenshot
-- 판정: INVALID_SCREENSHOT_CLIP/조합오류·성공이미지없다.
+- 판정: INVALID_SCREENSHOT_CLIP/조합 오류·성공 이미지 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-SCREENSHOT-004
@@ -113,8 +113,8 @@
 
 #### REQ-PAGE-SCREENSHOT-004-C01
 
-- 조건: 거대문서캡처는메모리/전송예산실패를명시한다.
-- 준비: 큰PNG·매우긴문서
-- 실행: fullPage/이후display
-- 판정: 한도초과/부분수집을숨기지않고현재viewport나iframe내부전체로오인하지않는다.
+- 조건: 거대 문서 캡처는 메모리/전송 예산 실패를 명시한다.
+- 준비: 큰 PNG·매우 긴 문서
+- 실행: fullPage/이후 display
+- 판정: 한도 초과/부분 수집을 숨기지 않고 현재 viewport나 iframe 내부 전체로 오인하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

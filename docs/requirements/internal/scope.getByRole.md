@@ -33,26 +33,26 @@
 
 #### REQ-SCOPE-GETBYROLE-001-C01
 
-- 조건: role과name 조건은 함께 적용되며 name 미지정과 빈 name은 구분한다.
-- 준비: button 이름A/빈이름·다른roleA
-- 실행: name생략/빈문자열exact/이름A조회
-- 판정: 각조건의정확한집합이며빈name을name생략으로처리하지않는다.
+- 조건: role과 name 조건은 함께 적용되며 name 미지정과 빈 name은 구분한다.
+- 준비: button 이름 A/빈 이름·다른 roleA
+- 실행: name 생략/빈 문자열 exact/이름 A 조회
+- 판정: 각 조건의 정확한 집합이며 빈 name을 name 생략으로 처리하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYROLE-001-C02
 
 - 조건: 문자열 exact와 RegExp는 별도 matching이다.
-- 준비: 이름저장/저장하기/Save·한글slotlabel
-- 실행: 부분/exact/정규식조회
-- 판정: exact는전체문자열,정규식은source/flags,반복호출결과동일이다.
+- 준비: 이름 저장/저장하기/Save·한글 slotlabel
+- 실행: 부분/exact/정규식 조회
+- 판정: exact는 전체 문자열,정규식은 source/flags,반복 호출 결과 동일이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYROLE-001-C03
 
-- 조건: includeHidden은 layout숨김을 포함하며 offscreen은 기본포함이다.
-- 준비: hidden버튼과offscreen버튼
-- 실행: 기본/true조회
-- 판정: 기본은hidden제외·offscreen포함,true는hidden도포함한다.
+- 조건: includeHidden은 layout 숨김을 포함하며 offscreen은 기본 포함이다.
+- 준비: hidden 버튼과 offscreen 버튼
+- 실행: 기본/true 조회
+- 판정: 기본은 hidden 제외·offscreen 포함,true는 hidden도 포함한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-SCOPE-GETBYROLE-002
@@ -72,18 +72,18 @@
 
 #### REQ-SCOPE-GETBYROLE-002-C01
 
-- 조건: 잘못된 role/옵션타입/정규식 조합은 조용히 무시하지 않는다.
-- 준비: 빈role·includeHidden문자열·regex와exact true
+- 조건: 잘못된 role/옵션 타입/정규식 조합은 조용히 무시하지 않는다.
+- 준비: 빈 role·includeHidden 문자열·regex와 exact true
 - 실행: 조회
-- 판정: 입력/미지원조합오류와무입력이다.
+- 판정: 입력/미지원 조합 오류와 무입력이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYROLE-002-C02
 
 - 조건: 중복 role/name을 조작하면 strict 오류다.
-- 준비: 같은저장버튼2개
+- 준비: 같은 저장 버튼 2개
 - 실행: getByRole(...).click
-- 판정: 다중오류와서버click0이다.
+- 판정: 다중 오류와 서버 click0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

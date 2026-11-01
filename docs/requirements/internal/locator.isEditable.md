@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-ISEDITABLE-001-C01
 
-- 조건: enabled·지원텍스트타입·notreadonly 제어만편집가능이다.
+- 조건: enabled·지원 텍스트 타입·notreadonly 제어만 편집 가능이다.
 - 준비: text/textarea/editor/checkbox/button
 - 실행: isEditable
-- 판정: 앞셋편집가능,체크형·버튼false이며fill지원과일치한다.
+- 판정: 앞 셋 편집 가능,체크형·버튼 false이며 fill 지원과 일치한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-ISEDITABLE-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-ISEDITABLE-002-C01
 
-- 조건: readonly/aria-readonly/disabled는false다.
-- 준비: 각제한제어와0/N
+- 조건: readonly/aria-readonly/disabled는 false다.
+- 준비: 각 제한 제어와 0/N
 - 실행: 조회
-- 판정: 제한false,없음/중복은strict이며상태조회무입력이다.
+- 판정: 제한 false,없음/중복은 strict이며 상태 조회 무입력이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

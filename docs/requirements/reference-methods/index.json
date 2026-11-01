@@ -2473,7 +2473,8 @@
           "reference": "snapshot-frames.md#ref-page-frames",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-page-frames-01"
+            "CL-CODEX-page-frames-01",
+            "CL-CODEX-page-frames-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -2481,7 +2482,8 @@
               "conditionId": "REQ-PAGE-FRAMES-001-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-frames-01"
+                "CL-CODEX-page-frames-01",
+                "CL-CODEX-page-frames-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -2517,7 +2519,8 @@
           "reference": "snapshot-frames.md#ref-page-frames",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-page-frames-01"
+            "CL-CODEX-page-frames-01",
+            "CL-CODEX-page-frames-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -2525,7 +2528,8 @@
               "conditionId": "REQ-PAGE-FRAMES-002-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-frames-01"
+                "CL-CODEX-page-frames-01",
+                "CL-CODEX-page-frames-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -3880,7 +3884,8 @@
           "reference": "input-state.md#ref-locator-inputvalue",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-inputValue-01"
+            "CL-CODEX-locator-inputValue-01",
+            "CL-CODEX-locator-inputValue-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -3888,7 +3893,8 @@
               "conditionId": "REQ-LOCATOR-INPUTVALUE-001-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-inputValue-01"
+                "CL-CODEX-locator-inputValue-01",
+                "CL-CODEX-locator-inputValue-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -3924,7 +3930,8 @@
           "reference": "input-state.md#ref-locator-inputvalue",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-inputValue-01"
+            "CL-CODEX-locator-inputValue-01",
+            "CL-CODEX-locator-inputValue-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -3932,7 +3939,8 @@
               "conditionId": "REQ-LOCATOR-INPUTVALUE-002-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-inputValue-01"
+                "CL-CODEX-locator-inputValue-01",
+                "CL-CODEX-locator-inputValue-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -4144,7 +4152,8 @@
           "reference": "input-state.md#ref-locator-iseditable",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-isEditable-01"
+            "CL-CODEX-locator-isEditable-01",
+            "CL-CODEX-locator-isEditable-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -4152,7 +4161,8 @@
               "conditionId": "REQ-LOCATOR-ISEDITABLE-001-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-isEditable-01"
+                "CL-CODEX-locator-isEditable-01",
+                "CL-CODEX-locator-isEditable-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -4188,7 +4198,8 @@
           "reference": "input-state.md#ref-locator-iseditable",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-isEditable-01"
+            "CL-CODEX-locator-isEditable-01",
+            "CL-CODEX-locator-isEditable-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -4196,7 +4207,8 @@
               "conditionId": "REQ-LOCATOR-ISEDITABLE-002-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-isEditable-01"
+                "CL-CODEX-locator-isEditable-01",
+                "CL-CODEX-locator-isEditable-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -4232,7 +4244,8 @@
           "reference": "input-state.md#ref-locator-ischecked",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-isChecked-01"
+            "CL-CODEX-locator-isChecked-01",
+            "CL-CODEX-locator-isChecked-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -4240,7 +4253,8 @@
               "conditionId": "REQ-LOCATOR-ISCHECKED-001-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-isChecked-01"
+                "CL-CODEX-locator-isChecked-01",
+                "CL-CODEX-locator-isChecked-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -4276,7 +4290,8 @@
           "reference": "input-state.md#ref-locator-ischecked",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-isChecked-01"
+            "CL-CODEX-locator-isChecked-01",
+            "CL-CODEX-locator-isChecked-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -4284,7 +4299,8 @@
               "conditionId": "REQ-LOCATOR-ISCHECKED-002-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-isChecked-01"
+                "CL-CODEX-locator-isChecked-01",
+                "CL-CODEX-locator-isChecked-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -4320,7 +4336,8 @@
           "reference": "snapshot-frames.md#ref-locator-boundingbox",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-boundingBox-01"
+            "CL-CODEX-locator-boundingBox-01",
+            "CL-CODEX-locator-boundingBox-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -4328,7 +4345,8 @@
               "conditionId": "REQ-LOCATOR-BOUNDINGBOX-001-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-boundingBox-01"
+                "CL-CODEX-locator-boundingBox-01",
+                "CL-CODEX-locator-boundingBox-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -4364,7 +4382,8 @@
           "reference": "snapshot-frames.md#ref-locator-boundingbox",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-locator-boundingBox-01"
+            "CL-CODEX-locator-boundingBox-01",
+            "CL-CODEX-locator-boundingBox-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -4372,7 +4391,8 @@
               "conditionId": "REQ-LOCATOR-BOUNDINGBOX-002-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-locator-boundingBox-01"
+                "CL-CODEX-locator-boundingBox-01",
+                "CL-CODEX-locator-boundingBox-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -6859,7 +6879,8 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforfunction",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-page-waitForFunction-01"
+            "CL-CODEX-page-waitForFunction-01",
+            "CL-CODEX-page-waitForFunction-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -6867,7 +6888,8 @@
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-001-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-waitForFunction-01"
+                "CL-CODEX-page-waitForFunction-01",
+                "CL-CODEX-page-waitForFunction-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -6903,7 +6925,8 @@
           "reference": "lifecycle-evaluation.md#ref-page-waitforfunction",
           "relation": "composition",
           "relatedClaims": [
-            "CL-CODEX-page-waitForFunction-01"
+            "CL-CODEX-page-waitForFunction-01",
+            "CL-CODEX-page-waitForFunction-02"
           ],
           "support": "partial-or-unknown",
           "conditions": [
@@ -6911,7 +6934,8 @@
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C01",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-waitForFunction-01"
+                "CL-CODEX-page-waitForFunction-01",
+                "CL-CODEX-page-waitForFunction-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             },
@@ -6919,7 +6943,8 @@
               "conditionId": "REQ-PAGE-WAITFORFUNCTION-002-C02",
               "coverage": "not-established",
               "relatedClaims": [
-                "CL-CODEX-page-waitForFunction-01"
+                "CL-CODEX-page-waitForFunction-01",
+                "CL-CODEX-page-waitForFunction-02"
               ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
@@ -8271,13 +8296,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-001-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8315,13 +8344,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-002-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8359,13 +8392,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-003-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8403,13 +8440,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-004-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8447,13 +8488,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-005-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8491,13 +8536,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-006-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8535,13 +8584,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-007-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8579,13 +8632,17 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "runtime-output.md#ref-runtime",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-runtime-01"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-RUNTIME-008-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-runtime-01"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8623,13 +8680,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "snapshot-frames.md#ref-dom-frames",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-dom-frames-01",
+            "CL-CODEX-dom-frames-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-001-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-dom-frames-01",
+                "CL-CODEX-dom-frames-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8673,13 +8736,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "snapshot-frames.md#ref-dom-frames",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-dom-frames-01",
+            "CL-CODEX-dom-frames-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-002-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-dom-frames-01",
+                "CL-CODEX-dom-frames-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8723,13 +8792,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "snapshot-frames.md#ref-dom-frames",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-dom-frames-01",
+            "CL-CODEX-dom-frames-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-003-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-dom-frames-01",
+                "CL-CODEX-dom-frames-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8773,13 +8848,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "snapshot-frames.md#ref-dom-frames",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-dom-frames-01",
+            "CL-CODEX-dom-frames-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-004-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-dom-frames-01",
+                "CL-CODEX-dom-frames-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8823,13 +8904,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "snapshot-frames.md#ref-dom-frames",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-dom-frames-01",
+            "CL-CODEX-dom-frames-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-005-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-dom-frames-01",
+                "CL-CODEX-dom-frames-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8873,13 +8960,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "snapshot-frames.md#ref-dom-frames",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-dom-frames-01",
+            "CL-CODEX-dom-frames-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-DOMFRAMES-006-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-dom-frames-01",
+                "CL-CODEX-dom-frames-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8923,13 +9016,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "selection-search.md#ref-selection",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-selection-01",
+            "CL-CODEX-selection-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-001-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-selection-01",
+                "CL-CODEX-selection-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -8975,13 +9074,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "selection-search.md#ref-selection",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-selection-01",
+            "CL-CODEX-selection-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-002-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-selection-01",
+                "CL-CODEX-selection-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9027,13 +9132,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "selection-search.md#ref-selection",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-selection-01",
+            "CL-CODEX-selection-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-003-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-selection-01",
+                "CL-CODEX-selection-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9079,13 +9190,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "selection-search.md#ref-selection",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-selection-01",
+            "CL-CODEX-selection-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-004-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-selection-01",
+                "CL-CODEX-selection-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9131,13 +9248,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "selection-search.md#ref-selection",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-selection-01",
+            "CL-CODEX-selection-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-005-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-selection-01",
+                "CL-CODEX-selection-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9183,13 +9306,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "selection-search.md#ref-selection",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-selection-01",
+            "CL-CODEX-selection-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-SELECTION-006-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-selection-01",
+                "CL-CODEX-selection-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9235,13 +9364,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "input-state.md#ref-input",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-input-01",
+            "CL-CODEX-input-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-001-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-input-01",
+                "CL-CODEX-input-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9281,13 +9416,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "input-state.md#ref-input",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-input-01",
+            "CL-CODEX-input-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-002-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-input-01",
+                "CL-CODEX-input-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9327,13 +9468,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "input-state.md#ref-input",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-input-01",
+            "CL-CODEX-input-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-003-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-input-01",
+                "CL-CODEX-input-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9373,13 +9520,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "input-state.md#ref-input",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-input-01",
+            "CL-CODEX-input-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-004-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-input-01",
+                "CL-CODEX-input-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9419,13 +9572,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "input-state.md#ref-input",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-input-01",
+            "CL-CODEX-input-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-INPUT-005-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-input-01",
+                "CL-CODEX-input-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9465,13 +9624,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-001-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9511,13 +9676,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-002-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9557,13 +9728,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-003-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9603,13 +9780,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-004-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9649,13 +9832,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-005-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9695,13 +9884,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-006-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]
@@ -9741,13 +9936,19 @@
           "surface": "Codex CUA / ChatGPT in-app browser (iab)",
           "reference": "files-events.md#ref-files-events",
           "relation": "composition",
-          "relatedClaims": [],
+          "relatedClaims": [
+            "CL-CODEX-files-events-01",
+            "CL-CODEX-files-events-02"
+          ],
           "support": "partial-or-unknown",
           "conditions": [
             {
               "conditionId": "REQ-C-FILESEVENTS-007-C01",
               "coverage": "not-established",
-              "relatedClaims": [],
+              "relatedClaims": [
+                "CL-CODEX-files-events-01",
+                "CL-CODEX-files-events-02"
+              ],
               "reason": "공개 API/일부 관측의 관련성은 있으나 이 조건 전체의 동등성을 아직 입증하지 않음. relatedClaims는 충족 증명이 아님."
             }
           ]

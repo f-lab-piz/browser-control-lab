@@ -33,26 +33,26 @@
 
 #### REQ-LOCATOR-SETFILES-001-C01
 
-- 조건: local/asset/bytes/base64는같은파일내용을전달한다.
-- 준비: 같은바이너리4소스
-- 실행: 각setFiles후실제multipartsubmit
-- 판정: 파일hash/안전이름/MIME/크기일치다.
+- 조건: local/asset/bytes/base64는 같은 파일 내용을 전달한다.
+- 준비: 같은 바이너리 4 소스
+- 실행: 각 setFiles 후 실제 multipartsubmit
+- 판정: 파일 hash/안전 이름/MIME/크기 일치다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SETFILES-001-C02
 
-- 조건: 빈파일과[]선택해제는구분한다.
-- 준비: 0byte inline파일과기존파일선택
-- 실행: 0byte설정후[]
-- 판정: 첫file1 size0·이후file0이며파일없는오류와혼동없다.
+- 조건: 빈 파일과[] 선택 해제는 구분한다.
+- 준비: 0byte inline 파일과 기존 파일 선택
+- 실행: 0byte 설정 후[]
+- 판정: 첫 file1 size0·이후 file0이며 파일 없는 오류와 혼동 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SETFILES-001-C03
 
-- 조건: 성공파일목록은입력순서와메타데이터를보존한다.
-- 준비: 중복명/Unicode명3파일
+- 조건: 성공 파일 목록은 입력 순서와 메타데이터를 보존한다.
+- 준비: 중복명/Unicode 명 3 파일
 - 실행: multiple setFiles
-- 판정: 서로다른바이트가합쳐지지않고각name/size/type와순서가맞다.
+- 판정: 서로 다른 바이트가 합쳐지지 않고 각 name/size/type와 순서가 맞다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SETFILES-002
@@ -72,26 +72,26 @@
 
 #### REQ-LOCATOR-SETFILES-002-C01
 
-- 조건: 여러source/불량bytes/base64는전체사전검증한다.
-- 준비: [256,-1]·bytes와fileId동시·불량base64
+- 조건: 여러 source/불량 bytes/base64는 전체 사전 검증한다.
+- 준비: [256,-1]·bytes와 fileId 동시·불량 base64
 - 실행: setFiles
-- 판정: 전달전오류·기존선택/hash/event불변이다.
+- 판정: 전달 전 오류·기존 선택/hash/event 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SETFILES-002-C02
 
-- 조건: 한파일및총합32MiB와single/multiple을검증한다.
-- 준비: 경계/1byte초과·single2개
+- 조건: 한 파일 및 총합 32MiB와 single/multiple을 검증한다.
+- 준비: 경계/1byte 초과·single2개
 - 실행: setFiles
-- 판정: 허용경계만진행·초과/개수오류전선택유지다.
+- 판정: 허용 경계만 진행·초과/개수 오류 전 선택 유지다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SETFILES-002-C03
 
-- 조건: local읽기/asset소유실패는혼합입력도사전거절한다.
-- 준비: 유효local+다른세션asset/없는경로
+- 조건: local 읽기/asset 소유 실패는 혼합 입력도 사전 거절한다.
+- 준비: 유효 local+다른 세션 asset/없는 경로
 - 실행: setFiles
-- 판정: 기존선택보존·partiallocal이벤트없음·임시DOM0이다.
+- 판정: 기존 선택 보존·partiallocal 이벤트 없음·임시 DOM0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
@@ -114,8 +114,8 @@
 
 #### REQ-LOCATOR-SETFILES-003-C01
 
-- 조건: 안전이름/MIME기본·빈파일·삭제를같은엔진정책으로유지한다.
-- 준비: 경로분리자/NUL·기본명·빈bytes·[]
-- 실행: setFiles와실제submit
-- 판정: basename정책·MIME·0byte와선택해제가정확하고invalid는전달전거절이다.
+- 조건: 안전 이름/MIME 기본·빈 파일·삭제를 같은 엔진 정책으로 유지한다.
+- 준비: 경로 분리자/NUL·기본명·빈 bytes·[]
+- 실행: setFiles와 실제 submit
+- 판정: basename 정책·MIME·0byte와 선택 해제가 정확하고 invalid는 전달 전 거절이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

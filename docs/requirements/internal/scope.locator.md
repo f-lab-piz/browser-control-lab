@@ -34,17 +34,17 @@
 #### REQ-SCOPE-LOCATOR-001-C01
 
 - 조건: CSS는 현재 Scope document의 open shadow를 포함한 후보를 지연 조회한다.
-- 준비: 동일CSS가main/child/shadow에각존재
-- 실행: Scope별locator를만든뒤DOM추가후count
-- 판정: 지정document범위와호출시점의후보이며다른frame침범없다.
+- 준비: 동일 CSS가 main/child/shadow에 각 존재
+- 실행: Scope별 locator를 만든 뒤 DOM 추가 후 count
+- 판정: 지정 document 범위와 호출 시점의 후보이며 다른 frame 침범 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-LOCATOR-001-C02
 
 - 조건: 발급 ref는 동일 page/frame/document/element identity에 결합한다.
-- 준비: snapshotref와동일연결요소
-- 실행: 다음snapshot후ref조회
-- 판정: 동일요소에만연결되며ref문자열을CSS로오인하지않는다.
+- 준비: snapshotref와 동일 연결 요소
+- 실행: 다음 snapshot 후 ref 조회
+- 판정: 동일 요소에만 연결되며 ref 문자열을 CSS로 오인하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-SCOPE-LOCATOR-002
@@ -65,9 +65,9 @@
 #### REQ-SCOPE-LOCATOR-002-C01
 
 - 조건: 잘못된 CSS와 stale ref는 서로 다른 오류다.
-- 준비: 구문불량CSS/분리요소ref/교체문서ref
-- 실행: count와click
-- 판정: selector/stale element/stale document가구분되고유사대상입력없다.
+- 준비: 구문 불량 CSS/분리 요소 ref/교체 문서 ref
+- 실행: count와 click
+- 판정: selector/stale element/stale document가 구분되고 유사 대상 입력 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

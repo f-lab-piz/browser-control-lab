@@ -33,34 +33,34 @@
 
 #### REQ-LOCATOR-CLICK-001-C01
 
-- 조건: 기본 left 단일클릭은 정확한대상에mouse down/up 한쌍을전달한다.
-- 준비: 서버clickcounter와pointertrace가있는버튼
-- 실행: 기본click
-- 판정: 대상counter1·다른counter0·buttons잔류0이다.
+- 조건: 기본 left 단일 클릭은 정확한 대상에 mouse down/up 한 쌍을 전달한다.
+- 준비: 서버 clickcounter와 pointertrace가 있는 버튼
+- 실행: 기본 click
+- 판정: 대상 counter1·다른 counter0·buttons 잔류 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-CLICK-001-C02
 
-- 조건: button/right/middle 및clickCount2는요청한이벤트구성을따른다.
-- 준비: contextmenu/auxclick/dblclick별카운터
-- 실행: 각옵션을독립run
-- 판정: 우클릭/중클릭/더블클릭을단일left로대체하지않고dblclick업무1회다.
+- 조건: button/right/middle 및 clickCount2는 요청한 이벤트 구성을 따른다.
+- 준비: contextmenu/auxclick/dblclick별 카운터
+- 실행: 각 옵션을 독립 run
+- 판정: 우클릭/중클릭/더블클릭을 단일 left로 대체하지 않고 dblclick 업무 1 회다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-CLICK-001-C03
 
-- 조건: 대상이화면밖이면필요한scrollport만노출시킨후입력한다.
-- 준비: 내부iframe·가로scroll밖버튼
+- 조건: 대상이 화면 밖이면 필요한 scrollport만 노출시킨 후 입력한다.
+- 준비: 내부 iframe·가로 scroll 밖 버튼
 - 실행: click
-- 판정: 대상hit일치·목적scroll변경을기록하고다른영역클릭없다.
+- 판정: 대상 hit 일치·목적 scroll 변경을 기록하고 다른 영역 클릭 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-CLICK-001-C04
 
-- 조건: 안정은연속2animation frame에서연결문서와box변동이CSS1px이하인상태다.
-- 준비: 버튼이움직이다정지하는fixture
+- 조건: 안정은 연속 2animation frame에서 연결 문서와 box 변동이 CSS1px 이하인 상태다.
+- 준비: 버튼이 움직이다 정지하는 fixture
 - 실행: click
-- 판정: 기본총5초내정지한대상만클릭하고계속움직이면ACTIONABILITY_TIMEOUT이다.
+- 판정: 기본 총 5초 내 정지한 대상만 클릭하고 계속 움직이면 ACTIONABILITY_TIMEOUT이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-CLICK-002
@@ -80,34 +80,34 @@
 
 #### REQ-LOCATOR-CLICK-002-C01
 
-- 조건: 없는대상은기본총5초까지만기다리고중복은발견즉시거절한다.
-- 준비: 지연등장/끝내없음/중복버튼
+- 조건: 없는 대상은 기본 총 5 초까지만 기다리고 중복은 발견 즉시 거절한다.
+- 준비: 지연 등장/끝내 없음/중복 버튼
 - 실행: click
-- 판정: 지연등장은1회,없음timeout·중복strict·거절시입력0이다.
+- 판정: 지연 등장은 1회,없음 timeout·중복 strict·거절 시 입력 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-CLICK-002-C02
 
-- 조건: 최종hit는자식요소와모든조상iframe의가림/clipping을검사한다.
-- 준비: 자식버튼은visible지만parentoverlay가가림
+- 조건: 최종 hit는 자식 요소와 모든 조상 iframe의 가림/clipping을 검사한다.
+- 준비: 자식 버튼은 visible지만 parentoverlay가 가림
 - 실행: click
-- 판정: ELEMENT_OBSCURED·버튼/overlay입력0이며자동overlay제거없다.
+- 판정: ELEMENT_OBSCURED·버튼/overlay 입력 0이며 자동 overlay 제거 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-CLICK-002-C03
 
-- 조건: 좌표준비후문서/ref교체는다른요소로재지정하지않는다.
-- 준비: ref발급후element교체·좌표계산후frame교체
+- 조건: 좌표 준비 후 문서/ref 교체는 다른 요소로 재지정하지 않는다.
+- 준비: ref 발급 후 element 교체·좌표 계산 후 frame 교체
 - 실행: click
-- 판정: ref/document stale이며새버튼click0이다.
+- 판정: ref/document stale이며 새 버튼 click0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-CLICK-002-C04
 
-- 조건: 입력도중실패는부분효과와자기소유버튼정리를알린다.
-- 준비: down후adapter실패/대상detach
+- 조건: 입력 도중 실패는 부분 효과와 자기 소유 버튼 정리를 알린다.
+- 준비: down 후 adapter 실패/대상 detach
 - 실행: click
-- 판정: 발생down은기록·up정리시도·완료불확실표시·자동두번째클릭없다.
+- 판정: 발생 down은 기록·up 정리 시도·완료 불확실 표시·자동 두 번째 클릭 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-WAITFOREVENT-001-C01
 
-- 조건: 발생전등록한페이지이벤트는조작가능한핸들을준다.
-- 준비: popup/chooser/dialog/download버튼
-- 실행: wait선언→click→await
-- 판정: 해당페이지발급핸들·identity·event순서가맞다.
+- 조건: 발생 전 등록한 페이지 이벤트는 조작 가능한 핸들을 준다.
+- 준비: popup/chooser/dialog/download 버튼
+- 실행: wait 선언→click→await
+- 판정: 해당 페이지 발급 핸들·identity·event 순서가 맞다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-WAITFOREVENT-002
@@ -56,18 +56,18 @@
 
 #### REQ-PAGE-WAITFOREVENT-002-C01
 
-- 조건: 같은가변event의중복소비와timeout누수를방지한다.
-- 준비: dialog/chooser waiter두개·timeout후event
-- 실행: wait등록/소비
-- 판정: 같은event에두가변핸들발급없고늦은event가종료wait에전달되지않는다.
+- 조건: 같은 가변 event의 중복 소비와 timeout 누수를 방지한다.
+- 준비: dialog/chooser waiter 두 개·timeout 후 event
+- 실행: wait 등록/소비
+- 판정: 같은 event에 두 가변 핸들 발급 없고 늦은 event가 종료 wait에 전달되지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-WAITFOREVENT-002-C02
 
-- 조건: close는정상close waiter와다른wait의오류를분리한다.
-- 준비: close와download wait동시등록
-- 실행: 자기Page.close
-- 판정: close metadata정상·다른wait PAGE_CLOSED·다른페이지wait유지다.
+- 조건: close는 정상 close waiter와 다른 wait의 오류를 분리한다.
+- 준비: close와 download wait 동시 등록
+- 실행: 자기 Page.close
+- 판정: close metadata 정상·다른 wait PAGE_CLOSED·다른 페이지 wait 유지다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
@@ -90,8 +90,8 @@
 
 #### REQ-PAGE-WAITFOREVENT-003-C01
 
-- 조건: wait선언다음hostaction은등록/arming완료뒤실행한다.
-- 준비: 등록ack지연·즉시dialog/chooser/popup
-- 실행: wait선언→click→await
-- 판정: register-ready→action→event순서·sleep없음·timeout/reset뒤late등록0이다.
+- 조건: wait 선언 다음 hostaction은 등록/arming 완료 뒤 실행한다.
+- 준비: 등록 ack 지연·즉시 dialog/chooser/popup
+- 실행: wait 선언→click→await
+- 판정: register-ready→action→event 순서·sleep 없음·timeout/reset 뒤 late 등록 0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

@@ -33,10 +33,10 @@
 
 #### REQ-KEYBOARD-DOWN-001-C01
 
-- 조건: 명시modifier down은다음press/type에이어진다.
-- 준비: focus된input
+- 조건: 명시 modifier down은 다음 press/type에 이어진다.
+- 준비: focus 된 input
 - 실행: Control down→press C→up Control
-- 판정: C의ctrlKey=true·마지막up까지만유지다.
+- 판정: C의 ctrlKey=true·마지막 up까지만 유지다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-KEYBOARD-DOWN-002
@@ -56,10 +56,10 @@
 
 #### REQ-KEYBOARD-DOWN-002-C01
 
-- 조건: 빈/알수없는키는키이벤트전에거절한다.
+- 조건: 빈/알 수 없는 키는 키 이벤트 전에 거절한다.
 - 준비: empty/NotAKey
 - 실행: down
-- 판정: 오류·keydown0·기존modifier불변이다.
+- 판정: 오류·keydown0·기존 modifier 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

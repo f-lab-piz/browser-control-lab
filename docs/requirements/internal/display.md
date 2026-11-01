@@ -33,10 +33,10 @@
 
 #### REQ-DISPLAY-001-C01
 
-- 조건: 유효이미지는완전한이미지출력블록으로전달한다.
-- 준비: PNG screenshot과before/after로그
+- 조건: 유효 이미지는 완전한 이미지 출력 블록으로 전달한다.
+- 준비: PNG screenshot과 before/after 로그
 - 실행: display
-- 판정: MIME/원바이트의이미지이며base64텍스트로그로대체하지않는다.
+- 판정: MIME/원바이트의 이미지이며 base64 텍스트 로그로 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-DISPLAY-002
@@ -56,10 +56,10 @@
 
 #### REQ-DISPLAY-002-C01
 
-- 조건: 잘못된MIME/base64는오류,한도초과정상이미지는전체생략이다.
-- 준비: corrupt데이터·4MiB초과·이미지합8MiB초과
-- 실행: display와후속log
-- 판정: 형식오류구분·부분이미지없음·truncated이유·후속유효로그보존이다.
+- 조건: 잘못된 MIME/base64는 오류,한도 초과 정상 이미지는 전체 생략이다.
+- 준비: corrupt 데이터·4MiB 초과·이미지 합 8MiB 초과
+- 실행: display와 후속 log
+- 판정: 형식 오류 구분·부분 이미지 없음·truncated 이유·후속 유효 로그 보존이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

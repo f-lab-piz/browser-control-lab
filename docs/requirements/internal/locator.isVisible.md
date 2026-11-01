@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-ISVISIBLE-001-C01
 
-- 조건: layout노출과offscreen/가림은별개다.
-- 준비: 보임/offscreen/overlay대상
+- 조건: layout 노출과 offscreen/가림은 별개다.
+- 준비: 보임/offscreen/overlay 대상
 - 실행: isVisible
-- 판정: 셋모두layout있으면true이며scroll0이다.
+- 판정: 셋 모두 layout 있으면 true이며 scroll0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-ISVISIBLE-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-ISVISIBLE-002-C01
 
-- 조건: 조상숨김·닫힌details본문은false,summary는자체노출기준이다.
-- 준비: display:none조상/details/summaryslot
+- 조건: 조상 숨김·닫힌 details 본문은 false,summary는 자체 노출 기준이다.
+- 준비: display:none 조상/details/summaryslot
 - 실행: isVisible
-- 판정: 본문false·summarytrue,0/N은strict오류다.
+- 판정: 본문 false·summarytrue,0/N은 strict 오류다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

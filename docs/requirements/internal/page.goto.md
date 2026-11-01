@@ -34,17 +34,17 @@
 #### REQ-PAGE-GOTO-001-C01
 
 - 조건: 탐색 준비는 목적 문서의 readyState가 interactive 이상이고 새 document identity에 연결된 상태다.
-- 준비: A문서와지연로딩B
-- 실행: goto(B)후즉시snapshot
-- 판정: B의URL/document에연결되며A내용을B로반환하지않는다.
+- 준비: A 문서와 지연 로딩 B
+- 실행: goto(B) 후 즉시 snapshot
+- 판정: B의 URL/document에 연결되며 A 내용을 B로 반환하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-GOTO-001-C02
 
 - 조건: redirect는 최종 URL/문서를 관찰할 수 있어야 한다.
-- 준비: B가C로HTTPredirect
-- 실행: goto(B)후URL조회
-- 판정: 최종C를확인하고원래B와최종C를혼동하지않는다.
+- 준비: B가 C로 HTTPredirect
+- 실행: goto(B) 후 URL 조회
+- 판정: 최종 C를 확인하고 원래 B와 최종 C를 혼동하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-GOTO-002
@@ -64,26 +64,26 @@
 
 #### REQ-PAGE-GOTO-002-C01
 
-- 조건: 잘못된URL/금지scheme은 기존 문서를 바꾸기 전에 거절한다.
-- 준비: A페이지와javascript:/상대경로
+- 조건: 잘못된 URL/금지 scheme은 기존 문서를 바꾸기 전에 거절한다.
+- 준비: A 페이지와 javascript:/상대경로
 - 실행: goto
-- 판정: 입력오류·A불변이다.
+- 판정: 입력 오류·A 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-GOTO-002-C02
 
 - 조건: HTTP 오류 문서와 네트워크 탐색 실패는 다르다.
-- 준비: HTTP404본문/연결불가호스트
-- 실행: 각goto
-- 판정: 404문서는관찰가능한탐색,네트워크실패는NAVIGATION_FAILED이며업무성공아니다.
+- 준비: HTTP404 본문/연결 불가 호스트
+- 실행: 각 goto
+- 판정: 404 문서는 관찰 가능한 탐색,네트워크 실패는 NAVIGATION_FAILED이며 업무 성공 아니다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-GOTO-002-C03
 
 - 조건: 중간 timeout/후속 탐색은 문서 결과의 불확실성을 보고한다.
-- 준비: 느린B와동일Page C탐색경합
-- 실행: goto(B)대기중C/timeout
-- 판정: B성공으로오인하지않고현재문서/취소·불확실을관찰한다.
+- 준비: 느린 B와 동일 Page C 탐색 경합
+- 실행: goto(B) 대기 중 C/timeout
+- 판정: B 성공으로 오인하지 않고 현재 문서/취소·불확실을 관찰한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

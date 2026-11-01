@@ -33,18 +33,18 @@
 
 #### REQ-LOCATOR-SETCHECKED-001-C01
 
-- 조건: 이미요청상태면click하지않는다.
-- 준비: checked true인checkbox
+- 조건: 이미 요청 상태면 click 하지 않는다.
+- 준비: checked true인 checkbox
 - 실행: setChecked true
-- 판정: true유지·clickcounter0이다.
+- 판정: true 유지·clickcounter0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-SETCHECKED-001-C02
 
-- 조건: 상태변경후요청checked와실제상태를비교한다.
-- 준비: 체크를되돌리는핸들러
+- 조건: 상태 변경 후 요청 checked와 실제 상태를 비교한다.
+- 준비: 체크를 되돌리는 핸들러
 - 실행: setChecked true
-- 판정: CHECK_STATE_NOT_CHANGED이며true성공없다.
+- 판정: CHECK_STATE_NOT_CHANGED이며 true 성공 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-SETCHECKED-002
@@ -64,10 +64,10 @@
 
 #### REQ-LOCATOR-SETCHECKED-002-C01
 
-- 조건: 비체크형/disabled와radio false 요청은변경전에거절한다.
+- 조건: 비체크형/disabled 대상과 현재 true인 radio의 false 변경 요청은 입력 전에 거절한다.
 - 준비: button/disabledcheckbox/checkedradio
 - 실행: setChecked false/true
-- 판정: 타입/불가조작오류·기존checked/이벤트불변이다.
+- 판정: 타입/불가조작 오류이며 기존 checked와 이벤트는 불변이다. 이미 false인 radio에 false를 요청하면 no-op 성공이며 클릭0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

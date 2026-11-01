@@ -33,18 +33,18 @@
 
 #### REQ-KEYBOARD-PRESS-001-C01
 
-- 조건: 조합키가새로소유한키만해제한다.
-- 준비: 기존Control down과아무down없는경우
+- 조건: 조합키가 새로 소유한 키만 해제한다.
+- 준비: 기존 Control down과 아무 down 없는 경우
 - 실행: press Control+A→press C
-- 판정: 기존Control은유지·임시Control은해제되어두후속C의flags가다르다.
+- 판정: 기존 Control은 유지·임시 Control은 해제되어 두 후속 C의 flags가 다르다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-KEYBOARD-PRESS-001-C02
 
-- 조건: 더하기문자자체와조합구분문자를구분한다.
-- 준비: focus된텍스트입력
-- 실행: press '+'와Control+key
-- 판정: 문자+입력과조합키해석이명시규칙대로이며빈토큰조합은거절한다.
+- 조건: 더하기 문자 자체와 조합 구분 문자를 구분한다.
+- 준비: focus 된 텍스트 입력
+- 실행: press '+'와 Control+key
+- 판정: 문자+입력과 조합키 해석이 명시 규칙대로이며 빈 토큰 조합은 거절한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-KEYBOARD-PRESS-002
@@ -64,10 +64,10 @@
 
 #### REQ-KEYBOARD-PRESS-002-C01
 
-- 조건: 검증실패/중도실패에서기존키와새소유키정리를구분한다.
-- 준비: 기존Control·새Alt중fault
-- 실행: press와후속C
-- 판정: 사전키0·중도새키해제·기존Control보존이다.
+- 조건: 검증 실패/중도 실패에서 기존 키와 새 소유 키 정리를 구분한다.
+- 준비: 기존 Control·새 Alt 중 fault
+- 실행: press와 후속 C
+- 판정: 사전 키 0·중도 새 키 해제·기존 Control 보존이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

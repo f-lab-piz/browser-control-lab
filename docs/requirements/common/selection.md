@@ -19,10 +19,10 @@
 
 #### REQ-C-SELECTION-001-C01
 
-- 조건: 단일조회/조작은strict이며명시예외만0/N을허용한다.
-- 준비: 0/2매칭과count/evaluateAll/상태wait
-- 실행: 각API호출
-- 판정: 단일strict·count0/2·all배열·wait표정책일치다.
+- 조건: 단일 조회/조작은 strict이며 명시 예외만 0/N을 허용한다.
+- 준비: 0/2 매칭과 count/evaluateAll/상태 wait
+- 실행: 각 API 호출
+- 판정: 단일 strict·count0/2·all 배열·wait 표 정책 일치다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-SELECTION-002
@@ -42,10 +42,10 @@
 
 #### REQ-C-SELECTION-002-C01
 
-- 조건: query조합은지연평가불변연산체인이다.
-- 준비: DOM갱신·A/B필터·nth순서
-- 실행: 같은원본과파생query조회
-- 판정: 원본보존·호출순서와최신DOM결과일치다.
+- 조건: query 조합은 지연 평가 불변 연산 체인이다.
+- 준비: DOM 갱신·A/B 필터·nth 순서
+- 실행: 같은 원본과 파생 query 조회
+- 판정: 원본 보존·호출 순서와 최신 DOM 결과 일치다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-SELECTION-003
@@ -65,10 +65,10 @@
 
 #### REQ-C-SELECTION-003-C01
 
-- 조건: 문자열/regex의정규화·대소문자·반복상태는일관된다.
-- 준비: 한글/이모지/줄바꿈·같은후보2개
-- 실행: exact/부분/regex g,y반복
-- 판정: 문자열대소문자구분·공백정규화·regex후보별lastIndex독립이다.
+- 조건: 문자열/regex의 정규화·대소문자·반복 상태는 일관된다.
+- 준비: 한글/이모지/줄바꿈·같은 후보 2개
+- 실행: exact/부분/regex g,y 반복
+- 판정: 문자열 대소문자 구분·공백 정규화·regex 후보별 lastIndex 독립이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-SELECTION-004
@@ -88,10 +88,10 @@
 
 #### REQ-C-SELECTION-004-C01
 
-- 조건: 검색본문은실제composed text순서로연결한다.
-- 준비: 인접span/실제공백·script/style·ARIA/CSS숨김
-- 실행: 양음본문검색
-- 판정: 없는공백삽입0·실제공백구분·제외/포함정책정확하다.
+- 조건: 검색 본문은 실제 composed text 순서로 연결한다.
+- 준비: 인접 span/실제 공백·script/style·ARIA/CSS 숨김
+- 실행: 양음 본문 검색
+- 판정: 없는 공백 삽입 0·실제 공백 구분·제외/포함 정책 정확하다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-SELECTION-005
@@ -111,10 +111,10 @@
 
 #### REQ-C-SELECTION-005-C01
 
-- 조건: 접근이름/검색본문/원문을별도로판정한다.
-- 준비: labelA·긴본문B·raw개행
+- 조건: 접근 이름/검색 본문/원문을 별도로 판정한다.
+- 준비: labelA·긴 본문 B·raw 개행
 - 실행: role/label/text/filter/textContent
-- 판정: 각정의결과가다르고출력축약이검색을줄이지않는다.
+- 판정: 각 정의 결과가 다르고 출력 축약이 검색을 줄이지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-C-SELECTION-006
@@ -133,8 +133,8 @@
 
 #### REQ-C-SELECTION-006-C01
 
-- 조건: ref의문서/요소identity를제목/순서와바꾸지않는다.
-- 준비: 동일문서2snapshot후element교체
+- 조건: ref의 문서/요소 identity를 제목/순서와 바꾸지 않는다.
+- 준비: 동일 문서 2snapshot 후 element 교체
 - 실행: old/new ref
-- 판정: 동일연결요소ref유지·교체oldstale·다른세션ref불가다.
+- 판정: 동일 연결 요소 ref 유지·교체 oldstale·다른 세션 ref 불가다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

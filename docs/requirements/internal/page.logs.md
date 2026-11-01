@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-LOGS-001-C01
 
-- 조건: entries는since초과/level정확일치로필터한다.
-- 준비: 같은ms의log/debug/error와빈버퍼
+- 조건: entries는 since 초과/level 정확 일치로 필터한다.
+- 준비: 같은 ms의 log/debug/error와 빈 버퍼
 - 실행: logs since/level
-- 판정: at>since인정확level만반환·REPL로그와구분한다.
+- 판정: at>since인 정확 level만 반환·REPL 로그와 구분한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-LOGS-002
@@ -56,10 +56,10 @@
 
 #### REQ-PAGE-LOGS-002-C01
 
-- 조건: collection은수집전/유실/보관범위를실제로그와분리한다.
-- 준비: attach전로그와1002개발생
+- 조건: collection은 수집 전/유실/보관 범위를 실제 로그와 분리한다.
+- 준비: attach 전 로그와 1002개 발생
 - 실행: logs
-- 판정: 최근1000·dropped/partial·시작/보관시각이맞고합성warning/타페이지로그없다.
+- 판정: 최근 1000·dropped/partial·시작/보관 시각이 맞고 합성 warning/타페이지 로그 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

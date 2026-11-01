@@ -16,7 +16,9 @@
 await locator.evaluate(el => el.value)
 ```
 
-- `CL-CODEX-locator-inputValue-01` **DOC**: read-only element evaluate는 공개; value 읽기 조합은 추론 근거 `CUA-DOC-API` / CUA API Reference: locator.evaluate read-only property and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-inputValue-01` **DOC**: read-only 단일 element evaluate(fn,arg?,options?) 공개 서명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:152-152. 범위: public declaration only; limits in unknownConditions.
+
+- `CL-CODEX-locator-inputValue-02` **INFERENCE**: element.value 읽기 조합은 조사자 제안이며 제어요소/CE 타입정책·오류를 입증하지 않는다. 근거 `CODEX-RESEARCH-INFERENCE` / sources.md#ref1-정리-조합-추론의-범위. 범위: 조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외.
 
 추가 확인할 조건:
 
@@ -66,7 +68,7 @@ await locator.evaluate(el => el.value)
 await locator.isVisible()
 ```
 
-- `CL-CODEX-locator-isVisible-01` **DOC**: first matched visible boolean 근거 `CUA-DOC-API` / CUA API Reference: locator.isVisible and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-isVisible-01` **DOC**: first matched visible boolean 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:89-89; raw/public-contract-excerpts.md:157-157. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -116,7 +118,7 @@ await locator.isVisible()
 await locator.isEnabled()
 ```
 
-- `CL-CODEX-locator-isEnabled-01` **DOC**: first matched enabled boolean 근거 `CUA-DOC-API` / CUA API Reference: locator.isEnabled and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-isEnabled-01` **DOC**: first matched enabled boolean 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:88-88; raw/public-contract-excerpts.md:156-156. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -166,7 +168,9 @@ await locator.isEnabled()
 await locator.evaluate(el => ({tag:el.tagName,disabled:el.disabled,readOnly:el.readOnly,isContentEditable:el.isContentEditable}))
 ```
 
-- `CL-CODEX-locator-isEditable-01` **DOC**: read-only state 수집 가능 서명; editable 판정은 우리 조합 근거 `CUA-DOC-API` / CUA API Reference: locator.evaluate read-only state and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-isEditable-01` **DOC**: read-only 단일 element evaluate(fn,arg?,options?) 공개 서명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:152-152. 범위: public declaration only; limits in unknownConditions.
+
+- `CL-CODEX-locator-isEditable-02` **INFERENCE**: 공개 evaluate에 DOM 상태를 읽는 함수를 전달하는 조합을 제안한다. editable 공통정책은 자체 판단이며 미실행이다. 근거 `CODEX-RESEARCH-INFERENCE` / sources.md#ref1-정리-조합-추론의-범위. 범위: 조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외.
 
 추가 확인할 조건:
 
@@ -216,7 +220,9 @@ await locator.evaluate(el => ({tag:el.tagName,disabled:el.disabled,readOnly:el.r
 await locator.evaluate(el => ({checked:el.checked,aria:el.getAttribute("aria-checked")}))
 ```
 
-- `CL-CODEX-locator-isChecked-01` **DOC**: native/ARIA 원상태 read-only 수집 조합 가능 근거 `CUA-DOC-API` / CUA API Reference: locator.evaluate + getAttribute and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-isChecked-01` **DOC**: read-only 단일 element evaluate와 getAttribute 공개 서명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:81-81. 범위: public declaration only; limits in unknownConditions.
+
+- `CL-CODEX-locator-isChecked-02` **INFERENCE**: native property/ARIA attribute를 읽어 체크상태를 판정하는 조합을 제안한다. mixed/타입정책은 미확인이다. 근거 `CODEX-RESEARCH-INFERENCE` / sources.md#ref1-정리-조합-추론의-범위. 범위: 조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외.
 
 추가 확인할 조건:
 
@@ -266,9 +272,9 @@ await locator.evaluate(el => ({checked:el.checked,aria:el.getAttribute("aria-che
 await locator.click({button:"left",timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-click-01` **DOC**: button/force/modifiers/timeoutMs, dblclick 별도; 과거 slot/scale 클릭 근거 `CUA-DOC-API` / CUA API Reference: locator.click / dblclick and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-click-01` **DOC**: click/dblclick은 LocatorClickOptions(button/force/modifiers/timeoutMs)를 받아 Promise<void>를 반환하는 선언이다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:74-74; raw/public-contract-excerpts.md:128-128. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-locator-click-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-locator-click-02` **HISTORICAL**: {"slotClick": true, "scaledFrameClick": true} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -324,9 +330,9 @@ await page.locator("button.export").click()
 await locator.fill("",{timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-fill-01` **DOC**: fill(value:string,{timeoutMs?}):void; 과거 readonly 거절 근거 `CUA-DOC-API` / CUA API Reference: locator.fill and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-fill-01` **DOC**: fill(value:string,{timeoutMs?}):Promise<void>를 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:78-78. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-locator-fill-02` **HISTORICAL**: only applicable audit result named in sources.md 근거 `HIST-CODEX-AUDIT` / docs/evidence/diagnostics-before-after.json#/codex; docs/fixes-before-after.md#codex--aside--우리-툴. 범위: prior audit fixture; build/call trace not recorded.
+- `CL-CODEX-locator-fill-02` **HISTORICAL**: {"readonly": "rejected"} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/readonly. 범위: 2026-11-01 이전 audit 기록의 해당 값만; 현재 재실행/모든 옵션 지원 아님; 빌드/상세 호출 trace 미보존.
 
 추가 확인할 조건:
 
@@ -378,7 +384,7 @@ await page.getByLabel("고정 문서번호", {exact:true}).fill("BROKEN", {timeo
 await locator.press("Enter",{timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-press-01` **DOC**: locator focus후 key press 공개 근거 `CUA-DOC-API` / CUA API Reference: locator.press and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-press-01` **DOC**: locator focus후 key press 공개 근거 `CUA-DOC-API` / raw/cua-entry-excerpts.md:139-139. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -426,7 +432,7 @@ await locator.press("Enter",{timeoutMs:1000})
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-locator-hover-01` **DOC**: native Target에는 coordinate actions가 있으나 DOM-only 입력은 throw 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-hover-01` **DOC**: native Target에는 coordinate actions가 있으나 DOM-only 입력은 throw 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:21-31; raw/cua-entry-excerpts.md:54-54. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -474,7 +480,7 @@ await locator.press("Enter",{timeoutMs:1000})
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-locator-focus-01` **DOC**: locator.press는 focus를 수반하지만 focus-only 계약은 없음 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-focus-01` **DOC**: locator.press는 대상이 focus된 상태에서 키를 누른다는 공개 설명이다. focus-only 동등성은 미확인이다. 근거 `CUA-DOC-API` / raw/cua-entry-excerpts.md:139-139. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -522,7 +528,7 @@ await locator.press("Enter",{timeoutMs:1000})
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-locator-scrollIntoView-01` **DOC**: native Target.scroll은 DOM-only throw, IAB locator scrollIntoView 없음 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-scrollIntoView-01` **DOC**: native Target.scroll 서명과 DOM-only tab의 native 입력 wrapper가 입력 전에 throw한다는 공개 설명. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:54-54. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -572,7 +578,7 @@ await locator.press("Enter",{timeoutMs:1000})
 await locator.setChecked(true,{timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-setChecked-01` **DOC**: boolean, force/timeoutMs, check/uncheck도 공개 근거 `CUA-DOC-API` / CUA API Reference: locator.setChecked and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-setChecked-01` **DOC**: boolean, force/timeoutMs, check/uncheck도 공개 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:71-71; raw/public-contract-excerpts.md:100-100; raw/public-contract-excerpts.md:127-127. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -622,7 +628,7 @@ await locator.setChecked(true,{timeoutMs:1000})
 await locator.selectOption([{value:"A"}],{timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-selectOption-01` **DOC**: string/descriptor/array, descriptor index/label/value; 반환void 근거 `CUA-DOC-API` / CUA API Reference: locator.selectOption and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-selectOption-01` **DOC**: string/descriptor/array, descriptor index/label/value; 반환void 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:96-96; raw/public-contract-excerpts.md:135-135; raw/public-contract-excerpts.md:144-144. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -670,7 +676,7 @@ await locator.selectOption([{value:"A"}],{timeoutMs:1000})
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-locator-dragTo-01` **DOC**: native Target.drag(from,to)는 있으나 DOM-only wrapper throw 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-dragTo-01` **DOC**: native Target.drag(from,to) 서명과 DOM-only tab의 native 입력 wrapper가 입력 전에 throw한다는 공개 설명. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:26-26; raw/cua-entry-excerpts.md:54-54. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -720,7 +726,7 @@ await page.locator("#drag-source").dragTo(page.locator("#drag-target"))
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-mouse-move-01` **DOC**: native Target.drag/scroll은 존재, move primitive는 열거안됨 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-mouse-move-01` **DOC**: native Target.drag/scroll은 존재, move primitive는 열거안됨 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:21-31. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -768,7 +774,7 @@ await page.locator("#drag-source").dragTo(page.locator("#drag-target"))
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-mouse-down-01` **DOC**: click/drag는 atomic native 메서드; 개별down 공개안됨 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-mouse-down-01` **DOC**: Target 공개 발췌는 click/drag/scroll을 열거한다. down 지속상태·atomicity·cleanup은 미확인이다. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:21-31. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -816,7 +822,7 @@ await page.locator("#drag-source").dragTo(page.locator("#drag-target"))
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-mouse-up-01` **DOC**: 개별up 공개안됨 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-mouse-up-01` **DOC**: 열람한 공개 인터페이스 발췌에는 개별 up 메서드가 열거되지 않았다. 제품 전체 실제지원은 미확인이다. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:21-31. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -866,7 +872,7 @@ await page.locator("#drag-source").dragTo(page.locator("#drag-target"))
 await nativeTab.click([100,100],{mouseButton:"left",clickCount:1})
 ```
 
-- `CL-CODEX-mouse-click-01` **DOC**: native click(Vec2/options) 계약; DOM-only tabs에서는 입력전 throw 근거 `CUA-DOC-API` / CUA API Reference: Target.click (native only) and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-mouse-click-01` **DOC**: native click(Vec2/options) 계약; DOM-only tabs에서는 입력전 throw 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:25-25; raw/cua-entry-excerpts.md:11-16; raw/cua-entry-excerpts.md:54-54. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -916,7 +922,7 @@ await nativeTab.click([100,100],{mouseButton:"left",clickCount:1})
 await nativeTab.scroll([100,100],"down",1)
 ```
 
-- `CL-CODEX-mouse-wheel-01` **DOC**: native scroll target/direction/pages 계약, raw deltaX/Y 아님 근거 `CUA-DOC-API` / CUA API Reference: Target.scroll (native only) and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-mouse-wheel-01` **DOC**: native scroll target/direction/pages 계약, raw deltaX/Y 아님 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:27-27; raw/cua-entry-excerpts.md:18-18. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -964,7 +970,7 @@ await nativeTab.scroll([100,100],"down",1)
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-keyboard-down-01` **DOC**: native pressKey/locator press는 atomic; 개별down 열거안됨 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-keyboard-down-01` **DOC**: Tab.pressKey와 locator.press 공개 서명이다. 개별 down/지속 modifier는 미확인이다. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:57-57; raw/public-contract-excerpts.md:94-94. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -1012,7 +1018,7 @@ await nativeTab.scroll([100,100],"down",1)
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-keyboard-up-01` **DOC**: 개별key up 열거안됨 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-keyboard-up-01` **DOC**: 열람한 공개 인터페이스 발췌에는 개별 up 메서드가 열거되지 않았다. 제품 전체 실제지원은 미확인이다. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:55-66; raw/public-contract-excerpts.md:67-113. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -1062,7 +1068,7 @@ await nativeTab.scroll([100,100],"down",1)
 await focusedLocator.press("Control+A",{timeoutMs:1000})
 ```
 
-- `CL-CODEX-keyboard-press-01` **DOC**: locator.press는 focus대상 지정; native tab.pressKey는 DOM-only throw 근거 `CUA-DOC-API` / CUA API Reference: locator.press / Target.pressKey and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-keyboard-press-01` **DOC**: locator.press는 focus대상 지정; native tab.pressKey는 DOM-only throw 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:57-57; raw/cua-entry-excerpts.md:54-54; raw/cua-entry-excerpts.md:139-139. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -1109,11 +1115,10 @@ await focusedLocator.press("Control+A",{timeoutMs:1000})
 - 공개 예제 상태: syntax-confirmed-not-executed. 아래 문법은 원문/가이드에 근거한 호출 조각이며 변수/선행 관찰은 실제 fixture에서 먼저 준비한다.
 
 ```text
-await focusedLocator.type("한글🙂
-",{timeoutMs:1000})
+await focusedLocator.type("한글🙂\n",{timeoutMs:1000})
 ```
 
-- `CL-CODEX-keyboard-type-01` **DOC**: 기존내용을 지우지않는 type, pressSequentially 문자별 입력 공개 근거 `CUA-DOC-API` / CUA API Reference: locator.type / pressSequentially and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-keyboard-type-01` **DOC**: 기존내용을 지우지않는 type, pressSequentially 문자별 입력 공개 근거 `CUA-DOC-API` / raw/cua-entry-excerpts.md:141-141; raw/cua-entry-excerpts.md:140-140. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -1161,7 +1166,9 @@ await focusedLocator.type("한글🙂
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- 확인된 개별 동작 근거 없음. API 미지원이라는 의미가 아니다.
+- `CL-CODEX-input-01` **DOC**: locator click/fill/press/setChecked/selectOption 공개 서명. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:72-72; raw/public-contract-excerpts.md:78-78; raw/public-contract-excerpts.md:94-94; raw/public-contract-excerpts.md:97-97; raw/public-contract-excerpts.md:96-96. 범위: 공개 선언/안내만; 실행 또는 전체조건 충족 주장 아님.
+
+- `CL-CODEX-input-02` **HISTORICAL**: {"readonly": "rejected", "slotClick": true, "scaledFrameClick": true} 근거 `HIST-CODEX-AUDIT` / raw/historical-diagnostics-before-after.json#/codex/readonly; raw/historical-diagnostics-before-after.json#/codex/slotClick; raw/historical-diagnostics-before-after.json#/codex/scaledFrameClick. 범위: 과거 audit의 해당 필드만; 현재/모든 옵션/일반 환경으로 확대하지 않음.
 
 추가 확인할 조건:
 
@@ -1198,3 +1205,7 @@ await focusedLocator.type("한글🙂
 구현 흐름(설계, 미실행): 입력/범위 확인 → 공개 방법으로 대상 관찰/선택 → 필요한 입력·대기 → 실제 상태/바이트/이벤트 판독 → 부분효과/정리 확인. 단일 정상 호출을 전체 요구 충족으로 취급하지 않는다.
 
 연결 PLAN: PLAN-C-INPUT-001, PLAN-C-INPUT-002, PLAN-C-INPUT-003, PLAN-C-INPUT-004, PLAN-C-INPUT-005. 세부 조건은 [condition index](../condition-index.json)에 있으며 정상·거절·부분효과 fixture가 없으면 다음 개발에서 먼저 작성한다.
+
+## 별도 보충 표면 관측
+
+IAB fixture 연결은 차단되었으며 CUA/Chrome-extension에서 기존 fixture의9개부분사례를 관찰했다. [보충 원자료](evidence/codex/raw/boundary1.json)와 [IAB 차단](evidence/codex/raw/boundary1-iab-blocked.json)을 구분한다. 인접/실제공백·긴본문 filter, label 조회, 0/N 조회 오류·readonly 거절 관측은 해당 어댑터/fixture 범위뿐이다. 부분확인으로서 주 IAB의 전체조건 근거 확인률은 올리지 않는다. 문서상 first-matched/null과 이Chrome실측의일부strict/timeout차이는 미해결표면차이로 보존한다.

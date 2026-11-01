@@ -8,14 +8,31 @@
   "fullConditionEvidence": {
     "not-established": 504
   },
-  "relatedClaimRecords": 136,
-  "distinctSourceIds": 16,
-  "uniqueRuns": 2,
+  "relatedClaimRecords": 151,
+  "distinctSourceIds": 18,
+  "uniqueRuns": 3,
   "runsByKind": {
-    "LIVE": 1,
+    "LIVE": 2,
     "HISTORICAL": 1
   },
   "note": "관련성/호출서명과 조건 전체의 입증을 분리. 0개의 full confirmation도 미지원 판정은 아님. LIVE run 수는API별중복집계하지않음.",
-  "cycles": [],
+  "cycles": [
+    {
+      "cycle": 1,
+      "reviewedHead": "ad821711153ffd8296b2557289214abaa9212774",
+      "model": "gpt-6.1-sol",
+      "reasoningEffort": "high",
+      "freshContext": true,
+      "verdict": "CHANGES_REQUESTED",
+      "reviewedRequirements": 184,
+      "reviewedConditions": 252,
+      "reviewedSlots": 368,
+      "candidates": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "deferred": 0,
+      "meaning": "문서/근거검토. 경쟁지원·제품적합성확인아님. 다음갱신본에서반영재확인."
+    }
+  ],
   "productStatus": "unverified; no product development"
 }

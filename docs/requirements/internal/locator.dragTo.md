@@ -33,18 +33,18 @@
 
 #### REQ-LOCATOR-DRAGTO-001-C01
 
-- 조건: native draggable은실제dragstart의데이터로한번drop한다.
-- 준비: 같은document의HTML DnD
+- 조건: native draggable은 실제 dragstart의 데이터로 한 번 drop 한다.
+- 준비: 같은 document의 HTML DnD
 - 실행: dragTo
-- 판정: trusted dragstart·서버drop1회·목적업무완료이며중복전송없다.
+- 판정: trusted dragstart·서버 drop1회·목적 업무 완료이며 중복 전송 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-DRAGTO-001-C02
 
-- 조건: 비draggable격자는연속pointer경로로범위를선택한다.
-- 준비: 회의실격자3칸
-- 실행: source.dragTo(target)후doubleclick
-- 판정: 선택구간이정확하고HTML DataTransfer로대체하지않는다.
+- 조건: 비 draggable 격자는 연속 pointer 경로로 범위를 선택한다.
+- 준비: 회의실 격자 3칸
+- 실행: source.dragTo(target) 후 doubleclick
+- 판정: 선택 구간이 정확하고 HTML DataTransfer로 대체하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-DRAGTO-002
@@ -64,18 +64,18 @@
 
 #### REQ-LOCATOR-DRAGTO-002-C01
 
-- 조건: 사전경계거절은dragstart/down전에실행한다.
-- 준비: 다른Page/다른document/OOPIF target·모호target
+- 조건: 사전 경계 거절은 dragstart/down 전에 실행한다.
+- 준비: 다른 Page/다른 document/OOPIF target·모호 target
 - 실행: dragTo
-- 판정: 명시경계/strict오류·dragstart/drop0이다.
+- 판정: 명시 경계/strict 오류·dragstart/drop0이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-LOCATOR-DRAGTO-002-C02
 
-- 조건: dragstart후detach/실패는상태정리하고재drop하지않는다.
-- 준비: 이동중frame교체·adapterfault
+- 조건: dragstart 후 detach/실패는 상태 정리하고 재 drop 하지 않는다.
+- 준비: 이동 중 frame 교체·adapterfault
 - 실행: dragTo
-- 판정: 부분trace·자기버튼release·drop중복0이며정리실패를숨기지않는다.
+- 판정: 부분 trace·자기 버튼 release·drop 중복 0이며 정리 실패를 숨기지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

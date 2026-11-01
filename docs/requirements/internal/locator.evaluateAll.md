@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-EVALUATEALL-001-C01
 
-- 조건: 0/N개를문서순서배열로한번전달한다.
-- 준비: 0/2/정렬변동후대상
+- 조건: 0/N 개를 문서 순서 배열로 한 번 전달한다.
+- 준비: 0/2/정렬 변동 후 대상
 - 실행: fn(elements,arg)
-- 판정: 0은[]·N은정확한identity배열·strict단일오류없다.
+- 판정: 0은[]·N은 정확한 identity 배열·strict 단일 오류 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-EVALUATEALL-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-EVALUATEALL-002-C01
 
-- 조건: 직렬화와효과뒤실패는공통평가정책을따른다.
-- 준비: asyncreject·DOMnode결과·frame교체
+- 조건: 직렬화와 효과 뒤 실패는 공통 평가 정책을 따른다.
+- 준비: asyncreject·DOMnode 결과·frame 교체
 - 실행: evaluateAll
-- 판정: 오류/부분효과·문서경계·late결과차단이같다.
+- 판정: 오류/부분 효과·문서 경계·late 결과 차단이 같다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

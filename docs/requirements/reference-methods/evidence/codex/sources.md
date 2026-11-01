@@ -111,3 +111,40 @@ value property는 element type 사전 확인 필요. read-only evaluate로 focus
 ## 과거 관측의 정확한 경계
 
 HIST-CODEX-AUDIT는 snapshotChars=2682070, tail=true, selected=true, secret=false, regex=1, visibleFilter=2, nthMinusOne=1, slotClick=true, scaledFrameClick=true, readonly='rejected', clip JPEG320×240를 기록한다. 값의 문자열 의미는 과거 문서/fixture에 한정한다. visibleFilter가 has/hasNot 모든 옵션·AND·hidden 정체를 증명하지 않는다. readonly='rejected'는 해당 입력의 거절이며 모든 mask/rerender 재확인까지 증명하지 않는다. scaledFrameClick는 fixture의 변환이며 중첩/OOPIF/rotate/skew를 포괄하지 않는다. clip은 한 크기이며 DPR2·scroll·pixel origin 범위를 포괄하지 않는다. 인접 span·긴 텍스트·summary·수평/수직 clip 후속 증거는 우리 제품뿐이다.
+
+## 제한적 추가 관측 · 주 표면 차단과 별도 보충 표면
+
+`CUA-LIVE-BOUNDARY1`, 2026-11-01. 메인이 제공한 기존 fixture 서버60561을 이용했다. 기존 비교 주 표면인 IAB(`iab`, 과거 id2)는 새탭 생성에서 모두 unavailable였다. 이 사실은 `raw/boundary1-iab-blocked.json`에 별도 BLOCKED run `codex-cua-iab-boundary1-blocked-20261101`로 보존한다. 개인탭은 조회하지 않았고, browser 목록만 새로 확인했을 때 현재 Chrome extension(id3)만 노출되었다.
+
+별도 보충 표면 **Codex CUA / Chrome extension**에서 새 연구탭 하나로 `/review-boundaries.html`, `/audit`의9개 소규모 사례를 측정했다. run `codex-cua-chrome-boundary1-20261101`, 원자료 `raw/boundary1.json`(호출별 실제 코드/기대/반환·오류/조건ID/부분범위), 호출 반환 보존 `raw/boundary1-observed.json`. 처음 snapshot을 읽은 뒤 그 대상의 읽기 전용 DOM identity를 확인해 CSS를 골랐다. selector나 업무 정답을 fixture 원본에서 가져오지 않았다. 마지막에는 자기 새 연구탭만 닫았다.
+
+Chrome 문서의 관련 PlaywrightAPI/Locator 서명은 최초 조사 IAB 문서와 같은 이름/형식이었다. 이는 실행 동등성의 증거가 아니다. 새 결과는 mapping의 `supplementalEvidence`에만 넣고 IAB의 `confirmedConditions`/`evidenceClaims`/주 coverage는 올리지 않았다. 기존 빈탭 run은 유지했다. IAB 조건 전체충족 신규확인0, Chrome 보충도9개 condition ID 모두 부분확인으로 기록했다.
+
+문서/관측 차이: Chrome에서 textContent/getAttribute의2개매칭은 strict mode violation,0개는200ms selector deadline 오류였다. 공개 설명의 first/null을 실제 Chrome 전체경계 동작으로 읽을 수 없다. isVisible/isEnabled는2개매칭 true,0개 false를 반환해 우리 단일strict 정책과 달랐다. native readonly fill은300ms deadline/진단 오류이며 LOCKED와 focus가 유지되었다. 이를 편집불가 전용 오류코드 확인이나 모든사전무입력 보장으로 확대하지 않는다.
+
+## REF1 정리 기록
+
+독립 리뷰 고정 head `ad821711153ffd8296b2557289214abaa9212774`의 REF1-01~03에 대한 조사자 자료 정리다. 정본 문서는 메인이 갱신하며 이 파일 수정을 독립 승인으로 표시하지 않는다. 새 브라우저/도구 호출 없이 이미 수신한 텍스트와 보존된 과거/빈탭 JSON을 대조했다.
+
+- REF1-01: `mapping.json`의 keyboard.type.syntax는 실제 개행 대신 JavaScript `\n` 이스케이프를 사용한다. 예제는 계속 `syntax-confirmed-not-executed`다. 실행 가능한 조각54개를 async 함수 컴파일 또는 외부도구 요청 JSON 파싱만 검사했고 오류0이었다. 결과 `raw/review1-syntax-check.json`. 컴파일한 함수를 호출하거나 브라우저 예제를 실행하지 않았다.
+- REF1-02: API67+공통5의 모든 primary evidenceClaims를 다시 점검했다. DOC에는 공개 서명/설명만 남겼다. 빈탭 LIVE는 owner별 actual URL/count/evaluate/output/close와 `raw/blank-probe.json`의 정확 JSON pointer, HISTORICAL은 해당 snapshot/clip/regex/visibleFilter/nthMinusOne/slotClick/scaledFrameClick/readonly 값과 `raw/historical-diagnostics-before-after.json#/codex/...` pointer로 분리했다. `confirmedConditions`도 종류별로 분리 표기했다. 공통 근거 재사용은 새 run으로 세지 않았다.
+- REF1-03: 첫 수신 응답에서 BrowserInfo/entry.TabInfo, listBrowsers/listTabs/getTab/createBrowserTab, Target와 네이티브 ClickOptions/Direction/Tab.pressKey, DOM-only throw 안내, logs substring/ISO timestamp의 원문 설명을 `raw/cua-entry-excerpts.md`에 발췌 보존했다. 각 DOC claim에 관련 발췌 파일의 구체 줄 범위를 넣었다. 같은 이름의 entry.TabInfo와 backend TabInfo는 다른 선언임을 표시했다. 추가 원문은 첫 공개 tool 응답/당시 tool entry 설명에서 보존한 것으로 신규 실측이 아니다.
+
+source ID의 현재 직접 열람 경로:
+
+|sourceId|정확 원자료|
+|---|---|
+|CUA-DOC-ENTRY|`raw/cua-entry-excerpts.md`의 Entry API types / Entry discovery / Tool entry metadata / IAB Additional Capabilities. mapping claim별 줄 범위 제공|
+|CUA-DOC-API|`raw/public-contract-excerpts.md`의 API Reference 발췌 및 `raw/cua-entry-excerpts.md`의 Current API Reference: logs/설명 주석. mapping claim별 줄 범위 제공|
+|CUA-DOC-UPLOAD|`raw/file-uploads.md`의 원문 전체. chooser 순서/절대경로/locator.setInputFiles 안내의 claim별 줄 범위 제공|
+|CUA-LIVE-BLANK|`raw/blank-probe.json`의 output/createdTab/tabClosedAfterProbe 및 같은 run의 actualCalls. 새 run 추가 없음|
+|HIST-CODEX-AUDIT|`raw/historical-diagnostics-before-after.json#/codex` 아래 각 관측 필드. owner별 pointer 제공|
+|CODEX-RESEARCH-INFERENCE|아래 조사자 조합 제안. DOC/LIVE 확인분자 제외|
+
+Chrome CUA 보충9사례와 IAB BLOCKED는 이전과 같이 `supplementalEvidence`/`blockedAttempts`로 분리했다. 보충 데이터와 primary coverage를 변경하지 않았음을 `raw/review1-claim-audit.json`에 남겼다. 주 표면 전환이나 조건 전체충족 신규확인은 없다.
+
+## REF1 정리 조합 추론의 범위
+
+`CODEX-RESEARCH-INFERENCE`는 이 조사자의 미실행 설계 제안이다. 공개 evaluate 서명에서 특정 DOM property나 API를 읽는 조합의 지원을 자동 보장할 수 없으므로 inputValue/isEditable/isChecked/boundingBox와 frame metadata 조회 조합을 DOC와 분리했다. 순차 evaluate polling도 waitForFunction의 대안 의사코드이며 내장 지원 증거가 아니다. frame-local rect→main 변환, editable/checked 타입정책, hidden/null, OOPIF 트리, Promise settle·JSON 직렬화 등은 여전히 미확인이다.
+
+정리 후 primary claim은 DOC73/LIVE5/HISTORICAL10/INFERENCE6(총94개)다. 이는 고유 source/run 수나 충족 조건 수가 아니다. HISTORICAL10에는 공통3개에서 같은 audit 필드를 재사용한 claim이 포함된다. 조건별 지원률·독립검토율을 이 숫자로 산출하지 않는다.

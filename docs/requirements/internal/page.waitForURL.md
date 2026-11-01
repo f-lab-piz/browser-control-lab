@@ -10,7 +10,7 @@
 - 입력/기본값: url:절대 URL 정확문자열, options.timeout?:positive ms(기본10000).
 - 출력/성공 의미: Promise<string> 일치현재URL.
 - 허용 부작용: 관찰만.
-- 오류/경계: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.
+- 오류/경계: RegExp 객체와 상대 glob 패턴은 미지원으로 거절한다. 절대 URL 문자열은 특수문자도 리터럴로 비교하고 시간초과를 네트워크 완료로 오인하지 않는다.
 - 재시도: 읽기는 최신 문서 상태로 다시 관찰할 수 있다. 입력은 완료 여부를 먼저 확인하며 응답 유실만으로 재전송하지 않는다.
 - 지원: Chrome debugger/CDP, 허용된 HTTP(S), 현재 연결 DOM. Firefox/Safari·closed Shadow·모든 사이트 완전 지원은 이번 약속이 아니다.
 
@@ -33,17 +33,17 @@
 
 #### REQ-PAGE-WAITFORURL-001-C01
 
-- 조건: 정확한URL문자열과일치할때현재URL을반환한다.
-- 준비: 현재A와지연B·hash/query차이
+- 조건: 정확한 URL 문자열과 일치할 때 현재 URL을 반환한다.
+- 준비: 현재 A와 지연 B·hash/query 차이
 - 실행: wait B
-- 판정: B와정확히같을때반환하며이미B면즉시다.
+- 판정: B와 정확히 같을 때 반환하며 이미 B면 즉시다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-WAITFORURL-002
 
 - 참고 방식: [Codex·Aside의 공개 방법과 우리 판단](../reference-methods/lifecycle-evaluation.md#ref-page-waitforurl). 관련 근거가 조건 전체의 충족을 의미하지 않는다.
 - 수준/판단: **MUST / 수용** (초안 설계 결정, 2026-11-01).
-- 규범: glob/RegExp는이번지원아님을 안내·거절하며 시간초과를네트워크완료로오인하지않는다.
+- 규범: RegExp 객체와 상대 glob 패턴은 미지원으로 거절한다. 절대 URL 문자열은 특수문자도 리터럴로 비교하고 시간초과를 네트워크 완료로 오인하지 않는다.
 - 근거: USR, CODE, DESIGN. 문서/이력에서 도출한 목표 계약이며 현재 충족의 증명은 아니다.
 - 충족 상태: **미검증**. 기존 구현 사실과 기본 PASS는 아래 후보 경로에서만 참고한다.
 - Given: 아래 REQ-PAGE-WAITFORURL-002-C01부터 C02까지의 독립 준비 조건을 사용한다. 각 반례는 별도 run이다.
@@ -56,18 +56,18 @@
 
 #### REQ-PAGE-WAITFORURL-002-C01
 
-- 조건: glob/RegExp는현재지원인정확문자열과섞지않는다.
-- 준비: URL패턴/RegExp·불량timeout
+- 조건: RegExp 객체와 상대 glob 패턴은 미지원이다. 유효한 절대 URL 문자열 안의 별표는 패턴이 아닌 리터럴로 비교한다.
+- 준비: RegExp /done/, 상대 glob '**/done', 유효한 리터럴 URL 'http://fixture.test/a*b'와 불량 timeout을 준비한다.
 - 실행: waitForURL
-- 판정: 명시미지원/입력오류·자동부분일치없다.
+- 판정: RegExp/glob/불량 timeout은 미지원·입력 오류다. 리터럴 URL은 정확 문자열만 일치하고 wildcard 부분 일치로 바꾸지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-PAGE-WAITFORURL-002-C02
 
-- 조건: 미일치/close/reset은서로다른종결이다.
-- 준비: 계속A·페이지닫힘·reset
+- 조건: 미일치/close/reset은 서로 다른 종결이다.
+- 준비: 계속 A·페이지 닫힘·reset
 - 실행: wait B
-- 판정: timeout/closed/reset구분·late결과없다.
+- 판정: timeout/closed/reset 구분·late 결과 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

@@ -33,10 +33,10 @@
 
 #### REQ-KEYBOARD-UP-001-C01
 
-- 조건: 지정키해제는다른modifier를유지한다.
+- 조건: 지정 키 해제는 다른 modifier를 유지한다.
 - 준비: Control/Shift down
-- 실행: Control up→후속키
-- 판정: Shift만유지되며내부상태와실제flags일치다.
+- 실행: Control up→후속 키
+- 판정: Shift만 유지되며 내부 상태와 실제 flags 일치다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-KEYBOARD-UP-002
@@ -56,10 +56,10 @@
 
 #### REQ-KEYBOARD-UP-002-C01
 
-- 조건: 닫힘/reset/전송fault의해제결과를구분한다.
-- 준비: up전송실패·이미reset된세대
+- 조건: 닫힘/reset/전송 fault의 해제 결과를 구분한다.
+- 준비: up 전송 실패·이미 reset 된 세대
 - 실행: up
-- 판정: 실패/취소는명시하고구세대up이새세대입력에영향주지않는다.
+- 판정: 실패/취소는 명시하고 구세대 up이 새 세대 입력에 영향 주지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

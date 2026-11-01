@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-TEXTCONTENT-001-C01
 
-- 조건: 원문 textContent는공백/숨김자식을포함하고이름과구분한다.
-- 준비: aria-label A·본문foo+bar·숨김X·개행
+- 조건: 원문 textContent는 공백/숨김 자식을 포함하고 이름과 구분한다.
+- 준비: aria-label A·본문 foo+bar·숨김 X·개행
 - 실행: textContent
-- 판정: 원문문자열과독립DOMtextContent가같다.
+- 판정: 반환 문자열은 독립적으로 읽은 DOM의 textContent와 정확히 같다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-TEXTCONTENT-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-TEXTCONTENT-002-C01
 
-- 조건: 0/N개는strict오류이며큰값을완전한작은값으로위장하지않는다.
-- 준비: 0/2개·큰본문
+- 조건: 0/N 개는 strict 오류이며 큰 값을 완전한 작은 값으로 위장하지 않는다.
+- 준비: 0/2개·큰 본문
 - 실행: 조회
-- 판정: strict오류또는출력예산상명시적전송/출력절단이며검색대상값이조용히잘리지않는다.
+- 판정: strict 오류 또는 출력 예산상 명시적 전송/출력 절단이며 검색 대상 값이 조용히 잘리지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

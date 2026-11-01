@@ -33,10 +33,10 @@
 
 #### REQ-PAGE-WAITFORLOADSTATE-001-C01
 
-- 조건: interactive/domcontentloaded는loading이아님,load는complete다.
-- 준비: 지연문서readyState변화
-- 실행: 각state대기
-- 판정: 요구readyState충족시만반환·이미충족은즉시다.
+- 조건: interactive/domcontentloaded는 loading이 아님,load는 complete다.
+- 준비: 지연 문서 readyState 변화
+- 실행: 각 state 대기
+- 판정: 요구 readyState 충족 시만 반환·이미 충족은 즉시다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-PAGE-WAITFORLOADSTATE-002
@@ -56,10 +56,10 @@
 
 #### REQ-PAGE-WAITFORLOADSTATE-002-C01
 
-- 조건: networkidle/불량state/timeout은즉시거절한다.
+- 조건: networkidle/불량 state/timeout은 즉시 거절한다.
 - 준비: state=x/networkidle·timeout0
 - 실행: 대기
-- 판정: 미지원/입력오류이며SPA업무완료를가정하지않는다.
+- 판정: 미지원/입력 오류이며 SPA 업무 완료를 가정하지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계

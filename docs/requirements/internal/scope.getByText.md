@@ -34,17 +34,17 @@
 #### REQ-SCOPE-GETBYTEXT-001-C01
 
 - 조건: 접근 이름이 달라도 본문 검색은 전체 정규화 본문을 쓴다.
-- 준비: aria-label=A·본문1000자끝needle
+- 준비: aria-label=A·본문 1000자 끝 needle
 - 실행: getByText needle
-- 판정: name A로대체하거나300/600자에서끊지않고목표를찾는다.
+- 판정: name A로 대체하거나 300/600 자에서 끊지 않고 목표를 찾는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYTEXT-001-C02
 
 - 조건: 동일 검색에 맞는 후손이 있으면 조상 후보를 제거한다.
-- 준비: div/button/span 모두확인문자열
-- 실행: exact확인조회
-- 판정: 최소매칭span만남고같은형제2개는2개다.
+- 준비: div/button/span 모두 확인 문자열
+- 실행: exact 확인 조회
+- 판정: 최소 매칭 span만 남고 같은 형제 2 개는 2 개다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-SCOPE-GETBYTEXT-002
@@ -65,17 +65,17 @@
 #### REQ-SCOPE-GETBYTEXT-002-C01
 
 - 조건: 실제 공백과 인접 노드의 무공백을 구분한다.
-- 준비: foo+bar span/실제foo bar/slot
-- 실행: 각문자열및regex조회
-- 판정: foobar와foo bar의집합이다르고없는공백삽입없다.
+- 준비: foo+bar span/실제 foo bar/slot
+- 실행: 각 문자열 및 regex 조회
+- 판정: foobar와 foo bar의 집합이 다르고 없는 공백 삽입 없다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 #### REQ-SCOPE-GETBYTEXT-002-C02
 
 - 조건: 본문 숨김 정책은 filter와 같고 조회가 스크롤하지 않는다.
 - 준비: aria-hidden/CSS hidden/offscreen
-- 실행: 본문조회전후scroll비교
-- 판정: aria-hidden제외·CSS숨김포함·scroll불변이다.
+- 실행: 본문 조회 전후 scroll 비교
+- 판정: aria-hidden 제외·CSS 숨김 포함·scroll 불변이다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
@@ -98,8 +98,8 @@
 
 #### REQ-SCOPE-GETBYTEXT-003-C01
 
-- 조건: 빈문자열과regex+exact조합은사전거절한다.
-- 준비: 빈text·/확인/와exact true
+- 조건: 빈 문자열과 regex+exact 조합은 사전 거절한다.
+- 준비: 빈 text·/확인/와 exact true
 - 실행: count
-- 판정: 입력오류이며정규식단독만패턴대로다.
+- 판정: 입력 오류이며 정규식 단독만 패턴대로다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.

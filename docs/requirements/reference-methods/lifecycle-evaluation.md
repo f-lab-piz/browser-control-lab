@@ -16,7 +16,7 @@
 await cua.listBrowsers({emit:false})
 ```
 
-- `CL-CODEX-browser-list-01` **DOC**: BrowserInfo의 id/name/family/type/profileName/metadata 공개 근거 `CUA-DOC-ENTRY` / First CUA response: Computer Use > API > cua list/create/get methods. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-browser-list-01` **DOC**: BrowserInfo의 id/name/family/type/profileName/metadata 공개 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:33-41; raw/cua-entry-excerpts.md:83-83. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -70,7 +70,7 @@ aside host list; aside host profiles --host <id-or-name>
 await cua.listTabs({browser:"iab",emit:false})
 ```
 
-- `CL-CODEX-browser-tabs-01` **DOC**: TabInfo id/browserId/providerTabId/title/url; listing does not claim 근거 `CUA-DOC-ENTRY` / First CUA response: Computer Use > API > cua list/create/get methods. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-browser-tabs-01` **DOC**: TabInfo id/browserId/providerTabId/title/url; listing does not claim 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:42-49; raw/cua-entry-excerpts.md:84-84; raw/cua-entry-excerpts.md:90-90. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -122,9 +122,9 @@ console.log(await listBrowserTabs())
 await cua.createBrowserTab("iab","about:blank",{visible:false})
 ```
 
-- `CL-CODEX-browser-open-01` **DOC**: 새 background about:blank 탭 생성 실제 성공 근거 `CUA-DOC-ENTRY` / First CUA response: Computer Use > API > cua list/create/get methods. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-browser-open-01` **DOC**: createBrowserTab(browserId,url?,options?):Promise<Tab>; options는 visible/sessionName을 선언한다. 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:73-78; raw/cua-entry-excerpts.md:52-52. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-browser-open-02` **LIVE**: about:blank metadata/count/read-only evaluate/output/close only as relevant 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json. 범위: no fixture input or boundary support claim.
+- `CL-CODEX-browser-open-02` **LIVE**: 새 background about:blank 탭 생성 성공; createdTab="about:blank". 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json#/createdTab. 범위: about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님.
 
 추가 확인할 조건:
 
@@ -176,7 +176,7 @@ const t1 = await openTab("http://127.0.0.1:8794/audit")
 await cua.getTab(knownTabId,{browser:"iab"})
 ```
 
-- `CL-CODEX-browser-attach-01` **DOC**: ID/mention/URL로 기존 탭 binding; create와 별도 근거 `CUA-DOC-ENTRY` / First CUA response: Computer Use > API > cua list/create/get methods. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-browser-attach-01` **DOC**: ID/mention/URL로 기존 탭 binding; create와 별도 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:78-83. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -226,7 +226,7 @@ await attachBrowserTab(targetId)
 
 문법이 확인되지 않은 API 호출은 만들지 않는다. 공개 방법이 없으면 아래 확인 과제를 먼저 수행한다.
 
-- `CL-CODEX-page-activate-01` **DOC**: IAB visible 생성/브라우저 visibility capability는 별도 존재 근거 `CUA-DOC-API` / CUA API Reference: None and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-activate-01` **DOC**: IAB visible 생성/브라우저 visibility capability는 별도 존재 근거 `CUA-DOC-ENTRY` / raw/cua-entry-excerpts.md:112-116. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -276,9 +276,9 @@ await attachBrowserTab(targetId)
 await tab.close()
 ```
 
-- `CL-CODEX-page-close-01` **DOC**: close():Promise<void>; 연구탭 close 예외 없음 근거 `CUA-DOC-API` / CUA API Reference: tab.close and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-close-01` **DOC**: Tab.close():Promise<void>를 선언한다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:30-30. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-page-close-02` **LIVE**: about:blank metadata/count/read-only evaluate/output/close only as relevant 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json. 범위: no fixture input or boundary support claim.
+- `CL-CODEX-page-close-02` **LIVE**: 연구 탭 close가 예외 없이 반환; tabClosedAfterProbe=true. 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json#/tabClosedAfterProbe. 범위: about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님.
 
 추가 확인할 조건:
 
@@ -332,7 +332,7 @@ await closeTab(t1)
 await tab.goto(fixtureUrl)
 ```
 
-- `CL-CODEX-page-goto-01` **DOC**: goto(url):Promise<void>; boolean 반환 아님 근거 `CUA-DOC-API` / CUA API Reference: tab.goto and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-goto-01` **DOC**: goto(url):Promise<void>; boolean 반환 아님 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:33-33. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -382,7 +382,7 @@ await tab.goto(fixtureUrl)
 await tab.back()
 ```
 
-- `CL-CODEX-page-back-01` **DOC**: back():Promise<void> 근거 `CUA-DOC-API` / CUA API Reference: tab.back and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-back-01` **DOC**: back():Promise<void> 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:29-29. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -432,7 +432,7 @@ await tab.back()
 await tab.forward()
 ```
 
-- `CL-CODEX-page-forward-01` **DOC**: forward():Promise<void> 근거 `CUA-DOC-API` / CUA API Reference: tab.forward and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-forward-01` **DOC**: forward():Promise<void> 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:31-31. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -482,7 +482,7 @@ await tab.forward()
 await tab.reload()
 ```
 
-- `CL-CODEX-page-reload-01` **DOC**: reload():Promise<void> 근거 `CUA-DOC-API` / CUA API Reference: tab.reload and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-reload-01` **DOC**: reload():Promise<void> 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:36-36. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -532,7 +532,7 @@ await tab.reload()
 await locator.waitFor({state:"visible",timeoutMs:1000})
 ```
 
-- `CL-CODEX-locator-waitFor-01` **DOC**: attached/detached/visible/hidden과 timeoutMs; Promise<void> 근거 `CUA-DOC-API` / CUA API Reference: locator.waitFor and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-waitFor-01` **DOC**: attached/detached/visible/hidden과 timeoutMs; Promise<void> 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:101-101; raw/public-contract-excerpts.md:136-136; raw/public-contract-excerpts.md:145-145. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -584,7 +584,7 @@ await page.getByText("PASS · drag", {exact:true}).waitFor({timeout:2000})
 await tab.playwright.waitForURL(expectedUrl,{timeoutMs:1000,waitUntil:"commit"})
 ```
 
-- `CL-CODEX-page-waitForURL-01` **DOC**: string URL와 timeoutMs/waitUntil; 반환void 근거 `CUA-DOC-API` / CUA API Reference: tab.playwright.waitForURL and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-waitForURL-01` **DOC**: string URL와 timeoutMs/waitUntil; 반환void 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:56-56; raw/public-contract-excerpts.md:126-126. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -634,7 +634,9 @@ await tab.playwright.waitForURL(expectedUrl,{timeoutMs:1000,waitUntil:"commit"})
 // 의사코드: deadline 내 read-only evaluate를 순차 await; truthy면 종료
 ```
 
-- `CL-CODEX-page-waitForFunction-01` **DOC**: evaluate Promise 타입은 공개; built-in waitForFunction 없음 근거 `CUA-DOC-API` / CUA API Reference: read-only evaluate + host polling and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-waitForFunction-01` **DOC**: page evaluate는 read-only 서명으로 Promise 결과 타입을 포함한다. 내장 waitForFunction 실제지원은 미확인이다. 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:120-120. 범위: public declaration only; limits in unknownConditions.
+
+- `CL-CODEX-page-waitForFunction-02` **INFERENCE**: 호스트에서 read-only evaluate를 순차 반복하는 조합은 의사코드다. 내장 waitForFunction 또는 effectful 함수 지원의 증거가 아니다. 근거 `CODEX-RESEARCH-INFERENCE` / sources.md#ref1-정리-조합-추론의-범위. 범위: 조사자의 미실행 조합 제안; DOC/LIVE 확정분자 제외.
 
 추가 확인할 조건:
 
@@ -684,7 +686,7 @@ await tab.playwright.waitForURL(expectedUrl,{timeoutMs:1000,waitUntil:"commit"})
 await tab.playwright.waitForLoadState({state:"domcontentloaded",timeoutMs:1000})
 ```
 
-- `CL-CODEX-page-waitForLoadState-01` **DOC**: load/domcontentloaded/networkidle 공개, 반환void 근거 `CUA-DOC-API` / CUA API Reference: tab.playwright.waitForLoadState and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-waitForLoadState-01` **DOC**: load/domcontentloaded/networkidle 공개, 반환void 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:54-54; raw/public-contract-excerpts.md:125-125; raw/public-contract-excerpts.md:122-122. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -734,9 +736,9 @@ await tab.playwright.waitForLoadState({state:"domcontentloaded",timeoutMs:1000})
 await tab.playwright.evaluate(() => ({title:document.title}))
 ```
 
-- `CL-CODEX-scope-evaluate-01` **DOC**: read-only page/element evaluate, function|string, optional arg/options, Promise 반환타입 근거 `CUA-DOC-API` / CUA API Reference: tab.playwright.evaluate / locator.evaluate and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-scope-evaluate-01` **DOC**: read-only page/element evaluate, function|string, optional arg/options, Promise 반환타입 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:151-151; raw/public-contract-excerpts.md:152-152; raw/public-contract-excerpts.md:120-120; raw/public-contract-excerpts.md:130-130. 범위: public declaration only; limits in unknownConditions.
 
-- `CL-CODEX-scope-evaluate-02` **LIVE**: about:blank metadata/count/read-only evaluate/output/close only as relevant 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json. 범위: no fixture input or boundary support claim.
+- `CL-CODEX-scope-evaluate-02` **LIVE**: read-only evaluate 결과={bodyText:"",title:""}. 근거 `CUA-LIVE-BLANK` / raw/blank-probe.json#/output/readOnlyValue. 범위: about:blank 1회 기록만; fixture/오류/옵션 경계 지원 근거 아님.
 
 추가 확인할 조건:
 
@@ -788,7 +790,7 @@ page.evaluate(fn) // signature incomplete: only method name documented
 await locator.evaluateAll(elements => elements.map(el=>el.textContent))
 ```
 
-- `CL-CODEX-locator-evaluateAll-01` **DOC**: read-only matched element array, optional arg/options Promise 타입 근거 `CUA-DOC-API` / CUA API Reference: locator.evaluateAll and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-locator-evaluateAll-01` **DOC**: read-only matched element array, optional arg/options Promise 타입 근거 `CUA-DOC-API` / raw/public-contract-excerpts.md:153-153; raw/public-contract-excerpts.md:131-131. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -838,7 +840,7 @@ await locator.evaluateAll(elements => elements.map(el=>el.textContent))
 await tab.dev.logs({levels:["error"],limit:20})
 ```
 
-- `CL-CODEX-page-logs-01` **DOC**: levels/filter substring/limit; ISO timestamp,message,url 배열 근거 `CUA-DOC-API` / CUA API Reference: tab.dev.logs and relevant option types. 범위: public declaration only; limits in unknownConditions.
+- `CL-CODEX-page-logs-01` **DOC**: levels/filter substring/limit; ISO timestamp,message,url 배열 근거 `CUA-DOC-API` / raw/cua-entry-excerpts.md:121-133. 범위: public declaration only; limits in unknownConditions.
 
 추가 확인할 조건:
 
@@ -873,3 +875,7 @@ await tab.dev.logs({levels:["error"],limit:20})
 구현 흐름(설계, 미실행): 입력/범위 확인 → 공개 방법으로 대상 관찰/선택 → 필요한 입력·대기 → 실제 상태/바이트/이벤트 판독 → 부분효과/정리 확인. 단일 정상 호출을 전체 요구 충족으로 취급하지 않는다.
 
 연결 PLAN: PLAN-PAGE-LOGS-001, PLAN-PAGE-LOGS-002. 세부 조건은 [condition index](../condition-index.json)에 있으며 정상·거절·부분효과 fixture가 없으면 다음 개발에서 먼저 작성한다.
+
+## 별도 보충 표면 관측
+
+IAB fixture 연결은 차단되었으며 CUA/Chrome-extension에서 기존 fixture의9개부분사례를 관찰했다. [보충 원자료](evidence/codex/raw/boundary1.json)와 [IAB 차단](evidence/codex/raw/boundary1-iab-blocked.json)을 구분한다. 인접/실제공백·긴본문 filter, label 조회, 0/N 조회 오류·readonly 거절 관측은 해당 어댑터/fixture 범위뿐이다. 부분확인으로서 주 IAB의 전체조건 근거 확인률은 올리지 않는다. 문서상 first-matched/null과 이Chrome실측의일부strict/timeout차이는 미해결표면차이로 보존한다.

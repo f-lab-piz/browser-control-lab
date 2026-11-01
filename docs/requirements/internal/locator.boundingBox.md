@@ -33,10 +33,10 @@
 
 #### REQ-LOCATOR-BOUNDINGBOX-001-C01
 
-- 조건: 반환 좌표는main viewport CSS 기준이다.
-- 준비: root/중첩scale/scroll/OOPIF의대상
-- 실행: box와독립hit좌표비교
-- 판정: 모두같은좌표계이며width/height가변환을반영한다.
+- 조건: 반환 좌표는 main viewport CSS 기준이다.
+- 준비: root/중첩 scale/scroll/OOPIF의 대상
+- 실행: box와 독립 hit 좌표 비교
+- 판정: 모두 같은 좌표계이며 width/height가 변환을 반영한다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ### REQ-LOCATOR-BOUNDINGBOX-002
@@ -56,10 +56,10 @@
 
 #### REQ-LOCATOR-BOUNDINGBOX-002-C01
 
-- 조건: 숨김은null이고unsupported frame transform은명시오류다.
+- 조건: 숨김은 null이고 unsupported frame transform은 명시 오류다.
 - 준비: display none/rotateframe/없음
 - 실행: 조회
-- 판정: hidden null·unsupported 오류·없음strict이며잘못된local좌표를주지않는다.
+- 판정: hidden null·unsupported 오류·없음 strict이며 잘못된 local 좌표를 주지 않는다.
 - 근거/상태: DESIGN · 수용된 목표 상세조건 · 제품 미검증.
 
 ## 현재 사실과 근거 한계
