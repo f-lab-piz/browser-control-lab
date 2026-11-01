@@ -17,3 +17,10 @@
 ## v2 재현 명령
 
 실제 프로젝트의 Git checkout에서 `python3 docs/requirements/tools/validate.py`를 실행한다. 이 도구는 정본185REQ/254Cnn·370슬롯·claim/source·PLAN·backlog·앵커·로컬링크와기준제품35파일의byte/SHA를검사한다. 소스/테스트를실행하거나수정하지않는다. 문서만있는전달ZIP에는Git/제품소스가없으므로제품동결검사는실제checkout에서재현한다. 문서판정은제품PASS가아니다.
+
+
+## PR #6 보완 검증
+
+PR 독립 리뷰에서 PLAN/backlog 교차 검사 누락을 재현했다. 보완한 검사기는 부모/상세 PLAN의 고유 형식과 연결, 담당 작업·API·수준·spec/anchor·부모 조건 집합을 대조한다. 회귀 확인은 `python3 docs/requirements/tools/test_validate.py`로 JSON 내용을 메모리에서만 변형해 수행한다. 원본 파일은 변경하지 않는다.
+
+`git diff --check 700a6a0..HEAD`의 Aside 공개 원문 current-main-guide.txt:88/current-repl-guide.txt:153 EOF blank 경고2건은 실제 stdout 끝 `\n\n`의 보존에 따른다. 원문을 정규화하지 않았으며 다른 경로의 whitespace 오류는 별도로 검사한다. 과거 document-validation.json과 독립3회 기록은 당시 head의 기록으로 유지한다.
