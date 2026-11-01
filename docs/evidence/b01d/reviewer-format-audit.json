@@ -1,0 +1,413 @@
+{
+  "base": "05b0e6a71e2b112b5dbb75e1b0ac3c951887fbd2",
+  "previousReviewHead": "3d4246f2821a67a9417585d8547782872eefbefa",
+  "newHead": "0e0580250f115b2a170127a0eb9117cb382cf0b3",
+  "changedFiles": [
+    "docs/evidence/b01d/aside-guide.txt",
+    "docs/evidence/b01d/aside-repl-guide.txt",
+    "docs/evidence/b01d/manifest.json"
+  ],
+  "unchangedTrackedCount": 389,
+  "workingTreeAllTrackedEqualsNewHead": true,
+  "artifacts": [
+    {
+      "file": "docs/evidence/b01d/before-product.json",
+      "rawSha256": "ddd2784191f34ad459b2a8032ec6abde17354175d1765ca308dcb0a20d3eeca6",
+      "deliveredSha256": "ddd2784191f34ad459b2a8032ec6abde17354175d1765ca308dcb0a20d3eeca6",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/before-product.log.txt",
+      "rawSha256": "29115d0df151df88bb51322f920fe5aefcda3ab4a0c7b492ba5643b81a60f811",
+      "deliveredSha256": "155e496ca6b5a6e550a09b9d133cfa46cc187f11044751ccbe7985173754a982",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/after-product.json",
+      "rawSha256": "9bb8a229a78d600d44ee34faa22dc2445ef8f2989333c11d970a32cc2b81c7f8",
+      "deliveredSha256": "9bb8a229a78d600d44ee34faa22dc2445ef8f2989333c11d970a32cc2b81c7f8",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/after-all.log.txt",
+      "rawSha256": "3450f8bd565e752fee42c2f0cb8a7f1a04c4341d441b55d2ecc113e2162745ac",
+      "deliveredSha256": "3450f8bd565e752fee42c2f0cb8a7f1a04c4341d441b55d2ecc113e2162745ac",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/after-headed.json",
+      "rawSha256": "dfd2d3f2f5487d901464be51eac76e686af9bdd0ba04ae3a94e7b1f7f049694f",
+      "deliveredSha256": "dfd2d3f2f5487d901464be51eac76e686af9bdd0ba04ae3a94e7b1f7f049694f",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/after-headed.log.txt",
+      "rawSha256": "3983c37c4270555b9d12f698eb21d5c43657ec9cc9bb9675c74f86a1a59bee7c",
+      "deliveredSha256": "3983c37c4270555b9d12f698eb21d5c43657ec9cc9bb9675c74f86a1a59bee7c",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/runtime-regression.json",
+      "rawSha256": "6ef075b02065e37efa42dff2f69926ce1ae0dbedf70e9ff150b9a29ac994a8b9",
+      "deliveredSha256": "6ef075b02065e37efa42dff2f69926ce1ae0dbedf70e9ff150b9a29ac994a8b9",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/commands.json",
+      "rawSha256": "763378dd5485b1c193a2dcb7f9bc56af031e34990e4b1b9479cab3b0cd57e369",
+      "deliveredSha256": "763378dd5485b1c193a2dcb7f9bc56af031e34990e4b1b9479cab3b0cd57e369",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/lifecycle-unit.log.txt",
+      "rawSha256": "35a64a5ef7e7f2863582d3d60f1a664d90439a05a3297b5074c477efcbafa254",
+      "deliveredSha256": "35a64a5ef7e7f2863582d3d60f1a664d90439a05a3297b5074c477efcbafa254",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-raf-failure.log.txt",
+      "rawSha256": "25811cc7425e60201eb32d800ef44f07f835acd17360b18bb82df7a03053f847",
+      "deliveredSha256": "4c0d9553a81c3eff997619ce8f62b555c69a4044d7d52c77857da8f84094c79f",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-polling-failure.log.txt",
+      "rawSha256": "64881db3628f365ff30d0f78733ab57f3209d12ad6cc00feb9a225d5f84e816d",
+      "deliveredSha256": "8d88fafb3f7d7e9041f89b526127914e4a5cc58f744c2277eff3270964e1ac17",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-focus-probe.json",
+      "rawSha256": "2fa259bb73fd942a0ad05dcc2d3dbf3101f7058c02ed89ca1b0db04ae6028e2b",
+      "deliveredSha256": "2fa259bb73fd942a0ad05dcc2d3dbf3101f7058c02ed89ca1b0db04ae6028e2b",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-diagnostic-suite.log.txt",
+      "rawSha256": "997bbdeeb0fd8719c8d0cb778fa9e287c44d014982cb32eb9b685df4701078f0",
+      "deliveredSha256": "997bbdeeb0fd8719c8d0cb778fa9e287c44d014982cb32eb9b685df4701078f0",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-scoped-0.log.txt",
+      "rawSha256": "55b99f98af8aa66e83779253125446973a5a3636008a7f4463814a30a0a3617f",
+      "deliveredSha256": "55b99f98af8aa66e83779253125446973a5a3636008a7f4463814a30a0a3617f",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-scoped-1.log.txt",
+      "rawSha256": "b882ca62e6848e2272206af127c0d32087a7200c4602e692ed352c430851da20",
+      "deliveredSha256": "b882ca62e6848e2272206af127c0d32087a7200c4602e692ed352c430851da20",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/native-scoped-2.log.txt",
+      "rawSha256": "63b818a99dee947e7a90a673353e1913e1f973733d2a81402aaf56a11175c5b2",
+      "deliveredSha256": "63b818a99dee947e7a90a673353e1913e1f973733d2a81402aaf56a11175c5b2",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/initial-harness-before.log.txt",
+      "rawSha256": "8a8922783466c091cb7ff079810af425e32bdd0f97c3301a50e4b79b9ac61b03",
+      "deliveredSha256": "05e1bd67a5aca9b146822c7536f357b6533c6cc4fec5aa99256f2f82e8e970ce",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/candidate-generation-failure.log.txt",
+      "rawSha256": "42626a1bda26043fc0fd1e77827585916f46ef67184c9eca7ca2b68fb129577e",
+      "deliveredSha256": "39f21d9a539a334e111218419dec14e8ead52885c9a3d2400b77ac0b80cd8eb5",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/candidate-ref-selection-failure.log.txt",
+      "rawSha256": "b727b1bb26a8fad8a11d6b23ac5ccf02c94f8136530cede04da186f57193417a",
+      "deliveredSha256": "326c5ffa7dd35e9aae86c819525accdbcaa8fd3374f17970964e08e582797696",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/candidate-awaited-stack-failure.log.txt",
+      "rawSha256": "683617c42061c993347bb9e28e8e43aa21396459a158844cefcd19d63f2ad812",
+      "deliveredSha256": "7840ca7882642add4a6cc6fdfe0cdd9fd5d926d6791253c92a01a73e5a3ffc7f",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/attach-adapter-before.json",
+      "rawSha256": "da28e2e1d604210f81750ef7888364da6c0a6337aaed56f5da81c10e7f3d59cb",
+      "deliveredSha256": "da28e2e1d604210f81750ef7888364da6c0a6337aaed56f5da81c10e7f3d59cb",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/attach-adapter-after.json",
+      "rawSha256": "193bfdcb30f50b8118cf4cf5d89466be6a40792aa5d8a87412e34e4519122cbc",
+      "deliveredSha256": "193bfdcb30f50b8118cf4cf5d89466be6a40792aa5d8a87412e34e4519122cbc",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/compare-codex-live.json",
+      "rawSha256": "3b97e98000489897b2492e3dfedbc78acf99fc378e9281393f530449f9002929",
+      "deliveredSha256": "3b97e98000489897b2492e3dfedbc78acf99fc378e9281393f530449f9002929",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/compare-aside-doc.json",
+      "rawSha256": "9bc5867916113e5ea23f50dd6f63f697424d567018c65709c49fd5e068ed8d69",
+      "deliveredSha256": "9bc5867916113e5ea23f50dd6f63f697424d567018c65709c49fd5e068ed8d69",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/aside-guide.txt",
+      "rawSha256": "69efe203e5d7b1e91e0617dc46adde5c50c52299af1b1436ac8e6e17275653ec",
+      "deliveredSha256": "6512500c099f57595096e2ba0b354361424953378eb6586efb5dbba8fd842742",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/aside-repl-guide.txt",
+      "rawSha256": "0f36a95f730dd2f021b37c0bcc915bb9f0c90f375e42ba8fd64ef4e93649254c",
+      "deliveredSha256": "0c396eb814818cd40458eed5602dfe41514f2474eb6727bbe1c0fcab0a2d0876",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    },
+    {
+      "file": "docs/evidence/b01d/aside-repl-help.txt",
+      "rawSha256": "e5c07c9d7565a43d922882790b6c0b0ffb9664caf79837cbd1493fd1a672546f",
+      "deliveredSha256": "e5c07c9d7565a43d922882790b6c0b0ffb9664caf79837cbd1493fd1a672546f",
+      "rawMatches": true,
+      "deliveredMatches": true,
+      "normalizationMatches": true,
+      "sourceShaUnchanged": true
+    }
+  ],
+  "beforeAfter": {
+    "sourceCount": 34,
+    "differences": [
+      "bridge/server.mjs",
+      "extension/runtime-worker.mjs",
+      "extension/offscreen.js",
+      "extension/browser-engine.mjs",
+      "extension/files.mjs",
+      "extension/background.js"
+    ],
+    "baselineHashesMatch": true,
+    "afterAndHeadedSourceMatchCurrent": true,
+    "before": {
+      "pass": 1,
+      "fail": 6
+    },
+    "after": {
+      "pass": 7,
+      "fail": 0
+    }
+  },
+  "retainedIndependentRuns": [
+    {
+      "file": "output/goal-b01d-review/all/b01a/results.json",
+      "sha256": "2b3caa44cf8bededfc0dd17003d36da2e454d026b5af1ae6a7d43c4992fd523c",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 25,
+      "sourceMismatch": [],
+      "pass": 5,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/all/b01b/results.json",
+      "sha256": "6e8747fbfa1078d1f79b353511fad5c8a570b86fdc8b0a5c9dd129ff14fa756a",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 27,
+      "sourceMismatch": [],
+      "pass": 4,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/all/b01c/results.json",
+      "sha256": "0f14474624419bf7ba16a8319e88936c4ed6f2d6ad022ac6d9706adff0caf1c3",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 28,
+      "sourceMismatch": [],
+      "pass": 9,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/all/b01d/results.json",
+      "sha256": "4c83fd754e7e0f4971c37a8d2a33d2449d45327cd4d9a931b7eb837c9b2e9175",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 34,
+      "sourceMismatch": [],
+      "pass": 7,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/headed/b01a/results.json",
+      "sha256": "9b8d74bc6605a759f9de21cdf90681f0eca6d2affa9b0321e903dfe69194135a",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 25,
+      "sourceMismatch": [],
+      "pass": 5,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/headed/b01b/results.json",
+      "sha256": "b9b3bc7a3332f07d0424e27c1a5cfee75823067fefb2cd111c97c1a474eb257d",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 27,
+      "sourceMismatch": [],
+      "pass": 4,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/headed/b01c/results.json",
+      "sha256": "659ccf1838543347ee5af5718260d24d0a597a1f88a60651bce6fb3f5d80c2db",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 28,
+      "sourceMismatch": [],
+      "pass": 9,
+      "browser": "145.0.7632.6"
+    },
+    {
+      "file": "output/goal-b01d-review/headed/b01d/results.json",
+      "sha256": "146e98f64369617d67d8814ed83609443331b7ae4860f6eefd920d9b0dc8cd92",
+      "head": "3d4246f2821a67a9417585d8547782872eefbefa",
+      "dirty": false,
+      "sourceCount": 34,
+      "sourceMismatch": [],
+      "pass": 7,
+      "browser": "145.0.7632.6"
+    }
+  ],
+  "probes": {
+    "file": "output/goal-b01d-review/probes/independent-b01d/results.json",
+    "sha256": "07634d113c40ee4e9707356b9f36e7215809b37281a6a78f878a02a8244f8f8b",
+    "count": 3,
+    "sourcesMatch": true
+  },
+  "logs": {
+    "test-all.log": {
+      "sha256": "d4d4ca02ab3ca767e5ee0ea372471357a1c449c791dbb9634169928f26240299",
+      "passSummaries": [
+        "34",
+        "9",
+        "1",
+        "24",
+        "25",
+        "7"
+      ],
+      "failSummaries": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "skipSummaries": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "headed.log": {
+      "sha256": "a730412db973ce89435da09054f5d7676c43ff5494952690e9ead7139dafdc1c",
+      "passSummaries": [
+        "25"
+      ],
+      "failSummaries": [
+        "0"
+      ],
+      "skipSummaries": [
+        "0"
+      ]
+    },
+    "probes.log": {
+      "sha256": "677a8e295ef3d4f8bf580751e376c301ffca60a8322db38bc6645c6c0bbb8d3b",
+      "passSummaries": [],
+      "failSummaries": [],
+      "skipSummaries": []
+    }
+  }
+}

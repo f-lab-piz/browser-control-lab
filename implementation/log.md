@@ -187,3 +187,10 @@ B01D 이슈15·feat/15-reset-lifecycle에서4부모/6조건을 시작한다. 기
 같은 최종 소스 입력에서 기존 소유6파일만05b0e6a로 복원한 Before1 PASS/6 FAIL→After7 PASS다. 기존 보존 자체는 Before에서도 됐으며 명시 metadata·실제 release·늦은 클릭 차단·해제 오류 보고가 개선된 점을 구분한다. 최종 전체100 PASS/외부1 SKIP·창 모드25 PASS, 기록 소스 일치·정확 baseline6파일 hash 확인. native oracle의 rAF/relay 관찰 실패를 raw로 남기고 child focused press+DOM polling으로 원래 trusted keyup 조건을 유지했다.3회 native oracle와 최종 전체 통과는 원인 보편적 해결 주장과 구분한다.
 
 Codex의 own fixture reset은 변수undefined·동일 tab7·A 보존을 LIVE 전사로 기록하고 임시 탭만 닫았다. Aside는 fresh guide/repl guide/help DOC에서 explicit reset 방법을 확인하지 못했으며 지원 불가로 해석하거나 API를 발명하지 않았다. 경쟁 actual release/late hostcall 실측은 없다고 명시한다. 새 정확 head 독립 Sol6.1 high 리뷰와 gate·머지가 남아 있으므로 slice는in-progress다. 전체 Goal의 B01E~B06와 최종 현황/전체 회귀는 계속 남는다.
+
+
+## 2026-11-02 · PR16 독립 PASS·머지와 B01E 준비
+
+정확3d4246f의 Sol6.1 high 독립 전체 리뷰는100 PASS/외부1 SKIP·headed25 PASS·추가 제품3 PASS와 증거/소스를 재검증했고 P0~P3 없음으로 PASS였다. 캡처 EOF2개/manifest만 정리한 정확0e05802는 별도 새 컨텍스트 delta 리뷰 PASS. 제품·실행 입력389개 동일성과 기존 exactclean 실행의 현재 소스fingerprint를 확인해 불필요한 브라우저 재실행 없이 결합gate를 충족했다. 원격 base/head·CLEAN/MERGEABLE 확인 뒤 PR16을8d7c7d8로 정상 squash merge, 이슈15를 닫았다. 두 보고서·독립 probe/감사를 보존한다.
+
+B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준비한다. 아직 제품 코드는 바꾸지 않았다. 현재 returnByValue/parseValue가 undefined 등을 null로 숨길 수 있고 waitForFunction의 catch-all이 reject/직렬화 오류를 timeout으로 오인할 수 있어 공통 strict JSON/Promise settle·에러 경로를 먼저 명세와 대조했다. 최종 fixture/테스트와 Before를 고정한 뒤 구현한다. B02~B06와 최종 전체 요구/회귀 문서까지 이어지는 Goal은 유지한다.

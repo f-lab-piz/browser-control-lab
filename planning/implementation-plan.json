@@ -95,7 +95,7 @@
         "B01B"
       ],
       "goal": "late hostcall 차단·실제 key/button release·탭/asset 보존",
-      "status": "in-progress",
+      "status": "pass",
       "requirements": [
         "REQ-C-RUNTIME-003",
         "REQ-RESET-001",
@@ -103,9 +103,14 @@
         "REQ-RESET-003"
       ],
       "evidence": [
-        "docs/implementation/b01d.md"
+        "docs/implementation/b01d.md",
+        "docs/reviews/pr16-b01d.md",
+        "docs/reviews/pr16-b01d-format.md"
       ],
-      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/15"
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/15",
+      "pullRequest": "https://github.com/f-lab-piz/browser-control-lab/pull/16",
+      "review": "docs/reviews/pr16-b01d-format.md",
+      "mergeCommit": "8d7c7d89ca48a8f75c5ac5a33e2b08c2e6254261"
     },
     {
       "id": "B01E",
@@ -114,7 +119,7 @@
         "B01D"
       ],
       "goal": "Promise settle·JSON 허용값·undefined 오류·재실행 없음",
-      "status": "not-started",
+      "status": "in-progress",
       "requirements": [
         "REQ-SCOPE-EVALUATE-001",
         "REQ-SCOPE-EVALUATE-002",
@@ -122,7 +127,8 @@
         "REQ-LOCATOR-EVALUATEALL-002",
         "REQ-C-RUNTIME-008"
       ],
-      "evidence": []
+      "evidence": [],
+      "issue": "https://github.com/f-lab-piz/browser-control-lab/issues/17"
     },
     {
       "id": "B02A",
