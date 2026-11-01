@@ -198,3 +198,15 @@ B01E는 이슈17·feat/17-evaluation-serialization에서5부모/7조건을 준�
 - B01E 이슈17: 엄격한 JSON/Promise settle/오류·문서 경계와 wait deadline을 구현. 실제 제품7 PASS·전체113 PASS/외부1 SKIP·headed32 PASS. Before0/7, 원시 준비 predicate 실패를 보존. Codex/Aside root LIVE 계약 비교 기록. 독립 리뷰 전이며 slice in-progress.
 
 - PR18 정확7bae78a Sol6.1 high 독립 CHANGES_REQUESTED(P2 큰 timeout 타이머 overflow). bounded interval 재설정으로 수정하고 제품4경계/단위1 추가. 전체114 PASS/외부1 SKIP·단독 headed32 PASS, 병렬 headed의 프레임조회1건 실패도 원시 보존·B03A 추적. 새head 재리뷰 대기.
+
+- PR18 정확70ba037 독립 재리뷰 PASS(114/외부1 SKIP·headed32·추가15행), 원격 exact gate 확인 후0452cbe 정상 머지·이슈17 닫힘. B02A 이슈19와 feat/19-selection-naming 시작.
+
+- B02A 이슈19: 공통 이름/본문/출력 분리·IDREF root/우선순위·composed 최소text·입력검증·detachedN 예외 보완. Before3/10→After10/10, 전체127 PASS/외부1 SKIP·단독 headed42 PASS. Codex/Aside 같은 최종root16조회+실제proof 비교와 원시 실패 보존. 독립 리뷰 전.
+
+- PR20 정확f664dd1 독립 CHANGES_REQUESTED: 기존 P2 composed ghost/문서CSS 누락2건을 수용. 선택projection/문서root/inertCSS를 보완하고 유효한 별도fixture·nativeoracle·2제품case추가. Before3/12→After12/12, 전체130 PASS/외부1 SKIP·단독 headed44 PASS. 추가3도구root실측·초기잘못된fixture실패를구분보존. 새head재리뷰전.
+
+- 사용자범위변경: 전체Goal중단,6단계B02A까지만마무리. 재리뷰bf91의기존 :scope P2를 native루트CSS로수정, 최신고정입력Before3/12→After12/12·전체130 PASS/외부1 SKIP·headed44 PASS. Codex/Aside :scope4조회도새실측. 새head독립리뷰후정상머지하고7단계는시작하지않는다.
+
+- PR20 정확a59c560 독립 CHANGES_REQUESTED: label부재를빈문자열로처리해 /^$/가단일무라벨입력에trustedfill한 P2를수용. 부재null/연결빈label문자열로분리, 별도fixture·음성3regex/무입력·정상빈labeltrusted입력검증. 정확base같은13case Before3/13→After13/13, 전체132 PASS/외부1 SKIP·단독headed45 PASS. 신규root Codex/Aside5조회LIVE비교보존, 새head재리뷰전. B02B미착수.
+
+- 정확23aff96 Sol6.1 high 독립 제품 리뷰 PASS: 전체132 PASS/외부1 SKIP·단독headed45 PASS·추가3그룹 PASS, 범위 내P0/P1/P2 없음. 비차단P3 증거EOF2개를문서전용으로수정하고보존hash갱신, 승인제품입력36개불변. B02A slice PASS/1~6합계37부모54조건으로완료기록, 최종문서delta/원격gate후PR20정상머지.7단계이후15slice미착수, 전체Goal중단유지.

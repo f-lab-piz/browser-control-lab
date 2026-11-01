@@ -1,0 +1,10 @@
+✔ selection fixture preserves raw names roots slots mutations and trusted outcome judges (2543.590625ms)
+✔ selection boundary fixture distinguishes projected text from hidden physical DOM and exposes document metadata (2449.23225ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5338.82525

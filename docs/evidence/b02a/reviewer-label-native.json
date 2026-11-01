@@ -1,0 +1,14 @@
+{
+  "grade": "native-fixture-oracle-only",
+  "browser": "145.0.7632.6",
+  "labelledCount": 0,
+  "value": "native-fixture-proof",
+  "events": [
+    {
+      "id": "unlabelled",
+      "value": "native-fixture-proof",
+      "trusted": true
+    }
+  ],
+  "status": "PASS"
+}

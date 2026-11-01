@@ -1,0 +1,18 @@
+{
+  "method": "HEAD archive and current probe/helper/dependencies fixed; only api-source/page-agent restored to exact base; cwd is baseline directory. Embedded git metadata resolves enclosing repo HEAD; source hashes establish source version.",
+  "baseline": "0452cbe2474ed73069167c43d683ae1514c4f29c",
+  "hashes": [
+    {
+      "file": "extension/api-source.mjs",
+      "recorded": "4691c082db7d60a677719f50876615d110c9de59fe1a7fc2a7b51889408d9864",
+      "base": "4691c082db7d60a677719f50876615d110c9de59fe1a7fc2a7b51889408d9864",
+      "match": true
+    },
+    {
+      "file": "extension/page-agent.mjs",
+      "recorded": "4bad0a0ec67ba3d6a40a5ded04c2e2df71f50bce0d584847a098905b5f6ccb2e",
+      "base": "4bad0a0ec67ba3d6a40a5ded04c2e2df71f50bce0d584847a098905b5f6ccb2e",
+      "match": true
+    }
+  ]
+}

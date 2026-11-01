@@ -1,0 +1,57 @@
+
+> browser-control-lab@0.2.0 test:requirements
+> node --test --test-concurrency=1 tests/requirements-runtime.test.mjs tests/bindings-runtime.test.mjs tests/output-runtime.test.mjs tests/reset-runtime.test.mjs tests/evaluation-runtime.test.mjs tests/selection-runtime.test.mjs
+
+✔ B01B independent QuickJS sessions retain values, outputs and owned real page handles (1644.992625ms)
+✔ B01B declarations, destructuring and closures persist across actual awaited host calls (138.451083ms)
+✔ B01B only explicit console and display output is returned (466.265042ms)
+✔ B01B lexical conflicts reject the entire request before variable or real click effects (637.263792ms)
+✔ B01E Scope Locator alias and child document receive explicit arguments without the QuickJS closure (1101.608709ms)
+✔ B01E synchronous async thenable JSON and special string data round trip without automatic output (197.733584ms)
+✔ B01E invalid arguments fail before the page function and invalid results never become successful null (951.794625ms)
+✔ B01E evaluateAll receives zero or all identities once in composed order and after actual reorder (303.797833ms)
+✔ B01E throw reject and an outer timeout preserve exactly one real page effect and never replay (1399.796583ms)
+✔ B01E evaluateAll failures keep partial effects and old frame execution cannot retarget a replacement (848.756875ms)
+✔ B01E function wait settles promises and reports reject invalid JSON and inner deadline without resetting the VM (1630.072334ms)
+✔ B01C explicit ordered text preserves NUL Unicode and circular values without page console leakage (1374.950084ms)
+✔ B01C UTF8 text and combined block limits mark reasons and keep following requests isolated (320.815291ms)
+✔ B01C actual screenshot and valid PNG bytes remain complete between text blocks (357.131708ms)
+✔ B01C invalid MIME base64 and corrupt PNG are synchronous display errors without substituted images (137.835959ms)
+✔ B01C image file bytes total count and mixed block budgets omit whole images and preserve logs (6421.28525ms)
+✔ B01C declared code time memory and stack limits report resource failures and recover (1032.457958ms)
+✔ B01C malformed Adam7 and expanded ICC are rejected through real display while valid Adam7 stays complete (481.8715ms)
+✔ B01C complete PNG format matrix preserves supported originals and rejects invalid or excessive structures (4390.659542ms)
+✔ B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously (276.648042ms)
+✔ B01A guide and unknown/auth failures preserve tabs, focus, sessions and owners (1947.900875ms)
+✔ B01A concurrent retry clicks exactly once and conflicting payload/operation have no effect (672.002ms)
+✔ B01A a second conversation cannot attach or upload another conversation asset (283.111792ms)
+✔ B01A code limits, syntax errors and CPU deadline are distinct and the new generation recovers (375.200584ms)
+✔ nested cross-site frames initialize across repeated mail and booking navigation (982.752916ms)
+✔ B01D reset clears one VM and output while preserving page value tab ref assets and completed files (2061.925084ms)
+✔ B01D reset releases held input in a real cross-site child target (385.292084ms)
+✔ B01D never-settle late host queries and overlapping resets cannot finish new generation requests (1672.01475ms)
+✔ B01D reset emits actual trusted key and mouse releases with truthful cleanup traces (317.921292ms)
+✔ B01D reset blocks previously waiting locator clicks and queued VM work after a delayed target appears (3113.07375ms)
+✔ B01D actual VM limits reset with cleanup whereas a subordinate wait timeout preserves bindings and effects (1406.802458ms)
+✔ B01D a missing browser target reports actual release failure without preventing a fresh VM (293.515417ms)
+✔ B02A CSS scope is lazy and includes open shadow without crossing documents (1636.627167ms)
+✔ B02A qualified refs keep identity and reject replaced elements or documents without clicking lookalikes (380.8065ms)
+✔ B02A role and explicit label names use priority ordered local IDREFs and safe fallbacks (166.780167ms)
+✔ B02A role names distinguish omitted and empty names with hidden offscreen and native roles (202.850875ms)
+✔ B02A full label and body search are independent of short accessible names and snapshot output (164.021417ms)
+✔ B02A text candidates are minimal composed descendants with exact whitespace and independent regex state (205.511792ms)
+✔ B02A text excludes ARIA hidden and inert content but includes CSS hidden and offscreen without scrolling (199.60975ms)
+✔ B02A invalid selector names and options fail explicitly with no input effects (655.562542ms)
+✔ B02A single actions are strict while count all and CSS state waits keep their explicit zero or many exceptions (11758.512ms)
+✔ B02A discovered controls produce trusted clicks and input and the fixture judges the outcome (348.890792ms)
+✔ B02A document CSS includes html head and inert elements in the selected frame (199.738667ms)
+✔ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (543.20825ms)
+✔ B02A explicit label provenance excludes unlabelled controls even for empty-matching regexes (5421.131666ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63399.862709

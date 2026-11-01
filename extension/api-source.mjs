@@ -2,6 +2,25 @@
 export function installBrowserApi(stringifyJsonValue){
  const encode=value=>value instanceof RegExp?{__bclRegex:true,source:value.source,flags:value.flags}:Array.isArray(value)?value.map(encode):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,encode(v)])):value;
  const call=(method,args)=>__hostCall(method,encode(args));
+ const roles=new Set('alert alertdialog application article banner blockquote button caption cell checkbox code columnheader combobox complementary contentinfo definition deletion dialog directory document emphasis feed figure form generic grid gridcell group heading iframe img insertion link list listbox listitem log main marquee math menu menubar menuitem menuitemcheckbox menuitemradio meter navigation none note option paragraph presentation progressbar radio radiogroup region row rowgroup rowheader scrollbar search searchbox separator slider spinbutton status strong subscript suggestion superscript switch tab table tablist tabpanel term textbox time timer toolbar tooltip tree treegrid treeitem'.split(' '));
+ const pattern=(value,empty=false)=>{
+  if(value instanceof RegExp)return value;
+  if(typeof value!=='string')throw Error('INVALID_SELECTOR: expected string or RegExp');
+  const normalized=value.replace(/\s+/g,' ').trim();if(!empty&&!normalized)throw Error('INVALID_SELECTOR: empty search text');return normalized;
+ };
+ const search=(scope,kind,value,options)=>{
+  if(!options||typeof options!=='object'||Array.isArray(options))throw Error('INVALID_SELECTOR_OPTIONS: expected object');
+  const allowed=kind==='role'?['name','exact','includeHidden']:['exact'];
+  for(const key of Object.keys(options))if(!allowed.includes(key))throw Error('UNSUPPORTED_SELECTOR_OPTION: '+key);
+  for(const key of ['exact','includeHidden'])if(options[key]!==undefined&&typeof options[key]!=='boolean')throw Error('INVALID_SELECTOR_OPTIONS: '+key+' must be boolean');
+  const opts={...options};
+  if(kind==='role'){
+   if(typeof value!=='string'||!roles.has(value))throw Error('INVALID_ROLE: expected a supported concrete role');
+   if(opts.name!==undefined)opts.name=pattern(opts.name,true);
+  }else value=pattern(value);
+  if(options.exact===true&&(kind==='role'?opts.name:value) instanceof RegExp)throw Error('UNSUPPORTED_SELECTOR_OPTION: RegExp with exact true');
+  return new Locator(scope,{kind,value,options:opts});
+ };
  const evaluation=async(method,args,fn,arg)=>{
   if(typeof fn!=='function')throw Error('EVALUATION_ERROR: expected a function');
   let argJson;
@@ -13,10 +32,10 @@ export function installBrowserApi(stringifyJsonValue){
  class Scope{
   constructor(tabId,frameId){this.tabId=tabId;this.frameId=frameId}
   args(extra={}){return {tabId:this.tabId,frameId:this.frameId,...extra}}
-  locator(value){return new Locator(this,value.includes(':')&&/^f\d+:[a-f0-9]+:e\d+$/.test(value)?{kind:'ref',value}:{kind:'css',value})}
-  getByRole(value,options={}){return new Locator(this,{kind:'role',value,options})}
-  getByText(value,options={}){return new Locator(this,{kind:'text',value,options})}
-  getByLabel(value,options={}){return new Locator(this,{kind:'label',value,options})}
+  locator(value){if(typeof value!=='string'||!value.trim())throw Error('INVALID_SELECTOR: expected nonempty CSS or qualified ref');return new Locator(this,/^f\d+:[a-f0-9]+:e\d+$/.test(value)?{kind:'ref',value}:{kind:'css',value})}
+  getByRole(value,options={}){return search(this,'role',value,options)}
+  getByText(value,options={}){return search(this,'text',value,options)}
+  getByLabel(value,options={}){return search(this,'label',value,options)}
   evaluate(fn,arg){return evaluation('scope.evaluate',this.args(),fn,arg)}
   snapshot(options={}){return call('scope.snapshot',this.args({options}))}
  }
@@ -47,7 +66,7 @@ export function installBrowserApi(stringifyJsonValue){
   setFiles(files){return call('locator.setFiles',this.args({files}))}
   drop(options={}){return call('locator.drop',this.args(options))}
   dragTo(target){return call('locator.dragTo',this.args({target:target.args()}))}
-  async waitFor(options={}){const end=Date.now()+(options.timeout||5000),state=options.state||'visible';while(Date.now()<end){const count=await this.count();if(state==='attached'&&count||state==='detached'&&!count)return true;if(count){const visible=await this.isVisible();if(state==='visible'&&visible||state==='hidden'&&!visible)return true}else if(state==='hidden')return true;await call('runtime.delay',{ms:50})}throw Error('WAIT_TIMEOUT: '+state)}
+  async waitFor(options={}){const end=Date.now()+(options.timeout||5000),state=options.state||'visible';while(Date.now()<end){const count=await this.count();if(state==='attached'){if(count)return true}else if(state==='detached'){if(!count)return true}else if(count){const visible=await this.isVisible();if(state==='visible'&&visible||state==='hidden'&&!visible)return true}else if(state==='hidden')return true;await call('runtime.delay',{ms:50})}throw Error('WAIT_TIMEOUT: '+state)}
  }
  class FileChooser{
   constructor(page,event){this.page=page;this.event=event}

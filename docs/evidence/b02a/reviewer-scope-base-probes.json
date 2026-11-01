@@ -1,0 +1,33 @@
+[
+  {
+    "kind": "product-queries",
+    "actual": {
+      "scope": [
+        "BODY#body",
+        "DIV#one",
+        "DIV#host",
+        "DIV#",
+        "SLOT#",
+        "BUTTON#slotted"
+      ],
+      "scopeBody": 0,
+      "bodyId": {
+        "error": "Error: ELEMENT_NOT_FOUND\n    at single (<anonymous>:117:38)\n    at Object.call (<anonymous>:157:16)\n    at <anonymous>:1:48"
+      },
+      "hiddenSlotRole": 0,
+      "hiddenSlotIncluded": 1
+    }
+  },
+  {
+    "kind": "native-read-only-oracle",
+    "actual": {
+      "scope": [
+        "HTML#"
+      ],
+      "scopeBody": 1,
+      "bodyId": "body",
+      "slotVisible": "hidden",
+      "rects": 1
+    }
+  }
+]

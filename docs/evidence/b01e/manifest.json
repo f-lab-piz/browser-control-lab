@@ -39,7 +39,7 @@
   "gradeSeparation": "Codec5 unit+native oracle1 preliminary focused run6; final fixture10 includes corrected actual child.waitForURL navigation check. Native/adapter are not Chrome product PASS.",
   "rawHistory": "Initial Before0/7 retained; first all106PASS7FAIL1SKIP review-boundaries DOMnode predicate rejected in shared before hook. Predicate now Boolean(same selected node). One intermediate baseline invocation used root cwd, so its source fingerprint read wrong owning directory; not used as final comparison. Corrected baseline executes from its own cwd and hashes verified. No product expectation relaxed.",
   "competitors": "Codex CUA IAB pure read-only LIVE received-output transcription; root only, child DNS blocked. Aside public guide and same root LIVE raw CLI. Different serialization/selection contracts, no general ranking or competitor full requirement PASS. No source/bundle/WASM copied.",
-  "gate": "First exact7bae78a independent CHANGES_REQUESTED; P2 fixed locally with full114PASS1SKIP/isolated headed32PASS, exact new-head independent rereview pending. B02-B06/final audit remain",
+  "gate": "Exact70ba037 independent PASS, root remote base/head/CLEAN/MERGEABLE verified, normal PR18 merged0452cbe2474ed73069167c43d683ae1514c4f29c; issue17 CLOSED. B02-B06/final audit remain.",
   "artifacts": [
     {
       "file": "before-product.json",
@@ -201,6 +201,13 @@
       "sourceSha256": "0771edd818db0e487f81b9606d94a3e14c876af4cadbd9bd8ffb331980f45308",
       "sha256": "0771edd818db0e487f81b9606d94a3e14c876af4cadbd9bd8ffb331980f45308",
       "normalization": "repository/control-baseline path placeholders, ANSI/trailing whitespace removed"
+    },
+    {
+      "file": "reviewer-rereview-probes.json",
+      "source": "output/pr18-rereview/independent-probes.json",
+      "sourceSha256": "5c159bbceaa874a938ee6ea8048943efccd3d2c648bbc89b536759504c1ba332",
+      "sha256": "35e98a81b799a825d855a680838e4c939f3f918ad9c0529b524debba378dabfe",
+      "normalization": "repository path placeholder, trailing whitespace removed"
     }
   ],
   "reviewHistory": {
@@ -209,7 +216,7 @@
     "finding": "P2 signed32bit timer overflow for valid long wait timeout",
     "originalRegression": "Independent full113PASS1SKIP/headed32PASS; exact first-head report docs/reviews/pr18-b01e.md",
     "fix": "Bounded timer intervals rearm to absolute deadline; unit multi-interval and product4boundaries; same independent probe now4normal completed values/effects1,2,3,4",
-    "newReview": "pending"
+    "newReview": "PASS exact70ba037 Sol6.1 high fresh context; full114PASS1SKIP/headed32PASS and15independent rows; no P0-P3 findings"
   },
   "headedFailure": "Post-fix concurrent headed run31PASS1FAIL: first mail page.frames hung Page.getFrameTree on a session absent in later cleanup list. Saved failure JSON/log. refreshFrames byte-identical to merged baseline; failing method does not use evaluationDeadline, but root cause/timing interactions unproven. Same source isolated full headed32PASS; original failure not erased. B03A lifecycle work must investigate before final goal completion."
 }

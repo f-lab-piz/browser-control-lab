@@ -100,3 +100,18 @@ Chrome 계열의 debugger/CDP 어댑터만 구현했다. Firefox/Safari, Chrome 
 - evaluateAll은 현재 선택 결과를 슬롯 배정을 반영한 composed 순서로 전달하고, 대상이 0개여도 빈 배열로 함수를 한 번 호출한다. 숨김/미배정 등 연결된 DOM의 선택 정책은 기존 locator를 따른다. 함수 실행 중 문서가 바뀌면 새 문서로 자동 재실행하지 않는다.
 - `page.waitForFunction(fn,arg,{timeout})`은 정상 falsy 결과만 다시 평가한다. async reject·직렬화 오류는 즉시 끝내고, 양의 정수 timeout(ms, 기본10000)은 JS 호출 시점의 인자 전달·연결 준비·Promise 대기를 모두 포함한다. 내부 deadline은 `WAIT_TIMEOUT`으로 기존 VM/변수를 유지한다. 외부 js timeout이 먼저 끝나면 기존 실행 제한/VM 재생성 정책을 따른다.
 - 오류·시간 초과 전에 발생한 페이지 효과는 남는다. 이미 전송된 사용자 JS 자체를 강제로 되돌리거나 종료한다고 보장하지 않으며, 취소 뒤의 후속 도구 호출·늦은 결과 전달을 막는다. 단일 evaluate를 자동 재실행하지 않는다.
+
+## 검색과 이름
+
+- CSS/ref와 getByRole/getByText/getByLabel은 현재 document의 연결 DOM과 open Shadow를 지연 조회한다. 다른 프레임은 page.frame(id)로 선택한다. 같은 연결 요소의 ref는 후속 snapshot에서 유지되지만 교체/분리/문서 변경 시 stale 오류이며 비슷한 요소로 옮겨가지 않는다.
+- 문자열은 whitespace run을 한 칸으로 정규화한 뒤 기본 부분일치, exact:true 전체일치다. 대소문자를 구분한다. RegExp는 source/flags를 보존하고 후보마다 독립 검사하여 g/y의 lastIndex가 다음 후보를 건너뛰게 하지 않는다. RegExp와 exact:true 조합은 거절한다. 빈 text/label, 알 수 없는 role, 잘못된 옵션 타입/키는 호출 전에 입력 오류다. 명시 role 토큰은 첫 지원 role을 사용하고 기존 iframe 표시 role도 조회할 수 있다. role의 name 생략과 name:'' exact:true는 다르다.
+- getByRole과 getByLabel의 명시 이름은 유효 aria-labelledby→aria-label→연결 native label 순서다. IDREF는 각 대상의 Document/ShadowRoot 안에서 지정 순서로 읽고 중복은 한 번만 쓴다. 일부 유효면 해당 참조만, 전부 없거나 결합이 비면 다음 이름 소스로 넘어간다. 순환 분기는 비워 끊는다. 직접 참조한 이름은 CSS/ARIA 숨김이어도 읽으며 script/style/noscript/template을 제외한다.
+- getByLabel은 input/textarea/select/button의 명시 ARIA/native label만 쓴다. placeholder나 일반 본문만으로 label 연결을 만들지 않는다. role 이름은 정의된 alt/title/placeholder/본문 fallback을 더 사용한다. 지원하는 v1 이름 소스의 순서이며 전체 접근성 표준과 동등하다는 약속은 아니다.
+- getByText와 hasText/hasNotText는 접근 이름과 별개인 전체 composed 본문을 쓴다. 슬롯 배정과 shadow 본문을 순서대로 잇고 인접 inline 사이에 없는 공백은 만들지 않는다. ARIA 숨김 subtree와 script/style/noscript/template은 제외하고 CSS 숨김 본문은 포함한다. getByText는 같은 조건에 맞는 후손이 있으면 조상을 제외한다. 긴 이름/본문의 검색은 snapshot 출력용 이름300자 축약에 영향받지 않는다.
+- getByRole은 기본 layout/ARIA 숨김을 제외하고 화면 밖 요소는 포함한다. includeHidden:true는 숨김도 포함한다. 읽기 검색은 스크롤/클릭/추가 로딩을 일으키지 않는다. 단일 읽기/조작은0/N을 구분해 오류이며 자동 첫번째 선택은 없다. count/evaluateAll과 CSS 상태 대기의 명시 예외는 별도다: attached≥1, detached0, hidden0 또는1hidden, visible1visible. hidden/visible의N은 다중 오류이며 ref stale를 상태 성공으로 흡수하지 않는다. 모든 wait 옵션/deadline의 추가 검증은 B06B에 남아 있다.
+
+CSS 후보는 선택 document의 html/head와 inert 태그도 포함하며 각 open ShadowRoot를 탐색한다. template의 별도 content처럼 document에 연결되지 않은 노드는 자동으로 연결 DOM으로 간주하지 않는다. 텍스트 검색은 활성 composed 투영을 사용하므로 미할당 light child와 배정된 slot의 비활성 fallback을 후보로 삼지 않는다. 투명한 slot 자체가 raw 텍스트의 실제 host를 대신하지 않는다. CSS로는 해당 물리 DOM을 명시 조회할 수 있고, 일반 CSS 숨김 본문을 포함하는 기존 검색 정책은 유지한다. script/style 등의 본문 제외는 HTML/SVG 모두 적용하며 raw textContent와 구분한다.
+
+CSS는 각 document/open ShadowRoot의 native querySelectorAll로 평가하고 결과를 기존 순서로 합친다. `:scope`를 후보마다 다시 묶지 않는다. Page/Frame의 document에서 `locator(':scope')`는 HTML 루트, `locator(':scope > body')`는 body를 선택한다. Shadow DOM을 가로지르는 별도 Playwright CSS 확장 문법은 제공하지 않는다.
+
+getByLabel은 명시 이름 소스의 존재와 빈 이름을 구분한다. 소스가 없는 제어는 `/^$/`, `/.*/` 같은 정규식에도 후보가 아니다. 연결된 빈 native label/유효한 빈 IDREF는 빈 이름으로 조회할 수 있다. 비어 있는 aria-label만 있거나 깨진 IDREF만 있는 제어는 연결을 만들지 않는다. 문자열 빈 label 입력은 기존처럼 오류다.

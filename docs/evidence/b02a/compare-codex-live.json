@@ -1,0 +1,107 @@
+{
+  "grade": "LIVE_RECEIVED_OUTPUT_TRANSCRIPTION",
+  "surface": "Codex CUA IAB playwright locators",
+  "url": "http://127.0.0.1:63771/selection",
+  "tab": "10 agent created and closed",
+  "rows": [
+    {
+      "name": "priority",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "repeated-idref",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "lower-priority-aria",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "long-label",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "long-role",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "slot-label",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "long-body",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "accessible-name-is-text",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "minimum",
+      "status": "returned",
+      "value": [
+        "minimum-span"
+      ]
+    },
+    {
+      "name": "adjacent",
+      "status": "returned",
+      "value": [
+        "adjacent",
+        "adjacent-shadow"
+      ]
+    },
+    {
+      "name": "regex-g",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "nested-aria-hidden",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "css-hidden-text",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "placeholder-label",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "empty-role-name",
+      "status": "returned",
+      "value": [
+        "empty-name"
+      ]
+    },
+    {
+      "name": "fallback-role",
+      "status": "returned",
+      "value": 1
+    }
+  ],
+  "proof": {
+    "click": "PASS: proof clicked",
+    "fill": "준비",
+    "value": "selection-proof"
+  },
+  "limits": [
+    "root comparison only, mail.test child DNS unavailable",
+    "Actual field value changed, but fixture trusted-input verdict stayed pending; no exact underlying cause established",
+    "Not an automated export of original tool payload",
+    "Current publicly exposed locator behavior only, no original source inspected"
+  ],
+  "fixtureSha256": "6e2418628ec8b3c13a314de1d0c312a359d0fbf93f52a2d6a6044e30acd11c14"
+}

@@ -1,0 +1,104 @@
+✖ B02A document CSS includes html head and inert elements in the selected frame (5849.793ms)
+✖ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (10376.088417ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16864.36775
+
+✖ failing tests:
+
+test at tests/selection-runtime.test.mjs:73:1
+✖ B02A document CSS includes html head and inert elements in the selected frame (5849.793ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   0,
+  +   0,
+  +   0,
+  +   0,
+  +   0,
+  +   0,
+  +   0,
+  +   0,
+      1,
+  -   1,
+  -   1,
+  -   1,
+  -   1,
+  -   1,
+  -   1,
+  -   1,
+  -   1
+    ]
+
+      at file://<repo>/tests/selection-runtime.test.mjs:75:325
+      at record (file://<repo>/tests/selection-runtime.test.mjs:9:47)
+      at TestContext.<anonymous> (file://<repo>/tests/selection-runtime.test.mjs:75:234)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      0, 0, 0, 0, 0,
+      0, 0, 0, 1
+    ],
+    expected: [
+      1, 1, 1, 1, 1,
+      1, 1, 1, 1
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/selection-runtime.test.mjs:78:1
+✖ B02A composed projection excludes inactive ghosts preserves CSS hidden text and clicks actual hosts (10376.088417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    {
+      active: [
+        'assigned'
+      ],
+  +   activeFallback: [],
+  -   activeFallback: [
+  -     'active-fallback-span'
+  -   ],
+      cssFallback: 1,
+      cssGhost: 1,
+  +   fallback: [
+  +     'fallback-ghost'
+  +   ],
+  +   ghost: [
+  +     'ghost'
+  +   ],
+  -   fallback: [],
+  -   ghost: [],
+      hidden: [
+        'css-hidden'
+      ],
+      prune: [
+  +     'pruned-ghost'
+  -     'pruning'
+      ],
+      raw: [
+        'raw-slot'
+      ]
+    }
+
+      at file://<repo>/tests/selection-runtime.test.mjs:81:329
+      at record (file://<repo>/tests/selection-runtime.test.mjs:9:47)
+      at TestContext.<anonymous> (file://<repo>/tests/selection-runtime.test.mjs:81:199)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { ghost: [ 'ghost' ], fallback: [ 'fallback-ghost' ], prune: [ 'pruned-ghost' ], raw: [ 'raw-slot' ], active: [ 'assigned' ], activeFallback: [], hidden: [ 'css-hidden' ], cssGhost: 1, cssFallback: 1 },
+    expected: { ghost: [], fallback: [], prune: [ 'pruning' ], raw: [ 'raw-slot' ], active: [ 'assigned' ], activeFallback: [ 'active-fallback-span' ], hidden: [ 'css-hidden' ], cssGhost: 1, cssFallback: 1 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

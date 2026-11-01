@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "name": "scope",
+      "value": [
+        "HTML"
+      ]
+    },
+    {
+      "name": "scope-head",
+      "value": 1
+    },
+    {
+      "name": "scope-body",
+      "value": "BODY"
+    },
+    {
+      "name": "scope-is-head",
+      "value": [
+        "HTML",
+        "HEAD"
+      ]
+    }
+  ],
+  "fixtureSha256": "d373b5f435d513bc43a671038df9871d8dca59e23be1ddb5434ec3f62075dfc2"
+}

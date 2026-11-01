@@ -1,0 +1,43 @@
+{
+  "grade": "HTTP-extension-QuickJS-product-supplement",
+  "status": "PASS",
+  "rows": [
+    {
+      "case": "malformed-css",
+      "code": "await p.locator('[').count()",
+      "error": {
+        "code": "JS_ERROR",
+        "guestName": "Error",
+        "message": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '[' is not a valid selector.\n    at find (<anonymous>:147:57)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
+      }
+    },
+    {
+      "case": "malformed-css",
+      "code": "await p.locator('[').click()",
+      "error": {
+        "code": "JS_ERROR",
+        "guestName": "Error",
+        "message": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '[' is not a valid selector.\n    at find (<anonymous>:147:57)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
+      }
+    },
+    {
+      "case": "stale-document",
+      "code": "await p.locator(oldRef).count()",
+      "error": {
+        "code": "JS_ERROR",
+        "guestName": "Error",
+        "message": "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:137:85)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48"
+      }
+    },
+    {
+      "case": "stale-document",
+      "code": "await p.locator(oldRef).click()",
+      "error": {
+        "code": "JS_ERROR",
+        "guestName": "Error",
+        "message": "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:137:85)\n    at single (<anonymous>:172:22)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48"
+      }
+    }
+  ],
+  "clicks": 0
+}

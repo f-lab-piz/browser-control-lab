@@ -1,0 +1,51 @@
+[
+  {
+    "kind": "open",
+    "actual": {
+      "ready": 1
+    }
+  },
+  {
+    "kind": "product-queries",
+    "actual": {
+      "ghost": [
+        {
+          "id": "ghost",
+          "rects": 0
+        }
+      ],
+      "fallback": [
+        {
+          "id": "fallback-ghost",
+          "rects": 0
+        }
+      ],
+      "prune": [
+        {
+          "id": "pruned-ghost",
+          "rects": 0
+        }
+      ],
+      "cssHTML": 0,
+      "cssHead": 0
+    }
+  },
+  {
+    "kind": "native-read-only-oracle",
+    "actual": {
+      "ghostBox": 0,
+      "fallbackBox": 0,
+      "pruneHostBox": 1,
+      "pruneGhostBox": 0,
+      "htmlCount": 1,
+      "headCount": 1
+    }
+  },
+  {
+    "kind": "action-on-pruned",
+    "actual": {
+      "accepted": false,
+      "error": "Error: ACTIONABILITY_TIMEOUT\n    at Object.call (<anonymous>:162:37)"
+    }
+  }
+]

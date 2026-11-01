@@ -1,0 +1,499 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "case": "long-timeout",
+      "timeout": 10000,
+      "elapsed": 100,
+      "effect": 1,
+      "result": {
+        "requestId": "d2793732-f30d-479b-a27c-4dc7bed49d90",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556284838,
+        "startedAt": 1793556284838,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 89.5,
+            "outputChars": 4,
+            "outputBytes": 4,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "true"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556284929
+      }
+    },
+    {
+      "case": "long-timeout",
+      "timeout": 2147483648,
+      "elapsed": 99,
+      "effect": 2,
+      "result": {
+        "requestId": "fe5bf698-d626-4a18-b8a2-842994ac874c",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556284957,
+        "startedAt": 1793556284957,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 85.30000019073486,
+            "outputChars": 4,
+            "outputBytes": 4,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "true"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285044
+      }
+    },
+    {
+      "case": "long-timeout",
+      "timeout": 4294967295,
+      "elapsed": 100,
+      "effect": 3,
+      "result": {
+        "requestId": "c3b7233e-cef9-4bfa-a9c0-4ac673826b20",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285057,
+        "startedAt": 1793556285057,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 85.80000019073486,
+            "outputChars": 4,
+            "outputBytes": 4,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "true"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285145
+      }
+    },
+    {
+      "case": "long-timeout",
+      "timeout": 9007199254740991,
+      "elapsed": 100,
+      "effect": 4,
+      "result": {
+        "requestId": "a7061dc2-9704-417d-85a3-9681c70a326d",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285159,
+        "startedAt": 1793556285159,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 84.40000057220459,
+            "outputChars": 4,
+            "outputBytes": 4,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "true"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285246
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "0",
+      "result": {
+        "requestId": "ae291902-103d-45f3-a9d5-9cd99624cc57",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285261,
+        "startedAt": 1793556285261,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 8.5,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285270
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "-1",
+      "result": {
+        "requestId": "87ebdeda-c541-4df1-a950-83455951add4",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285297,
+        "startedAt": 1793556285297,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 8.100000381469727,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285307
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "0.5",
+      "result": {
+        "requestId": "1afc614b-353c-44ac-b0f2-ad1c3b3a348b",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285333,
+        "startedAt": 1793556285333,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 8,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285342
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "false",
+      "result": {
+        "requestId": "70c84a15-566b-48a9-80d5-c939736b1c3b",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285372,
+        "startedAt": 1793556285372,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 8.09999942779541,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285381
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "\"200\"",
+      "result": {
+        "requestId": "78ccf352-22d4-49a1-ad99-eefe28b6a353",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285411,
+        "startedAt": 1793556285411,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 8.40000057220459,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285420
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "NaN",
+      "result": {
+        "requestId": "449cbf7d-b43d-4898-9da0-e54f53b2c15d",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285447,
+        "startedAt": 1793556285447,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 7.800000190734863,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285458
+      }
+    },
+    {
+      "case": "invalid-timeout",
+      "timeout": "Infinity",
+      "result": {
+        "requestId": "d52b691c-4be0-42b9-b818-935dfc532673",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285486,
+        "startedAt": 1793556285486,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 8.09999942779541,
+            "outputChars": 44,
+            "outputBytes": 44,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "INVALID_TIMEOUT: expected a positive integer"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285496
+      }
+    },
+    {
+      "case": "strict-receiver",
+      "selector": ".absent",
+      "result": {
+        "requestId": "130ada42-d76d-45dc-ae0d-0fd3cd69d693",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285524,
+        "startedAt": 1793556285524,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 2.90000057220459,
+            "outputChars": 128,
+            "outputBytes": 128,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "EVALUATION_TARGET_ERROR: Error: ELEMENT_NOT_FOUND\n    at Object.single [as resolve] (<anonymous>:117:38)\n    at <anonymous>:1:38"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285529
+      }
+    },
+    {
+      "case": "strict-receiver",
+      "selector": ".item",
+      "result": {
+        "requestId": "d16bf24d-2e44-4602-a4bc-0b6bddfe2ed8",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285561,
+        "startedAt": 1793556285561,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 2.5,
+            "outputChars": 139,
+            "outputBytes": 139,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "EVALUATION_TARGET_ERROR: Error: MULTIPLE_MATCHES: 5 elements\n    at Object.single [as resolve] (<anonymous>:117:38)\n    at <anonymous>:1:38"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285565
+      }
+    },
+    {
+      "case": "json-and-truthy-object",
+      "result": {
+        "requestId": "b69b215c-94b6-46dc-8946-d6a4da199801",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285598,
+        "startedAt": 1793556285598,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 5.199999809265137,
+            "outputChars": 74,
+            "outputBytes": 74,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"negative\":[true,true],\"value\":{\"items\":[{\"n\":7},{\"n\":7}]}}"
+            },
+            {
+              "type": "text",
+              "text": "{\"ready\":true}"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285605
+      }
+    },
+    {
+      "case": "main-navigation-no-replay",
+      "result": {
+        "requestId": "27f7c890-682e-40a6-a6ea-19c5002bfeac",
+        "operation": "js",
+        "sessionId": "234b61d7-8ade-4691-b8d1-fc999e4dd122",
+        "generation": 1,
+        "status": "completed",
+        "createdAt": 1793556285633,
+        "startedAt": 1793556285633,
+        "result": {
+          "execution": "extension-worker/QuickJS-WASM",
+          "metrics": {
+            "durationMs": 117.59999942779541,
+            "outputChars": 126,
+            "outputBytes": 126,
+            "imageBytes": 0,
+            "imageCount": 0
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"accepted\":false,\"error\":\"EVALUATION_CONTEXT_ERROR: {\\\"code\\\":-32000,\\\"message\\\":\\\"Inspected target navigated or closed\\\"}\"}"
+            },
+            {
+              "type": "text",
+              "text": "0"
+            }
+          ],
+          "truncated": false,
+          "truncationReasons": []
+        },
+        "finishedAt": 1793556285753
+      }
+    }
+  ]
+}

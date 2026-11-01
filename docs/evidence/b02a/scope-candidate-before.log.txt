@@ -1,0 +1,55 @@
+✖ B02A document CSS includes html head and inert elements in the selected frame (2134.477541ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2646.094458
+
+✖ failing tests:
+
+test at tests/selection-runtime.test.mjs:73:1
+✖ B02A document CSS includes html head and inert elements in the selected frame (2134.477541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+      1,
+      1,
+      1,
+      1,
+  ...
+      1,
+  +   35,
+  +   0,
+  +   0,
+  +   35
+  -   1,
+  -   1,
+  -   1,
+  -   2
+    ]
+
+      at file://<repo>/tests/selection-runtime.test.mjs:75:386
+      at record (file://<repo>/tests/selection-runtime.test.mjs:9:47)
+      at TestContext.<anonymous> (file://<repo>/tests/selection-runtime.test.mjs:75:295)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+       1, 1, 1,  1, 1, 1,
+       1, 1, 1, 35, 0, 0,
+      35
+    ],
+    expected: [
+      1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1,
+      2
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

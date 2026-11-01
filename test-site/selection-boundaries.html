@@ -1,0 +1,23 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="script-src 'nonce-selection-boundaries'; object-src 'none'">
+<meta id="boundary-meta" name="boundary-value" content="metadata-proof"><title>Selection boundary metadata</title>
+<style id="boundary-style">body{font:16px system-ui;margin:24px}#pruning,#unassigned,#fallback,#active-fallback,#raw-slot{display:block;padding:12px;margin:10px;border:1px solid #aaa}.hidden{display:none}output{display:block}iframe{width:600px;height:200px}</style></head><body>
+<h1>Composed projection boundaries</h1><output id="click-count">0</output><output id="events">[]</output><output id="verdict">준비</output>
+<div id="unassigned"><span id="ghost">Ghost Needle</span></div>
+<div id="fallback"><span slot="x" id="assigned">Active Needle</span></div>
+<div id="pruning" data-record><span id="pruned-ghost">Prune Needle</span></div>
+<div id="raw-slot" role="button" tabindex="0" data-record>Raw Slot Needle</div><div id="active-fallback" data-record></div>
+<p id="css-hidden" class="hidden">CSS Hidden Needle</p>
+<template id="boundary-template"><span id="template-content">Template Metadata Needle</span></template><noscript id="boundary-noscript">Noscript Metadata Needle</noscript>
+<script id="boundary-data" type="application/json">{"fixture":"inert"}</script>
+<svg aria-label="Inert SVG fixture"><style id="svg-style">/* SVG Style Needle */</style><script id="svg-script" type="application/json">"SVG Script Needle"</script></svg>
+<script nonce="selection-boundaries" id="boundary-init">
+const embedded=new URLSearchParams(location.search).has('embedded');document.documentElement.dataset.scope=embedded?'child':'main';
+document.querySelector('#unassigned').attachShadow({mode:'open'}).innerHTML='<span id="rendered">Rendered Content</span>';
+document.querySelector('#fallback').attachShadow({mode:'open'}).innerHTML='<slot name="x"><span id="fallback-ghost">Fallback Needle</span></slot>';
+document.querySelector('#pruning').attachShadow({mode:'open'}).textContent='Prune Needle';
+document.querySelector('#raw-slot').attachShadow({mode:'open'}).innerHTML='<slot></slot>';
+document.querySelector('#active-fallback').attachShadow({mode:'open'}).innerHTML='<slot><span id="active-fallback-span">Active Fallback Needle</span></slot>';
+const events=[];document.addEventListener('click',event=>{const target=event.composedPath().find(node=>node instanceof Element&&node.hasAttribute('data-record'));if(!target)return;events.push({id:target.id,trusted:event.isTrusted});document.querySelector('#events').textContent=JSON.stringify(events);document.querySelector('#click-count').textContent=String(events.length);if(events.length===3&&events.every((event,index)=>event.trusted&&event.id===['pruning','raw-slot','active-fallback'][index]))document.querySelector('#verdict').textContent='PASS: projected controls clicked'});
+if(!embedded){const child=document.createElement('iframe');child.id='boundary-child';child.title='Boundary child';child.src=location.protocol+'//mail.test:'+location.port+'/selection-boundaries?embedded=1';document.body.append(child)}
+</script></body></html>

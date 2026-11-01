@@ -1,0 +1,123 @@
+{
+  "grade": "HTTP-extension-QuickJS-product",
+  "name": "b02a",
+  "startedAt": "2026-11-01T21:18:28.566Z",
+  "finishedAt": "2026-11-01T21:18:30.518Z",
+  "browser": "145.0.7632.6",
+  "observer": {
+    "pauseOverrides": 3
+  },
+  "headed": false,
+  "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+  "dirty": true,
+  "sourceSha256": {
+    "bridge/server.mjs": "037a58d08e694a71255b9df64001c69a3ab87fb19bb01c17f3275ec6bef9e0c2",
+    "bridge/client.mjs": "eb47da8f72090b49bdc70647a6afbd58320ee6ec3db94ebca88f40e492427d3f",
+    "extension/runtime-worker.mjs": "b7e4ed2eff877a5c74e854024ac81bb933c462ab6c66a24bc0e23c3b655febaf",
+    "extension/output.mjs": "b0bc71c792d29266541f45267779566a73b457f25a94a9afce8f9b2114deb489",
+    "shared/limits.mjs": "d31174b174ea6cd10351875fee19fdf395d82ccc1e7d8a02bb9ac2d8b81324e2",
+    "shared/png-crc.mjs": "5af9ce6471d4901a3e7739a767522576a412a63bf5186780b6d9bf713d69d304",
+    "extension/transform.mjs": "f0b60533a80ac92369c84c7c1b01784330e86ed58a09b4f8a9359249ce803ecf",
+    "extension/api-source.mjs": "ff4b9fbd429e69db8979290a29d62c6ef7d853d71df8194529a45a9fbe9ebeda",
+    "extension/offscreen.js": "e7c7e6c7d325c115f5011d53c89ec0a3d3d00ef4477b14bf7c0dbb94a0af3540",
+    "extension/browser-engine.mjs": "a264485d1b567ba50cb51faea4a8ade98aaa088ae1244ab6a1853c2aa655b268",
+    "extension/frame-state.mjs": "a68d5cf11d4e694aed305f0ba36dda86abd6eb3f2ef5921d564a3b2191f6a249",
+    "extension/page-agent.mjs": "53a5b534b6a7494d74b5b59ecc2b003c476e3f54ce70ff2bd95fae6c07639416",
+    "extension/files.mjs": "bcc4db1066ec0c740f3e291009d156d624d084656d64642f92314a214cadb2c7",
+    "tests/helpers/product-runtime.mjs": "0fb29ce171d3c609fbd6e87889e6456dfe6a37345f8f1cc22a51f8ec6f9fdc2b",
+    "tests/helpers/observed-chrome.mjs": "a5903ef70c33a357a5f6d35e4ac5e7674d5539c889da388288fce5ab95f4e8eb",
+    "tests/requirements-runtime.test.mjs": "cdd67141dbb5ddd16a1a1ae1f9c269c0b443e53eb41422526a5ec095c8862b85",
+    "test-site/server.mjs": "7d38ebb8cf23baf3af3ef18773052c6d3194bce1ad56a2ea5cdeccbd74d3491b",
+    "test-site/audit.html": "7b3ba2cc3306fa6c30c3c74b496fbc61db9836b72423c0b780a1ec19db9658e6",
+    "test-site/audit.js": "6e6108e6ce78d9e3a519c6cd4d62e35ae1d30e38606ceeac4c5df6644e5f764c",
+    "test-site/index.html": "0c59ee5bb9414820b7e3763f3baa6e56c6ba419b9c0990375e25a1789e393d65",
+    "test-site/fixture.js": "c443191cf2dd8bfe59a6deccf85990936e9dcedba1d8dc9567bdaec7d4da0108",
+    "docs/runtime-usage.md": "52fba0cf6971cba2011bd6856ebbd952deff98f8c173b18cb8bb415ad0be23c2",
+    "docs/api-catalog.json": "9bded1e127a5928e81541e73b01bd21c237b82133083a716eb8db06461b356b1",
+    "package.json": "ea250ac7e6b67e15bfd99b04a8b403e17ac028cca39464a648209bf2fbd38bf4",
+    "package-lock.json": "410382cf6b025ca2a11be26259e0a237c54a49253cb45ed6b36adcf0ae2aa71a",
+    "tests/selection-runtime.test.mjs": "8090dec35fb9b701252d04f009a9f15112d5d2d9bd18b0fdf9481c9af2f2e9cf",
+    "tests/selection-fixture.test.mjs": "daf84797fa4a9759d77fd917574d02df3388d6f9054ed40d141a5df585906d16",
+    "tests/selection-contract.test.mjs": "7d4bd536beb89174eea4b2e475c98c66c8d25c03c22727eddde6e14068943a3a",
+    "tests/review-boundaries.test.mjs": "4d323c30c7eca67740fcd8a4f20773738203006ff83362a4617d8a530b91a053",
+    "test-site/selection.html": "eebaeedae067c94f9ce5d4d6d75654328a592ad54039cdb39a0a49df0e36a5a7",
+    "test-site/selection-boundaries.html": "d373b5f435d513bc43a671038df9871d8dca59e23be1ddb5434ec3f62075dfc2",
+    "test-site/selection-labels.html": "bd5284dddbe5fab14a8259466f1d59964ede1db384eea49d2a4ab1c7af057f03",
+    "extension/background.js": "0b04c5b1610896f00768da1a9dc6a860d6b604143db4cfdd1be2f7428a823e2d",
+    "extension/session-lifecycle.mjs": "521d44ed085f301ea04d7e9d0843278f66670a1eb176577f64624478ed8f360c",
+    "extension/evaluation.mjs": "1b5ac8509f5ef44a8e52aa80fcde23dcd03c95b8f90c693a72fe72abc453cd58",
+    "shared/json-value.mjs": "9014ec571f1c8451a323430066707c9f10108994c97d9ecfe5a87d890bcd2b9d"
+  },
+  "evidence": [
+    {
+      "conditions": [
+        "REQ-SCOPE-GETBYLABEL-001-C01",
+        "REQ-SCOPE-GETBYLABEL-002-C02"
+      ],
+      "status": "fail",
+      "actual": {
+        "absent": {
+          "ids": [
+            [
+              "unlabelled"
+            ],
+            [
+              "unlabelled"
+            ],
+            [
+              "unlabelled"
+            ]
+          ],
+          "action": {
+            "accepted": true
+          }
+        },
+        "untouched": {
+          "value": "wrong",
+          "events": [
+            {
+              "id": "unlabelled",
+              "value": "wrong",
+              "trusted": true
+            }
+          ]
+        },
+        "connected": {
+          "empty": [
+            "unlabelled",
+            "native-empty",
+            "reference-empty",
+            "aria-empty",
+            "broken-reference"
+          ],
+          "all": [
+            "unlabelled",
+            "native-empty",
+            "reference-empty",
+            "named",
+            "aria-empty",
+            "broken-reference"
+          ],
+          "named": [
+            "named"
+          ]
+        },
+        "legitimate": {
+          "accepted": true
+        },
+        "proof": {
+          "verdict": "FAIL: unexpected input",
+          "events": [
+            {
+              "id": "unlabelled",
+              "value": "empty-label-proof",
+              "trusted": true
+            }
+          ],
+          "unlabelled": "empty-label-proof"
+        }
+      },
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   [\n+     'unlabelled'\n+   ],\n+   [\n+     'unlabelled'\n+   ],\n+   [\n+     'unlabelled'\n+   ]\n-   [],\n-   [],\n-   []\n  ]\n"
+    }
+  ]
+}

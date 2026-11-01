@@ -1,0 +1,55 @@
+{
+  "grade": "HTTP-extension-QuickJS-independent-boundary-probe",
+  "checks": [
+    {
+      "case": "nested-shadow-composed-order-root-css-hidden-idref",
+      "actual": {
+        "root": [
+          "HTML"
+        ],
+        "group": [
+          "HTML",
+          "HEAD"
+        ],
+        "order": [
+          "beta",
+          "inner",
+          "alpha"
+        ],
+        "name": [
+          "proof"
+        ],
+        "noLower": 0
+      },
+      "pass": true
+    },
+    {
+      "case": "invalid-css-count-click-and-strict-duplicate",
+      "actual": [
+        "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '[' is not a valid selector.\n    at find (<anonymous>:147:57)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48",
+        "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '[' is not a valid selector.\n    at find (<anonymous>:147:57)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48",
+        "MULTIPLE_MATCHES: 2 elements"
+      ],
+      "pass": true
+    },
+    {
+      "case": "stale-document-count-click",
+      "actual": [
+        "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:137:85)\n    at Object.call (<anonymous>:212:36)\n    at <anonymous>:1:48",
+        "Error: STALE_DOCUMENT_REF\n    at find (<anonymous>:137:85)\n    at single (<anonymous>:172:22)\n    at Object.call (<anonymous>:213:16)\n    at <anonymous>:1:48"
+      ],
+      "pass": true
+    },
+    {
+      "case": "no-unwanted-input-and-valid-trusted-input",
+      "actual": [
+        {
+          "id": "proof",
+          "trusted": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "status": "PASS"
+}

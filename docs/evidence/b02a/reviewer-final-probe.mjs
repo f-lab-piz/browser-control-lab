@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import {createServer} from 'node:http';
+import {writeFile} from 'node:fs/promises';
+import {productRuntime,resultText} from '../../tests/helpers/product-runtime.mjs';
+const html=`<!doctype html><html lang="ko"><head><title>Independent label boundary probe</title></head><body>
+<input id="absent" value="initial" placeholder="Hint"><input id="empty-aria" value="initial" aria-label=" "><input id="broken" value="initial" aria-labelledby="missing">
+<label for="empty-native"></label><input id="empty-native" value="initial"><span id="empty-ref"></span><input id="empty-reference" value="initial" aria-labelledby="empty-ref">
+<span id="blank"></span><input id="fallback" value="initial" aria-labelledby="blank missing blank" aria-label="Fallback">
+<label for="hidden-named" aria-hidden="true" style="display:none">Hidden Native</label><input id="hidden-named" value="initial">
+<span id="outside">Outside</span><div id="shadow"></div><button id="trusted">Trusted Proof</button><output id="events">[]</output>
+<script>
+const host=document.querySelector('#shadow');host.attachShadow({mode:'open'}).innerHTML='<span id="outside">Inside</span><input id="local" aria-labelledby="outside" value="initial"><span id="inert-ref"><style>Ignored</style></span><input id="inert-empty" aria-labelledby="inert-ref" value="initial">';
+const events=[];document.addEventListener('input',e=>{events.push({type:'input',id:e.target.id,value:e.target.value,trusted:e.isTrusted});document.querySelector('#events').textContent=JSON.stringify(events)});document.querySelector('#trusted').addEventListener('click',e=>{events.push({type:'click',id:e.target.id,trusted:e.isTrusted});document.querySelector('#events').textContent=JSON.stringify(events)});
+</script></body></html>`;
+const server=createServer((req,res)=>{res.setHeader('content-type','text/html; charset=utf-8');res.end(html)});await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port;
+let h;const report={grade:'Independent HTTP-extension-QuickJS supplemental probe',rows:[],status:'INCOMPLETE'};
+try{
+ h=await productRuntime('independent-label-probe');const session=await h.client.session();const js=async code=>{const r=await h.client.js(session.id,code);assert.equal(r.status,'completed',JSON.stringify(r));return resultText(r)};const val=async code=>JSON.parse(await js(code));
+ await js(`var p=await browser.open(${JSON.stringify(url)});await p.locator('#trusted').waitFor();`);const observed=h.context.pages().find(p=>p.url().startsWith(url));assert(observed);
+ const actual=await val(`console.log({empty:await p.getByLabel(/^$/gy).evaluateAll(es=>es.map(e=>e.id)),all:await p.getByLabel(/.*/g).evaluateAll(es=>es.map(e=>e.id)),hidden:await p.getByLabel('Hidden Native',{exact:true}).evaluateAll(es=>es.map(e=>e.id)),local:await p.getByLabel('Inside',{exact:true}).evaluateAll(es=>es.map(e=>e.id)),outside:await p.getByLabel('Outside',{exact:true}).count(),fallback:await p.getByLabel('Fallback',{exact:true}).count(),root:await p.locator(':scope').getAttribute('lang'),inertText:await p.getByText('Ignored',{exact:true}).count()});`);
+ assert.deepEqual(actual,{empty:['empty-native','empty-reference','inert-empty'],all:['empty-native','empty-reference','fallback','hidden-named','local','inert-empty'],hidden:['hidden-named'],local:['local'],outside:0,fallback:1,root:'ko',inertText:0});report.rows.push({case:'names-provenance-fallback-root-and-inert',actual,pass:true});
+ const negative=await val(`var rows=[];for(var fn of [()=>p.getByLabel(/^$/).fill('wrong'),()=>p.getByLabel('Hint',{exact:true}).fill('wrong'),()=>p.getByLabel('Never',{exact:true}).fill('wrong')]){try{await fn();rows.push('accepted')}catch(e){rows.push(e.message)}}console.log(rows);`);assert.match(negative[0],/MULTIPLE_MATCHES/);assert(negative.slice(1).every(s=>/ELEMENT_NOT_FOUND/.test(s)));assert.deepEqual(JSON.parse(await observed.locator('#events').textContent()),[]);assert.equal(await observed.locator('#absent').inputValue(),'initial');report.rows.push({case:'negative-strict-and-unconnected-no-effects',actual:negative,pass:true});
+ await js(`await p.getByLabel('Fallback',{exact:true}).fill('valid');await p.getByRole('button',{name:'Trusted Proof',exact:true}).click();`);const events=JSON.parse(await observed.locator('#events').textContent());assert.deepEqual(events,[{type:'input',id:'fallback',value:'valid',trusted:true},{type:'click',id:'trusted',trusted:true}]);report.rows.push({case:'positive-trusted-input-and-click',actual:events,pass:true});report.status='PASS';
+}catch(error){report.status='FAIL';report.error=error.stack;throw error}finally{await writeFile('output/stage6-label-rereview/probe.json',JSON.stringify(report,null,2));await h?.close();await new Promise(r=>server.close(r))}

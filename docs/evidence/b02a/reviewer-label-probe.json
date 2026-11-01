@@ -1,0 +1,32 @@
+{
+  "grade": "HTTP-extension-QuickJS-independent-label-probe",
+  "head": "a59c560245e40e6842b580c9e9b8864aef9bb8f1",
+  "condition": "REQ-SCOPE-GETBYLABEL-002-C02; common/selection explicit label restriction",
+  "expected": {
+    "ids": [],
+    "fillRejected": true,
+    "value": "initial",
+    "events": []
+  },
+  "query": {
+    "ids": [
+      "unlabelled"
+    ],
+    "count": 1,
+    "literalPlaceholder": 0
+  },
+  "action": {
+    "accepted": true
+  },
+  "observed": {
+    "value": "changed-without-label",
+    "events": [
+      {
+        "id": "unlabelled",
+        "value": "changed-without-label",
+        "trusted": true
+      }
+    ]
+  },
+  "requirementPass": false
+}

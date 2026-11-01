@@ -1,0 +1,9 @@
+✔ explicit label fixture distinguishes absent sources from connected empty names and judges trusted input (1502.966417ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1839.82175

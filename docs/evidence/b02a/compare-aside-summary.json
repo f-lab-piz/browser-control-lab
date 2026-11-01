@@ -1,0 +1,94 @@
+{
+  "rows": [
+    {
+      "name": "fallback-role",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "priority",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "repeated-idref",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "lower-priority-aria",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "long-label",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "long-role",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "slot-label",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "long-body",
+      "status": "returned",
+      "value": 2
+    },
+    {
+      "name": "accessible-name-is-text",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "minimum",
+      "status": "returned",
+      "value": [
+        "minimum-span"
+      ]
+    },
+    {
+      "name": "adjacent",
+      "status": "returned",
+      "value": [
+        "adjacent"
+      ]
+    },
+    {
+      "name": "regex-g",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "nested-aria-hidden",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "css-hidden-text",
+      "status": "returned",
+      "value": 1
+    },
+    {
+      "name": "placeholder-label",
+      "status": "returned",
+      "value": 0
+    },
+    {
+      "name": "empty-role-name",
+      "status": "error",
+      "message": "locator.evaluateAll() does not support role selectors yet; use a CSS selector."
+    }
+  ],
+  "proof": {
+    "click": "PASS: proof clicked",
+    "fill": "PASS: proof filled",
+    "value": "selection-proof"
+  },
+  "fixtureSha256": "6e2418628ec8b3c13a314de1d0c312a359d0fbf93f52a2d6a6044e30acd11c14"
+}
