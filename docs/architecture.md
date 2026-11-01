@@ -34,3 +34,5 @@ MV3 service worker 종료에 내성이 필요하다. JS 상태를 서비스 워�
 
 ## Files
 로컬 경로는 브라우저 PC 기준이다. 서버·Pod 파일은 바이트/파일 참조로 전달한다. locator.setFiles와 chooser.setFiles는 같은 엔진을 쓴다. 바이너리 전송을 모델 텍스트 로그와 분리한다. local file path 접근 범위, POST/인증/blob 다운로드의 바이트 획득, 서버 export 경로는 실제 구현·검증이 필요하다.
+
+0.2.0의 사용자 요청은 QuickJS global async/strict 평가를 사용한다. AST 검증은 import/export를 거절하며 소스를 다시 쓰지 않는다. 선언·재선언·충돌·상수 의미는 세션 VM의 네이티브 lexical 환경에서 결정한다. top-level await의 Promise settle 후 명시 출력만 반환하며 마지막 표현식은 자동 출력하지 않는다.

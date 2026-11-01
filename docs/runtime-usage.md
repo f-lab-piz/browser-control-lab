@@ -39,7 +39,7 @@ console.log(await client.reset(session.id));
 
 모든 클라이언트 경로에 `Authorization: Bearer <client token>`이 필요하다. 중계기는 loopback에만 바인딩한다. 신뢰한 로컬 개발 환경을 위한 초기 구현이며 다중 사용자 서비스 인증 체계는 아직 없다.
 
-JS의 마지막 값은 자동 출력되지 않는다. `console.log(value)`로 텍스트를, `display(await page.screenshot({fullPage:true}))`로 이미지를 반환한다. 한 세션의 top-level 변수는 다음 호출에 유지된다. reset이나 실행 제한으로 런타임이 재생성되면 다시 선언한다.
+JS의 마지막 값은 자동 출력되지 않는다. `console.log(value)`로 텍스트를, `display(await page.screenshot({fullPage:true}))`로 이미지를 반환한다. 0.2.0부터 한 세션의 top-level var/let/const 선언은 원래 종류와 함께 다음 호출에 유지된다. let/const 재선언과 var↔lexical 이름 충돌은 그 요청의 앞선 코드도 실행하기 전에 오류다. var 재선언과 let 대입은 허용하고 const 대입은 오류다. 수정하려는 값은 처음에 let으로 선언하고 이후에는 이름에 대입한다. 선언 종류를 전역 속성으로 바꾸던0.1.x 동작과 다르다. reset이나 실행 제한으로 런타임이 재생성되면 다시 선언한다.
 
 이벤트는 조작 전에 대기시킨다.
 

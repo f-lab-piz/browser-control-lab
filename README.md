@@ -65,9 +65,9 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 
 브리지 실행 후 출력된 `.local/extension`을 Chrome 개발자 모드에서 로드합니다. 설치·세션·HTTP 호출·파일 전달 예제는 [사용 안내](docs/runtime-usage.md)를 참고합니다. 테스트는 임시 프로필에 확장을 자동 설치하므로 수동 설치가 필요 없습니다.
 
-- 계약·판정기·중계기 검증 7개.
+- 계약·판정기·중계기·프레임 상태 단위와 요구사항별 실제 확장 검증.
 - fixture UI 검증 7개, 초기 확장 왕복 probe 1개.
-- 제품 확장 경로 24개와 실제 네이버 검색 관찰 1개. 최신 결과는 [상태 문서](docs/status.md)에서 확인합니다.
+- 기존 제품 확장 복합 회귀와 선택적 실제 네이버 검색 관찰. 요구사항 구현의 최신 수·범위는 [실행 현황](implementation/index.md)과 [상태 문서](docs/status.md)에서 확인합니다.
 
 `verified-basic`은 기본 호출의 실제 검증이며 모든 옵션을 지원한다는 뜻은 아닙니다. 카탈로그의 partial 항목과 사용 안내의 제약을 함께 확인합니다. 결과는 `output/`에 생성하며 Git에서 제외합니다.
 
@@ -80,11 +80,11 @@ HEADED=1 EXTERNAL_SITE=1 npm run test:runtime
 - [검증 등급·복잡 시나리오·성공 판정](docs/testing.md)
 - [개발·검증 스킬](.agents/skills/browser-control-development/SKILL.md) — 프로젝트 AGENTS.md에서 로드
 
-개발은 API 계약→단위 검증→기본 fixture→복잡 fixture→제품 확장 E2E→외부 사이트 검증 순으로 진행합니다. GitHub 원격 저장소는 아직 연결하지 않았습니다.
+개발은 API 계약→단위 검증→기본 fixture→복잡 fixture→제품 확장 E2E→외부 사이트 검증 순으로 진행합니다. GitHub 원격은 비공개 [browser-control-lab](https://github.com/f-lab-piz/browser-control-lab)입니다.
 
 ## 수정 전 진단 평가
 
-`npm run site` 후 `/audit`에서16개 진단 구역을, `/coverage`에서64 API의 테스트 매핑을 확인합니다. `npm run test:audit`은 현 툴의 경계 진단31개를 실행합니다. 현재19 PASS/12 FAIL이며 실패가 있으면 종료 코드1을 반환합니다. 이는 알려진 미지원 옵션과 거짓 성공을 포함한 진단 결과입니다. 툴은 아직 수정하지 않았습니다.
+`npm run site` 후 `/audit`에서16개 진단 구역을, `/coverage`에서64 API의 테스트 매핑을 확인합니다. `npm run test:audit`은 현 툴의 경계 진단31개를 실행합니다. 초기 수정 전 기록은19 PASS/12 FAIL입니다. 실패가 있으면 종료 코드1을 반환하며, 당시 알려진 미지원 옵션과 거짓 성공의 진단 이력입니다. 이후 수정 결과는 아래 Before/After 보고서와 구분합니다.
 
 - `npm run test:audit-fixture`: 독립 fixture oracle, 제품 성능과 구분
 - `node scripts/build-audit-matrix.mjs`: 진단 결과를 반영해64 API 매핑과 정적 coverage 페이지 생성

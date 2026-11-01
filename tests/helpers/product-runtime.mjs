@@ -12,14 +12,14 @@ import {startFixture} from '../../test-site/server.mjs';
 import {buildExtension} from '../../scripts/build-extension.mjs';
 
 export const resultText=r=>r.result?.content?.filter(c=>c.type==='text').map(c=>c.text).join('\n');
-export async function productRuntime(name){
+export async function productRuntime(name,{extraSources=[]}={}){
  const evidence=[],startedAt=new Date().toISOString();
- const output=process.env.BCL_RUN_DIR||'output/requirements-runtime/'+name+'-'+startedAt.replace(/[:.]/g,'-');
+ const output=process.env.BCL_RUN_DIR?path.join(process.env.BCL_RUN_DIR,name):'output/requirements-runtime/'+name+'-'+startedAt.replace(/[:.]/g,'-');
  let root,bridge,fixture,context,browser;
  async function close(){
   try{
    await mkdir(output,{recursive:true});
-   const files=['bridge/server.mjs','bridge/client.mjs','extension/runtime-worker.mjs','extension/transform.mjs','extension/api-source.mjs','extension/offscreen.js','extension/browser-engine.mjs','extension/frame-state.mjs','extension/page-agent.mjs','extension/files.mjs','tests/helpers/product-runtime.mjs','tests/helpers/observed-chrome.mjs','tests/requirements-runtime.test.mjs','test-site/server.mjs','test-site/audit.html','test-site/audit.js','test-site/index.html','test-site/fixture.js','docs/runtime-usage.md','docs/api-catalog.json','package.json','package-lock.json'];
+   const files=['bridge/server.mjs','bridge/client.mjs','extension/runtime-worker.mjs','extension/transform.mjs','extension/api-source.mjs','extension/offscreen.js','extension/browser-engine.mjs','extension/frame-state.mjs','extension/page-agent.mjs','extension/files.mjs','tests/helpers/product-runtime.mjs','tests/helpers/observed-chrome.mjs','tests/requirements-runtime.test.mjs','test-site/server.mjs','test-site/audit.html','test-site/audit.js','test-site/index.html','test-site/fixture.js','docs/runtime-usage.md','docs/api-catalog.json','package.json','package-lock.json',...extraSources];
    const sourceSha256=Object.fromEntries(await Promise.all(files.map(async f=>[f,createHash('sha256').update(await readFile(f)).digest('hex')])));
    await writeFile(path.join(output,'results.json'),JSON.stringify({grade:'HTTP-extension-QuickJS-product',name,startedAt,finishedAt:new Date().toISOString(),browser:context?.browser()?.version(),observer:browser?.observer,headed:process.env.HEADED==='1',head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),dirty:Boolean(execFileSync('git',['status','--porcelain'],{encoding:'utf8'}).trim()),sourceSha256,evidence},null,2));
   }finally{
@@ -39,6 +39,6 @@ export async function productRuntime(name){
   const request=async(route,body,token=bridge.token)=>{
    const r=await fetch(bridge.url+route,{method:body===undefined?'GET':'POST',headers:{authorization:'Bearer '+token,'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});return {status:r.status,value:await r.json()};
   };
-  return {bridge,client,request,fixture,context,output,evidence,close};
+  return {bridge,client,request,fixture,context,output,evidence,inspectFrame:browser.inspectFrame,close};
  }catch(error){await close();throw error}
 }
