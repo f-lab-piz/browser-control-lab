@@ -1,4 +1,4 @@
-import {Unzlib} from 'fflate';
+import {Inflate} from 'pako';
 import {crc32} from '../shared/png-crc.mjs';
 import {LIMITS} from '../shared/limits.mjs';
 const encoder=new TextEncoder(),decoder=new TextDecoder();
@@ -6,16 +6,17 @@ export const byteLength=value=>encoder.encode(value).length;
 export function utf8Prefix(value,limit){const bytes=encoder.encode(value);return bytes.length<=limit?decoder.decode(bytes):new TextDecoder().decode(bytes.subarray(0,limit),{stream:true})}
 function inflateChecked(compressed,maximum,metadata=false,accept=()=>{}){
  if(compressed.length<6)throw Error('Incomplete PNG zlib stream');
- let length=0,a=1,b=0;
- const inflater=new Unzlib(data=>{
-  length+=data.length;if(length>maximum)throw Error(metadata?'IMAGE_RESOURCE_LIMIT: PNG metadata exceeds workspace':'PNG scanline size mismatch');
-  for(const byte of data){a=(a+byte)%65521;b=(b+a)%65521}accept(data);
- });
- // Bound each library output allocation by a small DEFLATE input slice.
- for(let offset=0;offset<compressed.length;offset+=256)inflater.push(compressed.subarray(offset,offset+256),offset+256>=compressed.length);
- if(new DataView(compressed.buffer,compressed.byteOffset,compressed.byteLength).getUint32(compressed.length-4)!==(((b<<16)|a)>>>0))throw Error('PNG zlib checksum mismatch');
+ let length=0,stream;
+ const inflater=new Inflate({windowBits:15,chunkSize:65536});
+ inflater.onStart=value=>{stream=value};
+ inflater.onData=data=>{length+=data.length;if(length>maximum)throw Error(metadata?'IMAGE_RESOURCE_LIMIT: PNG metadata exceeds workspace':'PNG scanline size mismatch');accept(data)};
+ for(let offset=0;offset<compressed.length;offset+=256){
+  if(!inflater.push(compressed.subarray(offset,offset+256),offset+256>=compressed.length))throw Error('Invalid PNG zlib stream: '+inflater.msg);
+ }
+ if(!inflater.ended||inflater.err||stream.total_in!==compressed.length)throw Error('Incomplete or trailing PNG zlib stream');
  return length;
 }
+
 function keywordEnd(data,start=0){const end=data.indexOf(0,start);if(end<start+1||end-start>79)throw Error('Invalid PNG metadata keyword');return end}
 function metadataStream(type,data){
  if(type==='iCCP'||type==='zTXt'){const end=keywordEnd(data);if(data[end+1]!==0)throw Error('Invalid PNG metadata compression');return data.subarray(end+2)}
@@ -32,7 +33,7 @@ function pngFormat(bytes){
  if(!width||!height||width>0x7fffffff||height>0x7fffffff||!depths?.includes(depth)||bytes[26]!==0||bytes[27]!==0||interlace>1)throw Error('Invalid PNG IHDR format');
  const channels=({0:1,2:3,3:1,4:2,6:4})[color],passes=interlace?[[0,0,8,8],[4,0,8,8],[0,4,4,8],[2,0,4,4],[0,2,2,4],[1,0,2,2],[0,1,1,2]]:[[0,0,1,1]];
  let expected=0,maxRow=0;const rows=[];for(const [x,y,dx,dy] of passes){const w=Math.max(0,Math.ceil((width-x)/dx)),h=Math.max(0,Math.ceil((height-y)/dy));if(w&&h){const bytes=Math.ceil(w*channels*depth/8);expected+=(bytes+1)*h;maxRow=Math.max(maxRow,bytes);rows.push({width:w,height:h,bytes})}}
- // Conservatively charge inflater copies, decoded raster and indexed conversion before allocation.
+ // Charge file copies, bounded inflater buffers and indexed row buffers before allocation.
  const workspace=(color===3?maxRow*2:0)+bytes.length*3+2*1024*1024;
  if(workspace>LIMITS.memoryBytes||expected>LIMITS.memoryBytes)throw Error('IMAGE_RESOURCE_LIMIT: PNG estimated decode workspace exceeds 64 MiB');
  return {width,height,depth,color,expected,workspace,rows,bytesPerPixel:Math.max(1,Math.ceil(channels*depth/8))};

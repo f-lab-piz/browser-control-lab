@@ -1,4 +1,4 @@
-import {deflateSync} from 'node:zlib';
+import {deflateSync,constants} from 'node:zlib';
 import {crc32} from '../shared/png-crc.mjs';
 export {crc32} from '../shared/png-crc.mjs';
 export function pngChunk(type,data){const content=Buffer.concat([Buffer.from(type),data]),out=Buffer.alloc(data.length+12);out.writeUInt32BE(data.length);content.copy(out,4);out.writeUInt32BE(crc32(content),out.length-4);return out}
@@ -11,6 +11,7 @@ export function outputPng(size=128){
 }
 
 export function reviewPng(kind){
+ if(kind.startsWith('zlib-'))return compressionPng(kind);
  const base=outputPng(128),header=Buffer.from(base.subarray(16,29));
  if(kind==='adam-short'){header[12]=1;return Buffer.concat([base.subarray(0,8),pngChunk('IHDR',header),pngChunk('IDAT',deflateSync(Buffer.from([0,12]))),pngChunk('IEND',Buffer.alloc(0))])}
  if(kind==='icc-large'){const profile=Buffer.alloc(80*1024*1024);profile.writeUInt32BE(profile.length);return Buffer.concat([base.subarray(0,33),pngChunk('iCCP',Buffer.concat([Buffer.from('profile\0\0','ascii'),deflateSync(profile)])),base.subarray(33)])}
@@ -73,4 +74,31 @@ export function pngFormatCases(){
  for(let rowFilter=0;rowFilter<=4;rowFilter++)cases.push({name:'indexed-filter-'+rowFilter,valid:true,nativeExpected:true,samples:[[0,0,[200,100,50,255]],[4,0,[12,34,56,255]],[0,1,[12,34,56,255]]],options:{color:3,depth:2,width:9,height:7,palette:Buffer.from([12,34,56,200,100,50]),pattern:true,rowFilter}});
  cases.push({name:'adam-indexed-paeth',valid:true,nativeExpected:true,samples:[[0,0,[200,100,50,255]],[4,1,[12,34,56,255]],[0,3,[12,34,56,255]]],options:{color:3,depth:2,width:9,height:7,interlace:1,palette:Buffer.from([12,34,56,200,100,50]),pattern:true,rowFilter:4}},{name:'invalid-row-filter',valid:false,nativeExpected:false,options:{rowFilter:5}});
  return cases;
+}
+
+
+// Native Chromium tolerates an invalid Adler/ancillary stream; that does not change product validity.
+export function compressionPngCases(){return [
+ {name:'zlib-stored-valid',valid:true,nativeExpected:true},
+ {name:'zlib-fixed-valid',valid:true,nativeExpected:true},
+ {name:'zlib-dynamic-valid',valid:true,nativeExpected:true},
+ {name:'zlib-stored-nlen',valid:false,nativeExpected:false},
+ {name:'zlib-stored-truncated',valid:false,nativeExpected:false},
+ {name:'zlib-header-invalid',valid:false,nativeExpected:false},
+ {name:'zlib-adler-invalid',valid:false,nativeExpected:true},
+ {name:'zlib-metadata-nlen',valid:false,nativeExpected:true}
+]}
+export function compressionPng(kind){
+ if(!compressionPngCases().some(row=>row.name===kind))throw Error('Unknown compression PNG');
+ const dynamic=kind==='zlib-dynamic-valid',width=dynamic?64:1,height=dynamic?64:1;
+ const raw=dynamic?Buffer.alloc((width*4+1)*height):Buffer.from([0,12,34,56,255]);
+ let compressed=deflateSync(raw,kind.includes('stored')||kind.includes('metadata')?{level:0}:kind.includes('fixed')?{strategy:constants.Z_FIXED}:{});
+ if(kind.endsWith('nlen'))compressed[5]^=1;
+ if(kind==='zlib-header-invalid')compressed[0]=0;
+ if(kind==='zlib-adler-invalid')compressed[compressed.length-1]^=1;
+ if(kind==='zlib-stored-truncated')compressed=Buffer.concat([compressed.subarray(0,compressed.length-5),compressed.subarray(-4)]);
+ const header=Buffer.alloc(13);header.writeUInt32BE(width);header.writeUInt32BE(height,4);header[8]=8;header[9]=6;
+ const chunks=[Buffer.from([137,80,78,71,13,10,26,10]),pngChunk('IHDR',header)];
+ if(kind==='zlib-metadata-nlen'){chunks.push(pngChunk('zTXt',Buffer.concat([Buffer.from('note\0\0'),compressed])));compressed=deflateSync(raw)}
+ chunks.push(pngChunk('IDAT',compressed),pngChunk('IEND',Buffer.alloc(0)));return Buffer.concat(chunks);
 }

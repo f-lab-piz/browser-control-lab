@@ -1,0 +1,42 @@
+[
+  {
+    "name": "before-review",
+    "command": [
+      "node",
+      "--test",
+      "tests/output-runtime.test.mjs"
+    ],
+    "exitCode": 1,
+    "expectedExitCode": 1
+  },
+  {
+    "name": "before-base",
+    "command": [
+      "node",
+      "--test",
+      "tests/output-runtime.test.mjs"
+    ],
+    "exitCode": 1,
+    "expectedExitCode": 1
+  },
+  {
+    "name": "all",
+    "command": [
+      "npm",
+      "run",
+      "test:all"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0
+  },
+  {
+    "name": "headed",
+    "command": [
+      "npm",
+      "run",
+      "test:requirements"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0
+  }
+]

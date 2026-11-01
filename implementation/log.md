@@ -164,3 +164,10 @@ guest 예외 이름과 메시지는 원인 증명이 아니므로 자동 VM 재�
 정확5747487의 재리뷰가 찾은 금지 color/depth·필수 PLTE 누락과 과도한 palette 할당을 보완했다. generic fast-png/iobuffer를 제품 의존성에서 제거하고 자체 색상·palette·transparency·행/Adam7·필터 검사와 제한 fflate 스트림을 사용한다. 전체 raster/palette 배열 없이 indexed 두 행만 복원하며 IDAT는 파일 길이 이내 단일 버퍼로 모은다. 확장64MiB와 작업 공간 예산을 분리 검사한다. 정상40·거절26의66행과 native oracle의 필터별 픽셀 판독을 추가했다.
 
 최종8개 제품 비교 base1/8→8/8, 직전 리뷰574의 output만 복원하면7/8→8/8(66행 중26개 오판)이다. base 형식 행렬은1MiB wire timeout으로 중도 실패해66행 기록이 없고, 이를 전부 실행한 것처럼 표시하지 않는다. 최종 final4 전체83 PASS/외부1 SKIP, 최종 source hash 일치. 직전 final2 실행의 다운로드 취소 TIMEOUT1건도 실패 기록으로 보존한다. 비중첩 재실행은 통과했지만 간헐 원인은 미확정이다. 새 정확 head의 Sol6.1 high 재리뷰가 남아 있고 B01C는in-progress다. 중계기는 개인용 로컬 전송이며 다중 사용자 계정/할당량 기능은 범위 밖이다.
+
+
+## 2026-11-02 · PR14 압축 구조 검증 보완
+
+정확64f2de4의 세 번째 독립 리뷰는 stored DEFLATE LEN/NLEN 불일치73bytes PNG를 실제 이미지로 수용하는 P2 한 건으로 CHANGES_REQUESTED였다. Node zlib·Chromium은 거절하지만 기존 fflate 스트림이 허용했다. 범용 pako3.0.3(MIT AND Zlib)의 zlib-only Inflate로 교체하고 고정64KiB 출력 조각/256bytes 입력·예산 callback·종결/입력 전체 소비 검사를 적용했다. 자체 행 검사·원본 bytes·64MiB 한도는 유지한다.
+
+추가8개 압축 사례 중 정상 stored/fixed/dynamic과 손상 LEN/NLEN·truncated/header/Adler/metadata를 실제 확장에서 구분했다. 동일 최종9개 테스트 base1/9→9/9, 직전64 output만 복원8/9→9/9다. 정상 native 지원과 일부 손상 checksum/ancillary 관대함을 분리하고 첫 native 기대값 오류를 성공으로 숨기지 않는다. 최종 전체/창 모드 검증과 새 head 독립 리뷰 결과는 round4 manifest를 따른다. B01C 이후 단계의 완료를 선언하지 않는다.

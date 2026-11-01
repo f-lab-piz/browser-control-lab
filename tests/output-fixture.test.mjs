@@ -6,7 +6,7 @@ import {existsSync} from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {startFixture} from '../test-site/server.mjs';
-import {outputPng,pngFormatCases} from '../test-site/output-png.mjs';
+import {outputPng,pngFormatCases,compressionPngCases} from '../test-site/output-png.mjs';
 test('PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixel',{timeout:45000},async()=>{
  const fixture=await startFixture();let browser;
  try{
@@ -19,9 +19,9 @@ test('PNG byte-boundary fixtures decode in Chromium to the intended1x1 RGBA pixe
    let timer;const observed=await Promise.race([observation,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Native PNG oracle timeout at '+size+' bytes')),10000)})]).finally(()=>clearTimeout(timer));
    assert.equal(observed.length,size);assert.deepEqual(observed.pixel,[12,34,56,255]);
   }
-  for(const [kind,expected] of [['adam-valid',true],['adam-short',false]]){
+  for(const [kind,expected] of [['adam-valid',true],['adam-short',false],...compressionPngCases().filter(r=>r.nativeExpected!==undefined).map(r=>[r.name,r.nativeExpected])]){
    const decoded=await page.evaluate(async kind=>{const data=await fetch('/output-review-image?kind='+kind).then(r=>r.json());const bytes=Uint8Array.from(atob(data.data),c=>c.charCodeAt(0));try{const image=await createImageBitmap(new Blob([bytes],{type:'image/png'}));image.close();return true}catch{return false}},kind);
-   assert.equal(decoded,expected);
+   assert.equal(decoded,expected,kind);
   }
 
   for(const row of pngFormatCases()){

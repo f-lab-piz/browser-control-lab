@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-01T16:35:06.010890+00:00",
+  "at": "2026-11-01T16:43:31.752480+00:00",
   "baseline": "0446e5b3ae683bb7801184648078f99de96ea55d",
   "comparison": "final test/fixture/dependencies/docs/helper plus new unused output/limits modules fixed; baseline server/worker entry files only changed. Not a full historical environment replay.",
   "sourceDifferences": [
@@ -8,10 +8,10 @@
   ],
   "beforeProduct": {
     "pass": 1,
-    "fail": 7
+    "fail": 8
   },
   "afterProduct": {
-    "pass": 8,
+    "pass": 9,
     "fail": 0
   },
   "beforeTransport": {
@@ -23,15 +23,15 @@
     "fail": 0
   },
   "regression": {
-    "pass": 83,
+    "pass": 85,
     "fail": 0,
     "skip": 1,
-    "command": "BCL_RUN_DIR=output/goal-b01c/round3/final4/product npm run test:all"
+    "command": "BCL_RUN_DIR=output/goal-b01c/round4/all npm run test:all"
   },
   "headed": {
-    "pass": 17,
+    "pass": 18,
     "fail": 0,
-    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b01c/round3/final4/headed npm run test:requirements"
+    "command": "HEADED=1 BCL_RUN_DIR=output/goal-b01c/round4/headed npm run test:requirements"
   },
   "firstParallelRun": "Fixture PNG process stayed live without completing. Inspected owned pids39633/39634, TERM then confirmed live and KILL; full exec terminal exit1. Not PASS. Serial fixture command and explicit oracle deadline added; native decode independent rerun passed.",
   "competitors": "bounded console output LIVE for Codex tool and Aside one-shot; budgets/images/HTTP not measured. Codex artifact is labeled received-output transcription, not raw export.",
@@ -301,9 +301,100 @@
       "sourceSha256": "f01182f90e01b892f65b1a127472eeed4e84cbae65fd720a4890f030f178f84d",
       "sha256": "f01182f90e01b892f65b1a127472eeed4e84cbae65fd720a4890f030f178f84d",
       "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-before-base.json",
+      "source": "output/goal-b01c/round4/before-base/b01c/results.json",
+      "sourceSha256": "27c3e41bed3a526d1e333a5ded9fd01f06e338e813837c483b8d4256a39e0533",
+      "sha256": "27c3e41bed3a526d1e333a5ded9fd01f06e338e813837c483b8d4256a39e0533",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-before-base.log.txt",
+      "source": "output/goal-b01c/round4/before-base.log",
+      "sourceSha256": "05b45484694878d0edfd3013ae3f739569e5e49bfa8cae64520cfe2c02521c4a",
+      "sha256": "cc20e59e83786757bc3b98167acd3a6dc1470d941013873329dab9ac31b09590",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-before-review.json",
+      "source": "output/goal-b01c/round4/before-review/b01c/results.json",
+      "sourceSha256": "c2ec30a5e1b88278d104c57b6784e790aa9954cbce1ebfe2cb9e5f489b1263b7",
+      "sha256": "c2ec30a5e1b88278d104c57b6784e790aa9954cbce1ebfe2cb9e5f489b1263b7",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-before-review.log.txt",
+      "source": "output/goal-b01c/round4/before-review.log",
+      "sourceSha256": "131d21ea778807ba6d44e0a14b5d4a4539a6fe3e8307d80773cb2caf212e9e88",
+      "sha256": "06a13356ba67e617200e3a86be5ccbe4a09d8b94af16e955cf7cacbac3eede47",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-after-product.json",
+      "source": "output/goal-b01c/round4/all/b01c/results.json",
+      "sourceSha256": "b35e737a3b5e241461f480800f655f7136e9b8de842b4e37dde1617a83dd4603",
+      "sha256": "b35e737a3b5e241461f480800f655f7136e9b8de842b4e37dde1617a83dd4603",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-after-all.log.txt",
+      "source": "output/goal-b01c/round4/all.log",
+      "sourceSha256": "ee43e548aafacc5115a54129d9d250e944b1c3fb4fd7077fdd0834347c6e56b2",
+      "sha256": "ee43e548aafacc5115a54129d9d250e944b1c3fb4fd7077fdd0834347c6e56b2",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-after-headed.json",
+      "source": "output/goal-b01c/round4/headed/b01c/results.json",
+      "sourceSha256": "844d1987255050eefa40d8db4caa8ba68b9147ce2ac95c6b7bd8dcde2b46a838",
+      "sha256": "844d1987255050eefa40d8db4caa8ba68b9147ce2ac95c6b7bd8dcde2b46a838",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-after-headed.log.txt",
+      "source": "output/goal-b01c/round4/headed.log",
+      "sourceSha256": "8d18723d47bdf68cd5e11b79eb30d15338cd7efb8676ee958b8b350d97bd9484",
+      "sha256": "8d18723d47bdf68cd5e11b79eb30d15338cd7efb8676ee958b8b350d97bd9484",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-runtime-regression.json",
+      "source": "output/goal-b01c/round4/all-runtime-regression.json",
+      "sourceSha256": "b7d47bda2c5540150614248efb5c88ab0ed8b2e4d357fabd0c4c8397a80a0d94",
+      "sha256": "b7d47bda2c5540150614248efb5c88ab0ed8b2e4d357fabd0c4c8397a80a0d94",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-commands.json",
+      "source": "output/goal-b01c/round4/commands.json",
+      "sourceSha256": "c356e8f9aff1190cff870a1f9a6c916dce1fc145f86efdc7bdf12be25e4cbd00",
+      "sha256": "c356e8f9aff1190cff870a1f9a6c916dce1fc145f86efdc7bdf12be25e4cbd00",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-native-expectation-failure.log.txt",
+      "source": "output/goal-b01c/round4-buffer-fixture.log",
+      "sourceSha256": "0449a11cf56ca6951ee28a51eea7a9d1e3def71bbd7914ccdf165cbfbee1d31c",
+      "sha256": "495468bcb8090b57d1623c9b74bc3845141ada9ac3b8e8d77d136b688560b1d8",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "round4-native-unit-pass.log.txt",
+      "source": "output/goal-b01c/round4-buffer-fixture2.log",
+      "sourceSha256": "9c6a4d2548a80888657b9979b5d1ed66ff8fcf6c3660e40a442cf5ca48c67a66",
+      "sha256": "9c6a4d2548a80888657b9979b5d1ed66ff8fcf6c3660e40a442cf5ca48c67a66",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
+    },
+    {
+      "file": "reviewer3-probes.json",
+      "source": ".local/goal-development/b01c-round3-review/probes.json",
+      "sourceSha256": "6035b2353357e2bbb26fa4b52eda31ce6e1951f2c836cbc5993dec4dc833ef9b",
+      "sha256": "6035b2353357e2bbb26fa4b52eda31ce6e1951f2c836cbc5993dec4dc833ef9b",
+      "normalization": "repository path -> <repo>; trailing spaces/tabs removed"
     }
   ],
-  "gate": "Both independent reviews CHANGES_REQUESTED findings repaired; new exact-head independent review pending",
+  "gate": "Third review P2 stored LEN/NLEN repaired; new exact-head independent review pending",
   "phase1Summary": {
     "at": "2026-11-01T15:50:32.663342+00:00",
     "sourceDifferences": [
@@ -332,17 +423,18 @@
     "gate": "independent exact-head review pending"
   },
   "reviewComparison": {
-    "baseline": "5747487ac72c613e650fc1977b28159b48ec7824",
+    "baseline": "64f2de4e7bf62413ed93a0382c6c565798430dcf",
     "before": {
-      "pass": 7,
+      "pass": 8,
       "fail": 1
     },
     "after": {
-      "pass": 8,
+      "pass": 9,
       "fail": 0
     },
     "formatRows": 66,
-    "mismatchedBeforeRows": 26,
+    "compressionRows": 8,
+    "incorrectCompressionBeforeRows": 2,
     "sourceDifferences": [
       "extension/output.mjs"
     ]
@@ -386,7 +478,48 @@
       ]
     }
   },
-  "png": "Own PNG structure+indexed row filter validator; generic pixel decoder removed.66rows40valid26invalid/resource. Native oracle separate. W3C reference and generic fflate only.",
+  "png": "Own PNG structure/indexed row filter validator with generic pako3.0.3 bounded64KiB output/256byte input Inflate; zlib-only framing/stored LEN/NLEN/checksum/completion/total input consumption.66format+8compression rows.",
   "transientFailure": "Same final source final2 full run failed download cancellation with TIMEOUT (23 runtime pass/1fail/1skip). Isolated final4 full run passed83/1skip. Cause unconfirmed; preserved raw failure; do not claim fixed or independent of PNG.",
-  "baselineMatrixLimitation": "Base0446 wire1MiB limit timed out during matrix; no complete66row matrix claimed for base. Baseline574 records all66rows;26incorrect."
+  "baselineMatrixLimitation": "Base0446 wire1MiB limit timed out during matrix; no complete66row matrix claimed for base. Baseline574 records all66rows;26incorrect.",
+  "phase3Summary": {
+    "at": "2026-11-01T16:35:06.010890+00:00",
+    "beforeProduct": {
+      "pass": 1,
+      "fail": 7
+    },
+    "afterProduct": {
+      "pass": 8,
+      "fail": 0
+    },
+    "regression": {
+      "pass": 83,
+      "fail": 0,
+      "skip": 1,
+      "command": "BCL_RUN_DIR=output/goal-b01c/round3/final4/product npm run test:all"
+    },
+    "headed": {
+      "pass": 17,
+      "fail": 0,
+      "command": "HEADED=1 BCL_RUN_DIR=output/goal-b01c/round3/final4/headed npm run test:requirements"
+    },
+    "gate": "Both independent reviews CHANGES_REQUESTED findings repaired; new exact-head independent review pending",
+    "reviewComparison": {
+      "baseline": "5747487ac72c613e650fc1977b28159b48ec7824",
+      "before": {
+        "pass": 7,
+        "fail": 1
+      },
+      "after": {
+        "pass": 8,
+        "fail": 0
+      },
+      "formatRows": 66,
+      "mismatchedBeforeRows": 26,
+      "sourceDifferences": [
+        "extension/output.mjs"
+      ]
+    },
+    "png": "Own PNG structure+indexed row filter validator; generic pixel decoder removed.66rows40valid26invalid/resource. Native oracle separate. W3C reference and generic fflate only."
+  },
+  "sourceRetention": "sourceSha256 records bytes at capture time. Fixed output/runtime-e2e/results.json is overwritten by subsequent required tests/reviewer; round3-runtime-regression.json retains captured bytes/hash. Round4 runtime raw copied to unique round4/all-runtime-regression.json before later tests. All immutable delivered hashes verified; historical mutable raw path is not asserted unchanged."
 }

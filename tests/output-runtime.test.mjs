@@ -2,7 +2,7 @@ import test,{before,after} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {productRuntime,resultText as text} from './helpers/product-runtime.mjs';
-import {outputPng,pngFormatCases} from '../test-site/output-png.mjs';
+import {outputPng,pngFormatCases,compressionPngCases} from '../test-site/output-png.mjs';
 let h,a,b;
 const KiB=1024,MiB=1024*KiB;
 const done=r=>{assert.equal(r.status,'completed',JSON.stringify(r.result?.error));assert.equal(r.result.execution,'extension-worker/QuickJS-WASM');return r.result};
@@ -108,4 +108,18 @@ test('B01C complete PNG format matrix preserves supported originals and rejects 
  h.evidence.push({conditions:['REQ-DISPLAY-001-C01','REQ-DISPLAY-002-C01','REQ-C-RUNTIME-007-C01'],status:failures.length?'fail':'pass',rows});
  assert.deepEqual(failures,[],'All PNG format cases must match their specified admission and continuation');
 
+});
+
+
+test('B01C stored fixed and dynamic streams preserve valid images and reject malformed compression synchronously',async()=>{
+ const rows=[];
+ for(const row of compressionPngCases()){
+  const result=await js(`var compressedImage=await outputPage.evaluate(async name=>(await fetch('/output-review-image?kind='+name)).json(),${JSON.stringify(row.name)});try{display(compressedImage);console.log('accepted')}catch(error){console.log('rejected '+error.message)}console.log('after');`);
+  const content=done(result).content,images=content.filter(c=>c.type==='image');
+  const diagnostic=content.find(c=>c.type==='text')?.text,after=content.at(-1).text;
+  const valid=images.length===(row.valid?1:0)&&after==='after'&&(row.valid?diagnostic==='accepted':/^rejected INVALID_IMAGE/.test(diagnostic));
+  rows.push({name:row.name,expectedValid:row.valid,imageBlocks:images.length,diagnostic,after,passed:valid});
+ }
+ h.evidence.push({conditions:['REQ-DISPLAY-001-C01','REQ-DISPLAY-002-C01'],status:rows.every(r=>r.passed)?'pass':'fail',rows});
+ assert.deepEqual(rows.filter(r=>!r.passed),[]);
 });

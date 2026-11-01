@@ -1,0 +1,179 @@
+[
+  {
+    "name": "valid-stored-block",
+    "bytes": 73,
+    "zlibHex": "7801010500faff000c2238ff020a0166",
+    "image": {
+      "type": "image",
+      "mimeType": "image/png",
+      "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR4AQEFAPr/AAwiOP8CCgFmIiCgggAAAABJRU5ErkJggg=="
+    },
+    "nodeDecode": {
+      "ok": true,
+      "raw": [
+        0,
+        12,
+        34,
+        56,
+        255
+      ]
+    },
+    "pure": {
+      "ok": true,
+      "bytes": 73
+    },
+    "native": {
+      "ok": true,
+      "pixel": [
+        12,
+        34,
+        56,
+        255
+      ]
+    },
+    "product": {
+      "requestId": "3af3c189-a23a-43b5-8108-8ae327ffe7a8",
+      "sessionId": "2295b978-3e1a-48e3-828b-8ab96bc177f1",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793551046643,
+      "startedAt": 1793551046643,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 11.59999942779541,
+          "outputChars": 19,
+          "outputBytes": 19,
+          "imageBytes": 73,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "before"
+          },
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR4AQEFAPr/AAwiOP8CCgFmIiCgggAAAABJRU5ErkJggg=="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793551046657
+    }
+  },
+  {
+    "name": "invalid-stored-NLEN",
+    "bytes": 73,
+    "zlibHex": "7801010500fbff000c2238ff020a0166",
+    "image": {
+      "type": "image",
+      "mimeType": "image/png",
+      "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR4AQEFAPv/AAwiOP8CCgFm465/QgAAAABJRU5ErkJggg=="
+    },
+    "nodeDecode": {
+      "ok": false,
+      "error": "invalid stored block lengths"
+    },
+    "pure": {
+      "ok": true,
+      "bytes": 73
+    },
+    "native": {
+      "ok": false,
+      "error": "The source image could not be decoded."
+    },
+    "product": {
+      "requestId": "f367ed4e-ee3f-4697-b48a-b64536704da9",
+      "sessionId": "2295b978-3e1a-48e3-828b-8ab96bc177f1",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793551046681,
+      "startedAt": 1793551046681,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 7.800000190734863,
+          "outputChars": 19,
+          "outputBytes": 19,
+          "imageBytes": 73,
+          "imageCount": 1
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "before"
+          },
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR4AQEFAPv/AAwiOP8CCgFm465/QgAAAABJRU5ErkJggg=="
+          },
+          {
+            "type": "text",
+            "text": "accepted"
+          },
+          {
+            "type": "text",
+            "text": "after"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793551046691
+    }
+  },
+  {
+    "name": "independent-console-shared-and-array-cycle",
+    "result": {
+      "requestId": "ef6cb9c7-e004-4f52-b34a-682250461910",
+      "sessionId": "2295b978-3e1a-48e3-828b-8ab96bc177f1",
+      "generation": 1,
+      "status": "completed",
+      "createdAt": 1793551046714,
+      "startedAt": 1793551046714,
+      "result": {
+        "execution": "extension-worker/QuickJS-WASM",
+        "metrics": {
+          "durationMs": 10.100000381469727,
+          "outputChars": 82,
+          "outputBytes": 82,
+          "imageBytes": 0,
+          "imageCount": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "[{\"n\":1},{\"n\":1}]"
+          },
+          {
+            "type": "text",
+            "text": "[\"[Circular]\"]"
+          },
+          {
+            "type": "text",
+            "text": "undefined 10n Symbol(s) function f(){}"
+          },
+          {
+            "type": "text",
+            "text": "after-console"
+          }
+        ],
+        "truncated": false,
+        "truncationReasons": []
+      },
+      "finishedAt": 1793551046725
+    }
+  }
+]
